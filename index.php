@@ -92,7 +92,7 @@ if (isset($_POST['Login'])){
 			echo "
 			<script>
 				alert('Login Successful. Welcome $dbFN $dbLN ($dbPosition - $dbCampus)');	
-				window.location.href='Dashboard.html';
+				window.location.href='dashboard.html';
 			</script>";
 		}
 		else{
