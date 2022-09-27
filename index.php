@@ -67,16 +67,16 @@ if (isset($_POST['Login'])){
 	while($result = mysqli_fetch_array($command))
 	{
 		$dbAID = $result['AccountID'];
+		$dbEmail = $result['Email'];
 		$dbPass = $result['Password'];
 		$dbFN = $result['Firstname'];
 		$dbLN = $result['Lastname'];
-		$dbEmail = $result['Email'];
 		$dbCampus = $result['Campus'];
 		$dbPosition = $result['Position'];
 	}
 	
 	//Decrypting Password using password verify
-	$DecryptPass = password_verify($Password, $dbPass);
+	//$DecryptPass = password_verify($Password, $dbPass);
 
 	if ($Email === $dbEmail){
 		//Result True
