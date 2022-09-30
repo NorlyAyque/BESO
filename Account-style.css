@@ -270,7 +270,7 @@ margin-left: 100px;
   width: 95%;
   margin-left:43px;
   margin-right:80px;
-  margin-top:130px;
+  margin-top:110px;
   border-radius: 3px 3px 0 0;
   overflow:hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
@@ -415,12 +415,15 @@ letter-spacing: 10px;
   
 }
 
-.header .btn{
-	margin-left: 20px;
-	margin-top: 45px;
-}
+ .form-field{
+	text-align: right;
+	margin-right:16px;
+	margin-top:5px;
+	 position: relative;
+	
+ }
  
- .header .btn {
+ .form-field .btn {
   background-color: #4CAF50; 
   border: none;
   color: white;
@@ -428,14 +431,14 @@ letter-spacing: 10px;
   font-size: 15px;
   transition-duration: 0.4s;
   cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+ box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
   border-radius: 5px;
-  width: auto;
+ width: auto;
 }
 
 
-.header .btn:hover {
+.form-field .btn:hover {
   background-color:  #EC7272;
   color: white;
 }
