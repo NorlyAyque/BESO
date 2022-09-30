@@ -409,7 +409,7 @@ letter-spacing: 10px;
  .form-field .btn {
   background-color: #4CAF50; 
   border: none;
-  color: white;
+  color: var(--white);
   padding: 8px 25px;
   font-size: 15px;
   transition-duration: 0.4s;
