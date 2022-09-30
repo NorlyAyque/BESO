@@ -58,6 +58,8 @@ body{
 	transition: 0.5s;
 	overflow:hidden;
 	
+	
+	
 }
 /*navigation 2nd width*/
 .navigation.active{
@@ -103,7 +105,7 @@ body{
 
 .navigation ul li:hover a,
 .navigation ul li.hovered a{
-	color: var(--black1);
+	color: #444;
 	
 	
 }
@@ -246,23 +248,6 @@ margin-left: 100px;
 }
 
 
-
-/*
-.target input{
-	width:40px;
-}
-.target tr,th,td{
-	border-collapse: collapse;
-	padding:12px 15px;
-}
-
-.target thead tr{
-	background-color: var(--red);
-	color: var(--white);
-	text-align: left;
-}
-
-*/
 .target {
   border-collapse: collapse;
   width: 95%;
@@ -271,7 +256,7 @@ margin-left: 100px;
   margin-top:110px;
   border-radius: 3px 3px 0 0;
   overflow:hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
   
 }
 .target input{
@@ -348,6 +333,7 @@ padding: 25px 90px;
 border-radius:5px;
 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 letter-spacing: 10px;
+}
 	/*
 	color: #444;
   text-shadow: 
@@ -360,3 +346,85 @@ letter-spacing: 10px;
     7px 6px 1px #ccc;
 }
 }
+*/
+
+.select {
+  border-collapse: collapse;
+  display: flex;
+  position: relative;
+  padding: 10px 20px;
+  background-color: #E64848;
+  margin-left: 30px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  border-radius:5px;
+}
+.header .select label{
+	color:white;
+	font-size:20px;
+	cursor: pointer;
+}
+ .select input{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-right:10px;
+  
+}
+
+.select1 {
+  border-collapse: collapse;
+  display: flex;
+  position: relative;
+  padding: 10px 20px;
+  background-color: #E64848;
+  margin-left: 30px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  border-radius:5px;
+  margin-top:5px;
+}
+.header .select1 label{
+	color:white;
+	font-size:20px;
+	cursor: pointer;
+}
+ .select1 input{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin-right:10px;
+  
+}
+
+ .form-field{
+	text-align: right;
+	margin-right:16px;
+	margin-top:5px;
+	 position: relative;
+	
+ }
+ 
+ .form-field .btn {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 8px 25px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+ width: auto;
+}
+
+
+.form-field .btn:hover {
+  background-color:  #EC7272;
+  color: white;
+}
+
+
+
