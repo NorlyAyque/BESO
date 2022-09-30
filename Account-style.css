@@ -296,18 +296,31 @@ margin-left: 100px;
 
 }
 .account{
-  width: 67%;
-  margin-left:50px;
+  width: 69%;
+  margin-left:30px;
   margin-right:auto;
   margin-bottom:100px;
   border-radius: 3px 3px 0 0;
   overflow:hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
   display:fixed;
-  border: 1px solid black;
-  
+  border: 1px solid black; 
   
 }
+
+.account th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--red);
+  color: white;
+  font-weight:bold;
+}
+
+.account .status th{
+	
+}
+
 .account input{
 	width:100%;
 	height:30px;
@@ -330,14 +343,7 @@ margin-left: 100px;
 .account tr:hover {
 background-color: #ddd;}
 
-.account th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: var(--red);
-  color: white;
-  font-weight:bold;
-}
+
 .account input {
 	text-align: center;
 	
@@ -357,7 +363,7 @@ background-color: #ddd;}
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
   border-radius: 5px;
-  margin-right:15px;
+
 
   
 }
@@ -371,7 +377,7 @@ background-color: #ddd;}
   background-color: #EF7C8E; 
   border: none;
   color: white;
-   padding: 5px 10px;
+  padding: 5px 10px;
   font-size: 11px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -385,4 +391,28 @@ background-color: #ddd;}
 .account .btn1:hover {
   background-color:  var(--red);
   color: white;
+}
+
+.account .btn2 {
+  background-color: orange; 
+  border: none;
+  color: white;
+   padding: 5px 10px;
+  font-size: 11px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+
+  
+}
+
+.account .btn2:hover {
+  background-color:  #F41F4E;
+  color: white;
+}
+.account .btn .btn1 .btn2 {
+	text-align: center;
+	
 }
