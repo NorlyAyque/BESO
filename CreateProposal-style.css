@@ -342,7 +342,8 @@ letter-spacing: 10px;
 .button {
 	text-align: right;
 	margin-right: 20px;
-	margin-top: -15px;
+	margin-top: -10px;
+	margin-bottom:10px;
 }
 .button .btn {
   background-color: #4CAF50; 
