@@ -73,6 +73,7 @@ if (isset($_POST['Login'])){
 		$dbLN = $result['Lastname'];
 		$dbCampus = $result['Campus'];
 		$dbPosition = $result['Position'];
+		$dbStatus = $result['Status'];
 	}
 	
 	//Decrypting Password using password verify
@@ -88,6 +89,7 @@ if (isset($_POST['Login'])){
 			$_SESSION["Email"] = $dbEmail;
 			$_SESSION["Campus"] = $dbCampus;
 			$_SESSION["Position"] = $dbPosition;
+			$_SESSION["Status"] = $dbStatus;
 			
 			echo "
 			<script>
