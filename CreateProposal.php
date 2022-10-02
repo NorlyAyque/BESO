@@ -8,68 +8,68 @@
 </head>
 <body>
 	
-	<div class="container">
+<div class="container">
 	
-		<div class = "navigation">
-		<div class="menu-header-bg"></div>
-		
-			<ul>
-				<li>
-					<a href="#">
-						<div class=" logo"><img src ="img/logo.png"></div>
-						<span class ="title1"> BESO Portal</span>
-					</a>
-				</li>
-				<li>
-					<a href="dashboard.html">
-						<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
-						<span class ="title"> Home</span>
-					</a>
-				</li>
-				<li>
-					<a href="Proposal.html">
-						<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
-						<span class ="title"> Project Proposals</span>
-					</a>
-				</li>
-				<li>
-					<a href="CreateProposal.html">
-						<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
-						<span class ="title"> Create Proposal</span>
-					</a>
-				</li>
-				<li>
-					<a href="Evaluation.html">
-						<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
-						<span class ="title"> Evaluation Reports</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
-						<span class ="title"> Monitoring Reports</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
-						<span class ="title"> Reports</span>
-					</a>
-				</li>
-				<li>
-					<a href="Account.html">
-						<span class ="icon"> <ion-icon name="person-add-outline"></ion-icon> </span>
-						<span class ="title"> Accounts</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
-						<span class ="title"> Sign out</span>
-					</a>
-				</li>
-			</ul>
-		</div>
+	<div class = "navigation">
+	<div class="menu-header-bg"></div>
+	
+		<ul> 
+			<li>
+				<a href="#">
+					<div class=" logo"><img src ="img/logo.png"></div>
+					<span class ="title1"> BESO Portal</span>
+				</a>
+			</li>
+			<li>
+				<a href="Dashboard.php">
+					<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
+					<span class ="title"> Home</span>
+				</a>
+			</li>
+			<li>
+				<a href="Proposal.php">
+					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
+					<span class ="title"> Project Proposals</span>
+				</a>
+			</li>
+			<li>
+				<a href="CreateProposal.php">
+					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
+					<span class ="title"> Create Proposal</span>
+				</a>
+			</li>
+			<li>
+				<a href="Evaluation.php">
+					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
+					<span class ="title"> Evaluation Reports</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
+					<span class ="title"> Monitoring Reports</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
+					<span class ="title"> Reports</span>
+				</a>
+			</li>
+			<li>
+				<a href="Account.php">
+					<span class ="icon"> <ion-icon name="person-add-outline"></ion-icon> </span>
+					<span class ="title"> Accounts</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
+					<span class ="title"> Sign out</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 		
 		
 		<!--main-->

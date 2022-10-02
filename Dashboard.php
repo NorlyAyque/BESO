@@ -21,25 +21,25 @@
 					</a>
 				</li>
 				<li>
-					<a href="dashboard.html">
+					<a href="Dashboard.php">
 						<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
 						<span class ="title"> Home</span>
 					</a>
 				</li>
 				<li>
-					<a href="Proposal.html">
+					<a href="Proposal.php">
 						<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 						<span class ="title"> Project Proposals</span>
 					</a>
 				</li>
 				<li>
-					<a href="CreateProposal.html">
+					<a href="CreateProposal.php">
 						<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
 						<span class ="title"> Create Proposal</span>
 					</a>
 				</li>
 				<li>
-					<a href="Evaluation.html">
+					<a href="Evaluation.php">
 						<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 						<span class ="title"> Evaluation Reports</span>
 					</a>
@@ -57,7 +57,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="Account.html">
+					<a href="Account.php">
 						<span class ="icon"> <ion-icon name="person-add-outline"></ion-icon> </span>
 						<span class ="title"> Accounts</span>
 					</a>
