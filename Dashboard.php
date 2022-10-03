@@ -8,7 +8,7 @@ include("Connection.php");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="dashboard-style.css">
+<link rel="stylesheet" type="text/css" href="dashboard.css">
 
 </head>
 <body>
@@ -95,8 +95,10 @@ include("Connection.php");
 
 <form method="post">				
 				<!--Save Button -->
-				<th><button class="btn" type="submit" name="Save" id="Save">Save</button></th>
-				<th><button class="btn" type="submit" name="Update" id="Save">Update</button></th>
+				<th>
+					<button class="btn" type="submit" name="Save" id="Save">Save</button>
+					<button class="btn4" type="submit" name="Update" id="Save">Update</button></th>
+				
 			</tr>
 			</thead>
 			</table>

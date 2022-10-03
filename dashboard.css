@@ -330,7 +330,9 @@ font-weight:bold;
   margin-left:auto;
   margin-right:auto;
   margin-bottom: -100px;
-  Border: none;
+  border: none;
+ 
+  
 }
 
 .header thead {
@@ -417,7 +419,8 @@ letter-spacing: 10px;
 
 .header .btn{
 	margin-left: 20px;
-	margin-top: 45px;
+	margin-bottom: 10px;
+	display:flex;
 }
  
  .header .btn {
@@ -436,7 +439,33 @@ letter-spacing: 10px;
 
 
 .header .btn:hover {
-  background-color:  #EC7272;
+  background-color:  #4CAF20;
+  color: white;
+}
+
+.header .btn4{
+		margin-left: 20px;
+		display:flex;
+
+}
+ 
+ .header .btn4 {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  width: auto;
+}
+
+
+.header .btn4:hover {
+  background-color:  #4CAF20;
   color: white;
 }
 

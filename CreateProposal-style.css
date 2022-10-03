@@ -245,7 +245,7 @@ margin-left: 100px;
  
 
 }
-.header p{
+.header th, p{
 font-weight: bold;
 font-size: 35px;
 background-color: #E64848;
@@ -255,6 +255,7 @@ padding: 25px 80px;
 border-radius:5px;
 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 letter-spacing: 10px;
+display:flex;
 
 
 }
