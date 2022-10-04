@@ -50,7 +50,7 @@ include("Connection.php");
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="Monitoring.php">
 						<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 						<span class ="title"> Monitoring Reports</span>
 					</a>

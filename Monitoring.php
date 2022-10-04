@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="proposal.css">
+<title>Evaluation</title>
+<link rel="stylesheet" type="text/css" href="Monitoring.css">
 
 </head>
 <body>
@@ -45,13 +45,13 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="Reports.php">
 					<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
 					<span class ="title"> Reports</span>
 				</a>
