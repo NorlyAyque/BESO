@@ -84,7 +84,7 @@
 			<div class ="header">
 			<table>
 				<tr>
-					<th><p> Extention Program Plan/Activity Evaluation Report</p></th>
+					<th><p>EXTENSION PROGRAM PLAN/ACTIVITY EVALUATION REPORT</p></th>
 				</tr>
 			</table>
 			</div>

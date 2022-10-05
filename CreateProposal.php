@@ -83,7 +83,7 @@
 			<div class ="header">
 			<table>
 				<tr>
-					<th><p> Extention Program Plan/Project Proposal</p></th>
+					<th><p>EXTENSION PROGRAM PLAN/PROJECT PROPOSAL</p></th>
 				</tr>
 			</table>
 			</div>
