@@ -66,6 +66,71 @@
 </body>
 </html>
 
+<?php
+session_start();
+include("Connection.php");
+
+if (isset($_POST['Login'])){
+	$Email = htmlspecialchars($_POST['email']);
+	$Password = htmlspecialchars($_POST['psw']);
+
+	$sql = ("SELECT * FROM account WHERE Email = '$Email'");
+	$command = $con->query($sql) or die("Error SQL");
+
+	//initialize the value
+	$dbEmail = "";
+
+	while($result = mysqli_fetch_array($command))
+	{
+		$dbAID = $result['AccountID'];
+		$dbEmail = $result['Email'];
+		$dbPass = $result['Password'];
+		$dbFN = $result['Firstname'];
+		$dbLN = $result['Lastname'];
+		$dbCampus = $result['Campus'];
+		$dbPosition = $result['Position'];
+		$dbStatus = $result['Status'];
+	}
+	
+	//Decrypting Password using password verify
+	//$DecryptPass = password_verify($Password, $dbPass);
+
+	if ($Email === $dbEmail){
+		//Result True
+		// if ($DecryptPass == 1){// Password Match
+		if ($Password == $dbPass){
+			//Adding Value to the Session User ID and User Full Name
+			$_SESSION["UserAID"] = $dbAID;
+			$_SESSION["UserFullName"] = $dbFN . " " . $dbLN;
+			$_SESSION["Email"] = $dbEmail;
+			$_SESSION["Campus"] = $dbCampus;
+			$_SESSION["Position"] = $dbPosition;
+			$_SESSION["Status"] = $dbStatus;
+			
+			echo "
+			<script>
+				alert('Login Successful. Welcome $dbFN $dbLN ($dbPosition - $dbCampus)');	
+				window.location.href='Dashboard.php';
+			</script>";
+		}
+		else{
+			//echo "Invalid Password <br>";
+			echo "
+				<script> 
+					document.getElementById('prompt').innerHTML = '<b> Invalid Password </b>';
+				</script>
+			";
+		}
+	}else {
+		//echo "Invalid Email"; 
+		echo "
+				<script> 
+					document.getElementById('prompt').innerHTML = '<b> Invalid Email </b>';
+				</script>
+			";
+	}
+}
+?>
 
 <script>
 	function ForgotPass(){
