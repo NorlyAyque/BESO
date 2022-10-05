@@ -433,7 +433,7 @@ letter-spacing: 10px;
 }
  
  .header .btn {
-  background-color: #4CAF50; 
+  background-color: blue; 
   border: none;
   color: white;
   padding: 8px 25px;
@@ -451,6 +451,71 @@ letter-spacing: 10px;
   background-color:  #4CAF20;
   color: white;
 }
+
+
+.header .btn1{
+	margin-left: 20px;
+	margin-bottom: 10px;
+	display:flex;
+}
+ 
+ .header .btn1 {
+  background-color: red; 
+  border: none;
+  color: white;
+  padding: 8px 25px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  width: auto;
+}
+
+
+.header .btn1:hover {
+  background-color:  #4CAF20;
+  color: white;
+}
+
+.header .btn2{
+	margin-left: 20px;
+	margin-bottom: 10px;
+	display:flex;
+}
+ 
+ .header .btn2 {
+  background-color: blue; 
+  border: none;
+  color: white;
+  padding: 8px 25px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  width: auto;
+}
+
+
+.header .btn2:hover {
+  background-color:  #4CAF20;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .header .btn4{
 		margin-left: 20px;

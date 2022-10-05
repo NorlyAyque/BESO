@@ -34,7 +34,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="Account.css">
+<link rel="stylesheet" type="text/css" href="Account-style.css">
 
 </head>
 <body>
@@ -109,7 +109,10 @@ if(isset($_GET['enable'])){
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>	
 			</div>
-			
+			<div class="add">
+			<button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon>
+			</button>
+			</div>
 			<table class="account">
 				<tr>
 					<th colspan="6"><center>ACCOUNT MANAGEMENT </th> 
@@ -117,11 +120,11 @@ if(isset($_GET['enable'])){
 			<tr>
 				
 				<th> Account ID </th>
-				<th width="170px";> Name </th>
-				<th> Email</th>
+				<th width="250px";> Name </th>
+				<th width="500px";> Email</th>
 				<th width="120px";> Position </th>
 				<th width="90px";> Status </th>
-				<th width="180px";></th>
+				<th width="500px";></th>
 				
 			</tr>
 <?php
@@ -140,17 +143,18 @@ while($result = mysqli_fetch_array($command))
 		$dbStatus = $result['AccStatus'];
 	
 ?>	
-				<tr>
+				<tr class="inputs">
 					<td> <?php echo $dbAID; ?> </td>
 					<td> <?php echo $dbName; ?> </td> 
 					<td> <?php echo $dbEmail; ?> </td> 
 					<td> <?php echo $dbPosition; ?> </td> 
 					<td> <?php echo $dbStatus; ?> </td> 
 					<td>
-						<button class = "btn" href="Account.php?edit=<?php echo $dbAID; ?>"> Edit </button>
-						<button class = "btn1" href="Account.php?delete=<?php echo $dbAID; ?>"> Delete </button>
+						<a href="Account.php?edit=<?php echo $dbAID; ?>" button class = "btn"> Edit </button>
+						<a href="Account.php?delete=<?php echo $dbAID; ?>" button class = "btn1"> Delete </button>
+						<a href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn3"> Enable </a>
 						<a href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
-						<a href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn2"> Enable </a>
+						
 					</td>
 				</tr>
 <?php
@@ -159,8 +163,8 @@ while($result = mysqli_fetch_array($command))
 				</tbody>
 			</table>
 
-			<!-- Sign up form -->
-		
+			<!-- Sign up form 
+			
 			<form>
 				<div class="signup">
 					<h1>Add User</h1>
@@ -184,11 +188,11 @@ while($result = mysqli_fetch_array($command))
 					<label><b>Position</b></label>
 					<input type="text" placeholder="Enter Position" name="email" required>
 					
-					<!--Save Button -->
+					<!--Save Button 
 					<button class="btn" type="submit" name="Signup">Add Account</button>
 				</div>
 			</form>
-
+-->
 		
 
 

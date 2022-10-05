@@ -211,6 +211,8 @@ text-underline-position: under;
 text-decoration-thickness:3px;
 }
 
+
+
 /***Main***/
 .main{
 	position: abosolute;
@@ -243,39 +245,194 @@ margin-left: 100px;
 	margin-top:10px;
 	margin-left: 30px;
 }
+.search{
+	position:relative;
+	width:300px;
+	margin:0 10px;
+	margin-right:10px;
+	margin-top:10px;
+}
+.search label{
+	position: relative;
+	width:100%;
+}
+.search label input{
+	width: 100%;
+	height: 30px;
+	border-radius:40px;
+	padding: 5px 20px;
+	padding-left: 35px;
+	outline: none;
+	border: 1px solid var(--black2);
+}
+.search label ion-icon{
+	position:absolute;
+	top: 0px;
+	bottom:1px;
+	left: 10px;
+	font-size: 20px;
+}
 
-.signup{
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-	margin-left:auto;
-	margin-right: 5px;
-	width: 300px;
-	padding: 15px;	
-	position: fixed;
-	top:10px;
-    bottom: 0;
-    right: 0;
-	overflow:hidden;
-	overflow-y:scroll;
+
+.target {
+  border-collapse: collapse;
+  width: 95%;
+  margin-left:43px;
+  margin-right:80px;
+  margin-top:130px;
+  border-radius: 3px 3px 0 0;
+  overflow:hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  
+}
+.target input{
+	width:40px;
+	height:30px;
 	
 }
 
-/* Full-width input fields */
-.signup input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+.target td, .target th {
+  padding: 8px;
+}
+.target tbody tr{
+	border-bottom: 1px solid #dddddd;
+}
+.target tr:nth-child(even){
+	background-color: var(--grey);
+}
+.target tbody tr:last-of-type{
+	border-bottom: 2px solid var(--red);
+}
+.target tr:hover {background-color: #ddd;}
+
+.target th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--red);
+  color: white;
+  font-weight:bold;
+}
+.target td, input {
+	text-align: center;
 }
 
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
 
-.signup .btn{
-	margin-left: 85px;
+.target select{
+background-color:var(--red);
+color: white;
+Border: none;
+font-size: 18px;
+cursor: pointer;
+font-weight:bold;
+}
+.target th,option{
+	color:white;
+	cursor: pointer;
+	text-align: center;
+}
+.header{
+  border-collapse: collapse;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: -100px;
+  border: none;
+ 
+  
+}
+
+.header thead {
+  margin-left:50px;
+}
+.header th{
+  font-size:40px;
+}
+
+.header p{
+font-weight: bold;
+font-size: 35px;
+background-color: #E64848;
+color: white;
+width: auto;
+padding: 25px 90px;
+border-radius:5px;
+box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+letter-spacing: 10px;
+}
+	/*
+	color: #444;
+  text-shadow: 
+    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
+}
+}
+*/
+
+.select {
+  border-collapse: collapse;
+  display: flex;
+  position: relative;
+  padding: 10px 20px;
+  background-color: #E64848;
+  margin-left: 30px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  border-radius:5px;
+}
+.header .select label{
+	color:white;
+	font-size:20px;
+	cursor: pointer;
+}
+ .select input{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-right:10px;
+  
+}
+
+.select1 {
+  border-collapse: collapse;
+  display: flex;
+  position: relative;
+  padding: 10px 20px;
+  background-color: #E64848;
+  margin-left: 30px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  border-radius:5px;
+  margin-top:5px;
+}
+.header .select1 label{
+	color:white;
+	font-size:20px;
+	cursor: pointer;
+}
+ .select1 input{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin-right:10px;
+  
+}
+
+.header .btn{
+	margin-left: 20px;
+	margin-bottom: 10px;
+	display:flex;
 }
  
- .signup .btn {
+ .header .btn {
   background-color: #4CAF50; 
   border: none;
   color: white;
@@ -290,132 +447,101 @@ margin-left: 100px;
 }
 
 
-.signup .btn:hover {
-  background-color:  #EC7272;
+.header .btn:hover {
+  background-color:  #38E54D;
   color: white;
 }
 
 
-.signup p{
-	font-size:14px;
-	text-decoration:underline;
-	margin-bottom:10px;
-
+.header .btn1{
+	margin-left: 20px;
+	margin-bottom: 10px;
+	display:flex;
 }
-.account{
-  width: 100%;
-  margin-left:30px;
-  margin-right:auto;
-  margin-bottom:100px;
-  border-radius: 3px 3px 0 0;
-  overflow:hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  display:fixed;
-  border: 1px solid black; 
-  
-}
-
-.account th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: var(--red);
-  color: white;
-  font-weight:bold;
-}
-
-.account input{
-	width:100%;
-	height:30px;
-	text-align:center;
-}
-.account td{
-	padding:10 10px;
-}
-.account td, .account th {
-  padding: 5px;
-}
-
-.account tr:nth-child(even){
-	background-color: var(--grey);
-
-}
-.account tbody tr:last-of-type{
-	border-bottom: 2px solid var(--red);
-}
-.account tr:hover {
-background-color: #ddd;}
-
-
-.account input {
-	text-align: center;
-	
-}
-
-
-
-
- .account .btn {
-  background-color: #4CAF50; 
+ 
+ .header .btn1 {
+  background-color:  orange; 
   border: none;
   color: white;
-  padding: 5px 10px;
-  font-size: 11px;
+  padding: 8px 19px;
+  font-size: 15px;
   transition-duration: 0.4s;
   cursor: pointer;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
   border-radius: 5px;
-
-
-  
+  width: auto;
 }
 
-.account .btn:hover {
+
+.header .btn1:hover {
+  background-color: #FF884B;
+  color: white;
+}
+
+.header .btn2{
+	margin-left: 20px;
+	margin-bottom: 10px;
+	display:flex;
+}
+ 
+ .header .btn2 {
+  background-color: #168aad; 
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  width: auto;
+}
+
+
+.header .btn2:hover {
+  background-color:  #34a0a4;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header .btn4{
+		margin-left: 20px;
+		display:flex;
+
+}
+ 
+ .header .btn4 {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  width: auto;
+}
+
+
+.header .btn4:hover {
   background-color:  #4CAF20;
   color: white;
 }
 
-.account .btn1 {
-  background-color: #EF7C8E; 
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  font-size: 11px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
 
-  
-}
 
-.account .btn1:hover {
-  background-color:  var(--red);
-  color: white;
-}
-
-.account .btn2 {
-  background-color: orange; 
-  border: none;
-  color: white;
-   padding: 5px 10px;
-  font-size: 11px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-
-  
-}
-
-.account .btn2:hover {
-  background-color:  #F41F4E;
-  color: white;
-}
-.account .btn .btn1 .btn2 {
-	text-align: center;
-	
-}

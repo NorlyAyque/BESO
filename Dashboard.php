@@ -68,8 +68,8 @@ if (isset($_POST['View'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="Dashboard-style.css">
-
+<link rel="stylesheet" type="text/css" href="dashboard.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 	
@@ -157,8 +157,8 @@ if (isset($_POST['View'])){
 				<!--Save Button -->
 				<th>
 					<button class="btn" type="submit" name="Save" id="Save">Save</button>
-					<button class="btn" type="submit" name="Update" id="Update">Update</button>
-					<button class="btn" type="submit" name="Cancel" id="Cancel">Cancel</button></th>
+					<button class="btn2" type="submit" name="Update" id="Update">Update</button>
+					<button class="btn1" type="submit" name="Cancel" id="Cancel">Cancel</button></th>
 				
 			</tr>
 			</thead>
