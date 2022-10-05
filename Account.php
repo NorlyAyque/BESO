@@ -1,3 +1,34 @@
+<?php
+session_start();
+include("Connection.php");
+?>
+
+
+<?php
+if(isset($_GET['disable'])){
+	$AID = $_GET['disable'];
+
+	$sql = ("UPDATE account SET AccStatus = 'Disabled' WHERE AccountID = $AID ");
+	$command = $con->query($sql) or die("Error Disabling the Account");
+	echo "
+		<script>
+			alert('Account ID $AID is Disabled');	
+		</script>";
+}
+
+if(isset($_GET['enable'])){
+	$AID = $_GET['enable'];
+
+	$sql = ("UPDATE account SET AccStatus = 'Active' WHERE AccountID = $AID ");
+	$command = $con->query($sql) or die("Error Enabling the Account");
+	echo "
+		<script>
+			alert('Account ID $AID is Active');	
+		</script>";
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,7 +102,6 @@
 		</ul>
 	</div>
 		
-		
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
@@ -82,31 +112,52 @@
 			
 			<table class="account">
 				<tr>
-					<th colspan="5"><center>ACCOUNT MANAGEMENT </th> 
+					<th colspan="6"><center>ACCOUNT MANAGEMENT </th> 
 				</tr>
 			<tr>
 				
+				<th> Account ID </th>
 				<th width="170px";> Name </th>
 				<th> Email</th>
 				<th width="120px";> Position </th>
 				<th width="90px";> Status </th>
 				<th width="180px";></th>
 				
-			</tr>	
+			</tr>
+<?php
+//Displaying All Accounts
+$sql = ("SELECT * FROM account");
+$command = $con->query($sql) or die("Error SQL");
+
+while($result = mysqli_fetch_array($command))
+	{
+		$dbAID = $result['AccountID'];
+		//$dbLN = $result['Lastname'];
+		//$dbFN = $result['Firstname'];
+		$dbName = $result['Firstname'] ." ". $result['Lastname'];
+		$dbEmail = $result['Email'];
+		$dbPosition = $result['Position'];
+		$dbStatus = $result['AccStatus'];
+	
+?>	
 				<tr>
-					<td><input type = "text"  disabled> </td> 
-					<td><input type = "text"  disabled> </td> 
-					<td><input type = "text"  disabled> </td> 
-					<td><input type = "text"  disabled> </td> 
-					<td><button  class="btn" type="Submit" name="Edit">Edit</button>
-					<button class="btn1" type="submit" name="=Delete">Delete</button>
-					<button class="btn2" type="submit" name="=Disable">Disable</button>
+					<td> <?php echo $dbAID; ?> </td>
+					<td> <?php echo $dbName; ?> </td> 
+					<td> <?php echo $dbEmail; ?> </td> 
+					<td> <?php echo $dbPosition; ?> </td> 
+					<td> <?php echo $dbStatus; ?> </td> 
+					<td>
+						<button class = "btn" href="Account.php?edit=<?php echo $dbAID; ?>"> Edit </button>
+						<button class = "btn1" href="Account.php?delete=<?php echo $dbAID; ?>"> Delete </button>
+						<a href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
+						<a href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn2"> Enable </a>
+					</td>
 				</tr>
+<?php
+	}
+?>
 				</tbody>
 			</table>
-			
-
-
 
 			<!-- Sign up form -->
 		
@@ -143,15 +194,6 @@
 
 
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	</div>
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

@@ -123,7 +123,7 @@
 				
 				<div class="fillup">
 				  <div class="input-field">
-						<label> X. Beneficiaries <i>(Tpye and Number of Male & Female)</i><label>
+						<label> X. Beneficiaries <i>(Type and Number of Male & Female)</i><label>
 						<textarea placeholder="type here..." ></textarea> 
 						
 						<label> Xl.Total Cost and Sources of Funds<label>
