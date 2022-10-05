@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="CreateProposal-style.css">
+<link rel="stylesheet" type="text/css" href="Create-Proposal-style.css">
 
 </head>
 <body>
@@ -33,7 +33,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="CreateProposal.php">
+				<a class="active" href="CreateProposal.php">
 					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
 					<span class ="title"> Create Proposal</span>
 				</a>

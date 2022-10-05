@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="Monitoring.css">
+<title>Proposals</title>
+<link rel="stylesheet" type="text/css" href="Report-style.css">
 
 </head>
 <body>
@@ -45,13 +45,13 @@
 				</a>
 			</li>
 			<li>
-				<a class="active" href="Monitoring.php">
+				<a href="#">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
 				</a>
 			</li>
 			<li>
-				<a href="Reports.php">
+				<a class="active"  href="Reports.php">
 					<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
 					<span class ="title"> Reports</span>
 				</a>
@@ -80,58 +80,8 @@
 				<ion-icon name="menu"></ion-icon>
 				</div>	
 			</div>
-			
-			<div class ="header">
-			<table>
-				<tr>
-					<th><p> MONITORING THE PROGRESS OF THE PROJECT</p></th>
-				</tr>
-			</table>
-			</div>
-			
-			<div class="Create">
-				<div class="fillup">
-				  <div class="input-field">
-						<label> l. Title of the project <label>
-						<textarea class="font" placeholder="type Here..." ></textarea>
-						 
-						<label> ll. Location <label>
-						<textarea placeholder="type here..." ></textarea> 
-						
-						<label> lll. Duration <label>
-						<textarea placeholder="type here..." ></textarea>
-						 
-						<label> lV. Type of Communuty Extension Service <label>
-						<textarea placeholder="type here..." ></textarea> 
-						
-						<label>  V. Sustatinable Development Goals (SDG) <label>
-						<textarea placeholder="type here..." ></textarea> 
-
-				  </div>
-				</div>
-				
-				<div class="fillup">
-				  <div class="input-field">
-						<label>  Vl. Office/ College/s Involved <label>
-						<textarea placeholder="type here..." ></textarea> 
-						
-						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i>h5><label>
-						<textarea placeholder="type here..." ></textarea> 
-						
-						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i><label>
-						<textarea placeholder="type here..." ></textarea> 
-						
-						<label> lX. Coorperating Agencies<label>
-						<textarea placeholder="type here..." ></textarea> 
-						
-						<label> X. Beneficiaries<i>(Type and Number of Male and Female</i><label>
-						<textarea placeholder="type here..." ></textarea> 
-				  </div>
-				</div>
-				
-			</div>
-		</div>	
-</div>
+		</div>
+	</div>
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

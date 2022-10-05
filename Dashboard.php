@@ -68,7 +68,7 @@ if (isset($_POST['View'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="dashboard.css">
+<link rel="stylesheet" type="text/css" href="Dashboard-style.css">
 
 </head>
 <body>
@@ -86,7 +86,7 @@ if (isset($_POST['View'])){
 					</a>
 				</li>
 				<li>
-					<a href="Dashboard.php">
+					<a class="active" href="Dashboard.php">
 						<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
 						<span class ="title"> Home</span>
 					</a>
@@ -116,7 +116,7 @@ if (isset($_POST['View'])){
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="Reports.php">
 						<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
 						<span class ="title"> Reports</span>
 					</a>

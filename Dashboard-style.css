@@ -204,6 +204,15 @@ body{
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
 }
+
+.navigation li .active{
+text-decoration: underline;
+text-underline-position: under;
+text-decoration-thickness:3px;
+}
+
+
+
 /***Main***/
 .main{
 	position: abosolute;
@@ -236,205 +245,238 @@ margin-left: 100px;
 	margin-top:10px;
 	margin-left: 30px;
 }
+.search{
+	position:relative;
+	width:300px;
+	margin:0 10px;
+	margin-right:10px;
+	margin-top:10px;
+}
+.search label{
+	position: relative;
+	width:100%;
+}
+.search label input{
+	width: 100%;
+	height: 30px;
+	border-radius:40px;
+	padding: 5px 20px;
+	padding-left: 35px;
+	outline: none;
+	border: 1px solid var(--black2);
+}
+.search label ion-icon{
+	position:absolute;
+	top: 0px;
+	bottom:1px;
+	left: 10px;
+	font-size: 20px;
+}
 
+
+.target {
+  border-collapse: collapse;
+  width: 95%;
+  margin-left:43px;
+  margin-right:80px;
+  margin-top:130px;
+  border-radius: 3px 3px 0 0;
+  overflow:hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  
+}
+.target input{
+	width:40px;
+	height:30px;
+	
+}
+
+.target td, .target th {
+  padding: 8px;
+}
+.target tbody tr{
+	border-bottom: 1px solid #dddddd;
+}
+.target tr:nth-child(even){
+	background-color: var(--grey);
+}
+.target tbody tr:last-of-type{
+	border-bottom: 2px solid var(--red);
+}
+.target tr:hover {background-color: #ddd;}
+
+.target th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--red);
+  color: white;
+  font-weight:bold;
+}
+.target td, input {
+	text-align: center;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.target select{
+background-color:var(--red);
+color: white;
+Border: none;
+font-size: 18px;
+cursor: pointer;
+font-weight:bold;
+}
+.target th,option{
+	color:white;
+	cursor: pointer;
+	text-align: center;
+}
 .header{
   border-collapse: collapse;
-  margin-left:20px;
+  margin-left:auto;
   margin-right:auto;
-  
-
+  margin-bottom: -100px;
+  border: none;
  
-
+  
 }
-.header th, p{
+
+.header thead {
+  margin-left:50px;
+}
+.header th{
+  font-size:40px;
+}
+
+.header p{
 font-weight: bold;
 font-size: 35px;
 background-color: #E64848;
 color: white;
-width: 100%;
-padding: 25px 80px;
+width: auto;
+padding: 25px 90px;
 border-radius:5px;
 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-letter-spacing: 5px;
-display:flex;
+letter-spacing: 10px;
+}
+	/*
+	color: #444;
+  text-shadow: 
+    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
+}
+}
+*/
 
+.select {
+  border-collapse: collapse;
+  display: flex;
+  position: relative;
+  padding: 10px 20px;
+  background-color: #E64848;
+  margin-left: 30px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  border-radius:5px;
+}
+.header .select label{
+	color:white;
+	font-size:20px;
+	cursor: pointer;
+}
+ .select input{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-right:10px;
+  
 }
 
-.navigation li .active{
-text-decoration: underline;
-text-underline-position: under;
-text-decoration-thickness:3px;
+.select1 {
+  border-collapse: collapse;
+  display: flex;
+  position: relative;
+  padding: 10px 20px;
+  background-color: #E64848;
+  margin-left: 30px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  border-radius:5px;
+  margin-top:5px;
+}
+.header .select1 label{
+	color:white;
+	font-size:20px;
+	cursor: pointer;
+}
+ .select1 input{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin-right:10px;
+  
 }
 
-/* Fill Up */
-.Create {
-	position: relative;
-	padding:20px;
-	display:grid;
+.header .btn{
 	margin-left: 20px;
-	word-wrap: break-word;
-	grid-template-columns: repeat(2,1fr);
-	grid-gap:20px;
-	width:fixed;
-
-	
-}
-
-.Create .fillup{
-	position:relative;
-	padding:5px;
+	margin-bottom: 10px;
 	display:flex;
-	justify-content:space-between;
-	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
-	background: #f1f1f1;
-	
 }
-
-
-
-.Create .input-field {
-  padding: 12px 5px;
-  width: auto;
-  
-}
-
-
-.Create .input-field label{
-	font-weight:bold;
-	color#444;
-	
-}
-
-
-
-.Create  .input-field textarea {
-  margin-top:5px;
-  width: 100%;
-  height: 70px;
-  padding: 10px 11px;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
+ 
+ .header .btn {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 8px 25px;
   font-size: 15px;
-  resize: none;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
-  margin: 5px 0 22px 0;
-  display: inline-block;
-}
-
-.Create  .input-field1 textarea {
-  margin-top:5px;
-  width: 100%;
-  height: 250px;
-  padding: 10px 11px;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
-  font-size: 15px;
-  resize: none;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
-  margin: 5px 0 22px 0;
-  display: inline-block;
-}
-.Create .input-field1 label{
-	font-weight:bold;
-	color#444;
-	
-}
-.Create .input-field1 {
-  padding: 12px 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
   width: auto;
 }
 
 
-
-
-
-
-.participants {
-	overflow:hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.2);
-	border-radius: 3px 3px 0 0;
-	border: 1px solid black; 	
-	margin-left:auto;
-	margin-right:auto;
-}
-.participants th {
-  border-collapse: collapse;
+.header .btn:hover {
+  background-color:  #4CAF20;
   color: white;
-  font-weight:bold;
-  padding: 8px 35px ;
-  background-color: var(--red);
-  display:abosolute; 
-  
-  
-}
- .participants .MF  td{
-	color: white;
-	background-color: #f1f1f1;
-	padding: 4px;
-}	
-.participants  td,input {
-  font-weight:bold;
-  resize: none;
-  font-weight:bold;
-  width: 50px;
-  text-align: center;
-  height:40px;
-  
-}
-.participants .total td{
-	color:white;
-}
-.participants .total  td:nth-child(1){
-	 background-color:  var(--red); 
-}
-.participants tr:hover {
-	background-color: #ddd;
-	cursor:pointer;
-
 }
 
+.header .btn4{
+		margin-left: 20px;
+		display:flex;
 
-.Evaluation {
-	overflow:hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.2);
-	border-radius: 3px 3px 0 0;
-	border: 1px solid black; 	
-	margin-left:auto;
-	margin-right:auto;
 }
-.Evaluation .th1 th {
-  border-collapse: collapse;
+ 
+ .header .btn4 {
+  background-color: #4CAF50; 
+  border: none;
   color: white;
-  font-weight:bold;
-  padding: 8px 20px;
-  background-color: var(--red);
-  display:abosolute; 
-  
+  padding: 8px 18px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  width: auto;
 }
- .Evaluation .MF  td{
-	font-size:12px;
-	text-align: left;
-	
-	
-}	
-.Evaluation  td,input {
-  font-weight:bold;
-  resize: none;
-  font-weight:bold;
-  width: 50px;
-  text-align: center;
-  height:40px;
-  
-}
-.Evaluation .total td{
-	color:white;
-}
-.Evaluation .total  td:nth-child(1){
-	 background-color:  var(--red); 
-}
-.Evaluation tr:hover {
-	background-color: #ddd;
-	cursor:pointer;
 
+
+.header .btn4:hover {
+  background-color:  #4CAF20;
+  color: white;
 }
+
+
 

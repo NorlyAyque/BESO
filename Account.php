@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="Account-style.css">
+<link rel="stylesheet" type="text/css" href="Account.css">
 
 </head>
 <body>
@@ -57,7 +57,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="Account.php">
+				<a class="active" href="Account.php">
 					<span class ="icon"> <ion-icon name="person-add-outline"></ion-icon> </span>
 					<span class ="title"> Accounts</span>
 				</a>

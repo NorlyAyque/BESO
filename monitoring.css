@@ -204,6 +204,12 @@ body{
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
 }
+
+.navigation li .active{
+text-decoration: underline;
+text-underline-position: under;
+text-decoration-thickness:3px;
+}
 /***Main***/
 .main{
 	position: abosolute;
@@ -236,6 +242,7 @@ margin-left: 100px;
 	margin-top:10px;
 	margin-left: 30px;
 }
+
 .header{
   border-collapse: collapse;
   margin-left:20px;
@@ -257,34 +264,7 @@ box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 letter-spacing: 5px;
 display:flex;
 
-
 }
-.header .title{
-	border-radius:5px;
-	font-weight: bold;
-	background-color: #E64848;
-	color: white;
-	padding: 30px;
-}
-.title td{
-	margin-bottom: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Fill Up */
 .Create {
@@ -339,31 +319,4 @@ display:flex;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
   margin: 5px 0 22px 0;
   display: inline-block;
-}
-.button {
-	text-align: right;
-	margin-right: 20px;
-	margin-top: -10px;
-	margin-bottom:10px;
-}
-.button .btn {
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding: 10px 30px;
-  font-size: 20px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
- 
-
-
-  
-}
-
-.button .btn:hover {
-  background-color:  #4CAF20;
-  color: white;
 }

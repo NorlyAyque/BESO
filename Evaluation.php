@@ -39,7 +39,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="Evaluation.php">
+				<a class="active" href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
 				</a>

@@ -187,6 +187,7 @@ body{
 	border-radius: 50%;
 	box-shadow: 35px 35px 0 10px var(--white);
 	pointer-events:none;
+	ddd
 	
 	
 }
@@ -236,3 +237,10 @@ margin-left: 100px;
 	margin-top:10px;
 	margin-left: 30px;
 }
+
+.navigation li .active{
+text-decoration: underline;
+text-underline-position: under;
+text-decoration-thickness:3px;
+}
+
