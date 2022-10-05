@@ -1,0 +1,325 @@
+body {
+  
+    background-image: url(img/back.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Open Sans", sans-serif;
+    color: #333333;
+    
+  }
+  
+  .box-form {
+    margin: 0 auto;
+    width: 70%;
+    background: #FFFFFF;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    margin-top:100px;
+  }
+  
+  @media (max-width: 980px) {
+    .box-form {
+      flex-flow: wrap;
+      text-align: center;
+      align-content: center;
+      align-items: center;
+      margin: auto;
+    }
+  }
+  .box-form div {
+    height: auto;
+  }
+  /*BESO title*/
+  .box-form .left {
+    color: #FFFFFF;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  /*logo backgroud*/
+  .box-form .left .overlay {
+    padding: 30px;
+    width: 70%;
+    height: 100%;
+    background: #E64848;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  /*logo backgroud*/
+  
+  /*logo image*/
+  .box-form .left .overlay img {
+    height: 250px;
+   
+    margin-left:15px;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.5);
+    display:absolute;
+  }
+  
+  
+  /* title */ 
+  .box-form .left .overlay span p {
+    margin-top: 10px;
+    font-weight: 900;
+    margin-left: 0px;
+    font-size:20px;
+    text-align: center;
+    
+    
+  }
+  
+  
+  .box-form .right {
+    padding: 40px;
+    margin-left: -25px;
+  }
+  
+  .box-form .right .welcome p{
+  font-weight: bold;
+  font-size: 19px;
+  font-family: sans-serif;
+  background-color: #E64848;
+  color: white;
+  width: 300px;
+  padding: 30px;
+  border-radius:5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  
+  /*color: white;
+  text-shadow: 1px 1px 3px  black;
+   */ 
+  }
+  .box-form .right .welcome p {
+      margin-left: -40px;
+  }
+  
+  form {
+    width: 370px;
+    position: relative;
+    margin-top: 45px;
+    margin-left: -50px;
+    margin-right: 70px;
+  }
+  /*Style for Icon */
+   .form-field::before {
+    font-size: 20px;
+    position: absolute;
+    left: 20px;
+    top: 17px;
+    color: #888888;
+    content: " ";
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+     margin-right: 50px;
+    
+  }
+  .form-field:nth-child(1)::before {
+    background-image: url(img/user-icon.png);
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    
+  }
+  .form-field:nth-child(2)::before {
+    background-image: url(img/lock-icon.png);
+    width: 20px;
+    height: 20px;
+   
+  }
+  form .form-field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+   form .form-field input {
+    font-family: inherit;
+    width: 100%;
+    outline: none;
+    background-color: #fff;
+    border-radius: 4px;
+    border: none;
+    display: block;
+    padding: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.16);
+    font-size: 17px;
+    color: #4A4A4A;
+    text-indent: 40px;
+  }
+  
+  form .show{
+    margin-bottom:20px;
+  }
+  form .forget-password{
+    margin-top: 10px;
+      font-size: 50px;
+      margin-left:10px;
+    margin-left: 300px;
+  }
+  
+  
+  
+  form .form-field .btn {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: 300px;
+    margin-top: -35px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+  }
+  form .form-field .btn  {
+    background-color: #4CAF50; 
+    color: white; 
+    border-radius: 5px;
+  }
+  
+  form .form-field .btn:hover {
+    background-color:  #EC7272;
+    color: white;
+  }
+  
+  
+  .popupcenter{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+  }
+  
+   .popup .popupcenter{
+       width:300px;
+       height:200px;
+       padding: 30px 20px;
+       background: white;
+       border-radius:10px;
+       z-index: 2;
+       text-align:center;
+       box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+   }
+  
+  
+  
+   .popup .popupcenter .icon {
+       margin: 5px 0px;
+       width: 50px;
+       height: 50px;
+       border: 2px solid #34f234;
+       text-align:center;
+       display:inline-block;
+       border-radius:50%;
+       line-height:60px;
+   }
+   .popup .popupcenter .icon i.fa{
+       font-size:30px;
+       color:#34f234;
+   }
+   .popup .popupcenter .title{
+       margin:5px 0px;
+       font-size:30px;
+       font-weight:600;
+   }
+   .popup .popupcenter .des{
+  v margin-top:10px;
+    font-size:15px;
+    font-weight:600px;
+}
+.popup .popupcenter .des span{
+    color:red;
+ }
+  .popup .popupcenter .dismiss-btn{
+      margin-top:15px;
+  }
+  .popup .popupcenter .dismiss-btn button{
+      padding:10px 20px;
+      background:#4CAF50;
+      color:#f5f5f5;
+      border:1px solid #4CAF50;
+      font-size:16px;
+      font-weight:600;
+      outline:none;
+      border-radius:10px;
+      transition: all 300ms ease-in-out;
+      cursor:pointer;
+  }
+  .popup .popupcenter .dismiss-btn button:hover{
+      color:#111;
+      background:#f5f5f5;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  #prompt{
+  margin-left:-50px;
+  }
+  
+  
+  
+  /*
+  .box-form .right .inputs {
+    overflow: hidden;
+    margin-left:-90px;
+    margin-right:40px;
+  
+  }
+  
+  .box-form .right input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #B0B3B9;
+     
+  }
+  
+  
+  .box-form .right button {
+    float: right;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    box-shadow: 0px 4px 20px 0px #49c628a6;
+    background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
+  }
+  */
+  
+  /****************************DASHBOARD STYLE*********************************/
+  
+  
+  
