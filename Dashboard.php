@@ -13,9 +13,9 @@ if ($Campus == "Alangilan"){$target_table = "target_alangilan";}
 
 <?php
 //Getting Todays Year by default
-$YearToday = date("Y"); 
+$YearToday = date("Y");
 
-//Displaying Data into each textboxes
+//Displaying Data into each textboxes default year
 $sql = ("SELECT * FROM $target_table WHERE Year = '$YearToday'");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
@@ -56,6 +56,12 @@ while($result = mysqli_fetch_array($command))
 		$dbRGAD4 = $result['RGAD4'];
 		$dbRGADT = $result['RGADT'];
 	}
+
+if (isset($_POST['View'])){
+	//Code Here
+	//Open new form to display target from selected year
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -161,6 +167,7 @@ while($result = mysqli_fetch_array($command))
 			<thead>
 			<tr>
 				<th>
+					<p id="Display_Year">  <?php echo $YearToday; ?></p>
 					<select name="Year" id="Year">
 						<option value="0">Select year</option>
 						<option value="2022">2022</option>
@@ -328,6 +335,8 @@ document.getElementById("Cancel").style.display = "none";
 const d = new Date();
 document.getElementById("Year").value = d.getFullYear();
 
+document.getElementById("Display_Year").style.display = "none";
+
 
 function NewTarget() {
 	var checkBox = document.getElementById("New");
@@ -367,6 +376,10 @@ function NewTarget() {
 		document.getElementById("Save").style.display = "block";
 		document.getElementById("Cancel").style.display = "block";
 		document.getElementById("New").style.display = "none";
+
+		document.getElementById("Year").value = 0;
+		document.getElementById("View").style.display = "none";
+
 	}
 }
 
@@ -408,6 +421,11 @@ function EditTarget() {
 		document.getElementById("Update").style.display = "block";
 		document.getElementById("Cancel").style.display = "block";
 		document.getElementById("Edit").style.display = "none";
+
+		document.getElementById("Year").style.display = "none";
+		document.getElementById("View").style.display = "none";
+
+		document.getElementById("Display_Year").style.display = "block";
 	}
 }
 
