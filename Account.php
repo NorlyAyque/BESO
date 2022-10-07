@@ -34,7 +34,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="account.css">
+<link rel="stylesheet" type="text/css" href="Account-style.css">
 
 </head>
 <body>
@@ -110,7 +110,7 @@ if(isset($_GET['enable'])){
 				</div>	
 			</div>
 			<div class="add">
-			<a href="form.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon>
+			<a href="form.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon></a>
 			</button>
 			</div>
 			<table class="account">
