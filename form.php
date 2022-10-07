@@ -1,31 +1,6 @@
 <?php
 session_start();
-include("Connection.php");
-?>
 
-
-<?php
-if(isset($_GET['disable'])){
-	$AID = $_GET['disable'];
-
-	$sql = ("UPDATE account SET AccStatus = 'Disabled' WHERE AccountID = $AID ");
-	$command = $con->query($sql) or die("Error Disabling the Account");
-	echo "
-		<script>
-			alert('Account ID $AID is Disabled');	
-		</script>";
-}
-
-if(isset($_GET['enable'])){
-	$AID = $_GET['enable'];
-
-	$sql = ("UPDATE account SET AccStatus = 'Active' WHERE AccountID = $AID ");
-	$command = $con->query($sql) or die("Error Enabling the Account");
-	echo "
-		<script>
-			alert('Account ID $AID is Active');	
-		</script>";
-}
 ?>
 
 
@@ -34,7 +9,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="account.css">
+<link rel="stylesheet" type="text/css" href="form.css">
 
 </head>
 <body>
@@ -109,66 +84,16 @@ if(isset($_GET['enable'])){
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>	
 			</div>
-			<div class="add">
-			<a href="form.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon>
-			</button>
-			</div>
-			<table class="account">
-				<tr>
-					<th colspan="6"><center>ACCOUNT MANAGEMENT </th> 
-				</tr>
-			<tr>
-				
-				<th> Account ID </th>
-				<th width="250px";> Name </th>
-				<th width="500px";> Email</th>
-				<th width="120px";> Position </th>
-				<th width="90px";> Status </th>
-				<th width="500px";></th>
-				
-			</tr>
-<?php
-//Displaying All Accounts
-$sql = ("SELECT * FROM account");
-$command = $con->query($sql) or die("Error SQL");
-
-while($result = mysqli_fetch_array($command))
-	{
-		$dbAID = $result['AccountID'];
-		//$dbLN = $result['Lastname'];
-		//$dbFN = $result['Firstname'];
-		$dbName = $result['Firstname'] ." ". $result['Lastname'];
-		$dbEmail = $result['Email'];
-		$dbPosition = $result['Position'];
-		$dbStatus = $result['AccStatus'];
-	
-?>	
-				<tr class="inputs">
-					<td> <?php echo $dbAID; ?> </td>
-					<td> <?php echo $dbName; ?> </td> 
-					<td> <?php echo $dbEmail; ?> </td> 
-					<td> <?php echo $dbPosition; ?> </td> 
-					<td> <?php echo $dbStatus; ?> </td> 
-					<td>
-						<a href="Account.php?edit=<?php echo $dbAID; ?>" button class = "btn"> Edit </button>
-						<a href="Account.php?delete=<?php echo $dbAID; ?>" button class = "btn1"> Delete </button>
-						<a href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn3"> Enable </a>
-						<a href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
-						
-					</td>
-				</tr>
-<?php
-	}
-?>
-				</tbody>
-			</table>
-
-			<!-- Sign up form 
 			
+
+			<!--Sign up form -->
+			<table class="form">
+			<tr>
+				<th>
 			<form>
 				<div class="signup">
 					<h1>Add User</h1>
-					<p>Please fill in this form to create an account.</p>
+					<br>
 					
 					<label><b>First Name</b></label>
 					<input type="text" placeholder="Enter First Name" name="email" required>
@@ -181,18 +106,55 @@ while($result = mysqli_fetch_array($command))
 
 					<label><b>Password</b></label>
 					<input type="password" placeholder="Enter Password" name="psw" required>
-
-					<label><b>Repeat Password</b></label>
-					<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 					
 					<label><b>Position</b></label>
-					<input type="text" placeholder="Enter Position" name="email" required>
-					
-					<!--Save Button 
+					<select name="pos" id="post">
+						<option value="0">Select Position</option>
+						<option value="head">Head</option>
+						<option value="corr">Coordinator</option>
+					</select>
+					<!--Save Button -->
 					<button class="btn" type="submit" name="Signup">Add Account</button>
 				</div>
+				
 			</form>
--->
+			</th>
+			</tr>
+			<tr>
+			<th>
+			<form>
+			<div class="signup1">
+					<h1>Edit User Info</h1>
+					<br>
+					
+					<label><b>First Name</b></label>
+					<input type="text" placeholder="Enter First Name" name="email" required>
+					
+					<label><b>Last Name</b></label>
+					<input type="text" placeholder="Enter Last Name" name="email" required>
+					
+					<label><b>Email</b></label>
+					<input type="text" placeholder="Enter Email" name="email" required>
+
+					<label><b>Password</b></label>
+					<input type="password" placeholder="Enter Password" name="psw" required>
+					
+					<label><b>Position</b></label>
+					<select name="pos" id="post">
+						<option value="0">Select Position</option>
+						<option value="head">Head</option>
+						<option value="corr">Coordinator</option>
+					</select>
+					
+					<!--Save Button -->
+					<button class="btn1" type="submit" name="Signup">Save</button>
+				</div>
+			</form>
+			</th>
+			</table>
+				
+			
+
 		
 
 
