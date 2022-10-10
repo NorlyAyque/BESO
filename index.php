@@ -1,3 +1,9 @@
+<?php
+session_start();
+include("Connection.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,9 +58,6 @@
 </html>
 
 <?php
-session_start();
-include("Connection.php");
-
 if (isset($_POST['Login'])){
 	$Email = htmlspecialchars($_POST['email']);
 	$Password = htmlspecialchars($_POST['psw']);
@@ -84,9 +87,9 @@ if (isset($_POST['Login'])){
 		//Result True
 		// if ($DecryptPass == 1){// Password Match
 		if ($Password == $dbPass){
-			//Adding Value to the Session User ID and User Full Name
-			$_SESSION["UserAID"] = $dbAID;
-			$_SESSION["UserFullName"] = $dbFN . " " . $dbLN;
+			//Adding Value to the Session variables
+			$_SESSION["AccountAID"] = $dbAID;
+			$_SESSION["FullName"] = $dbFN . " " . $dbLN;
 			$_SESSION["Email"] = $dbEmail;
 			$_SESSION["Campus"] = $dbCampus;
 			$_SESSION["Position"] = $dbPosition;
@@ -98,8 +101,6 @@ if (isset($_POST['Login'])){
 				document.getElementById('psw').disabled = true;
 				document.getElementById('open-popup-btn').disabled = true;
 				document.getElementById('forgotpassword').style.display = 'none';
-				
-
 			</script>
 			<div class='popup'>
 				<div class='popupcenter'>
@@ -120,6 +121,13 @@ if (isset($_POST['Login'])){
 				</div>
 			</div>
 			";
+
+			//Filtering Users from Different Campuses and Position
+			//Initializing tables to be used
+			if ($dbCampus == "Alangilan"){
+				$_SESSION["target_table"] = "target_alangilan";
+				$_SESSION["create_table"] = "create_alangilan";
+			}
 		}
 		else{
 			//echo "Invalid Password <br>";

@@ -3,12 +3,8 @@ session_start();
 include("Connection.php");
 
 //Getting Data declared from index.php
-$Campus = $_SESSION["Campus"];
-$Position = $_SESSION["Position"];
+$target_table = $_SESSION["target_table"];
 
-//Filtering Users from Different Campuses
-//Initializing tables to be used
-if ($Campus == "Alangilan"){$target_table = "target_alangilan";}
 ?>
 
 <?php
@@ -128,7 +124,7 @@ if (isset($_POST['View'])){
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="Signout.php">
 						<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
 						<span class ="title"> Sign out</span>
 					</a>
@@ -505,7 +501,7 @@ if (isset($_POST['Save'])){
 		alert('Target for this year $Year is already been set. Edit if you want to modify.');
 		</script>";
 	}else {
-		$sql = ("INSERT INTO target_alangilan 
+		$sql = ("INSERT INTO $target_table
 		(Year, PAP1, PAP2, PAP3, PAP4, PAPT,
 				GAD1, GAD2, GAD3, GAD4, GADT, 
 				APAP1, APAP2, APAP3, APAP4, APAPT,

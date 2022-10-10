@@ -3,9 +3,6 @@ session_start();
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -171,17 +168,12 @@ session_start();
 						
 					</div>
 					<div class="dismiss-btn">
-						<button id="dismiss-popup-btn"> OK</button>
+						<form method="post">
+							<button id="dismiss-popup-btn" type="submit" name="Logout"> OK</button>
+						</form>
 					</div>
 				</div>
 			</div>
-
-
-	
-		
-
-
-
 		</div>
 	</div>
 	
@@ -212,3 +204,11 @@ session_start();
 	</script>
 <body>
 </html>
+
+<?php
+if (isset($_POST['Logout'])){
+	session_destroy();
+	//header("location: index.php");
+	echo"<script> window.location.href='index.php'; </script>";
+}
+?>
