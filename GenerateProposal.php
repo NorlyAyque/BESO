@@ -2,7 +2,7 @@
 require("FPDFLibrary/fpdf.php");
 include("Connection.php");
 
-$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = 1");
+$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = 2");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
@@ -59,13 +59,13 @@ class PDF extends FPDF
 			//Page Number
 			$this->SetY(-15);
 			$this->SetFont('Times','',10);
-			$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'R');
+			$this->Cell(0,10,'Page '.$this->PageNo().' of  {nb}',0,0,'R');
 		}
 		else {
 			//Page Number
 			$this->SetY(-15);
 			$this->SetFont('Times','',10);
-			$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'R');
+			$this->Cell(0,10,'Page '.$this->PageNo().' of  {nb}',0,0,'R');
 		}	
 	}
 
@@ -87,9 +87,10 @@ class PDF extends FPDF
 		$this->Cell(100,5,"Extension Service Program/Project/Activity is requested by clients.",0,1);
 		
 		$this->SetFillColor(128, 128, 128);
+		
 		//For Small Box 1
 		$this->SetXY(40,42);
-		$this->Cell(5,5,'', 1, 0, 'C', True);
+		$this->Cell(5,5,'', 1, 0, 'C', TRUE);
 
 		/////////////////////////////////////////////////
 		
@@ -134,6 +135,7 @@ class PDF extends FPDF
 $pdf = new PDF('P','mm',array(215.9,330.2)); //W*H
 $pdf->AliasNbPages();
 $pdf->SetMargins(20,20,10,0);//L-T-R-B
+$pdf->SetAutoPageBreak(TRUE, 25); //For Bottom Margin
 $pdf->AddPage();
 $pdf->SetFont('Times','',10);
 
