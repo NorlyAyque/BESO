@@ -72,7 +72,7 @@ class PDF extends FPDF
 	function Row1(){
 		//=185.9
 		$this->SetXY(15,15);
-		$this->Image('img/logo.png',17,15,15,15); //Right-Top-Width-Height
+		$this->Image('images/logo.png',17,15,15,15); //Right-Top-Width-Height
 		$this->Cell(20,15,"",1,0,'C');
 		$this->Cell(65,15,'Reference No.: BatStateU-FO-ESO-01',1,0,'C');
 		$this->Cell(60.9,15,'Effectivity Date: May 18, 2022',1,0,'C');
