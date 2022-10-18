@@ -86,13 +86,13 @@
 					<th colspan="4">
 						<div class="menu">
 							
-							<a href="Proposal.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
+							<a href="Proposal.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
 							</button>
 							
 							<a href="Proposal-revision.php" button class = "nav"> Revsion <ion-icon name="warning-outline"></ion-icon></a>
 							</button>
 							
-							<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
+							<a href="Proposal-pproved.php" button class = "nav3"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 							</button>
 						
 							<a href="Proposal-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
@@ -103,7 +103,7 @@
 					
 				</tr>
 				<tr  class="title">
-					<th colspan="4" ><center>PENDING PROPOSALS</th> 
+					<th colspan="4"><center>APPROVED PROPOSALS </th> 
 				</tr>
 				
 			<tr>
@@ -115,7 +115,7 @@
 			</tr>
 
 			<tr class="inputs">
-				<td> Sample</td>
+				<td> Sample2</td>
 				<td>  </td> 
 				<td>  </td> 
 				<td>  </td> 		
