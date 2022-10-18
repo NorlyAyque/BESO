@@ -36,7 +36,7 @@ session_start();
        margin: 5px 0px;
        width: 50px;
        height: 50px;
-       border: 2px solid #34f234;
+       border: 2px solid  #E64848;
        text-align:center;
        display:inline-block;
        border-radius:50%;
@@ -44,7 +44,7 @@ session_start();
    }
    .signout .popupcenter .icon i.fa{
        font-size:30px;
-       color:#34f234;
+       color:red;
    }
    .signout .popupcenter .title{
        margin:5px 0px;
@@ -158,7 +158,7 @@ session_start();
 			<div class="signout">
 				<div class="popupcenter">
 					<div class="icon">
-						<i class="fa fa-check"></i>
+						<i class="fa fa-sign-out"></i>
 					</div>
 					
 					<div class="title">
