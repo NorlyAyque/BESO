@@ -144,6 +144,8 @@ $DateTime = date("M, d Y; h:i:s A");
 						
 						<label> lX. Partner Agencies<label>
 						<textarea placeholder="type here..." name="IX" required></textarea>
+						
+						
 				  </div>
 				</div>
 				
@@ -178,6 +180,37 @@ $DateTime = date("M, d Y; h:i:s A");
 				  </div>
 				</div>
 			</div>
+			
+			<table class="signiture">
+				<tr>
+					<th></th>
+					<th> Name </th>
+					<th> Designation </th>
+				</tr>
+				<tr>
+					<td> Prepared by:</td>
+					<td><textarea placeholder="type here..."></textarea></td>
+					<td><textarea placeholder="type here..."></textarea></td>
+				</tr>
+				<tr>
+					<td> Review by:</td>
+					<td><textarea placeholder="type here..."></textarea></td>
+				</tr>
+				<tr>
+					<td> Recommending Approval:</td>
+					<td><textarea placeholder="type here..."></textarea></td>
+				</tr>
+				<tr>
+					<td> Recommending Approval:</td>
+					<td><textarea placeholder="type here..."></textarea></td>
+				</tr>
+				<tr>
+					<td>Approved by:</td>
+					<td><textarea placeholder="type here..."></textarea></td>
+				</tr>
+			</table>
+			
+			
 			<div class="button">
 				<button type="submit" class="btn" name="=Save">Save </button>
 			</div>

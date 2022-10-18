@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/Evaluation.css">
+<link rel="stylesheet" type="text/css" href="styles/Evaluation-style.css">
 
 </head>
 <body>
@@ -81,13 +81,13 @@
 				</div>	
 			</div>
 			
-			<div class ="header">
-			<table>
-				<tr>
-					<th><p>EXTENSION PROGRAM PLAN/ACTIVITY EVALUATION REPORT</p></th>
+			<table class="header">
+				<tr class="title">
+					<th>
+						EXTENSION PROGRAM PLAN/EVALUATION REPORT	
+					</th> 
 				</tr>
 			</table>
-			</div>
 			
 			<div class="Create">
 				<div class="fillup">

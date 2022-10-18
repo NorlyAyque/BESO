@@ -204,6 +204,12 @@ body{
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
 }
+
+.navigation li .active{
+text-decoration: underline;
+text-underline-position: under;
+text-decoration-thickness:3px;
+}
 /***Main***/
 .main{
 	position: abosolute;
@@ -238,33 +244,29 @@ margin-left: 100px;
 }
 
 .header{
-  border-collapse: collapse;
-  margin-left:20px;
-  margin-right:auto;
+  width: 97%;
+  margin-left:30px;
+  margin-right:30px;
+  border-radius: 3px 3px 0 0;
+  overflow:hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  display:fixed;
+  border: 1px solid black; 
+  text-decoration:none;
   
-
- 
-
-}
-.header th, p{
-font-weight: bold;
-font-size: 35px;
-background-color: #E64848;
-color: white;
-width: 100%;
-padding: 25px 80px;
-border-radius:5px;
-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-letter-spacing: 5px;
-display:flex;
-
 }
 
-.navigation li .active{
-text-decoration: underline;
-text-underline-position: under;
-text-decoration-thickness:3px;
+.header .title th{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: var(--red);
+  color: white;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:35px;	
 }
+
 
 /* Fill Up */
 .Create {
@@ -307,7 +309,7 @@ text-decoration-thickness:3px;
 
 
 
-.Create  .input-field textarea {
+.Create  .input-field input, textarea {
   margin-top:5px;
   width: 100%;
   height: 70px;
@@ -320,121 +322,3 @@ text-decoration-thickness:3px;
   margin: 5px 0 22px 0;
   display: inline-block;
 }
-
-.Create  .input-field1 textarea {
-  margin-top:5px;
-  width: 100%;
-  height: 250px;
-  padding: 10px 11px;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
-  font-size: 15px;
-  resize: none;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
-  margin: 5px 0 22px 0;
-  display: inline-block;
-}
-.Create .input-field1 label{
-	font-weight:bold;
-	color#444;
-	
-}
-.Create .input-field1 {
-  padding: 12px 5px;
-  width: auto;
-}
-
-
-
-
-
-
-.participants {
-	overflow:hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.2);
-	border-radius: 3px 3px 0 0;
-	border: 1px solid black; 	
-	margin-left:auto;
-	margin-right:auto;
-}
-.participants th {
-  border-collapse: collapse;
-  color: white;
-  font-weight:bold;
-  padding: 8px 35px ;
-  background-color: var(--red);
-  display:abosolute; 
-  
-  
-}
- .participants .MF  td{
-	color: white;
-	background-color: #f1f1f1;
-	padding: 4px;
-}	
-.participants  td,input {
-  font-weight:bold;
-  resize: none;
-  font-weight:bold;
-  width: 50px;
-  text-align: center;
-  height:40px;
-  
-}
-.participants .total td{
-	color:white;
-}
-.participants .total  td:nth-child(1){
-	 background-color:  var(--red); 
-}
-.participants tr:hover {
-	background-color: #ddd;
-	cursor:pointer;
-
-}
-
-
-.Evaluation {
-	overflow:hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.2);
-	border-radius: 3px 3px 0 0;
-	border: 1px solid black; 	
-	margin-left:auto;
-	margin-right:auto;
-}
-.Evaluation .th1 th {
-  border-collapse: collapse;
-  color: white;
-  font-weight:bold;
-  padding: 8px 20px;
-  background-color: var(--red);
-  display:abosolute; 
-  
-}
- .Evaluation .MF  td{
-	font-size:12px;
-	text-align: left;
-	
-	
-}	
-.Evaluation  td,input {
-  font-weight:bold;
-  resize: none;
-  font-weight:bold;
-  width: 50px;
-  text-align: center;
-  height:40px;
-  
-}
-.Evaluation .total td{
-	color:white;
-}
-.Evaluation .total  td:nth-child(1){
-	 background-color:  var(--red); 
-}
-.Evaluation tr:hover {
-	background-color: #ddd;
-	cursor:pointer;
-
-}
-

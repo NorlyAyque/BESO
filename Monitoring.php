@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/Monitoring.css">
+<link rel="stylesheet" type="text/css" href="styles/Monitoring-style.css">
 
 </head>
 <body>
@@ -81,13 +81,13 @@
 				</div>	
 			</div>
 			
-			<div class ="header">
-			<table>
-				<tr>
-					<th><p> MONITORING THE PROGRESS OF THE PROJECT</p></th>
+			<table class="header">
+				<tr class="title">
+					<th>
+						MONITORING THE PROGRESS OF THE PROJECT
+					</th> 
 				</tr>
 			</table>
-			</div>
 			
 			<div class="Create">
 				<div class="fillup">
