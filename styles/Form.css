@@ -251,27 +251,30 @@ margin-left: 100px;
 
 .signup{
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-
-
 	width: 300px;
 	padding: 15px;	
-	
 	top:10px;
     bottom: 0;
     right: 0;
 	overflow:hidden;
 	overflow-y:scroll;
 	
+	
 }
 
- .form {
+ .forms {
 	width:auto;
 	margin:auto;
-	margin-top:-35px;
+	margin-top:-15px;
 	text-decoration:none;
+	
 }
+
+
+
+
 /* Full-width input fields */
- .form .signup input[type=text], input[type=password]{
+ .forms .signup input[type=text], input[type=password]{
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -281,19 +284,11 @@ margin-left: 100px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 
 }
- .form .signup label{
+ .forms .signup label{
 	display:flex;
 }
 
- .form .signup1 label{
-	display:flex;
-	
-}
-
-
-
- 
- .form .signup .btn {
+ .forms .signup .btn {
   background-color: #4CAF50; 
   border: none;
   color: white;
@@ -310,25 +305,36 @@ margin-left: 100px;
 }
 
 
-.form .signup .btn:hover {
+.forms .signup .btn:hover {
   background-color:  #EC7272;
   color: white;
 }
 
 
-.form .signup p{
+.forms .signup p{
 	font-size:14px;
 	text-decoration:underline;
 	margin-bottom:10px;
 	
-
 }
 
-.form .signup1{
+.Drp select{
+  display:flex;
+  background: #f1f1f1;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding: 10px 10px;
+  margin-bottom:20px;
+  margin-top:3px;
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+}
+
+
+.forms .signup1{
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-	margin-left:380px;
-	margin-top:-500px;
-	position:abosolute;
 	width: 300px;
 	padding: 15px;	
 	top:10px;
@@ -336,11 +342,13 @@ margin-left: 100px;
     right: 0;
 	overflow:hidden;
 	overflow-y:scroll;
+	margin-left:5px;
+
 	
 }
 
 /* Full-width input fields */
-.form .signup1 input[type=text], input[type=password] {
+.forms .signup1 input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -348,15 +356,20 @@ margin-left: 100px;
   border: none;
   background: #f1f1f1;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  
 }
 
+ .forms .signup1 label{
+	display:flex;
+	
+}
 
-.form .signup1 .btn1{
+.forms .signup1 .btn1{
 	margin-top:4px;
 	
 }
  
- .form .signup1 .btn1 {
+ .forms .signup1 .btn1 {
   background-color: #4CAF50; 
   border: none;
   color: white;
@@ -368,19 +381,34 @@ margin-left: 100px;
   font-weight: bold;
   border-radius: 5px;
   width: auto;
+  margin-top:-1px;
+  
 }
 
 
-.form .signup1 .btn1:hover {
+.forms .signup1 .btn1:hover {
   background-color:  #EC7272;
   color: white;
 }
 
 
-.form .signup1 p{
+.forms .signup1 p{
 	font-size:14px;
 	text-decoration:underline;
 	margin-bottom:10px;
 
 }
 
+.Drp1 select{
+  display:flex;
+  background: #f1f1f1;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding: 10px 10px;
+  margin-bottom:20px;
+  margin-top:3px;
+}
+.Drp1 option{
+	font-size:15px;
+	cursor:pointer;
+}

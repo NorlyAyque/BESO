@@ -87,7 +87,7 @@ session_start();
 			
 
 			<!--Sign up form -->
-			<table class="form">
+			<table class="forms">
 			<tr>
 				<th>
 			<form>
@@ -108,22 +108,22 @@ session_start();
 					<input type="password" placeholder="Enter Password" name="psw" required>
 					
 					<label><b>Position</b></label>
-					<select name="pos" id="post">
+					<div class ="Drp">
+					<select name="pos" id="post" >
 						<option value="0">Select Position</option>
 						<option value="head">Head</option>
 						<option value="corr">Coordinator</option>
+						<option value="staff">Staff</option>
 					</select>
+					</div>
 					<!--Save Button -->
 					<button class="btn" type="submit" name="Signup">Add Account</button>
 				</div>
-				
 			</form>
-			</th>
-			</tr>
-			<tr>
-			<th>
-			<form>
-			<div class="signup1">
+				</th>
+				<th>
+					<form>
+					<div class="signup1">
 					<h1>Edit User Info</h1>
 					<br>
 					
@@ -140,17 +140,23 @@ session_start();
 					<input type="password" placeholder="Enter Password" name="psw" required>
 					
 					<label><b>Position</b></label>
-					<select name="pos" id="post">
+					<div class ="Drp">
+					<select name="pos" id="post" >
 						<option value="0">Select Position</option>
 						<option value="head">Head</option>
 						<option value="corr">Coordinator</option>
+						<option value="staff">Staff</option>
 					</select>
+					</div>
 					
 					<!--Save Button -->
 					<button class="btn1" type="submit" name="Signup">Save</button>
 				</div>
-			</form>
-			</th>
+					</form>
+				</th>
+			</tr>
+			
+		
 			</table>
 				
 			
