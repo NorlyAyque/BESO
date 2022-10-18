@@ -16,7 +16,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create_Proposal.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
 
 </head>
 <body>
@@ -93,13 +93,27 @@ $DateTime = date("M, d Y; h:i:s A");
 				</div>	
 			</div>
 			
-			<div class ="header">
-			<table>
-				<tr>
-					<th><p>EXTENSION PROGRAM PLAN/PROJECT PROPOSAL</p></th>
+				<table class="header">
+				<tr class="title">
+					<th colspan="3">
+						EXTENSION PROGRAM PLAN/PROJECT PROPOSAL	
+					</th> 
+				</tr>
+				<tr class ="select">
+					<th colspan="2">
+					<label> <input type="checkbox">Extension Service Program/Project/Activity is requested by clients. <label></th>
+					<th colspan="2">
+					<label> <input type="checkbox">Extension Service Program/Project/Activity is Department’s initiative. <label></th>
+				</tr>	
+			</table>
+			<table class="header1">
+				<tr  class ="select1">
+					<th> <input type="checkbox"> Program</th>
+					<th> <input type="checkbox"> Project </th>
+					<th> <input type="checkbox"> Activity</th>
+						
 				</tr>
 			</table>
-			</div>
 	<form method="post">
 			<div class="Create">
 				<div class="fillup">
