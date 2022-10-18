@@ -9,7 +9,7 @@ session_start();
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Form.css">
+<link rel="stylesheet" type="text/css" href="styles/Forms.css">
 
 </head>
 <body>
