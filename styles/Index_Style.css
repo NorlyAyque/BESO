@@ -1,6 +1,6 @@
 body {
   
-    background-image: url("/img/logo.png"); 
+	background-image: url('../images/back.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -121,14 +121,14 @@ body {
     
   }
   .form-field:nth-child(1)::before {
-    background-image: url(img/user-icon.png);
+    background-image: url('../images/user-icon.png');
     width: 20px;
     height: 20px;
     top: 15px;
     
   }
   .form-field:nth-child(2)::before {
-    background-image: url(img/lock-icon.png);
+    background-image: url('../images/lock-icon.png');
     width: 20px;
     height: 20px;
    

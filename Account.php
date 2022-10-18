@@ -47,7 +47,7 @@ if(isset($_GET['enable'])){
 		<ul> 
 			<li>
 				<a href="#">
-					<div class=" logo"><img src ="imagesg/logo.png"></div>
+					<div class=" logo"><img src ="images/logo.png"></div>
 					<span class ="title1"> BESO Portal</span>
 				</a>
 			</li>

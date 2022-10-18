@@ -92,7 +92,7 @@ session_start();
 		<ul> 
 			<li>
 				<a href="#">
-					<div class=" logo"><img src ="img/logo.png"></div>
+					<div class=" logo"><img src ="images/logo.png"></div>
 					<span class ="title1"> BESO Portal</span>
 				</a>
 			</li>
