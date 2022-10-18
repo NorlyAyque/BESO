@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="Report-style.css">
+<link rel="stylesheet" type="text/css" href="Report.css">
 
 </head>
 <body>

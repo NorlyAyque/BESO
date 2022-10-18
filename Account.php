@@ -34,7 +34,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="Account-style.css">
+<link rel="stylesheet" type="text/css" href="Account.css">
 
 </head>
 <body>

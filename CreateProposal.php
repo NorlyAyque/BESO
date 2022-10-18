@@ -16,7 +16,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="Create-Proposal-style.css">
+<link rel="stylesheet" type="text/css" href="Create_Proposal.css">
 
 </head>
 <body>
