@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="Monitoring.css">
+<link rel="stylesheet" type="text/css" href="styles/Monitoring.css">
 
 </head>
 <body>
@@ -16,7 +16,7 @@
 		<ul> 
 			<li>
 				<a href="#">
-					<div class=" logo"><img src ="img/logo.png"></div>
+					<div class=" logo"><img src ="images/logo.png"></div>
 					<span class ="title1"> BESO Portal</span>
 				</a>
 			</li>

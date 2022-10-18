@@ -64,7 +64,7 @@ if (isset($_POST['View'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="Dashboard.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
@@ -77,7 +77,7 @@ if (isset($_POST['View'])){
 			<ul> 
 				<li>
 					<a href="#">
-						<div class=" logo"><img src ="img/logo.png"></div>
+						<div class=" logo"><img src ="images/logo.png"></div>
 						<span class ="title1"> BESO Portal</span>
 					</a>
 				</li>

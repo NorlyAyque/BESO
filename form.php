@@ -9,7 +9,7 @@ session_start();
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="Form.css">
+<link rel="stylesheet" type="text/css" href="styles/Form.css">
 
 </head>
 <body>
@@ -22,7 +22,7 @@ session_start();
 		<ul> 
 			<li>
 				<a href="#">
-					<div class=" logo"><img src ="img/logo.png"></div>
+					<div class=" logo"><img src ="images/logo.png"></div>
 					<span class ="title1"> BESO Portal</span>
 				</a>
 			</li>

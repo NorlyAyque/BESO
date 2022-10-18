@@ -34,7 +34,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="Account.css">
+<link rel="stylesheet" type="text/css" href="styles/Account.css">
 
 </head>
 <body>
@@ -47,7 +47,7 @@ if(isset($_GET['enable'])){
 		<ul> 
 			<li>
 				<a href="#">
-					<div class=" logo"><img src ="img/logo.png"></div>
+					<div class=" logo"><img src ="imagesg/logo.png"></div>
 					<span class ="title1"> BESO Portal</span>
 				</a>
 			</li>

@@ -16,7 +16,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="Create_Proposal.css">
+<link rel="stylesheet" type="text/css" href="styles/Create_Proposal.css">
 
 </head>
 <body>
@@ -29,7 +29,7 @@ $DateTime = date("M, d Y; h:i:s A");
 		<ul> 
 			<li>
 				<a href="#">
-					<div class=" logo"><img src ="img/logo.png"></div>
+					<div class=" logo"><img src ="images/logo.png"></div>
 					<span class ="title1"> BESO Portal</span>
 				</a>
 			</li>
