@@ -102,32 +102,32 @@ $pdf->Row2();
 $pdf->SetFont('Times','',10);
 
 $pdf->Cell(70, 7, 'Title of the Project or Activity:', 0, 0, 'L');
-$pdf->multicell(115.9, 5, $II, 1, 'L');
+$pdf->multicell(115.9, 5, $II, 1, 'J');
 
 $pdf->Cell(70, 7, 'Location:', 'T', 0, 'L');
-$pdf->multicell(115.9, 5, $II, 1, 'L');
+$pdf->multicell(115.9, 5, $II, 1, 'J');
 
 $pdf->Cell(70, 5, 'Date of Implementation /','T,R', 0,'L');
-$pdf->Cell(115.9, 5, $I, 0, 1, 'L');
+$pdf->Cell(115.9, 5, $I, 0, 1, 'J');
 
 $pdf->Cell(70, 5, 'Number of hours of implementation:','R,B', 0,'L');
-$pdf->Cell(115.9, 5, $I, 'B', 1, 'L');
+$pdf->Cell(115.9, 5, $I, 'B', 1, 'J');
 
 ////
 $pdf->Cell(70, 5, 'Implementing Office/ College / Program','R', 1,'L');
 $pdf->Cell(70, 5, '(specify the programs under the college','R', 0,'L');
-$pdf->multicell(115.9, 5, $II, 'L', 'L');
+$pdf->multicell(115.9, 5, $II, 'L', 'J');
 $pdf->Cell(70, 5, 'implementing the project):','R,B', 1,'L');
 ////
 
 $pdf->Cell(70, 7, 'Partner Agency:', 'R', 0, 'L');
-$pdf->multicell(115.9, 5, $II, 'L,T,B', 'L');
+$pdf->multicell(115.9, 5, $II, 'L,T,B', 'J');
 
 $pdf->Cell(70, 7, 'Type of Community Extension Service:', 'T,R', 0, 'L');
-$pdf->multicell(115.9, 5, $II, 'L,B', 'L');
+$pdf->multicell(115.9, 5, $II, 'L,B', 'J');
 
 $pdf->Cell(70, 7, 'Sustainable Development Goals:', 'T,R', 0, 'L');
-$pdf->multicell(115.9, 5, $II, 'L,B', 'L');
+$pdf->multicell(115.9, 5, $II, 'L,B', 'J');
 
 $pdf->Cell(70, 5, 'Number of Male and Female and Type of', 'T,R', 1, 'L');
 $pdf->Cell(70, 5, 'Beneficiaries (Type such as OSY, Children,', 'R', 0, 'L');

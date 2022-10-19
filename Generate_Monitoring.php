@@ -101,57 +101,68 @@ $pdf->Ln();
 
 $pdf->SetFont('Times','',10);
 
-$Length = 176;
+$Length = 160;
 $Spacing = 5;
 $Border = 0;
+$indent = 35;
 
 $pdf->Multicell($Length, $Spacing, 'I.          Title of the Project:', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$I, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $I, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'II.         Location:', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$II, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $II, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'III.       Duration;', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$III, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $III, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'IV.       Type of Community Extension Service:', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$IV, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $IV, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'V.        Sustainable Development Goals (SDG):', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$V, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $V, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'VI.       Office/s / College/s Involved:', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$VI, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $VI, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'VII.      Program/s Involved (specify the programs under the college implementing the project):', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$VII, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $VII, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'VIII.     Project Leader, Assistant Project Leader and Coordinators:', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$VIII, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $VIII, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'IX.       Cooperating Agencies:', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$IX, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $IX, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'X.        Beneficiaries (Type and Number of Male and Female):', $Border, 'L');
-$pdf->Multicell($Length, $Spacing,'               '.$X, $Border, 'J');
+$pdf->SetX($indent);
+$pdf->Multicell($Length, $Spacing, $X, $Border, 'J');
 
 $pdf->Ln();
 
@@ -159,37 +170,37 @@ $pdf->Multicell($Length, $Spacing, 'XI.        Project Status:', $Border, 'L');
 
 $pdf->Multicell($Length, $Spacing,'               1. As to purpose (how far has the purpose been attained)', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, '          '.$XI, 'J');
+$pdf->Multicell(155, $Spacing, $XI, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               2. Availability of materials', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, '          '.$XI, 'J');
+$pdf->Multicell(155, $Spacing, $XI, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               3. Schedule of activities', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, '          '.$XI, 'J');
+$pdf->Multicell(155, $Spacing, $XI, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               4. Financial report', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, '          '.$XI, 'J');
+$pdf->Multicell(155, $Spacing, $XI, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               5. Problems encountered', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, '          '.$XI, 'J');
+$pdf->Multicell(155, $Spacing, $XI, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               6. Actions taken to solve the problems encountered', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, '          '.$XI, 'J');
+$pdf->Multicell(155, $Spacing, $XI, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               7. Suggestions and recommendations', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, '          '.$XI, 'J');
+$pdf->Multicell(155, $Spacing, $XI, 'J');
 
 $pdf->Ln();
 
