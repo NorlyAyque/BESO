@@ -1,14 +1,13 @@
 <?php
 session_start();
-
+include("Connection.php");
 ?>
-
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>DashBoard BESO Portal</title>
+<title>Add New User</title>
 <link rel="stylesheet" type="text/css" href="styles/Forms.css">
 
 </head>
@@ -76,7 +75,6 @@ session_start();
 			</li>
 		</ul>
 	</div>
-		
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
@@ -84,90 +82,45 @@ session_start();
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>	
 			</div>
-			
-
+            
+<form method = "Post">
 			<!--Sign up form -->
 			<table class="forms">
-			<tr>
-				<th>
-			<form>
+			    <tr>
+				    <th>
 				<div class="signup">
 					<h1>Add User</h1>
 					<br>
-					
 					<label><b>First Name</b></label>
-					<input type="text" placeholder="Enter First Name" name="email" required>
+					<input type="text" placeholder="Enter First Name" name="FN" required>
 					
 					<label><b>Last Name</b></label>
-					<input type="text" placeholder="Enter Last Name" name="email" required>
+					<input type="text" placeholder="Enter Last Name" name="LN" required>
 					
 					<label><b>Email</b></label>
-					<input type="text" placeholder="Enter Email" name="email" required>
+					<input type="text" placeholder="Enter Email" name="Email" required>
 
 					<label><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="psw" required>
+					<input type="password" placeholder="Enter Password" name="PSW" required>
 					
 					<label><b>Position</b></label>
 					<div class ="Drp">
-					<select name="pos" id="post" >
-						<option value="0">Select Position</option>
-						<option value="head">Head</option>
-						<option value="corr">Coordinator</option>
-						<option value="staff">Staff</option>
+					<select name="Position" id="Position" required>
+						<option value="">Select Position</option>
+						<option value="Head">Head</option>
+						<option value="Coordinator">Coordinator</option>
+						<option value="Staff">Staff</option>
 					</select>
 					</div>
 					<!--Save Button -->
 					<button class="btn" type="submit" name="Signup">Add Account</button>
-				</div>
-			</form>
+				    </div>
 				</th>
-				<th>
-					<form>
-					<div class="signup1">
-					<h1>Edit User Info</h1>
-					<br>
-					
-					<label><b>First Name</b></label>
-					<input type="text" placeholder="Enter First Name" name="email" required>
-					
-					<label><b>Last Name</b></label>
-					<input type="text" placeholder="Enter Last Name" name="email" required>
-					
-					<label><b>Email</b></label>
-					<input type="text" placeholder="Enter Email" name="email" required>
-
-					<label><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="psw" required>
-					
-					<label><b>Position</b></label>
-					<div class ="Drp">
-					<select name="pos" id="post" >
-						<option value="0">Select Position</option>
-						<option value="head">Head</option>
-						<option value="corr">Coordinator</option>
-						<option value="staff">Staff</option>
-					</select>
-					</div>
-					
-					<!--Save Button -->
-					<button class="btn1" type="submit" name="Signup">Save</button>
-				</div>
-					</form>
-				</th>
-			</tr>
-			
-		
 			</table>
-				
-			
-
-		
-
-
-
 		</div>
 	</div>
-	
+</form>
+
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -195,3 +148,28 @@ session_start();
 	</script>
 <body>
 </html>
+
+<?php
+
+if (isset($_POST['Signup'])) {
+
+    $Campus = $_SESSION["Campus"];
+
+    $FN = htmlspecialchars($_POST['FN']);
+    $LN = htmlspecialchars($_POST['LN']);
+    $Email = htmlspecialchars($_POST['Email']);
+    $PSW = htmlspecialchars($_POST['PSW']);
+    $Position = htmlspecialchars($_POST['Position']);
+
+    $sql = ("INSERT INTO account
+            (Email, Password, Firstname, Lastname, Campus, Position, AccStatus)
+            VALUES 
+		    ('$Email', '$PSW', '$FN', '$LN', '$Campus', '$Position', 'Active')");
+    $command = $con->query($sql) or die("Error encounter while updating data");
+    
+    echo "<script>
+            alert('Target Updated Successfully');
+            window.location='Account.php';
+        </script>";
+}
+?>

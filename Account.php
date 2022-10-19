@@ -28,12 +28,11 @@ if(isset($_GET['enable'])){
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>DashBoard BESO Portal</title>
+<title>Account</title>
 <link rel="stylesheet" type="text/css" href="styles/Account.css">
 
 </head>
@@ -109,9 +108,33 @@ if(isset($_GET['enable'])){
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>	
 			</div>
+
+<?php
+if(isset($_GET['delete'])){
+	$AID = $_GET['delete'];
+
+	echo "<center>";
+	echo "Are you sure you want yo DELETE AccountID: ".$AID."? <br>" ;
+	echo "<form method='post'>";
+	echo "<input type='submit' name='YES' value='YES'>";
+	echo "<input type='submit' name='NO' value='NO'>";
+
+	if (isset($_POST['YES'])) {
+		echo "<script> alert('Account Deleted');";
+		echo "window.location.href='Account.php'; </script>";
+		/*
+		$sql = ("DELETE FROM account WHERE AccountID = $AID ");
+		$command = $con->query($sql) or die("Error Deleting the Account");
+		echo "
+		<script>
+			alert('Account ID $AID is Deleted');	
+		</script>"; */
+	}
+	if (isset($_POST['NO'])) {header('Location: Account.php');}
+}
+?>
 			<div class="add">
-			<a href="form.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon></a>
-			</button>
+			<a href="Form_Add.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon></a> </button>
 			</div>
 			<table class="account">
 				<tr>
@@ -120,12 +143,11 @@ if(isset($_GET['enable'])){
 			<tr>
 				
 				<th> Account ID </th>
-				<th width="250px";> Name </th>
+				<th width="300px";> Name </th>
 				<th width="500px";> Email</th>
 				<th width="120px";> Position </th>
-				<th width="90px";> Status </th>
-				<th width="500px";></th>
-				
+				<th width="100px";> Status </th>
+				<th width="420px";></th>
 			</tr>
 <?php
 //Displaying All Accounts
@@ -150,7 +172,7 @@ while($result = mysqli_fetch_array($command))
 					<td> <?php echo $dbPosition; ?> </td> 
 					<td> <?php echo $dbStatus; ?> </td> 
 					<td>
-						<a href="Account.php?edit=<?php echo $dbAID; ?>" button class = "btn"> Edit </button>
+						<a href="Form_Edit.php?edit=<?php echo $dbAID; ?>" button class = "btn"> Edit </button>
 						<a href="Account.php?delete=<?php echo $dbAID; ?>" button class = "btn1"> Delete </button>
 						<a href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn3"> Enable </a>
 						<a href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
@@ -192,3 +214,4 @@ while($result = mysqli_fetch_array($command))
 	</script>
 <body>
 </html>
+
