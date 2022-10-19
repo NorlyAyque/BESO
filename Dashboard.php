@@ -59,6 +59,26 @@ if (isset($_POST['View'])){
 }
 
 ?>
+
+<?php
+ 
+$dataPoints1 = array(
+	array("label"=> "Quarter 1", "y"=> 36.12),
+	array("label"=> "Quarter 2", "y"=> 34.87),
+	array("label"=> "Quarter 3", "y"=> 40.30),
+	array("label"=> "Quarter 4", "y"=> 35.30),
+	
+);
+$dataPoints2 = array(
+	array("label"=> "Quarter 1", "y"=> 64.61),
+	array("label"=> "Quarter 2", "y"=> 70.55),
+	array("label"=> "Quarter 3", "y"=> 72.50),
+	array("label"=> "Quarter 4", "y"=> 81.30),
+	
+);
+	
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -140,6 +160,7 @@ if (isset($_POST['View'])){
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>	
 			</div>
+			<div id="chartContainer" class = "graph"></div>
 			<table class ="header">
 			<thead>
 			<tr>
@@ -163,23 +184,7 @@ if (isset($_POST['View'])){
 			<thead>
 			<tr>
 				<th>
-					<p id="Display_Year">  <?php echo $YearToday; ?></p>
-					<select name="Year" id="Year">
-						<option value="0">Select year</option>
-						<option value="2022">2022</option>
-						<option value="2023">2023</option>
-						<option value="2024">2024</option>
-						<option value="2025">2025</option>
-						<option value="2026">2026</option>
-						<option value="2027">2027</option>
-						<option value="2028">2028</option>
-						<option value="2029">2029</option>
-						<option value="2030">2030</option>
-						<option value="2031">2031</option>
-						<option value="2032">2032</option>
-						<option value="2033">2033</option>
-				 </select>
-				 <button type="submit" name="View" id="View">View</button>
+					
 				</th>
 				<th> Quarter 1 </th>
 				<th> Quarter 2 </th>
@@ -258,6 +263,7 @@ if (isset($_POST['View'])){
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 	<script>
 	//MenuToggle
@@ -281,6 +287,58 @@ if (isset($_POST['View'])){
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink));
 	</script>
+	
+	<script>
+		window.onload = function () {
+		 
+		var chart = new CanvasJS.Chart("chartContainer", {
+			animationEnabled: true,
+			theme: "light2",
+			title:{
+				text: "PAP's RERPORT."
+				
+			},
+			axisY:{
+				includeZero: true
+			},
+			legend:{
+				cursor: "pointer",
+				verticalAlign: "center",
+				horizontalAlign: "right",
+				itemclick: toggleDataSeries
+			},
+			data: [{
+				type: "column",
+				name: "Remaining",
+				indexLabel: "{y}",
+				yValueFormatString: "$#0.##",
+				showInLegend: true,
+				dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
+			},{
+				type: "column",
+				name: "Accomplished",
+				indexLabel: "{y}",
+				yValueFormatString: "$#0.##",
+				showInLegend: true,
+				dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
+			}]
+		});
+		chart.render();
+		 
+		function toggleDataSeries(e){
+			if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+				e.dataSeries.visible = false;
+			}
+			else{
+				e.dataSeries.visible = true;
+			}
+			chart.render();
+		}
+		 
+		}
+</script>
+	
+	
 <body>
 </html>
 
