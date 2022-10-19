@@ -162,41 +162,6 @@ while($result = mysqli_fetch_array($command))
 ?>
 				</tbody>
 			</table>
-
-			<!-- Sign up form 
-			
-			<form>
-				<div class="signup">
-					<h1>Add User</h1>
-					<p>Please fill in this form to create an account.</p>
-					
-					<label><b>First Name</b></label>
-					<input type="text" placeholder="Enter First Name" name="email" required>
-					
-					<label><b>Last Name</b></label>
-					<input type="text" placeholder="Enter Last Name" name="email" required>
-					
-					<label><b>Email</b></label>
-					<input type="text" placeholder="Enter Email" name="email" required>
-
-					<label><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="psw" required>
-
-					<label><b>Repeat Password</b></label>
-					<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-					
-					<label><b>Position</b></label>
-					<input type="text" placeholder="Enter Position" name="email" required>
-					
-					<!--Save Button 
-					<button class="btn" type="submit" name="Signup">Add Account</button>
-				</div>
-			</form>
--->
-		
-
-
-
 		</div>
 	</div>
 	

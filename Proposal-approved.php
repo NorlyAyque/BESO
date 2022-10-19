@@ -83,7 +83,7 @@
 			
 		<table class="proposals">
 				<tr>
-					<th colspan="4">
+					<th colspan="5">
 						<div class="menu">
 							
 							<a href="Proposal.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
@@ -103,30 +103,28 @@
 					
 				</tr>
 				<tr  class="title">
-					<th colspan="4"><center>APPROVED PROPOSALS </th> 
+					<th colspan="5"><center>APPROVED PROPOSALS </th> 
 				</tr>
 				
-			<tr>
-				
-				<th> Account ID </th>
-				<th width="350px";> Title </th>
-				<th width="350px";> Email</th>
+				<tr>
+				<th width="100px"> Proposal ID </th>
+				<th> Title </th>
+				<th width="350px";> Creator</th>
 				<th width="100px";> Status </th>
+				<th width="150px";>  </th>
 			</tr>
 
 			<tr class="inputs">
-				<td> Sample2</td>
-				<td>  </td> 
-				<td>  </td> 
-				<td>  </td> 		
+				<td>1</td>
+				<td>Pakain para sa mga bata</td> 
+				<td>Norly Ayque</td> 
+				<td>Approved</td> 	
+				<td>
+					<button>VIEW<button>
+					<button>CREATE MONITORING<button>
+					<button>CREATE EVALUATION</button>
+				</td> 
 			</tr>
-			<tr class="inputs">
-				<td> Sample</td>
-				<td>  </td> 
-				<td>  </td> 
-				<td>  </td> 		
-			</tr>
-
 		</table>
 			
 			

@@ -1,3 +1,13 @@
+<?php
+session_start();
+include("Connection.php");
+?>
+
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,51 +92,42 @@
 			</div>
 			
 		<table class="proposals">
-				<tr>
-					<th colspan="4">
-						<div class="menu">
+			<tr>
+				<th colspan="5">
+					<div class="menu">
 							
-							<a href="Proposal.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
-							</button>
-							
-							<a href="Proposal-revision.php" button class = "nav"> Revsion <ion-icon name="warning-outline"></ion-icon></a>
-							</button>
-							
-							<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
-							</button>
-						
-							<a href="Proposal-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
-							</button>
-							
-						</div>
-					</th> 
-					
-				</tr>
-				<tr  class="title">
-					<th colspan="4" ><center>PENDING PROPOSALS</th> 
-				</tr>
+						<a href="Proposal.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
+						<a href="Proposal-revision.php" button class = "nav"> Revsion <ion-icon name="warning-outline"></ion-icon></a>
+						<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
+						<a href="Proposal-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>	
+					</div>
+				</th> 
+			</tr>
+
+			<tr  class="title">
+				<th colspan="5" ><center>PENDING PROPOSALS</th> 
+			</tr>
 				
 			<tr>
-				
-				<th> Account ID </th>
-				<th width="350px";> Title </th>
-				<th width="350px";> Email</th>
+				<th width="100px"> Proposal ID </th>
+				<th> Title </th>
+				<th width="350px";> Creator</th>
 				<th width="100px";> Status </th>
+				<th width="150px";>  </th>
 			</tr>
 
 			<tr class="inputs">
-				<td> Sample</td>
-				<td>  </td> 
-				<td>  </td> 
-				<td>  </td> 		
+				<td>1</td>
+				<td>Pakain para sa mga bata</td> 
+				<td>Norly Ayque</td> 
+				<td>Pending</td> 	
+				<td>
+					<button>VIEW<button>
+					<button>REVISE</button>
+					<button>APPROVED</button>
+					<button>REJECT</button>
+				</td> 
 			</tr>
-			<tr class="inputs">
-				<td> Sample</td>
-				<td>  </td> 
-				<td>  </td> 
-				<td>  </td> 		
-			</tr>
-
 		</table>
 			
 			
