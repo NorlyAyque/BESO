@@ -33,7 +33,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Account</title>
-<link rel="stylesheet" type="text/css" href="styles/Account.css">
+<link rel="stylesheet" type="text/css" href="styles/Account-style.css">
 
 </head>
 <body>
@@ -114,10 +114,10 @@ if(isset($_GET['delete'])){
 	$AID = $_GET['delete'];
 
 	echo "<center>";
-	echo "Are you sure you want yo DELETE AccountID: ".$AID."? <br>" ;
+	echo " <span class ='Notif'> Are you sure you want yo DELETE AccountID: ".$AID."? </span>" ;
 	echo "<form method='post'>";
-	echo "<input type='submit' name='YES' value='YES'>";
-	echo "<input type='submit' name='NO' value='NO'>";
+	echo "<input type='submit' class ='Ycss' name='YES' value='YES'>";
+	echo "<input type='submit' class ='Ncss' name='NO' value='NO'>";
 
 	if (isset($_POST['YES'])) {
 		echo "<script> alert('Account Deleted');";
