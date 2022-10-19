@@ -16,7 +16,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-Proposal.css">
 
 </head>
 <body>
@@ -195,17 +195,21 @@ $DateTime = date("M, d Y; h:i:s A");
 				<tr>
 					<td> Review by:</td>
 					<td><textarea placeholder="type here..."></textarea></td>
-				</tr>
-				<tr>
-					<td> Recommending Approval:</td>
 					<td><textarea placeholder="type here..."></textarea></td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
+					<td><textarea placeholder="type here..."></textarea></td>
+					<td><textarea placeholder="type here..."></textarea></td>
+				</tr>
+				<tr>
+					<td> Recommending Approval:</td>
+					<td><textarea placeholder="type here..."></textarea></td>
 					<td><textarea placeholder="type here..."></textarea></td>
 				</tr>
 				<tr>
 					<td>Approved by:</td>
+					<td><textarea placeholder="type here..."></textarea></td>
 					<td><textarea placeholder="type here..."></textarea></td>
 				</tr>
 			</table>

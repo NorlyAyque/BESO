@@ -187,6 +187,7 @@ body{
 	border-radius: 50%;
 	box-shadow: 35px 35px 0 10px var(--white);
 	pointer-events:none;
+	ddd
 	
 	
 }
@@ -204,6 +205,7 @@ body{
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
 }
+
 .navigation li .active{
 text-decoration: underline;
 text-underline-position: under;
@@ -244,7 +246,7 @@ margin-left: 100px;
 	margin-left: 30px;
 }
 
-.proposals{
+.account{
   width: 97%;
   margin-left:30px;
   margin-right:30px;
@@ -254,8 +256,11 @@ margin-left: 100px;
   display:fixed;
   border: 1px solid black; 
   text-decoration:none;
+  
+  
 }
-.proposals .title th:nth-child(1){
+
+.account th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
@@ -263,115 +268,116 @@ margin-left: 100px;
   color: white;
   font-weight:bold;
   text-decoration:none;
-  font-size:30px;
-	
-}
-
-.proposals th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: var(--red);
-  color: white;
-  font-weight:bold;
-  text-decoration:none;
-  
 }
 
 
+.account td{
+	padding:10 10px;
+	text-align: center;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Fill Up */
-.Create {
-	position: relative;
-	padding:20px;
-	display:grid;
-	margin-left: 20px;
-	word-wrap: break-word;
-	grid-template-columns: repeat(2,1fr);
-	grid-gap:20px;
-	width:fixed;
-
-	
+}
+.account td, .account th {
+  padding: 5px;
 }
 
-.Create .fillup{
-	position:relative;
-	padding:5px;
-	display:flex;
-	justify-content:space-between;
-	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
-	background: #f1f1f1;
+.account tr{
+	background-color: #EFEFEF;
+
+}
+
+.account tr:hover {
+background-color: #D1D1D1;}
+
+
+.account input {
+	text-align: center;
 	
 }
 
 
 
-.Create .input-field {
-  padding: 12px 5px;
-  width: auto;
-  
-}
 
-
-.Create .input-field label{
-	font-weight:bold;
-	color#444;
-	
-}
-
-
-
-.Create  .input-field input, textarea {
-  margin-top:5px;
-  width: 100%;
-  height: 70px;
-  padding: 10px 11px;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
-  font-size: 15px;
-  resize: none;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
-  margin: 5px 0 22px 0;
-  display: inline-block;
-}
-.button {
-	text-align: right;
-	margin-right: 20px;
-	margin-top: -10px;
-	margin-bottom:10px;
-}
-.button .btn {
-  background-color: #4CAF50; 
+ .account .btn {
+  background-color: #168aad; 
   border: none;
   color: white;
-  padding: 10px 30px;
-  font-size: 20px;
+  padding: 5px 10px;
+  font-size: 11px;
   transition-duration: 0.4s;
   cursor: pointer;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
   border-radius: 5px;
- 
-
+  text-decoration:none;
+  margin-right:5px;
 
   
 }
 
-.button .btn:hover {
-  background-color:  #4CAF20;
+.account .btn:hover {
+  background-color:  #34a0a4;
+  color: white;
+}
+
+.account .btn1 {
+  background-color: #EF7C8E; 
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 11px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  margin-right:5px; 
+  
+}
+
+.account .btn1:hover {
+  background-color:  var(--red);
+  color: white;
+}
+
+.account .btn2 {
+  background-color: orange; 
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 11px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  
+}
+
+.account .btn2:hover {
+  background-color:  #FF884B;
+  color: white;
+}
+
+.account .btn3 {
+  margin-right:5px;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 11px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+
+  
+}
+
+.account .btn3:hover {
+  background-color:  #38E54D;
   color: white;
 }
