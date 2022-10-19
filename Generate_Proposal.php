@@ -4,7 +4,13 @@ include("Connection.php");
 
 if(isset($_GET['view'])){ $PID = $_GET['view']; }
 
-$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = 3");
+
+
+
+
+
+
+$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{

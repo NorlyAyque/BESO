@@ -147,7 +147,7 @@ if(isset($_GET['delete'])){
 				<th width="500px";> Email</th>
 				<th width="120px";> Position </th>
 				<th width="100px";> Status </th>
-				<th width="420px";></th>
+				<th width="450px";></th>
 			</tr>
 <?php
 //Displaying All Accounts

@@ -45,13 +45,13 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="Reports.php">
 					<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
 					<span class ="title"> Reports</span>
 				</a>

@@ -3,11 +3,6 @@ session_start();
 include("Connection.php");
 ?>
 
-<?php
-
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,39 +111,40 @@ include("Connection.php");
 				<th width="150px";>  </th>
 			</tr>
 
+<?php
+//Display all the Pending Proposals
+$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'PENDING' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$PID = $result['ProposalID'];
+		$Title = $result['Title'];
+		$Creator = $result['AccountID'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 			<tr class="inputs">
-				<td>1</td>
-				<td>Pakain para sa mga bata</td> 
-				<td>Norly Ayque</td> 
-				<td>Pending</td> 	
+				<td><?php echo $PID; ?></td>
+				<td><?php echo $Title; ?></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td> 	
 				<td width ="260px";>
-					<button class ="Pbtn">View</button>
+					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 					<button class ="Pbtn1">Revise</button>
 					<button class ="Pbtn2">Approved</button>
 					<button class ="Pbtn3">Reject</button>
 				</td> 
 			</tr>
-		</table>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+<?php } }?>
+			</table>	
 		</div>
 	</div>
-	
-	
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -177,3 +173,12 @@ include("Connection.php");
 	</script>
 <body>
 </html>
+
+
+<?php
+
+
+
+
+
+?>

@@ -63,7 +63,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="Signout.php">
 					<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
 					<span class ="title"> Sign out</span>
 				</a>
