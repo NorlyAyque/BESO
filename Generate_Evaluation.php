@@ -102,10 +102,10 @@ $pdf->Row2();
 $pdf->SetFont('Times','',10);
 
 $pdf->Cell(70, 7, 'Title of the Project or Activity:', 0, 0, 'L');
-$pdf->multicell(115.9, 7, $I, 1, 'L');
+$pdf->multicell(115.9, 5, $II, 1, 'L');
 
 $pdf->Cell(70, 7, 'Location:', 'T', 0, 'L');
-$pdf->multicell(115.9, 7, $I, 1, 'L');
+$pdf->multicell(115.9, 5, $II, 1, 'L');
 
 $pdf->Cell(70, 5, 'Date of Implementation /','T,R', 0,'L');
 $pdf->Cell(115.9, 5, $I, 0, 1, 'L');
@@ -116,36 +116,54 @@ $pdf->Cell(115.9, 5, $I, 'B', 1, 'L');
 ////
 $pdf->Cell(70, 5, 'Implementing Office/ College / Program','R', 1,'L');
 $pdf->Cell(70, 5, '(specify the programs under the college','R', 0,'L');
-$pdf->multicell(115.9, 5, $I, 0, 'L');
+$pdf->multicell(115.9, 5, $II, 'L', 'L');
 $pdf->Cell(70, 5, 'implementing the project):','R,B', 1,'L');
 ////
 
-$pdf->Cell(70, 7, 'Partner Agency:', 'R,B', 0, 'L');
-$pdf->multicell(115.9, 7, $I, 'T,B', 'L');
+$pdf->Cell(70, 7, 'Partner Agency:', 'R', 0, 'L');
+$pdf->multicell(115.9, 5, $II, 'L,T,B', 'L');
 
-$pdf->Cell(70, 7, 'Type of Community Extension Service:', 'R,B', 0, 'L');
-$pdf->multicell(115.9, 7, $I, 'B', 'L');
+$pdf->Cell(70, 7, 'Type of Community Extension Service:', 'T,R', 0, 'L');
+$pdf->multicell(115.9, 5, $II, 'L,B', 'L');
 
-$pdf->Cell(70, 7, 'Sustainable Development Goals:', 'R,B', 0, 'L');
-$pdf->multicell(115.9, 7, $I, 'B', 'L');
+$pdf->Cell(70, 7, 'Sustainable Development Goals:', 'T,R', 0, 'L');
+$pdf->multicell(115.9, 5, $II, 'L,B', 'L');
 
-$pdf->Cell(70, 5, 'Number of Male and Female and Type of', 'R', 1, 'L');
+$pdf->Cell(70, 5, 'Number of Male and Female and Type of', 'T,R', 1, 'L');
 $pdf->Cell(70, 5, 'Beneficiaries (Type such as OSY, Children,', 'R', 0, 'L');
 $pdf->Cell(115.9, 5, 'Type of participants: '.$I, 'R', 1, 'C');
 $pdf->Cell(70, 5, 'Women, etc.)', 0, 0, 'L');
-$pdf->multicell(115.9, 3, '
-                          BatStateU             Participants from           Total
-                          Participants           other institution
 
+////Table for Numner of Male and Female
+$pdf->Cell(20.9, 4, '', 'L,T', 0, 'C');
+$pdf->Cell(37.5, 4, 'BatStateU', 'L,T', 0, 'C');
+$pdf->Cell(37.5, 4, 'Participants from', 'L,T', 0, 'C');
+$pdf->Cell(20, 4, 'Total', 'L,T', 1, 'C');
 
-     Male                 '.$x.'                              '.$x.'                           '.$x.'
+$pdf->SetX(85);
+$pdf->Cell(20.9, 4, '', 'L,B', 0, 'C');
+$pdf->Cell(37.5, 4, 'Participants', 'L,B', 0, 'C');
+$pdf->Cell(37.5, 4, 'Other Institution', 'L,B', 0, 'C');
+$pdf->Cell(20, 4, '', 'L,B', 1, 'C');
 
-     Female             '.$x.'                              '.$x.'                           '.$x.'
+$pdf->SetX(85);
+$pdf->Cell(20.9, 5, 'Male', 1, 0, 'C');
+$pdf->Cell(37.5, 5, $x, 1, 0, 'C');
+$pdf->Cell(37.5, 5, $x, 1, 0, 'C');
+$pdf->Cell(20, 5, $x, 1, 1, 'C');
 
-                                                                        Grand Total:  '.$x.'
+$pdf->SetX(85);
+$pdf->Cell(20.9, 5, 'Female', 1, 0, 'C');
+$pdf->Cell(37.5, 5, $x, 1, 0, 'C');
+$pdf->Cell(37.5, 5, $x, 1, 0, 'C');
+$pdf->Cell(20, 5, $x, 1, 1, 'C');
 
-', 'L,B', 'L');
+$pdf->SetX(85);
+$pdf->Cell(95.9, 5, 'Grand Total', 1, 0, 'R');
+$pdf->Cell(20, 5, $x, 1, 0, 'C');
+//End Table
 
+$pdf->Ln(5);
 $pdf->Cell(185.9, 5, 'Project Leader, Assistant Project Leader, Coordinators:', 'T', 1, 'L');
 $pdf->SetX(25);
 $pdf->multicell(171.9, 5, $II, 0, 'J');

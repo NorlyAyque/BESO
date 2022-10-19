@@ -92,8 +92,9 @@ $DateTime = date("M, d Y; h:i:s A");
 				<ion-icon name="menu"></ion-icon>
 				</div>	
 			</div>
-			
-				<table class="header">
+
+	<form action="" method="post">
+			<table class="header">
 				<tr class="title">
 					<th colspan="3">
 						EXTENSION PROGRAM PLAN/PROJECT PROPOSAL	
@@ -101,20 +102,19 @@ $DateTime = date("M, d Y; h:i:s A");
 				</tr>
 				<tr class ="select">
 					<th colspan="2">
-					<label> <input type="checkbox">Extension Service Program/Project/Activity is requested by clients. <label></th>
+						<input type="radio" id="Client" name="Initiated" value="Client" required> Extension Service Program/Project/Activity is requested by clients.</th>
 					<th colspan="2">
-					<label> <input type="checkbox">Extension Service Program/Project/Activity is Department’s initiative. <label></th>
+						<input type="radio" id="Department" name="Initiated" value="Department" required> Extension Service Program/Project/Activity is Departments initiative.</th>
 				</tr>	
 			</table>
+	
 			<table class="header1">
 				<tr  class ="select1">
-					<th> <input type="checkbox"> Program</th>
-					<th> <input type="checkbox"> Project </th>
-					<th> <input type="checkbox"> Activity</th>
-						
+					<th> <input type="radio" id="Program" name="Classification" value="Program" required> Program</th>
+					<th> <input type="radio" id="Project" name="Classification" value="Project" required> Project </th>
+					<th> <input type="radio" id="Activity" name="Classification" value="Activity" required> Activity</th>	
 				</tr>
 			</table>
-	<form method="post">
 			<div class="Create">
 				<div class="fillup">
 				  <div class="input-field">
@@ -143,9 +143,7 @@ $DateTime = date("M, d Y; h:i:s A");
 						<textarea placeholder="type here..." name="VIII" required></textarea>
 						
 						<label> lX. Partner Agencies<label>
-						<textarea placeholder="type here..." name="IX" required></textarea>
-						
-						
+						<textarea placeholder="type here..." name="IX" required></textarea>	
 				  </div>
 				</div>
 				
@@ -189,37 +187,35 @@ $DateTime = date("M, d Y; h:i:s A");
 				</tr>
 				<tr>
 					<td> Prepared by:</td>
-					<td><textarea placeholder="type here..."></textarea></td>
-					<td><textarea placeholder="type here..."></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign1_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign1_2" required></textarea></td>
 				</tr>
 				<tr>
 					<td> Review by:</td>
-					<td><textarea placeholder="type here..."></textarea></td>
-					<td><textarea placeholder="type here..."></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign2_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign2_2" required></textarea></td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
-					<td><textarea placeholder="type here..."></textarea></td>
-					<td><textarea placeholder="type here..."></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign3_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign3_2" required></textarea></td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
-					<td><textarea placeholder="type here..."></textarea></td>
-					<td><textarea placeholder="type here..."></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign4_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign4_2" required></textarea></td>
 				</tr>
 				<tr>
 					<td>Approved by:</td>
-					<td><textarea placeholder="type here..."></textarea></td>
-					<td><textarea placeholder="type here..."></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign5_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign5_2" required></textarea></td>
 				</tr>
 			</table>
-			
-			
 			<div class="button">
-				<button type="submit" class="btn" name="=Save">Save </button>
+				<input type="submit" class="btn" name="Save" value="Save">
 			</div>
 		</div>
-	</form>
+	</form>	
 
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -251,9 +247,11 @@ $DateTime = date("M, d Y; h:i:s A");
 
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+//if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if (isset($_POST['Save'])) {
 
-	$Classification = "To be Coded";
+	$Initiated = $_POST["Initiated"];
+	$Classification = $_POST["Classification"];
 
 	$I = htmlspecialchars($_POST['I']);
 	$II = htmlspecialchars($_POST['II']);
@@ -274,20 +272,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$XVII = htmlspecialchars($_POST['XVII']);
 	$XVIII = htmlspecialchars($_POST['XVIII']);
 
-	$sql = ("INSERT INTO $create_table
-		(AccountID, Date_Time, Title, Location_Area, Duration, TypeCES,
+	$Sign1_1 = htmlspecialchars($_POST['Sign1_1']); $Sign1_2 = htmlspecialchars($_POST['Sign1_2']);
+	$Sign2_1 = htmlspecialchars($_POST['Sign2_1']); $Sign2_2 = htmlspecialchars($_POST['Sign2_2']);
+	$Sign3_1 = htmlspecialchars($_POST['Sign3_1']); $Sign3_2 = htmlspecialchars($_POST['Sign3_2']);
+	$Sign4_1 = htmlspecialchars($_POST['Sign4_1']); $Sign4_2 = htmlspecialchars($_POST['Sign4_2']);
+	$Sign5_1 = htmlspecialchars($_POST['Sign5_1']); $Sign5_2 = htmlspecialchars($_POST['Sign5_2']);
+
+	$sql = ("INSERT INTO create_alangilan
+		(AccountID, Date_Time, Initiated, Classification, 
+				Title, Location_Area, Duration, TypeCES,
 				SDG, Office, Programs, People, Agencies, 
 				Beneficiaries, Cost, Rationale, Objectives, Descriptions,
-				Financial, Functional, Monitoring, Plans, Remarks, Classification)
+				Financial, Functional, Monitoring, Plans, Remarks,
+				Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2,
+				Sign4_1, Sign4_2, Sign5_1, Sign5_2)
 		VALUES 
-		('$AID', '$DateTime', '$I', '$II', '$III', '$IV',
-				'$V', '$VI', '$VII', '$VIII', '$IX', 
-				'$X', '$XI', '$XII', '$XIII', '$XIV',
-				'$XV', '$XVI', '$XVII', '$XVIII', 'PENDING', 'PAP')");
-	$command = $con->query($sql);
+		('$AID', '$DateTime', '$Initiated', '$Classification',
+				'$I', '$II', '$III', '$IV', '$V', 
+				'$VI', '$VII', '$VIII', '$IX', '$X', 
+				'$XI', '$XII', '$XIII', '$XIV','$XV', 
+				'$XVI', '$XVII', '$XVIII', 'PENDING',
+				'$Sign1_1', '$Sign1_2', '$Sign2_1', '$Sign2_2', '$Sign3_1', '$Sign3_2',
+				'$Sign4_1', '$Sign4_2', '$Sign5_1', '$Sign5_2')");
+	
+		$command = $con->query($sql);
 		echo "<script>
 		alert('Proposal Successfully Created');
 		</script>";
 }
-
 ?>
