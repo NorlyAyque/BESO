@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal-Style.css">
+<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
 
 </head>
 <body>
@@ -120,8 +120,8 @@
 				<td>Norly Ayque</td> 
 				<td>Rejected</td> 	
 				<td>
-					<button>VIEW<button>
-					<button>RE-USE<button>
+					<button class="REbtn">View</button>
+					<button class="REbtn1">Re-Use</button>
 				</td> 
 			</tr>
 		</table>

@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal-Style.css">
+<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
 
 </head>
 <body>
@@ -45,13 +45,13 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="Reports.php">
 					<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
 					<span class ="title"> Reports</span>
 				</a>
@@ -109,7 +109,7 @@
 				<tr>
 				<th width="100px"> Proposal ID </th>
 				<th> Title </th>
-				<th width="350px";> Creator</th>
+				<th width="300px";> Creator</th>
 				<th width="100px";> Status </th>
 				<th width="150px";>  </th>
 			</tr>
@@ -119,10 +119,10 @@
 				<td>Pakain para sa mga bata</td> 
 				<td>Norly Ayque</td> 
 				<td>Need to Revise</td> 	
-				<td>
-					<button>VIEW<button>
-					<button>EDIT</button>
-					<button>RE-SUBMIT</button>
+				<td width="200px";>
+					<button class="Rbtn">View</button>
+					<button class="Rbtn1">Edit</button>
+					<button class="Rbtn2">Re-Submit</button>
 				</td> 
 			</tr>
 		</table>

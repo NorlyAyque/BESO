@@ -13,7 +13,7 @@ include("Connection.php");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal-Style.css">
+<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
 
 </head>
 <body>
@@ -111,7 +111,7 @@ include("Connection.php");
 			<tr>
 				<th width="100px"> Proposal ID </th>
 				<th> Title </th>
-				<th width="350px";> Creator</th>
+				<th width="300px";> Creator</th>
 				<th width="100px";> Status </th>
 				<th width="150px";>  </th>
 			</tr>
@@ -121,11 +121,11 @@ include("Connection.php");
 				<td>Pakain para sa mga bata</td> 
 				<td>Norly Ayque</td> 
 				<td>Pending</td> 	
-				<td>
-					<button>VIEW<button>
-					<button>REVISE</button>
-					<button>APPROVED</button>
-					<button>REJECT</button>
+				<td width ="260px";>
+					<button class ="Pbtn">View</button>
+					<button class ="Pbtn1">Revise</button>
+					<button class ="Pbtn2">Approved</button>
+					<button class ="Pbtn3">Reject</button>
 				</td> 
 			</tr>
 		</table>
