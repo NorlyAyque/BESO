@@ -136,9 +136,9 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Status; ?></td> 	
 				<td width ="260px";>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
-					<button class ="Pbtn1">Revise</button>
-					<button class ="Pbtn2">Approved</button>
-					<button class ="Pbtn3">Reject</button>
+					<a href="Proposal.php?revise=<?php echo $PID; ?>" button class ="Pbtn1">Revise</button> </a> 
+					<a href="Proposal.php?approved=<?php echo $PID; ?>" button class ="Pbtn2">Approved</button> </a>
+					<a href="Proposal.php?reject=<?php echo $PID; ?>" button class ="Pbtn3">Reject</button> </a>
 				</td> 
 			</tr>
 <?php } }?>
@@ -176,8 +176,41 @@ while($result = mysqli_fetch_array($command))
 
 
 <?php
+if(isset($_GET['revise'])){
+	$PID = $_GET['revise'];
 
+	$sql = ("UPDATE create_alangilan SET Remarks = 'Need to Revise' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Proposal move to revision");
+	echo "
+		<script>
+			alert('Proposal ID $PID Move to Revision');	
+			window.location.href='Proposal.php';
+		</script>";
+}
 
+if(isset($_GET['approved'])){
+	$PID = $_GET['approved'];
+
+	$sql = ("UPDATE create_alangilan SET Remarks = 'Approved' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Proposal Approval");
+	echo "
+		<script>
+			alert('Proposal ID $PID APPROVED');	
+			window.location.href='Proposal.php';
+		</script>";
+}
+
+if(isset($_GET['reject'])){
+	$PID = $_GET['reject'];
+
+	$sql = ("UPDATE create_alangilan SET Remarks = 'Rejected' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Rejecting Proposal");
+	echo "
+		<script>
+			alert('Proposal ID $PID REJECTED');	
+			window.location.href='Proposal.php';
+		</script>";
+}
 
 
 

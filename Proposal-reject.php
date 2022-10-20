@@ -1,3 +1,8 @@
+<?php
+session_start();
+include("Connection.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,35 +119,38 @@
 				<th width="150px";>  </th>
 			</tr>
 
+<?php
+//Display all the Pending Proposals
+$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Rejected' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$PID = $result['ProposalID'];
+		$Title = $result['Title'];
+		$Creator = $result['AccountID'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 			<tr class="inputs">
-				<td>1</td>
-				<td>Pakain para sa mga bata</td> 
-				<td>Norly Ayque</td> 
-				<td>Rejected</td> 	
+				<td><?php echo $PID; ?></td>
+				<td><?php echo $Title; ?></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td> 	
 				<td>
-					<button class="REbtn">View</button>
-					<button class="REbtn1">Re-Use</button>
+					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="REbtn">View</button> </a>
+					<a href="Proposal-reject.php?re_use=<?php echo $PID; ?>" button class="REbtn1">Re-Use</button> <a/>
 				</td> 
 			</tr>
-		</table>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+<?php } }?>
+			</table>	
 		</div>
-	</div>
+	</div>>
 	
 	
 	
@@ -173,3 +181,17 @@
 	</script>
 <body>
 </html>
+
+<?php
+if(isset($_GET['re_use'])){
+	$PID = $_GET['re_use'];
+
+	$sql = ("UPDATE create_alangilan SET Remarks = 'PENDING' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Proposal move to revision");
+	echo "
+		<script>
+			alert('Proposal ID $PID Re-submit');	
+			window.location.href='Proposal-reject.php';
+		</script>";
+}
+?>

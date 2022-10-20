@@ -1,3 +1,8 @@
+<?php
+session_start();
+include("Connection.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,34 +119,37 @@
 				<th width="150px";>  </th>
 			</tr>
 
+<?php
+//Display all the Proposals that need Revision
+$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Need to Revise' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$PID = $result['ProposalID'];
+		$Title = $result['Title'];
+		$Creator = $result['AccountID'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 			<tr class="inputs">
-				<td>1</td>
-				<td>Pakain para sa mga bata</td> 
-				<td>Norly Ayque</td> 
-				<td>Need to Revise</td> 	
+				<td><?php echo $PID; ?></td>
+				<td><?php echo $Title; ?></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td> 	
 				<td width="200px";>
-					<button class="Rbtn">View</button>
-					<button class="Rbtn1">Edit</button>
-					<button class="Rbtn2">Re-Submit</button>
+					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Rbtn">View</button> </a>
+					<a href="EditProposal.php?edit=<?php echo $PID; ?>" button class="Rbtn1">Edit</button> </a>
+					<a href="Proposal-revision.php?re_submit=<?php echo $PID; ?>" button class="Rbtn2">Re-Submit</button> </a>
 				</td> 
 			</tr>
-		</table>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+<?php } }?>
+			</table>	
 		</div>
 	</div>
 	
@@ -174,3 +182,18 @@
 	</script>
 <body>
 </html>
+
+<?php
+
+if(isset($_GET['re_submit'])){
+	$PID = $_GET['re_submit'];
+
+	$sql = ("UPDATE create_alangilan SET Remarks = 'PENDING' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Re-submitting Proposal");
+	echo "
+		<script>
+			alert('Proposal ID $PID Re-submit');	
+			window.location.href='Proposal-revision.php';
+		</script>";
+}
+?>

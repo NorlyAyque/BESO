@@ -1,3 +1,8 @@
+<?php
+session_start();
+include("Connection.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,7 +97,7 @@
 							<a href="Proposal-revision.php" button class = "nav"> Revsion <ion-icon name="warning-outline"></ion-icon></a>
 							</button>
 							
-							<a href="Proposal-pproved.php" button class = "nav3"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
+							<a href="Proposal-approved.php" button class = "nav3"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 							</button>
 						
 							<a href="Proposal-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
@@ -114,34 +119,37 @@
 				<th width="150px";>  </th>
 			</tr>
 
+<?php
+//Display all the Approved Proposals
+$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Approved' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$PID = $result['ProposalID'];
+		$Title = $result['Title'];
+		$Creator = $result['AccountID'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 			<tr class="inputs">
-				<td>1</td>
-				<td>Pakain para sa mga bata</td> 
-				<td>Norly Ayque</td> 
-				<td>Approved</td> 	
+				<td><?php echo $PID; ?></td>
+				<td><?php echo $Title; ?></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td> 	
 				<td>
-					<button class="Abtn">View</button>
-					<button class="Abtn1">CREATE MONITORING</button>
-					<button class="Abtn2">CREATE EVALUATION</button>
+					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Abtn">View</button> </a> <br>
+					<a href="Create_Evaluation.php?evaluation=<?php echo $PID; ?>" target="_blank" button class="Abtn1">CREATE EVALUATION</button> </a> <br>
+					<a href="Create_Monitoring.php?monitoring=<?php echo $PID; ?>" target="_blank" button class="Abtn2">CREATE MONITORING</button> </a>
 				</td> 
 			</tr>
-		</table>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+<?php } }?>
+			</table>	
 		</div>
 	</div>
 	
