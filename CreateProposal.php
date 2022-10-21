@@ -175,6 +175,7 @@ $DateTime = date("M, d Y; h:i:s A");
 						
 						<label> XVlll. Sustainability Plan<label>
 						<textarea placeholder="type here..." name="XVIII" required></textarea>
+						
 				  </div>
 				</div>
 			</div>
@@ -214,6 +215,7 @@ $DateTime = date("M, d Y; h:i:s A");
 			<div class="button">
 				<input type="submit" class="btn" name="Save" value="Save">
 			</div>
+			
 		</div>
 	</form>	
 

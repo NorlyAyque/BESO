@@ -323,7 +323,7 @@ text-decoration-thickness:3px;
   display: inline-block;
 }
 
-.Create  .input-field1 textarea {
+  .input-field1 textarea {
   margin-top:5px;
   width: 100%;
   height: 250px;
@@ -336,7 +336,7 @@ text-decoration-thickness:3px;
   margin: 5px 0 22px 0;
   display: inline-block;
 }
-.Create .input-field1 label{
+.input-field1 label{
 	font-weight:bold;
 	color#444;
 	
@@ -369,18 +369,14 @@ text-decoration-thickness:3px;
   
   
 }
- .participants .MF  td{
-	color: white;
-	background-color: #f1f1f1;
-	padding: 4px;
-}	
+
 .participants  td,input {
-  font-weight:bold;
+  margin-top:-15px;
   resize: none;
   font-weight:bold;
   width: 50px;
   text-align: center;
-  height:40px;
+  height:60px;
   
 }
 .participants .total td{
@@ -423,7 +419,7 @@ text-decoration-thickness:3px;
   font-weight:bold;
   resize: none;
   font-weight:bold;
-  width: 50px;
+ width: 50px;
   text-align: center;
   height:40px;
   
@@ -439,4 +435,104 @@ text-decoration-thickness:3px;
 	cursor:pointer;
 
 }
+.pics1 textarea{
+	width:65%;
+	font-size:15px;
+	height:40px;
+}
+.pics2 textarea{
+	width:65%;
+	font-size:15px;
+	height:40px;
+}
+.pics3 textarea{
+	width:65%;
+	font-size:15px;
+	height:40px;
+}
 
+.pics1{
+
+	margin-top:30px;
+}
+.pics1 label,input{
+	 font-weight: normal;
+	 margin-bottom:-20px;
+}
+
+.pics1 input{
+	width: auto;
+}
+
+.pics2 label,input{
+	 font-weight: normal;
+	  margin-bottom:-20px;
+}
+
+.pics2 input{
+	width: auto;
+}
+
+.pics3 label,input{
+	 font-weight: normal;
+	  margin-bottom:-20px;
+}
+
+.pics3 input{
+	width: auto;
+}
+.save2 input{
+	margin-top:10px;
+	width: auto;
+}
+.submit{
+  
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+}
+.submit:hover {
+  background-color:  #4CAF20;
+  color: white;
+}
+
+
+.save{
+		text-align: right;
+		margin-right:15px;
+		margin-bottom: 10px;
+}
+ .btn3 {
+  margin-right:5px;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+
+}
+
+.btn3:hover {
+  background-color:  #4CAF20;
+  color: white;
+}

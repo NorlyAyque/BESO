@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/Evaluation-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Evaluation.css">
 
 </head>
 <body>
@@ -92,28 +92,28 @@
 			<div class="Create">
 				<div class="fillup">
 				  <div class="input-field">
-						<label>  Title of the Project or Activity <label>
+						<label>  Title of the Project or Activity  </label>
 						<textarea class="font" placeholder="type Here..." ></textarea>
 						 
-						<label>  Location <label>
+						<label>  Location </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label>  Date of Implementation / Number of hours of implementation <label>
+						<label>  Date of Implementation / Number of hours of implementation </label>
 						<textarea placeholder="type here..." ></textarea>
 						 
-						<label>  Implementing Offica/Collage/Program<i>(specify the programs under the college implementing the project)</i> <label>
+						<label>  Implementing Offica/Collage/Program<i>(specify the programs under the college implementing the project)</i> <</label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label>  Partner Agency <label>
+						<label>  Partner Agency </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> Sustanable Development Goals <label>
+						<label> Sustanable Development Goals </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> Number of Male and Female and Types of Beneficiaries<i>(Type such as OSY, Childern,Women,etc.)</i>  <label>
+						<label> Number of Male and Female and Types of Beneficiaries<i>(Type such as OSY, Childern,Women,etc.)</i>  </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> Types of Participants</i><label>
+						<label> Types of Participants</i></label>
 						<textarea placeholder="type here..." ></textarea> 
 						
 						<table class="participants">
@@ -126,19 +126,19 @@
 								</tr>	
 								<tr >
 									<td class="MF">Male</td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
+									<td><input type="text"></input></td>
+									<td><input type="text"></input></td>
+									<td><input type="text"></input></td>
 								</tr>
 								<tr>
 									<td class="MF">Female</td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
-									<td><input type="text"></td>
+									<td><input type="text"></input></td>
+									<td><input type="text"></input></td>
+									<td><input type="text"></input></td>
 								</tr>
 								<tr class ="total">
 									<td colspan="3">Grand Total</td>
-									<td><input type="text"></td>
+									<td><input type="text"></input></td>
 								</tr>
 								</table>
 								
@@ -153,33 +153,33 @@
 								</tr>	
 								<tr class="MF" >
 									<td >1.1. Exellent</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
 								</tr>
 								<tr class="MF" >
 									<td >1.2. Very Satisfactory</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
 								</tr>
 								<tr class="MF">
 									<td >1.3. Satisfactory</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
 								</tr>
 								<tr class="MF">
 									<td > 1.4. Fair</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
 								</tr>
 								<tr  class="MF">
 									<td >1.5. Poor</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
 								</tr>
 						</table>
 						
@@ -193,33 +193,34 @@
 								</tr>	
 								<tr class="MF" >
 									<td >2.1. Exellent</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
 								</tr>
 								<tr class="MF" >
 									<td >2.2. Very Satisfactory</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
 								</tr>
 								<tr class="MF">
 									<td >2.3. Satisfactory</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
 								</tr>
 								<tr class="MF">
 									<td > 2.4. Fair</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
 								</tr>
 								<tr  class="MF">
 									<td >2.5. Poor</td>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
-									<th><input type="text"></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									<th><input type="text"></input></th>
+									
 								</tr>
 						</table>
 						
@@ -230,25 +231,44 @@
 				</div>
 				
 				<div class="fillup">
-				  <div class="input-field1">
-						<label> Project Leader, Assistant Project Leader, Coordinators</i><label>
+					<div class="input-field1">
+						<label> Project Leader, Assistant Project Leader, Coordinators</i></label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> Objectives<label>
+						<label> Objectives</label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> Narrative Activity</i><label>
+						<label> Narrative Activity</i></label>
 						<textarea placeholder="type here..." ></textarea> 
 						<br>
-						<label>  Photos <i>(Please attach photos with captions):</i> <label>
+						<label>  Photos <i>(Please attach  3 photos with captions):</i> </label>
 						
-				  </div>
-				</div>
-			
-			
-			
-		</div>
+						<div class ="pics1">
+							 <label> Select Picture 1:</label>
+							 <input type="file"></input>
+							 <textarea class ="caption" placeholder="caption here..." ></textarea> 
+						</div>	 
+						<div class ="pics2">
+							<label> Select Picture 2:</label>
+							  <input type="file"></input>
+							  <textarea class ="caption" placeholder="caption here..." ></textarea> 
+						</div>	
+						<div class ="pics2">
+						<label> Select Picture 3:</label>
+							   <input type="file"></input>
+							   <textarea class ="caption" placeholder="caption here..." ></textarea> 
+						</div>	
+						<div class ="save2">
+							 <input class ="submit" type="submit"></input>
+						</div>
+		
+					</div>
+		
 	</div>
+		</div>
+		<div class ="save">
+			<button class = "btn3"> Save </button>
+		</div>
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
