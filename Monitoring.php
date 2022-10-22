@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/Monitoring.css">
+<link rel="stylesheet" type="text/css" href="styles/Monitoring-style.css">
 
 </head>
 <body>
@@ -92,19 +92,31 @@
 			<div class="Create">
 				<div class="fillup">
 				  <div class="input-field">
-						<label> l. Title of the project <label>
+						<label> l. Title of the project </label>
 						<textarea class="font" placeholder="type Here..." ></textarea>
 						 
-						<label> ll. Location <label>
+						<label> ll. Location </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> lll. Duration <label>
+						<label> lll. Duration </label>
 						<textarea placeholder="type here..." ></textarea>
 						 
-						<label> lV. Type of Communuty Extension Service <label>
+						<label> lV. Type of Communuty Extension Service </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label>  V. Sustatinable Development Goals (SDG) <label>
+						<label>  V. Sustatinable Development Goals (SDG) </label>
+						<textarea placeholder="type here..." ></textarea> 
+						
+						<label>  Vl. Office/ College/s Involved </label>
+						<textarea placeholder="type here..." ></textarea> 
+						
+						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i>h5></label>
+						<textarea placeholder="type here..." ></textarea> 
+						
+						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i></label>
+						<textarea placeholder="type here..." ></textarea> 
+						
+						<label> lX. Coorperating Agencies</label>
 						<textarea placeholder="type here..." ></textarea> 
 
 				  </div>
@@ -112,24 +124,69 @@
 				
 				<div class="fillup">
 				  <div class="input-field">
-						<label>  Vl. Office/ College/s Involved <label>
+						
+						
+						<label> X. Beneficiaries<i>(Type and Number of Male and Female</i></label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i>h5><label>
+						<center><label> Xl. Project Status<label></center><br>
+						
+						<label>1. As to purpose (how far has the purpose been attained)</label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i><label>
+						<label>2. Availability of materials</label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> lX. Coorperating Agencies<label>
+						<label>3. Schedule of activities</label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> X. Beneficiaries<i>(Type and Number of Male and Female</i><label>
+						<label>4. Financial report</label>
+						<textarea placeholder="type here..." ></textarea> 
+						
+						<label>5. Problems encountered</label>
+						<textarea placeholder="type here..." ></textarea> 
+						
+						<label>6. Actions taken to solve the problems encountered</label>
+						<textarea placeholder="type here..." ></textarea> 
+						
+						<label>7. Suggestions and recommendations</label>
 						<textarea placeholder="type here..." ></textarea> 
 				  </div>
 				</div>
 				
 			</div>
+			<table class="signiture">
+				<tr>
+					<th></th>
+					<th> Name </th>
+					<th> Designation </th>
+				</tr>
+				<tr>
+					<td> Prepared by:</td>
+					<td><textarea placeholder="Your Name" name="Sign1_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign1_2" required></textarea></td>
+				</tr>
+				<tr>
+					<td> Review by:</td>
+					<td><textarea placeholder="Your Name" name="Sign2_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign2_2" required></textarea></td>
+				</tr>
+				<tr>
+					<td> Recommending Approval:</td>
+					<td><textarea placeholder="Your Name" name="Sign3_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign3_2" required></textarea></td>
+				</tr>
+				<tr>
+					<td> Recommending Approval:</td>
+					<td><textarea placeholder="Your Name" name="Sign4_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign4_2" required></textarea></td>
+				</tr>
+				<tr>
+					<td>Approved by:</td>
+					<td><textarea placeholder="Your Name" name="Sign5_1" required></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign5_2" required></textarea></td>
+				</tr>
+			</table>
 			<div class ="save">
 		<button class = "btn3"> Save </button>
 		</div>

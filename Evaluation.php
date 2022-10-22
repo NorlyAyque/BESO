@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/Evaluation.css">
+<link rel="stylesheet" type="text/css" href="styles/Evaluation-style.css">
 
 </head>
 <body>
@@ -107,16 +107,19 @@
 						<label>  Partner Agency </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
+						<label>  Types of Community Extension Service </label>
+						<textarea placeholder="type here..." ></textarea> 
+						
 						<label> Sustanable Development Goals </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
 						<label> Number of Male and Female and Types of Beneficiaries<i>(Type such as OSY, Childern,Women,etc.)</i>  </label>
-						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> Types of Participants</i></label>
-						<textarea placeholder="type here..." ></textarea> 
 						
 						<table class="participants">
+								<tr class="types">
+									<th colspan="4"> 	<label> Types of Participants  <input type="text" id="fname" name="fname"></i></label></th>
+								</tr>
 								<tr>
 									<th>  </th>
 									<th> BatStateU Participants</th>
@@ -140,7 +143,7 @@
 									<td colspan="3">Grand Total</td>
 									<td><input type="number" min="0" name="MFT" id="MFT" Readonly></input></td>
 								</tr>
-								</table>
+						</table>
 								
 							<table class="Evaluation">	
 								<label><br> Evaluation Result <i>(If activity is training, techinical advice or seminar)</i></label>
@@ -181,7 +184,7 @@
 									<th><input type="number" min="0" name="Eval1E2" id="Eval1E2" onchange="Cal_1E()"> </td> 
 									<th><input type="number" min="0" name="Eval1ET" id="Eval1ET" Readonly></td>
 								</tr>
-						</table>
+							</table>
 						
 						<table class="Evaluation">	
 								<label> <h4><br>2. Number of beneficiaries/paricipants who rated the activity as:</h4></label>
@@ -257,11 +260,46 @@
 						<div class ="save2">
 							 <input class ="submit" type="submit"></input>
 						</div>
-		
+					
 					</div>
-		
-	</div>
+				</div>
+				
+	
+	
 		</div>
+				<table class="signiture">
+							<tr>
+								<th></th>
+								<th> Name </th>
+								<th> Designation </th>
+							</tr>
+							<tr>
+								<td> Prepared by:</td>
+								<td><textarea placeholder="Your Name" name="Sign1_1" required></textarea></td>
+								<td><textarea placeholder="Designation" name="Sign1_2" required></textarea></td>
+							</tr>
+							<tr>
+								<td> Review by:</td>
+								<td><textarea placeholder="Your Name" name="Sign2_1" required></textarea></td>
+								<td><textarea placeholder="Designation" name="Sign2_2" required></textarea></td>
+							</tr>
+							<tr>
+								<td> Recommending Approval:</td>
+								<td><textarea placeholder="Your Name" name="Sign3_1" required></textarea></td>
+								<td><textarea placeholder="Designation" name="Sign3_2" required></textarea></td>
+							</tr>
+							<tr>
+								<td> Recommending Approval:</td>
+								<td><textarea placeholder="Your Name" name="Sign4_1" required></textarea></td>
+								<td><textarea placeholder="Designation" name="Sign4_2" required></textarea></td>
+							</tr>
+							<tr>
+								<td>Approved by:</td>
+								<td><textarea placeholder="Your Name" name="Sign5_1" required></textarea></td>
+								<td><textarea placeholder="Designation" name="Sign5_2" required></textarea></td>
+							</tr>
+						</table>
+	
 		<div class ="save">
 			<button class = "btn3"> Save </button>
 		</div>
