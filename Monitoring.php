@@ -101,7 +101,7 @@
 						<label> lll. Duration </label>
 						<textarea placeholder="type here..." ></textarea>
 						 
-						<label> lV. Type of Communuty Extension Service </label>
+						<label> lV. Type of Community Extension Service </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
 						<label>  V. Sustatinable Development Goals (SDG) </label>
@@ -110,13 +110,13 @@
 						<label>  Vl. Office/ College/s Involved </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i>h5></label>
+						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i></label>
 						<textarea placeholder="type here..." ></textarea> 
 						
 						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i></label>
 						<textarea placeholder="type here..." ></textarea> 
 						
-						<label> lX. Coorperating Agencies</label>
+						<label> lX. Cooperating Agencies</label>
 						<textarea placeholder="type here..." ></textarea> 
 
 				  </div>
@@ -172,17 +172,7 @@
 					<td><textarea placeholder="Designation" name="Sign2_2" required></textarea></td>
 				</tr>
 				<tr>
-					<td> Recommending Approval:</td>
-					<td><textarea placeholder="Your Name" name="Sign3_1" required></textarea></td>
-					<td><textarea placeholder="Designation" name="Sign3_2" required></textarea></td>
-				</tr>
-				<tr>
-					<td> Recommending Approval:</td>
-					<td><textarea placeholder="Your Name" name="Sign4_1" required></textarea></td>
-					<td><textarea placeholder="Designation" name="Sign4_2" required></textarea></td>
-				</tr>
-				<tr>
-					<td>Approved by:</td>
+					<td>Accepted by:</td>
 					<td><textarea placeholder="Your Name" name="Sign5_1" required></textarea></td>
 					<td><textarea placeholder="Designation" name="Sign5_2" required></textarea></td>
 				</tr>

@@ -488,27 +488,7 @@ text-decoration-thickness:3px;
 .pics3 input{
 	width: auto;
 }
-.save2 input{
-	margin-top:10px;
-	width: auto;
-}
-.submit{
-  
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-}
+
 .submit:hover {
   background-color:  #4CAF20;
   color: white;

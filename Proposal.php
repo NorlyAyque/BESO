@@ -8,7 +8,7 @@ include("Connection.php");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
+<link rel="stylesheet" type="text/css" href="styles/Proposal-style.css">
 
 </head>
 <body>
@@ -118,7 +118,7 @@ $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
-		$Title = $result['Title'];
+		$Title = $result ['Title'];
 		$Creator = $result['AccountID'];
 		$Status = $result['Remarks'];
 		
@@ -131,7 +131,7 @@ while($result = mysqli_fetch_array($command))
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
-				<td><?php echo $Title; ?></td> 
+				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $Fullname; ?></td> 
 				<td><?php echo $Status; ?></td> 	
 				<td width ="260px";>

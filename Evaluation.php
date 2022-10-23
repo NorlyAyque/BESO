@@ -101,7 +101,7 @@
 						<label>  Date of Implementation / Number of hours of implementation </label>
 						<textarea placeholder="type here..." ></textarea>
 						 
-						<label>  Implementing Offica/Collage/Program<i>(specify the programs under the college implementing the project)</i> <</label>
+						<label>  Implementing Offical/College/Program<i>(specify the programs under the college implementing the project)</i> </label>
 						<textarea placeholder="type here..." ></textarea> 
 						
 						<label>  Partner Agency </label>
@@ -257,9 +257,7 @@
 							   <input type="file"></input>
 							   <textarea class ="caption" placeholder="caption here..." ></textarea> 
 						</div>	
-						<div class ="save2">
-							 <input class ="submit" type="submit"></input>
-						</div>
+						
 					
 					</div>
 				</div>
@@ -283,18 +281,7 @@
 								<td><textarea placeholder="Your Name" name="Sign2_1" required></textarea></td>
 								<td><textarea placeholder="Designation" name="Sign2_2" required></textarea></td>
 							</tr>
-							<tr>
-								<td> Recommending Approval:</td>
-								<td><textarea placeholder="Your Name" name="Sign3_1" required></textarea></td>
-								<td><textarea placeholder="Designation" name="Sign3_2" required></textarea></td>
-							</tr>
-							<tr>
-								<td> Recommending Approval:</td>
-								<td><textarea placeholder="Your Name" name="Sign4_1" required></textarea></td>
-								<td><textarea placeholder="Designation" name="Sign4_2" required></textarea></td>
-							</tr>
-							<tr>
-								<td>Approved by:</td>
+								<td>Accepted by:</td>
 								<td><textarea placeholder="Your Name" name="Sign5_1" required></textarea></td>
 								<td><textarea placeholder="Designation" name="Sign5_2" required></textarea></td>
 							</tr>
