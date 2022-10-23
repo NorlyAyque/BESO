@@ -7,8 +7,8 @@ include("Connection.php");
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
+<title>Proposals - Approved</title>
+<link rel="stylesheet" type="text/css" href="styles/Proposal-style.css">
 
 </head>
 <body>
@@ -144,8 +144,8 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Status; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Abtn">View</button> </a> <br>
-					<a href="Create_Evaluation.php?evaluation=<?php echo $PID; ?>" target="_blank" button class="Abtn1">CREATE EVALUATION</button> </a> <br>
-					<a href="Create_Monitoring.php?monitoring=<?php echo $PID; ?>" target="_blank" button class="Abtn2">CREATE MONITORING</button> </a>
+					<a href="CreateEvaluation.php?evaluation=<?php echo $PID; ?>" target="_blank" button class="Abtn1">CREATE EVALUATION</button> </a> <br>
+					<a href="CreateMonitoring.php?monitoring=<?php echo $PID; ?>" target="_blank" button class="Abtn2">CREATE MONITORING</button> </a>
 				</td> 
 			</tr>
 <?php } }?>

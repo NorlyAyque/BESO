@@ -7,8 +7,8 @@ include("Connection.php");
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
+<title>Proposals - Revisions</title>
+<link rel="stylesheet" type="text/css" href="styles/Proposal-style.css">
 
 </head>
 <body>
