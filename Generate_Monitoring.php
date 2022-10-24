@@ -2,7 +2,9 @@
 require("FPDFLibrary/fpdf.php");
 include("Connection.php");
 
-$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = 2");
+if(isset($_GET['view'])){ $MID = $_GET['view']; }
+
+$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $MID");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{

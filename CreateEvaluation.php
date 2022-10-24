@@ -28,7 +28,7 @@ if(isset($_GET['evaluation'])){
 		$dbPeople = $result['People'];
 		$dbObjectives = $result['Objectives'];
     }
-	$_SESSION["AID"] = $dbAuthor;
+	//$_SESSION["AID"] = $dbAuthor; //Save sa Session variable
 }
 ?>
 
@@ -122,7 +122,7 @@ if(isset($_GET['evaluation'])){
 					</th> 
 				</tr>
 			</table>
-<form method = "Post">			
+<form method = "Post">	
 			<div class="Create">
 				<div class="fillup">
 				  <div class="input-field">
@@ -189,33 +189,33 @@ if(isset($_GET['evaluation'])){
 								</tr>	
 								<tr class="MF" >
 									<td >1.1. Exellent</td>
-									<th><input type="number" min="0" name="Eval1A1" id="Eval1A1" onchange="Cal_1A()" required> </td> 
-									<th><input type="number" min="0" name="Eval1A2" id="Eval1A2" onchange="Cal_1A()" required> </td> 
-									<th><input type="number" min="0" name="Eval1AT" id="Eval1AT" Readonly required></td>
+									<th><input type="number" min="0" name="Eval1A1" id="Eval1A1" onchange="Cal_1A()" > </td> 
+									<th><input type="number" min="0" name="Eval1A2" id="Eval1A2" onchange="Cal_1A()" > </td> 
+									<th><input type="number" min="0" name="Eval1AT" id="Eval1AT" Readonly ></td>
 								</tr>
 								<tr class="MF" >
 									<td >1.2. Very Satisfactory</td>
-									<th><input type="number" min="0" name="Eval1B1" id="Eval1B1" onchange="Cal_1B()" required> </td> 
-									<th><input type="number" min="0" name="Eval1B2" id="Eval1B2" onchange="Cal_1B()" required> </td> 
-									<th><input type="number" min="0" name="Eval1BT" id="Eval1BT" Readonly required></td>
+									<th><input type="number" min="0" name="Eval1B1" id="Eval1B1" onchange="Cal_1B()" > </td> 
+									<th><input type="number" min="0" name="Eval1B2" id="Eval1B2" onchange="Cal_1B()" > </td> 
+									<th><input type="number" min="0" name="Eval1BT" id="Eval1BT" Readonly ></td>
 								</tr>
 								<tr class="MF">
 									<td >1.3. Satisfactory</td>
-									<th><input type="number" min="0" name="Eval1C1" id="Eval1C1" onchange="Cal_1C()" required> </td> 
-									<th><input type="number" min="0" name="Eval1C2" id="Eval1C2" onchange="Cal_1C()" required> </td> 
-									<th><input type="number" min="0" name="Eval1CT" id="Eval1CT" Readonly required></td>
+									<th><input type="number" min="0" name="Eval1C1" id="Eval1C1" onchange="Cal_1C()" > </td> 
+									<th><input type="number" min="0" name="Eval1C2" id="Eval1C2" onchange="Cal_1C()" > </td> 
+									<th><input type="number" min="0" name="Eval1CT" id="Eval1CT" Readonly ></td>
 								</tr>
 								<tr class="MF">
 									<td > 1.4. Fair</td>
-									<th><input type="number" min="0" name="Eval1D1" id="Eval1D1" onchange="Cal_1D()" required> </td> 
-									<th><input type="number" min="0" name="Eval1D2" id="Eval1D2" onchange="Cal_1D()" required> </td> 
-									<th><input type="number" min="0" name="Eval1DT" id="Eval1DT" Readonly required></td>
+									<th><input type="number" min="0" name="Eval1D1" id="Eval1D1" onchange="Cal_1D()" > </td> 
+									<th><input type="number" min="0" name="Eval1D2" id="Eval1D2" onchange="Cal_1D()" > </td> 
+									<th><input type="number" min="0" name="Eval1DT" id="Eval1DT" Readonly ></td>
 								</tr>
 								<tr  class="MF">
 									<td >1.5. Poor</td>
-									<th><input type="number" min="0" name="Eval1E1" id="Eval1E1" onchange="Cal_1E()" required> </td> 
-									<th><input type="number" min="0" name="Eval1E2" id="Eval1E2" onchange="Cal_1E()" required> </td> 
-									<th><input type="number" min="0" name="Eval1ET" id="Eval1ET" Readonly required></td>
+									<th><input type="number" min="0" name="Eval1E1" id="Eval1E1" onchange="Cal_1E()" > </td> 
+									<th><input type="number" min="0" name="Eval1E2" id="Eval1E2" onchange="Cal_1E()" > </td> 
+									<th><input type="number" min="0" name="Eval1ET" id="Eval1ET" Readonly ></td>
 								</tr>
 							</table>
 						
@@ -229,33 +229,33 @@ if(isset($_GET['evaluation'])){
 								</tr>	
 								<tr class="MF" >
 									<td >2.1. Exellent</td>
-									<th><input type="number" min="0" name="Eval2A1" id="Eval2A1" onchange="Cal_2A()" required> </td> 
-									<th><input type="number" min="0" name="Eval2A2" id="Eval2A2" onchange="Cal_2A()" required> </td> 
-									<th><input type="number" min="0" name="Eval2AT" id="Eval2AT" Readonly required></td>
+									<th><input type="number" min="0" name="Eval2A1" id="Eval2A1" onchange="Cal_2A()" > </td> 
+									<th><input type="number" min="0" name="Eval2A2" id="Eval2A2" onchange="Cal_2A()" > </td> 
+									<th><input type="number" min="0" name="Eval2AT" id="Eval2AT" Readonly ></td>
 								</tr>
 								<tr class="MF" >
 									<td >2.2. Very Satisfactory</td>
-									<th><input type="number" min="0" name="Eval2B1" id="Eval2B1" onchange="Cal_2B()" required> </td> 
-									<th><input type="number" min="0" name="Eval2B2" id="Eval2B2" onchange="Cal_2B()" required> </td> 
-									<th><input type="number" min="0" name="Eval2BT" id="Eval2BT" Readonly required></td>
+									<th><input type="number" min="0" name="Eval2B1" id="Eval2B1" onchange="Cal_2B()" > </td> 
+									<th><input type="number" min="0" name="Eval2B2" id="Eval2B2" onchange="Cal_2B()" > </td> 
+									<th><input type="number" min="0" name="Eval2BT" id="Eval2BT" Readonly ></td>
 								</tr>
 								<tr class="MF">
 									<td >2.3. Satisfactory</td>
-									<th><input type="number" min="0" name="Eval2C1" id="Eval2C1" onchange="Cal_2C()" required> </td> 
-									<th><input type="number" min="0" name="Eval2C2" id="Eval2C2" onchange="Cal_2C()" required> </td> 
+									<th><input type="number" min="0" name="Eval2C1" id="Eval2C1" onchange="Cal_2C()" > </td> 
+									<th><input type="number" min="0" name="Eval2C2" id="Eval2C2" onchange="Cal_2C()" > </td> 
 									<th><input type="number" min="0" name="Eval2CT" id="Eval2CT" Readonly></td>
 								</tr>
 								<tr class="MF">
 									<td > 2.4. Fair</td>
-									<th><input type="number" min="0" name="Eval2D1" id="Eval2D1" onchange="Cal_2D()" required> </td> 
-									<th><input type="number" min="0" name="Eval2D2" id="Eval2D2" onchange="Cal_2D()" required> </td> 
-									<th><input type="number" min="0" name="Eval2DT" id="Eval2DT" Readonly required></td>
+									<th><input type="number" min="0" name="Eval2D1" id="Eval2D1" onchange="Cal_2D()" > </td> 
+									<th><input type="number" min="0" name="Eval2D2" id="Eval2D2" onchange="Cal_2D()" > </td> 
+									<th><input type="number" min="0" name="Eval2DT" id="Eval2DT" Readonly ></td>
 								</tr>
 								<tr  class="MF">
 									<td >2.5. Poor</td>
-									<th><input type="number" min="0" name="Eval2E1" id="Eval2E1" onchange="Cal_2E()" required> </td> 
-									<th><input type="number" min="0" name="Eval2E2" id="Eval2E2" onchange="Cal_2E()" required> </td> 
-									<th><input type="number" min="0" name="Eval2ET" id="Eval2ET" Readonly required></td>
+									<th><input type="number" min="0" name="Eval2E1" id="Eval2E1" onchange="Cal_2E()" > </td> 
+									<th><input type="number" min="0" name="Eval2E2" id="Eval2E2" onchange="Cal_2E()" > </td> 
+									<th><input type="number" min="0" name="Eval2ET" id="Eval2ET" Readonly ></td>
 								</tr>
 						</table>
 				 	</div>
@@ -441,9 +441,8 @@ function Cal_2E(){
 <?php
 if (isset($_POST['submit'])) {
 
-	//$PID , $Author , $AID , $DateTime
-	$Author = $_SESSION["AID"];
-
+	//$PID , $dbAuthor , $AID - Evaluator , $DateTime
+	
 	$Title = htmlspecialchars($_POST['Title']);
 	$Location_Area = htmlspecialchars($_POST['Location']);
 	$Implementation = htmlspecialchars($_POST['Implementation']);
@@ -518,7 +517,7 @@ if (isset($_POST['submit'])) {
 			Pic1, Caption1, Pic2, Caption2, Pic3, Caption3,
 			Remarks, Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2)
 		VALUES 
-		('$PID', '$Author', '$AID', '$DateTime',
+		('$PID', '$dbAuthor', '$AID', '$DateTime',
 			'$Title', '$Location_Area', '$Implementation', '$Office', '$Agency', '$TypeCES', '$SDG', '$Beneficiaries',
 			'$M1', '$M2', '$MT', '$F1', '$F2', '$FT', '$MFT', '$People', '$Objectives', '$Narrative',
 			'$Eval1A1', '$Eval1A2', '$Eval1AT', '$Eval1B1', '$Eval1B2', '$Eval1BT', '$Eval1C1', '$Eval1C2', '$Eval1CT',
