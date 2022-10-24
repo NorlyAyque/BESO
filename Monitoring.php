@@ -7,8 +7,8 @@ include("Connection.php");
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Proposals - Approved</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
+<title>Monitoring</title>
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
 
 </head>
 <body>
@@ -32,7 +32,7 @@ include("Connection.php");
 				</a>
 			</li>
 			<li>
-				<a class="active" href="Proposal.php">
+				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
 				</a>
@@ -50,13 +50,13 @@ include("Connection.php");
 				</a>
 			</li>
 			<li>
-				<a href="Monitoring.php">
+				<a class="active" href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
 				</a>
 			</li>
 			<li>
-				<a href="Reports.php">
+				<a href="#">
 					<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
 					<span class ="title"> Reports</span>
 				</a>
@@ -87,75 +87,47 @@ include("Connection.php");
 			</div>
 			
 		<table class="proposals">
-				<tr>
-					<th colspan="5">
-						<div class="menu">
+			<tr>
+				<th colspan="5">
+					<div class="menu">
 							
-							<a href="Proposal.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
-							</button>
-							
-							<a href="Proposal-revision.php" button class = "nav"> Revsion <ion-icon name="warning-outline"></ion-icon></a>
-							</button>
-							
-							<a href="Proposal-approved.php" button class = "nav3"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
-							</button>
-						
-							<a href="Proposal-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
-							</button>
-							
-						</div>
-					</th> 
-					
-				</tr>
-				<tr  class="title">
-					<th colspan="5"><center>APPROVED PROPOSALS </th> 
-				</tr>
+						<a href="Monitoring.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
+						<a href="Monitoring-revision.php" button class = "nav"> Revsion <ion-icon name="warning-outline"></ion-icon></a>
+						<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
+						<a href="Monitoring-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>	
+					</div>
+				</th> 
+			</tr>
+
+			<tr  class="title">
+				<th colspan="5" ><center>PENDING PROPOSALS</th> 
+			</tr>
 				
-				<tr>
+			<tr>
 				<th width="50px"> Proposal ID </th>
 				<th width="350px"> Title </th>
 				<th width="200px";> Creator</th>
 				<th width="100px";> Status </th>
-				<th width="200px";>  </th>
+				<th width="270px";>  </th>
 			</tr>
-	
-<?php
-//Display all the Approved Proposals
-$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Approved' ");
-$command = $con->query($sql) or die("Error SQL");
-while($result = mysqli_fetch_array($command))
-	{
-		$PID = $result['ProposalID'];
-		$Title = $result['Title'];
-		$Creator = $result['AccountID'];
-		$Status = $result['Remarks'];
-		
-		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
-		$Command = $con->query($sql) or die("Error SQL");
-		while($result = mysqli_fetch_array($Command)){
-			$FN = $result['Firstname'];
-			$LN = $result['Lastname'];
-			$Fullname = $FN . " " . $LN;
-?>
+
 
 			<tr class="inputs">
-				<td><?php echo $PID; ?></td>
-				<td><?php echo $Title; ?></td> 
-				<td><?php echo $Fullname; ?></td> 
-				<td><?php echo $Status; ?></td> 	
-				<td>
-					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Abtn">View</button> </a> <br>
-					<a href="CreateEvaluation.php?evaluation=<?php echo $PID; ?>" target="_blank" button class="Abtn1">CREATE EVALUATION</button> </a> <br>
-					<a href="CreateMonitoring.php?monitoring=<?php echo $PID; ?>" target="_blank" button class="Abtn2">CREATE MONITORING</button> </a>
-					<br>
+				<td>sample4</td> >
+				<td>sample4</td> 
+				<td>sample4</td> 
+				<td>sample4</td> d> 	
+				<td width ="260px";>
+					<a href="#" button class ="Pbtn">View</button> </a>
+					<a href="#" button class ="Pbtn1">Revise</button> </a> 
+					<a href="#" button class ="Pbtn2">Approved</button> </a>
+					<a href="#" button class ="Pbtn3">Reject</button> </a>
 				</td> 
 			</tr>
-<?php } }?>
+
 			</table>	
 		</div>
 	</div>
-	
-	
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -184,3 +156,45 @@ while($result = mysqli_fetch_array($command))
 	</script>
 <body>
 </html>
+
+
+<?php
+if(isset($_GET['revise'])){
+	$PID = $_GET['revise'];
+
+	$sql = ("UPDATE create_alangilan SET Remarks = 'Need to Revise' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Proposal move to revision");
+	echo "
+		<script>
+			alert('Proposal ID $PID Move to Revision');	
+			window.location.href='Proposal.php';
+		</script>";
+}
+
+if(isset($_GET['approved'])){
+	$PID = $_GET['approved'];
+
+	$sql = ("UPDATE create_alangilan SET Remarks = 'Approved' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Proposal Approval");
+	echo "
+		<script>
+			alert('Proposal ID $PID APPROVED');	
+			window.location.href='Proposal.php';
+		</script>";
+}
+
+if(isset($_GET['reject'])){
+	$PID = $_GET['reject'];
+
+	$sql = ("UPDATE create_alangilan SET Remarks = 'Rejected' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Rejecting Proposal");
+	echo "
+		<script>
+			alert('Proposal ID $PID REJECTED');	
+			window.location.href='Proposal.php';
+		</script>";
+}
+
+
+
+?>

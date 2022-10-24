@@ -8,7 +8,7 @@ include("Connection.php");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
 
 </head>
 <body>
@@ -104,11 +104,11 @@ include("Connection.php");
 			</tr>
 				
 			<tr>
-				<th width="100px"> Proposal ID </th>
-				<th> Title </th>
-				<th width="300px";> Creator</th>
+				<th width="50px"> Proposal ID </th>
+				<th width="350px"> Title </th>
+				<th width="200px";> Creator</th>
 				<th width="100px";> Status </th>
-				<th width="150px";>  </th>
+				<th width="270px";>  </th>
 			</tr>
 
 <?php

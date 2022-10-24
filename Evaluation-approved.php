@@ -7,8 +7,8 @@ include("Connection.php");
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Proposals - Approved</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
+<title>Evaluation - Approved</title>
+<link rel="stylesheet" type="text/css" href="styles/EvaluationReport.css">
 
 </head>
 <body>
@@ -32,7 +32,7 @@ include("Connection.php");
 				</a>
 			</li>
 			<li>
-				<a class="active" href="Proposal.php">
+				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
 				</a>
@@ -44,7 +44,7 @@ include("Connection.php");
 				</a>
 			</li>
 			<li>
-				<a href="Evaluation.php">
+				<a class="active" href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
 				</a>
@@ -91,16 +91,16 @@ include("Connection.php");
 					<th colspan="5">
 						<div class="menu">
 							
-							<a href="Proposal.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
+							<a href="Evaluation.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
 							</button>
 							
-							<a href="Proposal-revision.php" button class = "nav"> Revsion <ion-icon name="warning-outline"></ion-icon></a>
+							<a href="Evaluation-revision.php" button class = "nav"> Revsion <ion-icon name="warning-outline"></ion-icon></a>
 							</button>
 							
-							<a href="Proposal-approved.php" button class = "nav3"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
+							<a href="Evaluation-approved.php" button class = "nav3"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 							</button>
 						
-							<a href="Proposal-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
+							<a href="Evaluation-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
 							</button>
 							
 						</div>
@@ -118,39 +118,20 @@ include("Connection.php");
 				<th width="100px";> Status </th>
 				<th width="200px";>  </th>
 			</tr>
-	
-<?php
-//Display all the Approved Proposals
-$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Approved' ");
-$command = $con->query($sql) or die("Error SQL");
-while($result = mysqli_fetch_array($command))
-	{
-		$PID = $result['ProposalID'];
-		$Title = $result['Title'];
-		$Creator = $result['AccountID'];
-		$Status = $result['Remarks'];
-		
-		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
-		$Command = $con->query($sql) or die("Error SQL");
-		while($result = mysqli_fetch_array($Command)){
-			$FN = $result['Firstname'];
-			$LN = $result['Lastname'];
-			$Fullname = $FN . " " . $LN;
-?>
+
 
 			<tr class="inputs">
-				<td><?php echo $PID; ?></td>
-				<td><?php echo $Title; ?></td> 
-				<td><?php echo $Fullname; ?></td> 
-				<td><?php echo $Status; ?></td> 	
+				<td>sample1</td>
+				<td>sample1</td> 
+				<td>sample1</td> 
+				<td>sample1</td> 	
 				<td>
-					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Abtn">View</button> </a> <br>
-					<a href="CreateEvaluation.php?evaluation=<?php echo $PID; ?>" target="_blank" button class="Abtn1">CREATE EVALUATION</button> </a> <br>
-					<a href="CreateMonitoring.php?monitoring=<?php echo $PID; ?>" target="_blank" button class="Abtn2">CREATE MONITORING</button> </a>
-					<br>
+					<a href="#" button class="Abtn">View</button> </a> <br>
+					<a href="#" button class="Abtn1">CREATE EVALUATION</button> </a> <br>
+					<a href="#" button class="Abtn2">CREATE MONITORING</button> </a>
 				</td> 
 			</tr>
-<?php } }?>
+
 			</table>	
 		</div>
 	</div>
