@@ -144,7 +144,7 @@ if(isset($_GET['monitoring'])){
 						<textarea placeholder="type here..." name="Office" required><?Php echo $dbOffice; ?></textarea> 
 						
 						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i></label>
-						<textarea placeholder="type here..." name="Programs" required><?Php echo $dbProgram; ?></textarea> 
+						<textarea placeholder="type here..." name="Programs" required><?Php echo $dbPrograms; ?></textarea> 
 						
 						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i></label>
 						<textarea placeholder="type here..." name="People" required><?Php echo $dbPeople; ?></textarea> 

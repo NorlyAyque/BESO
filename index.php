@@ -127,6 +127,9 @@ if (isset($_POST['Login'])){
 			if ($dbCampus == "Alangilan"){
 				$_SESSION["target_table"] = "target_alangilan";
 				$_SESSION["create_table"] = "create_alangilan";
+			}($dbCampus == "Lipa"){
+				$_SESSION["target_table"] = "target_lipa";
+				$_SESSION["create_table"] = "create_lipa";
 			}
 		}
 		else{
