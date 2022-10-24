@@ -8,9 +8,9 @@ $sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
-		$PID = $result['ProposalID'];
-		$AID = $result['AccountID'];
-		$Date_Time = $result['Date_Time'];
+		//$PID = $result['ProposalID'];
+		//$AID = $result['AccountID'];
+		//$Date_Time = $result['Date_Time'];
 
 		$Initiated = $result['Initiated'];
 		$Classification = $result['Classification'];
@@ -34,7 +34,7 @@ while($result = mysqli_fetch_array($command))
 		$XVII = $result['Monitoring'];
 		$XVIII = $result['Plans'];
 		
-		$Remarks = $result['Remarks'];
+		//$Remarks = $result['Remarks'];
 
 		$Sign1_1 = $result['Sign1_1'];
 		$Sign1_2 = $result['Sign1_2'];

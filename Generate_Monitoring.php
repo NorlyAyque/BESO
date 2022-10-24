@@ -4,36 +4,37 @@ include("Connection.php");
 
 if(isset($_GET['view'])){ $MID = $_GET['view']; }
 
-$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $MID");
+$sql = ("SELECT * FROM monitoring_alangilan WHERE MonitoringID = $MID");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
-		$PID = $result['ProposalID'];
-		$AID = $result['AccountID'];
-		$Date_Time = $result['Date_Time'];
-
-		$I = $result['Title'];
-		$II = $result['Location_Area'];
-		$III = $result['Duration'];
-		$IV = $result['TypeCES'];
-		$V = $result['SDG'];
-		$VI = $result['Office'];
-		$VII = $result['Programs'];
-		$VIII = $result['People'];
-		$IX = $result['Agencies'];
-		$X = $result['Beneficiaries'];
-		$XI = $result['Cost'];
-		$XII = $result['Rationale'];
-		$XIII = $result['Objectives'];
-		$XIV = $result['Descriptions'];
-		$XV = $result['Financial'];
-		$XVI = $result['Functional'];
-		$XVII = $result['Monitoring'];
-		$XVIII = $result['Plans'];
 		
-		$Remarks = $result['Remarks'];
+		$Title = $result['Title'];
+		$Location_Area = $result['Location_Area'];
+		$Duration = $result['Duration'];
+		$TypeCES = $result['TypeCES'];
+		$SDG = $result['SDG'];
+		$Office = $result['Office'];
+		$Programs = $result['Programs'];
+		$People = $result['People'];
+		$Agencies = $result['Agency'];
+		$Beneficiaries = $result['Beneficiaries'];
+		
+		$PS1 = $result['PS1'];
+		$PS2 = $result['PS2'];
+		$PS3 = $result['PS3'];
+		$PS4 = $result['PS4'];
+		$PS5 = $result['PS5'];
+		$PS6 = $result['PS6'];
+		$PS7 = $result['PS7'];
+	 
+		$Sign1_1 = $result['Sign1_1'];
+		$Sign1_2 = $result['Sign1_2'];
+		$Sign2_1 = $result['Sign2_1'];
+		$Sign2_2 = $result['Sign2_2'];
+		$Sign3_1 = $result['Sign3_1'];
+		$Sign3_2 = $result['Sign3_2'];
 	}
-
 
 class PDF extends FPDF
 {
@@ -110,61 +111,61 @@ $indent = 35;
 
 $pdf->Multicell($Length, $Spacing, 'I.          Title of the Project:', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $I, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $Title, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'II.         Location:', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $II, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $Location_Area, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'III.       Duration;', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $III, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $Duration, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'IV.       Type of Community Extension Service:', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $IV, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $TypeCES, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'V.        Sustainable Development Goals (SDG):', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $V, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $SDG, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'VI.       Office/s / College/s Involved:', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $VI, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $Office, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'VII.      Program/s Involved (specify the programs under the college implementing the project):', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $VII, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $Programs, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'VIII.     Project Leader, Assistant Project Leader and Coordinators:', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $VIII, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $People, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'IX.       Cooperating Agencies:', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $IX, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $Agencies, $Border, 'J');
 
 $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'X.        Beneficiaries (Type and Number of Male and Female):', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $X, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $Beneficiaries, $Border, 'J');
 
 $pdf->Ln();
 
@@ -172,37 +173,37 @@ $pdf->Multicell($Length, $Spacing, 'XI.        Project Status:', $Border, 'L');
 
 $pdf->Multicell($Length, $Spacing,'               1. As to purpose (how far has the purpose been attained)', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, $XI, 'J');
+$pdf->Multicell(155, $Spacing, $PS1, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               2. Availability of materials', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, $XI, 'J');
+$pdf->Multicell(155, $Spacing, $PS2, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               3. Schedule of activities', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, $XI, 'J');
+$pdf->Multicell(155, $Spacing, $PS3, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               4. Financial report', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, $XI, 'J');
+$pdf->Multicell(155, $Spacing, $PS4, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               5. Problems encountered', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, $XI, 'J');
+$pdf->Multicell(155, $Spacing, $PS5, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               6. Actions taken to solve the problems encountered', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, $XI, 'J');
+$pdf->Multicell(155, $Spacing, $PS6, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               7. Suggestions and recommendations', $Border, 'J');
 $pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, $XI, 'J');
+$pdf->Multicell(155, $Spacing, $PS7, 'J');
 
 $pdf->Ln();
 
@@ -215,15 +216,16 @@ $pdf->SetX(15);
 $pdf->Cell(92.95, 5, 'Prepared By:', 'T', 0, 'L');
 $pdf->Cell(92.95, 5, 'Reviewed By:', 'L,T', 1, 'L');
 
-$pdf->Cell(92.95, 7, '', 0, 0, 'L'); $pdf->Cell(92.95, 7, '', 'L', 1, 'L');
+$pdf->Cell(92.95, 7, '', 0, 0, 'L'); 
+$pdf->Cell(92.95, 7, '', 'L', 1, 'L');
 
 //Box 1 Names
-$pdf->Cell(92.95, 5, 'NAME', 0, 0, 'C');
-$pdf->Cell(92.95, 5, 'NAME', 'L', 1, 'C');
+$pdf->Cell(92.95, 5, $Sign1_1, 0, 0, 'C');
+$pdf->Cell(92.95, 5, $Sign2_1, 'L', 1, 'C');
 
 //Box 1 Designation
-$pdf->Cell(92.95, 5, 'Designation', 0, 0, 'C');
-$pdf->Cell(92.95, 5, 'Designation', 'L',1,'C');
+$pdf->Cell(92.95, 5, $Sign1_2, 0, 0, 'C');
+$pdf->Cell(92.95, 5, $Sign2_2, 'L',1,'C');
 
 //Box 1 Date Signed
 $pdf->Cell(92.95, 5, '     Date Signed:', 0, 0, 'L');
@@ -238,11 +240,11 @@ $pdf->Cell(92.95, 5, 'Remarks:', 'L,T', 1, 'L');
 $pdf->Cell(92.95, 7, '', 0, 0, 'L'); $pdf->Cell(92.95, 7, '', 'L', 1, 'L');
 
 //Box 2 Names
-$pdf->Cell(92.95, 5, 'NAME', 0, 0, 'C');
+$pdf->Cell(92.95, 5, $Sign3_1, 0, 0, 'C');
 $pdf->Cell(92.95, 5, '', 'L', 1, 'C');
 
 //Box 2 Designation
-$pdf->Cell(92.95, 5, 'Designation', 0, 0, 'C');
+$pdf->Cell(92.95, 5, $Sign3_2, 0, 0, 'C');
 $pdf->Cell(92.95, 5, '', 'L',1,'C');
 
 //Box 2 Date Signed

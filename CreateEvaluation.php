@@ -272,21 +272,21 @@ if(isset($_GET['evaluation'])){
 						<label> Narrative Activity</i></label>
 						<textarea placeholder="type here..."  name="Narrative" required></textarea> 
 						<br>
-						<label>  Photos <i>(Please attach  3 photos with captions):</i> </label>
+						<label>  Photos <i>(Please attach  3 photos with captions) <br>(Accepts JPEG only):</i> </label>
 						
 						<div class ="pics1">
 							 <label> Select Picture 1:</label>
-							 <input type="file" name="Pic1"></input>
+							 <input type="file" name="Pic1" accept="=image/jpeg"></input>
 							 <textarea class ="caption" placeholder="caption here..." name="Caption1"></textarea> 
 						</div>	 
 						<div class ="pics2">
 							<label> Select Picture 2:</label>
-							  <input type="file" name="Pic2"></input>
+							  <input type="file" name="Pic2" accept="=image/jpeg"></input>
 							  <textarea class ="caption" placeholder="caption here..." name="Caption2"></textarea> 
 						</div>	
 						<div class ="pics2">
 						<label> Select Picture 3:</label>
-							   <input type="file" name="Pic3"></input>
+							   <input type="file" name="Pic3" accept="=image/jpeg"></input>
 							   <textarea class ="caption" placeholder="caption here..." name="Caption3"></textarea> 
 						</div>	
 					</div>

@@ -4,37 +4,83 @@ include("Connection.php");
 
 if(isset($_GET['view'])){ $EID = $_GET['view']; }
 
-$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $MID");
+$sql = ("SELECT * FROM evaluation_alangilan WHERE EvaluationID = $EID");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
-		$PID = $result['ProposalID'];
-		$AID = $result['AccountID'];
-		$Date_Time = $result['Date_Time'];
-
-		$I = $result['Title'];
-		$II = $result['Location_Area'];
-		$III = $result['Duration'];
-		$IV = $result['TypeCES'];
-		$V = $result['SDG'];
-		$VI = $result['Office'];
-		$VII = $result['Programs'];
-		$VIII = $result['People'];
-		$IX = $result['Agencies'];
-		$X = $result['Beneficiaries'];
-		$XI = $result['Cost'];
-		$XII = $result['Rationale'];
-		$XIII = $result['Objectives'];
-		$XIV = $result['Descriptions'];
-		$XV = $result['Financial'];
-		$XVI = $result['Functional'];
-		$XVII = $result['Monitoring'];
-		$XVIII = $result['Plans'];
+		$Title = $result['Title'];
+		$Location_Area = $result['Location_Area'];
+		$Implementation = $result['Implementation'];
+		$Office = $result['Office'];
+		$Agencies = $result['Agency'];
+		$TypeCES = $result['TypeCES'];
+		$SDG = $result['SDG'];
+		$Beneficiaries = $result['Beneficiaries'];
 		
-		$Remarks = $result['Remarks'];
-	}
+		$M1 = $result['M1'];
+		$M2 = $result['M2'];
+		$MT = $result['MT'];
+		$F1 = $result['F1'];
+		$F2 = $result['F2'];
+		$FT = $result['FT'];
+		$MFT = $result['MFT'];
 
-$x = 77;
+		$People = $result['People'];
+		$Objectives = $result['Objectives'];
+		$Narrative = $result['Narrative'];
+
+		$Eval1A1 = $result['Eval1A1'];
+		$Eval1A2 = $result['Eval1A2'];
+		$Eval1AT = $result['Eval1AT'];
+		$Eval1B1 = $result['Eval1B1'];
+		$Eval1B2 = $result['Eval1B2'];
+		$Eval1BT = $result['Eval1BT'];
+		$Eval1C1 = $result['Eval1C1'];
+		$Eval1C2 = $result['Eval1C2'];
+		$Eval1CT = $result['Eval1CT'];
+		$Eval1D1 = $result['Eval1D1'];
+		$Eval1D2 = $result['Eval1D2'];
+		$Eval1DT = $result['Eval1DT'];
+		$Eval1E1 = $result['Eval1E1'];
+		$Eval1E2 = $result['Eval1E2'];
+		$Eval1ET = $result['Eval1ET'];
+
+		$Eval2A1 = $result['Eval2A1'];
+		$Eval2A2 = $result['Eval2A2'];
+		$Eval2AT = $result['Eval2AT'];
+		$Eval2B1 = $result['Eval2B1'];
+		$Eval2B2 = $result['Eval2B2'];
+		$Eval2BT = $result['Eval2BT'];
+		$Eval2C1 = $result['Eval2C1'];
+		$Eval2C2 = $result['Eval2C2'];
+		$Eval2CT = $result['Eval2CT'];
+		$Eval2D1 = $result['Eval2D1'];
+		$Eval2D2 = $result['Eval2D2'];
+		$Eval2DT = $result['Eval2DT'];
+		$Eval2E1 = $result['Eval2E1'];
+		$Eval2E2 = $result['Eval2E2'];
+		$Eval2ET = $result['Eval2ET'];
+
+		$Pic1 = $result['Pic1'];
+		$pic = 'data:image/*;base64,'.base64_encode($result['Pic1']);
+		$Caption1 = $result['Caption1'];
+		$Pic2 = $result['Pic2'];
+		$Caption2 = $result['Caption2'];
+		$Pic3 = $result['Pic3'];
+		$Caption3 = $result['Caption3'];
+
+		$Sign1_1 = $result['Sign1_1'];
+		$Sign1_2 = $result['Sign1_2'];
+		$Sign2_1 = $result['Sign2_1'];
+		$Sign2_2 = $result['Sign2_2'];
+		$Sign3_1 = $result['Sign3_1'];
+		$Sign3_2 = $result['Sign3_2'];
+	}
+?>
+	
+<?php
+
+
 class PDF extends FPDF
 {
 	function Header(){
@@ -104,36 +150,36 @@ $pdf->Row2();
 $pdf->SetFont('Times','',10);
 
 $pdf->Cell(70, 7, 'Title of the Project or Activity:', 0, 0, 'L');
-$pdf->multicell(115.9, 5, $II, 1, 'J');
+$pdf->multicell(115.9, 5, $Title, 1, 'J');
 
 $pdf->Cell(70, 7, 'Location:', 'T', 0, 'L');
-$pdf->multicell(115.9, 5, $II, 1, 'J');
+$pdf->multicell(115.9, 5, $Location_Area, 1, 'J');
 
 $pdf->Cell(70, 5, 'Date of Implementation /','T,R', 0,'L');
-$pdf->Cell(115.9, 5, $I, 0, 1, 'J');
+$pdf->Cell(115.9, 5, $Implementation , 0, 1, 'J');
 
 $pdf->Cell(70, 5, 'Number of hours of implementation:','R,B', 0,'L');
-$pdf->Cell(115.9, 5, $I, 'B', 1, 'J');
+$pdf->Cell(115.9, 5, '', 'B', 1, 'J');
 
 ////
 $pdf->Cell(70, 5, 'Implementing Office/ College / Program','R', 1,'L');
 $pdf->Cell(70, 5, '(specify the programs under the college','R', 0,'L');
-$pdf->multicell(115.9, 5, $II, 'L', 'J');
+$pdf->multicell(115.9, 5, $Office, 'L', 'J');
 $pdf->Cell(70, 5, 'implementing the project):','R,B', 1,'L');
 ////
 
 $pdf->Cell(70, 7, 'Partner Agency:', 'R', 0, 'L');
-$pdf->multicell(115.9, 5, $II, 'L,T,B', 'J');
+$pdf->multicell(115.9, 5, $Agencies, 'L,T,B', 'J');
 
 $pdf->Cell(70, 7, 'Type of Community Extension Service:', 'T,R', 0, 'L');
-$pdf->multicell(115.9, 5, $II, 'L,B', 'J');
+$pdf->multicell(115.9, 5, $TypeCES, 'L,B', 'J');
 
 $pdf->Cell(70, 7, 'Sustainable Development Goals:', 'T,R', 0, 'L');
-$pdf->multicell(115.9, 5, $II, 'L,B', 'J');
+$pdf->multicell(115.9, 5, $SDG, 'L,B', 'J');
 
 $pdf->Cell(70, 5, 'Number of Male and Female and Type of', 'T,R', 1, 'L');
 $pdf->Cell(70, 5, 'Beneficiaries (Type such as OSY, Children,', 'R', 0, 'L');
-$pdf->Cell(115.9, 5, 'Type of participants: '.$I, 'R', 1, 'C');
+$pdf->Cell(115.9, 5, 'Type of participants:  '.$Beneficiaries, 'R', 1, 'C');
 $pdf->Cell(70, 5, 'Women, etc.)', 0, 0, 'L');
 
 ////Table for Numner of Male and Female
@@ -150,37 +196,37 @@ $pdf->Cell(20, 4, '', 'L,B', 1, 'C');
 
 $pdf->SetX(85);
 $pdf->Cell(20.9, 5, 'Male', 1, 0, 'C');
-$pdf->Cell(37.5, 5, $x, 1, 0, 'C');
-$pdf->Cell(37.5, 5, $x, 1, 0, 'C');
-$pdf->Cell(20, 5, $x, 1, 1, 'C');
+$pdf->Cell(37.5, 5, $M1, 1, 0, 'C');
+$pdf->Cell(37.5, 5, $M2, 1, 0, 'C');
+$pdf->Cell(20, 5, $MT, 1, 1, 'C');
 
 $pdf->SetX(85);
 $pdf->Cell(20.9, 5, 'Female', 1, 0, 'C');
-$pdf->Cell(37.5, 5, $x, 1, 0, 'C');
-$pdf->Cell(37.5, 5, $x, 1, 0, 'C');
-$pdf->Cell(20, 5, $x, 1, 1, 'C');
+$pdf->Cell(37.5, 5, $F1, 1, 0, 'C');
+$pdf->Cell(37.5, 5, $F2, 1, 0, 'C');
+$pdf->Cell(20, 5, $FT, 1, 1, 'C');
 
 $pdf->SetX(85);
 $pdf->Cell(95.9, 5, 'Grand Total', 1, 0, 'R');
-$pdf->Cell(20, 5, $x, 1, 0, 'C');
+$pdf->Cell(20, 5, $MFT, 1, 0, 'C');
 //End Table
 
 $pdf->Ln(5);
 $pdf->Cell(185.9, 5, 'Project Leader, Assistant Project Leader, Coordinators:', 'T', 1, 'L');
 $pdf->SetX(25);
-$pdf->multicell(171.9, 5, $II, 0, 'J');
+$pdf->multicell(171.9, 5, $People, 0, 'J');
 
 $pdf->Ln(3);
 
 $pdf->Cell(185.9, 5, 'Objectives:', 'T', 1, 'L');
 $pdf->SetX(25);
-$pdf->multicell(171.9, 5, $II, 0, 'J');
+$pdf->multicell(171.9, 5, $Objectives, 0, 'J');
 
 $pdf->Ln(3);
 
 $pdf->Cell(185.9, 5, 'Narrative of the Activity:', 'T', 1, 'L');
 $pdf->SetX(25);
-$pdf->multicell(171.9, 5, $II, 0, 'J');
+$pdf->multicell(171.9, 5, $Narrative, 0, 'J');
 
 $pdf->Ln(3);
 
@@ -200,37 +246,37 @@ $pdf->Cell(15, 7, 'Total', 1, 1, 'C');
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.1.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Excellent', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval1A1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval1A2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval1AT, 1, 1, 'C');
 
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.2.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Very Satisfactory', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval1B1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval1B2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval1BT, 1, 1, 'C');
 
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.3.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Satisfactory', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval1C1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval1C2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval1CT, 1, 1, 'C');
 
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.4.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Fair', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval1D1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval1D2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval1DT, 1, 1, 'C');
 
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.5.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Poor', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval1E1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval1E2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval1ET, 1, 1, 'C');
 
 $pdf->Ln(3);
 
@@ -247,52 +293,68 @@ $pdf->Cell(15, 7, 'Total', 1, 1, 'C');
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.1.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Excellent', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval2A1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval2A2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval2AT, 1, 1, 'C');
 
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.2.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Very Satisfactory', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval2B1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval2B2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval2BT, 1, 1, 'C');
 
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.3.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Satisfactory', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval2C1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval2C2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval2CT, 1, 1, 'C');
 
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.4.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Fair', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval2D1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval2D2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval2DT, 1, 1, 'C');
 
 $pdf->SetX(25);
 $pdf->Cell(10.9, 5, '1.5.', 1, 0, 'C');
 $pdf->Cell(35, 5, 'Poor', 1, 0, 'L');
-$pdf->Cell(50, 5, $x, 1, 0, 'C');
-$pdf->Cell(55, 5, $x, 1, 0, 'C');
-$pdf->Cell(15, 5, $x, 1, 1, 'C');
+$pdf->Cell(50, 5, $Eval2E1, 1, 0, 'C');
+$pdf->Cell(55, 5, $Eval2E2, 1, 0, 'C');
+$pdf->Cell(15, 5, $Eval2ET, 1, 1, 'C');
 
 $pdf->Ln(5);
 
-$Height = 60;
-$Width = 60;
+$Height = 50;
+$Width = 80;
 
 $pdf->Cell(185.9, 5, 'Photos (Please attach photos with caption):', 'T', 1, 'L');
 $pdf->Ln(5);
 
-$pdf->Cell(61.97, $Height, $pdf->Image('images/logo.png', $pdf->GetX(), $pdf->GetY(), $Height, $Width), 0, 0, 'C');
-$pdf->Cell(61.97, $Height, $pdf->Image('images/back.jpg', $pdf->GetX(), $pdf->GetY(), $Height, $Width), 0, 0, 'C');
-$pdf->MultiCell(61.97, $Height, $pdf->Image('images/logo.png', $pdf->GetX(), $pdf->GetY(), $Height, $Width), 0, 'C');
+$pdf->Cell(115, 50, $pdf->Image($pic, $pdf->GetX(), $pdf->GetY(), $Width, $Height,'jpeg'), 1, 0, 'C');
+//$pdf->Cell(115, 50, $pdf->Image($Pic1, $pdf->GetX(), $pdf->GetY(), $Width, $Height), 1, 0, 'C');
+//$hi = '<img src="data:image/jpeg;base64,'.base64_encode( $result['Pic1'] ).'" alt="Image Unavailbale" width=250 height=200 />';
 
 
-$pdf->Ln(5);
+//$pdf->Image($pic, 10,30,20,20,'jpeg');
+
+//$pdf->MemImage($Pic1);
+
+//$pdf->Ln(5);
+
+//$pdf->Cell(115, 50, $pdf->Image($Pic1, $pdf->GetX(), $pdf->GetY(), $Height, $Width), 1, 0, 'C');
+//$pdf->Multicell(70.9, 5, $Caption1, 1, 'C');
+
+//$pdf->Cell(61.97, $Height, $pdf->Image('images/back.jpg', $pdf->GetX(), $pdf->GetY(), $Height, $Width), 1, 0, 'C');
+//$pdf->Cell(61.97, $Height, $pdf->Image('images/logo.png', $pdf->GetX(), $pdf->GetY(), $Height, $Width), 1, 1, 'C');
+
+
+
+
+
+$pdf->Ln(50);
 
 //Signatories
 
@@ -303,15 +365,16 @@ $pdf->SetX(15);
 $pdf->Cell(92.95, 5, 'Prepared By:', 'T', 0, 'L');
 $pdf->Cell(92.95, 5, 'Reviewed By:', 'L,T', 1, 'L');
 
-$pdf->Cell(92.95, 7, '', 0, 0, 'L'); $pdf->Cell(92.95, 7, '', 'L', 1, 'L');
+$pdf->Cell(92.95, 7, '', 0, 0, 'L'); 
+$pdf->Cell(92.95, 7, '', 'L', 1, 'L');
 
 //Box 1 Names
-$pdf->Cell(92.95, 5, 'NAME', 0, 0, 'C');
-$pdf->Cell(92.95, 5, 'NAME', 'L', 1, 'C');
+$pdf->Cell(92.95, 5, $Sign1_1, 0, 0, 'C');
+$pdf->Cell(92.95, 5, $Sign2_1, 'L', 1, 'C');
 
 //Box 1 Designation
-$pdf->Cell(92.95, 5, 'Designation', 0, 0, 'C');
-$pdf->Cell(92.95, 5, 'Designation', 'L',1,'C');
+$pdf->Cell(92.95, 5, $Sign1_2, 0, 0, 'C');
+$pdf->Cell(92.95, 5, $Sign2_2, 'L',1,'C');
 
 //Box 1 Date Signed
 $pdf->Cell(92.95, 5, '     Date Signed:', 0, 0, 'L');
@@ -326,11 +389,11 @@ $pdf->Cell(92.95, 5, 'Remarks:', 'L,T', 1, 'L');
 $pdf->Cell(92.95, 7, '', 0, 0, 'L'); $pdf->Cell(92.95, 7, '', 'L', 1, 'L');
 
 //Box 2 Names
-$pdf->Cell(92.95, 5, 'NAME', 0, 0, 'C');
+$pdf->Cell(92.95, 5, $Sign3_1, 0, 0, 'C');
 $pdf->Cell(92.95, 5, '', 'L', 1, 'C');
 
 //Box 2 Designation
-$pdf->Cell(92.95, 5, 'Designation', 0, 0, 'C');
+$pdf->Cell(92.95, 5, $Sign3_2, 0, 0, 'C');
 $pdf->Cell(92.95, 5, '', 'L',1,'C');
 
 //Box 2 Date Signed
@@ -338,4 +401,5 @@ $pdf->Cell(92.95, 5, '     Date Signed:', 'B', 0, 'L');
 $pdf->Cell(92.95, 5, '', 'L,B', 1, 'L');
 
 $pdf->Output();
+
 ?>
