@@ -37,7 +37,7 @@ if(isset($_GET['evaluation'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Update Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/EditEvaluation.css">
+<link rel="stylesheet" type="text/css" href="styles/EditEvaluations.css">
 
 </head>
 <body>
@@ -67,21 +67,21 @@ if(isset($_GET['evaluation'])){
 				</a>
 			</li>
 			<li>
-				<a href="EditProposal.php">
+				<a href="CreateProposal.php">
 					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
-					<span class ="title"> Edit Proposal</span>
+					<span class ="title">  Create Proposal</span>
 				</a>
 			</li>
 			<li>
 				<a class="active" href="EditEvaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
-					<span class ="title"> Edit Evaluation Reports</span>
+					<span class ="title"> Evaluation Reports</span>
 				</a>
 			</li>
 			<li>
-				<a href="EditMonitoring.php">
+				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
-					<span class ="title"> Edit Monitoring Reports</span>
+					<span class ="title">  Monitoring Reports</span>
 				</a>
 			</li>
 			<li>
@@ -118,7 +118,7 @@ if(isset($_GET['evaluation'])){
 			<table class="header">
 				<tr class="title">
 					<th>
-						EDIT EXTENSION PROGRAM PLAN/EVALUATION REPORT	
+						EDIT EVALUATION REPORT	
 					</th> 
 				</tr>
 			</table>

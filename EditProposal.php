@@ -16,7 +16,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Update Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/EditProposal.css">
+<link rel="stylesheet" type="text/css" href="styles/EditProposals.css">
 
 </head>
 <body>
@@ -46,21 +46,21 @@ $DateTime = date("M, d Y; h:i:s A");
 				</a>
 			</li>
 			<li>
-				<a class="active" href="EditProposal.php">
+				<a class="active" href="CreateProposal.php">
 					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
-					<span class ="title"> Edit Proposal </span>
+					<span class ="title"> Create Proposal </span>
 				</a>
 			</li>
 			<li>
-				<a href="EditEvaluation.php">
+				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
-					<span class ="title">  Edit Evaluation  Reports</span>
+					<span class ="title">   Evaluation  Reports</span>
 				</a>
 			</li>
 			<li>
-				<a href="EditMonitoring.php">
+				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
-					<span class ="title">  Edit Monitoring  Reports </span>
+					<span class ="title">  Monitoring  Reports </span>
 				</a>
 			</li>
 			<li>
@@ -97,7 +97,7 @@ $DateTime = date("M, d Y; h:i:s A");
 			<table class="header">
 				<tr class="title">
 					<th colspan="3">
-						EDIT EXTENSION PROGRAM PLAN/PROJECT PROPOSAL	
+						EDIT PROJECT PROPOSAL	
 					</th> 
 				</tr>
 				<tr class ="select">

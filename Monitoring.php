@@ -100,7 +100,7 @@ include("Connection.php");
 			</tr>
 
 			<tr  class="title">
-				<th colspan="5" ><center>PENDING PROPOSALS</th> 
+				<th colspan="5" ><center>PENDING MONITORING REPORTS</th> 
 			</tr>
 				
 			<tr>

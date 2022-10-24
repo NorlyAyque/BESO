@@ -153,9 +153,8 @@ body{
 	line-height: 70px;
 	text-align: start;
 	white-space: nowrap;
-	font-size: 16px;
+	font-size: 17px;
 	font-weight:bold;
-	margin-left:-25px;
 	
 }
 .navigation ul li a .title1{
@@ -205,6 +204,13 @@ body{
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
 }
+.navigation li .active{
+text-decoration: underline;
+text-underline-position: under;
+text-decoration-thickness:3px;
+}
+
+
 /***Main***/
 .main{
 	position: abosolute;
@@ -238,12 +244,6 @@ margin-left: 100px;
 	margin-left: 30px;
 }
 
-.navigation li .active{
-text-decoration: underline;
-text-underline-position: under;
-text-decoration-thickness:3px;
-}
-
 .header{
   width: 97%;
   margin-left:30px;
@@ -252,21 +252,95 @@ text-decoration-thickness:3px;
   overflow:hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
   display:fixed;
-  border: 1px solid black; 
+  border-top: 1px solid black; 
+  border-left: 1px solid black; 
+  border-right: 1px solid black; 
   text-decoration:none;
   
 }
-
-.header .title th{
-  padding-top: 40px;
-  padding-bottom: 40px;
+.header1{
+  width: 97%;
+  margin-left:30px;
+  margin-right:30px;
+  border-radius: 3px 3px 0 0;
+  overflow:hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  display:fixed;
+  border-left: 1px solid black; 
+  border-right: 1px solid black; 
+  border-bottom: 1px solid black;
+  text-decoration:none;
+}
+.header1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--red);
+  color: white;
+  font-weight:bold;
+  text-decoration:none; 
+}
+.header .title th:nth-child(1){
+  padding-top: 12px;
+  padding-bottom: 12px;
   text-align: center;
   background-color: var(--red);
   color: white;
   font-weight:bold;
   text-decoration:none;
-  font-size:35px;	
+  font-size:30px;
+	
 }
+
+.header th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background-color: var(--red);
+  color: white;
+  font-weight:bold;
+  text-decoration:none;
+  
+  
+}
+.header .select th:nth-child(1){
+	font-size:15px;
+	
+}
+
+
+ .select input{
+  cursor: pointer;
+  height: 18px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top:-4px;
+  vertical-align: middle;
+  margin-right:10px;
+}
+
+ .select1 input{
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  margin-top:-4px;
+  vertical-align: middle;
+  margin-right:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Fill Up */
@@ -310,7 +384,7 @@ text-decoration-thickness:3px;
 
 
 
-.Create  .input-field textarea {
+.Create  .input-field input, textarea {
   margin-top:5px;
   width: 100%;
   height: 70px;
@@ -324,176 +398,10 @@ text-decoration-thickness:3px;
   display: inline-block;
 }
 
-  .input-field1 textarea {
-  margin-top:5px;
-  width: 100%;
-  height: 250px;
-  padding: 10px 11px;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
-  font-size: 15px;
-  resize: none;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
-  margin: 5px 0 22px 0;
-  display: inline-block;
-}
-.input-field1 label{
-	font-weight:bold;
-	color#444;
+
+
 	
-}
-.Create .input-field1 {
-  padding: 12px 5px;
-  width: auto;
-}
 
-
-
-
-
-
-.participants {
-	overflow:hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.2);
-	border-radius: 3px 3px 0 0;
-	border: 1px solid black; 	
-	margin-left:auto;
-	margin-right:auto;
-}
-.participants th {
-  border-collapse: collapse;
-  color: white;
-  font-weight:bold;
-  padding: 8px 35px ;
-  background-color: var(--red);
-  display:abosolute; 
-  
-  
-}
-
-.participants  td,input {
-  margin-top:-15px;
-  resize: none;
-  font-weight:bold;
-  width: 50px;
-  text-align: center;
-  height:60px;
-  
-}
-.participants .total td{
-	color:white;
-}
-.participants .total  td:nth-child(1){
-	 background-color:  var(--red); 
-}
-.participants tr:hover {
-	background-color: #ddd;
-	cursor:pointer;
-
-}
-.participants .types input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  font-size:18px;
-}
-
-.Evaluation {
-	overflow:hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.2);
-	border-radius: 3px 3px 0 0;
-	border: 1px solid black; 	
-	margin-left:auto;
-	margin-right:auto;
-}
-.Evaluation .th1 th {
-  border-collapse: collapse;
-  color: white;
-  font-weight:bold;
-  padding: 8px 20px;
-  background-color: var(--red);
-  display:abosolute; 
-  
-}
- .Evaluation .MF  td{
-	font-size:12px;
-	text-align: left;
-	
-	
-}	
-.Evaluation  td,input {
-  font-weight:bold;
-  resize: none;
-  font-weight:bold;
- width: 50px;
-  text-align: center;
-  height:40px;
-  
-}
-.Evaluation .total td{
-	color:white;
-}
-.Evaluation .total  td:nth-child(1){
-	 background-color:  var(--red); 
-}
-.Evaluation tr:hover {
-	background-color: #ddd;
-	cursor:pointer;
-
-}
-.pics1 textarea{
-	width:65%;
-	font-size:15px;
-	height:40px;
-}
-.pics2 textarea{
-	width:65%;
-	font-size:15px;
-	height:40px;
-}
-.pics3 textarea{
-	width:65%;
-	font-size:15px;
-	height:40px;
-}
-
-.pics1{
-
-	margin-top:30px;
-}
-.pics1 label,input{
-	 font-weight: normal;
-	 margin-bottom:-20px;
-}
-
-.pics1 input{
-	width: auto;
-}
-
-.pics2 label,input{
-	 font-weight: normal;
-	  margin-bottom:-20px;
-}
-
-.pics2 input{
-	width: auto;
-}
-
-.pics3 label,input{
-	 font-weight: normal;
-	  margin-bottom:-20px;
-}
-
-.pics3 input{
-	width: auto;
-}
-
-.submit:hover {
-  background-color:  #4CAF20;
-  color: white;
-}
 
 .signiture{
   width: 97%;
@@ -517,7 +425,7 @@ text-decoration-thickness:3px;
 }
 
 
- .signiture input, textarea{
+.signiture input, textarea{
   width: 100%;
   height: 50px;
   box-sizing: border-box;
@@ -526,7 +434,6 @@ text-decoration-thickness:3px;
   resize: none;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
   display: inline-block;
-  padding: 12px 20px;
 }
 .signiture textarea {
 	margin:auto;
@@ -540,39 +447,28 @@ cursor: pointer;
 
 
 
-
-
-
-
-
-
-
-.save{
-		text-align: right;
-		margin-right:15px;
-		margin-bottom: 10px;
-		margin-top:10px;
+.button {
+	text-align: right;
+	margin-right: 5px;
+	margin-top: 10px;
+	margin-bottom:10px;
 }
- .btn3 {
-  margin-right:5px;
+.button .btn {
   background-color: #4CAF50; 
   border: none;
   color: white;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 30px;
   font-size: 20px;
   transition-duration: 0.4s;
   cursor: pointer;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
   border-radius: 5px;
-  text-decoration:none;
-
+ 
+  
 }
 
-.btn3:hover {
+.button .btn:hover {
   background-color:  #4CAF20;
   color: white;
 }

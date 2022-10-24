@@ -108,7 +108,7 @@ include("Connection.php");
 					
 				</tr>
 				<tr  class="title">
-					<th colspan="5"><center>UNDER REVISION PROPOSALS </th> 
+					<th colspan="5"><center>UNDER REVISION OF EVALUATION REPORTS </th> 
 				</tr>
 				
 				<tr>

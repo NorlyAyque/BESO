@@ -108,7 +108,7 @@ include("Connection.php");
 					
 				</tr>
 				<tr  class="title">
-					<th colspan="5"><center>REJECTED PROPOSALS </th> 
+					<th colspan="5"><center>REJECTED EVALUATION REPORTS </th> 
 				</tr>
 				
 				<tr>

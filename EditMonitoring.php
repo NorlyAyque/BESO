@@ -66,21 +66,21 @@ if(isset($_GET['monitoring'])){
 				</a>
 			</li>
 			<li>
-				<a href="EditProposal.php">
+				<a href="CreateProposal.php">
 					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
-					<span class ="title"> Edit Proposal</span>
+					<span class ="title"> Create Proposal</span>
 				</a>
 			</li>
 			<li>
-				<a href="EditEvaluation.php">
+				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
-					<span class ="title"> Edit Evaluation Reports</span>
+					<span class ="title">  Evaluation Reports</span>
 				</a>
 			</li>
 			<li>
 				<a class="active" href="EditMonitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
-					<span class ="title"> Edit Monitoring Reports</span>
+					<span class ="title"> Monitoring Reports</span>
 				</a>
 			</li>
 			<li>
