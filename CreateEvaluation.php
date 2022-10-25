@@ -122,7 +122,7 @@ if(isset($_GET['evaluation'])){
 					</th> 
 				</tr>
 			</table>
-<form method = "Post">	
+<form method = "Post" enctype="multipart/form-data">
 			<div class="Create">
 				<div class="fillup">
 				  <div class="input-field">
@@ -491,14 +491,26 @@ if (isset($_POST['submit'])) {
 	$Eval2E1 = htmlspecialchars($_POST['Eval2E1']);
 	$Eval2E2 = htmlspecialchars($_POST['Eval2E2']);
 	$Eval2ET = htmlspecialchars($_POST['Eval2ET']);
-	$Pic1 = htmlspecialchars($_POST['Pic1']);
+	
+	//$Pic1 = htmlspecialchars($_POST['Pic1']);
+	//$Pic2 = htmlspecialchars($_POST['Pic2']);
+	//$Pic3 = htmlspecialchars($_POST['Pic3']);
+
+	$Pic1 = $_FILES['Pic1']['tmp_name'];
+    $img1 = file_get_contents($Pic1);
+
+	$Pic2 = $_FILES['Pic2']['tmp_name'];
+    $img2 = file_get_contents($Pic2);
+
+	$Pic3 = $_FILES['Pic3']['tmp_name'];
+    $img3 = file_get_contents($Pic3);
+
 	$Caption1 = htmlspecialchars($_POST['Caption1']);
-	$Pic2 = htmlspecialchars($_POST['Pic2']);
 	$Caption2 = htmlspecialchars($_POST['Caption2']);
-	$Pic3 = htmlspecialchars($_POST['Pic3']);
 	$Caption3 = htmlspecialchars($_POST['Caption3']);
 	
 	//$Remarks (Pending, Approved, Revise, Reject)
+	$Remarks = "PENDING";
 	$Sign1_1 = htmlspecialchars($_POST['Sign1_1']);
 	$Sign1_2 = htmlspecialchars($_POST['Sign1_2']);
 	$Sign2_1 = htmlspecialchars($_POST['Sign2_1']);
@@ -506,7 +518,9 @@ if (isset($_POST['submit'])) {
 	$Sign3_1 = htmlspecialchars($_POST['Sign3_1']);
 	$Sign3_2 = htmlspecialchars($_POST['Sign3_2']);
 
-	$sql = ("INSERT INTO evaluation_alangilan
+	
+
+	$stmt = mysqli_prepare($con, "INSERT INTO evaluation_alangilan
 		(ProposalID, Author, Evaluator, Date_Time,
 			Title, Location_Area, Implementation, Office, Agency, TypeCES, SDG, Beneficiaries,
 			M1, M2, MT, F1, F2, FT, MFT, People, Objectives, Narrative,
@@ -517,19 +531,25 @@ if (isset($_POST['submit'])) {
 			Pic1, Caption1, Pic2, Caption2, Pic3, Caption3,
 			Remarks, Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2)
 		VALUES 
-		('$PID', '$dbAuthor', '$AID', '$DateTime',
-			'$Title', '$Location_Area', '$Implementation', '$Office', '$Agency', '$TypeCES', '$SDG', '$Beneficiaries',
-			'$M1', '$M2', '$MT', '$F1', '$F2', '$FT', '$MFT', '$People', '$Objectives', '$Narrative',
-			'$Eval1A1', '$Eval1A2', '$Eval1AT', '$Eval1B1', '$Eval1B2', '$Eval1BT', '$Eval1C1', '$Eval1C2', '$Eval1CT',
-			'$Eval1D1', '$Eval1D2', '$Eval1DT', '$Eval1E1', '$Eval1E2', '$Eval1ET',
-			'$Eval2A1', '$Eval2A2', '$Eval2AT', '$Eval2B1', '$Eval2B2', '$Eval2BT', '$Eval2C1', '$Eval2C2', '$Eval2CT',
-			'$Eval2D1', '$Eval2D2', '$Eval2DT', '$Eval2E1', '$Eval2E2', '$Eval2ET',
-			'$Pic1', '$Caption1', '$Pic2', '$Caption2', '$Pic3', '$Caption3',
-			'PENDING', '$Sign1_1', '$Sign1_2', '$Sign2_1', '$Sign2_2', '$Sign3_1', '$Sign3_2')");
-
-	$command = $con->query($sql);
+			(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
+			 ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
+			 ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
+			 ?,?,?,?,?)");
+	mysqli_stmt_bind_param($stmt, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', //65
+		$PID, $dbAuthor, $AID, $DateTime,
+			$Title, $Location_Area, $Implementation, $Office, $Agency, $TypeCES, $SDG, $Beneficiaries,
+			$M1, $M2, $MT, $F1, $F2, $FT, $MFT, $People, $Objectives, $Narrative,
+			$Eval1A1, $Eval1A2, $Eval1AT, $Eval1B1, $Eval1B2, $Eval1BT, $Eval1C1, $Eval1C2, $Eval1CT,
+			$Eval1D1, $Eval1D2, $Eval1DT, $Eval1E1, $Eval1E2, $Eval1ET,
+			$Eval2A1, $Eval2A2, $Eval2AT, $Eval2B1, $Eval2B2, $Eval2BT, $Eval2C1, $Eval2C2, $Eval2CT,
+			$Eval2D1, $Eval2D2, $Eval2DT, $Eval2E1, $Eval2E2, $Eval2ET,
+			$img1, $Caption1, $img2, $Caption2, $img3, $Caption3,
+			$Remarks, $Sign1_1, $Sign1_2, $Sign2_1, $Sign2_2, $Sign3_1, $Sign3_2);
+	mysqli_stmt_execute($stmt);
+	
 	echo "<script>
 			alert('Evaluation Successfully Created');
+			window.location='Evaluation.php';
 		</script>";
 }
 ?>

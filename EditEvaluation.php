@@ -92,7 +92,7 @@ if(isset($_GET['edit'])){
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Update Evaluation</title>
+<title>Edit Evaluation</title>
 <link rel="stylesheet" type="text/css" href="styles/EditEvaluations.css">
 
 </head>
@@ -178,7 +178,7 @@ if(isset($_GET['edit'])){
 					</th> 
 				</tr>
 			</table>
-<form method = "Post">	
+<form method = "Post" enctype="multipart/form-data">
 			<div class="Create">
 				<div class="fillup">
 				  <div class="input-field">
@@ -332,18 +332,18 @@ if(isset($_GET['edit'])){
 						
 						<div class ="pics1">
 							 <label> Select Picture 1:</label>
-							 <input type="file" name="Pic1" required></input>
-							 <textarea class ="caption" placeholder="caption here..." name="Caption1" required></textarea> 
+							 <input type="file" name="Pic1"></input>
+							 <textarea class ="caption" placeholder="caption here..." name="Caption1"></textarea> 
 						</div>	 
 						<div class ="pics2">
 							<label> Select Picture 2:</label>
-							  <input type="file" name="Pic2" required></input>
-							  <textarea class ="caption" placeholder="caption here..." name="Caption2" required></textarea> 
+							  <input type="file" name="Pic2"></input>
+							  <textarea class ="caption" placeholder="caption here..." name="Caption2"></textarea> 
 						</div>	
 						<div class ="pics2">
 						<label> Select Picture 3:</label>
-							   <input type="file" name="Pic3" required></input>
-							   <textarea class ="caption" placeholder="caption here..." name="Caption3" required></textarea> 
+							   <input type="file" name="Pic3"></input>
+							   <textarea class ="caption" placeholder="caption here..." name="Caption3"></textarea> 
 							   
 						</div>
 						<CENTER>
@@ -558,11 +558,13 @@ if (isset($_POST['update'])) {
 	$Eval2E1 = htmlspecialchars($_POST['Eval2E1']);
 	$Eval2E2 = htmlspecialchars($_POST['Eval2E2']);
 	$Eval2ET = htmlspecialchars($_POST['Eval2ET']);
-	$Pic1 = htmlspecialchars($_POST['Pic1']);
+	
+	$Pic1 = addslashes(file_get_contents($_FILES['Pic1']['tmp_name']));
+	$Pic2 = addslashes(file_get_contents($_FILES['Pic2']['tmp_name']));
+	$Pic3 = addslashes(file_get_contents($_FILES['Pic3']['tmp_name']));
+
 	$Caption1 = htmlspecialchars($_POST['Caption1']);
-	$Pic2 = htmlspecialchars($_POST['Pic2']);
 	$Caption2 = htmlspecialchars($_POST['Caption2']);
-	$Pic3 = htmlspecialchars($_POST['Pic3']);
 	$Caption3 = htmlspecialchars($_POST['Caption3']);
 	
 	//$Remarks (Pending, Approved, Revise, Reject)
