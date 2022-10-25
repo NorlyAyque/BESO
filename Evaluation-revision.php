@@ -112,34 +112,47 @@ include("Connection.php");
 				</tr>
 				
 				<tr>
-				<th width="50px"> Proposal ID </th>
-				<th width="350px"> Title </th>
-				<th width="200px";> Creator</th>
-				<th width="100px";> Status </th>
-				<th width="200px";>  </th>
-				
-			</tr>
-
-
-
+					<th width="50px"> Evaluation ID </th>
+					<th width="350px"> Title </th>
+					<th width="200px";> Evaluator</th>
+					<th width="100px";> Status </th>
+					<th width="200px";>  </th>
+				</tr>
+<?php
+//Display all the Pending Evaluation Reports
+$sql = ("SELECT * FROM evaluation_alangilan WHERE Remarks = 'Need to Revise' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$EID = $result['EvaluationID'];
+		$Title = $result ['Title'];
+		//$Creator = $result['Author'];
+		$Evaluator = $result['Evaluator'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 			<tr class="inputs">
-				<td>sample </td>
-				<td>sample </td> 
-				<td>sample </td>
-				<td>sample </td> 	
+				<td><?php echo $EID; ?></td>
+				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td>  	
 				<td width="200px";>
-					<a href="#" button class="Rbtn">View</button> </a>
-					<a href="#" button class="Rbtn1">Edit</button> </a>
-					<a href="#" button class="Rbtn2">Re-Submit</button> </a>
+					<a href="Generate_Evaluation.php?view=<?php echo $EID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
+					<a href="EditEvaluation.php?edit=<?php echo $EID; ?>" button class="Rbtn1">Edit</button> </a>
+					<a href="Evaluation-revision.php?re_submit=<?php echo $EID; ?>" button class="Rbtn2">Re-Submit</button> </a>
 				</td> 
 			</tr>
-
+<?php } }?>
 			</table>	
 		</div>
 	</div>
-	
-	
-	
+
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -171,14 +184,14 @@ include("Connection.php");
 <?php
 
 if(isset($_GET['re_submit'])){
-	$PID = $_GET['re_submit'];
+	$EID = $_GET['re_submit'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'PENDING' WHERE ProposalID = $PID ");
-	$command = $con->query($sql) or die("Error Re-submitting Proposal");
+	$sql = ("UPDATE evaluation_alangilan SET Remarks = 'PENDING' WHERE EvaluationID = $EID ");
+	$command = $con->query($sql) or die("Error Re-submitting Evaluation Report");
 	echo "
 		<script>
-			alert('Proposal ID $PID Re-submit');	
-			window.location.href='Proposal-revision.php';
+			alert('Evaluation ID $EID Re-submit');	
+			window.location.href='Evaluation-revision.php';
 		</script>";
 }
 ?>

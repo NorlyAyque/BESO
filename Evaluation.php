@@ -104,27 +104,44 @@ include("Connection.php");
 			</tr>
 				
 			<tr>
-				<th width="50px"> Proposal ID </th>
+				<th width="50px"> Evaluation ID </th>
 				<th width="350px"> Title </th>
-				<th width="200px";> Creator</th>
+				<th width="200px";> Evaluator </th>
 				<th width="100px";> Status </th>
 				<th width="270px";>  </th>
 			</tr>
-
-
+<?php
+//Display all the Pending Evaluation Reports
+$sql = ("SELECT * FROM evaluation_alangilan WHERE Remarks = 'PENDING' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$EID = $result['EvaluationID'];
+		$Title = $result ['Title'];
+		//$Creator = $result['Author'];
+		$Evaluator = $result['Evaluator'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 			<tr class="inputs">
-				<td></td>
-				<td>Title</p></td> 
-				<td>Fullname </td> 
-				<td> Status</td> 	
+				<td><?php echo $EID; ?></td>
+				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td> 	
 				<td width ="260px";>
-					<a href="#" button class ="Pbtn">View</button> </a>
-					<a href="#" button class ="Pbtn1">Revise</button> </a> 
-					<a href="#" button class ="Pbtn2">Approved</button> </a>
-					<a href="#" button class ="Pbtn3">Reject</button> </a>
+					<a href="Generate_Evaluation.php?view=<?php echo $EID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
+					<a href="Evaluation.php?revise=<?php echo $EID; ?>" button class ="Pbtn1">Revise</button> </a> 
+					<a href="Evaluation.php?approved=<?php echo $EID; ?>" button class ="Pbtn2">Approved</button> </a>
+					<a href="Evaluation.php?reject=<?php echo $EID; ?>" button class ="Pbtn3">Reject</button> </a>
 				</td> 
 			</tr>
-
+<?php } }?>
 			</table>	
 		</div>
 	</div>
@@ -160,41 +177,38 @@ include("Connection.php");
 
 <?php
 if(isset($_GET['revise'])){
-	$PID = $_GET['revise'];
+	$EID = $_GET['revise'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'Need to Revise' WHERE ProposalID = $PID ");
-	$command = $con->query($sql) or die("Error Proposal move to revision");
+	$sql = ("UPDATE evaluation_alangilan SET Remarks = 'Need to Revise' WHERE EvaluationID = $EID ");
+	$command = $con->query($sql) or die("Error Evaluation Report move to revision");
 	echo "
 		<script>
-			alert('Proposal ID $PID Move to Revision');	
-			window.location.href='Proposal.php';
+			alert('Evaluation ID $EID Move to Revision');	
+			window.location.href='Evaluation.php';
 		</script>";
 }
 
 if(isset($_GET['approved'])){
-	$PID = $_GET['approved'];
+	$EID = $_GET['approved'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'Approved' WHERE ProposalID = $PID ");
-	$command = $con->query($sql) or die("Error Proposal Approval");
+	$sql = ("UPDATE evaluation_alangilan SET Remarks = 'Approved' WHERE EvaluationID = $EID ");
+	$command = $con->query($sql) or die("Error Evaluation Report Approval");
 	echo "
 		<script>
-			alert('Proposal ID $PID APPROVED');	
-			window.location.href='Proposal.php';
+			alert('Evaluation ID $EID APPROVED');	
+			window.location.href='Evaluation.php';
 		</script>";
 }
 
 if(isset($_GET['reject'])){
-	$PID = $_GET['reject'];
+	$EID = $_GET['reject'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'Rejected' WHERE ProposalID = $PID ");
-	$command = $con->query($sql) or die("Error Rejecting Proposal");
+	$sql = ("UPDATE evaluation_alangilan SET Remarks = 'Rejected' WHERE EvaluationID = $EID ");
+	$command = $con->query($sql) or die("Error Rejecting Evaluation Report");
 	echo "
 		<script>
-			alert('Proposal ID $PID REJECTED');	
-			window.location.href='Proposal.php';
+			alert('Evaluation ID $EID REJECTED');	
+			window.location.href='Evaluation.php';
 		</script>";
 }
-
-
-
 ?>

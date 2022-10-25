@@ -144,7 +144,7 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Status; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="REbtn">View</button> </a>
-					<a href="Proposal-reject.php?re_use=<?php echo $PID; ?>" button class="REbtn1">Re-Use</button> <a/>
+					<a href="Proposal-reject.php?re_use=<?php echo $PID; ?>" button class="REbtn1">Re-Use</button> </a>
 				</td> 
 			</tr>
 <?php } }?>

@@ -112,29 +112,46 @@ include("Connection.php");
 				</tr>
 				
 				<tr>
-				<th width="100px"> Proposal ID </th>
+				<th width="100px"> Evaluation ID </th>
 				<th> Title </th>
-				<th width="350px";> Creator</th>
+				<th width="350px";> Evaluator</th>
 				<th width="100px";> Status </th>
 				<th width="150px";>  </th>
 			</tr>
-
+<?php
+//Display all the Pending Evaluation Reports
+$sql = ("SELECT * FROM evaluation_alangilan WHERE Remarks = 'Rejected' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$EID = $result['EvaluationID'];
+		$Title = $result ['Title'];
+		//$Creator = $result['Author'];
+		$Evaluator = $result['Evaluator'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 
 			<tr class="inputs">
-				<td>sample 2</td>
-				<td>sample 2</td>
-				<td>sample 2</td>
-				<td>sample 2</td>	
+				<td><?php echo $EID; ?></td>
+				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td> 	
 				<td>
-					<a href="#" button class="REbtn">View</button> </a>
-					<a href="#" button class="REbtn1">Re-Use</button> <a/>
+					<a href="Generate_Evaluation.php?view=<?php echo $EID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
+					<a href="Evaluation-reject.php?re_use=<?php echo $EID; ?>" button class="REbtn1">Re-Use</button> </a>
 				</td> 
 			</tr>
-		</table>	
+<?php } }?>
+			</table>	
 		</div>
-	</div>>
-	
-	
+	</div>	
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -166,14 +183,14 @@ include("Connection.php");
 
 <?php
 if(isset($_GET['re_use'])){
-	$PID = $_GET['re_use'];
+	$EID = $_GET['re_use'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'PENDING' WHERE ProposalID = $PID ");
+	$sql = ("UPDATE evaluation_alangilan SET Remarks = 'PENDING' WHERE EvaluationID = $EID ");
 	$command = $con->query($sql) or die("Error Proposal move to revision");
 	echo "
 		<script>
-			alert('Proposal ID $PID Re-submit');	
-			window.location.href='Proposal-reject.php';
+			alert('Evaluation ID $EID Re-submit');	
+			window.location.href='Evaluation-reject.php';
 		</script>";
 }
 ?>
