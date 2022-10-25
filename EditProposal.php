@@ -11,11 +11,54 @@ date_default_timezone_set("Asia/Manila");
 $DateTime = date("M, d Y; h:i:s A");
 ?>
 
+<?php
+if(isset($_GET['edit'])){
+	$PID = $_GET['edit'];
+	
+	$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
+	$command = $con->query($sql) or die("Error Fethcing data");
+    while($result = mysqli_fetch_array($command))
+	{
+		$dbInitiated = $result['Initiated'];
+		$dbClassification = $result['Classification'];
+		
+		$dbI = $result['Title'];
+		$dbII = $result['Location_Area'];
+		$dbIII = $result['Duration'];
+		$dbIV = $result['TypeCES'];
+		$dbV = $result['SDG'];
+		$dbVI = $result['Office'];
+		$dbVII = $result['Programs'];
+		$dbVIII = $result['People'];
+		$dbIX = $result['Agencies'];
+		$dbX = $result['Beneficiaries'];
+		$dbXI = $result['Cost'];
+		$dbXII = $result['Rationale'];
+		$dbXIII = $result['Objectives'];
+		$dbXIV = $result['Descriptions'];
+		$dbXV = $result['Financial'];
+		$dbXVI = $result['Functional'];
+		$dbXVII = $result['Monitoring'];
+		$dbXVIII = $result['Plans'];
+		
+		$dbSign1_1 = $result['Sign1_1'];
+		$dbSign1_2 = $result['Sign1_2'];
+		$dbSign2_1 = $result['Sign2_1'];
+		$dbSign2_2 = $result['Sign2_2'];
+		$dbSign3_1 = $result['Sign3_1'];
+		$dbSign3_2 = $result['Sign3_2'];
+		$dbSign4_1 = $result['Sign4_1'];
+		$dbSign4_2 = $result['Sign4_2'];
+		$dbSign5_1 = $result['Sign5_1'];
+		$dbSign5_2 = $result['Sign5_2'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Update Proposal</title>
+<title>Edit Proposal</title>
 <link rel="stylesheet" type="text/css" href="styles/EditProposals.css">
 
 </head>
@@ -99,12 +142,12 @@ $DateTime = date("M, d Y; h:i:s A");
 					<th colspan="3">
 						EDIT PROJECT PROPOSAL	
 					</th> 
-				</tr>
+				</tr> 
 				<tr class ="select">
 					<th colspan="2">
-						<input type="radio" id="Client" name="Initiated" value="Client" required> Extension Service Program/Project/Activity is requested by clients.</th>
+						<label> <input type="radio" id="Client" name="Initiated" value="Client"> Extension Service Program/Project/Activity is requested by clients.</th> </label>
 					<th colspan="2">
-						<input type="radio" id="Department" name="Initiated" value="Department" required> Extension Service Program/Project/Activity is Departments initiative.</th>
+						<label> <input type="radio" id="Department" name="Initiated" value="Department" > Extension Service Program/Project/Activity is Departments initiative.</th> </label>
 				</tr>	
 			</table>
 	
@@ -119,62 +162,62 @@ $DateTime = date("M, d Y; h:i:s A");
 				<div class="fillup">
 				  <div class="input-field">
 						<label> l. Title <label>
-						<textarea class="font" placeholder="type Here..." name="I" required></textarea>
+						<textarea class="font" placeholder="type Here..." name="I" required><?php echo $dbI; ?></textarea>
 						 
 						<label> ll. Location <label>
-						<textarea placeholder="type here..." name="II" required></textarea> 
+						<textarea placeholder="type here..." name="II" required><?php echo $dbII; ?></textarea> 
 						
 						<label> lll. Duration <label>
-						<textarea placeholder="type here..." name="III" required></textarea>
+						<textarea placeholder="type here..." name="III" required><?php echo $dbIII; ?></textarea>
 						 
 						<label> lV. Type of Communuty Extension Service <label>
-						<textarea placeholder="type here..." name="IV" required></textarea>
+						<textarea placeholder="type here..." name="IV" required><?php echo $dbIV; ?></textarea>
 						
 						<label>  V. Sustatinable Development Goals (SDG) <label>
-						<textarea placeholder="type here..." name="V" required></textarea>
+						<textarea placeholder="type here..." name="V" required><?php echo $dbV; ?></textarea>
 						
 						<label>  Vl. Office/ College/s Involved <label>
-						<textarea placeholder="type here..." name="VI" required></textarea>
+						<textarea placeholder="type here..." name="VI" required><?php echo $dbVI; ?></textarea>
 						
 						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i><label>
-						<textarea placeholder="type here..." name="VII" required></textarea>
+						<textarea placeholder="type here..." name="VII" required><?php echo $dbVII; ?></textarea>
 						
 						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i><label>
-						<textarea placeholder="type here..." name="VIII" required></textarea>
+						<textarea placeholder="type here..." name="VIII" required><?php echo $dbVIII; ?></textarea>
 						
 						<label> lX. Partner Agencies<label>
-						<textarea placeholder="type here..." name="IX" required></textarea>	
+						<textarea placeholder="type here..." name="IX" required><?php echo $dbIX; ?></textarea>	
 				  </div>
 				</div>
 				
 				<div class="fillup">
 				  <div class="input-field">
 						<label> X. Beneficiaries <i>(Type and Number of Male & Female)</i><label>
-						<textarea placeholder="type here..." name="X" required></textarea>
+						<textarea placeholder="type here..." name="X" required><?php echo $dbX; ?></textarea>
 						
 						<label> Xl. Total Cost and Sources of Funds<label>
-						<textarea placeholder="type here..." name="XI" required></textarea>
+						<textarea placeholder="type here..." name="XI" required><?php echo $dbXI; ?></textarea>
 						
 						<label> Xll. Rationale<i>(brief description of the situation)</i><label>
-						<textarea placeholder="type here..." name="XII" required></textarea>
+						<textarea placeholder="type here..." name="XII" required><?php echo $dbXII; ?></textarea>
 						
 						<label> Xlll. Objectives<i>(General and Specific)</i><label>
-						<textarea placeholder="type here..." name="XIII" required></textarea>
+						<textarea placeholder="type here..." name="XIII" required><?php echo $dbXIII; ?></textarea>
 
 						<label> XlV. Description, Strategies and Methods <i>(Activities/Schedule)</i><label>
-						<textarea placeholder="type here..." name="XIV" required></textarea>
+						<textarea placeholder="type here..." name="XIV" required><?php echo $dbXIV; ?></textarea>
 						
 						<label> XV. Financial Plan</i><label>
-						<textarea placeholder="type here..." name="XV" required></textarea>
+						<textarea placeholder="type here..." name="XV" required><?php echo $dbXV; ?></textarea>
 						
 						<label> XVl. Functional Relationships with the partner <i>(Duties/Task of the Partner Agencies)</i><label>
-						<textarea placeholder="type here..." name="XVI" required></textarea>
+						<textarea placeholder="type here..." name="XVI" required><?php echo $dbXVI; ?></textarea>
 						
 						<label> XVll. Monitoring and Evaluation Mechanics/Plan<label>
-						<textarea placeholder="type here..." name="XVII" required></textarea>
+						<textarea placeholder="type here..." name="XVII" required><?php echo $dbXVII; ?></textarea>
 						
 						<label> XVlll. Sustainability Plan<label>
-						<textarea placeholder="type here..." name="XVIII" required></textarea>
+						<textarea placeholder="type here..." name="XVIII" required><?php echo $dbXVIII; ?></textarea>
 						
 				  </div>
 				</div>
@@ -188,34 +231,33 @@ $DateTime = date("M, d Y; h:i:s A");
 				</tr>
 				<tr>
 					<td> Prepared by:</td>
-					<td><textarea placeholder="Your Name" name="Sign1_1" required></textarea></td>
-					<td><textarea placeholder="Designation" name="Sign1_2" required></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign1_1" required><?php echo $dbSign1_1; ?></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign1_2" required><?php echo $dbSign1_2; ?></textarea></td>
 				</tr>
 				<tr>
 					<td> Review by:</td>
-					<td><textarea placeholder="Your Name" name="Sign2_1" required></textarea></td>
-					<td><textarea placeholder="Designation" name="Sign2_2" required></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign2_1" required><?php echo $dbSign2_1; ?></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign2_2" required><?php echo $dbSign2_2; ?></textarea></td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
-					<td><textarea placeholder="Your Name" name="Sign3_1" required></textarea></td>
-					<td><textarea placeholder="Designation" name="Sign3_2" required></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign3_1" required><?php echo $dbSign3_1; ?></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign3_2" required><?php echo $dbSign3_2; ?></textarea></td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
-					<td><textarea placeholder="Your Name" name="Sign4_1" required></textarea></td>
-					<td><textarea placeholder="Designation" name="Sign4_2" required></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign4_1" required><?php echo $dbSign4_1; ?></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign4_2" required><?php echo $dbSign4_2; ?></textarea></td>
 				</tr>
 				<tr>
 					<td>Approved by:</td>
-					<td><textarea placeholder="Your Name" name="Sign5_1" required></textarea></td>
-					<td><textarea placeholder="Designation" name="Sign5_2" required></textarea></td>
+					<td><textarea placeholder="Your Name" name="Sign5_1" required><?php echo $dbSign5_1; ?></textarea></td>
+					<td><textarea placeholder="Designation" name="Sign5_2" required><?php echo $dbSign5_2; ?></textarea></td>
 				</tr>
 			</table>
 			<div class="button">
-				<input type="submit" class="btn" name="Save" value="Update">
+				<input type="submit" class="btn" name="update" value="Update">
 			</div>
-			
 		</div>
 	</form>	
 
@@ -238,19 +280,18 @@ $DateTime = date("M, d Y; h:i:s A");
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 </body>
 </html>
 
 <?php
 
-//if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-if (isset($_POST['Save'])) {
+if (isset($_POST['update'])) {
 
 	$Initiated = $_POST["Initiated"];
 	$Classification = $_POST["Classification"];
@@ -280,26 +321,36 @@ if (isset($_POST['Save'])) {
 	$Sign4_1 = htmlspecialchars($_POST['Sign4_1']); $Sign4_2 = htmlspecialchars($_POST['Sign4_2']);
 	$Sign5_1 = htmlspecialchars($_POST['Sign5_1']); $Sign5_2 = htmlspecialchars($_POST['Sign5_2']);
 
-	$sql = ("INSERT INTO create_alangilan
-		(AccountID, Date_Time, Initiated, Classification, 
-				Title, Location_Area, Duration, TypeCES,
-				SDG, Office, Programs, People, Agencies, 
-				Beneficiaries, Cost, Rationale, Objectives, Descriptions,
-				Financial, Functional, Monitoring, Plans, Remarks,
-				Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2,
-				Sign4_1, Sign4_2, Sign5_1, Sign5_2)
-		VALUES 
-		('$AID', '$DateTime', '$Initiated', '$Classification',
-				'$I', '$II', '$III', '$IV', '$V', 
-				'$VI', '$VII', '$VIII', '$IX', '$X', 
-				'$XI', '$XII', '$XIII', '$XIV','$XV', 
-				'$XVI', '$XVII', '$XVIII', 'PENDING',
-				'$Sign1_1', '$Sign1_2', '$Sign2_1', '$Sign2_2', '$Sign3_1', '$Sign3_2',
-				'$Sign4_1', '$Sign4_2', '$Sign5_1', '$Sign5_2')");
-	
-		$command = $con->query($sql);
-		echo "<script>
-		alert('Proposal Successfully Created');
+	$sql = ("UPDATE create_alangilan
+			SET Initiated = '$Initiated', Classification = '$Classification', 
+				Title = '$I', Location_Area = '$II', Duration = '$III', TypeCES = '$IV', SDG = '$V', 
+				Office = '$VI', Programs = '$VII', People = '$VIII', Agencies = '$IX', Beneficiaries = '$X', 
+				Cost = '$XI', Rationale = '$XII', Objectives = '$XIII', Descriptions = '$XIV', Financial = '$XV', 
+				Functional = '$XVI', Monitoring = '$XVII', Plans = '$XVIII',
+				Sign1_1 = '$Sign1_1', Sign1_2 = '$Sign1_2', Sign2_1 = '$Sign2_1', Sign2_2 = '$Sign2_2', 
+				Sign3_1 = '$Sign3_1', Sign3_2 = '$Sign3_2', Sign4_1 = '$Sign4_1', Sign4_2 = '$Sign4_2', 
+				Sign5_1 = '$Sign5_1', Sign5_2 = '$Sign5_2'
+			WHERE ProposalID = $PID");
+	$command = $con->query($sql);
+	echo "<script>
+			alert('Proposal Successfully Updated');
+			window.location='EditProposal.php?edit=$PID';
 		</script>";
 }
+?>
+
+<?php
+ if ($dbInitiated == "Department"){
+	echo "<script>document.getElementById('Department').checked = true; </script>";
+ } else if ($dbInitiated == "Client"){
+	echo "<script>document.getElementById('Client').checked = true; </script>";
+ }
+
+ if ($dbClassification == "Program"){
+	echo "<script>document.getElementById('Program').checked = true; </script>";
+ } else if ($dbClassification == "Project"){
+	echo "<script>document.getElementById('Project').checked = true; </script>";
+ }else if ($dbClassification == "Activity"){
+	echo "<script>document.getElementById('Activity').checked = true; </script>";
+ }
 ?>

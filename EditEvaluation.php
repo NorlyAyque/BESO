@@ -10,25 +10,81 @@ $DateTime = date("M, d Y; h:i:s A");
 ?>
 
 <?php
-if(isset($_GET['evaluation'])){
-	$PID = $_GET['evaluation']; //Proposal ID
+if(isset($_GET['edit'])){
+	
+	$EID = $_GET['edit']; 
     
-	$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE EvaluationID = $EID");
 	$command = $con->query($sql) or die("Error Fethcing data");
     while($result = mysqli_fetch_array($command))
 	{
-		$dbAuthor = $result['AccountID']; //Gumawa ng Proposal
 		$dbTitle = $result['Title'];
-        $dbLocation = $result['Location_Area'];
-		$dbDuration = $result['Duration'];
+		$dbLocation_Area = $result['Location_Area'];
+		$dbImplementation = $result['Implementation'];
 		$dbOffice = $result['Office'];
-		$dbAgencies = $result['Agencies'];
+		$dbAgencies = $result['Agency'];
 		$dbTypeCES = $result['TypeCES'];
 		$dbSDG = $result['SDG'];
+		$dbBeneficiaries = $result['Beneficiaries'];
+
+		$dbM1 = $result['M1'];
+		$dbM2 = $result['M2'];
+		$dbMT = $result['MT'];
+		$dbF1 = $result['F1'];
+		$dbF2 = $result['F2'];
+		$dbFT = $result['FT'];
+		$dbMFT = $result['MFT'];
+
 		$dbPeople = $result['People'];
 		$dbObjectives = $result['Objectives'];
+		$dbNarrative = $result['Narrative'];
+
+		$dbEval1A1 = $result['Eval1A1'];
+		$dbEval1A2 = $result['Eval1A2'];
+		$dbEval1AT = $result['Eval1AT'];
+		$dbEval1B1 = $result['Eval1B1'];
+		$dbEval1B2 = $result['Eval1B2'];
+		$dbEval1BT = $result['Eval1BT'];
+		$dbEval1C1 = $result['Eval1C1'];
+		$dbEval1C2 = $result['Eval1C2'];
+		$dbEval1CT = $result['Eval1CT'];
+		$dbEval1D1 = $result['Eval1D1'];
+		$dbEval1D2 = $result['Eval1D2'];
+		$dbEval1DT = $result['Eval1DT'];
+		$dbEval1E1 = $result['Eval1E1'];
+		$dbEval1E2 = $result['Eval1E2'];
+		$dbEval1ET = $result['Eval1ET'];
+
+		$dbEval2A1 = $result['Eval2A1'];
+		$dbEval2A2 = $result['Eval2A2'];
+		$dbEval2AT = $result['Eval2AT'];
+		$dbEval2B1 = $result['Eval2B1'];
+		$dbEval2B2 = $result['Eval2B2'];
+		$dbEval2BT = $result['Eval2BT'];
+		$dbEval2C1 = $result['Eval2C1'];
+		$dbEval2C2 = $result['Eval2C2'];
+		$dbEval2CT = $result['Eval2CT'];
+		$dbEval2D1 = $result['Eval2D1'];
+		$dbEval2D2 = $result['Eval2D2'];
+		$dbEval2DT = $result['Eval2DT'];
+		$dbEval2E1 = $result['Eval2E1'];
+		$dbEval2E2 = $result['Eval2E2'];
+		$dbEval2ET = $result['Eval2ET'];
+		
+		$dbPic1 = $result['Pic1'];
+		$dbCaption1 = $result['Caption1'];
+		$dbPic2 = $result['Pic2'];
+		$dbCaption2 = $result['Caption2'];
+		$dbPic3 = $result['Pic3'];
+		$dbCaption3 = $result['Caption3'];
+
+		$dbSign1_1 = $result['Sign1_1'];
+		$dbSign1_2 = $result['Sign1_2'];
+		$dbSign2_1 = $result['Sign2_1'];
+		$dbSign2_2 = $result['Sign2_2'];
+		$dbSign3_1 = $result['Sign3_1'];
+		$dbSign3_2 = $result['Sign3_2'];
     }
-	//$_SESSION["AID"] = $dbAuthor; //Save sa Session variable
 }
 ?>
 
@@ -73,7 +129,7 @@ if(isset($_GET['evaluation'])){
 				</a>
 			</li>
 			<li>
-				<a class="active" href="EditEvaluation.php">
+				<a class="active" href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
 				</a>
@@ -130,10 +186,10 @@ if(isset($_GET['evaluation'])){
 						<textarea class="font" placeholder="type Here..."  name="Title" required><?php echo $dbTitle; ?></textarea>
 						 
 						<label>  Location </label>
-						<textarea placeholder="type here..." name="Location" required><?php echo $dbLocation; ?></textarea> 
+						<textarea placeholder="type here..." name="Location" required><?php echo $dbLocation_Area; ?></textarea> 
 						
 						<label>  Date of Implementation / Number of hours of implementation </label>
-						<textarea placeholder="type here..." name="Implementation" required><?php echo $dbDuration; ?></textarea>
+						<textarea placeholder="type here..." name="Implementation" required><?php echo $dbImplementation; ?></textarea>
 						 
 						<label>  Implementing Office/College/Program<i>(specify the programs under the college implementing the project)</i> </label>
 						<textarea placeholder="type here..."  name="Office" required><?php echo $dbOffice; ?></textarea> 
@@ -151,7 +207,7 @@ if(isset($_GET['evaluation'])){
 						
 						<table class="participants">
 								<tr class="types">
-									<th colspan="4"> 	<label> Types of Participants  <input type="text" name="Beneficiaries" required></i></label></th>
+									<th colspan="4"> 	<label> Types of Participants  <input type="text" name="Beneficiaries" value="<?php echo $dbBeneficiaries; ?>" required></i></label></th>
 								</tr>
 								<tr>
 									<th>  </th>
@@ -162,19 +218,19 @@ if(isset($_GET['evaluation'])){
 								</tr>	
 								<tr >
 									<td class="MF">Male</td>
-									<td><input type="number" min="0" name="M1" id="M1" onchange="CalMale()" required> </td> 
-									<td><input type="number" min="0" name="M2" id="M2" onchange="CalMale()" required> </td> 
-									<td><input type="number" min="0" name="MT" id="MT" Readonly required> </td>
+									<td><input type="number" min="0" name="M1" id="M1" onchange="CalMale()" value="<?php echo $dbM1; ?>" required> </td> 
+									<td><input type="number" min="0" name="M2" id="M2" onchange="CalMale()" value="<?php echo $dbM2; ?>" required> </td> 
+									<td><input type="number" min="0" name="MT" id="MT" Readonly required value="<?php echo $dbMT; ?>" required> </td> 
 								</tr>
 								<tr>
 									<td class="MF">Female</td>
-									<td><input type="number" min="0" name="F1" id="F1" onchange="CalFemale()" required> </td> 
-									<td><input type="number" min="0" name="F2" id="F2" onchange="CalFemale()" required> </td> 
-									<td><input type="number" min="0" name="FT" id="FT" Readonly required></td>
+									<td><input type="number" min="0" name="F1" id="F1" onchange="CalFemale()" required value="<?php echo $dbF1; ?>" required> </td> 
+									<td><input type="number" min="0" name="F2" id="F2" onchange="CalFemale()" required value="<?php echo $dbF2; ?>" required> </td> 
+									<td><input type="number" min="0" name="FT" id="FT" Readonly required value="<?php echo $dbFT; ?>" required> </td> 
 								</tr>
 								<tr class ="total">
 									<td colspan="3">Grand Total</td>
-									<td><input type="number" min="0" name="MFT" id="MFT" Readonly required></input></td>
+									<td><input type="number" min="0" name="MFT" id="MFT" Readonly required value="<?php echo $dbMFT; ?>" required> </td> 
 								</tr>
 						</table>
 								
@@ -189,33 +245,33 @@ if(isset($_GET['evaluation'])){
 								</tr>	
 								<tr class="MF" >
 									<td >1.1. Exellent</td>
-									<th><input type="number" min="0" name="Eval1A1" id="Eval1A1" onchange="Cal_1A()" > </td> 
-									<th><input type="number" min="0" name="Eval1A2" id="Eval1A2" onchange="Cal_1A()" > </td> 
-									<th><input type="number" min="0" name="Eval1AT" id="Eval1AT" Readonly ></td>
+									<th><input type="number" min="0" name="Eval1A1" id="Eval1A1" onchange="Cal_1A()" value="<?php echo $dbEval1A1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1A2" id="Eval1A2" onchange="Cal_1A()" value="<?php echo $dbEval1A2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1AT" id="Eval1AT" Readonly value="<?php echo $dbEval1AT; ?>"> </td> 
 								</tr>
 								<tr class="MF" >
 									<td >1.2. Very Satisfactory</td>
-									<th><input type="number" min="0" name="Eval1B1" id="Eval1B1" onchange="Cal_1B()" > </td> 
-									<th><input type="number" min="0" name="Eval1B2" id="Eval1B2" onchange="Cal_1B()" > </td> 
-									<th><input type="number" min="0" name="Eval1BT" id="Eval1BT" Readonly ></td>
+									<th><input type="number" min="0" name="Eval1B1" id="Eval1B1" onchange="Cal_1B()" value="<?php echo $dbEval1B1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1B2" id="Eval1B2" onchange="Cal_1B()" value="<?php echo $dbEval1B2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1BT" id="Eval1BT" Readonly value="<?php echo $dbEval1BT; ?>"> </td> 
 								</tr>
 								<tr class="MF">
 									<td >1.3. Satisfactory</td>
-									<th><input type="number" min="0" name="Eval1C1" id="Eval1C1" onchange="Cal_1C()" > </td> 
-									<th><input type="number" min="0" name="Eval1C2" id="Eval1C2" onchange="Cal_1C()" > </td> 
-									<th><input type="number" min="0" name="Eval1CT" id="Eval1CT" Readonly ></td>
+									<th><input type="number" min="0" name="Eval1C1" id="Eval1C1" onchange="Cal_1C()" value="<?php echo $dbEval1C1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1C2" id="Eval1C2" onchange="Cal_1C()" value="<?php echo $dbEval1C2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1CT" id="Eval1CT" Readonly value="<?php echo $dbEval1CT; ?>"> </td> 
 								</tr>
 								<tr class="MF">
 									<td > 1.4. Fair</td>
-									<th><input type="number" min="0" name="Eval1D1" id="Eval1D1" onchange="Cal_1D()" > </td> 
-									<th><input type="number" min="0" name="Eval1D2" id="Eval1D2" onchange="Cal_1D()" > </td> 
-									<th><input type="number" min="0" name="Eval1DT" id="Eval1DT" Readonly ></td>
+									<th><input type="number" min="0" name="Eval1D1" id="Eval1D1" onchange="Cal_1D()" value="<?php echo $dbEval1D1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1D2" id="Eval1D2" onchange="Cal_1D()" value="<?php echo $dbEval1D2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1DT" id="Eval1DT" Readonly value="<?php echo $dbEval1DT; ?>"> </td> 
 								</tr>
 								<tr  class="MF">
 									<td >1.5. Poor</td>
-									<th><input type="number" min="0" name="Eval1E1" id="Eval1E1" onchange="Cal_1E()" > </td> 
-									<th><input type="number" min="0" name="Eval1E2" id="Eval1E2" onchange="Cal_1E()" > </td> 
-									<th><input type="number" min="0" name="Eval1ET" id="Eval1ET" Readonly ></td>
+									<th><input type="number" min="0" name="Eval1E1" id="Eval1E1" onchange="Cal_1E()" value="<?php echo $dbEval1C1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1E2" id="Eval1E2" onchange="Cal_1E()" value="<?php echo $dbEval1C2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval1ET" id="Eval1ET" Readonly value="<?php echo $dbEval1CT; ?>"> </td> 
 								</tr>
 							</table>
 						
@@ -229,33 +285,33 @@ if(isset($_GET['evaluation'])){
 								</tr>	
 								<tr class="MF" >
 									<td >2.1. Exellent</td>
-									<th><input type="number" min="0" name="Eval2A1" id="Eval2A1" onchange="Cal_2A()" > </td> 
-									<th><input type="number" min="0" name="Eval2A2" id="Eval2A2" onchange="Cal_2A()" > </td> 
-									<th><input type="number" min="0" name="Eval2AT" id="Eval2AT" Readonly ></td>
+									<th><input type="number" min="0" name="Eval2A1" id="Eval2A1" onchange="Cal_2A()" value="<?php echo $dbEval2A1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2A2" id="Eval2A2" onchange="Cal_2A()" value="<?php echo $dbEval2A2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2AT" id="Eval2AT" Readonly value="<?php echo $dbEval2AT; ?>"> </td> 
 								</tr>
 								<tr class="MF" >
 									<td >2.2. Very Satisfactory</td>
-									<th><input type="number" min="0" name="Eval2B1" id="Eval2B1" onchange="Cal_2B()" > </td> 
-									<th><input type="number" min="0" name="Eval2B2" id="Eval2B2" onchange="Cal_2B()" > </td> 
-									<th><input type="number" min="0" name="Eval2BT" id="Eval2BT" Readonly ></td>
+									<th><input type="number" min="0" name="Eval2B1" id="Eval2B1" onchange="Cal_2B()" value="<?php echo $dbEval2B1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2B2" id="Eval2B2" onchange="Cal_2B()" value="<?php echo $dbEval2B2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2BT" id="Eval2BT" Readonly value="<?php echo $dbEval2BT; ?>"> </td> 
 								</tr>
 								<tr class="MF">
 									<td >2.3. Satisfactory</td>
-									<th><input type="number" min="0" name="Eval2C1" id="Eval2C1" onchange="Cal_2C()" > </td> 
-									<th><input type="number" min="0" name="Eval2C2" id="Eval2C2" onchange="Cal_2C()" > </td> 
-									<th><input type="number" min="0" name="Eval2CT" id="Eval2CT" Readonly></td>
+									<th><input type="number" min="0" name="Eval2C1" id="Eval2C1" onchange="Cal_2C()" value="<?php echo $dbEval2C1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2C2" id="Eval2C2" onchange="Cal_2C()" value="<?php echo $dbEval2C2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2CT" id="Eval2CT" Readonly value="<?php echo $dbEval2CT; ?>"> </td> 
 								</tr>
 								<tr class="MF">
 									<td > 2.4. Fair</td>
-									<th><input type="number" min="0" name="Eval2D1" id="Eval2D1" onchange="Cal_2D()" > </td> 
-									<th><input type="number" min="0" name="Eval2D2" id="Eval2D2" onchange="Cal_2D()" > </td> 
-									<th><input type="number" min="0" name="Eval2DT" id="Eval2DT" Readonly ></td>
+									<th><input type="number" min="0" name="Eval2D1" id="Eval2D1" onchange="Cal_2D()" value="<?php echo $dbEval2D1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2D2" id="Eval2D2" onchange="Cal_2D()" value="<?php echo $dbEval2D2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2DT" id="Eval2DT" Readonly value="<?php echo $dbEval2DT; ?>"> </td> 
 								</tr>
 								<tr  class="MF">
 									<td >2.5. Poor</td>
-									<th><input type="number" min="0" name="Eval2E1" id="Eval2E1" onchange="Cal_2E()" > </td> 
-									<th><input type="number" min="0" name="Eval2E2" id="Eval2E2" onchange="Cal_2E()" > </td> 
-									<th><input type="number" min="0" name="Eval2ET" id="Eval2ET" Readonly ></td>
+									<th><input type="number" min="0" name="Eval2E1" id="Eval2E1" onchange="Cal_2E()" value="<?php echo $dbEval2E1; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2E2" id="Eval2E2" onchange="Cal_2E()" value="<?php echo $dbEval2E2; ?>"> </td> 
+									<th><input type="number" min="0" name="Eval2ET" id="Eval2ET" Readonly value="<?php echo $dbEval2ET; ?>"> </td> 
 								</tr>
 						</table>
 				 	</div>
@@ -270,25 +326,36 @@ if(isset($_GET['evaluation'])){
 						<textarea placeholder="type here..."  name="Objectives" required><?php echo $dbObjectives; ?></textarea> 
 						
 						<label> Narrative Activity</i></label>
-						<textarea placeholder="type here..."  name="Narrative" required></textarea> 
+						<textarea placeholder="type here..."  name="Narrative" required><?php echo $dbNarrative; ?></textarea> 
 						<br>
-						<label>  Photos <i>(Please attach  3 photos with captions):</i> </label>
+						<label>  Photos <i>(Please attach  3 photos with captions) <br> upload jpeg file type only</i> </label>
 						
 						<div class ="pics1">
 							 <label> Select Picture 1:</label>
-							 <input type="file" name="Pic1"></input>
-							 <textarea class ="caption" placeholder="caption here..." name="Caption1"></textarea> 
+							 <input type="file" name="Pic1" required></input>
+							 <textarea class ="caption" placeholder="caption here..." name="Caption1" required></textarea> 
 						</div>	 
 						<div class ="pics2">
 							<label> Select Picture 2:</label>
-							  <input type="file" name="Pic2"></input>
-							  <textarea class ="caption" placeholder="caption here..." name="Caption2"></textarea> 
+							  <input type="file" name="Pic2" required></input>
+							  <textarea class ="caption" placeholder="caption here..." name="Caption2" required></textarea> 
 						</div>	
 						<div class ="pics2">
 						<label> Select Picture 3:</label>
-							   <input type="file" name="Pic3"></input>
-							   <textarea class ="caption" placeholder="caption here..." name="Caption3"></textarea> 
-						</div>	
+							   <input type="file" name="Pic3" required></input>
+							   <textarea class ="caption" placeholder="caption here..." name="Caption3" required></textarea> 
+							   
+						</div>
+						<CENTER>
+							<?php 
+								echo '<img src="data:image/jpeg;base64,'.base64_encode($dbPic1).'" alt="Image 1 Unavailable" width=400 height=210 />';
+								echo "<br>".$dbCaption1."<br><br>";
+								echo '<img src="data:image/jpeg;base64,'.base64_encode($dbPic2).'" alt="Image 2 Unavailable" width=400 height=210 />';
+								echo "<br>".$dbCaption2."<br><br>";
+								echo '<img src="data:image/jpeg;base64,'.base64_encode($dbPic3).'" alt="Image 3 Unavailable" width=400 height=210 />';
+								echo "<br>".$dbCaption3;
+							?>
+						</CENTER>
 					</div>
 				</div>
 		</div>
@@ -300,22 +367,22 @@ if(isset($_GET['evaluation'])){
 							</tr>
 							<tr>
 								<td> Prepared by:</td>
-								<td><textarea placeholder="Your Name" name="Sign1_1" required></textarea></td>
-								<td><textarea placeholder="Designation" name="Sign1_2" required></textarea></td>
+								<td><textarea placeholder="Your Name" name="Sign1_1" required><?php echo $dbSign1_1; ?></textarea></td>
+								<td><textarea placeholder="Designation" name="Sign1_2" required><?php echo $dbSign1_2; ?></textarea></td>
 							</tr>
 							<tr>
 								<td> Review by:</td>
-								<td><textarea placeholder="Your Name" name="Sign2_1" required></textarea></td>
-								<td><textarea placeholder="Designation" name="Sign2_2" required></textarea></td>
+								<td><textarea placeholder="Your Name" name="Sign2_1" required><?php echo $dbSign2_1; ?></textarea></td>
+								<td><textarea placeholder="Designation" name="Sign2_2" required><?php echo $dbSign2_2; ?></textarea></td>
 							</tr>
 								<td>Accepted by:</td>
-								<td><textarea placeholder="Your Name" name="Sign3_1" required></textarea></td>
-								<td><textarea placeholder="Designation" name="Sign3_2" required></textarea></td>
+								<td><textarea placeholder="Your Name" name="Sign3_1" required><?php echo $dbSign3_1; ?></textarea></td>
+								<td><textarea placeholder="Designation" name="Sign3_2" required><?php echo $dbSign3_2; ?></textarea></td>
 							</tr>
 						</table>
 	
 		<div class ="save">
-			<button class = "btn3" type="submit" name="submit"> Update </button>
+			<button class = "btn3" type="submit" name="update"> Update </button>
 		</div>
 </form>
 
@@ -338,11 +405,11 @@ if(isset($_GET['evaluation'])){
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
@@ -439,7 +506,7 @@ function Cal_2E(){
 
 
 <?php
-if (isset($_POST['submit'])) {
+if (isset($_POST['update'])) {
 
 	//$PID , $dbAuthor , $AID - Evaluator , $DateTime
 	
@@ -506,30 +573,32 @@ if (isset($_POST['submit'])) {
 	$Sign3_1 = htmlspecialchars($_POST['Sign3_1']);
 	$Sign3_2 = htmlspecialchars($_POST['Sign3_2']);
 
-	$sql = ("INSERT INTO evaluation_alangilan
-		(ProposalID, Author, Evaluator, Date_Time,
-			Title, Location_Area, Implementation, Office, Agency, TypeCES, SDG, Beneficiaries,
-			M1, M2, MT, F1, F2, FT, MFT, People, Objectives, Narrative,
-			Eval1A1, Eval1A2, Eval1AT, Eval1B1, Eval1B2, Eval1BT, Eval1C1, Eval1C2, Eval1CT,
-			Eval1D1, Eval1D2, Eval1DT, Eval1E1, Eval1E2, Eval1ET,
-			Eval2A1, Eval2A2, Eval2AT, Eval2B1, Eval2B2, Eval2BT, Eval2C1, Eval2C2, Eval2CT,
-			Eval2D1, Eval2D2, Eval2DT, Eval2E1, Eval2E2, Eval2ET,
-			Pic1, Caption1, Pic2, Caption2, Pic3, Caption3,
-			Remarks, Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2)
-		VALUES 
-		('$PID', '$dbAuthor', '$AID', '$DateTime',
-			'$Title', '$Location_Area', '$Implementation', '$Office', '$Agency', '$TypeCES', '$SDG', '$Beneficiaries',
-			'$M1', '$M2', '$MT', '$F1', '$F2', '$FT', '$MFT', '$People', '$Objectives', '$Narrative',
-			'$Eval1A1', '$Eval1A2', '$Eval1AT', '$Eval1B1', '$Eval1B2', '$Eval1BT', '$Eval1C1', '$Eval1C2', '$Eval1CT',
-			'$Eval1D1', '$Eval1D2', '$Eval1DT', '$Eval1E1', '$Eval1E2', '$Eval1ET',
-			'$Eval2A1', '$Eval2A2', '$Eval2AT', '$Eval2B1', '$Eval2B2', '$Eval2BT', '$Eval2C1', '$Eval2C2', '$Eval2CT',
-			'$Eval2D1', '$Eval2D2', '$Eval2DT', '$Eval2E1', '$Eval2E2', '$Eval2ET',
-			'$Pic1', '$Caption1', '$Pic2', '$Caption2', '$Pic3', '$Caption3',
-			'PENDING', '$Sign1_1', '$Sign1_2', '$Sign2_1', '$Sign2_2', '$Sign3_1', '$Sign3_2')");
-
+	$sql = ("UPDATE evaluation_alangilan
+		SET Title = '$Title', Location_Area = '$Location_Area', Implementation= '$Implementation', 
+			Office = '$Office', Agency = '$Agency', TypeCES = '$TypeCES', SDG = '$SDG', Beneficiaries = '$Beneficiaries',
+			M1 = '$M1', M2 = '$M2', MT = '$MT', F1 = '$F1', F2 = '$F2', FT = '$FT', MFT = '$MFT',
+			People = '$People', Objectives = '$Objectives', Narrative = '$Narrative',
+			Eval1A1 = '$Eval1A1', Eval1A2 = '$', Eval1AT = '$', 
+			Eval1B1 = '$Eval1B1', Eval1B2 = '$Eval1B2', Eval1BT = '$Eval1BT', 
+			Eval1C1 = '$Eval1C1', Eval1C2 = '$Eval1C2', Eval1CT = '$Eval1CT',
+			Eval1D1 = '$Eval1D1', Eval1D2 = '$Eval1D2', Eval1DT = '$Eval1DT',
+			Eval1E1 = '$Eval1E1', Eval1E2 = '$Eval1E2', Eval1ET = '$Eval1ET',
+			Eval2A1 = '$Eval2A1', Eval2A2 = '$Eval2A2', Eval2AT = '$Eval2AT',
+			Eval2B1 = '$Eval2B1', Eval2B2 = '$Eval2B2', Eval2BT = '$Eval2BT',
+			Eval2C1 = '$Eval2C1', Eval2C2 = '$Eval2C2', Eval2CT = '$Eval2CT',
+			Eval2D1 = '$Eval2D1', Eval2D2 = '$Eval2D2', Eval2DT = '$Eval2DT',
+			Eval2E1 = '$Eval2E1', Eval2E2 = '$Eval2E2', Eval2ET = '$Eval2ET',
+			Pic1 = '$Pic1', Caption1 = '$Caption1',
+			Pic2 = '$Pic2', Caption2 = '$Caption2', 
+			Pic3 = '$Pic3', Caption3 = '$Caption3',
+			Sign1_1 = '$Sign1_1', Sign1_2 = '$Sign1_2', Sign2_1 = '$Sign2_1',
+			Sign2_2 = '$Sign2_2', Sign3_1 = '$Sign3_1', Sign3_2 = '$Sign3_2'
+		WHERE EvaluationID = $EID");
 	$command = $con->query($sql);
+	
 	echo "<script>
 			alert('Evaluation Successfully Created');
+			window.location='EditEvaluation.php?edit=$EID';
 		</script>";
 }
 ?>
