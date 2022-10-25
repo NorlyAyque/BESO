@@ -249,16 +249,16 @@ if(isset($_GET['monitoring'])){
 if (isset($_POST['submit'])) {
 	//$PID , $dbAuthor , $AID - Who Monitor (Evaluator), $DateTime
 	
-	$Title = htmlspecialchars($_POST['Sign1_1']);
-	$Location_Area = htmlspecialchars($_POST['Sign1_1']);
-	$Duration = htmlspecialchars($_POST['Sign1_1']);
-	$TypeCES = htmlspecialchars($_POST['Sign1_1']);
-	$SDG = htmlspecialchars($_POST['Sign1_1']);
-	$Office = htmlspecialchars($_POST['Sign1_1']);
-	$Programs = htmlspecialchars($_POST['Sign1_1']);
-	$People = htmlspecialchars($_POST['Sign1_1']);
-	$Agency = htmlspecialchars($_POST['Sign1_1']);
-	$Beneficiaries = htmlspecialchars($_POST['Sign1_1']);
+	$Title = htmlspecialchars($_POST['Title']);
+	$Location_Area = htmlspecialchars($_POST['Location_Area']);
+	$Duration = htmlspecialchars($_POST['Duration']);
+	$TypeCES = htmlspecialchars($_POST['TypeCES']);
+	$SDG = htmlspecialchars($_POST['SDG']);
+	$Office = htmlspecialchars($_POST['Office']);
+	$Programs = htmlspecialchars($_POST['Programs']);
+	$People = htmlspecialchars($_POST['People']);
+	$Agency = htmlspecialchars($_POST['Agency']);
+	$Beneficiaries = htmlspecialchars($_POST['Beneficiaries']);
 	$PS1 = htmlspecialchars($_POST['PS1']);
 	$PS2 = htmlspecialchars($_POST['PS2']);
 	$PS3 = htmlspecialchars($_POST['PS3']);

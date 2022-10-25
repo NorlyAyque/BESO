@@ -118,25 +118,39 @@ include("Connection.php");
 				<th width="100px";> Status </th>
 				<th width="200px";>  </th>
 			</tr>
-
+<?php
+//Display all the Pending Evaluation Reports
+$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'Approved' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$MID = $result['MonitoringID'];
+		$Title = $result ['Title'];
+		//$Creator = $result['Author'];
+		$Evaluator = $result['Evaluator'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 
 			<tr class="inputs">
-				<td>sample6</td>
-				<td>sample6</td> 
-				<td>sample6</td> 
-				<td>sample6</td> 	
+				<td><?php echo $MID; ?></td>
+				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td> 	
 				<td>
-					<a href="#" button class="Abtn">View</button> </a> <br>
-					<a href="#" button class="Abtn1">CREATE EVALUATION</button> </a> <br>
-					<a href="#" button class="Abtn2">CREATE MONITORING</button> </a>
+					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 				</td> 
 			</tr>
-
+<?php } }?>
 			</table>	
 		</div>
 	</div>
-	
-	
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

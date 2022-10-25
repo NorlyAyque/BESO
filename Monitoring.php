@@ -56,7 +56,7 @@ include("Connection.php");
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="Reports.php">
 					<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
 					<span class ="title"> Reports</span>
 				</a>
@@ -110,21 +110,38 @@ include("Connection.php");
 				<th width="100px";> Status </th>
 				<th width="270px";>  </th>
 			</tr>
-
-
+<?php
+//Display all the Pending Evaluation Reports
+$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$MID = $result['MonitoringID'];
+		$Title = $result ['Title'];
+		//$Creator = $result['Author'];
+		$Evaluator = $result['Evaluator'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 			<tr class="inputs">
-				<td>sample4</td> >
-				<td>sample4</td> 
-				<td>sample4</td> 
-				<td>sample4</td> d> 	
+				<td><?php echo $MID; ?></td>
+				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td> 	
 				<td width ="260px";>
-					<a href="#" button class ="Pbtn">View</button> </a>
-					<a href="#" button class ="Pbtn1">Revise</button> </a> 
-					<a href="#" button class ="Pbtn2">Approved</button> </a>
-					<a href="#" button class ="Pbtn3">Reject</button> </a>
+					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
+					<a href="Monitoring.php?revise=<?php echo $MID; ?>" button class ="Pbtn1">Revise</button> </a> 
+					<a href="Monitoring.php?approved=<?php echo $MID; ?>" button class ="Pbtn2">Approved</button> </a>
+					<a href="Monitoring.php?reject=<?php echo $MID; ?>" button class ="Pbtn3">Reject</button> </a>
 				</td> 
 			</tr>
-
+<?php } }?>
 			</table>	
 		</div>
 	</div>
@@ -160,38 +177,38 @@ include("Connection.php");
 
 <?php
 if(isset($_GET['revise'])){
-	$PID = $_GET['revise'];
+	$MID = $_GET['revise'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'Need to Revise' WHERE ProposalID = $PID ");
-	$command = $con->query($sql) or die("Error Proposal move to revision");
+	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Need to Revise' WHERE MonitoringID = $MID ");
+	$command = $con->query($sql) or die("Error Monitoring move to revision");
 	echo "
 		<script>
-			alert('Proposal ID $PID Move to Revision');	
-			window.location.href='Proposal.php';
+			alert('Monitoring ID $MID Move to Revision');	
+			window.location.href='Monitoring.php';
 		</script>";
 }
 
 if(isset($_GET['approved'])){
-	$PID = $_GET['approved'];
+	$MID = $_GET['approved'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'Approved' WHERE ProposalID = $PID ");
-	$command = $con->query($sql) or die("Error Proposal Approval");
+	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Approved' WHERE MonitoringID = $MID ");
+	$command = $con->query($sql) or die("Error Monitoring Approval");
 	echo "
 		<script>
-			alert('Proposal ID $PID APPROVED');	
-			window.location.href='Proposal.php';
+			alert('Monitoring ID $MID APPROVED');	
+			window.location.href='Monitoring.php';
 		</script>";
 }
 
 if(isset($_GET['reject'])){
-	$PID = $_GET['reject'];
+	$MID = $_GET['reject'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'Rejected' WHERE ProposalID = $PID ");
-	$command = $con->query($sql) or die("Error Rejecting Proposal");
+	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Rejected' WHERE MonitoringID = $MID ");
+	$command = $con->query($sql) or die("Error Rejecting Monitoring Report");
 	echo "
 		<script>
-			alert('Proposal ID $PID REJECTED');	
-			window.location.href='Proposal.php';
+			alert('Monitoring ID $MID REJECTED');	
+			window.location.href='Monitoring.php';
 		</script>";
 }
 

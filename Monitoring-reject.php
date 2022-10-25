@@ -119,22 +119,40 @@ include("Connection.php");
 				<th width="150px";>  </th>
 			</tr>
 
-
+<?php
+//Display all the Pending Evaluation Reports
+$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'Rejected' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$MID = $result['MonitoringID'];
+		$Title = $result ['Title'];
+		//$Creator = $result['Author'];
+		$Evaluator = $result['Evaluator'];
+		$Status = $result['Remarks'];
+		
+		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
+		$Command = $con->query($sql) or die("Error SQL");
+		while($result = mysqli_fetch_array($Command)){
+			$FN = $result['Firstname'];
+			$LN = $result['Lastname'];
+			$Fullname = $FN . " " . $LN;
+?>
 			<tr class="inputs">
-				<td>sample7</td>
-				<td>sample7</td>
-				<td>sample7</td>
-				<td>sample7</td>	
+				<td><?php echo $MID; ?></td>
+				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $Status; ?></td> 	
 				<td>
-					<a href="#" button class="REbtn">View</button> </a>
-					<a href="#" button class="REbtn1">Re-Use</button> <a/>
+					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
+					<a href="Monitoring-reject.php?re_use=<?php echo $MID; ?>" button class="REbtn1">Re-Use</button> </a>
 				</td> 
 			</tr>
-		</table>	
+<?php } }?>
+			</table>	
 		</div>
-	</div>>
-	
-	
+	</div>
+		
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -166,14 +184,14 @@ include("Connection.php");
 
 <?php
 if(isset($_GET['re_use'])){
-	$PID = $_GET['re_use'];
+	$MID = $_GET['re_use'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'PENDING' WHERE ProposalID = $PID ");
-	$command = $con->query($sql) or die("Error Proposal move to revision");
+	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'PENDING' WHERE MonitoringID = $MID ");
+	$command = $con->query($sql) or die("Error Monitoring Report move to Pending");
 	echo "
 		<script>
-			alert('Proposal ID $PID Re-submit');	
-			window.location.href='Proposal-reject.php';
+			alert('Monitoring ID $MID Re-submit');	
+			window.location.href='Monitoring-reject.php';
 		</script>";
 }
 ?>
