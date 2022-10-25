@@ -61,12 +61,13 @@ while($result = mysqli_fetch_array($command))
 		$Eval2E2 = $result['Eval2E2'];
 		$Eval2ET = $result['Eval2ET'];
 
-		$Pic1 = $result['Pic1'];
-		$pic = 'data:image/*;base64,'.base64_encode($result['Pic1']);
+		
+		$Pic1 = 'data:image/*;base64,'.base64_encode($result['Pic1']);
+		$Pic2 = 'data:image/*;base64,'.base64_encode($result['Pic2']);
+		$Pic3 = 'data:image/*;base64,'.base64_encode($result['Pic3']);
+		
 		$Caption1 = $result['Caption1'];
-		$Pic2 = $result['Pic2'];
 		$Caption2 = $result['Caption2'];
-		$Pic3 = $result['Pic3'];
 		$Caption3 = $result['Caption3'];
 
 		$Sign1_1 = $result['Sign1_1'];
@@ -327,34 +328,22 @@ $pdf->Cell(15, 5, $Eval2ET, 1, 1, 'C');
 
 $pdf->Ln(5);
 
-$Height = 50;
-$Width = 80;
+$Height = 55;
+$Width = 90;
 
 $pdf->Cell(185.9, 5, 'Photos (Please attach photos with caption):', 'T', 1, 'L');
 $pdf->Ln(5);
 
-$pdf->Cell(115, 50, $pdf->Image($pic, $pdf->GetX(), $pdf->GetY(), $Width, $Height,'jpeg'), 1, 0, 'C');
-//$pdf->Cell(115, 50, $pdf->Image($Pic1, $pdf->GetX(), $pdf->GetY(), $Width, $Height), 1, 0, 'C');
-//$hi = '<img src="data:image/jpeg;base64,'.base64_encode( $result['Pic1'] ).'" alt="Image Unavailbale" width=250 height=200 />';
+$pdf->Cell(115, $Height, $pdf->Image($Pic1, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
+$pdf->Multicell(70.9, $Height, $Caption1, 0, 'L');
+$pdf->Ln(5);
+$pdf->Cell(115, $Height, $pdf->Image($Pic2, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
+$pdf->Multicell(70.9, $Height, $Caption2, 0, 'L');
+$pdf->Ln(5);
+$pdf->Cell(115, $Height, $pdf->Image($Pic3, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
+$pdf->Multicell(70.9, $Height, $Caption2, 0, 'L');
 
-
-//$pdf->Image($pic, 10,30,20,20,'jpeg');
-
-//$pdf->MemImage($Pic1);
-
-//$pdf->Ln(5);
-
-//$pdf->Cell(115, 50, $pdf->Image($Pic1, $pdf->GetX(), $pdf->GetY(), $Height, $Width), 1, 0, 'C');
-//$pdf->Multicell(70.9, 5, $Caption1, 1, 'C');
-
-//$pdf->Cell(61.97, $Height, $pdf->Image('images/back.jpg', $pdf->GetX(), $pdf->GetY(), $Height, $Width), 1, 0, 'C');
-//$pdf->Cell(61.97, $Height, $pdf->Image('images/logo.png', $pdf->GetX(), $pdf->GetY(), $Height, $Width), 1, 1, 'C');
-
-
-
-
-
-$pdf->Ln(50);
+$pdf->Ln(5);
 
 //Signatories
 
