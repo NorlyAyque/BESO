@@ -94,7 +94,7 @@ include("Connection.php");
 							<a href="Monitoring.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
 							</button>
 							
-							<a href="Monitoring-revision.php" button class = "nav2"> Revsion <ion-icon name="warning-outline"></ion-icon></a>
+							<a href="Monitoring-revision.php" button class = "nav2"> Revision <ion-icon name="warning-outline"></ion-icon></a>
 							</button>
 							
 							<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
