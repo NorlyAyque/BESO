@@ -93,9 +93,9 @@ include("Connection.php");
 					<div class="menu">
 							
 						<a href="Proposal.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
-						<a href="Proposal-revision.php" button class = "nav"> Revision <ion-icon name="warning-outline"></ion-icon></a>
+						<a href="Proposal-revision.php" button class = "nav">Revision <ion-icon name="repeat-outline"></ion-icon></a>
 						<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
-						<a href="Proposal-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>	
+						<a href="Proposal-reject.php" button class = "nav"> Rejected <ion-icon name="thumbs-down-outline"></ion-icon></a>	
 					</div>
 				</th> 
 			</tr>
@@ -138,7 +138,7 @@ while($result = mysqli_fetch_array($command))
 				<td width ="260px";>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 					<a href="Proposal.php?revise=<?php echo $PID; ?>" button class ="Pbtn1">Revise</button> </a> 
-					<a href="Proposal.php?approved=<?php echo $PID; ?>" button class ="Pbtn2">Approved</button> </a>
+					<a href="Proposal.php?approved=<?php echo $PID; ?>" button class ="Pbtn2">Approve</button> </a>
 					<a href="Proposal.php?reject=<?php echo $PID; ?>" button class ="Pbtn3">Reject</button> </a>
 				</td> 
 			</tr>

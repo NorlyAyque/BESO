@@ -111,7 +111,7 @@ $dataPoints5 = array( //Total PAP + GAD
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboard-Style.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
@@ -186,7 +186,10 @@ $dataPoints5 = array( //Total PAP + GAD
 			<div class="topbar">
 				<div class="toggle">
 					<ion-icon name="reorder-three-sharp"></ion-icon>
-				</div>	
+				</div>
+				<div class ="profile">
+					<label> Norly Ayque - Head <ion-icon name="person-circle-sharp"></ion-icon></label>
+				</div>
 			</div>
 		
 			<div id="chartContainer" class = "graph"></div>

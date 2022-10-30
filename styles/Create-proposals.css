@@ -268,7 +268,7 @@ margin-left: 100px;
   display:fixed;
   border-left: 1px solid black; 
   border-right: 1px solid black; 
-  border-bottom: 1px solid black;
+ 
   text-decoration:none;
 }
 .header1 th {
@@ -320,6 +320,15 @@ margin-left: 100px;
 }
 
  .select1 input{
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  margin-top:-4px;
+  vertical-align: middle;
+  margin-right:10px;
+}
+.select2 input{
   cursor: pointer;
   height: 16px;
   width: 16px;
@@ -399,20 +408,7 @@ margin-left: 100px;
 }
 
 
-.Drp1 select{
-  width:500px;
-  display:flex;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  padding: 10px 10px;
-  margin-top:3px;
-  font-size: 15px;
-}
-.Drp1 option{
-	font-size:15px;
-	cursor:pointer;
-}
+
 
 .checkbox button{
   width:500px;
@@ -576,59 +572,44 @@ margin-left: 100px;
 
 
 
-
-
-
-
-
-
-
-
-.Drp4 select{
-  width:500px;
-  display:flex;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  padding: 10px 10px;
-  margin-top:3px;
-  font-size: 15px;
+.MaleFemale {
+	overflow:hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	margin-left:auto;
+	margin-right:auto;
+	 width: 100%;
+	 margin-top:5px;
+	 margin-bottom:15px;
 }
-.Drp4 option{
+.th1 th {
+  border-collapse: collapse;
+  color: white;
+  font-weight:bold;
+  padding: 8px 20px;
+  background-color: var(--red);
+  display:abosolute;  
+  
+}
+.MaleFemale .MF  td{
 	font-size:15px;
-	cursor:pointer;
+	text-align: center;
+	
+
+}	
+ .MaleFemale .MF input {
+  font-weight:bold;
+  text-align: center;
+  width: 110px;
+  height:40px;
+  margin:auto;
+  
+
 }
 
-.Drp5 select{
-  width:500px;
-  display:flex;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  padding: 10px 10px;
-  margin-top:3px;
-  font-size: 15px;
-}
-.Drp5 option{
-	font-size:15px;
-	cursor:pointer;
-}
 
-.Drp6 select{
-  width:500px;
-  display:flex;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  padding: 10px 10px;
-  margin-bottom:20px;
-  margin-top:3px;
-  font-size: 15px;
-}
-.Drp6 option{
-	font-size:15px;
-	cursor:pointer;
-}
+
 
 .signiture{
   width: 97%;

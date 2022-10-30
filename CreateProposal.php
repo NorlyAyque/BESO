@@ -114,6 +114,11 @@ $DateTime = date("M, d Y; h:i:s A");
 					<th> <input type="radio" id="Project" name="Classification" value="Project" required> Project </th>
 					<th> <input type="radio" id="Activity" name="Classification" value="Activity" required> Activity</th>	
 				</tr>
+				<tr  class ="select2">
+					<th> <input type="radio" id="ExtensionPAP" name="1" value="ExtensionPAP" required> Extension PAP</th>
+					<th> <input type="radio" id="Monitoring" name="1" value="Monitoring" required> Monitoring </th>
+					<th> <input type="radio" id="Impact" name="1" value="Impact" required> Impact Assessment</th>	
+				</tr>
 			</table>
 			<div class="Create">
 				<div class="fillup">
@@ -285,7 +290,21 @@ $DateTime = date("M, d Y; h:i:s A");
 				<div class="fillup">
 				  <div class="input-field">
 						<label> X. Beneficiaries <i>(Type and Number of Male & Female)</i><label>
-						<textarea placeholder="type here..." name="X" required></textarea>
+						<table class="MaleFemale">	
+								<tr class="th1">
+									<th></th>
+									<th> <p>Total No. of Male and Female<p> </th>
+								</tr>	
+								<tr class="MF" >
+									<td width="100px"  >Male</td>
+									<td><input type="number"> </input></td> 
+								
+								</tr>
+								<tr class="MF" >
+									<td >Female</td>
+									<td><input type="number"> </input></td> 
+								</tr>
+							</table>
 						
 						<label> Xl. Total Cost and Sources of Funds<label>
 						<textarea placeholder="type here..." name="XI" required></textarea>
