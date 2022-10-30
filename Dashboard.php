@@ -135,17 +135,18 @@ $dataPoints5 = array( //Total PAP + GAD
 					</a>
 				</li>
 				<li>
-					<a href="Proposal.php">
-						<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
-						<span class ="title"> Project Proposals</span>
-					</a>
-				</li>
-				<li>
 					<a href="CreateProposal.php">
 						<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
 						<span class ="title"> Create Proposal</span>
 					</a>
 				</li>
+				<li>
+					<a href="Proposal.php">
+						<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
+						<span class ="title"> Project Proposals</span>
+					</a>
+				</li>
+				
 				<li>
 					<a href="Evaluation.php">
 						<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
@@ -211,8 +212,9 @@ $dataPoints5 = array( //Total PAP + GAD
 			<thead>
 			<tr>
 				<th>
-					
+					 Year: 2022
 				</th>
+				
 				<th> Quarter 1 </th>
 				<th> Quarter 2 </th>
 				<th> Quarter 3 </th>

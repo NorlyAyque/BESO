@@ -75,17 +75,18 @@ if(isset($_GET['edit'])){
 				</a>
 			</li>
 			<li>
-				<a href="Proposal.php">
-					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
-					<span class ="title"> Project Proposals</span>
-				</a>
-			</li>
-			<li>
 				<a href="CreateProposal.php">
 					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
 					<span class ="title"> Create Proposal</span>
 				</a>
 			</li>
+			<li>
+				<a href="Proposal.php">
+					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
+					<span class ="title"> Project Proposals</span>
+				</a>
+			</li>
+			
 			<li>
 				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>

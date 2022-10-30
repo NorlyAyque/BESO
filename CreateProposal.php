@@ -16,7 +16,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-Proposal.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-Proposals.css">
 
 </head>
 <body>
@@ -40,15 +40,15 @@ $DateTime = date("M, d Y; h:i:s A");
 				</a>
 			</li>
 			<li>
-				<a href="Proposal.php">
-					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
-					<span class ="title"> Project Proposals</span>
-				</a>
-			</li>
-			<li>
 				<a class="active" href="CreateProposal.php">
 					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
 					<span class ="title"> Create Proposal</span>
+				</a>
+			</li>
+			<li>
+				<a href="Proposal.php">
+					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
+					<span class ="title"> Project Proposals</span>
 				</a>
 			</li>
 			<li>
@@ -127,12 +127,147 @@ $DateTime = date("M, d Y; h:i:s A");
 						<label> lll. Duration <label>
 						<textarea placeholder="type here..." name="III" required></textarea>
 						 
-						<label> lV. Type of Communuty Extension Service <label>
-						<textarea placeholder="type here..." name="IV" required></textarea>
-						
-						<label>  V. Sustatinable Development Goals (SDG) <label>
-						<textarea placeholder="type here..." name="V" required></textarea>
-						
+						<label><b>lV. Type of Communuty Extension Service</b></label>
+						<div class="checkbox" >
+							<button onclick="openForm()"> Please Select one or more types..  </button>
+						</div>
+						<div class="form-popup" id="myForm">
+							<label class="check" value=""><span>1. Smart Analytics and Engineering</span>
+								<input type="checkbox" checked="checked">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>2. Environment and Ntural Resources Conservation, Protection and Rehabilitation Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>3. Adopt-A-Barangay/Municipality/School/Social Development through BIDANI Implementation</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>4. Community Outreach Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>5. Technical-Vocational Education and Training(TVET)Program on Agri-Fishery and Related Program for Farmers and Fisherfolks</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>6. Technology Transfer, Utilization and Commercialization Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>7. Technical Assistance and Advisory Program to Agencies, Organizations, Associations and Other Groups</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>8. Parent's Empowerment through Social Development(PESODEV)Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>9. Genger and Development</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>10. Disaster Preparedness and Response/Climate Change Adaptation</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>11. BatStateU Inclusive Social Innovation for Regional Growth(BISIG)Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>12. Livelihood and other Entrepreneurship related on Agri-Fisheries(LEAF)</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<button type="button" class="btncancel" onclick="closeForm()">CLOSE</button>
+						</div>
+							<textarea placeholder="..." name="lV" required></textarea>
+							
+							
+						<label><b>V. Sustatinable Development Goals (SDG)</b></label>
+							<!-- -->
+							<div class="checkbox1" >
+								<button onclick="openForm1()"> Please Select one or more types..  </button>
+							</div>
+							<div class="form-popup1" id="myForm1">
+								<label class="check"value=""><span>1. No povery</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"value=""><span>2. Zero hunger</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>3. Good health and well-being</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>4. Quality education</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"value=""><span>5. Genger equality</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>6. Clean water and sanitation</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>7. Affordableand clean energy</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>8. Decent work and economic growth</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>9. Industry, innovation and infrastructure</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>10. Reduced inequalities</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>11. Sustainable cities and communities</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>12. Resonsible comsumption and production</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>13. Climate action</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"value=""><span>14. Life below water</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"value=""><span>15. Life on land</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>16. Peace, justice and strong institution</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>16. Peace, justice and strong institution</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<button type="button" class="btncancel" onclick="closeForm1()">CLOSE</button>
+							</div>
+							
+						<textarea placeholder="..." name="V" required></textarea>
+				
 						<label>  Vl. Office/ College/s Involved <label>
 						<textarea placeholder="type here..." name="VI" required></textarea>
 						
@@ -244,6 +379,42 @@ $DateTime = date("M, d Y; h:i:s A");
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
+	
+	<script>
+		function openForm() {
+		document.getElementById("myForm").style.display = "block";
+		}
+
+		function closeForm() {
+		  document.getElementById("myForm").style.display = "none";
+		}
+	</script>
+	
+	<script>
+		function openForm1() {
+		document.getElementById("myForm1").style.display = "block";
+		}
+
+		function closeForm1() {
+		  document.getElementById("myForm1").style.display = "none";
+		}
+	</script>
+	
+	<script>
+		function openForm2() {
+		document.getElementById("myForm2").style.display = "block";
+		}
+
+		function closeForm2() {
+		  document.getElementById("myForm2").style.display = "none";
+		}
+	</script>
+	
+	
+	
+	
+	
+	
 </body>
 </html>
 
