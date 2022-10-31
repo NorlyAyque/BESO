@@ -333,18 +333,18 @@ if(isset($_GET['edit'])){
 						
 						<div class ="pics1">
 							 <label> Select Picture 1:</label>
-							 <input type="file" name="Pic1"></input>
-							 <textarea class ="caption" placeholder="caption here..." name="Caption1"></textarea> 
+							 <input type="file" name="Pic1" accept=".jpg, .jpeg"></input>
+							 <textarea class ="caption" placeholder="caption here..." name="Caption1"><?php echo $dbCaption1; ?></textarea> 
 						</div>	 
 						<div class ="pics2">
 							<label> Select Picture 2:</label>
-							  <input type="file" name="Pic2"></input>
-							  <textarea class ="caption" placeholder="caption here..." name="Caption2"></textarea> 
+							  <input type="file" name="Pic2" accept=".jpg, .jpeg"></input>
+							  <textarea class ="caption" placeholder="caption here..." name="Caption2"><?php echo $dbCaption2; ?></textarea> 
 						</div>	
 						<div class ="pics2">
 						<label> Select Picture 3:</label>
-							   <input type="file" name="Pic3"></input>
-							   <textarea class ="caption" placeholder="caption here..." name="Caption3"></textarea> 
+							   <input type="file" name="Pic3" accept=".jpg, .jpeg"></input>
+							   <textarea class ="caption" placeholder="caption here..." name="Caption3"><?php echo $dbCaption3; ?></textarea> 
 							   
 						</div>
 						<CENTER>
@@ -560,15 +560,18 @@ if (isset($_POST['update'])) {
 	$Eval2E2 = htmlspecialchars($_POST['Eval2E2']);
 	$Eval2ET = htmlspecialchars($_POST['Eval2ET']);
 	
-	$Pic1 = addslashes(file_get_contents($_FILES['Pic1']['tmp_name']));
-	$Pic2 = addslashes(file_get_contents($_FILES['Pic2']['tmp_name']));
-	$Pic3 = addslashes(file_get_contents($_FILES['Pic3']['tmp_name']));
+	$img1 = ($_FILES['Pic1']['tmp_name']);
+	$img2 = ($_FILES['Pic2']['tmp_name']);
+	$img3 = ($_FILES['Pic3']['tmp_name']);
+
+	//$Pic1 = addslashes(file_get_contents($_FILES['Pic1']['tmp_name']));
+	//$Pic2 = addslashes(file_get_contents($_FILES['Pic2']['tmp_name']));
+	//$Pic3 = addslashes(file_get_contents($_FILES['Pic3']['tmp_name']));
 
 	$Caption1 = htmlspecialchars($_POST['Caption1']);
 	$Caption2 = htmlspecialchars($_POST['Caption2']);
 	$Caption3 = htmlspecialchars($_POST['Caption3']);
 	
-	//$Remarks (Pending, Approved, Revise, Reject)
 	$Sign1_1 = htmlspecialchars($_POST['Sign1_1']);
 	$Sign1_2 = htmlspecialchars($_POST['Sign1_2']);
 	$Sign2_1 = htmlspecialchars($_POST['Sign2_1']);
@@ -576,6 +579,28 @@ if (isset($_POST['update'])) {
 	$Sign3_1 = htmlspecialchars($_POST['Sign3_1']);
 	$Sign3_2 = htmlspecialchars($_POST['Sign3_2']);
 
+	if (empty($img1)== true){ }
+	else {
+		$Pic1 = addslashes(file_get_contents($_FILES['Pic1']['tmp_name']));
+		$sql = ("UPDATE evaluation_alangilan SET Pic1 = '$Pic1' WHERE EvaluationID = $EID");
+		$command = $con->query($sql);
+	}
+
+	if (empty($img2)== true){ }
+	else {
+		$Pic2 = addslashes(file_get_contents($_FILES['Pic2']['tmp_name']));
+		$sql = ("UPDATE evaluation_alangilan SET Pic2 = '$Pic2' WHERE EvaluationID = $EID");
+		$command = $con->query($sql);
+	}
+
+	if (empty($img3)== true){ }
+	else {
+		$Pic3 = addslashes(file_get_contents($_FILES['Pic3']['tmp_name']));
+		$sql = ("UPDATE evaluation_alangilan SET Pic3 = '$Pic3' WHERE EvaluationID = $EID");
+		$command = $con->query($sql);
+	}
+
+	//Update for all text fields
 	$sql = ("UPDATE evaluation_alangilan
 		SET Title = '$Title', Location_Area = '$Location_Area', Implementation= '$Implementation', 
 			Office = '$Office', Agency = '$Agency', TypeCES = '$TypeCES', SDG = '$SDG', Beneficiaries = '$Beneficiaries',
@@ -591,9 +616,7 @@ if (isset($_POST['update'])) {
 			Eval2C1 = '$Eval2C1', Eval2C2 = '$Eval2C2', Eval2CT = '$Eval2CT',
 			Eval2D1 = '$Eval2D1', Eval2D2 = '$Eval2D2', Eval2DT = '$Eval2DT',
 			Eval2E1 = '$Eval2E1', Eval2E2 = '$Eval2E2', Eval2ET = '$Eval2ET',
-			Pic1 = '$Pic1', Caption1 = '$Caption1',
-			Pic2 = '$Pic2', Caption2 = '$Caption2', 
-			Pic3 = '$Pic3', Caption3 = '$Caption3',
+			Caption1 = '$Caption1', Caption2 = '$Caption2', Caption3 = '$Caption3',
 			Sign1_1 = '$Sign1_1', Sign1_2 = '$Sign1_2', Sign2_1 = '$Sign2_1',
 			Sign2_2 = '$Sign2_2', Sign3_1 = '$Sign3_1', Sign3_2 = '$Sign3_2'
 		WHERE EvaluationID = $EID");

@@ -277,22 +277,23 @@ if(isset($_GET['evaluation'])){
 						
 						<div class ="pics1">
 							 <label> Select Picture 1:</label>
-							 <input type="file" name="Pic1" accept="=image/jpeg"></input>
+							 <input type="file" id="Pic1" name="Pic1" accept=".jpg, .jpeg" onchange="validateFileTypePic1()">
 							 <textarea class ="caption" placeholder="caption here..." name="Caption1"></textarea> 
 						</div>	 
 						<div class ="pics2">
 							<label> Select Picture 2:</label>
-							  <input type="file" name="Pic2" accept="=image/jpeg"></input>
+							  <input type="file" id="Pic2" name="Pic2" accept=".jpg, .jpeg" onchange="validateFileTypePic2()">
 							  <textarea class ="caption" placeholder="caption here..." name="Caption2"></textarea> 
 						</div>	
 						<div class ="pics2">
 						<label> Select Picture 3:</label>
-							   <input type="file" name="Pic3" accept="=image/jpeg"></input>
+							   <input type="file" id="Pic3" name="Pic3" accept=".jpg, .jpeg" onchange="validateFileTypePic3()">
 							   <textarea class ="caption" placeholder="caption here..." name="Caption3"></textarea> 
 						</div>	
 					</div>
 				</div>
 		</div>
+		
 				<table class="signiture">
 							<tr>
 								<th></th>
@@ -434,6 +435,43 @@ function Cal_2E(){
 	let ans = (parseInt(Eval2E1)) + (parseInt(Eval2E2));
 	document.getElementById("Eval2ET").value = ans;
 }
+</script>
+
+<script type="text/javascript">
+//For Image Validation
+
+function validateFileTypePic1(){
+	var fileName = document.getElementById("Pic1").value;
+	var idxDot = fileName.lastIndexOf(".") + 1;
+	var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+	if (extFile=="jpg" || extFile=="jpeg"){ }
+	else{
+		alert("Only jpg/jpeg files are allowed! \r\r   ->Reselect Picture 1");
+		document.getElementById("Pic1").value = "";
+	}   
+}
+
+function validateFileTypePic2(){
+	var fileName = document.getElementById("Pic2").value;
+	var idxDot = fileName.lastIndexOf(".") + 1;
+	var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+	if (extFile=="jpg" || extFile=="jpeg"){ }
+	else{
+		alert("Only jpg/jpeg files are allowed! \r\r   ->Reselect Picture 2");
+		document.getElementById("Pic2").value = "";
+	}   
+}
+
+function validateFileTypePic3(){
+	var fileName = document.getElementById("Pic3").value;
+	var idxDot = fileName.lastIndexOf(".") + 1;
+	var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+	if (extFile=="jpg" || extFile=="jpeg"){ }
+	else{
+		alert("Only jpg/jpeg files are allowed! \r\r   ->Reselect Picture 3");
+		document.getElementById("Pic3").value = "";
+	}   
+}
 
 
 </script>
@@ -498,13 +536,16 @@ if (isset($_POST['submit'])) {
 	//$Pic3 = htmlspecialchars($_POST['Pic3']);
 
 	$Pic1 = $_FILES['Pic1']['tmp_name'];
-    $img1 = file_get_contents($Pic1);
+	if ($Pic1 == ""){ $img1 = "";}
+	else{$img1 = file_get_contents($Pic1);}
 
 	$Pic2 = $_FILES['Pic2']['tmp_name'];
-    $img2 = file_get_contents($Pic2);
+	if ($Pic2 == ""){ $img2 = "";}
+	else{$img2 = file_get_contents($Pic2);}
 
 	$Pic3 = $_FILES['Pic3']['tmp_name'];
-    $img3 = file_get_contents($Pic3);
+    if ($Pic3 == ""){ $img3 = "";}
+	else{$img3 = file_get_contents($Pic3);}
 
 	$Caption1 = htmlspecialchars($_POST['Caption1']);
 	$Caption2 = htmlspecialchars($_POST['Caption2']);
@@ -518,8 +559,6 @@ if (isset($_POST['submit'])) {
 	$Sign2_2 = htmlspecialchars($_POST['Sign2_2']);
 	$Sign3_1 = htmlspecialchars($_POST['Sign3_1']);
 	$Sign3_2 = htmlspecialchars($_POST['Sign3_2']);
-
-	
 
 	$stmt = mysqli_prepare($con, "INSERT INTO evaluation_alangilan
 		(ProposalID, Author, Evaluator, Date_Time,

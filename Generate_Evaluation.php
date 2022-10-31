@@ -61,10 +61,23 @@ while($result = mysqli_fetch_array($command))
 		$Eval2E2 = $result['Eval2E2'];
 		$Eval2ET = $result['Eval2ET'];
 
+		//$Pic1 = 'data:image/*;base64,'.base64_encode($result['Pic1']);
+		//$Pic2 = 'data:image/*;base64,'.base64_encode($result['Pic2']);
+		//$Pic3 = 'data:image/*;base64,'.base64_encode($result['Pic3']);
 		
-		$Pic1 = 'data:image/*;base64,'.base64_encode($result['Pic1']);
-		$Pic2 = 'data:image/*;base64,'.base64_encode($result['Pic2']);
-		$Pic3 = 'data:image/*;base64,'.base64_encode($result['Pic3']);
+		$image1 = $result['Pic1'];
+		$image2 = $result['Pic2'];
+		$image3 = $result['Pic3'];
+
+		if ($image1 == ""){$Pic1 = "";}
+		else{$Pic1 = 'data:image/*;base64,'.base64_encode($image1);}
+
+		if ($image2 == ""){$Pic2 = "";}
+		else{$Pic2 = 'data:image/*;base64,'.base64_encode($image2);}
+		
+		if ($image3 == ""){$Pic3 = "";}
+		else{$Pic3 = 'data:image/*;base64,'.base64_encode($image3);}
+		
 		
 		$Caption1 = $result['Caption1'];
 		$Caption2 = $result['Caption2'];
@@ -334,14 +347,32 @@ $Width = 90;
 $pdf->Cell(185.9, 5, 'Photos (Please attach photos with caption):', 'T', 1, 'L');
 $pdf->Ln(5);
 
-$pdf->Cell(115, $Height, $pdf->Image($Pic1, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
-$pdf->Multicell(70.9, $Height, $Caption1, 0, 'L');
+if ($Pic1 == ""){}
+else{
+	$pdf->Cell(115, $Height, $pdf->Image($Pic1, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
+	$pdf->Multicell(70.9, $Height, $Caption1, 0, 'L');
+}
+		
 $pdf->Ln(5);
-$pdf->Cell(115, $Height, $pdf->Image($Pic2, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
-$pdf->Multicell(70.9, $Height, $Caption2, 0, 'L');
+
+if ($Pic2 == ""){}
+else{
+	$pdf->Cell(115, $Height, $pdf->Image($Pic2, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
+	$pdf->Multicell(70.9, $Height, $Caption2, 0, 'L');
+}
+
 $pdf->Ln(5);
-$pdf->Cell(115, $Height, $pdf->Image($Pic3, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
-$pdf->Multicell(70.9, $Height, $Caption2, 0, 'L');
+
+if ($Pic3 == ""){}
+else{
+	$pdf->Cell(115, $Height, $pdf->Image($Pic3, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
+	$pdf->Multicell(70.9, $Height, $Caption3, 0, 'L');
+}
+
+
+
+
+
 
 $pdf->Ln(5);
 
