@@ -76,6 +76,7 @@ if (isset($_POST['Login'])){
 		$dbFN = $result['Firstname'];
 		$dbLN = $result['Lastname'];
 		$dbCampus = $result['Campus'];
+		$dbDepartment = $result['Department'];
 		$dbPosition = $result['Position'];
 		$dbStatus = $result['AccStatus'];
 	}
@@ -92,6 +93,7 @@ if (isset($_POST['Login'])){
 			$_SESSION["FullName"] = $dbFN . " " . $dbLN;
 			$_SESSION["Email"] = $dbEmail;
 			$_SESSION["Campus"] = $dbCampus;
+			$_SESSION["Department"] = $dbDepartment;
 			$_SESSION["Position"] = $dbPosition;
 			$_SESSION["Status"] = $dbStatus;
 			

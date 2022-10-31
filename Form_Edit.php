@@ -15,6 +15,8 @@ if(isset($_GET['edit'])){
 		$dbFN = $result['Firstname'];
         $dbLN = $result['Lastname'];
 		$dbEmail = $result['Email'];
+		$dbCampus = $result['Campus'];
+		$dbDepartment = $result['Department'];
 		$dbPosition = $result['Position'];
     }
 }
@@ -124,6 +126,27 @@ if(isset($_GET['edit'])){
 					<label><b>Password</b></label>
 					<input type="password" placeholder="Enter Password" name="PSW">
 					
+					<label><b>Campus</b></label>
+					<div class ="Drp">
+					<select name="Campus" id="Campus" required>
+						<option value="">Select Campus</option>
+						<option value="Alangilan">Alangilan</option>
+						<option value="Balayan">Balayan</option>
+						<option value="Lemery">Lemery</option>
+						<option value="Lipa">Lipa</option>
+						<option value="Lobo">Lobo</option>
+						<option value="Mabini">Mabini</option>
+						<option value="Malvar">Malvar</option>
+						<option value="Pablo Borbon">Pablo Borbon</option>
+						<option value="Rosario">Rosario</option>
+						<option value="San Juan">San Juan</option>
+						<option value="<?php echo $dbCampus; ?>" selected><?php echo $dbCampus; ?></option>
+					</select>
+					</div>
+
+					<label><b>Department</b></label>
+					<input type="text" placeholder="Department" name="Department" value="<?php echo $dbDepartment; ?>" required>
+
 					<label><b>Position</b></label>
 					<div class ="Drp">
 					<select name="Position" id="Position">
@@ -179,27 +202,29 @@ if (isset($_POST['Update'])) {
     $LN = htmlspecialchars($_POST['LN']);
     $Email = htmlspecialchars($_POST['Email']);
     $PSW = htmlspecialchars($_POST['PSW']);
+	$Campus = htmlspecialchars($_POST['Campus']);
+	$Department = htmlspecialchars($_POST['Department']);
     $Position = htmlspecialchars($_POST['Position']);
 
-    if (empty($_POST["PSW"])) { //Do not Update Password
+    if (empty($_POST["PSW"])) { //Kung Empty c Passoword, walang laman
         $sql = ("UPDATE account
-			SET Email = '$Email', Firstname = '$FN', Lastname = '$LN', Position = '$Position'
+			SET Email = '$Email', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', Department = '$Department', Position = '$Position'
 			WHERE AccountID = $AID");
 		$command = $con->query($sql) or die("Error encounter while updating data");
 		
 		echo "<script>
-		alert('Target Updated Successfully');
+		alert('Account Successfully Updated');
 		window.location='Account.php';
 		</script>";
     }
     else { //kung ndi empty c Password, Edi Update
         $sql = ("UPDATE account
-			SET Email = '$Email', Password = '$PSW', Firstname = '$FN', Lastname = '$LN', Position = '$Position'
+			SET Email = '$Email', Password = '$PSW', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', Department = '$Department', Position = '$Position'
 			WHERE AccountID = $AID");
 		$command = $con->query($sql) or die("Error encounter while updating data");
 		
 		echo "<script>
-		alert('Target Updated Successfully');
+		alert('Account Successfully Updated');
 		window.location='Account.php';
 		</script>";
     }

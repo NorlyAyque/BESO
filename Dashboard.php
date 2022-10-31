@@ -188,7 +188,13 @@ $dataPoints5 = array( //Total PAP + GAD
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>
 				<div class ="profile">
-					<label> Norly Ayque - Head <ion-icon name="person-circle-sharp"></ion-icon></label>
+					<label> <?php 
+								echo "<b>".$_SESSION["FullName"]."</b>";
+								echo " - ";
+								echo $_SESSION["Position"];  
+								echo " - ";
+								echo $_SESSION["Department"]
+							?> <ion-icon name="person-circle-sharp"></ion-icon></label>
 				</div>
 			</div>
 		

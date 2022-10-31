@@ -109,46 +109,24 @@ if(isset($_GET['enable'])){
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>	
 			</div>
-
-<?php
-if(isset($_GET['delete'])){
-	$AID = $_GET['delete'];
-
-	echo "<center>";
-	echo " <span class ='Notif'> Are you sure you want yo DELETE AccountID: ".$AID."? </span>" ;
-	echo "<form method='post'>";
-	echo "<input type='submit' class ='Ycss' name='YES' value='YES'>";
-	echo "<input type='submit' class ='Ncss' name='NO' value='NO'>";
-
-	if (isset($_POST['YES'])) {
-		echo "<script> alert('Account Deleted');";
-		echo "window.location.href='Account.php'; </script>";
-		/*
-		$sql = ("DELETE FROM account WHERE AccountID = $AID ");
-		$command = $con->query($sql) or die("Error Deleting the Account");
-		echo "
-		<script>
-			alert('Account ID $AID is Deleted');	
-		</script>"; */
-	}
-	if (isset($_POST['NO'])) {header('Location: Account.php');}
-}
-?>
+			
 			<div class="add">
 			<a href="Form_Add.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon></a> </button>
 			</div>
 			<table class="account">
 				<tr>
-					<th colspan="6"><center>ACCOUNT MANAGEMENT </th> 
+					<th colspan="8"><center>ACCOUNT MANAGEMENT </th> 
 				</tr>
 			<tr>
 				
 				<th> Account ID </th>
-				<th width="300px";> Name </th>
-				<th width="500px";> Email</th>
-				<th width="120px";> Position </th>
-				<th width="100px";> Status </th>
-				<th width="450px";></th>
+				<th width="auto";> Name </th>
+				<th width="auto";> Email</th>
+				<th width="auto";> Campus</th>
+				<th width="auto";> Department </th>
+				<th width="auto";> Position </th>
+				<th width="auto";> Status </th>
+				<th width="200px";></th>
 			</tr>
 <?php
 //Displaying All Accounts
@@ -162,6 +140,8 @@ while($result = mysqli_fetch_array($command))
 		//$dbFN = $result['Firstname'];
 		$dbName = $result['Firstname'] ." ". $result['Lastname'];
 		$dbEmail = $result['Email'];
+		$dbCampus = $result['Campus'];
+		$dbDepartment = $result['Department'];
 		$dbPosition = $result['Position'];
 		$dbStatus = $result['AccStatus'];
 	
@@ -170,11 +150,13 @@ while($result = mysqli_fetch_array($command))
 					<td> <?php echo $dbAID; ?> </td>
 					<td> <?php echo $dbName; ?> </td> 
 					<td> <?php echo $dbEmail; ?> </td> 
+					<td> <?php echo $dbCampus; ?> </td> 
+					<td> <?php echo $dbDepartment; ?> </td> 
 					<td> <?php echo $dbPosition; ?> </td> 
 					<td> <?php echo $dbStatus; ?> </td> 
 					<td>
 						<a href="Form_Edit.php?edit=<?php echo $dbAID; ?>" button class = "btn"> Edit </button>
-						<a href="Account.php?delete=<?php echo $dbAID; ?>" button class = "btn1"> Delete </button>
+						
 						<a href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn3"> Enable </a>
 						<a href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
 						

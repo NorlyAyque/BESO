@@ -104,6 +104,27 @@ include("Connection.php");
 					<label><b>Password</b></label>
 					<input type="password" placeholder="Enter Password" name="PSW" required>
 					
+					<label><b>Campus</b></label>
+					<div class ="Drp">
+					<select name="Campus" id="Campus" required>
+						<option value="">Select Campus</option>
+						<option value="Alangilan">Alangilan</option>
+						<option value="Balayan">Balayan</option>
+						<option value="Lemery">Lemery</option>
+						<option value="Lipa">Lipa</option>
+						<option value="Lobo">Lobo</option>
+						<option value="Mabini">Mabini</option>
+						<option value="Malvar">Malvar</option>
+						<option value="Pablo Borbon">Pablo Borbon</option>
+						<option value="Rosario">Rosario</option>
+						<option value="San Juan">San Juan</option>
+						<option value="<?php echo $_SESSION["Campus"]; ?>" selected><?php echo $_SESSION["Campus"]; ?></option>
+					</select>
+					</div>
+
+					<label><b>Department</b></label>
+					<input type="text" placeholder="Department" name="Department" required>
+
 					<label><b>Position</b></label>
 					<div class ="Drp">
 					<select name="Position" id="Position" required>
@@ -113,6 +134,7 @@ include("Connection.php");
 						<option value="Staff">Staff</option>
 					</select>
 					</div>
+
 					<!--Save Button -->
 					<button class="btn" type="submit" name="Signup">Add Account</button>
 				    </div>
@@ -154,22 +176,22 @@ include("Connection.php");
 
 if (isset($_POST['Signup'])) {
 
-    $Campus = $_SESSION["Campus"];
-
     $FN = htmlspecialchars($_POST['FN']);
     $LN = htmlspecialchars($_POST['LN']);
     $Email = htmlspecialchars($_POST['Email']);
     $PSW = htmlspecialchars($_POST['PSW']);
     $Position = htmlspecialchars($_POST['Position']);
+	$Department = htmlspecialchars($_POST['Department']);
+	$Campus = htmlspecialchars($_POST['Campus']);
 
     $sql = ("INSERT INTO account
-            (Email, Password, Firstname, Lastname, Campus, Position, AccStatus)
+            (Email, Password, Firstname, Lastname, Campus, Department, Position, AccStatus)
             VALUES 
-		    ('$Email', '$PSW', '$FN', '$LN', '$Campus', '$Position', 'Active')");
+		    ('$Email', '$PSW', '$FN', '$LN', '$Campus','$Department', '$Position', 'Active')");
     $command = $con->query($sql) or die("Error encounter while updating data");
     
     echo "<script>
-            alert('Target Updated Successfully');
+            alert('Account Creation Successful');
             window.location='Account.php';
         </script>";
 }
