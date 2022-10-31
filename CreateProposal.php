@@ -296,13 +296,13 @@ $DateTime = date("M, d Y; h:i:s A");
 									<th> <p>Total No. of Male and Female<p> </th>
 								</tr>	
 								<tr class="MF" >
-									<td width="100px"  >Male</td>
-									<td><input type="number"> </input></td> 
+									<td width="100px" >Male</td>
+									<td><input type="number" min="0"> </input></td> 
 								
 								</tr>
 								<tr class="MF" >
 									<td >Female</td>
-									<td><input type="number"> </input></td> 
+									<td><input type="number" min="0"> </input></td> 
 								</tr>
 							</table>
 						

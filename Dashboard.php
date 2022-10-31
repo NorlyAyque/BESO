@@ -187,15 +187,7 @@ $dataPoints5 = array( //Total PAP + GAD
 				<div class="toggle">
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>
-				<div class ="profile">
-					<label> <?php 
-								echo "<b>".$_SESSION["FullName"]."</b>";
-								echo " - ";
-								echo $_SESSION["Position"];  
-								echo " - ";
-								echo $_SESSION["Department"]
-							?> <ion-icon name="person-circle-sharp"></ion-icon></label>
-				</div>
+				<?php include("userlogin.php"); ?>
 			</div>
 		
 			<div id="chartContainer" class = "graph"></div>
