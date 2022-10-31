@@ -76,7 +76,7 @@ if (isset($_POST['Login'])){
 		$dbFN = $result['Firstname'];
 		$dbLN = $result['Lastname'];
 		$dbCampus = $result['Campus'];
-		$dbDepartment = $result['Department'];
+		$dbCollege = $result['College'];
 		$dbPosition = $result['Position'];
 		$dbStatus = $result['AccStatus'];
 	}
@@ -93,7 +93,7 @@ if (isset($_POST['Login'])){
 			$_SESSION["FullName"] = $dbFN . " " . $dbLN;
 			$_SESSION["Email"] = $dbEmail;
 			$_SESSION["Campus"] = $dbCampus;
-			$_SESSION["Department"] = $dbDepartment;
+			$_SESSION["College"] = $dbCollege;
 			$_SESSION["Position"] = $dbPosition;
 			$_SESSION["Status"] = $dbStatus;
 			
@@ -115,7 +115,7 @@ if (isset($_POST['Login'])){
 					</div>
 					<div class='des'>
 						Welcome <span> $dbFN $dbLN </span><br>
-						$dbPosition - $dbCampus
+						$dbPosition - $dbCollege - $dbCampus
 					</div>
 					<div class='dismiss-btn'>
 						<button id='dismiss-popup-btn' onclick='OK()'> OK</button>

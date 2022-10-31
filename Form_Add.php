@@ -122,8 +122,8 @@ include("Connection.php");
 					</select>
 					</div>
 
-					<label><b>Department</b></label>
-					<input type="text" placeholder="Department" name="Department" required>
+					<label><b>College</b></label>
+					<input type="text" placeholder="College" name="College" required>
 
 					<label><b>Position</b></label>
 					<div class ="Drp">
@@ -181,13 +181,13 @@ if (isset($_POST['Signup'])) {
     $Email = htmlspecialchars($_POST['Email']);
     $PSW = htmlspecialchars($_POST['PSW']);
     $Position = htmlspecialchars($_POST['Position']);
-	$Department = htmlspecialchars($_POST['Department']);
+	$College = htmlspecialchars($_POST['College']);
 	$Campus = htmlspecialchars($_POST['Campus']);
 
     $sql = ("INSERT INTO account
-            (Email, Password, Firstname, Lastname, Campus, Department, Position, AccStatus)
+            (Email, Password, Firstname, Lastname, Campus, College, Position, AccStatus)
             VALUES 
-		    ('$Email', '$PSW', '$FN', '$LN', '$Campus','$Department', '$Position', 'Active')");
+		    ('$Email', '$PSW', '$FN', '$LN', '$Campus','$College', '$Position', 'Active')");
     $command = $con->query($sql) or die("Error encounter while updating data");
     
     echo "<script>

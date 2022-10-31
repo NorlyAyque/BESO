@@ -16,7 +16,7 @@ if(isset($_GET['edit'])){
         $dbLN = $result['Lastname'];
 		$dbEmail = $result['Email'];
 		$dbCampus = $result['Campus'];
-		$dbDepartment = $result['Department'];
+		$dbCollege = $result['College'];
 		$dbPosition = $result['Position'];
     }
 }
@@ -144,8 +144,8 @@ if(isset($_GET['edit'])){
 					</select>
 					</div>
 
-					<label><b>Department</b></label>
-					<input type="text" placeholder="Department" name="Department" value="<?php echo $dbDepartment; ?>" required>
+					<label><b>College</b></label>
+					<input type="text" placeholder="Collage" name="College" value="<?php echo $dbCollege; ?>" required>
 
 					<label><b>Position</b></label>
 					<div class ="Drp">
@@ -203,12 +203,12 @@ if (isset($_POST['Update'])) {
     $Email = htmlspecialchars($_POST['Email']);
     $PSW = htmlspecialchars($_POST['PSW']);
 	$Campus = htmlspecialchars($_POST['Campus']);
-	$Department = htmlspecialchars($_POST['Department']);
+	$College = htmlspecialchars($_POST['College']);
     $Position = htmlspecialchars($_POST['Position']);
 
     if (empty($_POST["PSW"])) { //Kung Empty c Passoword, walang laman
         $sql = ("UPDATE account
-			SET Email = '$Email', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', Department = '$Department', Position = '$Position'
+			SET Email = '$Email', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', College = '$College', Position = '$Position'
 			WHERE AccountID = $AID");
 		$command = $con->query($sql) or die("Error encounter while updating data");
 		
@@ -219,7 +219,7 @@ if (isset($_POST['Update'])) {
     }
     else { //kung ndi empty c Password, Edi Update
         $sql = ("UPDATE account
-			SET Email = '$Email', Password = '$PSW', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', Department = '$Department', Position = '$Position'
+			SET Email = '$Email', Password = '$PSW', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', College = '$College', Position = '$Position'
 			WHERE AccountID = $AID");
 		$command = $con->query($sql) or die("Error encounter while updating data");
 		

@@ -123,7 +123,7 @@ if(isset($_GET['enable'])){
 				<th width="auto";> Name </th>
 				<th width="auto";> Email</th>
 				<th width="auto";> Campus</th>
-				<th width="auto";> Department </th>
+				<th width="auto";> College </th>
 				<th width="auto";> Position </th>
 				<th width="auto";> Status </th>
 				<th width="200px";></th>
@@ -141,7 +141,7 @@ while($result = mysqli_fetch_array($command))
 		$dbName = $result['Firstname'] ." ". $result['Lastname'];
 		$dbEmail = $result['Email'];
 		$dbCampus = $result['Campus'];
-		$dbDepartment = $result['Department'];
+		$dbCollege = $result['College'];
 		$dbPosition = $result['Position'];
 		$dbStatus = $result['AccStatus'];
 	
@@ -151,7 +151,7 @@ while($result = mysqli_fetch_array($command))
 					<td> <?php echo $dbName; ?> </td> 
 					<td> <?php echo $dbEmail; ?> </td> 
 					<td> <?php echo $dbCampus; ?> </td> 
-					<td> <?php echo $dbDepartment; ?> </td> 
+					<td> <?php echo $dbCollege; ?> </td> 
 					<td> <?php echo $dbPosition; ?> </td> 
 					<td> <?php echo $dbStatus; ?> </td> 
 					<td>
