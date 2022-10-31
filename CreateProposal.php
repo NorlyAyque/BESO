@@ -138,7 +138,7 @@ $DateTime = date("M, d Y; h:i:s A");
 						</div>
 						<div class="form-popup" id="myForm">
 							<label class="check" value=""><span>1. Smart Analytics and Engineering</span>
-								<input type="checkbox" checked="checked">
+								<input type="checkbox">
 								<span class="checkmark"></span>
 							</label>
 							<label class="check"value=""><span>2. Environment and Ntural Resources Conservation, Protection and Rehabilitation Program</span>

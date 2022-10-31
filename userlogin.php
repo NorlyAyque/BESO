@@ -13,7 +13,7 @@ include("Connection.php");
 				echo " <br> ";
 				echo $_SESSION["Position"];  
 				echo "<br>";
-				echo $_SESSION["Department"];
+				echo $_SESSION["Department"]; //College
                 echo " - ";
                 echo $_SESSION["Campus"];
 			?> 
