@@ -1,6 +1,16 @@
 <?php
 session_start();
 include("Connection.php");
+
+$UserPosition = $_SESSION["Position"];
+if ($UserPosition == "Head"){
+	//Code Continue
+}else {
+	echo "<center> Access Denied! You are not allowed to access this page. <br>";
+	echo "<a href='Dashboard.php'> Return </a>";
+	die();
+}
+
 ?>
 
 
@@ -8,23 +18,41 @@ include("Connection.php");
 if(isset($_GET['disable'])){
 	$AID = $_GET['disable'];
 
-	$sql = ("UPDATE account SET AccStatus = 'Disabled' WHERE AccountID = $AID ");
-	$command = $con->query($sql) or die("Error Disabling the Account");
-	echo "
+	if ($_SESSION["AccountAID"] == $AID){
+		echo "
 		<script>
-			alert('Account ID $AID is Disabled');	
+			alert('You are not allow to Enable/Disable your own account');	
+			window.location.href='Account.php';
 		</script>";
+	}else {
+		$sql = ("UPDATE account SET AccStatus = 'Disabled' WHERE AccountID = $AID ");
+		$command = $con->query($sql) or die("Error Disabling the Account");
+		echo "
+			<script>
+				alert('Account ID $AID is Disabled');
+				window.location.href='Account.php';	
+			</script>";
+	}
 }
 
 if(isset($_GET['enable'])){
 	$AID = $_GET['enable'];
 
-	$sql = ("UPDATE account SET AccStatus = 'Active' WHERE AccountID = $AID ");
-	$command = $con->query($sql) or die("Error Enabling the Account");
-	echo "
+	if ($_SESSION["AccountAID"] == $AID){
+		echo "
 		<script>
-			alert('Account ID $AID is Active');	
+			alert('You are not allow to Enable/Disable your own account');
+			window.location.href='Account.php';
 		</script>";
+	}else {
+		$sql = ("UPDATE account SET AccStatus = 'Active' WHERE AccountID = $AID ");
+		$command = $con->query($sql) or die("Error Enabling the Account");
+		echo "
+			<script>
+				alert('Account ID $AID is Active');	
+				window.location.href='Account.php';
+			</script>";
+	}
 }
 ?>
 

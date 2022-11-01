@@ -89,76 +89,86 @@ if (isset($_POST['Login'])){
 		$dbPosition = $result['Position'];
 		$dbStatus = $result['AccStatus'];
 	}
-	
 	//Decrypting Password using password verify
 	$DecryptPass = password_verify($Password, $dbPass);
 
-	if ($Email === $dbEmail){
-		//Result True
-		if ($DecryptPass == 1){// Password Match
-		//if ($Password == $dbPass){
+	//Checking Account Stauts if Active or Disabled
+	if ($dbStatus == "Disabled") {
+		echo "<script> alert('You cannot login. Your account is Disabled'); </script> ";
+	}
+	else { //Otherwise (Active)
+		
+		if ($Email === $dbEmail){
+			//Result True
+			if ($DecryptPass == 1){// Password Match
+			//if ($Password == $dbPass){
 			//Adding Value to the Session variables
-			$_SESSION["AccountAID"] = $dbAID;
-			$_SESSION["FullName"] = $dbFN . " " . $dbLN;
-			$_SESSION["Email"] = $dbEmail;
-			$_SESSION["Campus"] = $dbCampus;
-			$_SESSION["College"] = $dbCollege;
-			$_SESSION["Position"] = $dbPosition;
-			$_SESSION["Status"] = $dbStatus;
+				$_SESSION["AccountAID"] = $dbAID;
+				$_SESSION["FullName"] = $dbFN . " " . $dbLN;
+				$_SESSION["Email"] = $dbEmail;
+				$_SESSION["Campus"] = $dbCampus;
+				$_SESSION["College"] = $dbCollege;
+				$_SESSION["Position"] = $dbPosition;
+				$_SESSION["Status"] = $dbStatus;
 			
-			echo "
-			<script>
-				document.getElementById('email').disabled = true;
-				document.getElementById('psw').disabled = true;
-				document.getElementById('open-popup-btn').disabled = true;
-				document.getElementById('forgotpassword').style.display = 'none';
-			</script>
-			<div class='popup'>
-				<div class='popupcenter'>
-					<div class='icon'>
-						<i class='fa fa-check'></i>
-					</div>
+				echo "
+				<script>
+					document.getElementById('email').disabled = true;
+					document.getElementById('psw').disabled = true;
+					document.getElementById('open-popup-btn').disabled = true;
+					document.getElementById('forgotpassword').style.display = 'none';
+				</script>
+				<div class='popup'>
+					<div class='popupcenter'>
+						<div class='icon'>
+							<i class='fa fa-check'></i>
+						</div>
 					
-					<div class='title'>
-						Successfully Login
-					</div>
-					<div class='des'>
-						Welcome <span> $dbFN $dbLN </span><br>
-						$dbPosition - $dbCollege - $dbCampus
-					</div>
-					<div class='dismiss-btn'>
-						<button id='dismiss-popup-btn' onclick='OK()'> OK</button>
+						<div class='title'>
+							Successfully Login
+						</div>
+						<div class='des'>
+							Welcome <span> $dbFN $dbLN </span><br>
+							$dbPosition - $dbCollege - $dbCampus
+						</div>
+						<div class='dismiss-btn'>
+							<button id='dismiss-popup-btn' onclick='OK()'> OK</button>
+						</div>
 					</div>
 				</div>
-			</div>
-			";
+				";
 
-			//Filtering Users from Different Campuses and Position
-			//Initializing tables to be used
-			if ($dbCampus == "Alangilan"){
-				$_SESSION["target_table"] = "target_alangilan";
-				$_SESSION["create_table"] = "create_alangilan";
-			}else if ($dbCampus == "Lipa"){
-				$_SESSION["target_table"] = "target_lipa";
-				$_SESSION["create_table"] = "create_lipa";
+				//Filtering Users from Different Campuses and Position
+				//Initializing tables to be used
+				if ($dbCampus == "Alangilan"){
+					$_SESSION["target_table"] = "target_alangilan";
+					$_SESSION["create_table"] = "create_alangilan";
+				}else if ($dbCampus == "Lipa"){
+					$_SESSION["target_table"] = "target_lipa";
+					$_SESSION["create_table"] = "create_lipa";
+				}
+				//Initializing Users Position
+				if ($dbPosition == "Head"){$_SESSION["Position"] = "Head";}
+				else if ($dbPosition == "Staff"){$_SESSION["Position"] = "Staff";}
+				else if ($dbPosition == "Coordinator"){$_SESSION["Position"] = "Coordinator";}
 			}
-		}
-		else{
-			//echo "Invalid Password <br>";
+			else{
+				//echo "Invalid Password <br>";
+				echo "
+					<script> 
+						document.getElementById('prompt').innerHTML = '<b> Invalid Password </b>';
+					</script>
+				";
+			}
+		}else {
+			//echo "Invalid Email"; 
 			echo "
-				<script> 
-					document.getElementById('prompt').innerHTML = '<b> Invalid Password </b>';
-				</script>
-			";
-		}
-	}else {
-		//echo "Invalid Email"; 
-		echo "
 				<script> 
 					document.getElementById('prompt').innerHTML = '<b> Invalid Email </b>';
 				</script>
 			";
-	}
+		}
+	}//end of Active
 }
 ?>
 
