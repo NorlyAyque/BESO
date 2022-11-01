@@ -2,6 +2,8 @@
 session_start();
 include("Connection.php");
 
+if (isset($_SESSION['AccountAID']) == False){ header('Location: index.php'); die; }
+
 //Getting Data declared from index.php
 $target_table = $_SESSION["target_table"];
 ?>
