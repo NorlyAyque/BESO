@@ -2,118 +2,17 @@
 session_start();
 include("Connection.php");
 
-if (isset($_SESSION['AccountAID']) == False){ header('Location: index.php'); die; }
 
-//Getting Data declared from index.php
-$target_table = $_SESSION["target_table"];
 ?>
 
-<?php
-//Getting Todays Year by default
-$YearToday = date("Y");
-//$YearToday = 2022;
 
-//Checking if Year is Existing
-$sqlexist = ("SELECT COUNT(*) as TotalCount FROM $target_table WHERE Year = '$YearToday'");
-$commandexist = $con->query($sqlexist) or die("Error Fetching Data");
-while($row = mysqli_fetch_array($commandexist)){$Count = $row['TotalCount'];}
-
-if ($Count == 0){ //if not exist
-	$dbPAP1 = $dbPAP2 = $dbPAP3 = $dbPAP4 = $dbPAPT = 0;
-	$dbGAD1 = $dbGAD2 = $dbGAD3 = $dbGAD4 = $dbGADT = 0;
-	$dbAPAP1 = $dbAPAP2 = $dbAPAP3 = $dbAPAP4 = $dbAPAPT = 0;
-	$dbRPAP1 = $dbRPAP2 = $dbRPAP3 = $dbRPAP4 = $dbRPAPT = 0;
-	$dbAGAD1 = 	$dbAGAD2 = $dbAGAD3 = $dbAGAD4 = $dbAGADT = 0;
-	$dbRGAD1 = 	$dbRGAD2 = $dbRGAD3 = $dbRGAD4 = $dbRGADT = 0;
-	echo "<center> <h1> Target is Not Been Set for this Year $YearToday </h1> </center>";
-}
-else{	
-		//Displaying Data into each textboxes default year
-		$sql = ("SELECT * FROM $target_table WHERE Year = '$YearToday'");
-		$command = $con->query($sql) or die("Error SQL");
-		while($result = mysqli_fetch_array($command))
-		{
-			$dbPAP1 = $result['PAP1'];
-			$dbPAP2 = $result['PAP2'];
-			$dbPAP3 = $result['PAP3'];
-			$dbPAP4 = $result['PAP4'];
-			$dbPAPT = $result['PAPT'];
-
-			$dbGAD1 = $result['GAD1'];
-			$dbGAD2 = $result['GAD2'];
-			$dbGAD3 = $result['GAD3'];
-			$dbGAD4 = $result['GAD4'];
-			$dbGADT = $result['GADT'];
-
-			$dbAPAP1 = $result['APAP1'];
-			$dbAPAP2 = $result['APAP2'];
-			$dbAPAP3 = $result['APAP3'];
-			$dbAPAP4 = $result['APAP4'];
-			$dbAPAPT = $result['APAPT'];
-
-			$dbRPAP1 = $result['RPAP1'];
-			$dbRPAP2 = $result['RPAP2'];
-			$dbRPAP3 = $result['RPAP3'];
-			$dbRPAP4 = $result['RPAP4'];
-			$dbRPAPT = $result['RPAPT'];
-
-			$dbAGAD1 = $result['AGAD1'];
-			$dbAGAD2 = $result['AGAD2'];
-			$dbAGAD3 = $result['AGAD3'];
-			$dbAGAD4 = $result['AGAD4'];
-			$dbAGADT = $result['AGADT'];
-
-			$dbRGAD1 = $result['RGAD1'];
-			$dbRGAD2 = $result['RGAD2'];
-			$dbRGAD3 = $result['RGAD3'];
-			$dbRGAD4 = $result['RGAD4'];
-			$dbRGADT = $result['RGADT'];
-		}
-	}
-?>
-
-<?php
- $dataPoints1 = array( //PAP Accomplished
-	array("label"=> "PAP Accomplished", "y"=> $dbAPAP1),
-	array("label"=> "PAP Accomplished", "y"=> $dbAPAP2),
-	array("label"=> "PAP Accomplished", "y"=> $dbAPAP3),
-	array("label"=> "PAP Accomplished", "y"=> $dbAPAP4)
-);
-$dataPoints2 = array( //PAP Remaining
-	array("label"=> "PAP Remaining", "y"=> $dbRPAP1),
-	array("label"=> "PAP Remaining", "y"=> $dbRPAP2),
-	array("label"=> "PAP Remaining", "y"=> $dbRPAP3),
-	array("label"=> "PAP Remaining", "y"=> $dbRPAP4)
-);
-
-$dataPoints3 = array(//GAD Accomplished
-	array("label"=> "GAD Accomplished", "y"=> $dbAGAD1),
-	array("label"=> "GAD Accomplished", "y"=> $dbAGAD2),
-	array("label"=> "GAD Accomplished", "y"=> $dbAGAD3),
-	array("label"=> "GAD Accomplished", "y"=> $dbAGAD4)
-);
-
-$dataPoints4 = array(//GAD Remaining
-	array("label"=> "GAD Remaining", "y"=> $dbRGAD1),
-	array("label"=> "GAD Remaining", "y"=> $dbRGAD2),
-	array("label"=> "GAD Remaining", "y"=> $dbRGAD3),
-	array("label"=> "GAD Remaining", "y"=> $dbRGAD4)
-);
-
-$dataPoints5 = array( //Total PAP + GAD
-	array("label"=> "Q1", "y"=> $dbAPAP1 + $dbAGAD1),
-	array("label"=> "Q2", "y"=> $dbAPAP2 + $dbAGAD2),
-	array("label"=> "Q3", "y"=> $dbAPAP3 + $dbAGAD3),
-	array("label"=> "Q4", "y"=> $dbAPAP4 + $dbAGAD4)
-);
-?>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboards.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
@@ -191,106 +90,174 @@ $dataPoints5 = array( //Total PAP + GAD
 				</div>
 				<?php include("userlogin.php"); ?>
 			</div>
-		
-			<div id="chartContainer" class = "graph"></div>
-			<table class ="header">
-			<thead>
-			<tr>
-				<th><p>ANNUAL TARGET </p></th> 
-				<th class="select"  id="SetNewField">
-					<label> <input type="checkbox" name="New"  id="New" onclick="NewTarget()">Set New Target <label></th> 
-				<th class="select1" id="EditField">
-					<label> <input type="checkbox" name="Edit" id="Edit" onclick="EditTarget()">Edit Target <label></th> 
-
-<form method="post">				
-				<!--Save Button -->
-				<th>
-					<button class="btn" type="submit" name="Save" id="Save">Save</button>
-					<button class="btn2" type="submit" name="Update" id="Update">Update</button>
-					<button class="btn1" type="submit" name="Cancel" id="Cancel">Cancel</button></th>
-			</tr>
-			</thead>
+			 <div class ="scroll">
+			<table class="input">
+				<tbody>
+					<tr>
+						<th rowspan="3"width="200px";>College</p> </th>
+						<th rowspan="3">Number of Programs</th>
+						<th colspan="20">Indicator</th>
+						<th rowspan="3">Budget </th>
+						
+					</tr>
+					<tr>
+						<th colspan="5">Number of Active Partnetship with LGUs,Industries,NGOs,NGAs, SMEs, and other stake holder as a result of extension activirties</th>
+						<th colspan="5">Number of Trainees weight by lenght of training </th>
+						<th colspan="5">Number of extension programs organized and supported consistent with the SUC's mandated and priority programs </th>
+						<th colspan="5">Percentage of beneficiaries who rate the training course/s and advisory service as satisfactory or higher in terms of quality and relevance</th>
+						
+					</tr>
+					<tr>
+						<td>1st Qrt</td>
+						<td>2nd Qrt</td>
+						<td>3rd Qrt</td>
+						<td>4th Qrt</td>
+						<td>Total</td>
+						<td>1st Qrt</td>
+						<td>2nd Qrt</td>
+						<td>3rd Qrt</td>
+						<td>4th Qrt</td>
+						<td>Total</td>
+						
+						<td>1st Qrt</td>
+						<td>2nd Qrt</td>
+						<td>3rd Qrt</td>
+						<td>4th Qrt</td>
+						<td>Total</td>
+						
+						<td>1st Qrt</td>
+						<td>2nd Qrt</td>
+						<td>3rd Qrt</td>
+						<td>4th Qrt</td>
+						<td>Total </td>
+						
+					</tr>
+					<tr class="cols">
+						<td colspan="23"></td>
+						
+					</tr>
+					<tr >
+						<th>CEAFA</th>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td  rowspan="3" class="input1" ><input type = "number"></td>
+					</tr>
+					<tr>
+						<th>CICS</th>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+					</tr>
+					<tr>
+						<th>CIT</th>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+					</tr>
+					<tr>
+						<th>Total</th>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td><input type = "number"></td>
+						<td colspan="5" class="input2"><input type = "number"></td>
+						<td class="input1"><input type = "number" ></td>
+					</tr>
+				</tbody>
 			</table>
-			<table class="target">
-			<thead>
-			<tr>
-				<th>
-					 Year: 2022
-				</th>
-				
-				<th> Quarter 1 </th>
-				<th> Quarter 2 </th>
-				<th> Quarter 3 </th>
-				<th> Quarter 4 </th>
-				<th> TOTAL </th>
-			</tr>	
-			</thead>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			
-			<tbody>
-			<tr>
-				<td>PAP </td> 
-				<td class="btn">
-				<input type = "number" min="0" name="PAP1" id="PAP1" value="<?php echo $dbPAP1;?>" onchange="CalPAP()"> </td> 
-				<td><input type = "number" min="0" name="PAP2" id="PAP2" value="<?php echo $dbPAP2;?>" onchange="CalPAP()"> </td> 
-				<td><input type = "number" min="0" name="PAP3" id="PAP3" value="<?php echo $dbPAP3;?>" onchange="CalPAP()"> </td> 
-				<td><input type = "number" min="0" name="PAP4" id="PAP4" value="<?php echo $dbPAP4;?>" onchange="CalPAP()"> </td> 
-				<td><input type = "number" min="0" name="PAPT" id="PAPT" value="<?php echo $dbPAPT;?>"> </td> 
-			</tr>
-			
-			<tr>
-				<td>GAD </td>
-				<td><input type = "number" min="0" name="GAD1" id="GAD1" value="<?php echo $dbGAD1;?>" onchange="CalGAD()"> </td> 
-				<td><input type = "number" min="0" name="GAD2" id="GAD2" value="<?php echo $dbGAD2;?>" onchange="CalGAD()"> </td> 
-				<td><input type = "number" min="0" name="GAD3" id="GAD3" value="<?php echo $dbGAD3;?>" onchange="CalGAD()"> </td> 
-				<td><input type = "number" min="0" name="GAD4" id="GAD4" value="<?php echo $dbGAD4;?>" onchange="CalGAD()"> </td> 
-				<td><input type = "number" min="0" name="GADT" id="GADT" value="<?php echo $dbGADT;?>"> </td> 
-			</tr>
-			
-	
-			<tr>
-				<th colspan="6"><center>PROGRESS OF PAP'S </th> 
-				
-			</tr>
-			
-			<tr>
-				<td>Accomplished </td> 
-				<td><input type = "number" min="0" name="APAP1" id="APAP1" value="<?php echo $dbAPAP1;?>" onchange="CalAPAP()"> </td> 
-				<td><input type = "number" min="0" name="APAP2" id="APAP2" value="<?php echo $dbAPAP2;?>" onchange="CalAPAP()"> </td> 
-				<td><input type = "number" min="0" name="APAP3" id="APAP3" value="<?php echo $dbAPAP3;?>" onchange="CalAPAP()"> </td> 
-				<td><input type = "number" min="0" name="APAP4" id="APAP4" value="<?php echo $dbAPAP4;?>" onchange="CalAPAP()"> </td> 
-				<td><input type = "number" min="0" name="APAPT" id="APAPT" value="<?php echo $dbAPAPT;?>"> </td> 
-			</tr>
-			<tr>
-				<td>Remain </td> 
-				<td><input type = "number" min="0" name="RPAP1" id="RPAP1" value="<?php echo $dbRPAP1;?>"> </td> 
-				<td><input type = "number" min="0" name="RPAP2" id="RPAP2" value="<?php echo $dbRPAP2;?>"> </td> 
-				<td><input type = "number" min="0" name="RPAP3" id="RPAP3" value="<?php echo $dbRPAP3;?>"> </td> 
-				<td><input type = "number" min="0" name="RPAP4" id="RPAP4" value="<?php echo $dbRPAP4;?>"> </td> 
-				<td><input type = "number" min="0" name="RPAPT" id="RPAPT" value="<?php echo $dbRPAPT;?>"> </td> 
-			</tr>
-			<tr>
-				<th colspan="6"><center>PROGRESS OF GAD </th> 
-			</tr>
-			
-			<tr>
-				<td>Accomplished </td> 
-				<td><input type = "number" min="0" name="AGAD1" id="AGAD1" value="<?php echo $dbAGAD1;?>"> </td> 
-				<td><input type = "number" min="0" name="AGAD2" id="AGAD2" value="<?php echo $dbAGAD2;?>"> </td> 
-				<td><input type = "number" min="0" name="AGAD3" id="AGAD3" value="<?php echo $dbAGAD3;?>"> </td> 
-				<td><input type = "number" min="0" name="AGAD4" id="AGAD4" value="<?php echo $dbAGAD4;?>"> </td> 
-				<td><input type = "number" min="0" name="AGADT" id="AGADT" value="<?php echo $dbAGADT;?>"> </td> 
-			</tr>
-			<tr>
-				<td>Remain </td> 
-				<td><input type = "number" min="0" name="RGAD1" id="RGAD1" value="<?php echo $dbRGAD1;?>"> </td> 
-				<td><input type = "number" min="0" name="RGAD2" id="RGAD2" value="<?php echo $dbRGAD2;?>"> </td> 
-				<td><input type = "number" min="0" name="RGAD3" id="RGAD3" value="<?php echo $dbRGAD3;?>"> </td> 
-				<td><input type = "number" min="0" name="RGAD4" id="RGAD4" value="<?php echo $dbRGAD4;?>"> </td> 
-				<td><input type = "number" min="0" name="RGADT" id="RGADT" value="<?php echo $dbRGADT;?>"> </td> 
-			</tr>
-			</tbody>
-</table>
-</form>			
 	</div>
 	</body>
 </html>

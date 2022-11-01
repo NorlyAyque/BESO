@@ -1,0 +1,38 @@
+.sample{
+	box-shadow: 0 0 20px rgba(0,0,0,0.3);
+	border-radius: 3px 3px 0 0;
+	margin:auto;
+	margin-top:50px;
+	border:1px black solid;
+}
+
+
+.sample table , td, th {
+	
+	border-collapse: collapse;
+	text-align:center;	
+}
+.sample td{
+	
+}
+.sample td, th {
+	padding: 3px;
+	width: 80px;
+	height: 25px;
+	
+}
+.sample th{
+	color:white;
+	background-color: #E64848;
+	font-weight:bold;
+}
+.sample td{
+	background-color: #B2B2B2;
+	color:white;
+	
+}
+/*
+tr:nth-child(even) {
+  background-color: #E64848;
+}
+*/
