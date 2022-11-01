@@ -25,15 +25,16 @@ $pdf->SetFont('Times','',10); // Set Font
 $pdf->Ln(); //Line Break
 
 //Total Width = 300.2
+$pdf->SetFont('Times','B',9);
 
-$pdf->Cell(10, 10, "No.", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
-$pdf->Cell(60, 10, "TITLE OF TRAINING", 1, 0, 'C');
-$pdf->Cell(40, 10, "INCLUSIVE DATES", 1, 0, 'C');
-$pdf->Cell(30, 10, "DURATION", 1, 0, 'C');
-$pdf->Cell(30, 10, "NO. OF TRAINEES", 1, 0, 'C');
-$pdf->Cell(30, 10, "", 1, 0, 'C');
-$pdf->Cell(50, 10, "", 1, 0, 'C');
-$pdf->Cell(50, 10, "", 1, 0, 'C');
+$pdf->Cell(10, 20, "No.", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
+$pdf->Cell(60, 20, "TITLE OF TRAINING", 1, 'C', 'L');
+$pdf->Cell(40, 20, "INCLUSIVE DATES", 1, 0, 'C');
+$pdf->Cell(30, 20, "DURATION", 1, 0, 'C');
+$pdf->Cell(30, 20, "NO. OF TRAINEES", 1, 0, 'C');
+$pdf->Cell(30, 20, "", 1, 0, 'C');
+$pdf->Cell(50, 20, "", 1, 0, 'C');
+$pdf->Cell(50, 20, "", 1, 0, 'C');
 $pdf->Ln();
 
 
@@ -44,11 +45,11 @@ $pdf->Cell(20, 10, "", 1, 0, 'C');
 $pdf->Cell(30, 10, "", 1, 0, 'C');
 $pdf->Cell(30, 10, "", 1, 0, 'C');
 $pdf->Cell(30, 10, "", 1, 0, 'C');
-$pdf->Cell(10, 10, "", 1, 0, 'C');
-$pdf->Cell(10, 10, "", 1, 0, 'C');
-$pdf->Cell(10, 10, "", 1, 0, 'C');
-$pdf->Cell(10, 10, "", 1, 0, 'C');
-$pdf->Cell(10, 10, "", 1, 0, 'C');
+$pdf->Cell(10, 10, "P", 1, 0, 'C');
+$pdf->Cell(10, 10, "F", 1, 0, 'C');
+$pdf->Cell(10, 10, "S", 1, 0, 'C');
+$pdf->Cell(10, 10, "VS", 1, 0, 'C');
+$pdf->Cell(10, 10, "E", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
 
@@ -57,7 +58,7 @@ $pdf->Ln();
 $pdf->MultiCell(300,10,'College of Industrial Technology',1,'J',false); //Multicell (Width, Height, "Text", Border, Allignment, Color)
 
 $pdf->Cell(10, 10, "1", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
-$pdf->Cell(60, 10, "", 1, 0, 'C');
+$pdf->Cell(60, 10, "", 10, 0, 'C');
 $pdf->Cell(20, 10, "", 1, 0, 'C');
 $pdf->Cell(20, 10, "", 1, 0, 'C');
 $pdf->Cell(30, 10, "", 1, 0, 'C');
@@ -180,7 +181,7 @@ $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
 
 
-$pdf->Cell(170, 10, "College of Engineering,Architecture and Fine Arts", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
+$pdf->Cell(170, 10, "College of Engineering,Architecture and Fine Arts", 1, 'C', 'L'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Cell(30, 10, "", 1, 0, 'C');
 $pdf->Cell(100, 10, "", 1, 0, 'C');
 
