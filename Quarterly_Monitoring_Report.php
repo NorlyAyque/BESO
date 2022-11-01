@@ -26,7 +26,16 @@ $pdf->Ln(); //Line Break
 
 //Total Width = 300.2
 
-$pdf->MultiCell(100,10,'Hello World',1,'J',false); //Multicell (Width, Height, "Text", Border, Allignment, Color)
+$pdf->Cell(20, 10, "No.", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
+$pdf->Cell(60, 10, "TITLE OF TRAINING", 1, 0, 'C');
+$pdf->Cell(40, 10, "INCLUSIVE DATES", 1, 0, 'C');
+$pdf->Cell(30, 10, "DURATION", 1, 0, 'C');
+$pdf->Cell(30, 10, "NO. OF TRAINEES", 1, 0, 'C');
+$pdf->Cell(30, 10, "", 1, 0, 'C');
+$pdf->Cell(50, 10, "", 1, 0, 'C');
+$pdf->Cell(50, 10, "", 1, 0, 'C');
+$pdf->Ln();
+
 
 $pdf->Cell(20, 10, "", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Cell(60, 10, "", 1, 0, 'C');
@@ -43,9 +52,9 @@ $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
 
-$pdf->MultiCell(310,10,'Alangilan Campus',1,'J',false); //Multicell (Width, Height, "Text", Border, Allignment, Color)
+$pdf->Cell(310, 10, "Alangilan Campus", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
+$pdf->Ln();
 $pdf->MultiCell(310,10,'College of Industrial Technology',1,'J',false); //Multicell (Width, Height, "Text", Border, Allignment, Color)
-
 
 $pdf->Cell(20, 10, "1", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Cell(60, 10, "", 1, 0, 'C');
@@ -170,10 +179,10 @@ $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
 
-$pdf->Cell(210, 10, "College of Engineering,Architecture and Fine Arts", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
-$pdf->Cell(30, 10, "", 1, 0, 'C');
-$pdf->Cell(70, 10, "", 1, 0, 'C');
 
+$pdf->Cell(180, 10, "College of Engineering,Architecture and Fine Arts", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
+$pdf->Cell(30, 10, "", 1, 0, 'C');
+$pdf->Cell(100, 10, "", 1, 0, 'C');
 
 
 $pdf->Output(); //To Display the whole Code
