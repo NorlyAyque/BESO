@@ -124,8 +124,12 @@ if(isset($_GET['edit'])){
 					<input type="text" placeholder="Enter Email" name="Email" value="<?php echo $dbEmail; ?>" required>
 
 					<label><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="PSW">
+					<input type="password" placeholder="Enter Password" name="PSW" id="PSW"
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
 					
+					<input type="checkbox" onclick="ShowPassword()"> Show Password
+
 					<label><b>Campus</b></label>
 					<div class ="Drp">
 					<select name="Campus" id="Campus" required>
@@ -185,11 +189,11 @@ if(isset($_GET['edit'])){
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
@@ -206,6 +210,9 @@ if (isset($_POST['Update'])) {
 	$College = htmlspecialchars($_POST['College']);
     $Position = htmlspecialchars($_POST['Position']);
 
+	//Encrypting the New Password
+	$EncryptPass = password_hash("$PSW", PASSWORD_DEFAULT);
+
     if (empty($_POST["PSW"])) { //Kung Empty c Passoword, walang laman
         $sql = ("UPDATE account
 			SET Email = '$Email', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', College = '$College', Position = '$Position'
@@ -219,7 +226,7 @@ if (isset($_POST['Update'])) {
     }
     else { //kung ndi empty c Password, Edi Update
         $sql = ("UPDATE account
-			SET Email = '$Email', Password = '$PSW', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', College = '$College', Position = '$Position'
+			SET Email = '$Email', Password = '$EncryptPass', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', College = '$College', Position = '$Position'
 			WHERE AccountID = $AID");
 		$command = $con->query($sql) or die("Error encounter while updating data");
 		
@@ -230,3 +237,14 @@ if (isset($_POST['Update'])) {
     }
 }
 ?>
+
+<script>
+function ShowPassword() {
+	var x = document.getElementById("PSW");
+	if (x.type === "password") {
+		x.type = "text";
+	} else {
+		x.type = "password";
+	}
+}
+</script>

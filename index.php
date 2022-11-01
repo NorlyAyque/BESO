@@ -40,10 +40,13 @@ if (isset($_SESSION['AccountAID']) == TRUE){
 			<form method="post">
 		
 				<div class="form-field">
-					<input type="email" name="email" id="email" placeholder="Email" required/>
+					<input type="email" name="email" id="email" placeholder="Email" required>
 				</div>
 				<div class="form-field">
-					<input type="password" id="psw" name="psw" placeholder="Password" required/> 
+					<input type="password" id="psw" name="psw" placeholder="Password" 
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+					required> 
 				</div>
 
 				<div class ="show">
@@ -88,12 +91,12 @@ if (isset($_POST['Login'])){
 	}
 	
 	//Decrypting Password using password verify
-	//$DecryptPass = password_verify($Password, $dbPass);
+	$DecryptPass = password_verify($Password, $dbPass);
 
 	if ($Email === $dbEmail){
 		//Result True
-		// if ($DecryptPass == 1){// Password Match
-		if ($Password == $dbPass){
+		if ($DecryptPass == 1){// Password Match
+		//if ($Password == $dbPass){
 			//Adding Value to the Session variables
 			$_SESSION["AccountAID"] = $dbAID;
 			$_SESSION["FullName"] = $dbFN . " " . $dbLN;

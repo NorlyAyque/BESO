@@ -102,8 +102,13 @@ include("Connection.php");
 					<input type="text" placeholder="Enter Email" name="Email" required>
 
 					<label><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="PSW" required>
+					<input type="password" placeholder="Enter Password" name="PSW" id="PSW"
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+					required>
 					
+					<input type="checkbox" onclick="ShowPassword()"> Show Password
+
 					<label><b>Campus</b></label>
 					<div class ="Drp">
 					<select name="Campus" id="Campus" required>
@@ -163,11 +168,11 @@ include("Connection.php");
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
@@ -184,10 +189,13 @@ if (isset($_POST['Signup'])) {
 	$College = htmlspecialchars($_POST['College']);
 	$Campus = htmlspecialchars($_POST['Campus']);
 
+	//Encrypting the Password
+	$EncryptPass = password_hash("$PSW", PASSWORD_DEFAULT);
+
     $sql = ("INSERT INTO account
             (Email, Password, Firstname, Lastname, Campus, College, Position, AccStatus)
             VALUES 
-		    ('$Email', '$PSW', '$FN', '$LN', '$Campus','$College', '$Position', 'Active')");
+		    ('$Email', '$EncryptPass', '$FN', '$LN', '$Campus','$College', '$Position', 'Active')");
     $command = $con->query($sql) or die("Error encounter while updating data");
     
     echo "<script>
@@ -196,3 +204,15 @@ if (isset($_POST['Signup'])) {
         </script>";
 }
 ?>
+
+
+<script>
+function ShowPassword() {
+	var x = document.getElementById("PSW");
+	if (x.type === "password") {
+		x.type = "text";
+	} else {
+		x.type = "password";
+	}
+}
+</script>
