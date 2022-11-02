@@ -219,6 +219,9 @@ if (isset($_POST['Update'])) {
 			WHERE AccountID = $AID");
 		$command = $con->query($sql) or die("Error encounter while updating data");
 		
+		//Update Session for Position
+		$_SESSION["Position"] = $Position;
+
 		echo "<script>
 		alert('Account Successfully Updated');
 		window.location='Account.php';
@@ -229,6 +232,9 @@ if (isset($_POST['Update'])) {
 			SET Email = '$Email', Password = '$EncryptPass', Firstname = '$FN', Lastname = '$LN', Campus = '$Campus', College = '$College', Position = '$Position'
 			WHERE AccountID = $AID");
 		$command = $con->query($sql) or die("Error encounter while updating data");
+		
+		//Update Session for Position
+		$_SESSION["Position"] = $Position;
 		
 		echo "<script>
 		alert('Account Successfully Updated');

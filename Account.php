@@ -2,7 +2,11 @@
 session_start();
 include("Connection.php");
 
+//Session variables from index.php
+$AccountID = $_SESSION["AccountAID"];
 $UserPosition = $_SESSION["Position"];
+$Campus = $_SESSION["Campus"];
+
 if ($UserPosition == "Head"){
 	//Code Continue
 }else {
@@ -18,7 +22,7 @@ if ($UserPosition == "Head"){
 if(isset($_GET['disable'])){
 	$AID = $_GET['disable'];
 
-	if ($_SESSION["AccountAID"] == $AID){
+	if ($AccountID == $AID){
 		echo "
 		<script>
 			alert('You are not allow to Enable/Disable your own account');	
@@ -38,7 +42,7 @@ if(isset($_GET['disable'])){
 if(isset($_GET['enable'])){
 	$AID = $_GET['enable'];
 
-	if ($_SESSION["AccountAID"] == $AID){
+	if ($AccountID == $AID){
 		echo "
 		<script>
 			alert('You are not allow to Enable/Disable your own account');
@@ -158,6 +162,8 @@ if(isset($_GET['enable'])){
 			</tr>
 <?php
 //Displaying All Accounts
+//$sql = ("SELECT * FROM account WHERE AccountID != '$AccountID' AND Campus = '$Campus'");
+//$sql = ("SELECT * FROM account WHERE AccountID = '$AccountID'");
 $sql = ("SELECT * FROM account");
 $command = $con->query($sql) or die("Error SQL");
 
@@ -184,7 +190,6 @@ while($result = mysqli_fetch_array($command))
 					<td> <?php echo $dbStatus; ?> </td> 
 					<td>
 						<a href="Form_Edit.php?edit=<?php echo $dbAID; ?>" button class = "btn"> Edit </button>
-						
 						<a href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn3"> Enable </a>
 						<a href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
 						
