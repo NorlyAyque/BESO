@@ -91,18 +91,16 @@ if (isset($_POST['Login'])){
 	}
 	//Decrypting Password using password verify
 	$DecryptPass = password_verify($Password, $dbPass);
-
-	//Checking Account Stauts if Active or Disabled
-	if ($dbStatus == "Disabled") {
-		echo "<script> alert('You cannot login. Your account is Disabled'); </script> ";
-	}
-	else { //Otherwise (Active)
-		
-		if ($Email === $dbEmail){
-			//Result True
-			if ($DecryptPass == 1){// Password Match
-			//if ($Password == $dbPass){
-			//Adding Value to the Session variables
+	
+	if ($Email === $dbEmail){
+		//Result True
+		if ($DecryptPass == 1){// Password Match
+			//Checking Account Stauts if Active or Disabled
+			if ($dbStatus == "Disabled") {
+				echo "<script> alert('You cannot login. Your account is Disabled'); </script> ";
+			}
+			else{
+				//Adding Value to the Session variables
 				$_SESSION["AccountAID"] = $dbAID;
 				$_SESSION["FullName"] = $dbFN . " " . $dbLN;
 				$_SESSION["Email"] = $dbEmail;
@@ -152,23 +150,22 @@ if (isset($_POST['Login'])){
 				else if ($dbPosition == "Staff"){$_SESSION["Position"] = "Staff";}
 				else if ($dbPosition == "Coordinator"){$_SESSION["Position"] = "Coordinator";}
 			}
-			else{
-				//echo "Invalid Password <br>";
-				echo "
-					<script> 
-						document.getElementById('prompt').innerHTML = '<b> Invalid Password </b>';
-					</script>
-				";
-			}
-		}else {
-			//echo "Invalid Email"; 
+		}else{
+			//echo "Invalid Password <br>";
 			echo "
 				<script> 
-					document.getElementById('prompt').innerHTML = '<b> Invalid Email </b>';
+					document.getElementById('prompt').innerHTML = '<b> Invalid Password </b>';
 				</script>
 			";
 		}
-	}//end of Active
+	}else {
+		//echo "Invalid Email"; 
+		echo "
+			<script> 
+				document.getElementById('prompt').innerHTML = '<b> Invalid Email </b>';
+			</script>
+		";
+	}
 }
 ?>
 
