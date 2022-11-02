@@ -53,12 +53,13 @@ $pdf->Cell(10, 10, "E", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
 
+
 $pdf->Cell(300, 10, "Alangilan Campus", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Ln();
 $pdf->MultiCell(300,10,'College of Industrial Technology',1,'J',false); //Multicell (Width, Height, "Text", Border, Allignment, Color)
 
 $pdf->Cell(10, 10, "1", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
-$pdf->Cell(60, 10, "", 10, 0, 'C');
+$pdf->Cell(60, 10, "", 1, 0, 'C');
 $pdf->Cell(20, 10, "", 1, 0, 'C');
 $pdf->Cell(20, 10, "", 1, 0, 'C');
 $pdf->Cell(30, 10, "", 1, 0, 'C');
@@ -71,6 +72,7 @@ $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
+
 
 $pdf->Cell(10, 10, "2", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Cell(60, 10, "", 1, 0, 'C');
@@ -87,6 +89,7 @@ $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
 
+
 $pdf->Cell(10, 10, "3", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Cell(60, 10, "", 1, 0, 'C');
 $pdf->Cell(20, 10, "", 1, 0, 'C');
@@ -101,6 +104,7 @@ $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
+
 
 $pdf->Cell(10, 10, "4", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Cell(60, 10, "", 1, 0, 'C');
@@ -117,6 +121,7 @@ $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
 
+
 $pdf->Cell(10, 10, "5", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Cell(60, 10, "", 1, 0, 'C');
 $pdf->Cell(20, 10, "", 1, 0, 'C');
@@ -131,6 +136,7 @@ $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
+
 
 $pdf->MultiCell(300,10,'College of Informatics and Computing Sciences',1,'J',false); //Multicell (Width, Height, "Text", Border, Allignment, Color)
 
@@ -149,6 +155,7 @@ $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
 
+
 $pdf->Cell(10, 10, "7", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Cell(60, 10, "", 1, 0, 'C');
 $pdf->Cell(20, 10, "", 1, 0, 'C');
@@ -163,6 +170,7 @@ $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(10, 10, "", 1, 0, 'C');
 $pdf->Cell(50, 10, "", 1, 0, 'C');
 $pdf->Ln();
+
 
 
 $pdf->Cell(10, 10, "8", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
