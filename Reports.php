@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Proposals</title>
+<title>Reports</title>
 <link rel="stylesheet" type="text/css" href="styles/Reports.css">
 
 </head>
