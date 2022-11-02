@@ -113,12 +113,12 @@ include("Connection.php");
 				</tr>
 				
 				<tr>
-				<th width="50px"> Evaluation ID </th>
-				<th width="350px"> Title </th>
-				<th width="200px";> Evaluator</th>
-				<th width="100px";> Status </th>
-				<th width="200px";>  </th>
-			</tr>
+					<th width="30px"> Evaluation ID </th>
+					<th width="auto"> Title </th>
+					<th width="180";> Evaluator </th>
+					<th width="120px";> Status </th>
+					<th width="100px";>  </th>
+				</tr>
 <?php
 //Display all the Pending Evaluation Reports
 $sql = ("SELECT * FROM evaluation_alangilan WHERE Remarks = 'Approved' ");

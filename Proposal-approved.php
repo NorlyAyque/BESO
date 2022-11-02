@@ -113,13 +113,12 @@ include("Connection.php");
 				</tr>
 				
 				<tr>
-				<th width="50px"> Proposal ID </th>
-				<th width="350px"> Title </th>
-				<th width="200px";> Creator</th>
-				<th width="100px";> Status </th>
-				<th width="200px";>  </th>
-			</tr>
-	
+					<th width="30px"> Proposal ID </th>
+					<th width="auto"> Title </th>
+					<th width="180px";> Creator</th>
+					<th width="120px";> Status </th>
+					<th width="200px";>  </th>
+				</tr>
 <?php
 //Display all the Approved Proposals
 $sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Approved' ");

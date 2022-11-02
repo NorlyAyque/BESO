@@ -105,11 +105,11 @@ include("Connection.php");
 			</tr>
 				
 			<tr>
-				<th width="50px"> Proposal ID </th>
-				<th width="350px"> Title </th>
-				<th width="200px";> Creator</th>
-				<th width="100px";> Status </th>
-				<th width="270px";>  </th>
+				<th width="30px"> Monitoring ID </th>
+				<th width="auto"> Title </th>
+				<th width="180px";> Creator</th>
+				<th width="120px";> Status </th>
+				<th width="280px";>  </th>
 			</tr>
 <?php
 //Display all the Pending Evaluation Reports
@@ -135,7 +135,7 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $Fullname; ?></td> 
 				<td><?php echo $Status; ?></td> 	
-				<td width ="260px";>
+				<td>
 					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 					<a href="Monitoring.php?revise=<?php echo $MID; ?>" button class ="Pbtn1">Revise</button> </a> 
 					<a href="Monitoring.php?approved=<?php echo $MID; ?>" button class ="Pbtn2">Approved</button> </a>

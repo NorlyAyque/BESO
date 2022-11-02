@@ -113,13 +113,12 @@ include("Connection.php");
 				</tr>
 				
 				<tr>
-				<th width="50px"> Proposal ID </th>
-				<th width="350px"> Title </th>
-				<th width="200px";> Creator</th>
-				<th width="100px";> Status </th>
-				<th width="200px";>  </th>
-				
-			</tr>
+					<th width="30px"> Proposal ID </th>
+					<th width="auto"> Title </th>
+					<th width="180px";> Creator</th>
+					<th width="120px";> Status </th>
+					<th width="250px";>  </th>
+				</tr>
 
 <?php
 //Display all the Proposals that need Revision
@@ -144,7 +143,7 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Title; ?></td> 
 				<td><?php echo $Fullname; ?></td> 
 				<td><?php echo $Status; ?></td> 	
-				<td width="200px";>
+				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Rbtn">View</button> </a>
 					<a href="EditProposal.php?edit=<?php echo $PID; ?>" button class="Rbtn1">Edit</button> </a>
 					<a href="Proposal-revision.php?re_submit=<?php echo $PID; ?>" button class="Rbtn2">Re-Submit</button> </a>
@@ -176,11 +175,11 @@ while($result = mysqli_fetch_array($command))
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>

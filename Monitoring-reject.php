@@ -113,11 +113,11 @@ include("Connection.php");
 				</tr>
 				
 				<tr>
-				<th width="100px"> Proposal ID </th>
-				<th> Title </th>
-				<th width="350px";> Creator</th>
-				<th width="100px";> Status </th>
-				<th width="150px";>  </th>
+					<th width="30px"> Monitoring ID </th>
+					<th width="auto"> Title </th>
+					<th width="180px";> Creator</th>
+					<th width="120px";> Status </th>
+					<th width="150px";>  </th>
 			</tr>
 
 <?php
@@ -174,11 +174,11 @@ while($result = mysqli_fetch_array($command))
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>

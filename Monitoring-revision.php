@@ -113,12 +113,12 @@ include("Connection.php");
 				</tr>
 				
 				<tr>
-				<th width="50px"> Proposal ID </th>
-				<th width="350px"> Title </th>
-				<th width="200px";> Creator</th>
-				<th width="100px";> Status </th>
-				<th width="200px";>  </th>
-			</tr>
+					<th width="30px"> Monitoring ID </th>
+					<th width="auto"> Title </th>
+					<th width="180px";> Creator</th>
+					<th width="120px";> Status </th>
+					<th width="250px";>  </th>
+				</tr>
 <?php
 //Display all the Pending Evaluation Reports
 $sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'Need to Revise' ");
@@ -143,7 +143,7 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $Fullname; ?></td> 
 				<td><?php echo $Status; ?></td> 
-				<td width="200px";>
+				<td>
 					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 					<a href="EditMonitoring.php?edit=<?php echo $MID; ?>" button class="Rbtn1">Edit</button> </a>
 					<a href="Monitoring-revision.php?re_submit=<?php echo $MID; ?>" button class="Rbtn2">Re-Submit</button> </a>

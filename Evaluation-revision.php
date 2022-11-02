@@ -113,11 +113,11 @@ include("Connection.php");
 				</tr>
 				
 				<tr>
-					<th width="50px"> Evaluation ID </th>
-					<th width="350px"> Title </th>
-					<th width="200px";> Evaluator</th>
-					<th width="100px";> Status </th>
-					<th width="200px";>  </th>
+					<th width="30px"> Evaluation ID </th>
+					<th width="auto"> Title </th>
+					<th width="180";> Evaluator </th>
+					<th width="120px";> Status </th>
+					<th width="250px";>  </th>
 				</tr>
 <?php
 //Display all the Pending Evaluation Reports
@@ -143,7 +143,7 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $Fullname; ?></td> 
 				<td><?php echo $Status; ?></td>  	
-				<td width="200px";>
+				<td>
 					<a href="Generate_Evaluation.php?view=<?php echo $EID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 					<a href="EditEvaluation.php?edit=<?php echo $EID; ?>" button class="Rbtn1">Edit</button> </a>
 					<a href="Evaluation-revision.php?re_submit=<?php echo $EID; ?>" button class="Rbtn2">Re-Submit</button> </a>
