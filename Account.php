@@ -4,8 +4,10 @@ include("Connection.php");
 
 //Session variables from index.php
 $AccountID = $_SESSION["AccountAID"];
+$Fullname = $_SESSION["FullName"];
 $UserPosition = $_SESSION["Position"];
 $Campus = $_SESSION["Campus"];
+$College = $_SESSION["College"];
 
 if ($UserPosition == "Head"){
 	//Code Continue
@@ -141,25 +143,37 @@ if(isset($_GET['enable'])){
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>	
 			</div>
-			
+
+			<?php 
+				echo " <center> $Fullname, $UserPosition  <br>
+				$College - $Campus <br>
+				<button type='button' onclick='display()'>FILTER</button>
+				</center>";
+			?>
+
 			<div class="add">
-			<a href="Form_Add.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon></a> </button>
+				<a href="Form_Add.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon></a> </button>
 			</div>
-			<table class="account">
+
+			<table class="account" id="Table">
+				<tr>
+					<th colspan="2"> Filter Name </th>
+					<th colspan="6"> <input type="text" onkeyup="myFunction()" id="keyword" placeholder="Type name here"></th>
+				</tr>
+
 				<tr>
 					<th colspan="8"><center>ACCOUNT MANAGEMENT </th> 
 				</tr>
-			<tr>
-				
-				<th> Account ID </th>
-				<th width="auto";> Name </th>
-				<th width="auto";> Email</th>
-				<th width="auto";> Campus</th>
-				<th width="auto";> College </th>
-				<th width="auto";> Position </th>
-				<th width="auto";> Status </th>
-				<th width="200px";></th>
-			</tr>
+				<tr>
+					<th> Account ID </th>
+					<th width="auto";> Name </th>
+					<th width="auto";> Email</th>
+					<th width="auto";> Campus</th>
+					<th width="auto";> College </th>
+					<th width="auto";> Position </th>
+					<th width="auto";> Status </th>
+					<th width="200px";></th>
+				</tr>
 <?php
 //Displaying All Accounts
 //$sql = ("SELECT * FROM account WHERE AccountID != '$AccountID' AND Campus = '$Campus'");
@@ -178,7 +192,6 @@ while($result = mysqli_fetch_array($command))
 		$dbCollege = $result['College'];
 		$dbPosition = $result['Position'];
 		$dbStatus = $result['AccStatus'];
-	
 ?>	
 				<tr class="inputs">
 					<td> <?php echo $dbAID; ?> </td>
@@ -189,10 +202,9 @@ while($result = mysqli_fetch_array($command))
 					<td> <?php echo $dbPosition; ?> </td> 
 					<td> <?php echo $dbStatus; ?> </td> 
 					<td>
-						<a href="Form_Edit.php?edit=<?php echo $dbAID; ?>" button class = "btn"> Edit </button>
+						<a href="Form_Edit.php?edit=<?php echo $dbAID; ?>" button class = "btn"> Edit </button> </a>
 						<a href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn3"> Enable </a>
 						<a href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
-						
 					</td>
 				</tr>
 <?php
@@ -222,12 +234,40 @@ while($result = mysqli_fetch_array($command))
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
-<body>
+</body>
 </html>
 
+<script>
+function display(){
+	const data = "<?php echo $Fullname; ?>";
+    document.getElementById("keyword").value = data;
+	myFunction()
+}
+function myFunction(){
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("keyword");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("Table");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1]; //1 = Column 2 in the table (Count starts at 0)
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
