@@ -27,15 +27,17 @@ $pdf->Ln(); //Line Break
 //Total Width = 300.2
 $pdf->SetFont('Times','B',9);
 
+//table heading
 $pdf->Cell(10, 20, "No.", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
 $pdf->Cell(60, 20, "TITLE OF TRAINING", 1, 'C', 'L');
 $pdf->Cell(40, 20, "INCLUSIVE DATES", 1, 0, 'C');
 $pdf->Cell(30, 20, "DURATION", 1, 0, 'C');
 $pdf->Cell(30, 20, "NO. OF TRAINEES", 1, 0, 'C');
-$pdf->Cell(30, 20, "", 1, 0, 'C');
-$pdf->Cell(50, 20, "", 1, 0, 'C');
-$pdf->Cell(50, 20, "", 1, 0, 'C');
+$pdf->Cell(30, 20, "TRAINEES WEIGHTED BY THE LENGTH OF TRAINING", 1, 0, 'C');
+$pdf->Cell(50, 20, "QUALITY AND REVELANCE RATING", 1, 0, 'C');
+$pdf->Cell(50, 20, "PROOF OF IMPLEMENTATION", 1, 0, 'C');
 $pdf->Ln();
+
 
 
 $pdf->Cell(10, 10, "", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
