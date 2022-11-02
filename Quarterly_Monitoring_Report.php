@@ -25,7 +25,7 @@ $pdf->SetFont('Times','',10); // Set Font
 $pdf->Ln(); //Line Break
 
 //Total Width = 300.2
-$pdf->SetFont('Times','B',9);
+$pdf->SetFont('Times','B',10);
 
 //table heading
 $pdf->Cell(10, 20, "No.", 1, 0, 'C'); //Normal Cell (Width, Height, "Text", Border, Line, Allignment)
