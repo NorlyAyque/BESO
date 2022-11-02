@@ -53,11 +53,11 @@ include("Connection.php");
             <?php 
 				
 				echo  "<ion-icon name='person-circle-sharp' class='profile'></ion-icon>";
-                echo "<div class='text'>" .$_SESSION["FullName"]. $_SESSION["Position"]."</div>";  
+                echo "<div class='text'>" .$_SESSION["FullName"]." - ". $_SESSION["Position"]."</div>";  
 
 	
 				
-				echo "<div class='text1'>" .$_SESSION["College"].$_SESSION["Campus"]."</div>"; 
+				echo "<div class='text1'>" .$_SESSION["College"]." - ". $_SESSION["Campus"]."</div>"; 
            
                
 				?> 
