@@ -335,7 +335,8 @@ if (isset($_POST['update'])) {
 	$command = $con->query($sql);
 	echo "<script>
 			alert('Proposal Successfully Updated');
-			window.location='EditProposal.php?edit=$PID';
+			window.location='Proposal-revision.php';
+			
 		</script>";
 }
 ?>

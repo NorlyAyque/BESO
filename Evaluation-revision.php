@@ -121,7 +121,7 @@ include("Connection.php");
 				</tr>
 <?php
 //Display all the Pending Evaluation Reports
-$sql = ("SELECT * FROM evaluation_alangilan WHERE Remarks = 'Need to Revise' ");
+$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Need to Revise' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
@@ -129,7 +129,7 @@ while($result = mysqli_fetch_array($command))
 		$Title = $result ['Title'];
 		//$Creator = $result['Author'];
 		$Evaluator = $result['Evaluator'];
-		$Status = $result['Remarks'];
+		$Status = $result['ProjectStatus'];
 		
 		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
 		$Command = $con->query($sql) or die("Error SQL");
@@ -187,7 +187,7 @@ while($result = mysqli_fetch_array($command))
 if(isset($_GET['re_submit'])){
 	$EID = $_GET['re_submit'];
 
-	$sql = ("UPDATE evaluation_alangilan SET Remarks = 'PENDING' WHERE EvaluationID = $EID ");
+	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'PENDING' WHERE EvaluationID = $EID ");
 	$command = $con->query($sql) or die("Error Re-submitting Evaluation Report");
 	echo "
 		<script>

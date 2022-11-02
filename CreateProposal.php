@@ -475,7 +475,7 @@ if (isset($_POST['Save'])) {
 				Title, Location_Area, Duration, TypeCES,
 				SDG, Office, Programs, People, Agencies, 
 				Beneficiaries, Cost, Rationale, Objectives, Descriptions,
-				Financial, Functional, Monitoring, Plans, Remarks,
+				Financial, Functional, Monitoring, Plans, ProjectStatus,
 				Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2,
 				Sign4_1, Sign4_2, Sign5_1, Sign5_2)
 		VALUES 

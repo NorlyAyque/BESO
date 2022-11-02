@@ -121,7 +121,7 @@ include("Connection.php");
 				</tr>
 <?php
 //Display all the Pending Evaluation Reports
-$sql = ("SELECT * FROM evaluation_alangilan WHERE Remarks = 'Approved' ");
+$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
@@ -129,7 +129,7 @@ while($result = mysqli_fetch_array($command))
 		$Title = $result ['Title'];
 		//$Creator = $result['Author'];
 		$Evaluator = $result['Evaluator'];
-		$Status = $result['Remarks'];
+		$Status = $result['ProjectStatus'];
 		
 		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
 		$Command = $con->query($sql) or die("Error SQL");
@@ -171,11 +171,11 @@ while($result = mysqli_fetch_array($command))
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>

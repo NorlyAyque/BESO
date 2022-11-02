@@ -114,7 +114,7 @@ include("Connection.php");
 
 <?php
 //Display all the Pending Proposals
-$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'PENDING' ");
+$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'PENDING' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
@@ -122,7 +122,7 @@ while($result = mysqli_fetch_array($command))
 		$PID = $result['ProposalID'];
 		$Title = $result ['Title'];
 		$Creator = $result['AccountID'];
-		$Status = $result['Remarks'];
+		$Status = $result['ProjectStatus'];
 		
 		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
 		$Command = $con->query($sql) or die("Error SQL");
@@ -181,7 +181,7 @@ while($result = mysqli_fetch_array($command))
 if(isset($_GET['revise'])){
 	$PID = $_GET['revise'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'Need to Revise' WHERE ProposalID = $PID ");
+	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'Need to Revise' WHERE ProposalID = $PID ");
 	$command = $con->query($sql) or die("Error Proposal move to revision");
 	echo "
 		<script>
@@ -193,7 +193,7 @@ if(isset($_GET['revise'])){
 if(isset($_GET['approved'])){
 	$PID = $_GET['approved'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'Approved' WHERE ProposalID = $PID ");
+	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'Approved', Remarks = 'Not Yet Evaluated' WHERE ProposalID = $PID ");
 	$command = $con->query($sql) or die("Error Proposal Approval");
 	echo "
 		<script>
@@ -205,7 +205,7 @@ if(isset($_GET['approved'])){
 if(isset($_GET['reject'])){
 	$PID = $_GET['reject'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'Rejected' WHERE ProposalID = $PID ");
+	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'Rejected' WHERE ProposalID = $PID ");
 	$command = $con->query($sql) or die("Error Rejecting Proposal");
 	echo "
 		<script>

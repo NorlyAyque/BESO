@@ -121,14 +121,14 @@ include("Connection.php");
 				</tr>
 <?php
 //Display all the Pending Proposals
-$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Rejected' ");
+$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Rejected' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
 		$Title = $result['Title'];
 		$Creator = $result['AccountID'];
-		$Status = $result['Remarks'];
+		$Status = $result['ProjectStatus'];
 		
 		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
 		$Command = $con->query($sql) or die("Error SQL");
@@ -186,7 +186,7 @@ while($result = mysqli_fetch_array($command))
 if(isset($_GET['re_use'])){
 	$PID = $_GET['re_use'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'PENDING' WHERE ProposalID = $PID ");
+	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'PENDING' WHERE ProposalID = $PID ");
 	$command = $con->query($sql) or die("Error Proposal move to revision");
 	echo "
 		<script>

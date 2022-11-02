@@ -122,14 +122,14 @@ include("Connection.php");
 
 <?php
 //Display all the Proposals that need Revision
-$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Need to Revise' ");
+$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Need to Revise' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
 		$Title = $result['Title'];
 		$Creator = $result['AccountID'];
-		$Status = $result['Remarks'];
+		$Status = $result['ProjectStatus'];
 		
 		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
 		$Command = $con->query($sql) or die("Error SQL");
@@ -189,7 +189,7 @@ while($result = mysqli_fetch_array($command))
 if(isset($_GET['re_submit'])){
 	$PID = $_GET['re_submit'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks = 'PENDING' WHERE ProposalID = $PID ");
+	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'PENDING' WHERE ProposalID = $PID ");
 	$command = $con->query($sql) or die("Error Re-submitting Proposal");
 	echo "
 		<script>

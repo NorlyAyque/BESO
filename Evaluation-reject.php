@@ -121,7 +121,7 @@ include("Connection.php");
 				</tr>
 <?php
 //Display all the Pending Evaluation Reports
-$sql = ("SELECT * FROM evaluation_alangilan WHERE Remarks = 'Rejected' ");
+$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Rejected' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
@@ -129,7 +129,7 @@ while($result = mysqli_fetch_array($command))
 		$Title = $result ['Title'];
 		//$Creator = $result['Author'];
 		$Evaluator = $result['Evaluator'];
-		$Status = $result['Remarks'];
+		$Status = $result['ProjectStatus'];
 		
 		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
 		$Command = $con->query($sql) or die("Error SQL");
@@ -173,11 +173,11 @@ while($result = mysqli_fetch_array($command))
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
@@ -186,7 +186,7 @@ while($result = mysqli_fetch_array($command))
 if(isset($_GET['re_use'])){
 	$EID = $_GET['re_use'];
 
-	$sql = ("UPDATE evaluation_alangilan SET Remarks = 'PENDING' WHERE EvaluationID = $EID ");
+	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'PENDING' WHERE EvaluationID = $EID ");
 	$command = $con->query($sql) or die("Error Proposal move to revision");
 	echo "
 		<script>
