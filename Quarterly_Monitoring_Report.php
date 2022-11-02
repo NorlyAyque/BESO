@@ -1,5 +1,5 @@
 <?php
-require("FPDFLibrary/pdf_mc_table.php"); //Ito ung Path ng Custom Library pdf_mc_table.php
+require("FPDFLibrary/fpdf.php"); //Ito ung Path ng Custom Library pdf_mc_table.php
 include("Connection.php"); //Database Connection
 
 if(isset($_GET['view'])){ $MID = $_GET['view']; } //Do not Edit
