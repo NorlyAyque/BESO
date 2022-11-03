@@ -2,6 +2,7 @@
 require("FPDFLibrary/fpdf.php");
 include("Connection.php");
 
+//For No input PID, EID at MID  under Generate PDF
 if((isset($_GET['view']))== False){ 
 	echo "<center> <br>";
 	echo("<h1> Please Select Monitoring Report to Generate into PDF </h1>");
@@ -10,6 +11,19 @@ if((isset($_GET['view']))== False){
 	die;
 }else{
 	$MID = $_GET['view'];
+}
+
+//With input PID, EID at MID but not existing in database
+$sqlexist = ("SELECT COUNT(*) as TotalCount FROM monitoring_alangilan WHERE MonitoringID = '$MID'");
+$commandexist = $con->query($sqlexist) or die("Error Fetching Data");
+while($row = mysqli_fetch_array($commandexist)){$Count = $row['TotalCount'];}
+
+if ($Count == 0){
+	echo "<center> <br>";
+	echo("<h1> Monitoring ID does not exist. </h1>");
+	echo "<h2> <a href='Monitoring.php'> RETURN <a> </h2>";
+	echo "</center";
+	die;
 }
 
 $sql = ("SELECT * FROM monitoring_alangilan WHERE MonitoringID = $MID");

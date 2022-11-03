@@ -12,6 +12,19 @@ if((isset($_GET['view']))== False){
 	$PID = $_GET['view'];
 }
 
+//With input PID, EID at MID but not existing in database
+$sqlexist = ("SELECT COUNT(*) as TotalCount FROM create_alangilan WHERE ProposalID = '$PID'");
+$commandexist = $con->query($sqlexist) or die("Error Fetching Data");
+while($row = mysqli_fetch_array($commandexist)){$Count = $row['TotalCount'];}
+
+if ($Count == 0){
+	echo "<center> <br>";
+	echo("<h1> Proposal ID does not exist. </h1>");
+	echo "<h2> <a href='Proposal.php'> RETURN <a> </h2>";
+	echo "</center";
+	die;
+}
+
 $sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))

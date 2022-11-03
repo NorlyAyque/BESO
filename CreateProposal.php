@@ -6,7 +6,6 @@ include("Connection.php");
 $AID = $_SESSION["AccountAID"];
 $create_table = $_SESSION["create_table"];
 
-
 date_default_timezone_set("Asia/Manila");
 $DateTime = date("M, d Y; h:i:s A");
 ?>
@@ -137,14 +136,27 @@ $DateTime = date("M, d Y; h:i:s A");
 						<textarea placeholder="type here..." name="II" required></textarea> 
 						
 						<label> lll. Duration <label>
-							<div class="startdate">
-							<p>Start date: <input type="date" id="start" value="2022-12-01" min="2022-01-01" max="2040-01-01"></p>
+								<table class="Date">	
+									
+								<tr class="Total">
+									<th>Start Date</th>
+									<th> End Date </th>
+								</tr>	
+								<tr class="MF" >
+									<td><input type="date" id="start" value="2022-12-01" min="2022-01-01" max="2040-01-01"></td> 
+									<td><input type="date" id="start" value="2022-12-01" min="2022-01-01" max="2040-01-01"></td> 
+								</tr>
+								<tr class="Total">
+									<th> Start Time</th>
+									<th>End Time</th>
+								<tr>
+								<tr class="MF" >
+									<td><input type="time" id="appt" name="appt"></td> 
+									<td><input type="time" id="appt" name="appt"></td> 
+								</tr>
 								
-							</div>
-							
-							<div class="enddate">
-						<p>End date: <input type="date" id="start" value="2022-12-01" min="2022-01-01" max="2040-01-01"></p>
-						 </div
+						</table>
+					
 						<label><b>lV. Type of Communuty Extension Service</b></label>
 						<div class="checkbox" >
 							<button onclick="openForm()"> Please Select one or more types..  </button>
@@ -321,7 +333,18 @@ $DateTime = date("M, d Y; h:i:s A");
 						</table>
 						
 						<label> Xl. Total Cost and Sources of Funds<label>
-						<textarea placeholder="type here..." name="XI" required></textarea>
+						<table class="TotalCost">	
+									
+								<tr class="MF" >
+									<th>Total Cost</th>
+									<td><input type="number" min="0"> </td> 
+								
+								</tr>
+								<tr class="MF1" >
+									<th >Source of Fund</th>
+									<td><textarea placeholder="type here"></textarea></input></td> 
+								</tr>
+						</table>
 						
 						<label> Xll. Rationale<i>(brief description of the situation)</i><label>
 						<textarea placeholder="type here..." name="XII" required></textarea>
