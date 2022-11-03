@@ -5,7 +5,7 @@ include("Connection.php");
 if((isset($_GET['view']))== False){ 
 	echo "<center> <br>";
 	echo("<h1> Please Select Monitoring Report to Generate into PDF </h1>");
-	echo "<h2> <a href='Evaluation.php'> RETURN <a> </h2>";
+	echo "<h2> <a href='Monitoring.php'> RETURN <a> </h2>";
 	echo "</center";
 	die;
 }else{
