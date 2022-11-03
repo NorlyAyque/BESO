@@ -8,7 +8,7 @@ include("Connection.php");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Add New User</title>
-<link rel="stylesheet" type="text/css" href="styles/Forms.css">
+<link rel="stylesheet" type="text/css" href="styles/Form.css">
 
 </head>
 <body>
@@ -106,9 +106,9 @@ include("Connection.php");
 					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
 					required>
-					
+					<div class="showP">
 					<input type="checkbox" onclick="ShowPassword()"> Show Password
-
+					</div>
 					<label><b>Campus</b></label>
 					<div class ="Drp">
 					<select name="Campus" id="Campus" required>

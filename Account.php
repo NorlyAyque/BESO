@@ -67,7 +67,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Account</title>
-<link rel="stylesheet" type="text/css" href="styles/Account-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Account.css">
 
 </head>
 <body>
@@ -145,20 +145,34 @@ if(isset($_GET['enable'])){
 			</div>
 
 			<?php 
-				echo " <center> $Fullname, $UserPosition  <br>
-				$College - $Campus <br>
-				<button type='button' onclick='display()'>FILTER</button>
-				</center>";
+				echo "<table class='Tuser'>";
+				echo " <tr class='logo'> 
+							<td> <ion-icon name='person-circle-sharp' class='profile'></ion-icon> </td>
+						</tr>";
+				echo "<tr>
+							<td> <div class='text'> $Fullname - $UserPosition </div></td>
+						</tr>";	
+				echo "<tr>
+							<td> <div class='text1'> $College - $Campus </div><td>
+					  </tr>";						
+						
+				echo "<tr>		
+						<td><div class='filter'><button type='button' onclick='display()'>FILTER</button></div><td>
+					</tr>
+					";
+				echo "</table>";
 			?>
 
 			<div class="add">
 				<a href="Form_Add.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon></a> </button>
 			</div>
+			<div style="height: 500px; overflow: auto">
 
 			<table class="account" id="Table">
-				<tr>
-					<th colspan="2"> Filter Name </th>
-					<th colspan="6"> <input type="text" onkeyup="myFunction()" id="keyword" placeholder="Type name here"></th>
+				<thead>
+				<tr class="Name">
+					 
+					<th colspan="8"> Filter Name: <input type="text" onkeyup="myFunction()" id="keyword" placeholder="Type name here"></th>
 				</tr>
 
 				<tr>
@@ -174,6 +188,7 @@ if(isset($_GET['enable'])){
 					<th width="auto";> Status </th>
 					<th width="200px";></th>
 				</tr>
+				</thead>
 <?php
 //Displaying All Accounts
 //$sql = ("SELECT * FROM account WHERE AccountID != '$AccountID' AND Campus = '$Campus'");
@@ -192,8 +207,8 @@ while($result = mysqli_fetch_array($command))
 		$dbCollege = $result['College'];
 		$dbPosition = $result['Position'];
 		$dbStatus = $result['AccStatus'];
-?>	
-				<tr class="inputs">
+?>				<tbody>
+					<tr class="inputs">
 					<td> <?php echo $dbAID; ?> </td>
 					<td> <?php echo $dbName; ?> </td> 
 					<td> <?php echo $dbEmail; ?> </td> 
@@ -207,11 +222,13 @@ while($result = mysqli_fetch_array($command))
 						<a href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
 					</td>
 				</tr>
+				</tbody>
 <?php
 	}
 ?>
-				</tbody>
+				
 			</table>
+			</div>
 		</div>
 	</div>
 	
