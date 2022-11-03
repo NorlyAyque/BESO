@@ -16,7 +16,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-Proposals.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-Proposalss.css">
 
 </head>
 <body>
@@ -119,6 +119,13 @@ $DateTime = date("M, d Y; h:i:s A");
 					<th> <input type="radio" id="Monitoring" name="1" value="Monitoring" required> Monitoring </th>
 					<th> <input type="radio" id="Impact" name="1" value="Impact" required> Impact Assessment</th>	
 				</tr>
+				<tr class ="select3">
+					<th colspan="3"> <input type="checkbox">Program/Project/Activity Proposal for GAD PAP?
+									
+								
+					
+					</th>
+				</tr>
 			</table>
 			<div class="Create">
 				<div class="fillup">
@@ -130,8 +137,14 @@ $DateTime = date("M, d Y; h:i:s A");
 						<textarea placeholder="type here..." name="II" required></textarea> 
 						
 						<label> lll. Duration <label>
-						<textarea placeholder="type here..." name="III" required></textarea>
-						 
+							<div class="startdate">
+							<p>Start date: <input type="date" id="start" value="2022-12-01" min="2022-01-01" max="2040-01-01"></p>
+								
+							</div>
+							
+							<div class="enddate">
+						<p>End date: <input type="date" id="start" value="2022-12-01" min="2022-01-01" max="2040-01-01"></p>
+						 </div
 						<label><b>lV. Type of Communuty Extension Service</b></label>
 						<div class="checkbox" >
 							<button onclick="openForm()"> Please Select one or more types..  </button>
@@ -284,13 +297,14 @@ $DateTime = date("M, d Y; h:i:s A");
 						
 						<label> lX. Partner Agencies<label>
 						<textarea placeholder="type here..." name="IX" required></textarea>	
-				  </div>
-				</div>
-				
-				<div class="fillup">
-				  <div class="input-field">
+						
 						<label> X. Beneficiaries <i>(Type and Number of Male & Female)</i><label>
 						<table class="MaleFemale">	
+								<tr class="th1">	
+									<th colspan="2">
+										Types of Participants : <input type ="text">
+									</th>
+								</tr>
 								<tr class="th1">
 									<th></th>
 									<th> <p>Total No. of Male and Female<p> </th>
@@ -304,7 +318,7 @@ $DateTime = date("M, d Y; h:i:s A");
 									<td >Female</td>
 									<td><input type="number" min="0"> </input></td> 
 								</tr>
-							</table>
+						</table>
 						
 						<label> Xl. Total Cost and Sources of Funds<label>
 						<textarea placeholder="type here..." name="XI" required></textarea>
@@ -318,13 +332,124 @@ $DateTime = date("M, d Y; h:i:s A");
 						<label> XlV. Description, Strategies and Methods <i>(Activities/Schedule)</i><label>
 						<textarea placeholder="type here..." name="XIV" required></textarea>
 						
-						<label> XV. Financial Plan</i><label>
-						<textarea placeholder="type here..." name="XV" required></textarea>
+				  </div>
+				</div>
+				
+				<div class="fillup">
+				  <div class="input-field">
 						
+						
+						
+						
+						<label> XV. Financial Plan</i><label>
+							<div class="Tfinancial">
+								 <table class="financial">
+									<tbody>
+										<tr>
+											<th>Item Description </th>
+											<th> Quantity </th>
+											<th>Unit </th>
+											<th>Unit Cost </th>
+											<th>Total</th>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+											
+										<tr class="MF">
+											<th colspan="4"  class="total">Grand Total</th>
+											<td><input type="number"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div> 
+								 
+								
 						<label> XVl. Functional Relationships with the partner <i>(Duties/Task of the Partner Agencies)</i><label>
 						<textarea placeholder="type here..." name="XVI" required></textarea>
 						
 						<label> XVll. Monitoring and Evaluation Mechanics/Plan<label>
+						<div class="select4">
+							<table>
+								<th><input type="radio" name="moni"> Quarterly</th>
+								<th><input type="radio" name="moni">Monthly </th>
+								<th><input type="radio" name="moni">Yearly </th>
+							</table>
+						</div>
 						<textarea placeholder="type here..." name="XVII" required></textarea>
 						
 						<label> XVlll. Sustainability Plan<label>

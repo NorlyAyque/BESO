@@ -38,8 +38,8 @@ include("Connection.php");
 	color:green;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 	border-radius:50%;
-	margin-left:10px;
-	margin-right:35px;
+	margin-left:auto;
+	margin-right:auto;
 	
 
 }
