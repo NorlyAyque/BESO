@@ -199,8 +199,6 @@ if(isset($_GET['check'])){
 	$commandexist = $con->query($sqlexist) or die("Error Fetching Data");
 	while($row = mysqli_fetch_array($commandexist)){$Count = $row['TotalCount'];}
 	
-	echo "<center> Count = $Count </center>";
-	
 	//Soon change to =1
 	if ($Count > 1){ //1 means meron na, existing na, so redirect sa evaluation page
 		echo "<script>
