@@ -122,7 +122,6 @@ $DateTime = date("M, d Y; h:i:s A");
 					<th> Is this Proposal a GAD PAP? </th>
 					<th> <input type="radio" id="Yes" name="IsGAD" value="Yes" required>Yes </th>
 					<th> <input type="radio" id="No" name="IsGAD" valye="No" required>No </th>
-					</th>
 				</tr>
 			</table>
 			<div class="Create">
