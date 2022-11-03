@@ -401,7 +401,7 @@ margin-left: 100px;
 	margin-left: 20px;
 	word-wrap: break-word;
 	grid-template-columns: repeat(2,1fr);
-	grid-gap:20px;
+	grid-gap:10px;
 	width:fixed;
 
 	
@@ -412,7 +412,7 @@ margin-left: 100px;
 	padding:5px;
 	display:flex;
 	justify-content:space-between;
-	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 7px 5px rgba(0, 0, 0, 0.2);
 	background: #f1f1f1;
 	
 }
@@ -664,16 +664,15 @@ cursor: pointer;
 
 
  .TotalCost {
-	
 	box-shadow: 0 0 5px rgba(0,0,0,0.2);
 	border-radius: 3px 3px 0 0;
 	border: 1px solid black; 	
 	margin-left:auto;
 	margin-right:auto;
-	 width: 100%;
-	 margin-top:10px;
-	 margin-bottom:15px;
-	 border:none;
+	width: 100%;
+	margin-top:10px;
+	margin-bottom:15px;
+	border:none;
 }
 .Total th {
   background-color: var(--red);
@@ -715,8 +714,9 @@ cursor: pointer;
   margin:auto;
 }
  .TotalCost .MF1 textarea{
-	 width:150px;
+	 width:300px;
 	 margin:auto;
+	 height:50px;
 	 
  }
 
@@ -780,6 +780,7 @@ cursor: pointer;
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
 	margin-top:10px;
 	margin-bottom:15px;
+	width:100%;
 	
 }
 .financial table,th,td{

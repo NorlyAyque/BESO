@@ -361,9 +361,6 @@ $DateTime = date("M, d Y; h:i:s A");
 				<div class="fillup">
 				  <div class="input-field">
 						
-						
-						
-						
 						<label> XV. Financial Plan</i><label>
 							<div class="Tfinancial">
 								 <table class="financial">
@@ -374,13 +371,6 @@ $DateTime = date("M, d Y; h:i:s A");
 											<th>Unit </th>
 											<th>Unit Cost </th>
 											<th>Total</th>
-										</tr>
-										<tr class="MF">
-											<td><textarea placeholder="type here..."></textarea></td>
-											<td><input type="number"></td>
-											<td><textarea placeholder="type here..."></textarea></td>
-											<td><input type="number"></td>
-											<td><input type="number"></td>
 										</tr>
 										<tr class="MF">
 											<td><textarea placeholder="type here..."></textarea></td>
@@ -468,9 +458,12 @@ $DateTime = date("M, d Y; h:i:s A");
 						<label> XVll. Monitoring and Evaluation Mechanics/Plan<label>
 						<div class="select4">
 							<table>
-								<th><input type="radio" name="moni"> Quarterly</th>
-								<th><input type="radio" name="moni">Monthly </th>
-								<th><input type="radio" name="moni">Yearly </th>
+								<tr>
+									<th><input type="radio" name="moni">Monthly </th>
+									<th><input type="radio" name="moni"> Quarterly</th>
+									<th><input type="radio" name="moni">Semi-Annually</th>
+									<th><input type="radio" name="moni">Yearly </th>
+								</tr>
 							</table>
 						</div>
 						<textarea placeholder="type here..." name="XVII" required></textarea>

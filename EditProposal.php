@@ -59,7 +59,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Edit Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/EditProposals.css">
+<link rel="stylesheet" type="text/css" href="styles/EditProposal.css">
 
 </head>
 <body>
@@ -158,46 +158,238 @@ if(isset($_GET['edit'])){
 					<th> <input type="radio" id="Project" name="Classification" value="Project" required> Project </th>
 					<th> <input type="radio" id="Activity" name="Classification" value="Activity" required> Activity</th>	
 				</tr>
+				<tr  class ="select2">
+					<th> <input type="radio" id="ExtensionPAP" name="1" value="ExtensionPAP" required> Extension PAP</th>
+					<th> <input type="radio" id="Monitoring" name="1" value="Monitoring" required> Monitoring </th>
+					<th> <input type="radio" id="Impact" name="1" value="Impact" required> Impact Assessment</th>	
+				</tr>
+				<tr class ="select3">
+					<th colspan="3"> <input type="checkbox">Program/Project/Activity Proposal for GAD PAP?
+									
+								
+					
+					</th>
+				</tr>
 			</table>
 			<div class="Create">
 				<div class="fillup">
 				  <div class="input-field">
-						<label> l. Title <label>
+						<label> l. Title <label/>
 						<textarea class="font" placeholder="type Here..." name="I" required><?php echo $dbI; ?></textarea>
 						 
-						<label> ll. Location <label>
+						<label> ll. Location <label/>
 						<textarea placeholder="type here..." name="II" required><?php echo $dbII; ?></textarea> 
 						
-						<label> lll. Duration <label>
-						<textarea placeholder="type here..." name="III" required><?php echo $dbIII; ?></textarea>
+						<label> lll. Duration <label/>
+							<table class="Date">	
+									
+								<tr class="Total">
+									<th>Start Date</th>
+									<th> End Date </th>
+								</tr>	
+								<tr class="MF" >
+									<td><input type="date" id="start" value="2022-12-01" min="2022-01-01" max="2040-01-01"></td> 
+									<td><input type="date" id="start" value="2022-12-01" min="2022-01-01" max="2040-01-01"></td> 
+								</tr>
+								<tr class="Total">
+									<th> Start Time</th>
+									<th>End Time</th>
+								<tr>
+								<tr class="MF" >
+									<td><input type="time" id="appt" name="appt"></td> 
+									<td><input type="time" id="appt" name="appt"></td> 
+								</tr>
+								
+						</table>
 						 
-						<label> lV. Type of Communuty Extension Service <label>
-						<textarea placeholder="type here..." name="IV" required><?php echo $dbIV; ?></textarea>
+						<label> lV. Type of Communuty Extension Service </label>
+							<div class="checkbox" >
+							<button onclick="openForm()"> Please Select one or more types..  </button>
+						</div>
+						<div class="form-popup" id="myForm">
+							<label class="check" value=""><span>1. Smart Analytics and Engineering</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>2. Environment and Ntural Resources Conservation, Protection and Rehabilitation Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>3. Adopt-A-Barangay/Municipality/School/Social Development through BIDANI Implementation</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>4. Community Outreach Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>5. Technical-Vocational Education and Training(TVET)Program on Agri-Fishery and Related Program for Farmers and Fisherfolks</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>6. Technology Transfer, Utilization and Commercialization Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>7. Technical Assistance and Advisory Program to Agencies, Organizations, Associations and Other Groups</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>8. Parent's Empowerment through Social Development(PESODEV)Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>9. Genger and Development</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>10. Disaster Preparedness and Response/Climate Change Adaptation</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>11. BatStateU Inclusive Social Innovation for Regional Growth(BISIG)Program</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<label class="check"value=""><span>12. Livelihood and other Entrepreneurship related on Agri-Fisheries(LEAF)</span>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+							<button type="button" class="btncancel" onclick="closeForm()">CLOSE</button>
+						</div>
+							<textarea placeholder="type here..." name="IV" required><?php echo $dbIV; ?></textarea>
+							
 						
-						<label>  V. Sustatinable Development Goals (SDG) <label>
+						
+						<label>  V. Sustatinable Development Goals (SDG) </label>
+							<div class="checkbox1" >
+								<button onclick="openForm1()"> Please Select one or more types..  </button>
+							</div>
+							<div class="form-popup1" id="myForm1">
+								<label class="check"value=""><span>1. No povery</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"value=""><span>2. Zero hunger</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>3. Good health and well-being</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>4. Quality education</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"value=""><span>5. Genger equality</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>6. Clean water and sanitation</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>7. Affordableand clean energy</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>8. Decent work and economic growth</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>9. Industry, innovation and infrastructure</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>10. Reduced inequalities</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>11. Sustainable cities and communities</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>12. Resonsible comsumption and production</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>13. Climate action</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"value=""><span>14. Life below water</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"value=""><span>15. Life on land</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>16. Peace, justice and strong institution</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"value=""><span>16. Peace, justice and strong institution</span>
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+								<button type="button" class="btncancel" onclick="closeForm1()">CLOSE</button>
+							</div>
+		
 						<textarea placeholder="type here..." name="V" required><?php echo $dbV; ?></textarea>
 						
-						<label>  Vl. Office/ College/s Involved <label>
+						<label>  Vl. Office/ College/s Involved </label>
 						<textarea placeholder="type here..." name="VI" required><?php echo $dbVI; ?></textarea>
 						
-						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i><label>
+						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i></label>
 						<textarea placeholder="type here..." name="VII" required><?php echo $dbVII; ?></textarea>
 						
-						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i><label>
+						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i></label>
 						<textarea placeholder="type here..." name="VIII" required><?php echo $dbVIII; ?></textarea>
 						
-						<label> lX. Partner Agencies<label>
+						<label> lX. Partner Agencies</label>
 						<textarea placeholder="type here..." name="IX" required><?php echo $dbIX; ?></textarea>	
-				  </div>
-				</div>
-				
-				<div class="fillup">
-				  <div class="input-field">
+						
 						<label> X. Beneficiaries <i>(Type and Number of Male & Female)</i><label>
-						<textarea placeholder="type here..." name="X" required><?php echo $dbX; ?></textarea>
+							<table class="MaleFemale">	
+								<tr class="th1">	
+									<th colspan="2">
+										Types of Participants : <input type ="text">
+									</th>
+								</tr>
+								<tr class="th1">
+									<th></th>
+									<th> <p>Total No. of Male and Female<p> </th>
+								</tr>	
+								<tr class="MF" >
+									<td width="100px" >Male</td>
+									<td><input type="number" min="0"> </input></td> 
+								
+								</tr>
+								<tr class="MF" >
+									<td >Female</td>
+									<td><input type="number" min="0"> </input></td> 
+								</tr>
+						</table>
 						
 						<label> Xl. Total Cost and Sources of Funds<label>
-						<textarea placeholder="type here..." name="XI" required><?php echo $dbXI; ?></textarea>
+							<table class="TotalCost">	
+										
+									<tr class="MF" >
+										<th>Total Cost</th>
+										<td><input type="number" min="0"> </td> 
+									
+									</tr>
+									<tr class="MF1" >
+										<th >Source of Fund</th>
+										<td><textarea placeholder="type here"></textarea></input></td> 
+									</tr>
+							</table>
 						
 						<label> Xll. Rationale<i>(brief description of the situation)</i><label>
 						<textarea placeholder="type here..." name="XII" required><?php echo $dbXII; ?></textarea>
@@ -207,15 +399,125 @@ if(isset($_GET['edit'])){
 
 						<label> XlV. Description, Strategies and Methods <i>(Activities/Schedule)</i><label>
 						<textarea placeholder="type here..." name="XIV" required><?php echo $dbXIV; ?></textarea>
+				  </div>
+				</div>
+				
+				<div class="fillup">
+				  <div class="input-field">
+					
+						<label> XV. Financial Plan</i></label>
+							<div class="Tfinancial">
+								 <table class="financial">
+									<tbody>
+										<tr>
+											<th>Item Description </th>
+											<th> Quantity </th>
+											<th>Unit </th>
+											<th>Unit Cost </th>
+											<th>Total</th>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><textarea placeholder="type here..."></textarea></td>
+											<td><input type="number"></td>
+											<td><input type="number"></td>
+										</tr>
+										
+											
+										<tr class="MF">
+											<th colspan="4"  class="total">Grand Total</th>
+											<td><input type="number"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div> 
 						
-						<label> XV. Financial Plan</i><label>
-						<textarea placeholder="type here..." name="XV" required><?php echo $dbXV; ?></textarea>
 						
-						<label> XVl. Functional Relationships with the partner <i>(Duties/Task of the Partner Agencies)</i><label>
+						<label> XVl. Functional Relationships with the partner <i>(Duties/Task of the Partner Agencies)</i></label>
 						<textarea placeholder="type here..." name="XVI" required><?php echo $dbXVI; ?></textarea>
 						
-						<label> XVll. Monitoring and Evaluation Mechanics/Plan<label>
-						<textarea placeholder="type here..." name="XVII" required><?php echo $dbXVII; ?></textarea>
+						<label> XVll. Monitoring and Evaluation Mechanics/Plan</label>
+							<div class="select4">
+							<table>
+								<tr>
+								<th><input type="radio" name="moni">Monthly </th>
+								<th><input type="radio" name="moni"> Quarterly</th>
+								<th><input type="radio" name="moni">Semi-Annually</th>
+								<th><input type="radio" name="moni">Yearly </th>
+								</tr>
+							</table>
+						</div>
+						<textarea placeholder="type here..." name="XVll" required><?php echo $dbXVll; ?></textarea>
+							
+							
+							
+							
+							
+							
 						
 						<label> XVlll. Sustainability Plan<label>
 						<textarea placeholder="type here..." name="XVIII" required><?php echo $dbXVIII; ?></textarea>
@@ -287,6 +589,47 @@ if(isset($_GET['edit'])){
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
+	
+	<script>
+		function openForm() {
+		document.getElementById("myForm").style.display = "block";
+		}
+
+		function closeForm() {
+		  document.getElementById("myForm").style.display = "none";
+		}
+	</script>
+	
+	<script>
+		function openForm1() {
+		document.getElementById("myForm1").style.display = "block";
+		}
+
+		function closeForm1() {
+		  document.getElementById("myForm1").style.display = "none";
+		}
+	</script>
+	
+	<script>
+		function openForm2() {
+		document.getElementById("myForm2").style.display = "block";
+		}
+
+		function closeForm2() {
+		  document.getElementById("myForm2").style.display = "none";
+		}
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>
 
