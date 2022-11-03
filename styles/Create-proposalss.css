@@ -359,6 +359,15 @@ margin-left: 100px;
   margin-right:5px;
  
 }
+
+.select4 th{
+	background-color: var(--red);
+	color:white;
+	cursor:pointer;
+	border-radius:5px;
+}
+
+
 .select4 table{
 	margin-top:10px;
 	margin-left:auto;
@@ -438,36 +447,50 @@ margin-left: 100px;
   display: inline-block;
   border:1px solid black;
 }
-.startdate{
-	text-align:center;
-	margin-top:15px;
-	 
+
+
+.Date {
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	margin-left:auto;
+	margin-right:auto;
+	width: 100%;
+	margin-top:10px;
+	margin-bottom:15px;
+	border:none;
 }
-.enddate{
-	 text-align:center;
-	 margin-bottom:25px;
+.Date  th {
+  background-color: var(--red);
+   border:none;
+   color:white;
 }
-.startdate p{
-font-weight:normal;	
-vertical-align: middle;
-font-size: 15px;
- 
-}
-.startdate input{
-	width:100px;
-	vertical-align: middle;
+
+.Date  .MF  td{
+	font-size:15px;
+	text-align: center;
+	border:none;
+}	
+.Date t .MF1  td{
+	font-size:15px;
+	text-align: center;
+	border:none;
+
+}	
+.Date .MF input {
+  text-align: center;
+  width: 110px;
+  height:40px;
+  margin:auto;
   
 }
 
-.enddate p{
-	font-weight:normal;	
-	margin-top:10px;
-	font-size: 15px;
+.Date  td:hover {
+background-color: lightgrey;
+cursor: pointer;
 }
-.enddate input{
-	width:100px;
-	margin-left:5px;
-}
+
+
 
 
 .checkbox button{
@@ -640,6 +663,68 @@ font-size: 15px;
 }
 
 
+ .TotalCost {
+	
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	margin-left:auto;
+	margin-right:auto;
+	 width: 100%;
+	 margin-top:10px;
+	 margin-bottom:15px;
+	 border:none;
+}
+.Total th {
+  background-color: var(--red);
+   border:none;
+}
+
+.Total input{
+	height: 30px;
+	text-align: center;
+	
+	border:none;
+}
+ .TotalCost .MF  td{
+	font-size:15px;
+	text-align: center;
+	border:none;
+	color:white;
+}	
+
+.TotalCost .MF th{
+	background-color: var(--red);
+	color:white;
+}
+.TotalCost .MF1 th{
+	background-color: var(--red);
+	color:white;
+}
+ .TotalCost .MF1  td{
+	font-size:15px;
+	text-align: center;
+	 border:none;
+
+}	
+ .TotalCost .MF input {
+  font-weight:bold;
+  text-align: center;
+  width: 110px;
+  height:40px;
+  margin:auto;
+}
+ .TotalCost .MF1 textarea{
+	 width:150px;
+	 margin:auto;
+	 
+ }
+
+.TotalCost td:hover {
+background-color: lightgrey;
+cursor: pointer;
+}
+
 
 
 .MaleFemale {
@@ -683,8 +768,11 @@ font-size: 15px;
   width: 110px;
   height:40px;
   margin:auto;
-  
+}
 
+ .MaleFemale td:hover {
+background-color: lightgrey;
+cursor: pointer;
 }
 .Tfinancial table{
 	margin-left:auto;

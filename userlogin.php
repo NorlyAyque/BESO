@@ -2,22 +2,27 @@
 //session_start();
 include("Connection.php");
 
+
+$Fullname = $_SESSION["FullName"];
+$Position = $_SESSION["Position"];
+$College = $_SESSION["College"];
+$Campus = $_SESSION["Campus"];
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="styles/Dashboards.css">
+<link rel="stylesheet" type="text/css" href="styles/Dash.css">
 <style>
  .text{
 	margin-top:auto;
-	margin-left:80px;
+	
 	 text-align:center;
 	 font-weight:bold;
 
  }
  .text1{
-	 margin-left:80px;
+	margin-top:-3px;
 	 text-align:center;
 	 font-size:12px;
 	 
@@ -25,7 +30,7 @@ include("Connection.php");
 	
  }
  .margin{
-	text-align: right;
+	
 	 margin-right:10px;
 	
  }
@@ -38,11 +43,25 @@ include("Connection.php");
 	color:green;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 	border-radius:50%;
-	margin-left:auto;
-	margin-right:auto;
 	
-
 }
+.Tuser{
+	margin-top: 30px;
+}
+.Tuser td{
+	
+}
+
+
+.Tuser table,td{
+	border: none;
+	border-collapse: collapse;
+}
+
+.Tuser .logo td:nth-child(1){
+	border:none;
+}
+
 </style>
 
 </head>
@@ -51,14 +70,21 @@ include("Connection.php");
 <div class="margin">
 	<label> 	
             <?php 
-				
-				echo  "<ion-icon name='person-circle-sharp' class='profile'></ion-icon>";
-                echo "<div class='text'>" .$_SESSION["FullName"]." - ". $_SESSION["Position"]."</div>";  
-
-	
-				
-				echo "<div class='text1'>" .$_SESSION["College"]." - ". $_SESSION["Campus"]."</div>"; 
-           
+				echo "<table class='Tuser'>";
+				echo " <tr class='logo'> 
+							<td> <ion-icon name='person-circle-sharp' class='profile'></ion-icon> </td>
+						</tr>
+						";
+                echo "<tr>
+							<td> <div class='text'> $Fullname - $Position </div></td>
+						</tr>
+					";
+					
+				echo "<tr>
+							<td> <div class='text1'>$College - $Campus </div> </td>
+						</tr>
+					"; 
+				echo "</table>";
                
 				?> 
 	</div>		
