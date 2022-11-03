@@ -2,7 +2,15 @@
 require("FPDFLibrary/fpdf.php");
 include("Connection.php");
 
-if(isset($_GET['view'])){ $MID = $_GET['view']; }
+if((isset($_GET['view']))== False){ 
+	echo "<center> <br>";
+	echo("<h1> Please Select Monitoring Report to Generate into PDF </h1>");
+	echo "<h2> <a href='Evaluation.php'> RETURN <a> </h2>";
+	echo "</center";
+	die;
+}else{
+	$MID = $_GET['view'];
+}
 
 $sql = ("SELECT * FROM monitoring_alangilan WHERE MonitoringID = $MID");
 $command = $con->query($sql) or die("Error SQL");

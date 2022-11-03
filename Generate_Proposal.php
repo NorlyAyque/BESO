@@ -2,7 +2,15 @@
 require("FPDFLibrary/fpdf.php");
 include("Connection.php");
 
-if(isset($_GET['view'])){ $PID = $_GET['view']; }
+if((isset($_GET['view']))== False){ 
+	echo "<center> <br>";
+	echo("<h1> Please Select Proposal to Generate into PDF </h1>");
+	echo "<h2> <a href='Proposal.php'> RETURN <a> </h2>";
+	echo "</center";
+	die;
+}else{
+	$PID = $_GET['view'];
+}
 
 $sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
 $command = $con->query($sql) or die("Error SQL");
