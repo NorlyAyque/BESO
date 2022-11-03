@@ -369,15 +369,7 @@ $Width = 90;
 $pdf->Cell(185.9, 5, 'Photos (Please attach photos with caption):', 'T', 1, 'L');
 $pdf->Ln(5);
 
-if ($Pic1 == "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry&#039;s standard dummy text ever since the
-1500s, when an unknown printer took a galley of type and scrambled it to make
-a type specimen book. It has survived not only five centuries, but also the leap
-into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry&#039;s standard dummy text ever since the
-1500s, when an unknown printer took a galley of type and scrambled it to make
-a type specimen book. It has survived not only five centuries, but also the leap
-into electronic typesetting, remaining essentially unchanged."){}
+if ($Pic1 == ""){}
 else{
 	$pdf->Cell(115, $Height, $pdf->Image($Pic1, $pdf->GetX()+15, $pdf->GetY(), $Width, $Height,'jpeg'), 0, 0, 'C');
 	$pdf->Multicell(70.9, $Height, $Caption1, 0, 'L');
