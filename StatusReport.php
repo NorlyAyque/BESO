@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Reports</title>
+<title>Status Report</title>
 <link rel="stylesheet" type="text/css" href="styles/Report.css">
 
 </head>
@@ -86,8 +86,8 @@
 				<tr>
 					<th>
 						<div class="menu">
-							<a href="Reports.php" button class = "nav1"> Quarterly Monitoring Report  <ion-icon name="bookmarks-outline"></ion-icon></a>
-							<a href="StatusReport.php" button class = "nav"> Status Report <ion-icon name="bookmarks-outline"></ion-icon></a>
+							<a href="Reports.php" button class = "nav"> Quarterly Monitoring Report  <ion-icon name="bookmarks-outline"></ion-icon></a>
+							<a href="StatusReport.php" button class = "nav1"> Status Report <ion-icon name="bookmarks-outline"></ion-icon></a>
 							<a href="GADReport.php" button class = "nav"> GAD Report <ion-icon name="bookmarks-outline"></ion-icon></a>
 							<a href="ListImpact.php" button class = "nav"> List of Extension PAPs for Impact assessment <ion-icon name="bookmarks-outline"></ion-icon></a>	
 						</div>	
@@ -96,13 +96,15 @@
 				<tr>
 					<th>
 						<div class="menu1">
-				
+							
 							<a href="AccomplishReport.php" button class = "nav"> Accomplishment report <ion-icon name="bookmarks-outline"></ion-icon></a>	
 						</div>
 					</th>
 				</tr>
 					
-				<table class="Date">	
+			</table>
+			
+			<table class="Date">	
 									
 								<tr>
 									<th>Set Year</th>
@@ -146,15 +148,13 @@
 								<tr>
 									<th colspan="2">
 										<div class="Create">				
-											<a href="QuarterlyMonitoringBlank.php" button class = "createBTN"> Create <ion-icon name="brush-outline"></ion-icon></a>
+											<a href="StatusReportBlank.php" button class = "createBTN"> Create <ion-icon name="brush-outline"></ion-icon></a>
 					
 										</div>
 									</th>
 								</tr>
 				
 			</table>
-			
-			
 			
 			
 			

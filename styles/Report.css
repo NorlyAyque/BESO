@@ -66,7 +66,6 @@ body{
 
 
 
-
 .navigation{
 	position: fixed;
 	width: 300px;
@@ -188,6 +187,7 @@ body{
 	border-radius: 50%;
 	box-shadow: 35px 35px 0 10px var(--white);
 	pointer-events:none;
+	ddd
 	
 	
 }
@@ -205,15 +205,6 @@ body{
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
 }
-
-.navigation li .active{
-text-decoration: underline;
-text-underline-position: under;
-text-decoration-thickness:3px;
-}
-
-
-
 /***Main***/
 .main{
 	position: abosolute;
@@ -247,188 +238,54 @@ margin-left: 100px;
 	margin-left: 30px;
 }
 
-.filter{
-	 
-	 text-align:center;
-	 
-}
-.filter button{
-	padding:5px;
-	
-	cursor:pointer;
-}
-
- .text{
-	
-	
-	 text-align:center;
-	 font-weight:bold;
-
- }
- .text1{
-	margin-top:-1px;
-	 text-align:center;
-	 font-size:12px;
-	 
-	
-	
- }
- .margin{
-	
-	 margin-right:10px;
-	
- }
-
-
-.profile {
-	width:50px;
-	height:50px;
-	color:green;
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-	border-radius:50%;
-	
-}
-.Tuser{
-	margin-left:auto;
-	margin-right:auto;
-}
-.Tuser td{
-	
-}
-
-
-.Tuser table,td{
-	border:none;
-	border-collapse: collapse;
-}
-
-.Tuser .logo td:nth-child(1){
-	border:none;
-	text-align:center;
+.navigation li .active{
+text-decoration: underline;
+text-underline-position: under;
+text-decoration-thickness:3px;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Notif{
-	 border-radius: 5px;
-	 padding: 10px 15px;
-	 border:1px solid black;
-	 color:#111;
-     background:#f5f5f5;
-	 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-	  font-weight:bold;
-}
-
-.Ycss  {
- background-color: #4CAF50; 
-   border:1px solid #4CAF50;
-  color: white;
-  padding: 5px 10px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-  margin-right:2px; 
-   transition: all 300ms ease-in-out;
-   margin-right:10px;
-   margin-top:17px;
-  
-
-}
-.Ycss:hover{
-color:#111;
-      background:#f5f5f5;
-}
-
-.Ncss  {
- background-color:  #EF7C8E; 
-   border:1px solid  #EF7C8E;
-  color: white;
-  padding: 5px 10px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-  margin-right:2px; 
-   transition: all 300ms ease-in-out;
-
-}
-.Ncss:hover{
-color:#111;
-      background:#f5f5f5;
-}
-
-
-
-.add{
-	text-align:right;
+.menu{
 	 text-decoration:none;
-	 margin-top:-40px;
-	
 }
- .add .adduser{
-  margin-right:8px;
-  margin-bottom:10px;
-  background-color: #353c59; 
+
+
+ 
+
+.menu1{
+	 text-decoration:none;
+}
+
+
+ .menu1 .nav{
+  margin-right:5px;
+  background-color: #f5f5f5;
   border: none;
-  color: white;
+  color: black;
   padding: 10px 15px;
   font-size: 15px;
   transition-duration: 0.4s;
   cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   font-weight: bold;
   border-radius: 5px;
- text-decoration:none;
-    display: inline-block;
+  text-decoration:none;
+  display: inline-block;
   vertical-align: middle;
-
+  border:1px solid #4CAF50;
+  margin-top:10px;
   
 }
 
- .add .adduser:hover {
-  background-color:  #4248f8;
-  color: white;
+.menu1 .nav:hover {
+  color:white;
+  background:#4CAF50;
+ 
   text-decoration:none;
 }
 
-.add .adduser ion-icon {
+.menu1 .nav ion-icon {
 	display: inline-block;
 	vertical-align: middle;
 	margin-right:10px;
@@ -439,78 +296,228 @@ color:#111;
 
 
 
-.signup{
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-	margin-left:auto;
-	margin-right: 5px;
-	width: 300px;
-	padding: 15px;	
-	position: fixed;
-	top:10px;
-    bottom: 0;
-    right: 0;
-	overflow:hidden;
-	overflow-y:scroll;
-	
-}
-
-/* Full-width input fields */
-.signup input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-
-.signup .btn{
-	margin-left: 85px;
-}
- 
- .signup .btn {
-  background-color: #4CAF50; 
+.menu .nav1{
+  margin-right:5px;
+  background-color:  #4CAF50;
   border: none;
   color: white;
-  padding: 8px 25px;
+  padding: 10px 15px;
   font-size: 15px;
   transition-duration: 0.4s;
   cursor: pointer;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
   border-radius: 5px;
-  width: auto;
+  text-decoration:none;
+  display: inline-block;
+  vertical-align: middle;
+
+
 }
 
+.menu .nav1 ion-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right:10px;
+	font-size: 20px;
+	float: left;
+	text-decoration:none;
+}
 
-.signup .btn:hover {
-  background-color:  #EC7272;
+.menu1 .nav1{
+  margin-right:5px;
+  background-color:  #4CAF50;
+  border: none;
   color: white;
+  padding: 10px 15px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top:10px;
+
+
+}
+
+.menu1 .nav1 ion-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right:10px;
+	font-size: 20px;
+	float: left;
+	text-decoration:none;
 }
 
 
-.signup p{
-	font-size:14px;
-	text-decoration:underline;
-	margin-bottom:10px;
 
+.menu .nav{
+  margin-right:5px;
+  background-color: #f5f5f5;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  display: inline-block;
+  vertical-align: middle;
+  border:1px solid #4CAF50;
+  
 }
 
-          
+.menu .nav:hover {
+  color:white;
+  background:#4CAF50;
  
-        
-      
+  text-decoration:none;
+}
+
+.menu .nav ion-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right:10px;
+	font-size: 20px;
+	float: left;
+	text-decoration:none;
+}
+
+
+.Reports{
+  width: 97%;
+  margin-top:-3px;
+  margin-left:30px;
+  margin-right:30px;
+  border-radius: 3px 3px 0 0;
+  overflow:hidden;
+  padding:20px 5px;
+   
+  display:fixed;
+  border: 1px solid black; 
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  text-decoration:none;
+}
+
+
+
+.Date {
+	
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	margin-left:auto;
+	margin-right:auto;
+	width: 50%;
+	margin-top:30px;
+	margin-bottom:15px;
+	
+	
+}
+.Date  th {
+  background-color: #4CAF50;
+   border:none;
+   color:white;
+   padding:6px;
+}
+.Date td{
+		padding:20px;
+}
 
 
 
 
+.Date  td:hover {
+background-color: lightgrey;
+cursor: pointer;
+}
 
 
 
+.Drp1 select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:80%;
+  border:1px solid black;
+  height:40px;
+  
+}
+.Drp1 option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.Drp2 select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:80%;
+  border:1px solid black;
+  height:40px;
+  
+}
+.Drp2 option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.Create{
+	text-align:right;
+}
 
-.account{
+
+.Create .createBTN{
+  margin-right:5px;
+  background-color: #f5f5f5;
+  border: none;
+  color: black;
+  padding: 5px 15px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  display: inline-block;
+  vertical-align: middle;
+  
+  
+}
+
+.Create .createBTN:hover {
+  color:white;
+  background:#2192FF;
+ 
+  text-decoration:none;
+}
+
+.Create .createBTN ion-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right:10px;
+	font-size: 20px;
+	float: left;
+	text-decoration:none;
+}
+
+.Header{
   width: 97%;
   margin-left:30px;
   margin-right:30px;
@@ -518,23 +525,12 @@ color:#111;
   overflow:hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
   display:fixed;
-  border: 1px solid black; 
+  border: none; 
   text-decoration:none;
-  height:300px;
-  
-  
+  margin-top:20px;
 }
 
- .Name input{
-	 height:35px;
-	  width:400px;
-	  border:none;
-	  font-size:15px;
-	  border-radius:3px;
- }
-
-
-.account th {
+.Header .title th:nth-child(1){
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
@@ -542,119 +538,115 @@ color:#111;
   color: white;
   font-weight:bold;
   text-decoration:none;
-}
-
-
-.account td{
-	padding:10 10px;
-	text-align: center;
-
-}
-.account td, .account th {
-  padding: 5px;
-}
-
-.account tr{
-	background-color: #EFEFEF;
-
-}
-
-.account tr:hover {
-background-color: #D1D1D1;}
-
-
-.account input {
-	text-align: center;
+  font-size:30px;
 	
 }
 
 
 
+.Header th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--red);
+  color: white;
+  font-weight:bold;
+  text-decoration:none;
+  
+}
 
- .account .btn {
-  background-color: #168aad; 
-  border: none;
+
+
+.Header td, .Header th {
+  padding: 5px;
+}
+
+.Header tr{
+	background-color: #EFEFEF;
+
+}
+
+.Header td{
+	text-align:center;
+}
+
+
+.Header tr:hover {
+  background-color:  #D1D1D1;
+  cursor:pointer;
+}
+
+
+.Header .margin{
+	margin-bottom:15px;
+	margin-top:3px;
+}
+.Header .margin1{
+	margin-bottom:5px;
+
+}
+.Header .btn1 {
+  
+  background-color: #4CAF50; 
   color: white;
   padding: 5px 10px;
-  font-size: 11px;
+  font-size: 15px;
   transition-duration: 0.4s;
   cursor: pointer;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
   border-radius: 5px;
   text-decoration:none;
-  margin-right:5px;
+  margin-top:5px;
 
   
 }
 
-.account .btn:hover {
-  background-color:  #34a0a4;
+.Header .btn1:hover {
+  background-color:  #38E54D;
   color: white;
 }
-
-.account .btn1 {
-  background-color: #EF7C8E; 
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  font-size: 11px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-  margin-right:5px; 
-  
-}
-
-.account .btn1:hover {
-  background-color:  var(--red);
-  color: white;
-}
-
-.account .btn2 {
-  background-color: orange; 
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  font-size: 11px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-  
-}
-
-.account .btn2:hover {
-  background-color:  #FF884B;
-  color: white;
-}
-
-.account .btn3 {
+.Header .btn2 {
   margin-right:5px;
   background-color: #4CAF50; 
-  border:1px solid #4CAF50;
-  border: none;
   color: white;
-  padding: 5px 10px;
-  font-size: 11px;
+ padding: 5px 10px;
+  font-size: 15px;
   transition-duration: 0.4s;
   cursor: pointer;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
   border-radius: 5px;
   text-decoration:none;
+  margin-top:5px;
+  
 
   
 }
 
-.account .btn3:hover {
+.Header .btn2:hover {
   background-color:  #38E54D;
   color: white;
 }
 
+
+ .Header .btn3 {
+  margin-right:5px;
+  background-color: #4CAF50; 
+  color: white;
+  padding: 5px 10px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+
+}
+
+  .Header .btn3:hover {
+  background-color:  #38E54D;
+  color: white;
+}
 
