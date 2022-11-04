@@ -89,7 +89,7 @@ include("Connection.php");
 			
 		<table class="proposals">
 				<tr>
-					<th colspan="5">
+					<th colspan="6">
 						<div class="menu">
 							
 							<a href="Evaluation.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
@@ -109,11 +109,12 @@ include("Connection.php");
 					
 				</tr>
 				<tr  class="title">
-					<th colspan="5"><center>APPROVED EVALUATION REPORTS </th> 
+					<th colspan="6"><center>APPROVED EVALUATION REPORTS </th> 
 				</tr>
 				
 				<tr>
 					<th width="30px"> Evaluation ID </th>
+					<th width="30px"> Proposal ID </th>
 					<th width="auto"> Title </th>
 					<th width="180";> Evaluator </th>
 					<th width="120px";> Status </th>
@@ -126,6 +127,7 @@ $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
 		$EID = $result['EvaluationID'];
+		$PID = $result['ProposalID'];
 		$Title = $result ['Title'];
 		//$Creator = $result['Author'];
 		$Evaluator = $result['Evaluator'];
@@ -140,6 +142,7 @@ while($result = mysqli_fetch_array($command))
 ?>
 			<tr class="inputs">
 				<td><?php echo $EID; ?></td>
+				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $Fullname; ?></td> 
 				<td><?php echo $Status; ?></td> 	
