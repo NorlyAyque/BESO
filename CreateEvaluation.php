@@ -72,7 +72,7 @@ if(isset($_GET['evaluation'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/CreateEvaluation-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Evaluation-style.css">
 
 </head>
 <body>
