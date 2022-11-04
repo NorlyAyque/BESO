@@ -32,7 +32,8 @@ while($result = mysqli_fetch_array($command))
 	{
 		$Title = $result['Title'];
 		$Location_Area = $result['Location_Area'];
-		$Implementation = $result['Implementation'];
+		$DateImplement = $result['DateImplement'];
+		$HoursImplement = $result['HoursImplement'];
 		$Office = $result['Office'];
 		$Agencies = $result['Agency'];
 		$TypeCES = $result['TypeCES'];
@@ -185,17 +186,17 @@ $pdf->Row2();
 
 $pdf->SetFont('Times','',10);
 
-$pdf->Cell(70, 7, 'Title of the Project or Activity:', 0, 0, 'L');
-$pdf->multicell(115.9, 5, $Title, 1, 'J');
+$pdf->Cell(70, 6, 'Title of the Project or Activity:', 0, 0, 'L');
+$pdf->multicell(115.9, 6, $Title, 1, 'J');
 
-$pdf->Cell(70, 7, 'Location:', 'T', 0, 'L');
-$pdf->multicell(115.9, 5, $Location_Area, 1, 'J');
+$pdf->Cell(70, 6, 'Location:', 'T', 0, 'L');
+$pdf->multicell(115.9, 6, $Location_Area, 1, 'J');
 
-$pdf->Cell(70, 5, 'Date of Implementation /','T,R', 0,'L');
-$pdf->Cell(115.9, 5, $Implementation , 0, 1, 'J');
+$pdf->Cell(70, 6, 'Date of Implementation /','T,R', 0,'L');
+$pdf->Cell(115.9, 6, $DateImplement , 0, 1, 'J');
 
 $pdf->Cell(70, 5, 'Number of hours of implementation:','R,B', 0,'L');
-$pdf->Cell(115.9, 5, '', 'B', 1, 'J');
+$pdf->Cell(115.9, 5, $HoursImplement, 'B', 1, 'J');
 
 ////
 $pdf->Cell(70, 5, 'Implementing Office/ College / Program','R', 1,'L');
