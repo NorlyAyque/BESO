@@ -93,7 +93,7 @@ include("Connection.php");
 					<div class="menu">
 							
 						<a href="Evaluation.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
-						<a href="Evaluation-revision.php" button class = "nav"> Revision <ion-icon name="warning-outline"></ion-icon></a>
+						<a href="Evaluation-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a>
 						<a href="Evaluation-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 						<a href="Evaluation-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>	
 					</div>
