@@ -323,13 +323,29 @@ if (isset($_POST['submit'])) {
 			'$Office', '$Programs', '$People', '$Agency', '$Beneficiaries',
 			'$PS1', '$PS2', '$PS3', '$PS4', '$PS5', '$PS6', '$PS7',
 			'PENDING', '$Sign1_1', '$Sign1_2', '$Sign2_1', '$Sign2_2', '$Sign3_1', '$Sign3_2')");
-	$command = $con->query($sql);
+	//$command = $con->query($sql);
 
-	//Update Remarks_2
+	if ($con->query($sql) === TRUE) {
+		$last_id = $con->insert_id;
+		//echo "New record created successfully. Last inserted ID is: " . $last_id;
+	  } else {
+		echo "Error: " . $sql . "<br>" . $con->error;
+	  }
+
+
+	//Update Remarks_2 for Create_alagilan Table
 	$sql = ("UPDATE create_alangilan
 			SET Remarks_2 = 'Last Monitored. $DateTime'
 			WHERE ProposalID = $PID");
 	$command = $con->query($sql);
+
+	//Update Last_Monitored for Monitoring table
+	$sql = ("UPDATE monitoring_alangilan
+			SET Last_Monitored = '$DateTime'
+			WHERE MonitoringID = $last_id");
+	$command = $con->query($sql);
+
+
 
 	echo "<script>
 			alert('Monitoring Successfully Created');
