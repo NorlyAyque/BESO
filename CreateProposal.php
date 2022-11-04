@@ -128,7 +128,7 @@ $DateTime = date("M, d Y; h:i:s A");
 				<div class="fillup">
 				  <div class="input-field">
 						<label> l. Title <label>
-						<textarea class="font" placeholder="type Here..." name="Title" required></textarea>
+						<textarea class="font" placeholder="type here..." name="Title" required></textarea>
 						 
 						<label> ll. Location <label>
 						<textarea placeholder="type here..." name="Location_Area" required></textarea> 
