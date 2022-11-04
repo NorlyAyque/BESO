@@ -10,25 +10,60 @@ $DateTime = date("M, d Y; h:i:s A");
 ?>
 
 <?php
-if(isset($_GET['monitoring'])){
-	$PID = $_GET['monitoring']; //Proposal ID
+if(isset($_GET['create'])){
+	$PID = $_GET['create']; //Proposal ID
     
 	$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
 	$command = $con->query($sql) or die("Error Fethcing data");
     while($result = mysqli_fetch_array($command))
 	{
 		$dbAuthor = $result['AccountID']; //Gumawa ng Proposal
+
 		$dbTitle = $result['Title'];
         $dbLocation = $result['Location_Area'];
-		$dbDuration = $result['Duration'];
+		
+		$dbStart_Date = $result['Start_Date'];
+		$dbEnd_Date = $result['End_Date'];
+		$dbStart_Time = $result['Start_Time'];
+		$dbEnd_Time = $result['End_Time'];
+
 		$dbTypeCES = $result['TypeCES'];
 		$dbSDG = $result['SDG'];
 		$dbOffice = $result['Office'];
 		$dbPrograms = $result['Programs'];
 		$dbPeople = $result['People'];
 		$dbAgencies = $result['Agencies'];
-		$dbBeneficiaries = $result['Beneficiaries'];
+		$dbTypeParticipants = $result['TypeParticipants'];
+		$dbMale = $result['Male'];
+		$dbFemale = $result['Female'];
     }
+
+	//Computation for number of Hours Implemented / Duration
+	$date1 = date_create($dbStart_Date); 	$Start_Date = date_format($date1,"F, d Y");
+	$date2 = date_create($dbEnd_Date); 		$End_Date = date_format($date2,"F, d Y");
+	
+	$time1 = date_create($dbStart_Time); 	$Start_Time = date_format($time1,"h:i:s A");
+	$time2 = date_create($dbEnd_Time); 		$End_Time = date_format($time2,"h:i:s A");
+
+	//Getting Number of Days
+	$dateinterval = date_diff($date1, $date2);
+	$x = $dateinterval->format('%a');//Whole Number
+
+	if ($x == 0){ //Same Day = 0 = 1 day (8hrs)
+		echo $NoOfDays = $dateinterval->format('%a') + 1;
+	}else{ //Not same day = 2 days or more
+		$NoOfDays = $dateinterval->format('%a') +1;
+	}
+	
+	//Getting Number of Hours
+	$timeinterval = date_diff($time1, $time2);
+	$TimeResult = $timeinterval->format('%h') - 1; //8 hrs = 1 DAY (7:00-4:00 = 9hrs - 1 = 8hrs)
+	
+	$NoOfHours = $TimeResult * $NoOfDays;
+	
+	//Use this variables to display in forms
+	$DurationDate = $Start_Date . " - " . $End_Date . " ($NoOfDays days)"; //Display Date Only
+	$DurationTime = $NoOfHours . " hours"; //Compute number of hours depends on number of days
 }
 ?>
 <!DOCTYPE html>
@@ -133,7 +168,7 @@ if(isset($_GET['monitoring'])){
 						<textarea placeholder="type here..." name="Location_Area" required><?Php echo $dbLocation; ?></textarea> 
 						
 						<label> lll. Duration </label>
-						<textarea placeholder="type here..." name="Duration" required><?Php echo $dbDuration; ?></textarea>
+						<textarea placeholder="type here..." name="Duration" required><?Php echo $DurationDate."\r".$DurationTime; ?></textarea>
 						 
 						<label> lV. Type of Community Extension Service </label>
 						<textarea placeholder="type here..." name="TypeCES" required><?Php echo $dbTypeCES; ?></textarea> 
@@ -160,8 +195,8 @@ if(isset($_GET['monitoring'])){
 						
 						
 						<label> X. Beneficiaries<i>(Type and Number of Male and Female</i></label>
-						<textarea placeholder="type here..." name="Beneficiaries" required><?Php echo $dbBeneficiaries; ?></textarea> 
-						
+						<textarea placeholder="type here..." name="Beneficiaries" required><?Php echo "Type: ".$dbTypeParticipants. "\rMale: ".$dbMale. "\rFemale: ".$dbFemale;?></textarea> 
+
 						<center><label> Xl. Project Status<label></center><br>
 						
 						<label>1. As to purpose (how far has the purpose been attained)</label>
@@ -236,11 +271,11 @@ if(isset($_GET['monitoring'])){
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
@@ -291,6 +326,7 @@ if (isset($_POST['submit'])) {
 	$command = $con->query($sql);
 	echo "<script>
 			alert('Monitoring Successfully Created');
+			window.location='Monitoring-pending.php';
 		</script>";
 }
 
