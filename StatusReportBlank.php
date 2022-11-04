@@ -22,10 +22,10 @@
 			<td colspan="13"><i>A. trainess weighted by the lenght of training / percentage of beneficiaries who rate the training course/s as satisfactory or higher terms of quality and relevance</i></td>
 		</tr>
 		<tr>
-			<th width="50px";>No.</th>
-			<th>TITLE OF TRAINING</th>
-			<th colspan="2" width="280px";>INCLUSIVE DATES</th>
-			<th width="110px";>DURATION</th>
+			<th width="45px";>No.</th>
+			<th width="120px";>TITLE OF <br>TRAINING</th>
+			<th colspan="2" width="280px";>INCLUSIVE<br> DATES</th>
+			<th width="107px";>DURATION</th>
 			<th width="110px";>NO. OF<br> TRAINEES</th>
 			<th width="140px";>TRAINESS<br> WEIGHTED BY <br>THE LENGTH <br>OF TRAINING</th>
 			<th colspan="5" width="140px";>QUALITY AND <br>RELEVANCE <br>RATING </th>
