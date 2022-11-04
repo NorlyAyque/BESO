@@ -261,9 +261,11 @@ if(isset($_GET['edit'])){
 						</table>
 						 
 						<label> lV. Type of Communuty Extension Service </label>
-							<div class="checkbox" >
+						
+						<div class="checkbox" >
 							<button onclick="openForm()"> Please Select one or more types..  </button>
 						</div>
+
 						<div class="form-popup" id="myForm">
 							<label class="check"><span>1. Smart Analytics and Engineering</span>
 								<input type="checkbox" id="TypeCES_1" value="Smart Analytics and Engineering" name="CES" onclick="SelectTypeCES()">
@@ -638,37 +640,6 @@ if(isset($_GET['edit'])){
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
-	
-	<script>
-		function openForm() {
-		document.getElementById("myForm").style.display = "block";
-		}
-
-		function closeForm() {
-		  document.getElementById("myForm").style.display = "none";
-		}
-	</script>
-	
-	<script>
-		function openForm1() {
-		document.getElementById("myForm1").style.display = "block";
-		}
-
-		function closeForm1() {
-		  document.getElementById("myForm1").style.display = "none";
-		}
-	</script>
-	
-	<script>
-		function openForm2() {
-		document.getElementById("myForm2").style.display = "block";
-		}
-
-		function closeForm2() {
-		  document.getElementById("myForm2").style.display = "none";
-		}
-	</script>
-
 </body>
 </html>
 
@@ -796,6 +767,14 @@ if (isset($_POST['update'])) {
 		</script>";
 }
 ?>
+<script>
+//For Form TypeCES and SDG
+	function openForm()  { document.getElementById("myForm").style.display = "block"; }
+	function closeForm() { document.getElementById("myForm").style.display = "none"; }
+		
+	function openForm1()  { document.getElementById("myForm1").style.display = "block"; }
+	function closeForm1() { document.getElementById("myForm1").style.display = "none"; }
+</script>
 
 <?php
  if ($dbInitiated == "Department"){
