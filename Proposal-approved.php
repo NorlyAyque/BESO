@@ -200,7 +200,7 @@ if(isset($_GET['check'])){
 	while($row = mysqli_fetch_array($commandexist)){$Count = $row['TotalCount'];}
 	
 	//Soon change to =1
-	if ($Count > 1){ //1 means meron na, existing na, so redirect sa evaluation page
+	if ($Count == 1){ //1 means meron na, existing na, so redirect sa evaluation page
 		echo "<script>
 				alert('Evaluation for this Proposal ID $PID is already existing. Go to Evaluation page to see.');
 				//window.location='Evaluation.php';
