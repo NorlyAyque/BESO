@@ -212,7 +212,7 @@ $DateTime = date("M, d Y; h:i:s A");
 							<textarea placeholder="..." id="TypeCES" name="TypeCES" required></textarea>
 							
 							
-						<label><b>V. Sustatinable Development Goals (SDG)</b></label>
+						<label><b>V. Sustainable Development Goals (SDG)</b></label>
 							<!-- -->
 							<div class="checkbox1" >
 								<button onclick="openForm1()"> Please Select one or more types..  </button>
