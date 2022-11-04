@@ -18,17 +18,52 @@ if(isset($_GET['evaluation'])){
     while($result = mysqli_fetch_array($command))
 	{
 		$dbAuthor = $result['AccountID']; //Gumawa ng Proposal
+
 		$dbTitle = $result['Title'];
         $dbLocation = $result['Location_Area'];
-		$dbDuration = $result['Duration'];
+		
+		$dbStart_Date = $result['Start_Date'];
+		$dbEnd_Date = $result['End_Date'];
+		$dbStart_Time = $result['Start_Time'];
+		$dbEnd_Time = $result['End_Time'];
+
 		$dbOffice = $result['Office'];
 		$dbAgencies = $result['Agencies'];
 		$dbTypeCES = $result['TypeCES'];
 		$dbSDG = $result['SDG'];
+
+		$dbTypeParticipants = $result['TypeParticipants'];
+
 		$dbPeople = $result['People'];
 		$dbObjectives = $result['Objectives'];
     }
-	//$_SESSION["AID"] = $dbAuthor; //Save sa Session variable
+
+	//Computation for number of Hours Implemented / Duration
+	$date1 = date_create($dbStart_Date); 	$Start_Date = date_format($date1,"F, d Y");
+	$date2 = date_create($dbEnd_Date); 		$End_Date = date_format($date2,"F, d Y");
+	
+	$time1 = date_create($dbStart_Time); 	$Start_Time = date_format($time1,"h:i:s A");
+	$time2 = date_create($dbEnd_Time); 		$End_Time = date_format($time2,"h:i:s A");
+
+	//Getting Number of Days
+	$dateinterval = date_diff($date1, $date2);
+	$x = $dateinterval->format('%a');//Whole Number
+
+	if ($x == 0){ //Same Day = 0 = 1 day (8hrs)
+		echo $NoOfDays = $dateinterval->format('%a') + 1;
+	}else{ //Not same day = 2 days or more
+		$NoOfDays = $dateinterval->format('%a') +1;
+	}
+	
+	//Getting Number of Hours
+	$timeinterval = date_diff($time1, $time2);
+	$TimeResult = $timeinterval->format('%h') - 1; //8 hrs = 1 DAY (7:00-4:00 = 9hrs - 1 = 8hrs)
+	
+	$NoOfHours = $TimeResult * $NoOfDays;
+	
+	//Use this variables to display in forms
+	$DurationDate = $Start_Date . " - " . $End_Date . " ($NoOfDays days)"; //Display Date Only
+	$DurationTime = $NoOfHours; //Compute number of hours depends on number of days
 }
 ?>
 
@@ -134,7 +169,8 @@ if(isset($_GET['evaluation'])){
 						<textarea placeholder="type here..." name="Location" required><?php echo $dbLocation; ?></textarea> 
 						
 						<label>  Date of Implementation / Number of hours of implementation </label>
-						<textarea placeholder="type here..." name="Implementation" required><?php echo $dbDuration; ?></textarea>
+						<textarea placeholder="type here..." name="DateImplement" required><?php echo $DurationDate; ?></textarea>
+						<textarea placeholder="type here..." name="HoursImplement" required><?php echo $DurationTime ." hours"; ?></textarea>
 						 
 						<label>  Implementing Office/College/Program<i>(specify the programs under the college implementing the project)</i> </label>
 						<textarea placeholder="type here..."  name="Office" required><?php echo $dbOffice; ?></textarea> 
@@ -152,7 +188,7 @@ if(isset($_GET['evaluation'])){
 						
 						<table class="participants">
 								<tr class="types">
-									<th colspan="4"> 	<label> Types of Participants  <input type="text" name="Beneficiaries" required></i></label></th>
+									<th colspan="4"> 	<label> Types of Participants  <input type="text" name="Beneficiaries" value="<?php echo $dbTypeParticipants; ?>" required></i></label></th>
 								</tr>
 								<tr>
 									<th>  </th>
@@ -484,7 +520,8 @@ if (isset($_POST['submit'])) {
 	
 	$Title = htmlspecialchars($_POST['Title']);
 	$Location_Area = htmlspecialchars($_POST['Location']);
-	$Implementation = htmlspecialchars($_POST['Implementation']);
+	$DateImplement = htmlspecialchars($_POST['DateImplement']);
+	$HoursImplement = htmlspecialchars($_POST['HoursImplement']);
 	$Office = htmlspecialchars($_POST['Office']);
 	$Agency = htmlspecialchars($_POST['Agency']);
 	$TypeCES = htmlspecialchars($_POST['TypeCES']);
@@ -562,7 +599,7 @@ if (isset($_POST['submit'])) {
 
 	$stmt = mysqli_prepare($con, "INSERT INTO evaluation_alangilan
 		(ProposalID, Author, Evaluator, Date_Time,
-			Title, Location_Area, Implementation, Office, Agency, TypeCES, SDG, Beneficiaries,
+			Title, Location_Area, DateImplement, HoursImplement, Office, Agency, TypeCES, SDG, Beneficiaries,
 			M1, M2, MT, F1, F2, FT, MFT, People, Objectives, Narrative,
 			Eval1A1, Eval1A2, Eval1AT, Eval1B1, Eval1B2, Eval1BT, Eval1C1, Eval1C2, Eval1CT,
 			Eval1D1, Eval1D2, Eval1DT, Eval1E1, Eval1E2, Eval1ET,
@@ -571,13 +608,13 @@ if (isset($_POST['submit'])) {
 			Pic1, Caption1, Pic2, Caption2, Pic3, Caption3,
 			ProjectStatus, Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2)
 		VALUES 
-			(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
+			(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
 			 ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
 			 ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
 			 ?,?,?,?,?)");
-	mysqli_stmt_bind_param($stmt, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', //65
+	mysqli_stmt_bind_param($stmt, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', //65
 		$PID, $dbAuthor, $AID, $DateTime,
-			$Title, $Location_Area, $Implementation, $Office, $Agency, $TypeCES, $SDG, $Beneficiaries,
+			$Title, $Location_Area, $DateImplement, $HoursImplement, $Office, $Agency, $TypeCES, $SDG, $Beneficiaries,
 			$M1, $M2, $MT, $F1, $F2, $FT, $MFT, $People, $Objectives, $Narrative,
 			$Eval1A1, $Eval1A2, $Eval1AT, $Eval1B1, $Eval1B2, $Eval1BT, $Eval1C1, $Eval1C2, $Eval1CT,
 			$Eval1D1, $Eval1D2, $Eval1DT, $Eval1E1, $Eval1E2, $Eval1ET,
