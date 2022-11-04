@@ -486,7 +486,7 @@ cursor: pointer;
 }
 
 
-.checkbox button{
+.checkbox label{
   width:500px;
   display:flex;
   background-color: #ff4d4d;
@@ -502,7 +502,7 @@ cursor: pointer;
   font-weight:bold;
   margin-top:10px;
 }
-.checkbox1 button{
+.checkbox1 label{
   width:352px;
   display:flex;
   background-color: #ff4d4d;

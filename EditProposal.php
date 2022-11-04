@@ -263,7 +263,7 @@ if(isset($_GET['edit'])){
 						<label> lV. Type of Communuty Extension Service </label>
 						
 						<div class="checkbox" >
-							<button onclick="openForm()"> Please Select one or more types..  </button>
+							<label onclick="openForm()"> Please Select one or more types..  </label>
 						</div>
 
 						<div class="form-popup" id="myForm">
@@ -321,7 +321,7 @@ if(isset($_GET['edit'])){
 							
 						<label>  V. Sustatinable Development Goals (SDG) </label>
 							<div class="checkbox1" >
-								<button onclick="openForm1()"> Please Select one or more types..  </button>
+								<label onclick="openForm1()"> Please Select one or more types..  </label>
 							</div>
 							<div class="form-popup1" id="myForm1">
 								<label class="check"><span>1. No poverty</span>

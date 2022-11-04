@@ -15,7 +15,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-Proposalss.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-Proposal.css">
 
 </head>
 <body>
@@ -157,7 +157,7 @@ $DateTime = date("M, d Y; h:i:s A");
 						<label><b>lV. Type of Community Extension Service</b></label>
 						
 						<div class="checkbox">
-							<button onclick="openForm()"> Please Select one or more types.. </button>
+							<label onclick="openForm()"> Please Select one or more types.. </label>
 						</div>
 
 						<div class="form-popup" id="myForm">
@@ -217,7 +217,7 @@ $DateTime = date("M, d Y; h:i:s A");
 						<label><b>V. Sustainable Development Goals (SDG)</b></label>
 							<!-- -->
 							<div class="checkbox1" >
-								<button onclick="openForm1()"> Please Select one or more types..  </button>
+								<label onclick="openForm1()"> Please Select one or more types..  </label>
 							</div>
 							<div class="form-popup1" id="myForm1">
 								<label class="check"><span>1. No poverty</span>
