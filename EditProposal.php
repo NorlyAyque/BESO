@@ -265,141 +265,139 @@ if(isset($_GET['edit'])){
 							<button onclick="openForm()"> Please Select one or more types..  </button>
 						</div>
 						<div class="form-popup" id="myForm">
-							<label class="check" value=""><span>1. Smart Analytics and Engineering</span>
-								<input type="checkbox">
+							<label class="check"><span>1. Smart Analytics and Engineering</span>
+								<input type="checkbox" id="TypeCES_1" value="Smart Analytics and Engineering" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>2. Environment and Ntural Resources Conservation, Protection and Rehabilitation Program</span>
-								<input type="checkbox">
+							<label class="check"><span>2. Environment and Natural Resources Conservation, Protection and Rehabilitation Program</span>
+								<input type="checkbox" id="TypeCES_2" value="Environment and Natural Resources Conservation, Protection and Rehabilitation Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>3. Adopt-A-Barangay/Municipality/School/Social Development through BIDANI Implementation</span>
-								<input type="checkbox">
+							<label class="check"><span>3. Adopt-A-Barangay/Municipality/School/Social Development through BIDANI Implementation</span>
+								<input type="checkbox" id="TypeCES_3" value="Adopt-A-Barangay/Municipality/School/Social Development through BIDANI Implementation" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>4. Community Outreach Program</span>
-								<input type="checkbox">
+							<label class="check"><span>4. Community Outreach Program</span>
+								<input type="checkbox" id="TypeCES_4" value="Community Outreach Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>5. Technical-Vocational Education and Training(TVET)Program on Agri-Fishery and Related Program for Farmers and Fisherfolks</span>
-								<input type="checkbox">
+							<label class="check"><span>5. Technical-Vocational Education and Training(TVET)Program on Agri-Fishery and Related Program for Farmers and Fisherfolks</span>
+								<input type="checkbox" id="TypeCES_5" value="Technical-Vocational Education and Training(TVET)Program on Agri-Fishery and Related Program for Farmers and Fisherfolks" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>6. Technology Transfer, Utilization and Commercialization Program</span>
-								<input type="checkbox">
+							<label class="check"><span>6. Technology Transfer, Utilization and Commercialization Program</span>
+								<input type="checkbox" id="TypeCES_6" value="Technology Transfer, Utilization and Commercialization Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>7. Technical Assistance and Advisory Program to Agencies, Organizations, Associations and Other Groups</span>
-								<input type="checkbox">
+							<label class="check"><span>7. Technical Assistance and Advisory Program to Agencies, Organizations, Associations and Other Groups</span>
+								<input type="checkbox" id="TypeCES_7" value="Technical Assistance and Advisory Program to Agencies, Organizations, Associations and Other Groups" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>8. Parent's Empowerment through Social Development(PESODEV)Program</span>
-								<input type="checkbox">
+							<label class="check"><span>8. Parent's Empowerment through Social Development(PESODEV)Program</span>
+								<input type="checkbox" id="TypeCES_8" value="Parent's Empowerment through Social Development(PESODEV)Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>9. Genger and Development</span>
-								<input type="checkbox">
+							<label class="check"><span>9. Genger and Development</span>
+								<input type="checkbox" id="TypeCES_9" value="Genger and Development" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>10. Disaster Preparedness and Response/Climate Change Adaptation</span>
-								<input type="checkbox">
+							<label class="check"><span>10. Disaster Preparedness and Response/Climate Change Adaptation</span>
+								<input type="checkbox" id="TypeCES_10" value="Disaster Preparedness and Response/Climate Change Adaptation" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>11. BatStateU Inclusive Social Innovation for Regional Growth(BISIG)Program</span>
-								<input type="checkbox">
+							<label class="check"><span>11. BatStateU Inclusive Social Innovation for Regional Growth(BISIG)Program</span>
+								<input type="checkbox" id="TypeCES_11" value="BatStateU Inclusive Social Innovation for Regional Growth(BISIG)Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"value=""><span>12. Livelihood and other Entrepreneurship related on Agri-Fisheries(LEAF)</span>
-								<input type="checkbox">
+							<label class="check"><span>12. Livelihood and other Entrepreneurship related on Agri-Fisheries(LEAF)</span>
+								<input type="checkbox" id="TypeCES_12" value="Livelihood and other Entrepreneurship related on Agri-Fisheries(LEAF)" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
 							<button type="button" class="btncancel" onclick="closeForm()">CLOSE</button>
 						</div>
-							<textarea placeholder="type here..." name="TypeCES" required><?php echo $dbTypeCES; ?></textarea>
+							<textarea placeholder="type here..." id ="TypeCES" name="TypeCES" required><?php echo $dbTypeCES; ?></textarea>
 							
-						
-						
 						<label>  V. Sustatinable Development Goals (SDG) </label>
 							<div class="checkbox1" >
 								<button onclick="openForm1()"> Please Select one or more types..  </button>
 							</div>
 							<div class="form-popup1" id="myForm1">
-								<label class="check"value=""><span>1. No povery</span>
-									<input type="checkbox">
+								<label class="check"><span>1. No poverty</span>
+									<input type="checkbox" id="SDG1" value="No poverty" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
 								<br>
-								<label class="check"value=""><span>2. Zero hunger</span>
-									<input type="checkbox">
+								<label class="check"><span>2. Zero hunger</span>
+									<input type="checkbox" id="SDG2" value="Zero hunger" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
-								<label class="check"value=""><span>3. Good health and well-being</span>
-									<input type="checkbox">
+								<label class="check"><span>3. Good health and well-being</span>
+									<input type="checkbox" id="SDG3" value="Good health and well-being" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
-								<label class="check"value=""><span>4. Quality education</span>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"value=""><span>5. Genger equality</span>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-								<label class="check"value=""><span>6. Clean water and sanitation</span>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-								<label class="check"value=""><span>7. Affordableand clean energy</span>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-								<label class="check"value=""><span>8. Decent work and economic growth</span>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-								<label class="check"value=""><span>9. Industry, innovation and infrastructure</span>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-								<label class="check"value=""><span>10. Reduced inequalities</span>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-								<label class="check"value=""><span>11. Sustainable cities and communities</span>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-								<label class="check"value=""><span>12. Resonsible comsumption and production</span>
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-								<label class="check"value=""><span>13. Climate action</span>
-									<input type="checkbox">
+								<label class="check"><span>4. Quality education</span>
+									<input type="checkbox" id="SDG4" value="Quality education" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
 								<br>
-								<label class="check"value=""><span>14. Life below water</span>
-									<input type="checkbox">
+								<label class="check"><span>5. Genger equality</span>
+									<input type="checkbox" id="SDG5" value="Genger equality" name="ChkSDG" onclick="SelectSDG()">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"><span>6. Clean water and sanitation</span>
+									<input type="checkbox" id="SDG6" value="Clean water and sanitation" name="ChkSDG" onclick="SelectSDG()">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"><span>7. Affordableand clean energy</span>
+									<input type="checkbox" id="SDG7" value="Affordableand clean energy" name="ChkSDG" onclick="SelectSDG()">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"><span>8. Decent work and economic growth</span>
+									<input type="checkbox" id="SDG8" value="Decent work and economic growth" name="ChkSDG" onclick="SelectSDG()">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"><span>9. Industry, innovation and infrastructure</span>
+									<input type="checkbox" id="SDG9" value="Industry, innovation and infrastructure" name="ChkSDG" onclick="SelectSDG()">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"><span>10. Reduced inequalities</span>
+									<input type="checkbox" id="SDG10" value="Reduced inequalities" name="ChkSDG" onclick="SelectSDG()">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"><span>11. Sustainable cities and communities</span>
+									<input type="checkbox" id="SDG11" value="Sustainable cities and communities" name="ChkSDG" onclick="SelectSDG()">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"><span>12. Resonsible comsumption and production</span>
+									<input type="checkbox" id="SDG12" value="Resonsible comsumption and production" name="ChkSDG" onclick="SelectSDG()">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"><span>13. Climate action</span>
+									<input type="checkbox" id="SDG13" value="Climate action" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
 								<br>
-								<label class="check"value=""><span>15. Life on land</span>
-									<input type="checkbox">
+								<label class="check"><span>14. Life below water</span>
+									<input type="checkbox" id="SDG14" value="Life below water" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
-								<label class="check"value=""><span>16. Peace, justice and strong institution</span>
-									<input type="checkbox">
+								<br>
+								<label class="check"><span>15. Life on land</span>
+									<input type="checkbox" id="SDG15" value="Life on land" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
-								<label class="check"value=""><span>16. Peace, justice and strong institution</span>
-									<input type="checkbox">
+								<label class="check"><span>16. Peace, justice and strong institution</span>
+									<input type="checkbox" id="SDG16" value="Peace, justice and strong institution" name="ChkSDG" onclick="SelectSDG()">
+									<span class="checkmark"></span>
+								</label>
+								<label class="check"><span>17. Partnership for the goals</span>
+									<input type="checkbox" id="SDG17" value="Partnership for the goals" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm1()">CLOSE</button>
 							</div>
 		
-						<textarea placeholder="type here..." name="SDG" required><?php echo $dbSDG; ?></textarea>
+						<textarea placeholder="type here..." name="SDG" id="SDG" required><?php echo $dbSDG; ?></textarea>
 						
 						<label>  Vl. Office/ College/s Involved </label>
 						<textarea placeholder="type here..." name="Office" required><?php echo $dbOffice; ?></textarea>
@@ -946,4 +944,29 @@ function GrandTotal(){
 	document.getElementById("Cost").value = anss;
 }
 
+</script>
+
+<script>
+//For Type CES & SDG
+function SelectTypeCES(){
+	var checkboxes = document.getElementsByName('CES');
+	var result = "";
+		for (var i = 0; i < checkboxes.length; i++) {
+			if (checkboxes[i].checked) {
+					result += checkboxes[i].value + " " + "\n";
+                }
+            }
+			document.getElementById("TypeCES").value = result ;
+}
+
+function SelectSDG(){
+	var checkboxes = document.getElementsByName('ChkSDG');
+	var result = "";
+		for (var i = 0; i < checkboxes.length; i++) {
+			if (checkboxes[i].checked) {
+					result += checkboxes[i].value + " " + "\n";
+                }
+            }
+			document.getElementById("SDG").value = result ;
+}
 </script>
