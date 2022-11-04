@@ -98,8 +98,8 @@ include("Connection.php");
 						
 					</tr>
 					<tr>
-						<th colspan="5">Number of Active Partnetship with LGUs,Industries,NGOs,NGAs, SMEs, and other stake holder as a result of extension activirties</th>
-						<th colspan="5">Number of Trainees weight by lenght of training </th>
+						<th colspan="5">Number of Active Partnership with LGUs,Industries,NGOs,NGAs, SMEs, and other stake holder as a result of extension activities</th>
+						<th colspan="5">Number of Trainees weight by length of training </th>
 						<th colspan="5">Number of extension programs organized and supported consistent with the SUC's mandated and priority programs </th>
 						<th colspan="5">Percentage of beneficiaries who rate the training course/s and advisory service as satisfactory or higher in terms of quality and relevance</th>
 						
