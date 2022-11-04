@@ -89,7 +89,7 @@ include("Connection.php");
 			
 		<table class="proposals">
 				<tr>
-					<th colspan="5">
+					<th colspan="6">
 						<div class="menu">
 							<a href="Monitoring.php" button class = "nav"> List <ion-icon name="mail-unread-outline"></ion-icon></a></button>
 							<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
@@ -101,7 +101,7 @@ include("Connection.php");
 					
 				</tr>
 				<tr  class="title">
-					<th colspan="5"><center>REJECTED MONITORING REPORTS </th> 
+					<th colspan="6"><center>REJECTED MONITORING REPORTS </th> 
 				</tr>
 				
 				<tr>
@@ -109,6 +109,7 @@ include("Connection.php");
 					<th width="100px"> Proposal ID </th>
 					<th width="auto"> Title </th>
 					<th width="180px";> Prepared By</th>
+					<th width="120px";> Last Monitored</th>
 					<th width="150px";>  </th>
 				</tr>
 
@@ -122,12 +123,14 @@ while($result = mysqli_fetch_array($command))
 		$PID = $result['ProposalID'];
 		$Title = $result ['Title'];
 		$PreparedBy = $result['Sign1_1'];
+		$Remarks = $result['Last_Monitored']; //Monitored. Date
 ?>
 			<tr class="inputs">
 				<td><?php echo $MID; ?></td>
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $PreparedBy; ?></td> 	
+				<td><?php echo $Remarks; ?></td> 	
 				<td>
 					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 					<a href="Monitoring-reject.php?re_use=<?php echo $MID; ?>" button class="REbtn1">Re-Use</button> </a>

@@ -335,7 +335,7 @@ if (isset($_POST['submit'])) {
 
 	//Update Remarks_2 for Create_alagilan Table
 	$sql = ("UPDATE create_alangilan
-			SET Remarks_2 = 'Last Monitored. $DateTime'
+			SET Remarks_2 = '$DateTime'
 			WHERE ProposalID = $PID");
 	$command = $con->query($sql);
 

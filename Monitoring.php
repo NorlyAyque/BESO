@@ -112,7 +112,7 @@ date_default_timezone_set("Asia/Manila");
 				<th width="auto"> Title </th>
 				<th width="130px";> End Date </th>
 				<th width="120px";> Monitoring</th> <!-- Frequency (Monthly, Quarterly, Semi-Annually, Yearly) -->
-				<th width="120px";> Remarks</th> <!-- Remarks_2 in Create Proposal table-->
+				<th width="120px";> Last Monitored</th> <!-- Remarks_2 in Create Proposal table-->
 				<th width="220x";>  </th> <!-- Buttons, View and Create Monitoring -->
 			</tr>
 <?php

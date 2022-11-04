@@ -89,7 +89,7 @@ date_default_timezone_set("Asia/Manila");
 			</div>
 		<table class="proposals">
 			<tr>
-				<th colspan="5">
+				<th colspan="6">
 					<div class="menu">
 						<a href="Monitoring.php" button class = "nav"> List <ion-icon name="mail-unread-outline"></ion-icon></a></button>
 						<a href="Monitoring-pending.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
@@ -101,7 +101,7 @@ date_default_timezone_set("Asia/Manila");
 			</tr>
 
 			<tr  class="title">
-				<th colspan="5" ><center>PENDING MONITORING REPORTS  </center> </th> 
+				<th colspan="6" ><center>PENDING MONITORING REPORTS  </center> </th> 
 			</tr>
 			
 			<tr>
@@ -109,6 +109,7 @@ date_default_timezone_set("Asia/Manila");
 				<th width="50px"> Proposal ID </th>
 				<th width="auto"> Title </th>
 				<th width="120px";> Prepared By</th>
+				<th width="120px";> Last Monitored</th>
 				<th width="280px";>  </th>
 			</tr>
 <?php
@@ -123,12 +124,14 @@ while($result = mysqli_fetch_array($command))
 		$PID = $result['ProposalID'];
 		$Title = $result ['Title'];
 		$PreparedBy = $result['Sign1_1'];
+		$Remarks = $result['Last_Monitored']; //Monitored. Date
 ?>
 			<tr class="inputs">
 				<td><?php echo $MID; ?></td>
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
-				<td><?php echo $PreparedBy; ?></td> 	
+				<td><?php echo $PreparedBy; ?></td>
+				<td><?php echo $Remarks; ?></td> 	 	
 				<td>
 					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 					<a href="Monitoring-pending.php?revise=<?php echo $MID; ?>" button class ="Pbtn1">Revise</button> </a> 
