@@ -154,7 +154,7 @@ $DateTime = date("M, d Y; h:i:s A");
 								</tr>
 						</table>
 					
-						<label><b>lV. Type of Communuty Extension Service</b></label>
+						<label><b>lV. Type of Community Extension Service</b></label>
 						<div class="checkbox" >
 							<button onclick="openForm()"> Please Select one or more types..  </button>
 						</div>
