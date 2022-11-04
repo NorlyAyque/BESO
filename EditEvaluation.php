@@ -20,7 +20,8 @@ if(isset($_GET['edit'])){
 	{
 		$dbTitle = $result['Title'];
 		$dbLocation_Area = $result['Location_Area'];
-		$dbImplementation = $result['Implementation'];
+		$dbDateImplement = $result['DateImplement'];
+		$dbHoursImplement = $result['HoursImplement'];
 		$dbOffice = $result['Office'];
 		$dbAgencies = $result['Agency'];
 		$dbTypeCES = $result['TypeCES'];
@@ -190,7 +191,8 @@ if(isset($_GET['edit'])){
 						<textarea placeholder="type here..." name="Location" required><?php echo $dbLocation_Area; ?></textarea> 
 						
 						<label>  Date of Implementation / Number of hours of implementation </label>
-						<textarea placeholder="type here..." name="Implementation" required><?php echo $dbImplementation; ?></textarea>
+						<textarea placeholder="type here..." name="DateImplement" required><?php echo $dbDateImplement; ?></textarea>
+						<textarea placeholder="type here..." name="HoursImplement" required><?php echo $dbHoursImplement; ?></textarea>
 						 
 						<label>  Implementing Office/College/Program<i>(specify the programs under the college implementing the project)</i> </label>
 						<textarea placeholder="type here..."  name="Office" required><?php echo $dbOffice; ?></textarea> 
@@ -513,7 +515,8 @@ if (isset($_POST['update'])) {
 	
 	$Title = htmlspecialchars($_POST['Title']);
 	$Location_Area = htmlspecialchars($_POST['Location']);
-	$Implementation = htmlspecialchars($_POST['Implementation']);
+	$DateImplement = htmlspecialchars($_POST['DateImplement']);
+	$HoursImplement = htmlspecialchars($_POST['HoursImplement']);
 	$Office = htmlspecialchars($_POST['Office']);
 	$Agency = htmlspecialchars($_POST['Agency']);
 	$TypeCES = htmlspecialchars($_POST['TypeCES']);
@@ -602,7 +605,7 @@ if (isset($_POST['update'])) {
 
 	//Update for all text fields
 	$sql = ("UPDATE evaluation_alangilan
-		SET Title = '$Title', Location_Area = '$Location_Area', Implementation= '$Implementation', 
+		SET Title = '$Title', Location_Area = '$Location_Area', DateImplement = '$DateImplement', HoursImplement = '$HoursImplement', 
 			Office = '$Office', Agency = '$Agency', TypeCES = '$TypeCES', SDG = '$SDG', Beneficiaries = '$Beneficiaries',
 			M1 = '$M1', M2 = '$M2', MT = '$MT', F1 = '$F1', F2 = '$F2', FT = '$FT', MFT = '$MFT',
 			People = '$People', Objectives = '$Objectives', Narrative = '$Narrative',
