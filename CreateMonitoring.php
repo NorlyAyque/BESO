@@ -324,6 +324,13 @@ if (isset($_POST['submit'])) {
 			'$PS1', '$PS2', '$PS3', '$PS4', '$PS5', '$PS6', '$PS7',
 			'PENDING', '$Sign1_1', '$Sign1_2', '$Sign2_1', '$Sign2_2', '$Sign3_1', '$Sign3_2')");
 	$command = $con->query($sql);
+
+	//Update Remarks_2
+	$sql = ("UPDATE create_alangilan
+			SET Remarks_2 = 'Last Monitored. $DateTime'
+			WHERE ProposalID = $PID");
+	$command = $con->query($sql);
+
 	echo "<script>
 			alert('Monitoring Successfully Created');
 			window.location='Monitoring-pending.php';

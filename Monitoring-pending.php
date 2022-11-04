@@ -1,13 +1,16 @@
 <?php
 session_start();
 include("Connection.php");
+
+date_default_timezone_set("Asia/Manila");
+//$DateToday = date("Y-m-d");
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Monitoring - Rejected</title>
+<title>Monitoring - Pending</title>
 <link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
 
 </head>
@@ -38,14 +41,14 @@ include("Connection.php");
 				</a>
 			</li>
 			<li>
-				<a  href="Proposal.php">
+				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
 				</a>
 			</li>
 			
 			<li>
-				<a  href="Evaluation.php">
+				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
 				</a>
@@ -76,9 +79,7 @@ include("Connection.php");
 			</li>
 		</ul>
 	</div>
-		
-		
-		
+
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
@@ -86,35 +87,35 @@ include("Connection.php");
 				<ion-icon name="menu"></ion-icon>
 				</div>	
 			</div>
-			
 		<table class="proposals">
-				<tr>
-					<th colspan="5">
-						<div class="menu">
-							<a href="Monitoring.php" button class = "nav"> List <ion-icon name="mail-unread-outline"></ion-icon></a></button>
-							<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
-							<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a></button>
-							<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
-							<a href="Monitoring-reject.php" button class = "nav1"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a></button>
-						</div>
-					</th> 
-					
-				</tr>
-				<tr  class="title">
-					<th colspan="5"><center>REJECTED MONITORING REPORTS </th> 
-				</tr>
-				
-				<tr>
-					<th width="100px"> Monitoring ID </th>
-					<th width="100px"> Proposal ID </th>
-					<th width="auto"> Title </th>
-					<th width="180px";> Prepared By</th>
-					<th width="150px";>  </th>
-				</tr>
+			<tr>
+				<th colspan="5">
+					<div class="menu">
+						<a href="Monitoring.php" button class = "nav"> List <ion-icon name="mail-unread-outline"></ion-icon></a></button>
+						<a href="Monitoring-pending.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
+						<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a></button>
+						<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
+						<a href="Monitoring-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a></button>
+					</div>
+				</th> 
+			</tr>
 
+			<tr  class="title">
+				<th colspan="5" ><center>PENDING MONITORING REPORTS  </center> </th> 
+			</tr>
+			
+			<tr>
+				<th width="50px"> Monitoring ID </th>
+				<th width="50px"> Proposal ID </th>
+				<th width="auto"> Title </th>
+				<th width="120px";> Prepared By</th>
+				<th width="280px";>  </th>
+			</tr>
 <?php
-//Display all the Pending Evaluation Reports
-$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'Rejected' ");
+$DateToday = date("Y-m-d");
+
+//Display Proposal that needs to Monitor
+$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
@@ -130,14 +131,15 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $PreparedBy; ?></td> 	
 				<td>
 					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
-					<a href="Monitoring-reject.php?re_use=<?php echo $MID; ?>" button class="REbtn1">Re-Use</button> </a>
+					<a href="Monitoring-pending.php?revise=<?php echo $MID; ?>" button class ="Pbtn1">Revise</button> </a> 
+					<a href="Monitoring-pending.php?approved=<?php echo $MID; ?>" button class ="Pbtn2">Approve</button> </a>
+					<a href="Monitoring-pending.php?reject=<?php echo $MID; ?>" button class ="Pbtn3">Reject</button> </a>
 				</td> 
 			</tr>
-<?php } ?>
+<?php }?>
 			</table>	
 		</div>
 	</div>
-		
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -167,16 +169,44 @@ while($result = mysqli_fetch_array($command))
 <body>
 </html>
 
-<?php
-if(isset($_GET['re_use'])){
-	$MID = $_GET['re_use'];
 
-	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'PENDING' WHERE MonitoringID = $MID ");
-	$command = $con->query($sql) or die("Error Monitoring Report move to Pending");
+<?php
+if(isset($_GET['revise'])){
+	$MID = $_GET['revise'];
+
+	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Need to Revise' WHERE MonitoringID = $MID ");
+	$command = $con->query($sql) or die("Error Monitoring move to revision");
 	echo "
 		<script>
-			alert('Monitoring ID $MID Re-submit');	
-			window.location.href='Monitoring-reject.php';
+			alert('Monitoring ID $MID Move to Revision');	
+			window.location.href='Monitoring-pending.php';
 		</script>";
 }
+
+if(isset($_GET['approved'])){
+	$MID = $_GET['approved'];
+
+	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Approved' WHERE MonitoringID = $MID ");
+	$command = $con->query($sql) or die("Error Monitoring Approval");
+	echo "
+		<script>
+			alert('Monitoring ID $MID APPROVED');	
+			window.location.href='Monitoring-pending.php';
+		</script>";
+}
+
+if(isset($_GET['reject'])){
+	$MID = $_GET['reject'];
+
+	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Rejected' WHERE MonitoringID = $MID ");
+	$command = $con->query($sql) or die("Error Rejecting Monitoring Report");
+	echo "
+		<script>
+			alert('Monitoring ID $MID REJECTED');	
+			window.location.href='Monitoring-pending.php';
+		</script>";
+}
+
+
+
 ?>

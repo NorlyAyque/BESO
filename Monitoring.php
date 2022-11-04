@@ -1,6 +1,9 @@
 <?php
 session_start();
 include("Connection.php");
+
+date_default_timezone_set("Asia/Manila");
+//$DateToday = date("Y-m-d");
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +14,7 @@ include("Connection.php");
 <link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
 
 </head>
-<body>
+<body onload=display_ct()>
 	
 <div class="container">
 	
@@ -76,9 +79,7 @@ include("Connection.php");
 			</li>
 		</ul>
 	</div>
-		
-		
-		
+
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
@@ -87,62 +88,60 @@ include("Connection.php");
 				</div>	
 			</div>
 			
+			<center> <h2> <div id="ct"></div> </h2> </center>
+
 		<table class="proposals">
 			<tr>
-				<th colspan="5">
+				<th colspan="6">
 					<div class="menu">
-							
-						<a href="Monitoring.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
-						<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a>
-						<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
-						<a href="Monitoring-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>	
+						<a href="Monitoring.php" button class = "nav1"> List <ion-icon name="mail-unread-outline"></ion-icon></a></button>
+						<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
+						<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a></button>
+						<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
+						<a href="Monitoring-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a></button>
 					</div>
 				</th> 
 			</tr>
 
 			<tr  class="title">
-				<th colspan="5" ><center>PENDING MONITORING REPORTS</th> 
+				<th colspan="6" ><center>LIST OF EXTENSION PAPs FOR MONITORING </center> </th> 
 			</tr>
-				
+			
 			<tr>
-				<th width="30px"> Monitoring ID </th>
+				<th width="50px"> Proposal ID </th>
 				<th width="auto"> Title </th>
-				<th width="180px";> Creator</th>
-				<th width="120px";> Status </th>
-				<th width="280px";>  </th>
+				<th width="130px";> End Date </th>
+				<th width="120px";> Monitoring</th> <!-- Frequency (Monthly, Quarterly, Semi-Annually, Yearly) -->
+				<th width="120px";> Remarks</th> <!-- Remarks_2 in Create Proposal table-->
+				<th width="220x";>  </th> <!-- Buttons, View and Create Monitoring -->
 			</tr>
 <?php
-//Display all the Pending Evaluation Reports
-$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
+$DateToday = date("Y-m-d");
+
+//Display Proposal that needs to Monitor
+$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Approved' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
-		$MID = $result['MonitoringID'];
+		$PID = $result['ProposalID'];
 		$Title = $result ['Title'];
-		//$Creator = $result['Author'];
-		$Evaluator = $result['Evaluator'];
-		$Status = $result['Remarks'];
-		
-		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
-		$Command = $con->query($sql) or die("Error SQL");
-		while($result = mysqli_fetch_array($Command)){
-			$FN = $result['Firstname'];
-			$LN = $result['Lastname'];
-			$Fullname = $FN . " " . $LN;
+		$End_Date = $result['End_Date']; $date = date_create("$End_Date");
+		$Frequency = $result['Frequency'];
+		$Remarks = $result['Remarks_2']; //Monitored. Date
 ?>
 			<tr class="inputs">
-				<td><?php echo $MID; ?></td>
+				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
-				<td><?php echo $Fullname; ?></td> 
-				<td><?php echo $Status; ?></td> 	
+				<td><?php echo date_format($date,"M, d Y"); ?></td> 
+				<td><?php echo $Frequency; ?></td> 	
+				<td><?php echo $Remarks; ?></td> 	
 				<td>
-					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
-					<a href="Monitoring.php?revise=<?php echo $MID; ?>" button class ="Pbtn1">Revise</button> </a> 
-					<a href="Monitoring.php?approved=<?php echo $MID; ?>" button class ="Pbtn2">Approved</button> </a>
-					<a href="Monitoring.php?reject=<?php echo $MID; ?>" button class ="Pbtn3">Reject</button> </a>
+					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
+					<a href="CreateMonitoring.php?create=<?php echo $PID; ?>" button class ="Pbtn2">CREATE MONITORING</button> </a> 
+					
 				</td> 
 			</tr>
-<?php } }?>
+<?php }?>
 			</table>	
 		</div>
 	</div>
@@ -166,11 +165,11 @@ while($result = mysqli_fetch_array($command))
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
@@ -216,3 +215,17 @@ if(isset($_GET['reject'])){
 
 
 ?>
+
+<script>
+function display_c(){
+	var refresh=1000; // Refresh rate in milli seconds
+	mytime=setTimeout('display_ct()',refresh)
+}
+
+function display_ct() {
+	var x = new Date()
+	document.getElementById('ct').innerHTML = x;
+	display_c();
+ }
+
+</script>

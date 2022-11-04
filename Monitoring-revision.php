@@ -91,33 +91,24 @@ include("Connection.php");
 				<tr>
 					<th colspan="5">
 						<div class="menu">
-							
-							<a href="Monitoring.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
-							</button>
-							
-							<a href="Monitoring-revision.php" button class = "nav2"> Revision <ion-icon name="repeat-outline"></ion-icon></a>
-							</button>
-							
-							<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
-							</button>
-						
-							<a href="Monitoring-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
-							</button>
-							
+							<a href="Monitoring.php" button class = "nav"> List <ion-icon name="mail-unread-outline"></ion-icon></a></button>
+							<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
+							<a href="Monitoring-revision.php" button class = "nav1"> Revision <ion-icon name="repeat-outline"></ion-icon></a></button>
+							<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
+							<a href="Monitoring-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a></button>
 						</div>
 					</th> 
-					
 				</tr>
 				<tr  class="title">
 					<th colspan="5"><center>UNDER REVISION OF MONITORING REPORTS </th> 
 				</tr>
 				
 				<tr>
-					<th width="30px"> Monitoring ID </th>
+					<th width="50px"> Monitoring ID </th>
+					<th width="50px"> Proposal ID </th>
 					<th width="auto"> Title </th>
-					<th width="180px";> Creator</th>
-					<th width="120px";> Status </th>
-					<th width="250px";>  </th>
+					<th width="120px";> Prepared By</th>
+					<th width="230px";>  </th>
 				</tr>
 <?php
 //Display all the Pending Evaluation Reports
@@ -126,30 +117,22 @@ $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
 		$MID = $result['MonitoringID'];
+		$PID = $result['ProposalID'];
 		$Title = $result ['Title'];
-		//$Creator = $result['Author'];
-		$Evaluator = $result['Evaluator'];
-		$Status = $result['Remarks'];
-		
-		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
-		$Command = $con->query($sql) or die("Error SQL");
-		while($result = mysqli_fetch_array($Command)){
-			$FN = $result['Firstname'];
-			$LN = $result['Lastname'];
-			$Fullname = $FN . " " . $LN;
+		$PreparedBy = $result['Sign1_1'];
 ?>
 			<tr class="inputs">
 				<td><?php echo $MID; ?></td>
+				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
-				<td><?php echo $Fullname; ?></td> 
-				<td><?php echo $Status; ?></td> 
+				<td><?php echo $PreparedBy; ?></td> 
 				<td>
 					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 					<a href="EditMonitoring.php?edit=<?php echo $MID; ?>" button class="Rbtn1">Edit</button> </a>
 					<a href="Monitoring-revision.php?re_submit=<?php echo $MID; ?>" button class="Rbtn2">Re-Submit</button> </a>
 				</td> 
 			</tr>
-<?php } }?>
+<?php } ?>
 			</table>	
 		</div>
 	</div>

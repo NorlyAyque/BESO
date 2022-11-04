@@ -227,6 +227,7 @@ if(isset($_GET['edit'])){
 			</table>
 			<div class ="save">
 				<button class = "btn3" type="submit" name="submit"> Update </button>
+				<a href="Monitoring-revision.php" button class = "btn3"> Back </a></button>
 			</div>
 		</div>	
 	</div>
