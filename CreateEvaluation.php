@@ -3,7 +3,7 @@ session_start();
 include("Connection.php");
 
 //Getting Data declared from index.php
-$AID = $_SESSION["AccountAID"]; //Naka Login na User
+$AID = $_SESSION["AccountAID"]; //Naka Login na User - Evaluator
 
 date_default_timezone_set("Asia/Manila");
 $DateTime = date("M, d Y; h:i:s A");
@@ -17,7 +17,7 @@ if(isset($_GET['evaluation'])){
 	$command = $con->query($sql) or die("Error Fethcing data");
     while($result = mysqli_fetch_array($command))
 	{
-		$dbAuthor = $result['AccountID']; //Gumawa ng Proposal
+		$dbAuthor = $result['AccountID']; //Gumawa ng Proposal - Author
 
 		$dbTitle = $result['Title'];
         $dbLocation = $result['Location_Area'];
