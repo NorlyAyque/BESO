@@ -1,8 +1,14 @@
+<?php
+session_start();
+include("Connection.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Status Report</title>
+<title>List of Extension PAPs for Impact Assessment</title>
 <link rel="stylesheet" type="text/css" href="styles/Report.css">
 
 </head>
@@ -89,15 +95,15 @@
 							<a href="Reports.php" button class = "nav"> Quarterly Monitoring Report  <ion-icon name="bookmarks-outline"></ion-icon></a>
 							<a href="StatusReport.php" button class = "nav"> Status Report <ion-icon name="bookmarks-outline"></ion-icon></a>
 							<a href="GADReport.php" button class = "nav"> GAD Report <ion-icon name="bookmarks-outline"></ion-icon></a>
-							<a href="ListImpact.php" button class = "nav1"> List of Extension PAPs for Impact assessment <ion-icon name="bookmarks-outline"></ion-icon></a>	
+							
 						</div>	
 					</th>
 				</tr>
 				<tr>
 					<th>
 						<div class="menu1">
-							
-							<a href="AccomplishReport.php" button class = "nav"> Accomplishment report <ion-icon name="bookmarks-outline"></ion-icon></a>	
+							<a href="ListImpact.php" button class = "nav1"> List of Extension PAPs for Impact Assessment <ion-icon name="bookmarks-outline"></ion-icon></a>	
+							<a href="AccomplishReport.php" button class = "nav"> List of Accomplishment Report <ion-icon name="bookmarks-outline"></ion-icon></a>	
 						</div>
 					</th>
 				</tr>
@@ -105,31 +111,44 @@
 			
 			<table class="Header">
 				<tr  class="title">
-					<th colspan="5" >Extension PAP's for Impact Assessment</th> 
+					<th colspan="6" >Extension PAP's for Impact Assessment</th> 
 				</tr>
 					
 				<tr>
-					<th width="30px"> TEXT</th>
-					<th width="auto"> TEXT </th>
-					<th width="180px";> TEXT</th>
-					<th width="120px";> TEXT </th>
-					<th width="280px";> TEXT </th>
+					<th width="100px"> Proposal ID</th>
+					<th width="auto"> Title </th>
+					<th width="140px"> Duration </th>
+					<th width="140px";> Prepared By </th>
+					<th width="120px";> Remarks </th>
+					<th width="200px";> </th>
 				</tr>
-			</table>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+<?php
+//Display all the Pending Proposals
+$sql = ("SELECT * FROM create_alangilan WHERE unknown = 'For Impact Assessment' ");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$PID = $result['ProposalID'];
+		$Title = $result ['Title'];
+		$SD = $result ['Start_Date']; 	$CDate1 = date_create("$SD"); $Date1 = date_format($CDate1,"M, d Y");
+		$ED = $result ['End_Date']; 	$CDate2 = date_create("$ED"); $Date2 = date_format($CDate2,"M, d Y");
+		$PreparedBy = $result['Sign1_1'];
+		$Remarks_3 = $result['Remarks_3'];
+?>
+			<tr class="inputs">
+				<td><?php echo $PID; ?></td>
+				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $Date1 . " -<br>". $Date2;?></td> 
+				<td><?php echo $PreparedBy; ?></td> 
+				<td><?php echo $Remarks_3; ?></td> 	
+				<td>
+					<a href="ListImpact.php?MarkAsComplete=<?php echo $PID; ?>" button class ="btn1">Mark as Complete</button> </a>
+				</td> 
+			</tr>
+<?php }?>
+			</table>	
 		</div>
 	</div>
-	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	<script type="module" scr="https://cdn.bootcdn.net/ajax/libs/ionicons/6.0.3/cjs/index-1bc7b418.js"></script>
@@ -149,11 +168,26 @@
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
+
+<?php
+
+if(isset($_GET['MarkAsComplete'])){
+	$PID = $_GET['MarkAsComplete'];
+
+	$sql = ("UPDATE create_alangilan SET Remarks_3 = 'Done Impact Assessment' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Rejecting Proposal");
+	echo "
+		<script>
+			alert('Proposal ID $PID Completed');	
+			window.location.href='ListImpact.php';
+		</script>";
+}
+?>

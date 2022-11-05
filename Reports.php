@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Reports</title>
+<title>Quarterly Monitoring Reports</title>
 <link rel="stylesheet" type="text/css" href="styles/Report.css">
 
 </head>
@@ -89,14 +89,14 @@
 							<a href="Reports.php" button class = "nav1"> Quarterly Monitoring Report  <ion-icon name="bookmarks-outline"></ion-icon></a>
 							<a href="StatusReport.php" button class = "nav"> Status Report <ion-icon name="bookmarks-outline"></ion-icon></a>
 							<a href="GADReport.php" button class = "nav"> GAD Report <ion-icon name="bookmarks-outline"></ion-icon></a>
-							<a href="ListImpact.php" button class = "nav"> List of Extension PAPs for Impact assessment <ion-icon name="bookmarks-outline"></ion-icon></a>	
+							
 						</div>	
 					</th>
 				</tr>
 				<tr>
 					<th>
 						<div class="menu1">
-				
+							<a href="ListImpact.php" button class = "nav"> List of Extension PAPs for Impact assessment <ion-icon name="bookmarks-outline"></ion-icon></a>	
 							<a href="AccomplishReport.php" button class = "nav"> Accomplishment report <ion-icon name="bookmarks-outline"></ion-icon></a>	
 						</div>
 					</th>
