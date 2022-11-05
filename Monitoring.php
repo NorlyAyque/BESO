@@ -14,7 +14,7 @@ date_default_timezone_set("Asia/Manila");
 <link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
 
 </head>
-<body onload=display_ct()>
+<body>
 	
 <div class="container">
 	
@@ -88,9 +88,7 @@ date_default_timezone_set("Asia/Manila");
 				</div>	
 			</div>
 			
-			<center> <h2> <div id="ct"></div> </h2> </center>
-
-		<table class="proposals">
+		<table class="proposals" id="MyTable">
 			<tr>
 				<th colspan="6">
 					<div class="menu">
@@ -106,7 +104,21 @@ date_default_timezone_set("Asia/Manila");
 			<tr  class="title">
 				<th colspan="6" ><center>LIST OF EXTENSION PAPs FOR MONITORING </center> </th> 
 			</tr>
-			
+			<tr>
+				<th colspan="6"> 
+					Select Column to filter: 
+						<select name="column" id="column">
+							<option value="">Select Column</option>
+							<option value="1">Proposal ID</option>
+							<option value="2">Title</option>
+							<option value="3">End Date</option>
+							<option value="4">Monitoring</option>
+							<option value="5">Last Monitored</option>
+						</select>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+				</th>
+			</tr>
 			<tr>
 				<th width="50px"> Proposal ID </th>
 				<th width="auto"> Title </th>
@@ -211,21 +223,36 @@ if(isset($_GET['reject'])){
 			window.location.href='Monitoring.php';
 		</script>";
 }
-
-
-
 ?>
 
 <script>
-function display_c(){
-	var refresh=1000; // Refresh rate in milli seconds
-	mytime=setTimeout('display_ct()',refresh)
+//For Table filter
+function Filter() {
+	var x = document.getElementById("column").value;
+	
+	if (x == "1"){var SelectedColumn = 0;}
+	else if (x == "2"){var SelectedColumn = 1;}
+	else if (x == "3"){var SelectedColumn = 2;}
+	else if (x == "4"){var SelectedColumn = 3;}	
+	
+	var input, filter, table, tr, td, i, txtValue;
+	input = document.getElementById("keyword");
+	filter = input.value.toUpperCase();
+	table = document.getElementById("MyTable");
+	tr = table.getElementsByTagName("tr");
+	
+	for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[SelectedColumn];
+		
+		if (td) {
+			txtValue = td.textContent || td.innerText;
+			
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			} else {
+				tr[i].style.display = "none";
+			}
+		}       
+	}
 }
-
-function display_ct() {
-	var x = new Date()
-	document.getElementById('ct').innerHTML = x;
-	display_c();
- }
-
 </script>
