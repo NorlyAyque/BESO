@@ -109,11 +109,26 @@ include("Connection.php");
 				</tr>
 			</table>
 			
-			<table class="Header">
+			<table class="Header" id="MyTable">
 				<tr  class="title">
 					<th colspan="7" >List of Accomplishment Reports</th> 
 				</tr>
-					
+				<tr>
+					<th colspan="7"> 
+						Select Column to filter: 
+							<select name="column" id="column">
+								<option value="">Select Column</option>
+								<option value="1">Proposal ID</option>
+								<option value="2">Title</option>
+								<option value="3">Proposal</option>
+								<option value="4">Evaluation</option>
+								<option value="5">Last Monitored</option>
+								<option value="6">Impact Assessment</option>
+							</select>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+					</th>
+				</tr>
 				<tr>
 					<th width="100px"> Proposal ID</th>
 					<th width="auto"> Title </th>
@@ -151,7 +166,7 @@ while($result = mysqli_fetch_array($command))
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn1">Proposal</button> </a>
 					<a href="Evaluation-approved.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn2">Evaluation</button> </a>
-					<a href="Monitoring-approved.php?filter=<?php echo $PID; ?>" button class ="btn3">Monitoring</button> </a>
+					<a href="Monitoring-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn3">Monitoring</button> </a>
 				</td> 
 			</tr>
 <?php }?>
@@ -200,3 +215,37 @@ if(isset($_GET['MarkAsComplete'])){
 		</script>";
 }
 ?>
+
+<script>
+//For Table filter
+function Filter() {
+	var x = document.getElementById("column").value;
+	
+	if (x == "1"){var SelectedColumn = 0;}
+	else if (x == "2"){var SelectedColumn = 1;}
+	else if (x == "3"){var SelectedColumn = 2;}
+	else if (x == "4"){var SelectedColumn = 3;}	
+	else if (x == "5"){var SelectedColumn = 4;}	
+	else if (x == "6"){var SelectedColumn = 5;}	
+	
+	var input, filter, table, tr, td, i, txtValue;
+	input = document.getElementById("keyword");
+	filter = input.value.toUpperCase();
+	table = document.getElementById("MyTable");
+	tr = table.getElementsByTagName("tr");
+	
+	for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[SelectedColumn];
+		
+		if (td) {
+			txtValue = td.textContent || td.innerText;
+			
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			} else {
+				tr[i].style.display = "none";
+			}
+		}       
+	}
+}
+</script>

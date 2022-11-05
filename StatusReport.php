@@ -101,72 +101,65 @@
 						</div>
 					</th>
 				</tr>
-					
 			</table>
 			
+			<form action="Generate_StatusReport.php" method="_GET" target="_blank">
 			<table class="Date">	
 									
-								<tr>
-									<th>Set Year</th>
-									<th> Set Quarter </th>
-								</tr>	
-								<tr>
-									<td class="MF">
-										<div class ="Drp1">
-											<select name="Quarter" id="Quarter" required>
-												<option value="">Select Year</option>
-												<option value="2022">2022</option>
-												<option value="2023">2023</option>
-												<option value="2024">2024</option>
-												<option value="2025">2025</option>
-												<option value="2026">2026</option>
-												<option value="2027">2027</option>
-												<option value="2028">2028</option>
-												<option value="2029">2029</option>
-												<option value="2030">2030</option>
-												<option value="2031">2031</option>
-												<option value="2032">2032</option>
-												<option value="2033">2033</option>
-												<option value="2034">2034</option>
-												<option value="2035">2035</option>
-											</select>
-										</div>
-									</td> 
-									<td>
-										<div class ="Drp2">
-											<select name="Quarter" id="Quarter" required>
-												<option value="">Select Quarter</option>
-												<option value="Quarter1">Quarter 1</option>
-												<option value="Quarter1">Quarter 2</option>
-												<option value="Quarter1">Quarter 3</option>
-												<option value="Quarter1">Quarter 4</option>
-												
-											</select>
-											</div>
-									</td> 
-								</tr>
-								<tr>
-									<th colspan="2">
-										<div class="Create">				
-											<a href="StatusReportBlank.php" button class = "createBTN"> Create <ion-icon name="brush-outline"></ion-icon></a>
-					
-										</div>
-									</th>
-								</tr>
+				<tr>
+					<th>Set Year</th>
+					<th> Set Quarter </th>
+				</tr>	
 				
+				<tr>
+					<td class="MF">
+						<div class ="Drp1">
+							<select name="Year" id="Year" required>
+								<option value="">Select Year</option>
+								<option value="2022">2022</option>
+								<option value="2023">2023</option>
+								<option value="2024">2024</option>
+								<option value="2025">2025</option>
+								<option value="2026">2026</option>
+								<option value="2027">2027</option>
+								<option value="2028">2028</option>
+								<option value="2029">2029</option>
+								<option value="2030">2030</option>
+								<option value="2031">2031</option>
+								<option value="2032">2032</option>
+								<option value="2033">2033</option>
+								<option value="2034">2034</option>
+								<option value="2035">2035</option>
+							</select>
+						</div>
+					</td> 
+					
+					<td>
+						<div class ="Drp2">
+							<select name="Quarter" id="Quarter" required>
+								<option value="">Select Quarter</option>
+								<option value="1">Quarter 1</option>
+								<option value="2">Quarter 2</option>
+								<option value="3">Quarter 3</option>
+								<option value="4">Quarter 4</option>
+							</select>
+						</div>
+					</td> 
+				</tr>
+				
+				<tr>
+					<th colspan="2">
+						<div class="Create">
+							<input type="submit" value="Create" class = "createBTN">
+							<!-- <a href="QuarterlyMonitoringReport.php" button class = "createBTN"> Create <ion-icon name="brush-outline"></ion-icon></a> -->
+						</div>
+					</th>
+				</tr>
+			</form>
 			</table>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 		</div>
 	</div>
+
 	
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -187,11 +180,11 @@
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
