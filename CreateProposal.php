@@ -115,8 +115,8 @@ $DateTime = date("M, d Y; h:i:s A");
 				</tr>
 				<tr  class ="select2">
 					<th> <input type="radio" id="ExtensionPAP" name="unknown" value="ExtensionPAP" required> Extension PAP</th>
-					<th> <input type="radio" id="Monitoring" name="unknown" value="Monitoring" required> Monitoring </th>
-					<th> <input type="radio" id="Impact" name="unknown" value="Impact" required> Impact Assessment</th>	
+					<th> <input type="radio" id="Monitoring" name="unknown" value="Monitoring" required> For Monitoring </th>
+					<th> <input type="radio" id="Impact" name="unknown" value="Impact" required> For Impact Assessment</th>	
 				</tr>
 				<tr class ="select3">
 					<th> Is this Proposal a GAD PAP? </th>
