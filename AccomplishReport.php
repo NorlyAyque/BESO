@@ -117,15 +117,20 @@ include("Connection.php");
 				<tr>
 					<th width="100px"> Proposal ID</th>
 					<th width="auto"> Title </th>
-					<th width="140px"> Proposal </th>
-					<th width="140px";> Evaluation </th>
-					<th width="120px";> Last Monitored </th>
-					<th width="120px";> Impact Assessment </th>
+					<th width="140px"> Proposal </th> <!-- Project Status -->
+					<th width="140px";> Evaluation </th> <!-- Remarks -->
+					<th width="120px";> Last Monitored </th> <!-- Remarks_2 -->
+					<th width="120px";> Impact Assessment </th> <!-- Remarks_3 -->
 					<th width="200px";> View</th>
 				</tr>
 <?php
 //Display all the Pending Proposals
-$sql = ("SELECT * FROM create_alangilan WHERE unknown = 'For Impact Assessment' ");
+$sql = ("SELECT * FROM create_alangilan WHERE 
+		ProjectStatus = 'Approved' AND 
+		Remarks = 'Evaluated' AND
+		Remarks_2 != '' AND
+		Remarks_3 = 'Done Impact Assessment'
+	");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
