@@ -124,7 +124,7 @@ include("Connection.php");
 					<th width="200px";> View</th>
 				</tr>
 <?php
-//Display all the Pending Proposals
+//Display all the Approved PAP
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		ProjectStatus = 'Approved' AND 
 		Remarks = 'Evaluated' AND

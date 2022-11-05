@@ -87,7 +87,7 @@ include("Connection.php");
 				</div>	
 			</div>
 			
-		<table class="proposals">
+		<table class="proposals" id="MyTable">
 			<tr>
 				<th colspan="5">
 					<div class="menu">
@@ -101,7 +101,21 @@ include("Connection.php");
 			</tr>
 
 			<tr  class="title">
-				<th colspan="5" ><center>PENDING PROPOSALS</th> 
+				<th colspan="5" ><center>PENDING PROPOSALS </center> </th> 
+			</tr>
+			<tr>
+				<th colspan="5"> 
+					Select Column to filter: 
+						<select name="column" id="column">
+							<option value="">Select Column</option>
+							<option value="1">Proposal ID</option>
+							<option value="2">Title</option>
+							<option value="3">Prepared By</option>
+							<option value="4">Status</option>
+						</select>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+				</th>
 			</tr>
 				
 			<tr>
@@ -209,3 +223,35 @@ if(isset($_GET['reject'])){
 
 
 ?>
+
+<script>
+//For Table filter
+function Filter() {
+	var x = document.getElementById("column").value;
+	
+	if (x == "1"){var SelectedColumn = 0;}
+	else if (x == "2"){var SelectedColumn = 1;}
+	else if (x == "3"){var SelectedColumn = 2;}
+	else if (x == "4"){var SelectedColumn = 3;}	
+	
+	var input, filter, table, tr, td, i, txtValue;
+	input = document.getElementById("keyword");
+	filter = input.value.toUpperCase();
+	table = document.getElementById("MyTable");
+	tr = table.getElementsByTagName("tr");
+	
+	for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[SelectedColumn];
+		
+		if (td) {
+			txtValue = td.textContent || td.innerText;
+			
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			} else {
+				tr[i].style.display = "none";
+			}
+		}       
+	}
+}
+</script>
