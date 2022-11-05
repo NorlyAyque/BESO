@@ -115,7 +115,7 @@ include("Connection.php");
 				<tr>
 					<th width="30px"> Proposal ID </th>
 					<th width="auto"> Title </th>
-					<th width="180px";> Creator</th>
+					<th width="180px";> Prepared By</th>
 					<th width="120px";> Status </th>
 					<th width="250px";>  </th>
 				</tr>
@@ -128,20 +128,13 @@ while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
 		$Title = $result['Title'];
-		$Creator = $result['AccountID'];
-		$Status = $result['ProjectStatus'];
-		
-		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
-		$Command = $con->query($sql) or die("Error SQL");
-		while($result = mysqli_fetch_array($Command)){
-			$FN = $result['Firstname'];
-			$LN = $result['Lastname'];
-			$Fullname = $FN . " " . $LN;
+		$PreparedBy = $result['Sign1_1'];
+		$Status = $result['ProjectStatus'];	
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></td> 
-				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $PreparedBy; ?></td> 
 				<td><?php echo $Status; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Rbtn">View</button> </a>
@@ -149,7 +142,7 @@ while($result = mysqli_fetch_array($command))
 					<a href="Proposal-revision.php?re_submit=<?php echo $PID; ?>" button class="Rbtn2">Re-Submit</button> </a>
 				</td> 
 			</tr>
-<?php } }?>
+<?php }?>
 			</table>	
 		</div>
 	</div>

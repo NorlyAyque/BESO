@@ -115,7 +115,7 @@ include("Connection.php");
 				<tr>
 					<th width="30px"> Proposal ID </th>
 					<th width="auto"> Title </th>
-					<th width="180px";> Creator</th>
+					<th width="180px";> Prepared By</th>
 					<th width="100px";> Status </th>
 					<th width="100px";> Remarks </th>
 					<th width="200px";>  </th>
@@ -128,22 +128,14 @@ while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
 		$Title = $result['Title'];
-		$Creator = $result['AccountID'];
+		$PreparedBy = $result['Sign1_1'];
 		$Status = $result['ProjectStatus'];
 		$Remarks = $result['Remarks'];
-		
-		$sql = ("SELECT * FROM account WHERE AccountID = '$Creator' ");
-		$Command = $con->query($sql) or die("Error SQL");
-		while($result = mysqli_fetch_array($Command)){
-			$FN = $result['Firstname'];
-			$LN = $result['Lastname'];
-			$Fullname = $FN . " " . $LN;
 ?>
-
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></td> 
-				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $PreparedBy; ?></td> 
 				<td><?php echo $Status; ?></td> 	
 				<td><?php echo $Remarks; ?></td> 	
 				<td>
@@ -152,7 +144,7 @@ while($result = mysqli_fetch_array($command))
 					<br>
 				</td> 
 			</tr>
-<?php } }?>
+<?php } ?>
 			</table>	
 		</div>
 	</div>
@@ -178,11 +170,11 @@ while($result = mysqli_fetch_array($command))
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>

@@ -116,7 +116,7 @@ include("Connection.php");
 					<th width="30px"> Evaluation ID </th>
 					<th width="30px"> Proposal ID </th>
 					<th width="auto"> Title </th>
-					<th width="180";> Evaluator </th>
+					<th width="180px";> Prepared By</th>
 					<th width="120px";> Status </th>
 					<th width="100px";>  </th>
 				</tr>
@@ -129,28 +129,20 @@ while($result = mysqli_fetch_array($command))
 		$EID = $result['EvaluationID'];
 		$PID = $result['ProposalID'];
 		$Title = $result ['Title'];
-		//$Creator = $result['Author'];
-		$Evaluator = $result['Evaluator'];
+		$PreparedBy = $result['Sign1_1'];
 		$Status = $result['ProjectStatus'];
-		
-		$sql = ("SELECT * FROM account WHERE AccountID = '$Evaluator' ");
-		$Command = $con->query($sql) or die("Error SQL");
-		while($result = mysqli_fetch_array($Command)){
-			$FN = $result['Firstname'];
-			$LN = $result['Lastname'];
-			$Fullname = $FN . " " . $LN;
 ?>
 			<tr class="inputs">
 				<td><?php echo $EID; ?></td>
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
-				<td><?php echo $Fullname; ?></td> 
+				<td><?php echo $PreparedBy; ?></td> 
 				<td><?php echo $Status; ?></td> 	
 				<td>
 					<a href="Generate_Evaluation.php?view=<?php echo $EID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 				</td> 
 			</tr>
-<?php } }?>
+<?php }?>
 			</table>	
 		</div>
 	</div>
