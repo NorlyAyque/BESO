@@ -165,7 +165,7 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $R3; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn1">Proposal</button> </a>
-					<a href="Evaluation-approved.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn2">Evaluation</button> </a>
+					<a href="Evaluation-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn2">Evaluation</button> </a>
 					<a href="Monitoring-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn3">Monitoring</button> </a>
 				</td> 
 			</tr>

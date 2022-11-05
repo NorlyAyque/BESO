@@ -181,6 +181,20 @@ while($result = mysqli_fetch_array($command))
 <body>
 </html>
 
+<?php
+//From Accomplishment Report
+if(isset($_GET['FilterPID'])){
+	$PID = $_GET['FilterPID'];
+	echo "
+		<script>
+			document.getElementById('keyword').value = $PID;
+			document.getElementById('column').value = '2';
+		</script>
+		<body onload='Filter()'>
+	";
+}
+?>
+
 <script>
 //For Table filter
 function Filter() {

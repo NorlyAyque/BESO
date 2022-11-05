@@ -3,6 +3,8 @@ session_start();
 include("Connection.php");
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -123,7 +125,7 @@ include("Connection.php");
 								<option value="5">Status</option>
 								</select>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+						Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword">
 					</th>
 				</tr>
 				<tr>
@@ -186,8 +188,22 @@ while($result = mysqli_fetch_array($command))
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
-<body>
+</body>
 </html>
+
+<?php
+//From Accomplishment Report
+if(isset($_GET['FilterPID'])){
+	$PID = $_GET['FilterPID'];
+	echo "
+		<script>
+			document.getElementById('keyword').value = $PID;
+			document.getElementById('column').value = '2';
+		</script>
+		<body onload='Filter()'>
+	";
+}
+?>
 
 <script>
 //For Table filter
@@ -221,3 +237,6 @@ function Filter() {
 	}
 }
 </script>
+
+
+
