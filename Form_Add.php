@@ -192,16 +192,24 @@ if (isset($_POST['Signup'])) {
 	//Encrypting the Password
 	$EncryptPass = password_hash("$PSW", PASSWORD_DEFAULT);
 
-    $sql = ("INSERT INTO account
+	//Checking if Email is exisiting
+	$sql = mysqli_query($con,"SELECT * FROM account WHERE Email = '$Email'");
+	if(mysqli_num_rows($sql)>0){
+		echo "<script>
+            alert('Email is Existing. Try a new one!');
+        </script>";
+	}else{
+		$sql = ("INSERT INTO account
             (Email, Password, Firstname, Lastname, Campus, College, Position, AccStatus)
             VALUES 
 		    ('$Email', '$EncryptPass', '$FN', '$LN', '$Campus','$College', '$Position', 'Active')");
-    $command = $con->query($sql) or die("Error encounter while updating data");
+    	$command = $con->query($sql) or die("Error encounter while updating data");
     
-    echo "<script>
+    	echo "<script>
             alert('Account Creation Successful');
             window.location='Account.php';
         </script>";
+	}
 }
 ?>
 

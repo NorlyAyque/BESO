@@ -197,7 +197,7 @@ if(isset($_GET['edit'])){
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
-<body>
+</body>
 </html>
 
 <?php
@@ -214,6 +214,19 @@ if (isset($_POST['Update'])) {
 
 	//Encrypting the New Password
 	$EncryptPass = password_hash("$PSW", PASSWORD_DEFAULT);
+
+	//Verifying email if exisiting
+	if ($Email == $dbEmail){ //if true, ndi nagpalit ng email
+		//code continue
+	}else{ //nagpalit ng email
+		$sql = mysqli_query($con,"SELECT * FROM account WHERE Email = '$Email'");
+		if(mysqli_num_rows($sql)>0){
+			echo "<script>
+				alert('Email is Existing. Try a new one!');
+			</script>";
+			die;
+		}
+	}
 
     if (empty($_POST["PSW"])) { //Kung Empty c Passoword, walang laman
         $sql = ("UPDATE account
