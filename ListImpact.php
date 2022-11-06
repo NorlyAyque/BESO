@@ -9,7 +9,7 @@ include("Connection.php");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>List of Extension PAPs for Impact Assessment</title>
-<link rel="stylesheet" type="text/css" href="styles/Report.css">
+<link rel="stylesheet" type="text/css" href="styles/Reports-style.css">
 
 </head>
 <body>
@@ -115,6 +115,7 @@ include("Connection.php");
 				</tr>
 				<tr>
 					<th colspan="6"> 
+						<div class="Drp5">
 						Select Column to filter: 
 							<select name="column" id="column">
 								<option value="">Select Column</option>
@@ -124,11 +125,17 @@ include("Connection.php");
 								<option value="4">Prepared By</option>
 								<option value="5">Remarks</option>
 							</select>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+						</div>
 					</th>
+				
 				</tr>
-
+				<tr>
+					<th colspan="6">
+						<div class="Drp6">
+							Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+						</div>
+					</th>					
+				</tr>
 				<tr>
 					<th width="100px"> Proposal ID</th>
 					<th width="auto"> Title </th>

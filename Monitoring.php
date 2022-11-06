@@ -11,7 +11,7 @@ date_default_timezone_set("Asia/Manila");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReport-style.css">
 
 </head>
 <body>
@@ -92,7 +92,7 @@ date_default_timezone_set("Asia/Manila");
 			<tr>
 				<th colspan="6">
 					<div class="menu">
-						<a href="Monitoring.php" button class = "nav1"> List <ion-icon name="mail-unread-outline"></ion-icon></a></button>
+						<a href="Monitoring.php" button class = "nav1"> List<ion-icon name="list-outline"></ion-icon></a></button>
 						<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
 						<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a></button>
 						<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
@@ -106,6 +106,7 @@ date_default_timezone_set("Asia/Manila");
 			</tr>
 			<tr>
 				<th colspan="6"> 
+					<div class="Drp">
 					Select Column to filter: 
 						<select name="column" id="column">
 							<option value="">Select Column</option>
@@ -115,8 +116,9 @@ date_default_timezone_set("Asia/Manila");
 							<option value="4">Monitoring</option>
 							<option value="5">Last Monitored</option>
 						</select>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
 					Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+					</div>
 				</th>
 			</tr>
 			<tr>

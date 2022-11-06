@@ -9,7 +9,7 @@ include("Connection.php");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>List of Accomplishment Report</title>
-<link rel="stylesheet" type="text/css" href="styles/Report.css">
+<link rel="stylesheet" type="text/css" href="styles/Reports-style.css">
 
 </head>
 <body>
@@ -115,6 +115,8 @@ include("Connection.php");
 				</tr>
 				<tr>
 					<th colspan="7"> 
+						
+						<div class ="Drp3">
 						Select Column to filter: 
 							<select name="column" id="column">
 								<option value="">Select Column</option>
@@ -125,18 +127,25 @@ include("Connection.php");
 								<option value="5">Last Monitored</option>
 								<option value="6">Impact Assessment</option>
 							</select>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+						</div>
+						
+						</th>	
+				</tr>
+				<tr>
+					<th colspan=7"> 
+						<div class ="Drp4">
+							Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+						</div>
 					</th>
 				</tr>
 				<tr>
-					<th width="100px"> Proposal ID</th>
+					<th width="80px"> Proposal ID</th>
 					<th width="auto"> Title </th>
 					<th width="140px"> Proposal </th> <!-- Project Status -->
 					<th width="140px";> Evaluation </th> <!-- Remarks -->
 					<th width="120px";> Last Monitored </th> <!-- Remarks_2 -->
 					<th width="120px";> Impact Assessment </th> <!-- Remarks_3 -->
-					<th width="200px";> View</th>
+					<th width="130px";> View</th>
 				</tr>
 <?php
 //Display all the Approved PAP
@@ -164,9 +173,15 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $R2; ?></td> 
 				<td><?php echo $R3; ?></td> 	
 				<td>
-					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn1">Proposal</button> </a>
-					<a href="Evaluation-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn2">Evaluation</button> </a>
-					<a href="Monitoring-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn3">Monitoring</button> </a>
+					<div class="margin">
+						<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn1">Proposal</button> </a>
+					</div>
+					<div class="margin2">
+						<a href="Evaluation-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn2">Evaluation</button> </a>
+					</div>
+					<div class="margin1">
+						<a href="Monitoring-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn3">Monitoring</button> </a>
+					</div>
 				</td> 
 			</tr>
 <?php }?>

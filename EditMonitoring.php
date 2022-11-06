@@ -51,7 +51,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Update Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/EditMonitoring.css">
+<link rel="stylesheet" type="text/css" href="styles/EditMonitoring-style.css">
 
 </head>
 <body>
@@ -225,10 +225,23 @@ if(isset($_GET['edit'])){
 					<td><textarea placeholder="Designation" name="Sign3_2" required><?Php echo $dbSign3_2; ?></textarea></td>
 				</tr>
 			</table>
-			<div class ="save">
-				<button class = "btn3" type="submit" name="submit"> Update </button>
-				<a href="Monitoring-revision.php" button class = "btn3"> Back </a></button>
-			</div>
+			<table class="save-back">
+				<tr>
+					<th>
+						<div class ="back">
+							<a href="Monitoring-revision.php" button class = "btn4"> Back </a></button>
+						</div>
+					</th>
+					<th>
+					<div class ="save">
+							<button class = "btn3" type="submit" name="submit"> Update </button>
+						</div>
+						
+					</th>
+				</tr>
+			</table>
+			
+			
 		</div>	
 	</div>
 </form>

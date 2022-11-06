@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Quarterly Monitoring Reports</title>
-<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad-style.css">
+<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
 
 </head>
 

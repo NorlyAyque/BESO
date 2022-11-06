@@ -366,14 +366,27 @@ cursor: pointer;
 }
 
 
+.save-back{
+	margin:auto;
+	width:100%
+}
 
 
-
+.save-back table,th{
+	border:none;
+	
+}
 .save{
 		margin-top:10px;
 		text-align: right;
 		margin-right:15px;
 		margin-bottom: 10px;
+}
+
+.back{
+		text-align: left;
+		margin-left:40px;
+	
 }
  .btn3 {
   margin-right:5px;
@@ -395,6 +408,30 @@ cursor: pointer;
 }
 
 .btn3:hover {
+  background-color:  #4CAF20;
+  color: white;
+}
+
+.btn4 {
+  margin-right:5px;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+text-align:right;
+}
+
+.btn4:hover {
   background-color:  #4CAF20;
   color: white;
 }

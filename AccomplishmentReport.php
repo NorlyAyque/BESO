@@ -3,12 +3,13 @@ session_start();
 include("Connection.php");
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Proposals - Rejected</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal-style.css">
+<title>List of Extension PAPs for Impact Assessment</title>
+<link rel="stylesheet" type="text/css" href="styles/Report.css">
 
 </head>
 <body>
@@ -32,18 +33,17 @@ include("Connection.php");
 				</a>
 			</li>
 			<li>
+				<a href="Proposal.php">
+					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
+					<span class ="title"> Project Proposals</span>
+				</a>
+			</li>
+			<li>
 				<a href="CreateProposal.php">
 					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
 					<span class ="title"> Create Proposal</span>
 				</a>
 			</li>
-			<li>
-				<a class="active" href="Proposal.php">
-					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
-					<span class ="title"> Project Proposals</span>
-				</a>
-			</li>
-			
 			<li>
 				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
@@ -57,7 +57,7 @@ include("Connection.php");
 				</a>
 			</li>
 			<li>
-				<a href="Reports.php">
+				<a class="active"  href="Reports.php">
 					<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
 					<span class ="title"> Reports</span>
 				</a>
@@ -87,84 +87,96 @@ include("Connection.php");
 				</div>	
 			</div>
 			
-		<table class="proposals" id="MyTable">
+			<!--Content-->
+			<table class="Reports">
 				<tr>
-					<th colspan="5">
+					<th>
 						<div class="menu">
+							<a href="Reports.php" button class = "nav"> Quarterly Monitoring Report  <ion-icon name="bookmarks-outline"></ion-icon></a>
+							<a href="StatusReport.php" button class = "nav"> Status Report <ion-icon name="bookmarks-outline"></ion-icon></a>
+							<a href="GADReport.php" button class = "nav"> GAD Report <ion-icon name="bookmarks-outline"></ion-icon></a>
 							
-							<a href="Proposal.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
-							</button>
-							
-							<a href="Proposal-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a>
-							</button>
-							
-							<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
-							</button>
-						
-							<a href="Proposal-reject.php" button class = "nav4"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
-							</button>
-							
-						</div>
-					</th> 
-					
-				</tr>
-				<tr  class="title">
-					<th colspan="5"><center>REJECTED PROPOSALS </th> 
-				</tr>
-				<tr>
-					<th colspan="5"> 
-					<div class="Drp">
-						Select Column to filter: 
-						<select name="column" id="column">
-							<option value="">Select Column</option>
-							<option value="1">Proposal ID</option>
-							<option value="2">Title</option>
-							<option value="3">Prepared By</option>
-							<option value="4">Status</option>
-						</select>
-							
-						Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
-					</div>
+						</div>	
 					</th>
 				</tr>
 				<tr>
-					<th width="30px"> Proposal ID </th>
+					<th>
+						<div class="menu1">
+							<a href="ListImpact.php" button class = "nav"> List of Extension PAPs for Impact Assessment <ion-icon name="bookmarks-outline"></ion-icon></a>	
+							<a href="AccomplishReport.php" button class = "nav1"> List of Accomplishment Report <ion-icon name="bookmarks-outline"></ion-icon></a>	
+						</div>
+					</th>
+				</tr>
+			</table>
+			
+			
+			<table class="Header" id="MyTable">
+				<tr  class="title">
+					<th colspan="7" >List of Accomplishment Reports</th> 
+				</tr>
+				<tr>
+					<th colspan="7"> 
+						Select Column to filter: 
+							<select name="column" id="column">
+								<option value="">Select Column</option>
+								<option value="1">Proposal ID</option>
+								<option value="2">Title</option>
+								<option value="3">Proposal</option>
+								<option value="4">Evaluation</option>
+								<option value="5">Last Monitored</option>
+								<option value="6">Impact Assessment</option>
+							</select>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+					</th>
+				</tr>
+				<tr>
+					<th width="100px"> Proposal ID</th>
 					<th width="auto"> Title </th>
-					<th width="180px";> Prepared By</th>
-					<th width="120px";> Status </th>
-					<th width="150px";>  </th>
+					<th width="140px"> Proposal </th> <!-- Project Status -->
+					<th width="140px";> Evaluation </th> <!-- Remarks -->
+					<th width="120px";> Last Monitored </th> <!-- Remarks_2 -->
+					<th width="120px";> Impact Assessment </th> <!-- Remarks_3 -->
+					<th width="200px";> View</th>
 				</tr>
 <?php
-//Display all the Pending Proposals
-$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Rejected' ");
-$command = $con->query($sql) or die("Error SQL");
+//Display all the Approved PAP
+$sql = ("SELECT * FROM create_alangilan WHERE 
+		ProjectStatus = 'Approved' AND 
+		Remarks = 'Evaluated' AND
+		Remarks_2 != '' AND
+		Remarks_3 = 'Done Impact Assessment'
+	");
+
 while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
-		$Title = $result['Title'];
-		$PreparedBy = $result['Sign1_1'];
-		$Status = $result['ProjectStatus'];
+		$Title = $result ['Title'];
+		$PS = $result ['ProjectStatus']; // Pending, Approved, Revised, Reject
+		$R1 = $result ['Remarks']; //For Evaluation
+		$R2 = $result['Remarks_2']; //For Monitoring
+		$R3 = $result['Remarks_3']; // For Impact Assessment
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
-				<td><?php echo $Title; ?></td> 
-				<td><?php echo $PreparedBy; ?></td> 
-				<td><?php echo $Status; ?></td> 	
+				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $PS; ?></td> 
+				<td><?php echo $R1; ?></td> 
+				<td><?php echo $R2; ?></td> 
+				<td><?php echo $R3; ?></td> 	
 				<td>
-					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="REbtn">View</button> </a>
-					<a href="Proposal-reject.php?re_use=<?php echo $PID; ?>" button class="REbtn1">Re-Use</button> </a>
+					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn1">Proposal</button> </a>
+					<a href="Evaluation-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn2">Evaluation</button> </a>
+					<a href="Monitoring-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn3">Monitoring</button> </a>
 				</td> 
 			</tr>
 <?php }?>
 			</table>	
 		</div>
-	</div>>
-	
-	
-	
+	</div>
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+	<script type="module" scr="https://cdn.bootcdn.net/ajax/libs/ionicons/6.0.3/cjs/index-1bc7b418.js"></script>
 	<script>
 	//MenuToggle
 	let toggle = document.querySelector('.toggle');
@@ -191,15 +203,16 @@ while($result = mysqli_fetch_array($command))
 </html>
 
 <?php
-if(isset($_GET['re_use'])){
-	$PID = $_GET['re_use'];
 
-	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'PENDING' WHERE ProposalID = $PID ");
-	$command = $con->query($sql) or die("Error Proposal move to revision");
+if(isset($_GET['MarkAsComplete'])){
+	$PID = $_GET['MarkAsComplete'];
+
+	$sql = ("UPDATE create_alangilan SET Remarks_3 = 'Done Impact Assessment' WHERE ProposalID = $PID ");
+	$command = $con->query($sql) or die("Error Rejecting Proposal");
 	echo "
 		<script>
-			alert('Proposal ID $PID Re-submit');	
-			window.location.href='Proposal-reject.php';
+			alert('Proposal ID $PID Completed');	
+			window.location.href='ListImpact.php';
 		</script>";
 }
 ?>
@@ -213,6 +226,8 @@ function Filter() {
 	else if (x == "2"){var SelectedColumn = 1;}
 	else if (x == "3"){var SelectedColumn = 2;}
 	else if (x == "4"){var SelectedColumn = 3;}	
+	else if (x == "5"){var SelectedColumn = 4;}	
+	
 	
 	var input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("keyword");

@@ -246,6 +246,14 @@ margin-left: 100px;
 	margin-left: 30px;
 }
 
+.fulljustify {
+   text-align: justify;
+   
+}
+
+
+
+
 .menu{
 	 text-decoration:none;
 }
@@ -389,6 +397,78 @@ margin-left: 100px;
 	float: left;
 	text-decoration:none;
 }
+
+
+.Drp{
+	text-align:left;
+}
+.Drp select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.Drp input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -593,9 +673,7 @@ background-color: #D1D1D1;}
   background-color: #38E54D;
   color: white;
 }
-.proposal .Abtn1 a{
-	margin-top:10px;
-}
+
 .proposals .Abtn{
   background-color:  #00b4d8; 
   border: none;
@@ -608,6 +686,7 @@ background-color: #D1D1D1;}
   font-weight: bold;
   border-radius: 5px;
   text-decoration:none;
+  
   
  
 }
@@ -628,7 +707,8 @@ background-color: #D1D1D1;}
   border-radius: 2px;
   text-decoration:none;
   margin-top:10px;
-  display:inline-block;
+  display:inline-block;;
+
 
   
  
@@ -651,8 +731,11 @@ background-color: #D1D1D1;}
   font-weight: bold;
   border-radius: 2px;
   text-decoration:none;
- margin-top:10px;
+  margin-top:10px;
   display:inline-block;
+
+
+ 
  
 }
 .proposals .Abtn2:hover {

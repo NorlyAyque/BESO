@@ -477,6 +477,98 @@ cursor: pointer;
 	
 	
 }
+.Drp3 {
+	text-align:left;
+}
+.Drp4{
+	text-align:left;
+}
+.Drp5 {
+	text-align:left;
+}
+.Drp6{
+	text-align:left;
+}
+.Drp3 select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+.Drp3 option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.Drp4 input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+.Drp4 option{
+	font-size:15px;
+	cursor:pointer;	
+}
+
+.Drp5 select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+.Drp5 option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.Drp6 input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+.Drp6 option{
+	font-size:15px;
+	cursor:pointer;	
+}
+
+
+
 .Create{
 	text-align:right;
 }
@@ -578,15 +670,22 @@ cursor: pointer;
 
 
 .Header .margin{
+	margin-top:5px;
 	margin-bottom:15px;
-	margin-top:3px;
+	
+}
+.Header .margin2{
+	margin-top:5px;
+	margin-bottom:15px;
 }
 .Header .margin1{
+	margin-top:5px;
 	margin-bottom:5px;
-
 }
+
+
 .Header .btn1 {
-  
+
   background-color: #4CAF50; 
   color: white;
   padding: 5px 10px;
@@ -607,7 +706,7 @@ cursor: pointer;
   color: white;
 }
 .Header .btn2 {
-  margin-right:5px;
+ 
   background-color: #4CAF50; 
   color: white;
  padding: 5px 10px;
@@ -631,7 +730,7 @@ cursor: pointer;
 
 
  .Header .btn3 {
-  margin-right:5px;
+  
   background-color: #4CAF50; 
   color: white;
   padding: 5px 10px;

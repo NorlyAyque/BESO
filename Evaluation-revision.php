@@ -8,7 +8,7 @@ include("Connection.php");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation - Revisions</title>
-<link rel="stylesheet" type="text/css" href="styles/EvaluationReport.css">
+<link rel="stylesheet" type="text/css" href="styles/EvaluationReport-style.css">
 
 </head>
 <body>
@@ -113,7 +113,8 @@ include("Connection.php");
 				</tr>
 				<tr>
 					<th colspan="6"> 
-						Select Column to filter: 
+							<div class="Drp">
+								Select Column to filter: 
 							<select name="column" id="column">
 								<option value="">Select Column</option>
 								<option value="1">Evaluation ID</option>
@@ -122,8 +123,9 @@ include("Connection.php");
 								<option value="4">Prepared By</option>
 								<option value="5">Status</option>
 								</select>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							
 						Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+						</div>
 					</th>
 				</tr>	
 				

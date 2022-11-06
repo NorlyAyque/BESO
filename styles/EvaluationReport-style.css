@@ -787,3 +787,47 @@ background-color: #D1D1D1;}
   background-color:  #38E54D;
   color: white;
 }
+.Drp{
+	text-align:left;
+}
+.Drp select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.Drp input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}

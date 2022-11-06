@@ -67,7 +67,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Account</title>
-<link rel="stylesheet" type="text/css" href="styles/Account.css">
+<link rel="stylesheet" type="text/css" href="styles/Account-style.css">
 
 </head>
 <body>
@@ -166,9 +166,8 @@ if(isset($_GET['enable'])){
 			<div class="add">
 				<a href="Form_Add.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon></a> </button>
 			</div>
-			<div style="height: 500px; overflow: auto">
-
-			<table class="account" id="Table">
+			<div class="scroll" >
+			<table class="account" id="Table" >
 				<thead>
 				<tr class="Name">
 					 

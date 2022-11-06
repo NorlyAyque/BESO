@@ -3,7 +3,7 @@
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Quarterly Monitoring Reports</title>
-<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad-style.css">
+<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
 
 </head>
 <body>
@@ -12,7 +12,7 @@
 <table>
 	
 		<tr>
-			<td colspan="4">Reference No.:</td>
+			<td colspan="4"><img src ="images/logo.png" class="logo">Reference No.:</td>
 			<td colspan="4">Effectivity Date:</td>
 			<td colspan="2">Revision No.:</td>
 		</tr>
