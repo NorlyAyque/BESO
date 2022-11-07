@@ -132,7 +132,7 @@ include("Connection.php");
 						</th>	
 				</tr>
 				<tr>
-					<th colspan=7"> 
+					<th colspan="7"> 
 						<div class ="Drp4">
 							Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
 						</div>
@@ -150,10 +150,10 @@ include("Connection.php");
 <?php
 //Display all the Approved PAP
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		ProjectStatus = 'Approved' AND 
+		(ProjectStatus = 'Approved' AND 
 		Remarks = 'Evaluated' AND
-		Remarks_2 != '' AND
-		Remarks_3 = 'Done Impact Assessment'
+		Remarks_2 != '') AND
+		(Remarks_3 = 'Done Impact Assessment' OR Remarks_3 = '')
 	");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))

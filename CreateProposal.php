@@ -8,6 +8,10 @@ $create_table = $_SESSION["create_table"];
 
 date_default_timezone_set("Asia/Manila");
 $DateTime = date("M, d Y; h:i:s A");
+$Year = date("Y");
+//Getting Year Quarter
+$month = date("n");
+$yearQuarter = ceil($month / 3);
 ?>
 
 <!DOCTYPE html>
@@ -635,7 +639,7 @@ if (isset($_POST['Save'])) {
 	$Sign5_1 = htmlspecialchars($_POST['Sign5_1']); $Sign5_2 = htmlspecialchars($_POST['Sign5_2']);
 
 	$sql = ("INSERT INTO create_alangilan
-		(AccountID, Date_Time, Initiated, Classification, unknown, IsGAD,
+		(AccountID, Date_Time, Year, Quarter, Initiated, Classification, unknown, IsGAD,
 				Title, Location_Area, Start_Date, End_Date, Start_Time, End_Time, TypeCES,
 				SDG, Office, Programs, People, Agencies, TypeParticipants, Male, Female,
 				Cost, SourceFund, Rationale, Objectives, Descriptions,
@@ -653,7 +657,7 @@ if (isset($_POST['Save'])) {
 				Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2,
 				Sign4_1, Sign4_2, Sign5_1, Sign5_2)
 		VALUES 
-			('$AID', '$DateTime', '$Initiated', '$Classification', '$unknown', '$IsGAD',
+			('$AID', '$DateTime', '$Year', '$yearQuarter', '$Initiated', '$Classification', '$unknown', '$IsGAD',
 				'$Title', '$Location_Area', '$Start_Date', '$End_Date', '$Start_Time', '$End_Time', '$TypeCES',
 				'$SDG', '$Office', '$Programs', '$People', '$Agencies', '$TypeParticipants', '$Male', '$Female',
 				'$Cost', '$SourceFund', '$Rationale', '$Objectives', '$Descriptions',
