@@ -50,7 +50,7 @@ if(isset($_GET['evaluation'])){
 	$x = $dateinterval->format('%a');//Whole Number
 
 	if ($x == 0){ //Same Day = 0 = 1 day (8hrs)
-		echo $NoOfDays = $dateinterval->format('%a') + 1;
+		$NoOfDays = $dateinterval->format('%a') + 1;
 	}else{ //Not same day = 2 days or more
 		$NoOfDays = $dateinterval->format('%a') +1;
 	}
@@ -260,7 +260,7 @@ if(isset($_GET['evaluation'])){
 							</table>
 						
 						<table class="Evaluation">	
-								<label> <h4><br>2. Number of beneficiaries/paricipants who rated the activity as:</h4></label>
+								<label> <h4><br>2. Number of beneficiaries/paricipants who rated the timeliness of the activity as:</h4></label>
 								<tr class="th1">
 									<th>Scale</th>
 									<th> BatStateU Participants </th>
