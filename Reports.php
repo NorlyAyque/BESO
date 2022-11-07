@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title> Reports</title>
+<title>Quarterly Monitoring Report</title>
 <link rel="stylesheet" type="text/css" href="styles/Report.css">
 
 </head>

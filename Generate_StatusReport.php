@@ -2,78 +2,84 @@
 <html>
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
-<title>Quarterly Monitoring Reports</title>
+<title>Generate Status Report</title>
 <link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
 
 </head>
-
-
 <body>
 <div class="content">
-	<table>
+<table>
 	
 		<tr>
-			<td colspan="13"><center>Quarterly Moniroing Report<br>Extension Services <br>Programs,Acivities and Projects</center></td>
+			
+			<td colspan="3"><img src ="images/logo.png" class="logo">Reference No. :</td>
+			<td colspan="4">Effectivity Date:</td>
+			<td colspan="3">Revision No.:</td>
 		</tr>
 		<tr>
-			<td colspan="13"><center>Fiscal Year:</center></td>
+			<td colspan="3">Name of SUC: </td>
+			<td colspan="4"></td>
+			<td colspan="3">REGION lV-A</td>
 		</tr>
 		<tr>
-			<td colspan="13"><i>A. trainess weighted by the lenght of training / percentage of beneficiaries who rate the training course/s as satisfactory or higher terms of quality and relevance</i></td>
+			<td colspan="10"><center>Status Report of Extension Programs, Project and Acivity (PAPs)</center></td>	
 		</tr>
 		<tr>
-			<th width="45px";>No.</th>
-			<th width="120px";>TITLE OF <br>TRAINING</th>
-			<th colspan="2" width="280px";>INCLUSIVE<br> DATES</th>
-			<th width="107px";>DURATION</th>
-			<th width="110px";>NO. OF<br> TRAINEES</th>
-			<th width="140px";>TRAINESS<br> WEIGHTED BY <br>THE LENGTH <br>OF TRAINING</th>
-			<th colspan="5" width="140px";>QUALITY AND <br>RELEVANCE <br>RATING </th>
-			<th width="110px";>PROOF OF<br> IMPLEMETAION<br>(reference)</th>
+			<td colspan="10"><center>First Quarter,Fy 2022</center></td>	
+		</tr>
+
+		<tr class ="header">
+			<th width="155px";>Title of Projects</th>
+			<th width="130px";>Sustainble<br> Development<br> Goals</th>
+			<th width="90px";>Date/<br>Duration</th>
+			<th width ="220px";>Documentation</th>
+			<th width="110px";>No. of <br>(Male and <br>Female <br> Beneficiaries)</th>
+			<th width="130px";>Beneficiaries</th>
+			<th width="120px";>Location</th>
+			<th width="120px";>Extensionist </th>
+			<th width="100px">Budget <br>Allocation</th>
+			<th width="70px">Source <br>of<br> fund</th>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<th width="80px";>From:</th>
-			<th width="80px";>To:</th>
-			<td></td>
-			<td></td>
-			<td></td>
-			<th>P</th>
-			<th>F</th>
-			<th>S</th>
-			<th width="42px";>VS</th>
-			<th>E</th>
-			<td></td>
+			<td colspan="10">Implemented Projects</td>
+		</tr>
+		<tr>
+			<td colspan="10">College of insdustrial Technology</td>
+		</tr>
+		<tr>
+			<td colspan="10">TEXT</td>
 		</tr>
 		<tr class="font">
-			<td>1</td>
-			<td><p>QWEQDJGLOIRWQK:LDSFLSDwwwwwwwwwwwwwwwwwS:FLPDSFL:"L:SAK<p></td>
-			<td>02/22/22</td>
-			<td>02/12/44</td>
-			<td>1</td>
-			<td>43</td>
-			<td>54.0</td>
-			<td>0</td>
-			<td>2</td>
-			<td>3</td>
-			<td>4</td>
-			<td>1</td>
-			<td>None NOne</td>
+			<td><p>CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS</p></td>
+			<td><p>CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS</p></td>
+			<td>CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS</td>
+			<td><p>CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS</p></td>
+			<td>CAPSTONE DEFNE DEFENSE SUCCESS</td>
+			<td><p>CAPST</p></td>
+			<td>CAPSTO</td>
+			<td><p>CAPSTONE NE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS</p></td>
+			<td>CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS CAPSTONE DEFENSE SUCCESS</td>
+			<td>CAPSTONE DES</td>
 			
-	
+		</tr>
+		
+		
+		
+		
+		
+	</tbody>
 </table>
-	
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
+</div>
+
+
+
+
+
+
+
+
+
+
 	
 <body>
 </html>
