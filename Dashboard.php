@@ -135,11 +135,13 @@ include("Connection.php");
 					</tr>
 					<tr >
 						<th>CEAFA</th>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
+						<td><input type = "number" min="0" name="ACEAFA" id="ACEAFA" value="<?php echo $dbACEAFA;?>"></td>
+						<td><input type = "number" min="0" name="CEAFA1" id="CEAFA1" value="<?php echo $dbCEAFA1;?>" onchange="CalCEAFA()"></td>
+						<td><input type = "number" min="0" name="CEAFA2" id="CEAFA2" value="<?php echo $dbCEAFA2;?>" onchange="CalCEAFA()"></td>
+						<td><input type = "number" min="0" name="CEAFA3" id="CEAFA3" value="<?php echo $dbCEAFA3;?>" onchange="CalCEAFA()"></td>
+						<td><input type = "number" min="0" name="CEAFA4" id="CEAFA4" value="<?php echo $dbCEAFA4;?>" onchange="CalCEAFA()"></td>
+						<td><input type = "number" min="0" name="CEAFAT" id="CEAFAT" value="<?php echo $dbCEAFAT;?>"> </td> 
+						
 						<td><input type = "number" min="0"></td>
 						<td><input type = "number" min="0"></td>
 						<td><input type = "number" min="0"></td>
@@ -160,11 +162,13 @@ include("Connection.php");
 					</tr>
 					<tr>
 						<th>CICS</th>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
+						<td><input type = "number" min="0" name="BCICS" id="BCICS" value="<?php echo $dbBCICS;?>"></td>
+						<td><input type = "number" min="0" name="CICS1" id="CICS1" value="<?php echo $dbCICS1;?>" onchange="CalCICS()"></td>
+						<td><input type = "number" min="0" name="CICS2" id="CICS2" value="<?php echo $dbCICS2;?>" onchange="CalCICS()"></td>
+						<td><input type = "number" min="0" name="CICS3" id="CICS3" value="<?php echo $dbCICS3;?>" onchange="CalCICS()"></td>
+						<td><input type = "number" min="0" name="CICS4" id="CICS4" value="<?php echo $dbCICS4;?>" onchange="CalCICS()"></td>
+						<td><input type = "number" min="0" name="CICST" id="CICST" value="<?php echo $dbCICST;?>"> </td> 
+						
 						<td><input type = "number" min="0"></td>
 						<td><input type = "number" min="0"></td>
 						<td><input type = "number" min="0"></td>
@@ -184,11 +188,13 @@ include("Connection.php");
 					</tr>
 					<tr>
 						<th>CIT</th>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
-						<td><input type = "number" min="0"></td>
+						<td><input type = "number" min="0" name="CCIT" id="CCIT" value="<?php echo $dbCCIT;?>"></td>
+						<td><input type = "number" min="0" name="CIT1" id="CIT1" value="<?php echo $dbCIT1;?>" onchange="CalCIT()"></td>
+						<td><input type = "number" min="0" name="CIT2" id="CIT2" value="<?php echo $dbCIT2;?>" onchange="CalCIT()"></td>
+						<td><input type = "number" min="0" name="CIT3" id="CIT3" value="<?php echo $dbCIT3;?>" onchange="CaCIT()"></td>
+						<td><input type = "number" min="0" name="CIT4" id="CIT4" value="<?php echo $dbCIT4;?>" onchange="CalCIT()"></td>
+						<td><input type = "number" min="0" name="CITT" id="CITT" value="<?php echo $dbCITT;?>"> </td> 
+						
 						<td><input type = "number" min="0"></td>
 						<td><input type = "number" min="0"></td>
 						<td><input type = "number" min="0"></td>
@@ -207,7 +213,7 @@ include("Connection.php");
 						<td><input type = "number" min="0"></td>
 					</tr>
 					<tr>
-						<th>Total</th>
+						<th>Total</th> 
 						<td><input type = "number" min="0"></td>
 						<td><input type = "number" min="0"></td>
 						<td><input type = "number" min="0"></td>
@@ -261,3 +267,33 @@ include("Connection.php");
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
+
+
+<script>
+function CalCEAFA(){ //Auto Compute for CEAFA
+	let CEAFA1 = document.getElementById('CEAFA1').value;
+	let CEAFA2 = document.getElementById('CEAFA2').value;
+	let CEAFA3 = document.getElementById('CEAFA3').value;
+	let CEAFA4 = document.getElementById('CEAFA4').value;
+	let ans = (parseInt(CEAFA1)) + (parseInt(CEAFA2)) + (parseInt(CEAFA3)) + (parseInt(CEAFA4));
+	document.getElementById("CEAFAT").value = ans;
+	
+}
+function CalCICS(){ //Auto Compute for CICS
+	let CICS1 = document.getElementById('CICS1').value;
+	let CICS2 = document.getElementById('CICS2').value;
+	let CICS3 = document.getElementById('CICS3').value;
+	let CICS4 = document.getElementById('CICS4').value;
+	let ans = (parseInt(CICS1)) + (parseInt(CICS2)) + (parseInt(CICS3)) + (parseInt(CICS4));
+	document.getElementById("CICST").value = ans;
+}
+function CalCIT(){ //Auto Compute for CIT
+	let CIT1 = document.getElementById('CIT1').value;
+	let CIT2 = document.getElementById('CIT2').value;
+	let CIT3 = document.getElementById('CIT3').value;
+	let CIT4 = document.getElementById('CIT4').value;
+	let ans = (parseInt(CIT1)) + (parseInt(CIT2)) + (parseInt(CIT3)) + (parseInt(CIT4));
+	document.getElementById("CITT").value = ans;
+	
+}
+</script>
