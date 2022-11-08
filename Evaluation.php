@@ -1,6 +1,12 @@
 <?php
 session_start();
 include("Connection.php");
+
+//Getting Year Quarter
+$month = date("n");
+$yearQuarter = ceil($month / 3);
+
+$YearToday = date("Y");
 ?>
 
 <!DOCTYPE html>
@@ -201,14 +207,176 @@ if(isset($_GET['revise'])){
 
 if(isset($_GET['approved'])){
 	$EID = $_GET['approved'];
+	$PID = $_GET['update'];
+
+	//Updating Target
+	//Getting the values from Actual Target
+	$sql = ("SELECT * FROM target_alangilan WHERE Year = $YearToday");
+	$command = $con->query($sql) or die("Error Fethcing data");
+	while($result = mysqli_fetch_array($command))
+	{
+		$CEAFA_BQ1 = $result["CEAFA_BQ1"];
+		$CEAFA_BQ2 = $result["CEAFA_BQ2"];
+		$CEAFA_BQ3 = $result["CEAFA_BQ3"];
+		$CEAFA_BQ4 = $result["CEAFA_BQ4"];
+		$CEAFA_BQT = $result["CEAFA_BQT"];
+
+		$CICS_BQ1 = $result["CICS_BQ1"];
+		$CICS_BQ2 = $result["CICS_BQ2"];
+		$CICS_BQ3 = $result["CICS_BQ3"];
+		$CICS_BQ4 = $result["CICS_BQ4"];
+		$CICS_BQT = $result["CICS_BQT"];
+
+		$CIT_BQ1 = $result["CIT_BQ1"];
+		$CIT_BQ2 = $result["CIT_BQ2"];
+		$CIT_BQ3 = $result["CIT_BQ3"];
+		$CIT_BQ4 = $result["CIT_BQ4"];
+		$CIT_BQT = $result["CIT_BQT"];
+
+		$BT_Q1 = $result["BT_Q1"];
+		$BT_Q2 = $result["BT_Q2"];
+		$BT_Q3 = $result["BT_Q3"];
+		$BT_Q4 = $result["BT_Q4"];
+		$BT_QT = $result["BT_QT"];	
+	}
+
+	//Determining what Office/College involved
+	$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
+	$command = $con->query($sql) or die("Error Fethcing data");
+	while($result = mysqli_fetch_array($command))
+	{
+		$word = $result["Office"];
+		$Office = strtoupper($word);
+	}
+
 	
+	$CICS = strtoupper("CICS");
+	$CICS_Full = strtoupper("College of Informatics and Computing Sciences");
+
+	$CIT = strtoupper("CIT");
+	$CIT_Full = strtoupper("College of Industrial Technology");
+
+	$CEAFA = strtoupper("CEAFA");
+	$CEAFA_Full = strtoupper("College of Engineering, Architecture and Fine Arts");
+	
+	// Test if string contains the word 
+	if (((str_contains($Office, $CEAFA)) == TRUE) OR ((str_contains($Office, $CEAFA_Full)) == TRUE)) {
+		if ($yearQuarter == 1){//For CEAFA Actual Quarter 1
+			$NewCount = $CEAFA_BQ1 + 1;
+			$Col = $CEAFA_BQT + 1;
+			$Row = $BT_Q1 + 1;
+			$Total = $BT_QT + 1;
+			$sql = ("UPDATE target_alangilan SET CEAFA_BQ1 = '$NewCount', CEAFA_BQT = '$Col', BT_Q1 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($yearQuarter == 2){//For CEAFA Actual Quarter 2
+			$NewCount = $CEAFA_BQ2 + 1;		
+			$Col = $CEAFA_BQT + 1;
+			$Row = $BT_Q2 + 1;	
+			$Total = $BT_QT + 1;
+			$sql = ("UPDATE target_alangilan SET CEAFA_BQ2 = '$NewCount', CEAFA_BQT = '$Col', BT_Q2 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($yearQuarter == 3){//For CEAFA Actual Quarter 3
+			$NewCount = $CEAFA_BQ3 + 1;	
+			$Col = $CEAFA_BQT + 1;
+			$Row = $BT_Q3 + 1;	
+			$Total = $BT_QT + 1;	
+			$sql = ("UPDATE target_alangilan SET CEAFA_BQ3 = '$NewCount', CEAFA_BQT = '$Col', BT_Q3 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($yearQuarter == 4){//For CEAFA Actual Quarter 3
+			$NewCount = $CEAFA_BQ4 + 1;	
+			$Col = $CEAFA_BQT + 1;
+			$Row = $BT_Q4 + 1;		
+			$Total = $BT_QT + 1;
+			$sql = ("UPDATE target_alangilan SET CEAFA_BQ4 = '$NewCount', CEAFA_BQT = '$Col', BT_Q4 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+	}
+	
+	if (((str_contains($Office, $CICS)) == TRUE) OR ((str_contains($Office, $CICS_Full)) == TRUE)) {
+		if ($yearQuarter == 1){//For CICS Actual Quarter 1
+			$NewCount = $CICS_BQ1 + 1;	
+			$Col = $CICS_BQT + 1;
+			$Row = $BT_Q1 + 1;		
+			$Total = $BT_QT + 1;		
+			$sql = ("UPDATE target_alangilan SET CICS_BQ1 = '$NewCount', CICS_BQT = '$Col', BT_Q1 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($yearQuarter == 2){//For CICS Actual Quarter 2
+			$NewCount = $CICS_BQ2 + 1;			
+			$Col = $CICS_BQT + 1;
+			$Row = $BT_Q2 + 1;		
+			$Total = $BT_QT + 1;
+			$sql = ("UPDATE target_alangilan SET CICS_BQ2 = '$NewCount', CICS_BQT = '$Col', BT_Q2 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($yearQuarter == 3){//For CICS Actual Quarter 3
+			$NewCount = $CICS_BQ3 + 1;	
+			$Col = $CICS_BQT + 1;
+			$Row = $BT_Q3+ 1;		
+			$Total = $BT_QT + 1;		
+			$sql = ("UPDATE target_alangilan SET CICS_BQ3 = '$NewCount', CICS_BQT = '$Col', BT_Q3 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($yearQuarter == 4){//For CICS Actual Quarter 3
+			$NewCount = $CICS_BQ4 + 1;	
+			$Col = $CICS_BQT + 1;
+			$Row = $BT_Q4 + 1;		
+			$Total = $BT_QT + 1;		
+			$sql = ("UPDATE target_alangilan SET CICS_BQ4 = '$NewCount', CICS_BQT = '$Col', BT_Q4 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}	
+	}
+	
+	if (((str_contains($Office, $CIT)) == TRUE) OR ((str_contains($Office, $CIT_Full)) == TRUE)) {
+		if ($yearQuarter == 1){//For CIT Actual Quarter 1
+			$NewCount = $CIT_BQ1 + 1;	
+			$Col = $CIT_BQT + 1;
+			$Row = $BT_Q1 + 1;		
+			$Total = $BT_QT + 1;		
+			$sql = ("UPDATE target_alangilan SET CIT_BQ1 = '$NewCount', CIT_BQT = '$Col', BT_Q1 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($yearQuarter == 2){//For CIT Actual Quarter 2
+			$NewCount = $CIT_BQ2 + 1;			
+			$Col = $CIT_BQT + 1;
+			$Row = $BT_Q2 + 1;		
+			$Total = $BT_QT + 1;
+			$sql = ("UPDATE target_alangilan SET CIT_BQ2 = '$NewCount', CIT_BQT = '$Col', BT_Q2 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($yearQuarter == 3){//For CIT Actual Quarter 3
+			$NewCount = $CIT_BQ3 + 1;
+			$Col = $CIT_BQT + 1;
+			$Row = $BT_Q3 + 1;		
+			$Total = $BT_QT + 1;
+			$sql = ("UPDATE target_alangilan SET CIT_BQ3 = '$NewCount', CIT_BQT = '$Col', BT_Q3 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($yearQuarter == 4){//For CIT Actual Quarter 3
+			$NewCount = $CIT_BQ4 + 1;
+			$Col = $CIT_BQT + 1;
+			$Row = $BT_Q4 + 1;		
+			$Total = $BT_QT + 1;		
+			$sql = ("UPDATE target_alangilan SET CIT_BQ4 = '$NewCount', CIT_BQT = '$Col', BT_Q4 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+	}
+	
+	
+
+
+	//Updating Project Status
 	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'Approved' WHERE EvaluationID = $EID ");
 	$command = $con->query($sql) or die("Error Evaluation Report Approval");
 	echo "
 		<script>
 			alert('Evaluation ID $EID APPROVED');	
-			window.location.href='Evaluation.php';
+			//window.location.href='Evaluation.php';
 		</script>";
+	
 }
 
 if(isset($_GET['update'])){
