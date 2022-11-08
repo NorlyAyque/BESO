@@ -18,28 +18,36 @@ if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Generate QMR</title>
-<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
+<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad-style.css">
 </head>
 
 <body>
 <div class="content">
-	<table>
+	<table class="table-class">
 		<tr>
-			<td colspan="13"><center><b> Quarterly Monitoring Report </b><br>Extension Services <br>Programs,Acivities and Projects</center></td>
+			<th><center> Quarterly Monitoring Report</center></th>
 		</tr>
 		<tr>
-			<td colspan="13"><center>Fiscal Year: <u><b><?php echo $Year;?></b></u> Quarter: <u><b><?php echo $Quarter;?></b></u></center></td>
+			<td><center>Extension Services <br>Programs,Acivities and Projects</center></td>
 		</tr>
 		<tr>
-			<td colspan="13"><i>A. trainess weighted by the lenght of training / percentage of beneficiaries who rate the training course/s as satisfactory or higher terms of quality and relevance</i></td>
+				<td><center>Fiscal Year: <u><b><?php echo $Year;?></b></u> Quarter: <u><b><?php echo $Quarter;?></b></u></center></td>
 		</tr>
+	</table>
+	<table class="table-trainess">
+	<tr>
+		<th><i>A. trainess weighted by the lenght of training / percentage of beneficiaries who rate the training course/s as satisfactory or higher terms of quality and relevance</i></th>
+	</tr>
+	</table>
+	
+	<table class="table2">
 		<tr>
-			<th width="45px";>No.</th>
+			<th><p style="width:25px;">No.</p></th>
 			<th width="120px";>TITLE OF <br>TRAINING</th>
 			<th colspan="2" width="280px";>INCLUSIVE<br> DATES</th>
 			<th width="107px";>DURATION</th>
 			<th width="110px";>NO. OF<br> TRAINEES</th>
-			<th width="140px";>TRAINESS<br> WEIGHTED BY <br>THE LENGTH <br>OF TRAINING</th>
+			<th width="150px";>TRAINESS<br> WEIGHTED BY <br>THE LENGTH <br>OF TRAINING</th>
 			<th colspan="5" width="140px";>QUALITY AND <br>RELEVANCE <br>RATING </th>
 			<th width="110px";>PROOF OF<br> IMPLEMETAION<br>(reference)</th>
 		</tr>
@@ -102,15 +110,15 @@ while($result = mysqli_fetch_array($command))
 	
 		$NoOfHours = $TimeResult * $NoOfDays; //Display number of hours depends on number of days
 		if ($NoOfHours <= 7 ){
-			echo $Duration = "0.5";
+			 $Duration = "0.5";
 		}else if ($NoOfHours <= 8 OR $NoOfHours <= 15){
-			echo $Duration = "1";
+			 $Duration = "1";
 		}else if ($NoOfHours <= 16 OR $NoOfHours <= 23){
-			echo $Duration = "2";
+			 $Duration = "2";
 		}else if ($NoOfHours <= 24 OR $NoOfHours <= 31){
-			echo $Duration = "3";
+			 $Duration = "3";
 		}else if ($NoOfHours >= 32 ){
-			echo $Duration = "4";
+			 $Duration = "4";
 		}
 
 		//Getting number of trainees from Evaluation MFT 
@@ -129,28 +137,63 @@ while($result = mysqli_fetch_array($command))
 		$No++; //For auto numbering
 ?>
 		<tr class="font">
-			<td><?php echo $No; ?></td> <!-- No -->
-			<td><textarea><?php echo $Title; ?></textarea></td> <!-- Title of the Training -->
-			<td><textarea><?php echo $Date1; ?></textarea></td> <!-- Date From -->
-			<td><textarea><?php echo $Date2; ?></textarea></td> <!-- Date To -->
-			<td><textarea><?php echo $Duration; ?></textarea></td> <!-- Duration-->
-			<td><textarea><?php echo $Trainees; ?></textarea></td> <!-- No. of Trainees -->
-			<td><textarea><?php echo $Weighted; ?></textarea></td> <!-- Weighted -->
-			<td><textarea><?php echo $Poor; ?></textarea></td> <!-- P -->
-			<td><textarea><?php echo $Fair; ?></textarea></td> <!-- F -->
-			<td><textarea><?php echo $Satisfactory; ?></textarea></td> <!-- S -->
-			<td><textarea><?php echo $VerySatisfactory; ?></textarea></td> <!-- VS -->
-			<td><textarea><?php echo $Excellent; ?></textarea></td> <!-- E -->
+			<td> <?php echo $No;?></td> <!-- No -->
+			<td>	
+				<textarea style="width:200px;"><?php echo $Title; ?></textarea></td> <!-- Title of the Training -->
+		
+			<td><textarea style="width:100px;"><?php echo $Date1; ?></textarea></td> <!-- Date From -->
+			<td><textarea style="width:100px;"><?php echo $Date2; ?></textarea></td> <!-- Date To -->
+			<td><textarea style="width:90px;"><?php echo $Duration; ?></textarea></td> <!-- Duration-->
+			<td><textarea style="width:100px;"><?php echo $Trainees; ?></textarea></td> <!-- No. of Trainees -->
+			<td><textarea style="width:130px;"><?php echo $Weighted; ?></textarea></td> <!-- Weighted -->
+			<td><textarea style="width:50px;"><?php echo $Poor; ?></textarea></td> <!-- P -->
+			<td><textarea style="width:50px;"><?php echo $Fair; ?></textarea></td> <!-- F -->
+			<td><textarea style="width:50px;"><?php echo $Satisfactory; ?></textarea></td> <!-- S -->
+			<td><textarea style="width:50px;"><?php echo $VerySatisfactory; ?></textarea></td> <!-- VS -->
+			<td><textarea style="width:50px;"><?php echo $Excellent; ?></textarea></td> <!-- E -->
 			<td><textarea><?php echo ""; ?></textarea></td> <!-- Proof -->
+	
 		</tr>
 <?php }}?>
-
-
-
 	</table>
+	<table class="legend">
+		<tr>
+			<td>[1] - 0 Less than 8hrs; 1 = 8 hours or 1 day; 2 = 2 days; 3 = to 4 days; 5 days or more</td>
+		</tr>
+		<tr>
+			<td>[2] - Annex A: Extension Program Write-up describing the program framwork and the actual implementaion
+			<br> Annex B: MOA/Other similar supporting Documents
+			</td>
+		</tr>
+		<tr>
+			<td><br>*A copy of the monitoring reports assigned to contituent campuses must be submitted to the Office of the Director for Extension Services for consolidation</td>
+		</tr>
+	</table>
+	
+	<table class="signatories">
+		<tr>
+			<th>Prepared by:</th>
+			<th>Review by:</th>
+			<th>Approve by:</th>
+			<th>Recive by:</th>
+		</tr>
+		<tr>
+			<td><textarea></textarea></td>
+			<td><textarea></textarea></td>
+			<td><textarea></textarea></td>
+			<td><textarea></textarea></td>
+			
+		</tr>
+	</table>
+	
+	
+	
+	
+	<div class="print">
+	<button id="print_button"> PRINT </button>
+</div>
 </div>	
 
-<button id="print_button"> PRINT </button>
 </body>
 </html>
 

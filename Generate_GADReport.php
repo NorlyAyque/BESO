@@ -18,28 +18,33 @@ if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Generate GAD Report</title>
-<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
+<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad-style.css">
 
 </head>
 <body>
-<div class="content">
+<div class="content1">
 
-<table>
+<table class="Gad-content">
 	
 		<tr>
-			<td colspan="4"><img src ="images/logo.png" class="logo">Reference No.:</td>
-			<td colspan="4">Effectivity Date:</td>
-			<td colspan="2">Revision No.:</td>
+			
+			<td colspan="4"><img src ="images/logo.png" class="logo">Reference No.: BatStateU-FO-ESO-03</td>
+			<td colspan="4">Effectivity Date: May 18, 2022</td>
+			<td colspan="2">Revision No.: 01</td>
 		</tr>
 		<tr>
-			<td colspan="10"><center>Quarterly Report of GAD Programs,Project ang Activities (PPAs)</center></td>
+			<th colspan="10"><center>Quarterly Report of GAD Programs,Project ang Activities (PPAs)</center></th>
 		</tr>
 		<tr>
-			<td colspan="10"><center> <b><u><?php echo $Quarter;?></b></u> Quarter, FY <b><u><?php echo $Year; ?></b></u></center></td>
+			<th colspan="10"><center> <b><u><?php echo $Quarter;?></b></u> Quarter, FY <b><u><?php echo $Year; ?></b></u></center></th>
 		</tr>
 		<tr>
 			<td colspan="10">Campus: BatStateU Alangilan</td>
 		</tr>
+
+
+
+		
 		<tr>
 			<th width="168px";>Title of<br> Implementated<br> PPAs</th>
 			<th width="110px">Date/<br>Duration <br> (Number of hours)</th>
@@ -50,7 +55,7 @@ if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
 				(Project Leader,<br> Asst.<br> Project Leader/s <br>Coordinator, etc.)</th>
 			<th width="100px";>Approved <br>Budget</th>
 			<th width="83px";>Actual<br> Cost</th>
-			<th width="100px";>PS Attribution(BatstateU Participants)</th>
+			<th>PS <br>Attribution<br>(BatstateU <br>Participants)</th>
 			<th width="90px";>Source <br>of<br> Fund</th>
 		</tr>
 <?php
@@ -94,15 +99,15 @@ while($result = mysqli_fetch_array($command))
 	
 		$NoOfHours = $TimeResult * $NoOfDays; //Display number of hours depends on number of days
 		if ($NoOfHours <= 7 ){
-			echo $Duration = "0.5";
+			 $Duration = "0.5";
 		}else if ($NoOfHours <= 8 OR $NoOfHours <= 15){
-			echo $Duration = "1";
+			 $Duration = "1";
 		}else if ($NoOfHours <= 16 OR $NoOfHours <= 23){
-			echo $Duration = "2";
+			 $Duration = "2";
 		}else if ($NoOfHours <= 24 OR $NoOfHours <= 31){
-			echo $Duration = "3";
+			 $Duration = "3";
 		}else if ($NoOfHours >= 32 ){
-			echo $Duration = "4";
+			 $Duration = "4";
 		}
 
 
@@ -123,20 +128,51 @@ while($result = mysqli_fetch_array($command))
 		$No++; //For auto numbering
 ?>
 		<tr class="font">
-			<td><textarea><?php echo $No.". ".$Title; ?></textarea></td> <!-- Title of the Training -->
-			<td><textarea><?php echo $Dateduration."&#13;".$NoOfHours." hours"; ?></textarea></td> <!-- Date/Duration (Number of Hours) -->
-			<td><textarea><?php echo "Headcount: ".$Total."&#10;&#10;"."Male: ".$Male."&#10;"."Female: ".$Female."&#10;&#10;"."Weighted by the length of training: ".$Weighted; ?></textarea></td> <!-- No of Beneficiaries -->
-			<td><textarea><?php echo $Beneficiaries; ?></textarea></td> <!-- Type of Beneficiaries -->
+			<td><textarea style="height:80px;"><?php echo $No.". ".$Title; ?></textarea></td> <!-- Title of the Training -->
+			<td><textarea style="height:80px ;"><?php echo $Dateduration."&#13;".$NoOfHours." hours"; ?></textarea></td> <!-- Date/Duration (Number of Hours) -->
+			<td><textarea style="height:80px;"><?php echo "Headcount: ".$Total."&#10;&#10;"."Male: ".$Male."&#10;"."Female: ".$Female."&#10;&#10;"."Weighted by the length of training: ".$Weighted; ?></textarea></td> <!-- No of Beneficiaries -->
+			<td><textarea  style="width:90px;"><?php echo $Beneficiaries; ?></textarea></td> <!-- Type of Beneficiaries -->
 			<td><textarea><?php echo $Location; ?></textarea></td> <!-- Location -->
-			<td><textarea><?php echo $People; ?></textarea></td> <!-- Personnel Involved -->
-			<td><textarea><?php echo $Cost; ?></textarea></td> <!-- Approved Budget -->
-			<td><textarea><?php echo $Cost; ?></textarea></td> <!-- Actual Cost -->
+			<td><textarea ><?php echo $People; ?></textarea></td> <!-- Personnel Involved -->
+			<td><textarea style="width:69px;"><?php echo $Cost; ?></textarea></td> <!-- Approved Budget -->
+			<td><textarea style="width:65px;"><?php echo $Cost; ?></textarea></td> <!-- Actual Cost -->
 			<td><textarea><?php echo ""; ?></textarea></td> <!-- PS -->
-			<td><textarea><?php echo $SourceFund; ?></textarea></td> <!-- Source of Fund -->
+			<td><textarea style="width:70px;"><?php echo $SourceFund; ?></textarea></td> <!-- Source of Fund -->
 		</tr>
+		
+		
+		<tr>
+		
+		</tr>
+		
+		
+		
 <?php }}?>	
-
 </table>
+<table class="GADsignatories">
+	<tr>
+		<th >Prepared by:</th>
+		<th colspan="2">Checked by:</th>
+		<th >Verified by:</th>
+	</tr>
+	<tr>
+		<td><textarea></textarea></td>
+		<td><textarea></textarea></td>
+		<td><textarea></textarea></td>
+		<td><textarea></textarea></td>
+	</tr>
+	
+	
+</table>
+<table class="legend">
+	<tr>
+		<td>Required Attachments: Signed and approved: (1) PPA Proposal or Request Letter<br>
+														(2) Narrative or Evaluation Report of the PPAs implemented</td>
+	</tr>
+</table>
+
+
+
 </div>
 
 
@@ -166,7 +202,17 @@ while($result = mysqli_fetch_array($command))
 
 
 
-
+<div class="print">
+	<button id="print_button"> PRINT </button>
+</div>
 	
 <body>
 </html>
+<script>
+const btn = document.getElementById('print_button');
+	btn.addEventListener('click', () => {
+		btn.style.display = 'none';
+		window.print(); 
+		btn.style.display = 'block';
+	});
+</script>

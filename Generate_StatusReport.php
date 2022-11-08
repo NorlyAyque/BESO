@@ -19,32 +19,40 @@ if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Generate Status Report</title>
-<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
+<link rel="stylesheet" type="text/css" href="styles/Generate_StatusReport.css">
 
 </head>
 <body>
 <div class="content">
-<table>
-	
+
+<table class="header1">
 		<tr>
-			
-			<td colspan="3"><img src ="images/logo.png" class="logo">Reference No. :</td>
-			<td colspan="4">Effectivity Date:</td>
-			<td colspan="3">Revision No.:</td>
+			<td colspan="3"><img src ="images/logo.png" class="logo">Reference No. : BatStateU-FO-ESO-03</td>
+			<td colspan="4">Effectivity Date: May 18, 2022</td>
+			<td colspan="3">Revision No.: 01</td>
 		</tr>
 		<tr>
-			<td colspan="3">Name of SUC: </td>
+			<td colspan="3">Name of SUC: <b><u>BATANGAS STATE UNIVERSITY<br>
+							THE NATIONAL ENGINEERING UNIVERSITY</b></u> </td>
 			<td colspan="4"></td>
-			<td colspan="3">REGION lV-A</td>
-		</tr>
-		<tr>
-			<td colspan="10"><center>Status Report of Extension Programs, Project and Acivity (PAPs)</center></td>	
-		</tr>
-		<tr>
-			<td colspan="10"><center>First Quarter,Fy 2022</center></td>	
+			<td colspan="3"><b><u>REGION lV-A</b></u></td>
 		</tr>
 
-		<tr class ="header">
+</table>
+
+<table class="header1">		
+		<tr>
+		
+			<td colspan="10"><center><b>Status Report of Extension Programs, Project and Acivity (PAPs)</b></center></td>	
+		</tr>
+		<tr>
+			<td colspan="10"><center><b>First Quarter,Fy 2022</b></center></td>	
+		</tr>
+</table>
+
+<table class="header3">
+
+		<tr>
 			<th width="155px";>Title of Projects</th>
 			<th width="130px";>Sustainble<br> Development<br> Goals</th>
 			<th width="90px";>Date/<br>Duration</th>
@@ -107,15 +115,15 @@ while($result = mysqli_fetch_array($command))
 	
 		$NoOfHours = $TimeResult * $NoOfDays; //Display number of hours depends on number of days
 		if ($NoOfHours <= 7 ){
-			echo $Duration = "0.5";
+			 $Duration = "0.5";
 		}else if ($NoOfHours <= 8 OR $NoOfHours <= 15){
-			echo $Duration = "1";
+			 $Duration = "1";
 		}else if ($NoOfHours <= 16 OR $NoOfHours <= 23){
-			echo $Duration = "2";
+			 $Duration = "2";
 		}else if ($NoOfHours <= 24 OR $NoOfHours <= 31){
-			echo $Duration = "3";
+			 $Duration = "3";
 		}else if ($NoOfHours >= 32 ){
-			echo $Duration = "4";
+				$Duration = "4";
 		}
 		$Dateduration = $Date1." - ".$Date2. " / ".$NoOfDays. "day(s)";
 
@@ -131,37 +139,50 @@ while($result = mysqli_fetch_array($command))
 			$Location = $result2['Location_Area'];
 			$People = $result2['People'];
 ?>
-		<tr>
-			<td colspan="10"><textarea><?php echo $TypeCES;?> </textarea></td> <!-- TYPE CES -->
+		<tr class="font1">
+			<td colspan="10"><textarea style="width:50%;"><?php echo $TypeCES;?> </textarea></td> <!-- TYPE CES -->
 		</tr>
 		<tr class="font">
-			<td><textarea><?php echo $No.". ".$Title; ?></textarea></td> <!-- Title of the Training -->
-			<td><textarea><?php echo $SDG; ?> </textarea></td> <!-- SDG-->
-			<td><textarea><?php echo $Dateduration."&#13;".$NoOfHours." hours"; ?></textarea></td> <!-- Date Duration-->
-			<td><textarea><?php echo $Narrative; ?> </textarea></td> <!-- Documentation-->
-			<td><textarea><?php echo $Male." - Male"."&#13;".$Female." - Female"; ?> </textarea></td> <!-- Male/Female-->
-			<td><textarea><?php echo $Beneficiaries; ?> </textarea></td> <!-- Beneficiaries-->
-			<td><textarea><?php echo $Location; ?> </textarea></td> <!-- Location-->
-			<td><textarea><?php echo $People; ?> </textarea></td> <!-- Extensionist-->
-			<td><textarea><?php echo $Cost; ?> </textarea></td> <!-- Budget-->
+			<td><textarea style="height:80px; "><?php echo $No.". ".$Title; ?></textarea></td> <!-- Title of the Training -->
+			<td><textarea style="height:80px; text-align:left;"><?php echo $SDG; ?> </textarea></td> <!-- SDG-->
+			<td><textarea style="height:80px;"><?php echo $Dateduration."&#13;".$NoOfHours." hours"; ?></textarea></td> <!-- Date Duration-->
+			<td><textarea style="height:80px;"><?php echo $Narrative; ?> </textarea></td> <!-- Documentation-->
+			<td><textarea style="width:90px;"><?php echo $Male." - Male"."&#13;".$Female." - Female"; ?> </textarea></td> <!-- Male/Female-->
+			<td><textarea style="width:85px; "><?php echo $Beneficiaries; ?> </textarea></td> <!-- Beneficiaries-->
+			<td><textarea style="width:70px; height:80px;"><?php echo $Location; ?> </textarea></td> <!-- Location-->
+			<td><textarea style="width:110px; height:100px; text-align:left;"><?php echo $People; ?> </textarea></td> <!-- Extensionist-->
+			<td><textarea style="width:80px;"><?php echo $Cost; ?> </textarea></td> <!-- Budget-->
 			<td><textarea><?php echo $SourceFund; ?> </textarea></td> <!-- Source fund-->
 		</tr>
-<?php }}?>
 		
+		
+		
+		
+<?php }}?>
 	
-	</tbody>
+		<tr >
+			<th colspan="3">Prepared by:</th>
+			<th colspan="4">Reviewed by:</th>
+			<th colspan="3">Approved by:</th>
+		</tr>
+		<tr class="signatories">
+			<td colspan="3"><textarea></textarea></td>
+			<td colspan="4"><textarea></textarea></td>
+			<td colspan="3"><textarea></textarea></td>
+		</tr>
+		</tbody>
 </table>
+<div class="print">
+	<button id="print_button"> PRINT </button>
 </div>
-
-
-
-
-
-
-
-
-
-
-	
+</div>	
 <body>
 </html>
+<script>
+const btn = document.getElementById('print_button');
+	btn.addEventListener('click', () => {
+		btn.style.display = 'none';
+		window.print(); 
+		btn.style.display = 'block';
+	});
+</script>
