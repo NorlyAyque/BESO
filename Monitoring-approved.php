@@ -8,7 +8,7 @@ include("Connection.php");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring - Approved</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReport-style.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReports-style.css">
 
 </head>
 <body>

@@ -12,7 +12,7 @@ $DateToday = date("Y-m-d"); //YYYY-mm-dd
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReport-style.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReports-style.css">
 
 </head>
 <body>
@@ -106,29 +106,30 @@ if(isset($_GET['verify'])){
 
 	echo "<center>
 
-	<table border='0'>
+	<table class='headmes'>
 		<tr>
-			<td colspan='2' style='text-align:center'> <h2> PROMPT </h2> </td>
+			<th colspan='2' style='text-align:center'> <h2> PROMPT </h2> </th>
 		</tr>
 		<tr>
-			<td style='text-align:right'> Create Monitoring for: </td>
-			<td style='text-align:left'> <h3><u>$Title</u></h3></td>
+			<td> Create Monitoring for: </td>
+			<td> <h3>$Title</h3></td>
+		</tr>
+
+		<tr>
+			<td > Project End Date: </td>
+			<td > <h3>$End_Date</h3></td>
 		</tr>
 		<tr>
-			<td style='text-align:right'> Project End Date: </td>
-			<td style='text-align:left'> <h3><u>$End_Date</u></h3></td>
+			<td > Monitoring Frequency: </td>
+			<td > <h3>$Frequency</h3></td>
 		</tr>
 		<tr>
-			<td style='text-align:right'> Monitoring Frequency: </td>
-			<td style='text-align:left'> <h3><u>$Frequency</u></h3></td>
+			<td> Date Today: </td>
+			<td > <h3>$display_date</h3></td>
 		</tr>
 		<tr>
-			<td style='text-align:right'> Date Today: </td>
-			<td style='text-align:left'> <h3><u>$display_date</u></h3></td>
-		</tr>
-		<tr>
-			<td style='text-align:left'> <a href='Monitoring.php'>CANCEL </a> </td>	
-			<td style='text-align:right'><a href='CreateMonitoring.php?create=$PID'>PROCEED</a></td>
+			<td colspan='2' style='text-align:right' > <a href='Monitoring.php' class='cancel'>CANCEL</a> 
+			<a href='CreateMonitoring.php?create=$PID'  class='proceed'>PROCEED</a></td>
 		</tr>
 	</table>
 	";

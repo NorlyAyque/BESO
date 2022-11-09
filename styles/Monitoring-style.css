@@ -397,3 +397,8 @@ cursor: pointer;
   background-color:  #4CAF20;
   color: white;
 }
+
+.headmes{
+	border:1px solid black;
+	margin:auto;
+}
