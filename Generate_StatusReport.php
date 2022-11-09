@@ -24,7 +24,9 @@ if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
 </head>
 <body>
 <div class="content">
-
+<div class="print">
+	<button id="print_button"> PRINT </button>
+</div>
 <table class="header1">
 		<tr>
 			<td colspan="3"><img src ="images/logo.png" class="logo">Reference No. : BatStateU-FO-ESO-03</td>
@@ -172,9 +174,7 @@ while($result = mysqli_fetch_array($command))
 		</tr>
 		</tbody>
 </table>
-<div class="print">
-	<button id="print_button"> PRINT </button>
-</div>
+
 </div>	
 <body>
 </html>

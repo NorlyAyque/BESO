@@ -23,6 +23,9 @@ if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
 
 <body>
 <div class="content">
+<div class="print">
+		<button id="print_button"> PRINT </button>
+	</div>
 	<table class="table-class">
 		<tr>
 			<th><center> Quarterly Monitoring Report</center></th>
@@ -189,9 +192,7 @@ while($result = mysqli_fetch_array($command))
 	
 	
 	
-	<div class="print">
-	<button id="print_button"> PRINT </button>
-</div>
+	
 </div>	
 
 </body>
