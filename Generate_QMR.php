@@ -34,7 +34,7 @@ if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
 			<td><center>Extension Services <br>Programs,Acivities and Projects</center></td>
 		</tr>
 		<tr>
-				<td><center>Fiscal Year: <u><b><?php echo $Year;?></b></u> Quarter: <u><b><?php echo $Quarter;?></b></u></center></td>
+			<td><center>Fiscal Year: <u><b><?php echo $Year;?></b></u> Quarter: <u><b><?php echo $Quarter;?></b></u></center></td>
 		</tr>
 	</table>
 	<table class="table-trainess">
@@ -70,10 +70,10 @@ if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
 			<td></td>
 		</tr>
 		<tr>
-			<td colspan="13"> <center> Alangilan Campus </center></td>
+			<td colspan="13"> <center> <b> Alangilan Campus </b></center></td>
 		</tr>
 		<tr>
-			<td colspan="13"> College of Industrial Technology </td>
+			<td colspan="13"> <b> College of Industrial Technology </b></td>
 		</tr>
 <?php
 //Display all PAPS under CIT
@@ -84,6 +84,15 @@ $sql = ("SELECT * FROM create_alangilan WHERE
 		(Remarks = 'Evaluated')");
 $command = $con->query($sql) or die("Error finding Offices under CIT");
 $No = 0;
+$TotalDuration = 0;
+$TotalTrainees = 0;
+$TotalWeight = 0;
+$TotalP = 0;
+$TotalF = 0;
+$TotalS = 0;
+$TotalVS = 0;
+$TotalE = 0;
+
 while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
@@ -138,12 +147,19 @@ while($result = mysqli_fetch_array($command))
 			
 		$Weighted = $Duration * $Trainees;
 		$No++; //For auto numbering
+		
+		$TotalDuration += $Duration;
+		$TotalTrainees += $Trainees;
+		$TotalWeight += $Weighted;
+		$TotalP += $Poor;
+		$TotalF += $Fair;
+		$TotalS += $Satisfactory;
+		$TotalVS += $VerySatisfactory;
+		$TotalE += $Excellent;
 ?>
 		<tr class="font">
-			<td> <?php echo $No;?></td> <!-- No -->
-			<td>	
-				<textarea style="width:200px;"><?php echo $Title; ?></textarea></td> <!-- Title of the Training -->
-		
+			<td><?php echo $No;?></td> <!-- No -->
+			<td><textarea style="width:200px;"><?php echo $Title; ?></textarea></td> <!-- Title of the Training -->
 			<td><textarea style="width:100px;"><?php echo $Date1; ?></textarea></td> <!-- Date From -->
 			<td><textarea style="width:100px;"><?php echo $Date2; ?></textarea></td> <!-- Date To -->
 			<td><textarea style="width:90px;"><?php echo $Duration; ?></textarea></td> <!-- Duration-->
@@ -155,10 +171,211 @@ while($result = mysqli_fetch_array($command))
 			<td><textarea style="width:50px;"><?php echo $VerySatisfactory; ?></textarea></td> <!-- VS -->
 			<td><textarea style="width:50px;"><?php echo $Excellent; ?></textarea></td> <!-- E -->
 			<td><textarea><?php echo ""; ?></textarea></td> <!-- Proof -->
-	
 		</tr>
 <?php }}?>
+		<tr>
+			<td colspan="13"> <b> College of Informatics and Computing Sciences </b></td>
+		</tr>
+<?php
+//Display all PAPS under CICS
+$sql = ("SELECT * FROM create_alangilan WHERE 
+		(Year = $Year) AND
+		(Quarter = $Q) AND
+		(Office LIKE '%CICS%' OR Office LIKE '%College of Informatics and Computing Sciences%') AND
+		(Remarks = 'Evaluated')");
+$command = $con->query($sql) or die("Error finding Offices under CIT");
+//$No = 0;
+while($result = mysqli_fetch_array($command))
+	{
+		$PID = $result['ProposalID'];
+		$Title = $result['Title'];
+		$SD = $result['Start_Date'];	$CDate1 = date_create("$SD"); $Date1 = date_format($CDate1,"m/d/Y");
+		$ED = $result['End_Date'];		$CDate2 = date_create("$ED"); $Date2 = date_format($CDate2,"m/d/Y");
+
+		$ST = $result['Start_Time'];
+		$ET = $result['End_Time'];
+
+		$time1 = date_create($ST); 		$Start_Time = date_format($time1,"h:i:s A");
+		$time2 = date_create($ET); 		$End_Time = date_format($time2,"h:i:s A");
+
+		//Getting Number of Days
+		$dateinterval = date_diff($CDate1, $CDate2);
+		$x = $dateinterval->format('%a');//Whole Number
+
+		if ($x == 0){ //Same Day = 0 = 1 day (8hrs)
+			$NoOfDays = $dateinterval->format('%a') + 1;
+		}else{ //Not same day = 2 days or more
+			$NoOfDays = $dateinterval->format('%a') +1;
+		}
+	
+		//Getting Number of Hours
+		$timeinterval = date_diff($time1, $time2);
+		$TimeResult = $timeinterval->format('%h'); //8 hrs = 1 DAY (7:00-4:00 = 9hrs - 1 = 8hrs)
+	
+		$NoOfHours = $TimeResult * $NoOfDays; //Display number of hours depends on number of days
+		if ($NoOfHours <= 7 ){
+			 $Duration = "0.5";
+		}else if ($NoOfHours <= 8 OR $NoOfHours <= 15){
+			 $Duration = "1";
+		}else if ($NoOfHours <= 16 OR $NoOfHours <= 23){
+			 $Duration = "2";
+		}else if ($NoOfHours <= 24 OR $NoOfHours <= 31){
+			 $Duration = "3";
+		}else if ($NoOfHours >= 32 ){
+			 $Duration = "4";
+		}
+
+		//Getting number of trainees from Evaluation MFT 
+		$sql2 = ("SELECT * FROM evaluation_alangilan WHERE ProposalID ='$PID'");
+		$command2 = $con->query($sql2) or die("Error finding Total number of Trainees");
+		while($result2 = mysqli_fetch_array($command2))
+		{
+			$Trainees = $result2['MFT'];
+			$Excellent = $result2['Eval1AT'];
+			$VerySatisfactory = $result2['Eval1BT'];
+			$Satisfactory = $result2['Eval1CT'];
+			$Fair = $result2['Eval1DT'];
+			$Poor = $result2['Eval1ET'];
+			
+		$Weighted = $Duration * $Trainees;
+		$No++; //For auto numbering
+
+		$TotalDuration += $Duration;
+		$TotalTrainees += $Trainees;
+		$TotalWeight += $Weighted;
+		$TotalP += $Poor;
+		$TotalF += $Fair;
+		$TotalS += $Satisfactory;
+		$TotalVS += $VerySatisfactory;
+		$TotalE += $Excellent;
+?>
+		<tr class="font">
+			<td><?php echo $No;?></td> <!-- No -->
+			<td> <textarea style="width:200px;"><?php echo $Title; ?></textarea></td> <!-- Title of the Training -->
+			<td><textarea style="width:100px;"><?php echo $Date1; ?></textarea></td> <!-- Date From -->
+			<td><textarea style="width:100px;"><?php echo $Date2; ?></textarea></td> <!-- Date To -->
+			<td><textarea style="width:90px;"><?php echo $Duration; ?></textarea></td> <!-- Duration-->
+			<td><textarea style="width:100px;"><?php echo $Trainees; ?></textarea></td> <!-- No. of Trainees -->
+			<td><textarea style="width:130px;"><?php echo $Weighted; ?></textarea></td> <!-- Weighted -->
+			<td><textarea style="width:50px;"><?php echo $Poor; ?></textarea></td> <!-- P -->
+			<td><textarea style="width:50px;"><?php echo $Fair; ?></textarea></td> <!-- F -->
+			<td><textarea style="width:50px;"><?php echo $Satisfactory; ?></textarea></td> <!-- S -->
+			<td><textarea style="width:50px;"><?php echo $VerySatisfactory; ?></textarea></td> <!-- VS -->
+			<td><textarea style="width:50px;"><?php echo $Excellent; ?></textarea></td> <!-- E -->
+			<td><textarea><?php echo ""; ?></textarea></td> <!-- Proof -->
+		</tr>
+<?php }}?>
+
+<tr>
+			<td colspan="13"> <b>College of Engineering, Architecture and Fine Arts </b></td>
+		</tr>
+<?php
+//Display all PAPS under CICS
+$sql = ("SELECT * FROM create_alangilan WHERE 
+		(Year = $Year) AND
+		(Quarter = $Q) AND
+		(Office LIKE '%CEAFA%' OR Office LIKE '%College of Engineering, Architecture and Fine Artss%') AND
+		(Remarks = 'Evaluated')");
+$command = $con->query($sql) or die("Error finding Offices under CIT");
+//$No = 0;
+while($result = mysqli_fetch_array($command))
+	{
+		$PID = $result['ProposalID'];
+		$Title = $result['Title'];
+		$SD = $result['Start_Date'];	$CDate1 = date_create("$SD"); $Date1 = date_format($CDate1,"m/d/Y");
+		$ED = $result['End_Date'];		$CDate2 = date_create("$ED"); $Date2 = date_format($CDate2,"m/d/Y");
+
+		$ST = $result['Start_Time'];
+		$ET = $result['End_Time'];
+
+		$time1 = date_create($ST); 		$Start_Time = date_format($time1,"h:i:s A");
+		$time2 = date_create($ET); 		$End_Time = date_format($time2,"h:i:s A");
+
+		//Getting Number of Days
+		$dateinterval = date_diff($CDate1, $CDate2);
+		$x = $dateinterval->format('%a');//Whole Number
+
+		if ($x == 0){ //Same Day = 0 = 1 day (8hrs)
+			$NoOfDays = $dateinterval->format('%a') + 1;
+		}else{ //Not same day = 2 days or more
+			$NoOfDays = $dateinterval->format('%a') +1;
+		}
+	
+		//Getting Number of Hours
+		$timeinterval = date_diff($time1, $time2);
+		$TimeResult = $timeinterval->format('%h'); //8 hrs = 1 DAY (7:00-4:00 = 9hrs - 1 = 8hrs)
+	
+		$NoOfHours = $TimeResult * $NoOfDays; //Display number of hours depends on number of days
+		if ($NoOfHours <= 7 ){
+			 $Duration = "0.5";
+		}else if ($NoOfHours <= 8 OR $NoOfHours <= 15){
+			 $Duration = "1";
+		}else if ($NoOfHours <= 16 OR $NoOfHours <= 23){
+			 $Duration = "2";
+		}else if ($NoOfHours <= 24 OR $NoOfHours <= 31){
+			 $Duration = "3";
+		}else if ($NoOfHours >= 32 ){
+			 $Duration = "4";
+		}
+
+		//Getting number of trainees from Evaluation MFT 
+		$sql2 = ("SELECT * FROM evaluation_alangilan WHERE ProposalID ='$PID'");
+		$command2 = $con->query($sql2) or die("Error finding Total number of Trainees");
+		while($result2 = mysqli_fetch_array($command2))
+		{
+			$Trainees = $result2['MFT'];
+			$Excellent = $result2['Eval1AT'];
+			$VerySatisfactory = $result2['Eval1BT'];
+			$Satisfactory = $result2['Eval1CT'];
+			$Fair = $result2['Eval1DT'];
+			$Poor = $result2['Eval1ET'];
+			
+		$Weighted = $Duration * $Trainees;
+		$No++; //For auto numbering
+
+		$TotalDuration += $Duration;
+		$TotalTrainees += $Trainees;
+		$TotalWeight += $Weighted;
+		$TotalP += $Poor;
+		$TotalF += $Fair;
+		$TotalS += $Satisfactory;
+		$TotalVS += $VerySatisfactory;
+		$TotalE += $Excellent;
+?>
+		<tr class="font">
+			<td><?php echo $No;?></td> <!-- No -->
+			<td><textarea style="width:200px;"><?php echo $Title; ?></textarea></td> <!-- Title of the Training -->
+			<td><textarea style="width:100px;"><?php echo $Date1; ?></textarea></td> <!-- Date From -->
+			<td><textarea style="width:100px;"><?php echo $Date2; ?></textarea></td> <!-- Date To -->
+			<td><textarea style="width:90px;"><?php echo $Duration; ?></textarea></td> <!-- Duration-->
+			<td><textarea style="width:100px;"><?php echo $Trainees; ?></textarea></td> <!-- No. of Trainees -->
+			<td><textarea style="width:130px;"><?php echo $Weighted; ?></textarea></td> <!-- Weighted -->
+			<td><textarea style="width:50px;"><?php echo $Poor; ?></textarea></td> <!-- P -->
+			<td><textarea style="width:50px;"><?php echo $Fair; ?></textarea></td> <!-- F -->
+			<td><textarea style="width:50px;"><?php echo $Satisfactory; ?></textarea></td> <!-- S -->
+			<td><textarea style="width:50px;"><?php echo $VerySatisfactory; ?></textarea></td> <!-- VS -->
+			<td><textarea style="width:50px;"><?php echo $Excellent; ?></textarea></td> <!-- E -->
+			<td><textarea><?php echo ""; ?></textarea></td> <!-- Proof -->
+		</tr>
+<?php }}?>
+		<tr style="font-weight:bold;">
+			<td></td>
+			<td>Sub-total: <?php echo $No; ?></td><!-- Sub Total-->
+			<td></td>
+			<td></td>
+			<td align="center"><?php echo $TotalDuration; ?></td> <!-- Total Duration-->
+			<td align="center"><?php echo $TotalTrainees; ?></td> <!-- Total Trainees-->
+			<td align="center"><?php echo $TotalWeight; ?></td> <!-- Total Weight-->
+			<td align="center"><?php echo $TotalP; ?></td> <!-- Total P-->
+			<td align="center"><?php echo $TotalF; ?></td> <!-- Total F-->
+			<td align="center"><?php echo $TotalS; ?></td> <!-- Total S-->
+			<td align="center"><?php echo $TotalVS; ?></td> <!-- Total VS-->
+			<td align="center"><?php echo $TotalE; ?></td> <!-- Total E-->
+			<td></td>
+		</tr>
+
 	</table>
+
 	<table class="legend">
 		<tr>
 			<td>[1] - 0 Less than 8hrs; 1 = 8 hours or 1 day; 2 = 2 days; 3 = to 4 days; 5 days or more</td>
@@ -185,19 +402,11 @@ while($result = mysqli_fetch_array($command))
 			<td><textarea></textarea></td>
 			<td><textarea></textarea></td>
 			<td><textarea></textarea></td>
-			
 		</tr>
 	</table>
-	
-	
-	
-	
-	
 </div>	
-
 </body>
 </html>
-
 
 <script>
 const btn = document.getElementById('print_button');
