@@ -88,7 +88,53 @@ $DateToday = date("Y-m-d"); //YYYY-mm-dd
 				<ion-icon name="menu"></ion-icon>
 				</div>	
 			</div>
-			
+<?php
+if(isset($_GET['verify'])){
+	$PID = $_GET['verify'];
+	$End_Date = $_GET['EndDate'];
+	
+	$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
+	$command = $con->query($sql) or die("Error Fethcing data");
+    while($result = mysqli_fetch_array($command))
+	{
+		$Title = $result['Title'];
+		$Frequency = $result['Frequency'];
+	}
+
+	$date = date_create($DateToday);
+	$display_date = date_format($date,"M, d Y");
+
+	echo "<center>
+
+	<table border='0'>
+		<tr>
+			<td colspan='2' style='text-align:center'> <h2> PROMPT </h2> </td>
+		</tr>
+		<tr>
+			<td style='text-align:right'> Create Monitoring for: </td>
+			<td style='text-align:left'> <h3><u>$Title</u></h3></td>
+		</tr>
+		<tr>
+			<td style='text-align:right'> Project End Date: </td>
+			<td style='text-align:left'> <h3><u>$End_Date</u></h3></td>
+		</tr>
+		<tr>
+			<td style='text-align:right'> Monitoring Frequency: </td>
+			<td style='text-align:left'> <h3><u>$Frequency</u></h3></td>
+		</tr>
+		<tr>
+			<td style='text-align:right'> Date Today: </td>
+			<td style='text-align:left'> <h3><u>$display_date</u></h3></td>
+		</tr>
+		<tr>
+			<td style='text-align:left'> <a href='Monitoring.php'>CANCEL </a> </td>	
+			<td style='text-align:right'><a href='CreateMonitoring.php?create=$PID'>PROCEED</a></td>
+		</tr>
+	</table>
+	";
+	echo "<br>";
+}
+?>
 		<table class="proposals" id="MyTable">
 			<tr>
 				<th colspan="6">
@@ -146,13 +192,13 @@ while($result = mysqli_fetch_array($command))
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
-				<td><?php echo date_format($date,"M, d Y"); ?></td> 
+				<td><?php echo $dt = date_format($date,"M, d Y"); ?></td> 
 				<td><?php echo $Frequency; ?></td> 	
 				<td><?php echo $Remarks; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 					<!-- <a href="CreateMonitoring.php?create=<?php //echo $PID; ?>" button class ="Pbtn2">CREATE MONITORING</button> </a> -->
-					<a href="Monitoring.php?checkdate=<?php echo $PID; ?>" button class ="Pbtn2">CREATE MONITORING</button> </a> 
+					<a href="Monitoring.php?verify=<?php echo $PID; ?>&EndDate=<?php echo $dt; ?>" button class ="Pbtn2">CREATE MONITORING</button> </a> 
 					
 				</td> 
 			</tr>
@@ -225,30 +271,6 @@ if(isset($_GET['reject'])){
 			alert('Monitoring ID $MID REJECTED');	
 			window.location.href='Monitoring.php';
 		</script>";
-}
-
-
-if(isset($_GET['checkdate'])){
-	$PID = $_GET['checkdate'];
-	
-	$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
-	$command = $con->query($sql) or die("Error Fethcing data");
-    while($result = mysqli_fetch_array($command))
-	{
-		$End_Date = $result['End_Date'];
-		$Frequency = $result['Frequency'];
-
-	}
-
-	$dt = strtotime($End_Date);
-	
-	if ($Frequency == "Monthly"){
-
-	}
-	echo "<center>".$hi = date("Y-m-d", strtotime("+1 month", $dt));
-	echo "<br>".$hi;
-
-	
 }
 ?>
 
