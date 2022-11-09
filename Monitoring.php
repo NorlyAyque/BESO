@@ -4,6 +4,7 @@ include("Connection.php");
 
 date_default_timezone_set("Asia/Manila");
 //$DateToday = date("Y-m-d");
+$DateToday = date("Y-m-d"); //YYYY-mm-dd
 ?>
 
 <!DOCTYPE html>
@@ -130,10 +131,9 @@ date_default_timezone_set("Asia/Manila");
 				<th width="220x";>  </th> <!-- Buttons, View and Create Monitoring -->
 			</tr>
 <?php
-$DateToday = date("Y-m-d");
 
 //Display Proposal that needs to Monitor
-$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Approved' ");
+$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Evaluated' ORDER BY ProposalID DESC");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
@@ -151,7 +151,8 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Remarks; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
-					<a href="CreateMonitoring.php?create=<?php echo $PID; ?>" button class ="Pbtn2">CREATE MONITORING</button> </a> 
+					<!-- <a href="CreateMonitoring.php?create=<?php //echo $PID; ?>" button class ="Pbtn2">CREATE MONITORING</button> </a> -->
+					<a href="Monitoring.php?checkdate=<?php echo $PID; ?>" button class ="Pbtn2">CREATE MONITORING</button> </a> 
 					
 				</td> 
 			</tr>
@@ -185,7 +186,7 @@ while($result = mysqli_fetch_array($command))
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
-<body>
+</body>
 </html>
 
 
@@ -224,6 +225,30 @@ if(isset($_GET['reject'])){
 			alert('Monitoring ID $MID REJECTED');	
 			window.location.href='Monitoring.php';
 		</script>";
+}
+
+
+if(isset($_GET['checkdate'])){
+	$PID = $_GET['checkdate'];
+	
+	$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
+	$command = $con->query($sql) or die("Error Fethcing data");
+    while($result = mysqli_fetch_array($command))
+	{
+		$End_Date = $result['End_Date'];
+		$Frequency = $result['Frequency'];
+
+	}
+
+	$dt = strtotime($End_Date);
+	
+	if ($Frequency == "Monthly"){
+
+	}
+	echo "<center>".$hi = date("Y-m-d", strtotime("+1 month", $dt));
+	echo "<br>".$hi;
+
+	
 }
 ?>
 

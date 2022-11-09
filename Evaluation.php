@@ -365,8 +365,6 @@ if(isset($_GET['approved'])){
 		}
 	}
 	
-	
-
 
 	//Updating Project Status
 	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'Approved' WHERE EvaluationID = $EID ");
@@ -374,7 +372,7 @@ if(isset($_GET['approved'])){
 	echo "
 		<script>
 			alert('Evaluation ID $EID APPROVED');	
-			//window.location.href='Evaluation.php';
+			window.location.href='Evaluation.php';
 		</script>";
 	
 }

@@ -153,7 +153,7 @@ $sql = ("SELECT * FROM create_alangilan WHERE
 		(ProjectStatus = 'Approved' AND 
 		Remarks = 'Evaluated' AND
 		Remarks_2 != '') AND
-		(Remarks_3 = 'Done Impact Assessment' OR Remarks_3 = '')
+		(Remarks_3 = 'Completed' OR Remarks_3 = '')
 	");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))

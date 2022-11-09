@@ -6,6 +6,7 @@ $YearToday = date("Y");
 ?>
 
 <?php
+//Display Data of Target and Actual
 $sql = ("SELECT * FROM target_alangilan WHERE Year = $YearToday");
 $command = $con->query($sql) or die("Error Fethcing data");
 while($result = mysqli_fetch_array($command))
@@ -58,6 +59,11 @@ while($result = mysqli_fetch_array($command))
 	$dbBT_Q4 = $result["BT_Q4"];
 	$dbBT_QT = $result["BT_QT"];
 }
+?>
+
+<?php
+//Getting number of percentage
+
 ?>
 <!DOCTYPE html>
 <html>

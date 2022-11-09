@@ -204,7 +204,7 @@ while($result = mysqli_fetch_array($command))
 if(isset($_GET['MarkAsComplete'])){
 	$PID = $_GET['MarkAsComplete'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks_3 = 'Done Impact Assessment' WHERE ProposalID = $PID ");
+	$sql = ("UPDATE create_alangilan SET Remarks_3 = 'Completed' WHERE ProposalID = $PID ");
 	$command = $con->query($sql) or die("Error Rejecting Proposal");
 	echo "
 		<script>
