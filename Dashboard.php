@@ -70,7 +70,7 @@ while($result = mysqli_fetch_array($command))
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dash.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
@@ -164,7 +164,8 @@ while($result = mysqli_fetch_array($command))
 						<th colspan="11"> 
 							<div id="Enable_Dropdown" onclick="Enable_Dropdown()">Create Target</div>
 							
-								<p id="Dropdown" style="display:none"> Set target for year: 
+								<a id="Dropdown" style="display:none"> 
+									Set target for year: 
 									<select name="Year" id="Year_DD" required>
 										<option value="">Select Year</option>
 										<option value="2022">2022</option>
@@ -176,17 +177,18 @@ while($result = mysqli_fetch_array($command))
 										<option value="2028">2028</option>
 										<option value="2029">2029</option>
 										<option value="2030">2030</option>
-									</select>			
-									<input type="submit" id="Createbtn" name="Createbtn" value="CREATE"><br>
+									</select>	
+									<input type="submit" id="Createbtn" name="Createbtn" value="CREATE">
 									<span id="Cancel" onclick="Cancel()">CANCEL</span>
-								</p>						
+								
+								</a>						
 						</th>	
-						<th colspan="12">
-							<div id="Enable_SaveBtn" onclick="Enable_SaveBtn()">Edit Target/Actual</div>
-							<p id="savebtn" style="display:none">
-								<input type="submit" name="Savebtn" value="Save"> <br>
-								<span id="Cancel" onclick="Cancel()">CANCEL</span>
-							</p>
+						<th colspan="12" class="SaveCancel">
+							<a id="Enable_SaveBtn" onclick="Enable_SaveBtn()">Edit Target/Actual</a>
+							<a id="savebtn" style="display:none">
+									<input type="submit" class="Ssave" name="Savebtn" value="Save"> 
+									<span id="Cancel" onclick="Cancel()">CANCEL</span>
+							</a>
 						</th>
 					</tr>
 					<tr>
@@ -612,7 +614,9 @@ function Cancel(){
 }
 </script>
 
+
 <?php
+
 if (isset($_POST['Createbtn'])) {//Creating new target
 	
 	$Year = $_POST["Year"];

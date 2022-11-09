@@ -12,7 +12,7 @@ $Campus = $_SESSION["Campus"];
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="styles/Dash.css">
+<link rel="stylesheet" type="text/css" href="styles/Dash-style.css">
 <style>
  .text{
 	margin-top:auto;

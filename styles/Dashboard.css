@@ -361,3 +361,125 @@ margin-left: 100px;
 	background-color: lightgrey;}
 
 
+#savebtn input{
+	
+	border-radius:3px;
+	background-color:white; 
+	color: black;
+	cursor:pointer;
+	padding: 10px 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+	width:10%;
+	height:38px;
+	padding:7px;
+}
+#savebtn input:hover{
+	background-color:#4CAF50; 
+	color:white;
+}
+
+#savebtn span{
+	border-radius:3px;
+	background-color:white; 
+	color: black;
+	cursor:pointer;
+	padding: 10px 15px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+		margin-top:10px;
+}
+#savebtn span:hover{
+	cursor:pointer;
+	background-color:#FF884B;
+	color:white;
+}
+
+
+#Enable_SaveBtn{
+	width:30%;
+	border-radius:3px;
+	background-color:white; 
+	color: black;
+	cursor:pointer;
+	padding: 10px 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+	
+}
+#Enable_SaveBtn:hover{
+	cursor:pointer;
+	background-color: #168aad; 
+	color:white;
+}
+
+#Enable_Dropdown{
+	margin:auto;
+	width:30%;
+	border-radius:3px;
+	background-color:white; 
+	color: black;
+	cursor:pointer;
+	padding: 10px 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+}
+
+#Enable_Dropdown:hover{
+	cursor:pointer;
+	background-color: #168aad; 
+	color:white;
+}
+
+
+
+#Dropdown select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  
+}
+#Dropdown option{
+	font-size:15px;
+	cursor:pointer;
+}
+
+
+#Dropdown input{
+	border-radius:3px;
+	background-color:white; 
+	color: black;
+	cursor:pointer;
+	padding: 10px 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+	width:10%;
+	height:38px;
+	padding:7px;
+}
+#Dropdown input:hover{
+	background-color:#4CAF50; 
+	color:white;
+}
+	
+	
+
+
+#Dropdown span{
+	border-radius:3px;
+	background-color:white; 
+	color: black;
+	cursor:pointer;
+	padding: 10px 15px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+		margin-top:10px;
+}
+#Dropdown span:hover{
+	cursor:pointer;
+	background-color:#FF884B;
+	color:white;
+}

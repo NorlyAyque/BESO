@@ -8,7 +8,7 @@ session_start();
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Sign out</title>
-<link rel="stylesheet" type="text/css" href="styles/Account.css">
+<link rel="stylesheet" type="text/css" href="styles/Account-style.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 <style>
@@ -134,13 +134,13 @@ session_start();
 				</a>
 			</li>
 			<li>
-				<a class="active" href="Account.php">
+				<a  href="Account.php">
 					<span class ="icon"> <ion-icon name="person-add-outline"></ion-icon> </span>
 					<span class ="title"> Accounts</span>
 				</a>
 			</li>
 			<li>
-				<a href="Signout.php">
+				<a  class="active" href="Signout.php">
 					<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
 					<span class ="title"> Sign out</span>
 				</a>
