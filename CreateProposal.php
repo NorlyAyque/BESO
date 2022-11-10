@@ -455,7 +455,7 @@ $yearQuarter = ceil($month / 3);
 							</div> 
 								 
 								
-						<label> XVl. Functional Relationships with the partner <i>(Duties/Task of the Partner Agencies)</i><label>
+						<label> XVl. Functional Relationships with the Partner <i>(Duties/Task of the Partner Agencies)</i><label>
 						<textarea placeholder="type here..." name="Functional" required></textarea>
 						
 						<label> XVll. Monitoring and Evaluation Mechanics/Plan<label>
