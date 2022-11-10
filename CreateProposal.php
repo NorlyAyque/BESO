@@ -100,7 +100,7 @@ $yearQuarter = ceil($month / 3);
 			<table class="header">
 				<tr class="title">
 					<th colspan="3">
-						EXTENSION PROGRAM PLAN/PROJECT PROPOSAL	
+						EXTENSION PROGRAM PLAN / PROPOSAL	
 					</th> 
 				</tr>
 				<tr class ="select">

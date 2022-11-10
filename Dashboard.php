@@ -70,7 +70,7 @@ while($result = mysqli_fetch_array($command))
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>DashBoard BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboards.css">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
@@ -155,13 +155,13 @@ while($result = mysqli_fetch_array($command))
 			<table class="input">
 				<tbody>
 					<tr>
-						<th colspan="23"> 
+						<th colspan="18"> 
 							<h2> EXTENSION SERVICES <?php echo $YearToday;?> TARGETS </h2>
 							<p> BATANGAS STATE UNIVERSITY ALANGILAN </p>
 						</th>
 					</tr>
 					<tr>
-						<th colspan="11"> 
+						<th colspan="7"> 
 							<div id="Enable_Dropdown" onclick="Enable_Dropdown()">Create Target</div>
 							
 								<a id="Dropdown" style="display:none"> 
@@ -183,7 +183,7 @@ while($result = mysqli_fetch_array($command))
 								
 								</a>						
 						</th>	
-						<th colspan="12" class="SaveCancel">
+						<th colspan="5" class="SaveCancel">
 							<a id="Enable_SaveBtn" onclick="Enable_SaveBtn()">Edit Target/Actual</a>
 							<a id="savebtn" style="display:none">
 									<input type="submit" class="Ssave" name="Savebtn" value="Save"> 
@@ -194,16 +194,19 @@ while($result = mysqli_fetch_array($command))
 					<tr>
 						<th rowspan="3"width="200px";>College</p> </th>
 						<th rowspan="3">Number of Programs</th>
-						<th colspan="20">Indicator</th>
-						<th rowspan="3">Budget </th>
+						<th colspan="15">Indicator</th>
+						<!--<th rowspan="3">Budget </th>-->
+						
+						
+						
 						
 					</tr>
 					<tr>
-						<th colspan="5">Number of Active Partnership with LGUs,Industries,NGOs,NGAs, SMEs, and other stake holder as a result of extension activities <br> (TARGET)</th>
-						<th colspan="5">Number of Trainees weight by length of training </th>
+						<th colspan="5">Number of Active Partnership with LGUs, Industries, NGOs, NGAs, SMEs, and other stakeholders as a result of extension activities <br> (TARGET)</th>
+					<!--	<th colspan="5">Number of Trainees weight by length of training </th>-->
 						<th colspan="5">Number of extension programs organized and supported consistent with the SUC's mandated and priority programs <br> (ACTUAL) </th>
-						<th colspan="5">Percentage of beneficiaries who rate the training course/s and advisory service as satisfactory or higher in terms of quality and relevance</th>
-						
+					<!--	<th colspan="5">Percentage of beneficiaries who rate the training course/s and advisory service as satisfactory or higher in terms of quality and relevance</th>
+						-->
 					</tr>
 					<tr>
 						<td>1st Qrt</td>
@@ -211,23 +214,25 @@ while($result = mysqli_fetch_array($command))
 						<td>3rd Qrt</td>
 						<td>4th Qrt</td>
 						<td>Total</td>
+						<!-- 
 						<td>1st Qrt</td>
 						<td>2nd Qrt</td>
 						<td>3rd Qrt</td>
 						<td>4th Qrt</td>
 						<td>Total</td>
-						
+						-->
 						<td>1st Qrt</td>
 						<td>2nd Qrt</td>
 						<td>3rd Qrt</td>
 						<td>4th Qrt</td>
 						<td>Total</td>
-						
+						<!--
 						<td>1st Qrt</td>
 						<td>2nd Qrt</td>
 						<td>3rd Qrt</td>
 						<td>4th Qrt</td>
 						<td>Total </td>
+						-->
 					</tr>
 					<tr class="cols">
 						<td colspan="23"></td>
@@ -241,26 +246,26 @@ while($result = mysqli_fetch_array($command))
 						<td><input type = "number" min="0" name="CEAFA_AQ3" id="CEAFA_AQ3" value="<?php echo $dbCEAFA_AQ3;?>" onchange="CalCEAFA_A()" REQUIRED></td>
 						<td><input type = "number" min="0" name="CEAFA_AQ4" id="CEAFA_AQ4" value="<?php echo $dbCEAFA_AQ4;?>" onchange="CalCEAFA_A()" REQUIRED></td>
 						<td><input type = "number" min="0" name="CEAFA_AQT" id="CEAFA_AQT" value="<?php echo $dbCEAFA_AQT;?>" readonly> </td> 
-						
-						<td><?php echo "A";?></td>
-						<td><?php echo "B";?></td>
-						<td><?php echo "C";?></td>
-						<td><?php echo "D";?></td>
-						<td><?php echo "E";?></td>
-
+						<!--
+						<td><?php //echo "A";?></td>
+						<td><?php //echo "B";?></td>
+						<td><?php //echo "C";?></td>
+						<td><?php //echo "D";?></td>
+						<td><?php //echo "E";?></td>
+						-->
 						<td><input type = "number" min="0" name="CEAFA_BQ1" id="CEAFA_BQ1" value="<?php echo $dbCEAFA_BQ1;?>" onchange="CalCEAFA_B()"></td>
 						<td><input type = "number" min="0" name="CEAFA_BQ2" id="CEAFA_BQ2" value="<?php echo $dbCEAFA_BQ2;?>" onchange="CalCEAFA_B()"></td>
 						<td><input type = "number" min="0" name="CEAFA_BQ3" id="CEAFA_BQ3" value="<?php echo $dbCEAFA_BQ3;?>" onchange="CalCEAFA_B()"></td>
 						<td><input type = "number" min="0" name="CEAFA_BQ4" id="CEAFA_BQ4" value="<?php echo $dbCEAFA_BQ4;?>" onchange="CalCEAFA_B()"></td>
 						<td><input type = "number" min="0" name="CEAFA_BQT" id="CEAFA_BQT" value="<?php echo $dbCEAFA_BQT;?>" readonly> </td> 
 
-						<td><?php echo "1";?></td>
-						<td><?php echo "2";?></td>
-						<td><?php echo "3";?></td>
-						<td><?php echo "4";?></td>
-						<td><?php echo "5";?></td>
-						
-						<td  rowspan="3" class="input1" ><?php echo "Total Budget";?></td>
+						<!--<td><?php //echo "1";?></td>
+						<td><?php //echo "2";?></td>
+						<td><?php //echo "3";?></td>
+						<td><?php //echo "4";?></td>
+						<td><?php //echo "5";?></td>
+						-->
+						<!--<td  rowspan="3" class="input1" ><?php //echo "Total Budget";?></td>-->
 					</tr>
 					<tr>
 						<th>CICS</th>
@@ -271,24 +276,24 @@ while($result = mysqli_fetch_array($command))
 						<td><input type = "number" min="0" name="CICS_AQ4" id="CICS_AQ4" value="<?php echo $dbCICS_AQ4;?>" onchange="CalCICS_A()"></td>
 						<td><input type = "number" min="0" name="CICS_AQT" id="CICS_AQT" value="<?php echo $dbCICS_AQT;?>" readonly> </td> 
 						
-						<td><?php echo "F";?></td>
-						<td><?php echo "G";?></td>
-						<td><?php echo "H";?></td>
-						<td><?php echo "I";?></td>
-						<td><?php echo "J";?></td>
-
+						<!--<td><?php //echo "F";?></td>
+						<td><?php //echo "G";?></td>
+						<td><?php //echo "H";?></td>
+						<td><?php //echo "I";?></td>
+						<td><?php //echo "J";?></td>
+						-->
 						<td><input type = "number" min="0" name="CICS_BQ1" id="CICS_BQ1" value="<?php echo $dbCICS_BQ1;?>" onchange="CalCICS_B()"></td>
 						<td><input type = "number" min="0" name="CICS_BQ2" id="CICS_BQ2" value="<?php echo $dbCICS_BQ2;?>" onchange="CalCICS_B()"></td>
 						<td><input type = "number" min="0" name="CICS_BQ3" id="CICS_BQ3" value="<?php echo $dbCICS_BQ3;?>" onchange="CalCICS_B()"></td>
 						<td><input type = "number" min="0" name="CICS_BQ4" id="CICS_BQ4" value="<?php echo $dbCICS_BQ4;?>" onchange="CalCICS_B()"></td>
 						<td><input type = "number" min="0" name="CICS_BQT" id="CICS_BQT" value="<?php echo $dbCICS_BQT;?>" readonly> </td> 
 
-						<td><?php echo "6";?></td>
-						<td><?php echo "7";?></td>
-						<td><?php echo "8";?></td>
-						<td><?php echo "9";?></td>
-						<td><?php echo "10";?></td>
-						 
+						<!--td><?php //echo "6";?></td>
+						<td><?php //echo "7";?></td>
+						<td><?php //echo "8";?></td>
+						<td><?php //echo "9";?></td>
+						<td><?php //echo "10";?></td>
+						 -->
 					</tr>
 					<tr>
 						<th>CIT</th>
@@ -299,11 +304,12 @@ while($result = mysqli_fetch_array($command))
 						<td><input type = "number" min="0" name="CIT_AQ4" id="CIT_AQ4" value="<?php echo $dbCIT_AQ4;?>" onchange="CalCIT_A()"></td>
 						<td><input type = "number" min="0" name="CIT_AQT" id="CIT_AQT" value="<?php echo $dbCIT_AQT;?>" readonly> </td> 
 						
-						<td><?php echo "K";?></td>
-						<td><?php echo "L";?></td>
-						<td><?php echo "M";?></td>
-						<td><?php echo "N";?></td>
-						<td><?php echo "O";?></td>
+						<!--<td><?php //echo "K";?></td>
+						<td><?php //echo "L";?></td>
+						<td><?php //echo "M";?></td>
+						<td><?php //echo "N";?></td>
+						<td><?php //echo "O";?></td>
+						-->
 
 						<td><input type = "number" min="0" name="CIT_BQ1" id="CIT_BQ1" value="<?php echo $dbCIT_BQ1;?>" onchange="CalCIT_B()"></td>
 						<td><input type = "number" min="0" name="CIT_BQ2" id="CIT_BQ2" value="<?php echo $dbCIT_BQ2;?>" onchange="CalCIT_B()"></td>
@@ -311,12 +317,12 @@ while($result = mysqli_fetch_array($command))
 						<td><input type = "number" min="0" name="CIT_BQ4" id="CIT_BQ4" value="<?php echo $dbCIT_BQ4;?>" onchange="CalCIT_B()"></td>
 						<td><input type = "number" min="0" name="CIT_BQT" id="CIT_BQT" value="<?php echo $dbCIT_BQT;?>" readonly> </td> 
 
-						<td><?php echo "11";?></td>
-						<td><?php echo "12";?></td>
-						<td><?php echo "13";?></td>
-						<td><?php echo "14";?></td>
-						<td><?php echo "15";?></td>
-				 
+						<!--<td><?php //echo "11";?></td>
+						<td><?php //echo "12";?></td>
+						<td><?php //echo "13";?></td>
+						<td><?php //echo "14";?></td>
+						<td><?php //echo "15";?></td>
+						-->
 					</tr>
 					<tr>
 						<th>Total</th> 
@@ -327,21 +333,22 @@ while($result = mysqli_fetch_array($command))
 						<td><input type = "number" min="0" name="AT_Q4" id="AT_Q4" value="<?php echo $dbAT_Q4;?>" readonly></td>
 						<td><input type = "number" min="0" name="AT_QT" id="AT_QT" value="<?php echo $dbAT_QT;?>" readonly></td>
 
-						<td><?php echo "P";?></td>
-						<td><?php echo "Q";?></td>
-						<td><?php echo "R";?></td>
-						<td><?php echo "S";?></td>
-						<td><?php echo "T";?></td>
-
+						<!--<td><?php //echo "P";?></td>
+						<td><?php //echo "Q";?></td>
+						<td><?php //echo "R";?></td>
+						<td><?php //echo "S";?></td>
+						<td><?php //echo "T";?></td>
+						
+						-->
 						<td><input type = "number" min="0" name="BT_Q1" id="BT_Q1" value="<?php echo $dbBT_Q1;?>" readonly></td>
 						<td><input type = "number" min="0" name="BT_Q2" id="BT_Q2" value="<?php echo $dbBT_Q2;?>" readonly></td>
 						<td><input type = "number" min="0" name="BT_Q3" id="BT_Q3" value="<?php echo $dbBT_Q3;?>" readonly></td>
 						<td><input type = "number" min="0" name="BT_Q4" id="BT_Q4" value="<?php echo $dbBT_Q4;?>" readonly></td>
 						<td><input type = "number" min="0" name="BT_QT" id="BT_QT" value="<?php echo $dbBT_QT;?>" readonly></td>
 
-						<td colspan="5" class="input2"><?php echo "TOTAL";?></td>
+						<!--<td colspan="5" class="input2"><?php echo "TOTAL";?></td>-->
 
-						<td class="input1"><?php echo "Total Budget";?></td>
+						<!--<td class="input1"><?php //echo "Total Budget";?></td>--> 
 					</tr>
 				</tbody>
 			</table>
