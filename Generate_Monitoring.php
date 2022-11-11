@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("FPDFLibrary/fpdf.php");
 include("Connection.php");
 

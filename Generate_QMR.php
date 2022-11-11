@@ -8,7 +8,13 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 }
 
 //Get selected Year and Quarter from Reports.php
-if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
+if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
+	echo "<center> <br>";
+	echo("<h1> Please Select Year and Quarter </h1>");
+	echo "<h2> <a href='Reports.php'> RETURN <a> </h2>";
+	echo "</center";
+	die;
+}else{
 	$Year = $_GET['Year'];
 	$Q = $_GET['Quarter'];
 	if ($Q == 1){$Quarter = "First";}
