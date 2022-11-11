@@ -2,7 +2,6 @@
 session_start();
 include("Connection.php");
 
-
 if (isset($_SESSION['AccountAID']) == TRUE){
 	header('Location: Dashboard.php');
 	die;

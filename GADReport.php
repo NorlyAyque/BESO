@@ -1,3 +1,13 @@
+<?php
+session_start();
+include("Connection.php");
+
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

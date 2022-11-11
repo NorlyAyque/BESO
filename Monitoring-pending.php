@@ -2,6 +2,11 @@
 session_start();
 include("Connection.php");
 
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
 date_default_timezone_set("Asia/Manila");
 //$DateToday = date("Y-m-d");
 ?>

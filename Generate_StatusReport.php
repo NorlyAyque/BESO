@@ -2,6 +2,11 @@
 session_start();
 include("Connection.php");
 
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
 //Get selected Year and Quarter from Reports.php
 if((isset($_GET['Year'])) AND (isset($_GET['Quarter']))) {
 	$Year = $_GET['Year'];

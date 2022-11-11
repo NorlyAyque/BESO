@@ -2,6 +2,11 @@
 session_start();
 include("Connection.php");
 
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
 //Getting Year Quarter
 $month = date("n");
 $yearQuarter = ceil($month / 3);

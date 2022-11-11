@@ -1,6 +1,13 @@
 <?php
+session_start();
 require("FPDFLibrary/fpdf.php");
 include("Connection.php");
+
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
 
 if((isset($_GET['view']))== False){ 
 	echo "<center> <br>";

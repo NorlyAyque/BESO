@@ -1,3 +1,10 @@
+<?php
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -186,5 +193,5 @@
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
-<body>
+</body>
 </html>

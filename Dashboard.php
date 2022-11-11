@@ -2,6 +2,12 @@
 session_start();
 include("Connection.php");
 
+
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
 $YearToday = date("Y");
 ?>
 
