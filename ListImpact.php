@@ -14,7 +14,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>List of Extension PAPs for Impact Assessment</title>
-<link rel="stylesheet" type="text/css" href="styles/Report.css">
+<link rel="stylesheet" type="text/css" href="styles/Reports.css">
 
 </head>
 <body>
@@ -130,17 +130,12 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 								<option value="4">Prepared By</option>
 								<option value="5">Remarks</option>
 							</select>
+							Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
 						</div>
 					</th>
 				
 				</tr>
-				<tr>
-					<th colspan="6">
-						<div class="Drp6">
-							Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
-						</div>
-					</th>					
-				</tr>
+				
 				<tr>
 					<th width="100px"> Proposal ID</th>
 					<th width="auto"> Title </th>

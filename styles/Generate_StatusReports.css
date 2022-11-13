@@ -1,4 +1,7 @@
-
+*
+{
+		font-family:"Open Sans", sans-serif;
+}
 
  table , td, th {
 	border-collapse: collapse;
@@ -50,6 +53,12 @@ textarea::-webkit-scrollbar {
     width: 1px;
 }
 .font textarea{
+	border:none;
+	
+	height: auto;
+
+}
+.font2nd textarea{
 	border:none;
 	text-align:center;
 	height: auto;

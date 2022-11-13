@@ -11,7 +11,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Quarterly Monitoring Report</title>
-<link rel="stylesheet" type="text/css" href="styles/Report.css">
+<link rel="stylesheet" type="text/css" href="styles/Reports.css">
 
 </head>
 <body>

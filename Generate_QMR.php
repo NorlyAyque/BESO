@@ -29,7 +29,7 @@ if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Generate QMR</title>
-<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad-style.css">
+<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
 </head>
 
 <body>
@@ -56,7 +56,7 @@ if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 	
 	<table class="table2">
 		<tr>
-			<th><p style="width:25px;">No.</p></th>
+			<th><p style="width:30px;">No.</p></th>
 			<th width="120px";>TITLE OF <br>TRAINING</th>
 			<th colspan="2" width="280px";>INCLUSIVE<br> DATES</th>
 			<th width="107px";>DURATION</th>
@@ -168,20 +168,20 @@ while($result = mysqli_fetch_array($command))
 		$TotalVS += $VerySatisfactory;
 		$TotalE += $Excellent;
 ?>
-		<tr class="font">
+		<tr >
 			<td><?php echo $No;?></td> <!-- No -->
-			<td><textarea style="width:200px;"><?php echo $Title; ?></textarea></td> <!-- Title of the Training -->
-			<td><textarea style="width:100px;"><?php echo $Date1; ?></textarea></td> <!-- Date From -->
-			<td><textarea style="width:100px;"><?php echo $Date2; ?></textarea></td> <!-- Date To -->
-			<td><textarea style="width:90px;"><?php echo $Duration; ?></textarea></td> <!-- Duration-->
-			<td><textarea style="width:100px;"><?php echo $Trainees; ?></textarea></td> <!-- No. of Trainees -->
-			<td><textarea style="width:130px;"><?php echo $Weighted; ?></textarea></td> <!-- Weighted -->
-			<td><textarea style="width:50px;"><?php echo $Poor; ?></textarea></td> <!-- P -->
-			<td><textarea style="width:50px;"><?php echo $Fair; ?></textarea></td> <!-- F -->
-			<td><textarea style="width:50px;"><?php echo $Satisfactory; ?></textarea></td> <!-- S -->
-			<td><textarea style="width:50px;"><?php echo $VerySatisfactory; ?></textarea></td> <!-- VS -->
-			<td><textarea style="width:50px;"><?php echo $Excellent; ?></textarea></td> <!-- E -->
-			<td><textarea><?php echo ""; ?></textarea></td> <!-- Proof -->
+			<td class="font"><textarea style="width:200px;"><?php echo $Title; ?></textarea></td> <!-- Title of the Training -->
+			<td class="font2nd"><textarea style="width:100px;" ><?php echo $Date1; ?></textarea></td> <!-- Date From -->
+			<td class="font2nd"><textarea style="width:100px;"><?php echo $Date2; ?></textarea></td> <!-- Date To -->
+			<td class="font2nd"><textarea style="width:90px;"><?php echo $Duration; ?></textarea></td> <!-- Duration-->
+			<td class="font2nd"><textarea style="width:100px;"><?php echo $Trainees; ?></textarea></td> <!-- No. of Trainees -->
+			<td class="font2nd"><textarea style="width:130px;"><?php echo $Weighted; ?></textarea></td> <!-- Weighted -->
+			<td class="font2nd"><textarea style="width:50px;"><?php echo $Poor; ?></textarea></td> <!-- P -->
+			<td class="font2nd"><textarea style="width:50px;"><?php echo $Fair; ?></textarea></td> <!-- F -->
+			<td class="font2nd"><textarea style="width:50px;"><?php echo $Satisfactory; ?></textarea></td> <!-- S -->
+			<td class="font2nd"><textarea style="width:50px;"><?php echo $VerySatisfactory; ?></textarea></td> <!-- VS -->
+			<td class="font2nd"><textarea style="width:50px;"><?php echo $Excellent; ?></textarea></td> <!-- E -->
+			<td class="font2nd"><textarea><?php echo ""; ?></textarea></td> <!-- Proof -->
 		</tr>
 <?php }}?>
 		<tr>

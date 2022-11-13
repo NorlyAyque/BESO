@@ -39,7 +39,7 @@ $CEAFA_Full = "College of Engineering, Architecture and Fine Arts";
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Generate Status Report</title>
-<link rel="stylesheet" type="text/css" href="styles/Generate_StatusReport.css">
+<link rel="stylesheet" type="text/css" href="styles/Generate_StatusReports.css">
 
 </head>
 <body>
@@ -164,17 +164,17 @@ while($result = mysqli_fetch_array($command))
 		<tr class="font1">
 			<td colspan="10"><textarea style="width:50%;"><?php echo $TypeCES;?></textarea></td> <!-- TYPE CES -->
 		</tr>
-		<tr class="font">
-			<td><textarea style="height:80px; "><?php echo $No.". ".$Title; ?></textarea></td> <!-- Title of the Training -->
-			<td><textarea style="height:80px; text-align:left;"><?php echo $SDG; ?> </textarea></td> <!-- SDG-->
-			<td><textarea style="height:80px;"><?php echo $Dateduration."&#13;".$NoOfHours." hours"; ?></textarea></td> <!-- Date Duration-->
-			<td><textarea style="height:80px;"><?php echo $Narrative; ?> </textarea></td> <!-- Documentation-->
-			<td><textarea style="width:90px;"><?php echo $Male." - Male"."&#13;".$Female." - Female"; ?> </textarea></td> <!-- Male/Female-->
-			<td><textarea style="width:85px; "><?php echo $Beneficiaries; ?> </textarea></td> <!-- Beneficiaries-->
-			<td><textarea style="width:70px; height:80px;"><?php echo $Location; ?> </textarea></td> <!-- Location-->
-			<td><textarea style="width:110px; height:100px; text-align:left;"><?php echo $People; ?> </textarea></td> <!-- Extensionist-->
-			<td><textarea style="width:80px;"><?php echo $Cost; ?> </textarea></td> <!-- Budget-->
-			<td><textarea><?php echo $SourceFund; ?> </textarea></td> <!-- Source fund-->
+		<tr>
+			<td class="font"><textarea style="height:80px; "><?php echo $No.". ".$Title; ?></textarea></td> <!-- Title of the Training -->
+			<td class="font"><textarea style="height:80px; "><?php echo $SDG; ?> </textarea></td> <!-- SDG-->
+			<td class="font2nd"><textarea style="height:80px;"><?php echo $Dateduration."&#13;".$NoOfHours." hours"; ?></textarea></td> <!-- Date Duration-->
+			<td class="font2nd"><textarea style="height:80px;"><?php echo $Narrative; ?> </textarea></td> <!-- Documentation-->
+			<td class="font2nd"><textarea style="width:90px;"><?php echo $Male." - Male"."&#13;".$Female." - Female"; ?> </textarea></td> <!-- Male/Female-->
+			<td class="font2nd"><textarea style="width:85px; "><?php echo $Beneficiaries; ?> </textarea></td> <!-- Beneficiaries-->
+			<td class="font2nd"><textarea style="width:70px; height:80px;"><?php echo $Location; ?> </textarea></td> <!-- Location-->
+			<td class="font"><textarea style="width:110px; height:100px;"><?php echo $People; ?> </textarea></td> <!-- Extensionist-->
+			<td class="font2nd"><textarea style="width:80px;"><?php echo $Cost; ?> </textarea></td> <!-- Budget-->
+			<td class="font2nd"><textarea><?php echo $SourceFund; ?> </textarea></td> <!-- Source fund-->
 		</tr>
 <?php }}?>
 

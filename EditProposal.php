@@ -124,7 +124,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Edit Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/EditProposal.css">
+<link rel="stylesheet" type="text/css" href="styles/EditProposals.css">
 
 </head>
 <body>
@@ -210,13 +210,64 @@ if(isset($_GET['edit'])){
 					</th> 
 				</tr> 
 				<tr class ="select">
+					<th>
+						<div class="Drp">
+							(label text): 
+							<select name="Initiated" id="Initiated">
+								<option  value="">Please Select</option>
+								<option  value="Client"required>Extension Service Program/Project/Activity is requested by clients.</option>
+								<option  value="Department" required>Extension Service Program/Project/Activity is Departments initiative.</option>
+							</select>
+						</div>
+						<div class="DrpV2">
+							(label text): 
+							<select id="Classification" name="Classification">
+								<option value="">Please Select</option>
+								<option value="Program">Program</option>
+								<option value="Project">Project</option>
+								<option value="Activity">Activity</option>
+							</select>
+							
+						</div>
+					</th>
+					
+					
+					
+				
+				
+					<!-- 
 					<th colspan="2">
 						<label> <input type="radio" id="Client" name="Initiated" value="Client"> Extension Service Program/Project/Activity is requested by clients.</th> </label>
 					<th colspan="2">
 						<label> <input type="radio" id="Department" name="Initiated" value="Department" > Extension Service Program/Project/Activity is Departments initiative.</th> </label>
+					-->
 				</tr>	
+				<tr>
+					<th>
+						<div class="Drp">
+								(label text): 
+							<select id="unknown"name="unknown">
+								<option value="">Please Select</option>
+								<option value="Extension PAP">Extension PAP</option>
+								<option value="For Monitoring">Monitoring</option>
+								<option value="For Impact Assessment">Impact Assessment</option>
+							</select>
+						</div>
+						<div class="DrpGAD">
+								GAD PAP Proposal?: 
+							<select id="IsGAD" name="IsGAD">
+								<option value="">Please Select</option>
+								<option value="Yes">YES</option>
+								<option value="No">NO</option>
+							</select>
+						</div>
+					</th>
+				</tr>
 			</table>
+				
+				
 	
+	<!--
 			<table class="header1">
 				<tr  class ="select1">
 					<th> <input type="radio" id="Program" name="Classification" value="Program" required> Program</th>
@@ -234,6 +285,8 @@ if(isset($_GET['edit'])){
 					<th> <input type="radio" id="No" name="IsGAD" value="No" required> No </th>
 				</tr>
 			</table>
+			-->
+			
 			<div class="Create">
 				<div class="fillup">
 				  <div class="input-field">
