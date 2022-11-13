@@ -1,15 +1,15 @@
 <?php
 session_start();
 include("Connection.php");
-
+$YearToday = date("Y");
 
 if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
 
-$YearToday = date("Y");
 ?>
+
 
 <?php
 //Display Data of Target and Actual
@@ -166,7 +166,7 @@ while($result = mysqli_fetch_array($command))
 							<p> BATANGAS STATE UNIVERSITY ALANGILAN </p>
 						</th>
 					</tr>
-					<tr>
+					<tr id="row">
 						<th colspan="7"> 
 							<div id="Enable_Dropdown" onclick="Enable_Dropdown()">Create Target</div>
 							
@@ -197,15 +197,24 @@ while($result = mysqli_fetch_array($command))
 							</a>
 						</th>
 					</tr>
+<?php
+//Account Restrictions
+$UserPosition = $_SESSION["Position"];
+if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
+	//Code Continue
+}else {
+	echo "
+	<script>
+		document.getElementById('row').style.display  = 'none';
+	</script>
+	";
+}
+?>
 					<tr>
 						<th rowspan="3"width="200px";>College</p> </th>
 						<th rowspan="3">Number of Programs</th>
 						<th colspan="15">Indicator</th>
-						<!--<th rowspan="3">Budget </th>-->
-						
-						
-						
-						
+						<!--<th rowspan="3">Budget </th>-->	
 					</tr>
 					<tr>
 						<th colspan="5">Number of Active Partnership with LGUs, Industries, NGOs, NGAs, SMEs, and other stakeholders as a result of extension activities <br> (TARGET)</th>
@@ -625,6 +634,7 @@ function Enable_SaveBtn(){//For Edit Target
 function Cancel(){
 	window.location='Dashboard.php';
 }
+
 </script>
 
 
@@ -725,3 +735,5 @@ if (isset($_POST['Savebtn'])) { //For update
 		</script>";	
 }
 ?>
+
+

@@ -201,9 +201,16 @@ while($result = mysqli_fetch_array($command))
 </html>
 
 
-
 <?php
 if(isset($_GET['check'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if (($UserPosition == "Head") OR ($UserPosition == "Coordinator")){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+
 	$PID = $_GET['check'];
 	
 	//Avoiding creation of multiple Evaluation under the same Proposal

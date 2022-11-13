@@ -81,9 +81,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			</li>
 		</ul>
 	</div>
-		
-		
-		
+
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
@@ -162,7 +160,7 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Status; ?></td>  	
 				<td>
 					<a href="Generate_Evaluation.php?view=<?php echo $EID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
-					<a href="EditEvaluation.php?edit=<?php echo $EID; ?>" button class="Rbtn1">Edit</button> </a>
+					<a href="Evaluation-revision.php?edit=<?php echo $EID; ?>" button class="Rbtn1">Edit</button> </a>
 					<a href="Evaluation-revision.php?re_submit=<?php echo $EID; ?>" button class="Rbtn2">Re-Submit</button> </a>
 				</td> 
 			</tr>
@@ -190,18 +188,40 @@ while($result = mysqli_fetch_array($command))
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
 
 <?php
 
+if(isset($_GET['edit'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if (($UserPosition == "Head") OR ($UserPosition == "Coordinator")){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+	
+	
+	$EID = $_GET['edit'];
+	echo "<script> window.location.href='EditEvaluation.php?edit=$EID'; </script>";
+}
+
 if(isset($_GET['re_submit'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if (($UserPosition == "Head") OR ($UserPosition == "Coordinator")){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+	
 	$EID = $_GET['re_submit'];
 
 	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'PENDING' WHERE EvaluationID = $EID ");

@@ -7,6 +7,18 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	die;
 }
 
+//Account Restrictions
+$UserPosition = $_SESSION["Position"];
+if (($UserPosition == "Head") OR ($UserPosition == "Coordinator")) {
+	//Code Continue
+}else {
+	echo "<center> <br>";
+	echo "<h1> Access Denied! <br>";
+	echo "Staffs are not allowed to Create Proposal. </h1>";
+	echo "<h2> <a href='Dashboard.php'> RETURN </a> </h2>";
+	die();
+}
+
 //Getting Data declared from index.php
 $AID = $_SESSION["AccountAID"];
 $create_table = $_SESSION["create_table"];

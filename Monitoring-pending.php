@@ -196,6 +196,14 @@ while($result = mysqli_fetch_array($command))
 
 <?php
 if(isset($_GET['revise'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if ($UserPosition == "Head"){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+
 	$MID = $_GET['revise'];
 
 	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Need to Revise' WHERE MonitoringID = $MID ");
@@ -208,6 +216,14 @@ if(isset($_GET['revise'])){
 }
 
 if(isset($_GET['approved'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if ($UserPosition == "Head"){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+
 	$MID = $_GET['approved'];
 
 	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Approved' WHERE MonitoringID = $MID ");
@@ -220,6 +236,14 @@ if(isset($_GET['approved'])){
 }
 
 if(isset($_GET['reject'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if ($UserPosition == "Head"){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+	
 	$MID = $_GET['reject'];
 
 	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Rejected' WHERE MonitoringID = $MID ");

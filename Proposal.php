@@ -11,7 +11,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Proposals</title>
 <link rel="stylesheet" type="text/css" href="styles/Proposal-style.css">
 
@@ -192,6 +192,14 @@ while($result = mysqli_fetch_array($command))
 
 <?php
 if(isset($_GET['revise'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if ($UserPosition == "Head"){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+
 	$PID = $_GET['revise'];
 
 	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'Need to Revise' WHERE ProposalID = $PID ");
@@ -204,6 +212,14 @@ if(isset($_GET['revise'])){
 }
 
 if(isset($_GET['approved'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if ($UserPosition == "Head"){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+
 	$PID = $_GET['approved'];
 
 	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'Approved', Remarks = 'Not Yet Evaluated' WHERE ProposalID = $PID ");
@@ -216,6 +232,14 @@ if(isset($_GET['approved'])){
 }
 
 if(isset($_GET['reject'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if ($UserPosition == "Head"){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+	
 	$PID = $_GET['reject'];
 
 	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'Rejected' WHERE ProposalID = $PID ");

@@ -88,8 +88,7 @@ $YearToday = date("Y");
 		</ul>
 	</div>
 		
-		
-		
+
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
@@ -199,6 +198,14 @@ while($result = mysqli_fetch_array($command))
 
 <?php
 if(isset($_GET['revise'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if ($UserPosition == "Head"){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+
 	$EID = $_GET['revise'];
 
 	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'Need to Revise' WHERE EvaluationID = $EID ");
@@ -211,6 +218,14 @@ if(isset($_GET['revise'])){
 }
 
 if(isset($_GET['approved'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if ($UserPosition == "Head"){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+
 	$EID = $_GET['approved'];
 	$PID = $_GET['update'];
 
@@ -391,6 +406,14 @@ if(isset($_GET['update'])){
 }
 
 if(isset($_GET['reject'])){
+	//Account Restriction
+	$UserPosition = $_SESSION["Position"];
+	if ($UserPosition == "Head"){ //Code Continue
+	}else {
+		echo "<script> alert('Action not allowed!'); </script> ";
+		die;
+	}
+	
 	$EID = $_GET['reject'];
 
 	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'Rejected' WHERE EvaluationID = $EID ");
