@@ -240,7 +240,7 @@ if (isset($_POST['Update'])) {
 		$command = $con->query($sql) or die("Error encounter while updating data");
 		
 		//Update Session for Position
-		$_SESSION["Position"] = $Position;
+		//$_SESSION["Position"] = $Position; //must be implement after logout
 
 		echo "<script>
 		alert('Account Successfully Updated');
@@ -254,7 +254,7 @@ if (isset($_POST['Update'])) {
 		$command = $con->query($sql) or die("Error encounter while updating data");
 		
 		//Update Session for Position
-		$_SESSION["Position"] = $Position;
+		//$_SESSION["Position"] = $Position; //must be implement after logout
 		
 		echo "<script>
 		alert('Account Successfully Updated');
