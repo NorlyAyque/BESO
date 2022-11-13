@@ -14,7 +14,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>List of Accomplishment Report</title>
-<link rel="stylesheet" type="text/css" href="styles/Report.css">
+<link rel="stylesheet" type="text/css" href="styles/Reports.css">
 
 </head>
 <body>
@@ -122,7 +122,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th colspan="7"> 
 						
 						<div class ="Drp3">
-						Select Column to filter: 
+								Select Column to filter: 
 							<select name="column" id="column">
 								<option value="">Select Column</option>
 								<option value="1">Proposal ID</option>
@@ -132,17 +132,12 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 								<option value="5">Last Monitored</option>
 								<option value="6">Impact Assessment</option>
 							</select>
+								 Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
 						</div>
-						
+							
 						</th>	
 				</tr>
-				<tr>
-					<th colspan="7"> 
-						<div class ="Drp4">
-							Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
-						</div>
-					</th>
-				</tr>
+				
 				<tr>
 					<th width="80px"> Proposal ID</th>
 					<th width="auto"> Title </th>

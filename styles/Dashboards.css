@@ -323,7 +323,7 @@ margin-left: 100px;
 	
 }
 .input td {
-	background-color:#ddd;
+	background-color:#EEF1FF;
 	cursor:pointer;
 }
 
@@ -357,8 +357,6 @@ margin-left: 100px;
 	
 }
 
-.input td:hover {
-	background-color: lightgrey;}
 
 
 #savebtn input{

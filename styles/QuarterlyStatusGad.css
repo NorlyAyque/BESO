@@ -3,6 +3,8 @@
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
+	font-family:"Open Sans", sans-serif;
+
 	
 }
 
@@ -38,6 +40,7 @@
 
 .table-class{
 	margin-bottom:-30px;
+	
 }
 .table-class th{
 	 border:none;
@@ -63,9 +66,9 @@
 }
 
 .table2 th{
-	font-weight:bold;
+	
 	padding:5px;
-	font-family:"Open Sans", Serif;
+	font-family:"Open Sans", sans-serif;
 }
 .table2 td{
 	font-size:13px;
@@ -89,14 +92,17 @@ textarea::-webkit-scrollbar {
 }
 .font textarea{
 	border:none;
-	text-align:center;
 	height: auto;
-
+}
+.font2nd textarea{
+	border:none;
+	height: auto;
+	text-align:center;
 }
 
 .legend td{
 	font-style: italic;
-		padding:0;
+	padding:0;
 }
 
 .signatories{

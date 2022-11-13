@@ -227,11 +227,11 @@ while($result = mysqli_fetch_array($command))
 						<td>4th Qrt</td>
 						<td>Total</td>
 						-->
-						<td>1st Qrt</td>
-						<td>2nd Qrt</td>
-						<td>3rd Qrt</td>
-						<td>4th Qrt</td>
-						<td>Total</td>
+						<td style=" background-color:#D6E4E5";>1st Qrt</td>
+						<td style=" background-color:#D6E4E5";>2nd Qrt</td>
+						<td style=" background-color:#D6E4E5";>3rd Qrt</td>
+						<td style=" background-color:#D6E4E5";>4th Qrt</td>
+						<td style=" background-color:#D6E4E5";>Total</td>
 						<!--
 						<td>1st Qrt</td>
 						<td>2nd Qrt</td>
@@ -259,11 +259,11 @@ while($result = mysqli_fetch_array($command))
 						<td><?php //echo "D";?></td>
 						<td><?php //echo "E";?></td>
 						-->
-						<td><input type = "number" min="0" name="CEAFA_BQ1" id="CEAFA_BQ1" value="<?php echo $dbCEAFA_BQ1;?>" onchange="CalCEAFA_B()"></td>
-						<td><input type = "number" min="0" name="CEAFA_BQ2" id="CEAFA_BQ2" value="<?php echo $dbCEAFA_BQ2;?>" onchange="CalCEAFA_B()"></td>
-						<td><input type = "number" min="0" name="CEAFA_BQ3" id="CEAFA_BQ3" value="<?php echo $dbCEAFA_BQ3;?>" onchange="CalCEAFA_B()"></td>
-						<td><input type = "number" min="0" name="CEAFA_BQ4" id="CEAFA_BQ4" value="<?php echo $dbCEAFA_BQ4;?>" onchange="CalCEAFA_B()"></td>
-						<td><input type = "number" min="0" name="CEAFA_BQT" id="CEAFA_BQT" value="<?php echo $dbCEAFA_BQT;?>" readonly> </td> 
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQ1" id="CEAFA_BQ1" value="<?php echo $dbCEAFA_BQ1;?>" onchange="CalCEAFA_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQ2" id="CEAFA_BQ2" value="<?php echo $dbCEAFA_BQ2;?>" onchange="CalCEAFA_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQ3" id="CEAFA_BQ3" value="<?php echo $dbCEAFA_BQ3;?>" onchange="CalCEAFA_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQ4" id="CEAFA_BQ4" value="<?php echo $dbCEAFA_BQ4;?>" onchange="CalCEAFA_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQT" id="CEAFA_BQT" value="<?php echo $dbCEAFA_BQT;?>" readonly> </td> 
 
 						<!--<td><?php //echo "1";?></td>
 						<td><?php //echo "2";?></td>
@@ -288,11 +288,11 @@ while($result = mysqli_fetch_array($command))
 						<td><?php //echo "I";?></td>
 						<td><?php //echo "J";?></td>
 						-->
-						<td><input type = "number" min="0" name="CICS_BQ1" id="CICS_BQ1" value="<?php echo $dbCICS_BQ1;?>" onchange="CalCICS_B()"></td>
-						<td><input type = "number" min="0" name="CICS_BQ2" id="CICS_BQ2" value="<?php echo $dbCICS_BQ2;?>" onchange="CalCICS_B()"></td>
-						<td><input type = "number" min="0" name="CICS_BQ3" id="CICS_BQ3" value="<?php echo $dbCICS_BQ3;?>" onchange="CalCICS_B()"></td>
-						<td><input type = "number" min="0" name="CICS_BQ4" id="CICS_BQ4" value="<?php echo $dbCICS_BQ4;?>" onchange="CalCICS_B()"></td>
-						<td><input type = "number" min="0" name="CICS_BQT" id="CICS_BQT" value="<?php echo $dbCICS_BQT;?>" readonly> </td> 
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQ1" id="CICS_BQ1" value="<?php echo $dbCICS_BQ1;?>" onchange="CalCICS_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQ2" id="CICS_BQ2" value="<?php echo $dbCICS_BQ2;?>" onchange="CalCICS_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQ3" id="CICS_BQ3" value="<?php echo $dbCICS_BQ3;?>" onchange="CalCICS_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQ4" id="CICS_BQ4" value="<?php echo $dbCICS_BQ4;?>" onchange="CalCICS_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQT" id="CICS_BQT" value="<?php echo $dbCICS_BQT;?>" readonly> </td> 
 
 						<!--td><?php //echo "6";?></td>
 						<td><?php //echo "7";?></td>
@@ -317,11 +317,11 @@ while($result = mysqli_fetch_array($command))
 						<td><?php //echo "O";?></td>
 						-->
 
-						<td><input type = "number" min="0" name="CIT_BQ1" id="CIT_BQ1" value="<?php echo $dbCIT_BQ1;?>" onchange="CalCIT_B()"></td>
-						<td><input type = "number" min="0" name="CIT_BQ2" id="CIT_BQ2" value="<?php echo $dbCIT_BQ2;?>" onchange="CalCIT_B()"></td>
-						<td><input type = "number" min="0" name="CIT_BQ3" id="CIT_BQ3" value="<?php echo $dbCIT_BQ3;?>" onchange="CalCIT_B()"></td>
-						<td><input type = "number" min="0" name="CIT_BQ4" id="CIT_BQ4" value="<?php echo $dbCIT_BQ4;?>" onchange="CalCIT_B()"></td>
-						<td><input type = "number" min="0" name="CIT_BQT" id="CIT_BQT" value="<?php echo $dbCIT_BQT;?>" readonly> </td> 
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQ1" id="CIT_BQ1" value="<?php echo $dbCIT_BQ1;?>" onchange="CalCIT_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQ2" id="CIT_BQ2" value="<?php echo $dbCIT_BQ2;?>" onchange="CalCIT_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQ3" id="CIT_BQ3" value="<?php echo $dbCIT_BQ3;?>" onchange="CalCIT_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQ4" id="CIT_BQ4" value="<?php echo $dbCIT_BQ4;?>" onchange="CalCIT_B()"></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQT" id="CIT_BQT" value="<?php echo $dbCIT_BQT;?>" readonly> </td> 
 
 						<!--<td><?php //echo "11";?></td>
 						<td><?php //echo "12";?></td>
@@ -346,11 +346,11 @@ while($result = mysqli_fetch_array($command))
 						<td><?php //echo "T";?></td>
 						
 						-->
-						<td><input type = "number" min="0" name="BT_Q1" id="BT_Q1" value="<?php echo $dbBT_Q1;?>" readonly></td>
-						<td><input type = "number" min="0" name="BT_Q2" id="BT_Q2" value="<?php echo $dbBT_Q2;?>" readonly></td>
-						<td><input type = "number" min="0" name="BT_Q3" id="BT_Q3" value="<?php echo $dbBT_Q3;?>" readonly></td>
-						<td><input type = "number" min="0" name="BT_Q4" id="BT_Q4" value="<?php echo $dbBT_Q4;?>" readonly></td>
-						<td><input type = "number" min="0" name="BT_QT" id="BT_QT" value="<?php echo $dbBT_QT;?>" readonly></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_Q1" id="BT_Q1" value="<?php echo $dbBT_Q1;?>" readonly></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_Q2" id="BT_Q2" value="<?php echo $dbBT_Q2;?>" readonly></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_Q3" id="BT_Q3" value="<?php echo $dbBT_Q3;?>" readonly></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_Q4" id="BT_Q4" value="<?php echo $dbBT_Q4;?>" readonly></td>
+						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_QT" id="BT_QT" value="<?php echo $dbBT_QT;?>" readonly></td>
 
 						<!--<td colspan="5" class="input2"><?php echo "TOTAL";?></td>-->
 

@@ -483,7 +483,7 @@ cursor: pointer;
 .Drp4{
 	text-align:left;
 }
-.Drp5 {
+.Drp5{
 	text-align:left;
 }
 .Drp6{
@@ -501,14 +501,30 @@ cursor: pointer;
   border-radius:3px;
   display: inline-block;
   vertical-align: middle;
+  margin-right:40px;
   
 }
 .Drp3 option{
 	font-size:15px;
 	cursor:pointer;
 	
-	
 }
+.Drp3 input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+  
+}
+
 .Drp4 input{
   display:flex;
   margin:auto;
@@ -540,14 +556,31 @@ cursor: pointer;
   border-radius:3px;
   display: inline-block;
   vertical-align: middle;
+  margin-right:40px;
+ 
   
 }
 .Drp5 option{
 	font-size:15px;
-	cursor:pointer;
-	
-	
+	cursor:pointer;	
 }
+.Drp5 input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+  
+}
+
+
 .Drp6 input{
   display:flex;
   margin:auto;

@@ -28,7 +28,7 @@ if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Generate GAD Report</title>
-<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad-style.css">
+<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
 
 </head>
 <body>
@@ -40,9 +40,9 @@ if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 	
 		<tr>
 			
-			<td colspan="4"><img src ="images/logo.png" class="logo">Reference No.: BatStateU-FO-ESO-03</td>
+			<td colspan="4"><img src ="images/logo.png" class="logo">Reference No. : BatStateU-FO-ESO-03</td>
 			<td colspan="4">Effectivity Date: May 18, 2022</td>
-			<td colspan="2">Revision No.: 01</td>
+			<td colspan="2">Revision No. : 01</td>
 		</tr>
 		<tr>
 			<th colspan="10"><center>Quarterly Report of GAD Programs,Project ang Activities (PPAs)</center></th>
@@ -139,17 +139,17 @@ while($result = mysqli_fetch_array($command))
 		$Weighted = $Duration * $Total;
 		$No++; //For auto numbering
 ?>
-		<tr class="font">
-			<td><textarea style="height:80px;"><?php echo $No.". ".$Title; ?></textarea></td> <!-- Title of the Training -->
-			<td><textarea style="height:80px ;"><?php echo $Dateduration."&#13;".$NoOfHours." hours"; ?></textarea></td> <!-- Date/Duration (Number of Hours) -->
-			<td><textarea style="height:80px;"><?php echo "Headcount: ".$Total."&#10;&#10;"."Male: ".$Male."&#10;"."Female: ".$Female."&#10;&#10;"."Weighted by the length of training: ".$Weighted; ?></textarea></td> <!-- No of Beneficiaries -->
-			<td><textarea  style="width:90px;"><?php echo $Beneficiaries; ?></textarea></td> <!-- Type of Beneficiaries -->
-			<td><textarea><?php echo $Location; ?></textarea></td> <!-- Location -->
-			<td><textarea ><?php echo $People; ?></textarea></td> <!-- Personnel Involved -->
-			<td><textarea style="width:69px;"><?php echo $Cost; ?></textarea></td> <!-- Approved Budget -->
-			<td><textarea style="width:65px;"><?php echo $Cost; ?></textarea></td> <!-- Actual Cost -->
-			<td><textarea><?php echo ""; ?></textarea></td> <!-- PS -->
-			<td><textarea style="width:70px;"><?php echo $SourceFund; ?></textarea></td> <!-- Source of Fund -->
+		<tr >
+			<td class="font"><textarea style="height:80px;"><?php echo $No.". ".$Title; ?></textarea></td> <!-- Title of the Training -->
+			<td class="font2nd"><textarea style="height:80px ;"><?php echo $Dateduration."&#13;".$NoOfHours." hours"; ?></textarea></td> <!-- Date/Duration (Number of Hours) -->
+			<td class="font2nd"><textarea style="height:80px;"><?php echo "Headcount: ".$Total."&#10;&#10;"."Male: ".$Male."&#10;"."Female: ".$Female."&#10;&#10;"."Weighted by the length of training: ".$Weighted; ?></textarea></td> <!-- No of Beneficiaries -->
+			<td class="font2nd"><textarea  style="width:90px;"><?php echo $Beneficiaries; ?></textarea></td> <!-- Type of Beneficiaries -->
+			<td class="font2nd"><textarea><?php echo $Location; ?></textarea></td> <!-- Location -->
+			<td class="font2nd"><textarea style="height:80px;" ><?php echo $People; ?></textarea></td> <!-- Personnel Involved -->
+			<td class="font2nd"><textarea style="width:69px;"><?php echo $Cost; ?></textarea></td> <!-- Approved Budget -->
+			<td class="font2nd"><textarea style="width:65px;"><?php echo $Cost; ?></textarea></td> <!-- Actual Cost -->
+			<td class="font2nd"><textarea><?php echo ""; ?></textarea></td> <!-- PS -->
+			<td class="font2nd"><textarea style="width:70px;"><?php echo $SourceFund; ?></textarea></td> <!-- Source of Fund -->
 		</tr>
 		
 		

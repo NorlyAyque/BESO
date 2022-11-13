@@ -256,8 +256,98 @@ margin-left: 100px;
   border-left: 1px solid black; 
   border-right: 1px solid black; 
   text-decoration:none;
+}
+
+.Drp{
+	text-align:left;
+}
+
+
+
+.Drp select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:45%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  font-size:15px;
+ 
   
 }
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.DrpV2 {
+	margin-top:-30px;
+	margin-left:58%;
+}
+
+
+.DrpV2 select{
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:30%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+    font-size:15px;
+
+}
+.DrpV2 select{
+	cursor:pointer;
+	
+}
+.DrpGAD {
+	margin-top:-30px;
+	margin-left:50%
+	
+}
+
+
+.DrpGAD select{
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:30%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+    font-size:15px;
+
+}
+.DrpGAD select{
+	cursor:pointer;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .header1{
   width: 97%;
   margin-left:30px;
