@@ -2,6 +2,11 @@
 //session_start();
 include("Connection.php");
 
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
 
 $Fullname = $_SESSION["FullName"];
 $Position = $_SESSION["Position"];
@@ -12,7 +17,7 @@ $Campus = $_SESSION["Campus"];
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="styles/Dash-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboards.css">
 <style>
  .text{
 	margin-top:auto;

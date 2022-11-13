@@ -2,6 +2,11 @@
 session_start();
 include("Connection.php");
 
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
 //Getting Data declared from index.php
 $AID = $_SESSION["AccountAID"];
 $create_table = $_SESSION["create_table"];
@@ -19,7 +24,7 @@ $yearQuarter = ceil($month / 3);
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-Proposal.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
 
 </head>
 <body>
@@ -100,7 +105,7 @@ $yearQuarter = ceil($month / 3);
 			<table class="header">
 				<tr class="title">
 					<th colspan="3">
-						EXTENSION PROGRAM PLAN/PROJECT PROPOSAL	
+						EXTENSION PROGRAM PLAN / PROPOSAL	
 					</th> 
 				</tr>
 				<tr class ="select">
@@ -455,7 +460,7 @@ $yearQuarter = ceil($month / 3);
 							</div> 
 								 
 								
-						<label> XVl. Functional Relationships with the partner <i>(Duties/Task of the Partner Agencies)</i><label>
+						<label> XVl. Functional Relationships with the Partner <i>(Duties/Task of the Partner Agencies)</i><label>
 						<textarea placeholder="type here..." name="Functional" required></textarea>
 						
 						<label> XVll. Monitoring and Evaluation Mechanics/Plan<label>

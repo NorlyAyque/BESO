@@ -1,8 +1,14 @@
 <?php
+session_start();
 require("FPDFLibrary/fpdf.php");
 include("Connection.php");
 
-if((isset($_GET['view']))== False){ 
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
+if (isset($_GET['view'])== False){ 
 	echo "<center> <br>";
 	echo("<h1> Please Select Proposal to Generate into PDF </h1>");
 	echo "<h2> <a href='Proposal.php'> RETURN <a> </h2>";

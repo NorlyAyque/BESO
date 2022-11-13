@@ -1,6 +1,12 @@
 <?php
+session_start();
 require("FPDFLibrary/fpdf.php");
 include("Connection.php");
+
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
 
 //For No input PID, EID at MID  under Generate PDF
 if((isset($_GET['view']))== False){ 

@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
 ?>
 
 <!DOCTYPE html>

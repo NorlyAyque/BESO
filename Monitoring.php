@@ -2,6 +2,11 @@
 session_start();
 include("Connection.php");
 
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
 date_default_timezone_set("Asia/Manila");
 //$DateToday = date("Y-m-d");
 $DateToday = date("Y-m-d"); //YYYY-mm-dd
@@ -180,7 +185,7 @@ if(isset($_GET['verify'])){
 <?php
 
 //Display Proposal that needs to Monitor
-$sql = ("SELECT * FROM create_alangilan WHERE Remarks = 'Evaluated' ORDER BY ProposalID DESC");
+$sql = ("SELECT * FROM create_alangilan WHERE (unknown != 'Extension PAP' AND Remarks = 'Evaluated') ORDER BY ProposalID DESC");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{

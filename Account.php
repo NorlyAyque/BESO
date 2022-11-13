@@ -2,6 +2,11 @@
 session_start();
 include("Connection.php");
 
+if (isset($_SESSION['AccountAID']) == FALSE){
+	header('Location: index.php');
+	die;
+}
+
 //Session variables from index.php
 $AccountID = $_SESSION["AccountAID"];
 $Fullname = $_SESSION["FullName"];
