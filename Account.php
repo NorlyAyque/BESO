@@ -10,15 +10,18 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 //Session variables from index.php
 $AccountID = $_SESSION["AccountAID"];
 $Fullname = $_SESSION["FullName"];
-$UserPosition = $_SESSION["Position"];
 $Campus = $_SESSION["Campus"];
 $College = $_SESSION["College"];
 
+//Account Restrictions
+$UserPosition = $_SESSION["Position"];
 if ($UserPosition == "Head"){
 	//Code Continue
 }else {
-	echo "<center> Access Denied! You are not allowed to access this page. <br>";
-	echo "<a href='Dashboard.php'> Return </a>";
+	echo "<center> <br>";
+	echo "<h1> Access Denied! <br>";
+	echo "You are not allowed to access this page. </h1>";
+	echo "<h2> <a href='Dashboard.php'> RETURN </a> </h2>";
 	die();
 }
 
