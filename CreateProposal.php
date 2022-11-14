@@ -124,7 +124,7 @@ $yearQuarter = ceil($month / 3);
 					<th>
 						<div class="Drp">
 							(label text): 
-							<select name="Initiated" id="Initiated">
+							<select name="Initiated" id="Initiated" required>
 								<option  value="">Please Select</option>
 								<option  value="Client"required>Extension Service Program/Project/Activity is requested by clients.</option>
 								<option  value="Department" required>Extension Service Program/Project/Activity is Departments initiative.</option>
@@ -132,7 +132,7 @@ $yearQuarter = ceil($month / 3);
 						</div>
 						<div class="DrpV2">
 							(label text): 
-							<select id="Classification" name="Classification">
+							<select id="Classification" name="Classification" required>
 								<option value="">Please Select</option>
 								<option value="Program">Program</option>
 								<option value="Project">Project</option>
@@ -152,7 +152,7 @@ $yearQuarter = ceil($month / 3);
 					<th>
 						<div class="Drp">
 								(label text): 
-							<select id="unknown"name="unknown">
+							<select id="unknown"name="unknown" required>
 								<option value="">Please Select</option>
 								<option value="Extension PAP">Extension PAP</option>
 								<option value="For Monitoring">Monitoring</option>
@@ -161,7 +161,7 @@ $yearQuarter = ceil($month / 3);
 						</div>
 						<div class="DrpGAD">
 								GAD PAP Proposal?: 
-							<select id="IsGAD" name="IsGAD">
+							<select id="IsGAD" name="IsGAD" required>
 								<option value="">Please Select</option>
 								<option value="Yes">YES</option>
 								<option value="No">NO</option>
