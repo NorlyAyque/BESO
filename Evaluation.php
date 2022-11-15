@@ -1,5 +1,4 @@
 <?php
-phpinfo();
 session_start();
 include("Connection.php");
 
@@ -320,6 +319,7 @@ if(isset($_GET['approved'])){
 				alert('Error Occur. Implementing Office/ College / Program is not specified well.');
 			</script>
 		";
+		die;
 	}
 	
 	if (((str_contains($Office, $CICS)) == TRUE) OR ((str_contains($Office, $CICS_Full)) == TRUE)) {
@@ -361,6 +361,7 @@ if(isset($_GET['approved'])){
 				alert('Error Occur. Implementing Office/ College / Program is not specified well.');
 			</script>
 		";
+		die;
 	}
 	
 	if (((str_contains($Office, $CIT)) == TRUE) OR ((str_contains($Office, $CIT_Full)) == TRUE)) {
@@ -402,6 +403,7 @@ if(isset($_GET['approved'])){
 				alert('Error Occur. Implementing Office/ College / Program is not specified well.');
 			</script>
 		";
+		die;
 	}
 	
 
