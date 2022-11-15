@@ -36,7 +36,7 @@ $yearQuarter = ceil($month / 3);
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposals.css">
 
 </head>
 <body>
@@ -121,7 +121,7 @@ $yearQuarter = ceil($month / 3);
 					</th> 
 				</tr>
 				<tr>
-					<th>
+					<th colspan="4">
 						<div class="Drp">
 							Type of Proposal: 
 							<select name="Initiated" id="Initiated" required>
@@ -130,27 +130,7 @@ $yearQuarter = ceil($month / 3);
 								<option  value="Department" required>Departments initiative.</option>
 							</select>
 						</div>
-						<div class="DrpV2">
-							Classification: 
-							<select id="Classification" name="Classification" required>
-								<option value="">Please Select</option>
-								<option value="Program">Program</option>
-								<option value="Project">Project</option>
-								<option value="Activity">Activity</option>
-							</select>
-							
-						</div>
-					</th>
-					<!--
-						<input type="radio" id="Client" name="Initiated" value="Client" required> Extension Service Program/Project/Activity is requested by clients.</th>
-					<th colspan="2">
-						<input type="radio" id="Department" name="Initiated" value="Department" required> Extension Service Program/Project/Activity is Departments initiative.</th>
-					-->
-				</tr>	
-				
-				<tr>
-					<th>
-						<div class="Drp">
+						<div class="DrpCate">
 								Category: 
 							<select id="unknown"name="unknown" required>
 								<option value="">Please Select</option>
@@ -160,15 +140,44 @@ $yearQuarter = ceil($month / 3);
 							</select>
 						</div>
 						<div class="DrpGAD">
-								GAD PAP: 
+							GAD PAP: 
 							<select id="IsGAD" name="IsGAD" required>
 								<option value="">Please Select</option>
 								<option value="Yes">YES</option>
 								<option value="No">NO</option>
 							</select>
 						</div>
-					</th>
-				</tr>
+						<!--
+						<div class="DrpGAD">
+								GAD PAP: 
+							<select id="IsGAD" name="IsGAD" required>
+								<option value="">Please Select</option>
+								<option value="Yes">YES</option>
+								<option value="No">NO</option>
+							</select>
+							
+						</div>
+						-->
+					</th>	
+					<tr>
+					<th colspan="4">
+						<div class="DrpV2">
+							Classification: 
+							<select id="Classification" name="Classification" required>
+								<option value="">Please Select</option>
+								<option value="Program">Program</option>
+								<option value="Project">Project</option>
+								<option value="Activity">Activity</option>
+							</select>
+						</div>
+					</th>	
+					
+					<!--
+						<input type="radio" id="Client" name="Initiated" value="Client" required> Extension Service Program/Project/Activity is requested by clients.</th>
+					<th colspan="2">
+						<input type="radio" id="Department" name="Initiated" value="Department" required> Extension Service Program/Project/Activity is Departments initiative.</th>
+					-->
+				
 			</table>
 	<!--
 			<table class="header1">

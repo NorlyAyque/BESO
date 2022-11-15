@@ -124,7 +124,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Edit Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/EditProposals.css">
+<link rel="stylesheet" type="text/css" href="styles/EditProposal.css">
 
 </head>
 <body>
@@ -209,25 +209,32 @@ if(isset($_GET['edit'])){
 						EDIT PROJECT PROPOSAL	
 					</th> 
 				</tr> 
-				<tr class ="select">
-					<th>
+				<tr>
+					<th colspan="4">
 						<div class="Drp">
-							(label text): 
-							<select name="Initiated" id="Initiated">
+							Type of Proposal: 
+							<select name="Initiated" id="Initiated" required>
 								<option  value="">Please Select</option>
-								<option  value="Client"required>Extension Service Program/Project/Activity is requested by clients.</option>
-								<option  value="Department" required>Extension Service Program/Project/Activity is Departments initiative.</option>
+								<option  value="Client"required>Requested by clients.</option>
+								<option  value="Department" required>Departments initiative.</option>
 							</select>
 						</div>
-						<div class="DrpV2">
-							(label text): 
-							<select id="Classification" name="Classification">
+						<div class="DrpCate">
+								Category: 
+							<select id="unknown"name="unknown" required>
 								<option value="">Please Select</option>
-								<option value="Program">Program</option>
-								<option value="Project">Project</option>
-								<option value="Activity">Activity</option>
+								<option value="Extension PAP">Extension PAP</option>
+								<option value="For Monitoring">Monitoring</option>
+								<option value="For Impact Assessment">Impact Assessment</option>
 							</select>
-							
+						</div>
+						<div class="DrpGAD">
+							GAD PAP: 
+							<select id="IsGAD" name="IsGAD" required>
+								<option value="">Please Select</option>
+								<option value="Yes">YES</option>
+								<option value="No">NO</option>
+							</select>
 						</div>
 					</th>
 					
@@ -243,22 +250,14 @@ if(isset($_GET['edit'])){
 					-->
 				</tr>	
 				<tr>
-					<th>
-						<div class="Drp">
-								(label text): 
-							<select id="unknown"name="unknown">
+					<th colspan="4">
+						<div class="DrpV2">
+							Classification: 
+							<select id="Classification" name="Classification" required>
 								<option value="">Please Select</option>
-								<option value="Extension PAP">Extension PAP</option>
-								<option value="For Monitoring">Monitoring</option>
-								<option value="For Impact Assessment">Impact Assessment</option>
-							</select>
-						</div>
-						<div class="DrpGAD">
-								GAD PAP Proposal?: 
-							<select id="IsGAD" name="IsGAD">
-								<option value="">Please Select</option>
-								<option value="Yes">YES</option>
-								<option value="No">NO</option>
+								<option value="Program">Program</option>
+								<option value="Project">Project</option>
+								<option value="Activity">Activity</option>
 							</select>
 						</div>
 					</th>

@@ -270,7 +270,7 @@ margin-left: 100px;
   cursor: pointer;
   border:none;
   text-align:center;
-  width:45%;
+  width:18%;
   border:none;
   height:30px;
   border-radius:3px;
@@ -284,12 +284,35 @@ margin-left: 100px;
 .Drp option{
 	font-size:15px;
 	cursor:pointer;
+}
+.DrpCate{
+	margin-top:-30px;
+	margin-left:-3%;
+}
+.DrpCate select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:18%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  font-size:15px;
+
+}
+.DrpCate option{
+	font-size:15px;
+	cursor:pointer;
 	
 	
 }
 .DrpV2 {
-	margin-top:-30px;
-	margin-left:58%;
+	text-align:left;
 }
 
 
@@ -298,13 +321,14 @@ margin-left: 100px;
   cursor: pointer;
   border:none;
   text-align:center;
-  width:30%;
+  width:18.4%;
   border:none;
   height:30px;
   border-radius:3px;
   display: inline-block;
   vertical-align: middle;
     font-size:15px;
+	margin-left:22px;
 
 }
 .DrpV2 select{
@@ -313,13 +337,13 @@ margin-left: 100px;
 }
 .DrpGAD {
 	margin-top:-30px;
-	margin-left:50%
+	margin-left:50%;
 	
 }
 
 
 .DrpGAD select{
-  margin:auto;
+ margin:auto;
   cursor: pointer;
   border:none;
   text-align:center;
@@ -336,7 +360,6 @@ margin-left: 100px;
 	cursor:pointer;
 	
 }
-
 
 
 
@@ -383,8 +406,6 @@ margin-left: 100px;
 }
 
 .header th {
-  padding-top: 15px;
-  padding-bottom: 15px;
   text-align: center;
   background-color: var(--red);
   color: white;
