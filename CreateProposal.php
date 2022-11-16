@@ -267,8 +267,8 @@ $yearQuarter = ceil($month / 3);
 								<input type="checkbox" id="TypeCES_8" value="Parent's Empowerment through Social Development(PESODEV)Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"><span>9. Genger and Development</span>
-								<input type="checkbox" id="TypeCES_9" value="Genger and Development" name="CES" onclick="SelectTypeCES()">
+							<label class="check"><span>9. Gender and Development</span>
+								<input type="checkbox" id="TypeCES_9" value="Gender and Development" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
 							<label class="check"><span>10. Disaster Preparedness and Response/Climate Change Adaptation</span>
@@ -312,15 +312,15 @@ $yearQuarter = ceil($month / 3);
 									<span class="checkmark"></span>
 								</label>
 								<br>
-								<label class="check"><span>5. Genger equality</span>
-									<input type="checkbox" id="SDG5" value="Genger equality" name="ChkSDG" onclick="SelectSDG()">
+								<label class="check"><span>5. Gender equality</span>
+									<input type="checkbox" id="SDG5" value="Gender equality" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
 								<label class="check"><span>6. Clean water and sanitation</span>
 									<input type="checkbox" id="SDG6" value="Clean water and sanitation" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
-								<label class="check"><span>7. Affordableand clean energy</span>
+								<label class="check"><span>7. Affordable and clean energy</span>
 									<input type="checkbox" id="SDG7" value="Affordableand clean energy" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
