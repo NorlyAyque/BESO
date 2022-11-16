@@ -184,7 +184,7 @@ class PDF extends FPDF
 // Instanciation of inherited class
 $pdf = new PDF('P','mm',array(215.9,330.2)); //W*H
 $pdf->AliasNbPages();
-$pdf->SetMargins(20,20,10,0);//L-T-R-B
+$pdf->SetMargins(20,20,10);//L-T-R-B
 $pdf->SetAutoPageBreak(TRUE, 25); //For Bottom Margin
 $pdf->AddPage();
 $pdf->SetFont('Times','',10);
@@ -489,7 +489,7 @@ $pdf->Ln();
 
 //Signatories
 
-$pdf->SetMargins(15,20,10,50);//L-T-R-B
+$pdf->SetMargins(15,20,10);//L-T-R-B
 $pdf->SetAutoPageBreak(TRUE, 25); //For Bottom Margin
 $pdf->SetX(15);
 
