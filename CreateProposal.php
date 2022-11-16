@@ -251,7 +251,7 @@ $yearQuarter = ceil($month / 3);
 								<input type="checkbox" id="TypeCES_4" value="Community Outreach Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"><span>5. Technical-Vocational Education and Training(TVET)Program on Agri-Fishery and Related Program for Farmers and Fisherfolks</span>
+							<label class="check"><span>5. Technical-Vocational Education and Training(TVET) Program on Agri-Fishery and Related Program for Farmers and Fisherfolks</span>
 								<input type="checkbox" id="TypeCES_5" value="Technical-Vocational Education and Training(TVET)Program on Agri-Fishery and Related Program for Farmers and Fisherfolks" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
