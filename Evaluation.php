@@ -313,13 +313,6 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CEAFA_BQ4 = '$NewCount', CEAFA_BQT = '$Col', BT_Q4 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-	}else {
-		echo "
-			<script>
-				alert('Error Occur. Implementing Office/ College / Program is not specified well.');
-			</script>
-		";
-		die;
 	}
 	
 	if (((str_contains($Office, $CICS)) == TRUE) OR ((str_contains($Office, $CICS_Full)) == TRUE)) {
@@ -355,13 +348,6 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CICS_BQ4 = '$NewCount', CICS_BQT = '$Col', BT_Q4 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
 			$command = $con->query($sql) or die("Error Occur");
 		}	
-	}else {
-		echo "
-			<script>
-				alert('Error Occur. Implementing Office/ College / Program is not specified well.');
-			</script>
-		";
-		die;
 	}
 	
 	if (((str_contains($Office, $CIT)) == TRUE) OR ((str_contains($Office, $CIT_Full)) == TRUE)) {
@@ -397,13 +383,6 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CIT_BQ4 = '$NewCount', CIT_BQT = '$Col', BT_Q4 = '$Row', BT_QT = '$Total' WHERE Year = '$YearToday'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-	}else {
-		echo "
-			<script>
-				alert('Error Occur. Implementing Office/ College / Program is not specified well.');
-			</script>
-		";
-		die;
 	}
 	
 
