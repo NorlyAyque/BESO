@@ -164,6 +164,7 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $PreparedBy; ?></td> 
 				<td><?php echo $Remarks_3; ?></td> 	
 				<td>
+					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn1">View</button> </a> <br> <br>
 					<a href="ListImpact.php?MarkAsComplete=<?php echo $PID; ?>" button class ="btn1">Mark as Complete</button> </a>
 				</td> 
 			</tr>
