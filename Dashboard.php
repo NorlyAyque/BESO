@@ -217,7 +217,7 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<th colspan="5">Number of Trainees weight by length of training </th>
 						<th colspan="5">Number of extension programs organized and supported consistent with the SUC's mandated and priority programs <br> (ACTUAL) </th>
 						<th colspan="5">Percentage of beneficiaries who rate the training course/s and advisory service as satisfactory or higher in terms of quality and relevance</th>
-						<th rowspan="2">Budget </th>
+						<th rowspan="3">Budget </th>
 					</tr>
 					<tr>
 						<td>1st Qrt</td>

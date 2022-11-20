@@ -363,7 +363,7 @@ if(isset($_GET['evaluation'])){
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm2()">CLOSE</button>
 										</div>
-										<textarea placeholder="Your Name" name="Sign1_1" required><?php echo $dbSign1_1; ?></textarea></td>
+										<textarea placeholder="Your Name" name="Sign1_1" required><?php echo ""; ?></textarea></td>
 	
 								<td>
 									<div class="checkbox3">
@@ -386,7 +386,7 @@ if(isset($_GET['evaluation'])){
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm3()">CLOSE</button>
 										</div>
-										<textarea placeholder="Designation" name="Sign1_2" required><?php echo $dbSign1_2; ?></textarea></td>
+										<textarea placeholder="Designation" name="Sign1_2" required><?php echo ""; ?></textarea></td>
 							</tr>
 							<tr>
 								<td> Review by:</td>
@@ -411,7 +411,7 @@ if(isset($_GET['evaluation'])){
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm4()">CLOSE</button>
 										</div>
-									<textarea placeholder="Your Name" name="Sign2_1" required><?php echo $dbSign2_1; ?></textarea></td>
+									<textarea placeholder="Your Name" name="Sign2_1" required><?php echo ""; ?></textarea></td>
 								<td>
 									<div class="checkbox5">
 											<label onclick="openForm5()">Select Designation</label>
@@ -433,7 +433,7 @@ if(isset($_GET['evaluation'])){
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm5()">CLOSE</button>
 										</div>
-								<textarea placeholder="Designation" name="Sign2_2" required><?php echo $dbSign2_2; ?></textarea></td>
+								<textarea placeholder="Designation" name="Sign2_2" required><?php echo ""; ?></textarea></td>
 							</tr>
 				<tr>
 					<td> Accepted by:</td>
@@ -458,7 +458,7 @@ if(isset($_GET['evaluation'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm6()">CLOSE</button>
 							</div>
-					<textarea placeholder="Your Name" name="Sign3_1" required><?php echo $dbSign3_1; ?></textarea></td>
+					<textarea placeholder="Your Name" name="Sign3_1" required><?php echo ""; ?></textarea></td>
 					
 					<td>
 						<div class="checkbox7">
@@ -481,7 +481,7 @@ if(isset($_GET['evaluation'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm7()">CLOSE</button>
 							</div>
-					<textarea placeholder="Designation" name="Sign3_2" required><?php echo $dbSign3_2; ?></textarea></td>
+					<textarea placeholder="Designation" name="Sign3_2" required><?php echo ""; ?></textarea></td>
 				</tr>
 						</table>
 	
