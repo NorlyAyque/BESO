@@ -520,6 +520,7 @@ if(isset($_GET['edit'])){
 						</table>
 	
 		<div class ="save">
+			<a href="Evaluation-revision.php"> Back </a></button>
 			<button class = "btn3" type="submit" name="update"> Update </button>
 		</div>
 </form>

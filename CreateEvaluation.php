@@ -23,6 +23,8 @@ if(isset($_GET['evaluation'])){
     while($result = mysqli_fetch_array($command))
 	{
 		$dbAuthor = $result['AccountID']; //Gumawa ng Proposal - Author
+		$dbYear = $result['Year'];
+		$dbQuarter = $result['Quarter'];
 
 		$dbTitle = $result['Title'];
         $dbLocation = $result['Location_Area'];
@@ -732,7 +734,7 @@ if (isset($_POST['submit'])) {
 	$Sign3_2 = htmlspecialchars($_POST['Sign3_2']);
 
 	$stmt = mysqli_prepare($con, "INSERT INTO evaluation_alangilan
-		(ProposalID, Author, Evaluator, Date_Time,
+		(ProposalID, Author, Evaluator, Date_Time, Year, Quarter,
 			Title, Location_Area, DateImplement, HoursImplement, Office, Agency, TypeCES, SDG, Beneficiaries,
 			M1, M2, MT, F1, F2, FT, MFT, People, Objectives, Narrative,
 			Eval1A1, Eval1A2, Eval1AT, Eval1B1, Eval1B2, Eval1BT, Eval1C1, Eval1C2, Eval1CT,
@@ -743,11 +745,11 @@ if (isset($_POST['submit'])) {
 			ProjectStatus, Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2)
 		VALUES 
 			(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
-			 ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
-			 ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
+			 ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
+			 ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
 			 ?,?,?,?,?)");
-	mysqli_stmt_bind_param($stmt, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', //65
-		$PID, $dbAuthor, $AID, $DateTime,
+	mysqli_stmt_bind_param($stmt, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', //65
+		$PID, $dbAuthor, $AID, $DateTime, $dbYear, $dbQuarter,
 			$Title, $Location_Area, $DateImplement, $HoursImplement, $Office, $Agency, $TypeCES, $SDG, $Beneficiaries,
 			$M1, $M2, $MT, $F1, $F2, $FT, $MFT, $People, $Objectives, $Narrative,
 			$Eval1A1, $Eval1A2, $Eval1AT, $Eval1B1, $Eval1B2, $Eval1BT, $Eval1C1, $Eval1C2, $Eval1CT,

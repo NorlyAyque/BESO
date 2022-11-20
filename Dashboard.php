@@ -7,9 +7,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
-
 ?>
-
 
 <?php
 //Display Data of Target and Actual
@@ -65,12 +63,9 @@ while($result = mysqli_fetch_array($command))
 	$dbBT_Q4 = $result["BT_Q4"];
 	$dbBT_QT = $result["BT_QT"];
 }
+include_once 'Dashboard-Computations.php';
 ?>
 
-<?php
-//Getting number of percentage
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,8 +74,8 @@ while($result = mysqli_fetch_array($command))
 <link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
 
 </head>
-<body>
-	
+<body onload="Compute()">
+
 <div class="container">
 	
 	<div class = "navigation">
@@ -260,11 +255,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td><input type = "number" min="0" name="CEAFA_AQ4" id="CEAFA_AQ4" value="<?php echo $dbCEAFA_AQ4;?>" onchange="CalCEAFA_A()" REQUIRED></td>
 						<td><input type = "number" min="0" name="CEAFA_AQT" id="CEAFA_AQT" value="<?php echo $dbCEAFA_AQT;?>" readonly> </td> 
 						
-						<td><?php echo "A";?></td>
-						<td><?php echo "B";?></td>
-						<td><?php echo "C";?></td>
-						<td><?php echo "D";?></td>
-						<td><?php echo "E";?></td>
+						<td><input type = "number" min="0" id="T_R1Q1" value="<?php echo $T_R1Q1;?>" readonly></td> <!-- Row 1 Q1 -->
+						<td><input type = "number" min="0" id="T_R1Q2" value="<?php echo $T_R1Q2;?>" readonly></td> <!-- Row 1 Q2 -->
+						<td><input type = "number" min="0" id="T_R1Q3" value="<?php echo $T_R1Q3;?>" readonly></td> <!-- Row 1 Q3 -->
+						<td><input type = "number" min="0" id="T_R1Q4" value="<?php echo $T_R1Q4;?>" readonly></td> <!-- Row 1 Q4 -->
+						<td><input type = "number" min="0" id="T_R1_T" value="<?php echo $T_R1_T;?>" readonly> </td> <!-- Row 1 Total -->
 						
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQ1" id="CEAFA_BQ1" value="<?php echo $dbCEAFA_BQ1;?>" onchange="CalCEAFA_B()"></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQ2" id="CEAFA_BQ2" value="<?php echo $dbCEAFA_BQ2;?>" onchange="CalCEAFA_B()"></td>
@@ -278,7 +273,7 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td><?php echo "4";?></td>
 						<td><?php echo "5";?></td>
 						
-						<td  rowspan="3" class="input1" ><?php echo "Total Budget";?></td>-->
+						<td  rowspan="3" class="input1" ><?php echo "Total Budget";?></td>
 					</tr>
 					<tr>
 						<th>CICS</th>
@@ -289,11 +284,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td><input type = "number" min="0" name="CICS_AQ4" id="CICS_AQ4" value="<?php echo $dbCICS_AQ4;?>" onchange="CalCICS_A()"></td>
 						<td><input type = "number" min="0" name="CICS_AQT" id="CICS_AQT" value="<?php echo $dbCICS_AQT;?>" readonly> </td> 
 						
-						<td><?php echo "F";?></td>
-						<td><?php echo "G";?></td>
-						<td><?php echo "H";?></td>
-						<td><?php echo "I";?></td>
-						<td><?php echo "J";?></td>
+						<td><input type = "number" min="0" id="T_R2Q1" value="<?php echo $T_R2Q1;?>" readonly></td> <!-- Row 2 Q1 -->
+						<td><input type = "number" min="0" id="T_R2Q2" value="<?php echo $T_R2Q2;?>" readonly></td> <!-- Row 2 Q2 -->
+						<td><input type = "number" min="0" id="T_R2Q3" value="<?php echo $T_R2Q3;?>" readonly></td> <!-- Row 2 Q3 -->
+						<td><input type = "number" min="0" id="T_R2Q4" value="<?php echo $T_R2Q4;?>" readonly></td> <!-- Row 2 Q4 -->
+						<td><input type = "number" min="0" id="T_R2_T" value="<?php echo $T_R2_T;?>" readonly> </td> <!-- Row 2 Total -->
 						
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQ1" id="CICS_BQ1" value="<?php echo $dbCICS_BQ1;?>" onchange="CalCICS_B()"></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQ2" id="CICS_BQ2" value="<?php echo $dbCICS_BQ2;?>" onchange="CalCICS_B()"></td>
@@ -317,11 +312,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td><input type = "number" min="0" name="CIT_AQ4" id="CIT_AQ4" value="<?php echo $dbCIT_AQ4;?>" onchange="CalCIT_A()"></td>
 						<td><input type = "number" min="0" name="CIT_AQT" id="CIT_AQT" value="<?php echo $dbCIT_AQT;?>" readonly> </td> 
 						
-						<td><?php echo "K";?></td>
-						<td><?php echo "L";?></td>
-						<td><?php echo "M";?></td>
-						<td><?php echo "N";?></td>
-						<td><?php echo "O";?></td>
+						<td><input type = "number" min="0" id="T_R3Q1" value="<?php echo $T_R3Q1;?>" readonly></td> <!-- Row 3 Q1 -->
+						<td><input type = "number" min="0" id="T_R3Q2" value="<?php echo $T_R3Q2;?>" readonly></td> <!-- Row 3 Q2 -->
+						<td><input type = "number" min="0" id="T_R3Q3" value="<?php echo $T_R3Q3;?>" readonly></td> <!-- Row 3 Q3 -->
+						<td><input type = "number" min="0" id="T_R3Q4" value="<?php echo $T_R3Q4;?>" readonly></td> <!-- Row 3 Q4 -->
+						<td><input type = "number" min="0" id="T_R3_T" value="<?php echo $T_R3_T;?>" readonly> </td> <!-- Row 3 Total -->
 
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQ1" id="CIT_BQ1" value="<?php echo $dbCIT_BQ1;?>" onchange="CalCIT_B()"></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQ2" id="CIT_BQ2" value="<?php echo $dbCIT_BQ2;?>" onchange="CalCIT_B()"></td>
@@ -345,11 +340,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td><input type = "number" min="0" name="AT_Q4" id="AT_Q4" value="<?php echo $dbAT_Q4;?>" readonly></td>
 						<td><input type = "number" min="0" name="AT_QT" id="AT_QT" value="<?php echo $dbAT_QT;?>" readonly></td>
 
-						<td><?php echo "P";?></td>
-						<td><?php echo "Q";?></td>
-						<td><?php echo "R";?></td>
-						<td><?php echo "S";?></td>
-						<td><?php echo "T";?></td>
+						<td><input type = "number" min="0" id="T_R4Q1" value="<?php echo $T_R4Q1;?>" readonly></td> <!-- Row 4 Q1 -->
+						<td><input type = "number" min="0" id="T_R4Q2" value="<?php echo $T_R4Q2;?>" readonly></td> <!-- Row 4 Q2 -->
+						<td><input type = "number" min="0" id="T_R4Q3" value="<?php echo $T_R4Q3;?>" readonly></td> <!-- Row 4 Q3 -->
+						<td><input type = "number" min="0" id="T_R4Q4" value="<?php echo $T_R4Q4;?>" readonly></td> <!-- Row 4 Q4 -->
+						<td><input type = "number" min="0" id="T_R4_T" value="<?php echo $T_R4_T;?>" readonly></td> <!-- Row 4 Total -->
 						
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_Q1" id="BT_Q1" value="<?php echo $dbBT_Q1;?>" readonly></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_Q2" id="BT_Q2" value="<?php echo $dbBT_Q2;?>" readonly></td>
@@ -608,6 +603,80 @@ function CalTotal_BQ(){ //Auto Compute for A_Quarter4
 	document.getElementById("BT_QT").value = ans;
 }
 //End for Auto Compute for ACTUAL (B)
+
+//Auto Compute for Number of Trainees weight by length of training
+//Rows
+function T_R1_T(){
+	let A = document.getElementById('T_R1Q1').value;
+	let B = document.getElementById('T_R1Q2').value;
+	let C = document.getElementById('T_R1Q3').value;
+	let D = document.getElementById('T_R1Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("T_R1_T").value = ans;
+}
+function T_R2_T(){
+	let A = document.getElementById('T_R2Q1').value;
+	let B = document.getElementById('T_R2Q2').value;
+	let C = document.getElementById('T_R2Q3').value;
+	let D = document.getElementById('T_R2Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("T_R2_T").value = ans;
+}
+function T_R3_T(){
+	let A = document.getElementById('T_R3Q1').value;
+	let B = document.getElementById('T_R3Q2').value;
+	let C = document.getElementById('T_R3Q3').value;
+	let D = document.getElementById('T_R3Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("T_R3_T").value = ans;
+}
+//Columns
+function T_R4Q1(){
+	let A = document.getElementById('T_R1Q1').value;
+	let B = document.getElementById('T_R2Q1').value;
+	let C = document.getElementById('T_R3Q1').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
+	document.getElementById("T_R4Q1").value = ans;
+}
+function T_R4Q2(){
+	let A = document.getElementById('T_R1Q2').value;
+	let B = document.getElementById('T_R2Q2').value;
+	let C = document.getElementById('T_R3Q2').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
+	document.getElementById("T_R4Q2").value = ans;
+}
+function T_R4Q3(){
+	let A = document.getElementById('T_R1Q3').value;
+	let B = document.getElementById('T_R2Q3').value;
+	let C = document.getElementById('T_R3Q3').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
+	document.getElementById("T_R4Q3").value = ans;
+}
+function T_R4Q4(){
+	let A = document.getElementById('T_R1Q4').value;
+	let B = document.getElementById('T_R2Q4').value;
+	let C = document.getElementById('T_R3Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
+	document.getElementById("T_R4Q4").value = ans;
+}
+function T_R4_T(){
+	let A = document.getElementById('T_R4Q1').value;
+	let B = document.getElementById('T_R4Q2').value;
+	let C = document.getElementById('T_R4Q3').value;
+	let D = document.getElementById('T_R4Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("T_R4_T").value = ans;
+}
+
+//Compute Trainees and Percentage
+function Compute(){
+	T_R1_T();	T_R2_T();	T_R3_T();	
+	T_R4Q1();	T_R4Q2();	T_R4Q3();	T_R4Q4();	T_R4_T();
+	
+}
+
+
+
 </script>
 
 <script>

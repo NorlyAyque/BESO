@@ -55,7 +55,7 @@ if(isset($_GET['create'])){
 	$x = $dateinterval->format('%a');//Whole Number
 
 	if ($x == 0){ //Same Day = 0 = 1 day (8hrs)
-		echo $NoOfDays = $dateinterval->format('%a') + 1;
+		$NoOfDays = $dateinterval->format('%a') + 1;
 	}else{ //Not same day = 2 days or more
 		$NoOfDays = $dateinterval->format('%a') +1;
 	}

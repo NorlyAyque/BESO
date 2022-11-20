@@ -11,7 +11,6 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 $AID = $_SESSION["AccountAID"];
 $create_table = $_SESSION["create_table"];
 
-
 date_default_timezone_set("Asia/Manila");
 $DateTime = date("M, d Y; h:i:s A");
 ?>
@@ -659,7 +658,7 @@ if(isset($_GET['edit'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm2()">CLOSE</button>
 							</div>
-							<textarea placeholder="..." name="Sign1_1" required></textarea></td>
+							<textarea placeholder="..." name="Sign1_1" required><?php echo $dbSign1_1;?></textarea></td>
 	
 					<td>
 						<div class="checkbox3">
@@ -683,7 +682,7 @@ if(isset($_GET['edit'])){
 								<button type="button" class="btncancel" onclick="closeForm3()">CLOSE</button>
 							</div>
 					
-					<textarea placeholder="..." name="Sign1_2" required></textarea></td>
+					<textarea placeholder="..." name="Sign1_2" required><?php echo $dbSign1_2;?></textarea></td>
 				</tr>
 				<tr>
 					<td> Review by:</td>
@@ -708,7 +707,7 @@ if(isset($_GET['edit'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm4()">CLOSE</button>
 							</div>
-						<textarea placeholder="..." name="Sign2_1" required></textarea></td>
+						<textarea placeholder="..." name="Sign2_1" required><?php echo $dbSign2_1;?></textarea></td>
 					<td>
 						<div class="checkbox5">
 								<label onclick="openForm5()">Select Designation</label>
@@ -730,7 +729,7 @@ if(isset($_GET['edit'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm5()">CLOSE</button>
 							</div>
-					<textarea placeholder="..." name="Sign2_2" required></textarea></td>
+					<textarea placeholder="..." name="Sign2_2" required><?php echo $dbSign2_2;?></textarea></td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
@@ -755,7 +754,7 @@ if(isset($_GET['edit'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm6()">CLOSE</button>
 							</div>
-					<textarea placeholder="..." name="Sign3_1" required></textarea></td>
+					<textarea placeholder="..." name="Sign3_1" required><?php echo $dbSign3_1;?></textarea></td>
 					
 					<td>
 						<div class="checkbox7">
@@ -778,7 +777,7 @@ if(isset($_GET['edit'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm7()">CLOSE</button>
 							</div>
-					<textarea placeholder="..." name="Sign3_2" required></textarea></td>
+					<textarea placeholder="..." name="Sign3_2" required><?php echo $dbSign3_2;?></textarea></td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
@@ -803,7 +802,7 @@ if(isset($_GET['edit'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm8()">CLOSE</button>
 							</div>
-					<textarea placeholder="..." name="Sign4_1" required></textarea></td>
+					<textarea placeholder="..." name="Sign4_1" required><?php echo $dbSign4_1;?></textarea></td>
 					
 					<td>
 						<div class="checkbox9">
@@ -826,7 +825,7 @@ if(isset($_GET['edit'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm9()">CLOSE</button>
 							</div>
-					<textarea placeholder="..." name="Sign4_2" required></textarea></td>
+					<textarea placeholder="..." name="Sign4_2" required><?php echo $dbSign4_2;?></textarea></td>
 				</tr>
 				<tr>
 					<td>Approved by:</td>
@@ -851,7 +850,7 @@ if(isset($_GET['edit'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm10()">CLOSE</button>
 							</div>
-					<textarea placeholder="..." name="Sign5_1" required></textarea></td>
+					<textarea placeholder="..." name="Sign5_1" required><?php echo $dbSign5_1;?></textarea></td>
 					
 					<td>
 						<div class="checkbox11">
@@ -874,11 +873,13 @@ if(isset($_GET['edit'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm11()">CLOSE</button>
 							</div>
-					<textarea placeholder="..." name="Sign5_2" required></textarea></td>
+					<textarea placeholder="..." name="Sign5_2" required><?php echo $dbSign5_2;?></textarea></td>
 				</tr>
 			</table>
 			<div class="button">
+				<a href="Proposal-revision.php"> Back </a></button>
 				<input type="submit" class="btn" name="update" value="Update">
+
 			</div>
 		</div>
 	</form>	
@@ -1031,7 +1032,7 @@ if (isset($_POST['update'])) {
 	$command = $con->query($sql);
 	echo "<script>
 			alert('Proposal Successfully Updated');
-			window.location='Proposal-revision.php';
+			window.location='EditProposal.php?edit=$PID';
 		</script>";
 }
 ?>
@@ -1046,31 +1047,31 @@ if (isset($_POST['update'])) {
 
 <?php
  if ($dbInitiated == "Department"){
-	echo "<script>document.getElementById('Department').checked = true; </script>";
+	echo "<script>document.getElementById('Initiated').value = 'Department'; </script>";
  } else if ($dbInitiated == "Client"){
-	echo "<script>document.getElementById('Client').checked = true; </script>";
+	echo "<script>document.getElementById('Initiated').value = 'Client'; </script>";
  }
 
  if ($dbClassification == "Program"){
-	echo "<script>document.getElementById('Program').checked = true; </script>";
+	echo "<script>document.getElementById('Classification').value = 'Program'; </script>";
  } else if ($dbClassification == "Project"){
-	echo "<script>document.getElementById('Project').checked = true; </script>";
+	echo "<script>document.getElementById('Classification').value = 'Project'; </script>";
  }else if ($dbClassification == "Activity"){
-	echo "<script>document.getElementById('Activity').checked = true; </script>";
+	echo "<script>document.getElementById('Classification').value = 'Activity'; </script>";
  }
 
- if ($dbunknown == "ExtensionPAP"){
-	echo "<script>document.getElementById('ExtensionPAP').checked = true; </script>";
- } else if ($dbunknown == "Monitoring"){
-	echo "<script>document.getElementById('Monitoring').checked = true; </script>";
- }else if ($dbunknown == "Impact"){
-	echo "<script>document.getElementById('Impact').checked = true; </script>";
+ if ($dbunknown == "Extension PAP"){
+	echo "<script>document.getElementById('unknown').value = 'Extension PAP'; </script>";
+ } else if ($dbunknown == "For Monitoring"){
+	echo "<script>document.getElementById('unknown').value = 'For Monitoring'; </script>";
+ }else if ($dbunknown == "For Impact Assessment"){
+	echo "<script>document.getElementById('unknown').value = 'For Impact Assessment'; </script>";
  }
 
  if ($dbIsGAD == "Yes"){
-	echo "<script>document.getElementById('Yes').checked = true; </script>";
+	echo "<script>document.getElementById('IsGAD').value = 'Yes'; </script>";
  } else if ($dbIsGAD == "No"){
-	echo "<script>document.getElementById('No').checked = true; </script>";
+	echo "<script>document.getElementById('IsGAD').value = 'No'; </script>";
  }
 
  if ($dbFrequency == "Monthly"){
