@@ -88,6 +88,9 @@ if(isset($_GET['evaluation'])){
 	<div class="menu-header-bg"></div>
 	
 		<ul> 
+		<div class="toggle">
+				<ion-icon name="menu"></ion-icon>
+				</div>
 			<center><?php include("userlogin.php"); ?></center>
 			<li>
 				<a href="Dashboard.php">
@@ -146,9 +149,7 @@ if(isset($_GET['evaluation'])){
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
-				<div class="toggle">
-				<ion-icon name="menu"></ion-icon>
-				</div>	
+					
 			</div>
 			
 			<table class="header">

@@ -86,6 +86,9 @@ if(isset($_GET['enable'])){
 	<div class="menu-header-bg"></div>
 	
 		<ul> 
+		<div class="toggle">
+				<ion-icon name="menu"></ion-icon>
+				</div>
 			<center><?php include("userlogin.php"); ?></p></center>
 			<li>
 				<a href="Dashboard.php">
@@ -142,9 +145,7 @@ if(isset($_GET['enable'])){
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
-				<div class="toggle">
-					<ion-icon name="reorder-three-sharp"></ion-icon>
-				</div>	
+				
 			</div>
 
 			<?php 

@@ -208,8 +208,8 @@ margin-left: 100px;
 	align-items: center;
 	font-size:30px;
 	cursor: pointer;
-	margin-top:10px;
-	margin-left: 30px;
+	color:white;
+	margin-bottom:-30px;
 }
 /*
 .profile{
@@ -253,8 +253,7 @@ margin-left: 100px;
   
 }
 .btnview{
-	margin-bottom:5px;
-	text-align:right
+	margin-left:auto;
 }
 .btnview .adduser{
   margin-right:8px;
@@ -293,7 +292,7 @@ margin-left: 100px;
 .input{
   margin-right:auto;
   margin-left:30px;
-  
+  margin-top:-15px;
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0,0,0,0.3); 
   overflow:hidden;
