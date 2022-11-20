@@ -32,7 +32,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Edit User</title>
-<link rel="stylesheet" type="text/css" href="styles/Form.css">
+<link rel="stylesheet" type="text/css" href="styles/Form-style.css">
 
 </head>
 <body>
@@ -43,12 +43,10 @@ if(isset($_GET['edit'])){
 	<div class="menu-header-bg"></div>
 	
 		<ul> 
-			<li>
-				<a href="#">
-					<div class=" logo"><img src ="images/logo.png"></div>
-					<span class ="title1"> BESO Portal</span>
-				</a>
-			</li>
+			<div class="toggle">
+					<ion-icon name="reorder-three-sharp"></ion-icon>
+				</div>
+			<center><?php include("userlogin.php"); ?></center>
 			<li>
 				<a href="Dashboard.php">
 					<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
