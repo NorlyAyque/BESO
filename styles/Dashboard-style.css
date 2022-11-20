@@ -252,6 +252,43 @@ margin-left: 100px;
    
   
 }
+.btnview{
+	margin-bottom:5px;
+	text-align:right
+}
+.btnview .adduser{
+  margin-right:8px;
+  background-color: #353c59; 
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  display: inline-block;
+  vertical-align: middle;
+
+  
+}
+
+.btnview .adduser:hover {
+  background-color:  #4248f8;
+  color: white;
+  text-decoration:none;
+}
+
+.btnview .adduser ion-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right:10px;
+	font-size: 20px;
+	float: left;
+	text-decoration:none;
+}
 
 .input{
   margin-right:auto;

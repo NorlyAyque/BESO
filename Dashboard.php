@@ -76,7 +76,7 @@ while($result = mysqli_fetch_array($command))
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboards.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard-style.css">
 
 </head>
 <body>
@@ -151,6 +151,9 @@ while($result = mysqli_fetch_array($command))
 			<div class ="scroll">
 
 <form action="" method="POST">
+			<div class="btnview">
+				<a href="View.php" button class = "adduser"> View Target<ion-icon name="eye-outline"></ion-icon></a> </button>
+			</div>
 			<table class="input">
 				<tbody>
 					<tr>

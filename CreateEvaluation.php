@@ -77,7 +77,7 @@ if(isset($_GET['evaluation'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Create Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/Evaluation-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Evaluation.css">
 
 </head>
 <body>
@@ -88,12 +88,7 @@ if(isset($_GET['evaluation'])){
 	<div class="menu-header-bg"></div>
 	
 		<ul> 
-			<li>
-				<a href="#">
-					<div class=" logo"><img src ="images/logo.png"></div>
-					<span class ="title1"> BESO Portal</span>
-				</a>
-			</li>
+			<center><?php include("userlogin.php"); ?></center>
 			<li>
 				<a href="Dashboard.php">
 					<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
@@ -346,18 +341,148 @@ if(isset($_GET['evaluation'])){
 							</tr>
 							<tr>
 								<td> Prepared by:</td>
-								<td><textarea placeholder="Your Name" name="Sign1_1" required></textarea></td>
-								<td><textarea placeholder="Designation" name="Sign1_2" required></textarea></td>
+									
+								<td>
+									<div class="checkbox2">
+											<label onclick="openForm2()">Select your name</label>
+									</div>
+										<div class="form-popup2" id="myForm2">
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<br>
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<br>
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<button type="button" class="btncancel" onclick="closeForm2()">CLOSE</button>
+										</div>
+										<textarea placeholder="Your Name" name="Sign1_1" required><?php echo $dbSign1_1; ?></textarea></td>
+	
+								<td>
+									<div class="checkbox3">
+											<label onclick="openForm3()">Select Designation</label>
+									</div>
+										<div class="form-popup3" id="myForm3">
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<br>
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<br>
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<button type="button" class="btncancel" onclick="closeForm3()">CLOSE</button>
+										</div>
+										<textarea placeholder="Designation" name="Sign1_2" required><?php echo $dbSign1_2; ?></textarea></td>
 							</tr>
 							<tr>
 								<td> Review by:</td>
-								<td><textarea placeholder="Your Name" name="Sign2_1" required></textarea></td>
-								<td><textarea placeholder="Designation" name="Sign2_2" required></textarea></td>
+								<td>
+									<div class="checkbox4">
+											<label onclick="openForm4()">Select your name</label>
+									</div>
+										<div class="form-popup4" id="myForm4">
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<br>
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<br>
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<button type="button" class="btncancel" onclick="closeForm4()">CLOSE</button>
+										</div>
+									<textarea placeholder="Your Name" name="Sign2_1" required><?php echo $dbSign2_1; ?></textarea></td>
+								<td>
+									<div class="checkbox5">
+											<label onclick="openForm5()">Select Designation</label>
+									</div>
+										<div class="form-popup5" id="myForm5">
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<br>
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<br>
+											<label class="check"><span>Sample</span>
+												<input type="checkbox" id="" value="" name="" onclick="">
+												<span class="checkmark"></span>
+											</label>
+											<button type="button" class="btncancel" onclick="closeForm5()">CLOSE</button>
+										</div>
+								<textarea placeholder="Designation" name="Sign2_2" required><?php echo $dbSign2_2; ?></textarea></td>
 							</tr>
-								<td>Accepted by:</td>
-								<td><textarea placeholder="Your Name" name="Sign3_1" required></textarea></td>
-								<td><textarea placeholder="Designation" name="Sign3_2" required></textarea></td>
-							</tr>
+				<tr>
+					<td> Accepted by:</td>
+					<td>
+						<div class="checkbox6">
+								<label onclick="openForm6()">Select your name</label>
+						</div>
+							<div class="form-popup6" id="myForm6">
+								<label class="check"><span>Sample</span>
+									<input type="checkbox" id="" value="" name="" onclick="">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"><span>Sample</span>
+									<input type="checkbox" id="" value="" name="" onclick="">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"><span>Sample</span>
+									<input type="checkbox" id="" value="" name="" onclick="">
+									<span class="checkmark"></span>
+								</label>
+								<button type="button" class="btncancel" onclick="closeForm6()">CLOSE</button>
+							</div>
+					<textarea placeholder="Your Name" name="Sign3_1" required><?php echo $dbSign3_1; ?></textarea></td>
+					
+					<td>
+						<div class="checkbox7">
+								<label onclick="openForm7()">Select Designation</label>
+						</div>
+							<div class="form-popup7" id="myForm7">
+								<label class="check"><span>Sample</span>
+									<input type="checkbox" id="" value="" name="" onclick="">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"><span>Sample</span>
+									<input type="checkbox" id="" value="" name="" onclick="">
+									<span class="checkmark"></span>
+								</label>
+								<br>
+								<label class="check"><span>Sample</span>
+									<input type="checkbox" id="" value="" name="" onclick="">
+									<span class="checkmark"></span>
+								</label>
+								<button type="button" class="btncancel" onclick="closeForm7()">CLOSE</button>
+							</div>
+					<textarea placeholder="Designation" name="Sign3_2" required><?php echo $dbSign3_2; ?></textarea></td>
+				</tr>
 						</table>
 	
 		<div class ="save">
