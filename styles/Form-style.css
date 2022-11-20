@@ -20,18 +20,6 @@ body{
 	
 }
 
-.menu-header-bg {
-    height: 250px;
-    width: 360px;
-    background: linear-gradient(190deg,#A62C2B 50%, #E64848 100%);
-	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    transform: rotate(-10deg);
-    border-radius: 20px  15px 15px;
-    margin-left: -20px;
-	margin-top: -150px;
-   
-
-}
 .container{
 	position: relative;
 	width:100%;
@@ -39,16 +27,7 @@ body{
 
 }
 
-.navigation .logo img{
-	height:90px;
-	width:90px;
-	margin-right:40px;
-	margin-left:5px;
-	border-radius:50px;
-	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.5);
-	margin-top:-5px;
-	
-}
+
 /* width */
 ::-webkit-scrollbar {
   width: 2px;
@@ -157,19 +136,6 @@ body{
 	font-weight:bold;
 	
 }
-.navigation ul li a .title1{
-	position: relative;
-	font-size:25px;
-	display:block;
-	margin-left:-20px;
-	line-height: 68px;
-	text-align: start;
-	white-space: nowrap;
-	transform: rotate(-9deg);
-	margin-top:-9px;
-	 font-weight:bold;
-}
-
 
 
 
