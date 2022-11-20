@@ -20,18 +20,7 @@ body{
 	
 }
 
-.menu-header-bg {
-    height: 250px;
-    width: 360px;
-    background: linear-gradient(190deg,#A62C2B 50%, #E64848 100%);
-	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    transform: rotate(-10deg);
-    border-radius: 20px  15px 15px;
-    margin-left: -20px;
-	margin-top: -150px;
-   
 
-}
 .container{
 	position: relative;
 	width:100%;
@@ -39,16 +28,7 @@ body{
 
 }
 
-.navigation .logo img{
-	height:90px;
-	width:90px;
-	margin-right:40px;
-	margin-left:5px;
-	border-radius:50px;
-	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.5);
-	margin-top:-5px;
-	
-}
+
 /* width */
 ::-webkit-scrollbar {
   width: 2px;
@@ -156,18 +136,6 @@ body{
 	font-size: 17px;
 	font-weight:bold;
 	
-}
-.navigation ul li a .title1{
-	position: relative;
-	font-size:25px;
-	display:block;
-	margin-left:-20px;
-	line-height: 68px;
-	text-align: start;
-	white-space: nowrap;
-	transform: rotate(-9deg);
-	margin-top:-9px;
-	 font-weight:bold;
 }
 
 
@@ -629,7 +597,7 @@ cursor: pointer;
   margin-top:10px;
    border-radius:5px;
 }
-
+/*
 .checkbox2 button{
   width:352px;
   display:flex;
@@ -640,6 +608,27 @@ cursor: pointer;
   margin-top:3px;
   font-size: 15px;
   cursor: pointer;
+}
+*/
+
+.checkbox2 label, .checkbox3 label, .checkbox4 label, .checkbox5 label, 
+.checkbox6 label, .checkbox7 label, .checkbox8 label, .checkbox9 label, 
+.checkbox10 label, .checkbox11 label {
+  width:100%;
+  display:flex;
+  background-color: #ff4d4d;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+  padding: 10px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  color:white;
+  border:none;
+  font-weight:bold;
+  margin-top:5px;
+  border-radius:5px;
+  margin-bottom:5px;
+  justify-content: center;
 }
 
 .form-popup {
@@ -659,14 +648,17 @@ cursor: pointer;
   width: 350px;
 }
 
-.form-popup2 {
+.form-popup2, .form-popup3, .form-popup4, .form-popup5, 
+ .form-popup6, .form-popup7, .form-popup8, .form-popup9, 
+ .form-popup10, .form-popup11{
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   display: none;
   background-color: #f1f1f2;
   bottom: 0;
   border: 3px solid #f1f1f1;
-  width: 350px;
+  width: 100%;
 }
+
 
 
 

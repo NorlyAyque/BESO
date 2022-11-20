@@ -20,18 +20,7 @@ body{
 	
 }
 
-.menu-header-bg {
-    height: 250px;
-    width: 360px;
-    background: linear-gradient(190deg,#A62C2B 50%, #E64848 100%);
-	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    transform: rotate(-10deg);
-    border-radius: 20px  15px 15px;
-    margin-left: -20px;
-	margin-top: -150px;
-   
 
-}
 .container{
 	position: relative;
 	width:100%;
@@ -39,16 +28,6 @@ body{
 
 }
 
-.navigation .logo img{
-	height:90px;
-	width:90px;
-	margin-right:40px;
-	margin-left:5px;
-	border-radius:50px;
-	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.5);
-	margin-top:-5px;
-	
-}
 /* width */
 ::-webkit-scrollbar {
   width: 2px;
@@ -111,6 +90,7 @@ body{
 	
 }
 
+
 .navigation ul li a{
 	position: relative;
 	display: block;
@@ -157,18 +137,6 @@ body{
 	font-weight:bold;
 	
 }
-.navigation ul li a .title1{
-	position: relative;
-	font-size:25px;
-	display:block;
-	margin-left:-20px;
-	line-height: 68px;
-	text-align: start;
-	white-space: nowrap;
-	transform: rotate(-9deg);
-	margin-top:-9px;
-	 font-weight:bold;
-}
 
 
 
@@ -204,13 +172,11 @@ body{
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
 }
-
 .navigation li .active{
 text-decoration: underline;
 text-underline-position: under;
 text-decoration-thickness:3px;
 }
-
 
 
 /***Main***/
@@ -290,13 +256,14 @@ margin-left: 100px;
 .input{
   margin-right:auto;
   margin-left:30px;
-  margin-top:85px;
+  
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0,0,0,0.3); 
   overflow:hidden;
   overflow-y:scroll;
   height:470px;
   width:100%;
+  border:1px solid black;
   
 	
 

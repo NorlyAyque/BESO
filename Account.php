@@ -75,7 +75,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Account</title>
-<link rel="stylesheet" type="text/css" href="styles/Account-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Account.css">
 
 </head>
 <body>
@@ -86,12 +86,7 @@ if(isset($_GET['enable'])){
 	<div class="menu-header-bg"></div>
 	
 		<ul> 
-			<li>
-				<a href="#">
-					<div class=" logo"><img src ="images/logo.png"></div>
-					<span class ="title1"> BESO Portal</span>
-				</a>
-			</li>
+			<center><?php include("userlogin.php"); ?></p></center>
 			<li>
 				<a href="Dashboard.php">
 					<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
@@ -153,6 +148,7 @@ if(isset($_GET['enable'])){
 			</div>
 
 			<?php 
+				/*
 				echo "<table class='Tuser'>";
 				echo " <tr class='logo'> 
 							<td> <ion-icon name='person-circle-sharp' class='profile'></ion-icon> </td>
@@ -169,6 +165,7 @@ if(isset($_GET['enable'])){
 					</tr>
 					";
 				echo "</table>";
+				*/
 			?>
 
 			<div class="add">

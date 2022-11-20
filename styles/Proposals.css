@@ -20,18 +20,7 @@ body{
 	
 }
 
-.menu-header-bg {
-    height: 250px;
-    width: 360px;
-    background: linear-gradient(190deg,#A62C2B 50%, #E64848 100%);
-	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    transform: rotate(-10deg);
-    border-radius: 20px  15px 15px;
-    margin-left: -20px;
-	margin-top: -150px;
-   
 
-}
 .container{
 	position: relative;
 	width:100%;
@@ -39,16 +28,7 @@ body{
 
 }
 
-.navigation .logo img{
-	height:90px;
-	width:90px;
-	margin-right:40px;
-	margin-left:5px;
-	border-radius:50px;
-	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.5);
-	margin-top:-5px;
-	
-}
+
 /* width */
 ::-webkit-scrollbar {
   width: 2px;
@@ -157,18 +137,6 @@ body{
 	font-weight:bold;
 	
 }
-.navigation ul li a .title1{
-	position: relative;
-	font-size:25px;
-	display:block;
-	margin-left:-20px;
-	line-height: 68px;
-	text-align: start;
-	white-space: nowrap;
-	transform: rotate(-9deg);
-	margin-top:-9px;
-	 font-weight:bold;
-}
 
 
 
@@ -245,6 +213,14 @@ margin-left: 100px;
 	margin-top:10px;
 	margin-left: 30px;
 }
+
+.fulljustify {
+   text-align: justify;
+   
+}
+
+
+
 
 .menu{
 	 text-decoration:none;
@@ -389,6 +365,78 @@ margin-left: 100px;
 	float: left;
 	text-decoration:none;
 }
+
+
+.Drp{
+	text-align:left;
+}
+.Drp select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.Drp input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -593,9 +641,7 @@ background-color: #D1D1D1;}
   background-color: #38E54D;
   color: white;
 }
-.proposal .Abtn1 a{
-	margin-top:10px;
-}
+
 .proposals .Abtn{
   background-color:  #00b4d8; 
   border: none;
@@ -608,6 +654,7 @@ background-color: #D1D1D1;}
   font-weight: bold;
   border-radius: 5px;
   text-decoration:none;
+  
   
  
 }
@@ -628,7 +675,8 @@ background-color: #D1D1D1;}
   border-radius: 2px;
   text-decoration:none;
   margin-top:10px;
-  display:inline-block;
+  display:inline-block;;
+
 
   
  
@@ -651,8 +699,11 @@ background-color: #D1D1D1;}
   font-weight: bold;
   border-radius: 2px;
   text-decoration:none;
- margin-top:10px;
+  margin-top:10px;
   display:inline-block;
+
+
+ 
  
 }
 .proposals .Abtn2:hover {
@@ -786,48 +837,4 @@ background-color: #D1D1D1;}
 .proposals .btn3:hover {
   background-color:  #38E54D;
   color: white;
-}
-.Drp{
-	text-align:left;
-}
-.Drp select{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right:40px;
-  
-}
-.Drp option{
-	font-size:15px;
-	cursor:pointer;
-	
-	
-}
-.Drp input{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  
-}
-.Drp option{
-	font-size:15px;
-	cursor:pointer;
-	
-	
 }

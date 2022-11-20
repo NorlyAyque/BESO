@@ -14,7 +14,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>List of Extension PAPs for Impact Assessment</title>
-<link rel="stylesheet" type="text/css" href="styles/Reports.css">
+<link rel="stylesheet" type="text/css" href="styles/DashReports.css">
 
 </head>
 <body>
@@ -25,12 +25,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	<div class="menu-header-bg"></div>
 	
 		<ul> 
-			<li>
-				<a href="#">
-					<div class=" logo"><img src ="images/logo.png"></div>
-					<span class ="title1"> BESO Portal</span>
-				</a>
-			</li>
+			<center><?php include("userlogin.php"); ?></center>
 			<li>
 				<a href="Dashboard.php">
 					<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>

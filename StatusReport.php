@@ -11,7 +11,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Status Report</title>
-<link rel="stylesheet" type="text/css" href="styles/Reports.css">
+<link rel="stylesheet" type="text/css" href="styles/DashReports.css">
 
 </head>
 <body>
@@ -22,12 +22,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	<div class="menu-header-bg"></div>
 	
 		<ul> 
-			<li>
-				<a href="#">
-					<div class=" logo"><img src ="images/logo.png"></div>
-					<span class ="title1"> BESO Portal</span>
-				</a>
-			</li>
+			<center><?php include("userlogin.php"); ?></center>
 			<li>
 				<a href="Dashboard.php">
 					<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
@@ -112,7 +107,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			</table>
 			
 			<form action="Generate_StatusReport.php" method="_GET" target="_blank">
-			<table class="Date">	
+			<table class="tbcontent">	
 									
 				<tr>
 					<th>Set Year</th>
@@ -157,7 +152,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				
 				<tr>
 					<th colspan="2">
-						<div class="Create">
+						<div class="tbcreate">
 							<input type="submit" value="Create" class = "createBTN">
 							<!-- <a href="QuarterlyMonitoringReport.php" button class = "createBTN"> Create <ion-icon name="brush-outline"></ion-icon></a> -->
 						</div>

@@ -16,7 +16,7 @@ date_default_timezone_set("Asia/Manila");
 <head>
 <meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring - Pending</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReports-style.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
 
 </head>
 <body>
@@ -27,12 +27,7 @@ date_default_timezone_set("Asia/Manila");
 	<div class="menu-header-bg"></div>
 	
 		<ul> 
-			<li>
-				<a href="#">
-					<div class=" logo"><img src ="images/logo.png"></div>
-					<span class ="title1"> BESO Portal</span>
-				</a>
-			</li>
+			<center><?php include("userlogin.php"); ?></center>
 			<li>
 				<a href="Dashboard.php">
 					<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>

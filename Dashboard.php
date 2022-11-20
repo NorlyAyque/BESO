@@ -74,77 +74,70 @@ while($result = mysqli_fetch_array($command))
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content ="width=device-width, initial-scale=1.0">
-<title>DashBoard BESO Portal</title>
+<meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
+<title>Dashborad BESO Portal</title>
 <link rel="stylesheet" type="text/css" href="styles/Dashboards.css">
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 	
-	<div class="container">
+<div class="container">
 	
-		<div class = "navigation">
-		<div class="menu-header-bg"></div>
-		
-			<ul> 
-				<li>
-					<a href="#">
-						<div class=" logo"><img src ="images/logo.png"></div>
-						<span class ="title1"> BESO Portal</span>
-					</a>
-				</li>
-				<li>
-					<a class="active" href="Dashboard.php">
-						<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
-						<span class ="title"> Home</span>
-					</a>
-				</li>
-				<li>
-					<a href="CreateProposal.php">
-						<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
-						<span class ="title"> Create Proposal</span>
-					</a>
-				</li>
-				<li>
-					<a href="Proposal.php">
-						<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
-						<span class ="title"> Project Proposals</span>
-					</a>
-				</li>
-				
-				<li>
-					<a href="Evaluation.php">
-						<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
-						<span class ="title"> Evaluation Reports</span>
-					</a>
-				</li>
-				<li>
-					<a href="Monitoring.php">
-						<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
-						<span class ="title"> Monitoring Reports</span>
-					</a>
-				</li>
-				<li>
-					<a href="Reports.php">
-						<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
-						<span class ="title"> Reports</span>
-					</a>
-				</li>
-				<li>
-					<a href="Account.php">
-						<span class ="icon"> <ion-icon name="person-add-outline"></ion-icon> </span>
-						<span class ="title"> Accounts</span>
-					</a>
-				</li>
-				<li>
-					<a href="Signout.php">
-						<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
-						<span class ="title"> Sign out</span>
-					</a>
-				</li>
-			</ul>
-		</div>
+	<div class = "navigation">
+	<div class="menu-header-bg"></div>
+	
+		<ul> 
+			<center><?php include("userlogin.php"); ?></center>
+			<li>
+				<a class="active" href="Dashboard.php">
+					<span class ="icon"> <ion-icon name="home-outline"></ion-icon> </span>
+					<span class ="title"> Home</span>
+				</a>
+			</li>
+			<li>
+				<a  href="CreateProposal.php">
+					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
+					<span class ="title"> Create Proposal</span>
+				</a>
+			</li>
+			<li>
+				<a href="Proposal.php">
+					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
+					<span class ="title"> Project Proposals</span>
+				</a>
+			</li>
+			<li>
+				<a href="Evaluation.php">
+					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
+					<span class ="title"> Evaluation Reports</span>
+				</a>
+			</li>
+			<li>
+				<a href="Monitoring.php">
+					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
+					<span class ="title"> Monitoring Reports</span>
+				</a>
+			</li>
+			<li>
+				<a href="Reports.php">
+					<span class ="icon"> <ion-icon name="documents-outline"></ion-icon> </span>
+					<span class ="title"> Reports</span>
+				</a>
+			</li>
+			<li>
+				<a href="Account.php">
+					<span class ="icon"> <ion-icon name="person-add-outline"></ion-icon> </span>
+					<span class ="title"> Accounts</span>
+				</a>
+			</li>
+			<li>
+				<a href="Signout.php">
+					<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
+					<span class ="title"> Sign out</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 				
 		<!--main-->
 		<div class="main">
@@ -152,7 +145,7 @@ while($result = mysqli_fetch_array($command))
 				<div class="toggle">
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>
-					<?php include("userlogin.php"); ?>
+					
 				</div>
 			
 			<div class ="scroll">
