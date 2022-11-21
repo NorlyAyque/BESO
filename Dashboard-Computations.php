@@ -20,11 +20,24 @@ $CICS_Full = "College of Informatics and Computing Sciences";
 $CEAFA = "CEAFA";
 $CEAFA_Full = "College of Engineering, Architecture and Fine Arts";
 
-//Variables to be used in Number of Trainees weight by length of training
+//Variables to be used in Number of Trainees weight by length of training - T
 $T_R1Q1 = $T_R1Q2 = $T_R1Q3 = $T_R1Q4 = $T_R1_T = 0;
 $T_R2Q1 = $T_R2Q2 = $T_R2Q3 = $T_R2Q4 = $T_R2_T = 0;
 $T_R3Q1 = $T_R3Q2 = $T_R3Q3 = $T_R3Q4 = $T_R3_T = 0;
 $T_R4Q1 = $T_R4Q2 = $T_R4Q3 = $T_R4Q4 = $T_R4_T = 0;
+
+//Variables to be used in Percentage of beneficiaries - P
+$P_R1Q1 = $P_R1Q2 = $P_R1Q3 = $P_R1Q4 = $P_R1_T = 0;
+$P_R2Q1 = $P_R2Q2 = $P_R2Q3 = $P_R2Q4 = $P_R2_T = 0;
+$P_R3Q1 = $P_R3Q2 = $P_R3Q3 = $P_R3Q4 = $P_R3_T = 0;
+$PercentageTotal = 0;
+
+//Variables to be used in Budget - B
+$Budget = 0;
+
+/*
+*********************Nuber of Trainees*********************
+*/
 
 /*
 *********************CEAFA QUARTER 1*********************
@@ -497,4 +510,307 @@ while($result = mysqli_fetch_array($command))
 			}
 	}
 
+
+
+/*
+*********************Percentage of Beneficiaries*********************
+*/
+
+/*
+*********************CEAFA QUARTER 1*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+	(Year = $YearToday) AND
+	(Quarter = '1') AND
+	(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R1Q1 = number_format($Compute/$No,1); //Average R1Q1
+	}
+/*
+*********************CEAFA QUARTER 2*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+	(Year = $YearToday) AND
+	(Quarter = '2') AND
+	(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R1Q2 = number_format($Compute/$No,1); //Average R1Q2
+	}		
+/*
+*********************CEAFA QUARTER 3*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+	(Year = $YearToday) AND
+	(Quarter = '3') AND
+	(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R1Q3= number_format($Compute/$No,1); //Average R1Q3
+	}
+/*
+*********************CEAFA QUARTER 4*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+	(Year = $YearToday) AND
+	(Quarter = '4') AND
+	(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R1Q4 = number_format($Compute/$No,1); //Average R1Q4
+	}
+
+/*
+*********************CICS QUARTER 1*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+	(Year = $YearToday) AND
+	(Quarter = '1') AND
+	(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R2Q1 = number_format($Compute/$No,1); //Average R2Q1
+	}
+/*
+*********************CICS QUARTER 2*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+	(Year = $YearToday) AND
+	(Quarter = '2') AND
+	(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R2Q2 = number_format($Compute/$No,1); //Average R2Q2
+	}
+/*
+*********************CICS QUARTER 3*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+	(Year = $YearToday) AND
+	(Quarter = '3') AND
+	(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R2Q3 = number_format($Compute/$No,1); //Average R2Q3
+	}
+/*
+*********************CICS QUARTER 4*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+	(Year = $YearToday) AND
+	(Quarter = '4') AND
+	(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R2Q4 = number_format($Compute/$No,1); //Average R2Q4
+	}
+
+/*
+*********************CIT QUARTER 1*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+(Year = $YearToday) AND
+(Quarter = '1') AND
+(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+(ProjectStatus = 'Approved')		
+");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R3Q1 = number_format($Compute/$No,1); //Average R3Q1
+	}
+/*
+*********************CIT QUARTER 2*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+(Year = $YearToday) AND
+(Quarter = '2') AND
+(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+(ProjectStatus = 'Approved')		
+");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R3Q2 = number_format($Compute/$No,1); //Average R3Q2
+	}
+/*
+*********************CIT QUARTER 3*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+(Year = $YearToday) AND
+(Quarter = '3') AND
+(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+(ProjectStatus = 'Approved')		
+");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R3Q3 = number_format($Compute/$No,1); //Average R3Q3
+	}
+/*
+*********************CIT QUARTER 4*********************
+*/
+$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+(Year = $YearToday) AND
+(Quarter = '4') AND
+(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+(ProjectStatus = 'Approved')		
+");
+$No = 0;
+$Compute = 0;
+
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$No++;
+		$Participants = $result['MFT'];
+			$Excellent = $result['Eval1AT'];	$Very_Satisfactory = $result['Eval1BT'];	$Satisfactory = $result['Eval1CT'];
+		$Responses = $Excellent + $Very_Satisfactory + $Satisfactory;
+		$Percentage = (($Responses/$Participants)*100);
+		$Compute += $Percentage; //Summation of all Percentage per PAP
+		$P_R3Q4 = number_format($Compute/$No,1); //Average R3Q4
+	}
+
+
+
+/*
+*********************BUDGET*********************
+*/
+$x = 0;
+$sql = ("SELECT * FROM create_alangilan WHERE 
+	(Year = $YearToday) AND
+	(Quarter = '4') AND
+	(Remarks = 'Evaluated')		
+	");
+$command = $con->query($sql) or die("Error SQL");
+while($result = mysqli_fetch_array($command))
+	{
+		$GrandTotal = $result['GrandTotal'];
+		$x += $GrandTotal;
+	}
+	$Budget = number_format($x,2);
 ?>

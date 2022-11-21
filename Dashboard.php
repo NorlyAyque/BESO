@@ -63,7 +63,7 @@ while($result = mysqli_fetch_array($command))
 	$dbBT_Q4 = $result["BT_Q4"];
 	$dbBT_QT = $result["BT_QT"];
 }
-include_once 'Dashboard-Computations.php';
+include_once ("Dashboard-Computations.php");
 ?>
 
 <!DOCTYPE html>
@@ -213,7 +213,7 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<th colspan="5">Number of Active Partnership with LGUs, Industries, NGOs, NGAs, SMEs, and other stakeholders as a result of extension activities <br> (TARGET)</th>
 						<th colspan="5">Number of Trainees weight by length of training </th>
 						<th colspan="5">Number of extension programs organized and supported consistent with the SUC's mandated and priority programs <br> (ACTUAL) </th>
-						<th colspan="5">Percentage of beneficiaries who rate the training course/s and advisory service as satisfactory or higher in terms of quality and relevance</th>
+						<th colspan="5">Percentage of beneficiaries who rate the training course/s and advisory service as satisfactory or higher in terms of quality and relevance <br> (%)</th>
 						<th rowspan="3">Budget </th>
 					</tr>
 					<tr>
@@ -255,11 +255,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td><input type = "number" min="0" name="CEAFA_AQ4" id="CEAFA_AQ4" value="<?php echo $dbCEAFA_AQ4;?>" onchange="CalCEAFA_A()" REQUIRED></td>
 						<td><input type = "number" min="0" name="CEAFA_AQT" id="CEAFA_AQT" value="<?php echo $dbCEAFA_AQT;?>" readonly> </td> 
 						
-						<td><input type = "number" min="0" id="T_R1Q1" value="<?php echo $T_R1Q1;?>" readonly></td> <!-- Row 1 Q1 -->
-						<td><input type = "number" min="0" id="T_R1Q2" value="<?php echo $T_R1Q2;?>" readonly></td> <!-- Row 1 Q2 -->
-						<td><input type = "number" min="0" id="T_R1Q3" value="<?php echo $T_R1Q3;?>" readonly></td> <!-- Row 1 Q3 -->
-						<td><input type = "number" min="0" id="T_R1Q4" value="<?php echo $T_R1Q4;?>" readonly></td> <!-- Row 1 Q4 -->
-						<td><input type = "number" min="0" id="T_R1_T" value="<?php echo $T_R1_T;?>" readonly> </td> <!-- Row 1 Total -->
+						<td><input type = "number" min="0" id="T_R1Q1" value="<?php echo $T_R1Q1;?>" readonly></td> <!-- Trainees Row 1 Q1 -->
+						<td><input type = "number" min="0" id="T_R1Q2" value="<?php echo $T_R1Q2;?>" readonly></td> <!-- Trainees Row 1 Q2 -->
+						<td><input type = "number" min="0" id="T_R1Q3" value="<?php echo $T_R1Q3;?>" readonly></td> <!-- Trainees Row 1 Q3 -->
+						<td><input type = "number" min="0" id="T_R1Q4" value="<?php echo $T_R1Q4;?>" readonly></td> <!-- Trainees Row 1 Q4 -->
+						<td><input type = "number" min="0" id="T_R1_T" value="<?php echo $T_R1_T;?>" readonly></td> <!-- Trainees Row 1 Total -->
 						
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQ1" id="CEAFA_BQ1" value="<?php echo $dbCEAFA_BQ1;?>" onchange="CalCEAFA_B()"></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQ2" id="CEAFA_BQ2" value="<?php echo $dbCEAFA_BQ2;?>" onchange="CalCEAFA_B()"></td>
@@ -267,13 +267,13 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQ4" id="CEAFA_BQ4" value="<?php echo $dbCEAFA_BQ4;?>" onchange="CalCEAFA_B()"></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CEAFA_BQT" id="CEAFA_BQT" value="<?php echo $dbCEAFA_BQT;?>" readonly> </td> 
 
-						<td><?php echo "1";?></td>
-						<td><?php echo "2";?></td>
-						<td><?php echo "3";?></td>
-						<td><?php echo "4";?></td>
-						<td><?php echo "5";?></td>
+						<td><input type = "text" id="P_R1Q1" value="<?php echo $P_R1Q1;?>" readonly></td> <!-- Percentage Row 1 Q1 -->
+						<td><input type = "text" id="P_R1Q2" value="<?php echo $P_R1Q2;?>" readonly></td> <!-- Percentage Row 1 Q2 -->
+						<td><input type = "text" id="P_R1Q3" value="<?php echo $P_R1Q3;?>" readonly></td> <!-- Percentage Row 1 Q3 -->
+						<td><input type = "text" id="P_R1Q4" value="<?php echo $P_R1Q4;?>" readonly></td> <!-- Percentage Row 1 Q4 -->
+						<td><input type = "text" id="P_R1_T" value="<?php echo $P_R1_T;?>" readonly></td> <!-- Percentage Row 1 Total -->
 						
-						<td  rowspan="3" class="input1" ><?php echo "Total Budget";?></td>
+						<td  rowspan="3" class="input1" >₱<?php echo $Budget;?></td>
 					</tr>
 					<tr>
 						<th>CICS</th>
@@ -284,11 +284,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td><input type = "number" min="0" name="CICS_AQ4" id="CICS_AQ4" value="<?php echo $dbCICS_AQ4;?>" onchange="CalCICS_A()"></td>
 						<td><input type = "number" min="0" name="CICS_AQT" id="CICS_AQT" value="<?php echo $dbCICS_AQT;?>" readonly> </td> 
 						
-						<td><input type = "number" min="0" id="T_R2Q1" value="<?php echo $T_R2Q1;?>" readonly></td> <!-- Row 2 Q1 -->
-						<td><input type = "number" min="0" id="T_R2Q2" value="<?php echo $T_R2Q2;?>" readonly></td> <!-- Row 2 Q2 -->
-						<td><input type = "number" min="0" id="T_R2Q3" value="<?php echo $T_R2Q3;?>" readonly></td> <!-- Row 2 Q3 -->
-						<td><input type = "number" min="0" id="T_R2Q4" value="<?php echo $T_R2Q4;?>" readonly></td> <!-- Row 2 Q4 -->
-						<td><input type = "number" min="0" id="T_R2_T" value="<?php echo $T_R2_T;?>" readonly> </td> <!-- Row 2 Total -->
+						<td><input type = "number" min="0" id="T_R2Q1" value="<?php echo $T_R2Q1;?>" readonly></td> <!-- Trainees Row 2 Q1 -->
+						<td><input type = "number" min="0" id="T_R2Q2" value="<?php echo $T_R2Q2;?>" readonly></td> <!-- Trainees Row 2 Q2 -->
+						<td><input type = "number" min="0" id="T_R2Q3" value="<?php echo $T_R2Q3;?>" readonly></td> <!-- Trainees Row 2 Q3 -->
+						<td><input type = "number" min="0" id="T_R2Q4" value="<?php echo $T_R2Q4;?>" readonly></td> <!-- Trainees Row 2 Q4 -->
+						<td><input type = "number" min="0" id="T_R2_T" value="<?php echo $T_R2_T;?>" readonly></td> <!-- Trainees Row 2 Total -->
 						
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQ1" id="CICS_BQ1" value="<?php echo $dbCICS_BQ1;?>" onchange="CalCICS_B()"></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQ2" id="CICS_BQ2" value="<?php echo $dbCICS_BQ2;?>" onchange="CalCICS_B()"></td>
@@ -296,11 +296,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQ4" id="CICS_BQ4" value="<?php echo $dbCICS_BQ4;?>" onchange="CalCICS_B()"></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CICS_BQT" id="CICS_BQT" value="<?php echo $dbCICS_BQT;?>" readonly> </td> 
 
-						<td><?php echo "6";?></td>
-						<td><?php echo "7";?></td>
-						<td><?php echo "8";?></td>
-						<td><?php echo "9";?></td>
-						<td><?php echo "10";?></td>
+						<td><input type = "text" id="P_R2Q1" value="<?php echo $P_R2Q1;?>" readonly></td> <!-- Percentage Row 2 Q1 -->
+						<td><input type = "text" id="P_R2Q2" value="<?php echo $P_R2Q2;?>" readonly></td> <!-- Percentage Row 2 Q2 -->
+						<td><input type = "text" id="P_R2Q3" value="<?php echo $P_R2Q3;?>" readonly></td> <!-- Percentage Row 2 Q3 -->
+						<td><input type = "text" id="P_R2Q4" value="<?php echo $P_R2Q4;?>" readonly></td> <!-- Percentage Row 2 Q4 -->
+						<td><input type = "text" id="P_R2_T" value="<?php echo $P_R2_T;?>" readonly></td> <!-- Percentage Row 2 Total -->
 						 
 					</tr>
 					<tr>
@@ -312,11 +312,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td><input type = "number" min="0" name="CIT_AQ4" id="CIT_AQ4" value="<?php echo $dbCIT_AQ4;?>" onchange="CalCIT_A()"></td>
 						<td><input type = "number" min="0" name="CIT_AQT" id="CIT_AQT" value="<?php echo $dbCIT_AQT;?>" readonly> </td> 
 						
-						<td><input type = "number" min="0" id="T_R3Q1" value="<?php echo $T_R3Q1;?>" readonly></td> <!-- Row 3 Q1 -->
-						<td><input type = "number" min="0" id="T_R3Q2" value="<?php echo $T_R3Q2;?>" readonly></td> <!-- Row 3 Q2 -->
-						<td><input type = "number" min="0" id="T_R3Q3" value="<?php echo $T_R3Q3;?>" readonly></td> <!-- Row 3 Q3 -->
-						<td><input type = "number" min="0" id="T_R3Q4" value="<?php echo $T_R3Q4;?>" readonly></td> <!-- Row 3 Q4 -->
-						<td><input type = "number" min="0" id="T_R3_T" value="<?php echo $T_R3_T;?>" readonly> </td> <!-- Row 3 Total -->
+						<td><input type = "number" min="0" id="T_R3Q1" value="<?php echo $T_R3Q1;?>" readonly></td> <!-- Trainees Row 3 Q1 -->
+						<td><input type = "number" min="0" id="T_R3Q2" value="<?php echo $T_R3Q2;?>" readonly></td> <!-- Trainees Row 3 Q2 -->
+						<td><input type = "number" min="0" id="T_R3Q3" value="<?php echo $T_R3Q3;?>" readonly></td> <!-- Trainees Row 3 Q3 -->
+						<td><input type = "number" min="0" id="T_R3Q4" value="<?php echo $T_R3Q4;?>" readonly></td> <!-- Trainees Row 3 Q4 -->
+						<td><input type = "number" min="0" id="T_R3_T" value="<?php echo $T_R3_T;?>" readonly></td> <!-- Trainees Row 3 Total -->
 
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQ1" id="CIT_BQ1" value="<?php echo $dbCIT_BQ1;?>" onchange="CalCIT_B()"></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQ2" id="CIT_BQ2" value="<?php echo $dbCIT_BQ2;?>" onchange="CalCIT_B()"></td>
@@ -324,11 +324,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQ4" id="CIT_BQ4" value="<?php echo $dbCIT_BQ4;?>" onchange="CalCIT_B()"></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="CIT_BQT" id="CIT_BQT" value="<?php echo $dbCIT_BQT;?>" readonly> </td> 
 
-						<td><?php echo "11";?></td>
-						<td><?php echo "12";?></td>
-						<td><?php echo "13";?></td>
-						<td><?php echo "14";?></td>
-						<td><?php echo "15";?></td>
+						<td><input type = "text" id="P_R3Q1" value="<?php echo $P_R3Q1;?>" readonly></td> <!-- Percentage Row 3 Q1 -->
+						<td><input type = "text" id="P_R3Q2" value="<?php echo $P_R3Q2;?>" readonly></td> <!-- Percentage Row 3 Q2 -->
+						<td><input type = "text" id="P_R3Q3" value="<?php echo $P_R3Q3;?>" readonly></td> <!-- Percentage Row 3 Q3 -->
+						<td><input type = "text" id="P_R3Q4" value="<?php echo $P_R3Q4;?>" readonly></td> <!-- Percentage Row 3 Q4 -->
+						<td><input type = "text" id="P_R3_T" value="<?php echo $P_R3_T;?>" readonly></td> <!-- Percentage Row 3 Total -->
 						
 					</tr>
 					<tr>
@@ -340,11 +340,11 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td><input type = "number" min="0" name="AT_Q4" id="AT_Q4" value="<?php echo $dbAT_Q4;?>" readonly></td>
 						<td><input type = "number" min="0" name="AT_QT" id="AT_QT" value="<?php echo $dbAT_QT;?>" readonly></td>
 
-						<td><input type = "number" min="0" id="T_R4Q1" value="<?php echo $T_R4Q1;?>" readonly></td> <!-- Row 4 Q1 -->
-						<td><input type = "number" min="0" id="T_R4Q2" value="<?php echo $T_R4Q2;?>" readonly></td> <!-- Row 4 Q2 -->
-						<td><input type = "number" min="0" id="T_R4Q3" value="<?php echo $T_R4Q3;?>" readonly></td> <!-- Row 4 Q3 -->
-						<td><input type = "number" min="0" id="T_R4Q4" value="<?php echo $T_R4Q4;?>" readonly></td> <!-- Row 4 Q4 -->
-						<td><input type = "number" min="0" id="T_R4_T" value="<?php echo $T_R4_T;?>" readonly></td> <!-- Row 4 Total -->
+						<td><input type = "number" min="0" id="T_R4Q1" value="<?php echo $T_R4Q1;?>" readonly></td> <!-- Trainees Row 4 Q1 -->
+						<td><input type = "number" min="0" id="T_R4Q2" value="<?php echo $T_R4Q2;?>" readonly></td> <!-- Trainees Row 4 Q2 -->
+						<td><input type = "number" min="0" id="T_R4Q3" value="<?php echo $T_R4Q3;?>" readonly></td> <!-- Trainees Row 4 Q3 -->
+						<td><input type = "number" min="0" id="T_R4Q4" value="<?php echo $T_R4Q4;?>" readonly></td> <!-- Trainees Row 4 Q4 -->
+						<td><input type = "number" min="0" id="T_R4_T" value="<?php echo $T_R4_T;?>" readonly></td> <!-- Trainees Row 4 Total -->
 						
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_Q1" id="BT_Q1" value="<?php echo $dbBT_Q1;?>" readonly></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_Q2" id="BT_Q2" value="<?php echo $dbBT_Q2;?>" readonly></td>
@@ -352,9 +352,9 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_Q4" id="BT_Q4" value="<?php echo $dbBT_Q4;?>" readonly></td>
 						<td style=" background-color:#D6E4E5";><input type = "number" min="0" name="BT_QT" id="BT_QT" value="<?php echo $dbBT_QT;?>" readonly></td>
 
-						<td colspan="5" class="input2"><?php echo "TOTAL";?></td>
+						<td colspan="5" class="input2"><input type = "text" id="PercentageTotal" value="<?php echo $PercentageTotal;?>" readonly></td> <!-- Percentage Row 4 Total -->
 
-						<td class="input1"><?php echo "Total Budget";?></td>
+						<td class="input1">₱<?php echo $Budget;?></td>
 					</tr>
 				</tbody>
 			</table>
@@ -668,11 +668,117 @@ function T_R4_T(){
 	document.getElementById("T_R4_T").value = ans;
 }
 
+function P_R1_T(){
+	let A = document.getElementById('P_R1Q1').value;
+	let B = document.getElementById('P_R1Q2').value;
+	let C = document.getElementById('P_R1Q3').value;
+	let D = document.getElementById('P_R1Q4').value;
+
+	if ((A > 0) && (B == 0) && (C == 0) && (D == 0)) {Count = 1;}	//A
+	if ((A == 0) && (B > 0) && (C == 0) && (D == 0)) {Count = 1;}	//B
+	if ((A == 0) && (B == 0) && (C > 0) && (D == 0)) {Count = 1;}	//C
+	if ((A == 0) && (B == 0) && (C == 0) && (D > 0)) {Count = 1;}	//D
+
+	if ((A > 0) && (B > 0) && (C == 0) && (D == 0)) {Count = 2;}	//AB
+	if ((A > 0) && (B == 0) && (C > 0) && (D == 0)) {Count = 2;}	//AC
+	if ((A > 0) && (B == 0) && (C == 0) && (D > 0)) {Count = 2;}	//AD
+	if ((A == 0) && (B > 0) && (C > 0) && (D == 0)) {Count = 2;}	//BC
+	if ((A == 0) && (B > 0) && (C == 0) && (D > 0)) {Count = 2;}	//BD
+	if ((A == 0) && (B == 0) && (C > 0) && (D > 0)) {Count = 2;}	//CD
+
+	if ((A > 0) && (B > 0) && (C > 0) && (D == 0)) {Count = 3;}		//ABC
+	if ((A > 0) && (B > 0) && (C == 0) && (D > 0)) {Count = 3;}		//ABD
+	if ((A == 0) && (B > 0) && (C > 0) && (D > 0)) {Count = 3;}		//BCD
+
+	if ((A > 0) && (B > 0) && (C > 0) && (D > 0)) {Count = 4;}		//ABCD
+
+	let ans = (((parseFloat(A)) + (parseFloat(B)) + (parseFloat(C)) + (parseFloat(D)))/Count);
+	let answer = ans.toFixed(1);
+	document.getElementById("P_R1_T").value = answer;
+}
+function P_R2_T(){
+	let A = document.getElementById('P_R2Q1').value;
+	let B = document.getElementById('P_R2Q2').value;
+	let C = document.getElementById('P_R2Q3').value;
+	let D = document.getElementById('P_R2Q4').value;
+
+	if ((A > 0) && (B == 0) && (C == 0) && (D == 0)) {Count = 1;}	//A
+	if ((A == 0) && (B > 0) && (C == 0) && (D == 0)) {Count = 1;}	//B
+	if ((A == 0) && (B == 0) && (C > 0) && (D == 0)) {Count = 1;}	//C
+	if ((A == 0) && (B == 0) && (C == 0) && (D > 0)) {Count = 1;}	//D
+
+	if ((A > 0) && (B > 0) && (C == 0) && (D == 0)) {Count = 2;}	//AB
+	if ((A > 0) && (B == 0) && (C > 0) && (D == 0)) {Count = 2;}	//AC
+	if ((A > 0) && (B == 0) && (C == 0) && (D > 0)) {Count = 2;}	//AD
+	if ((A == 0) && (B > 0) && (C > 0) && (D == 0)) {Count = 2;}	//BC
+	if ((A == 0) && (B > 0) && (C == 0) && (D > 0)) {Count = 2;}	//BD
+	if ((A == 0) && (B == 0) && (C > 0) && (D > 0)) {Count = 2;}	//CD
+
+	if ((A > 0) && (B > 0) && (C > 0) && (D == 0)) {Count = 3;}		//ABC
+	if ((A > 0) && (B > 0) && (C == 0) && (D > 0)) {Count = 3;}		//ABD
+	if ((A == 0) && (B > 0) && (C > 0) && (D > 0)) {Count = 3;}		//BCD
+
+	if ((A > 0) && (B > 0) && (C > 0) && (D > 0)) {Count = 4;}		//ABCD
+
+	let ans = (((parseFloat(A)) + (parseFloat(B)) + (parseFloat(C)) + (parseFloat(D)))/Count);
+	let answer = ans.toFixed(1);
+	document.getElementById("P_R2_T").value = answer;
+}
+function P_R3_T(){
+	let A = document.getElementById('P_R3Q1').value;
+	let B = document.getElementById('P_R3Q2').value;
+	let C = document.getElementById('P_R3Q3').value;
+	let D = document.getElementById('P_R3Q4').value;
+
+	if ((A > 0) && (B == 0) && (C == 0) && (D == 0)) {Count = 1;}	//A
+	if ((A == 0) && (B > 0) && (C == 0) && (D == 0)) {Count = 1;}	//B
+	if ((A == 0) && (B == 0) && (C > 0) && (D == 0)) {Count = 1;}	//C
+	if ((A == 0) && (B == 0) && (C == 0) && (D > 0)) {Count = 1;}	//D
+
+	if ((A > 0) && (B > 0) && (C == 0) && (D == 0)) {Count = 2;}	//AB
+	if ((A > 0) && (B == 0) && (C > 0) && (D == 0)) {Count = 2;}	//AC
+	if ((A > 0) && (B == 0) && (C == 0) && (D > 0)) {Count = 2;}	//AD
+	if ((A == 0) && (B > 0) && (C > 0) && (D == 0)) {Count = 2;}	//BC
+	if ((A == 0) && (B > 0) && (C == 0) && (D > 0)) {Count = 2;}	//BD
+	if ((A == 0) && (B == 0) && (C > 0) && (D > 0)) {Count = 2;}	//CD
+
+	if ((A > 0) && (B > 0) && (C > 0) && (D == 0)) {Count = 3;}		//ABC
+	if ((A > 0) && (B > 0) && (C == 0) && (D > 0)) {Count = 3;}		//ABD
+	if ((A == 0) && (B > 0) && (C > 0) && (D > 0)) {Count = 3;}		//BCD
+
+	if ((A > 0) && (B > 0) && (C > 0) && (D > 0)) {Count = 4;}		//ABCD
+
+	let ans = (((parseFloat(A)) + (parseFloat(B)) + (parseFloat(C)) + (parseFloat(D)))/Count);
+	let answer = ans.toFixed(1);
+	document.getElementById("P_R3_T").value = answer;
+}
+function PercentageTotal(){
+	let A = document.getElementById('P_R1_T').value;
+	let B = document.getElementById('P_R2_T').value;
+	let C = document.getElementById('P_R3_T').value;
+
+	if ((A > 0) && (B == 0) && (C == 0)) {Count = 1;}	//A
+	if ((A == 0) && (B > 0) && (C == 0)) {Count = 1;}	//B
+	if ((A == 0) && (B == 0) && (C > 0)) {Count = 1;}	//C
+
+	if ((A > 0) && (B > 0) && (C == 0)) {Count = 2;}	//AB
+	if ((A > 0) && (B == 0) && (C > 0)) {Count = 2;}	//AC
+	if ((A == 0) && (B > 0) && (C > 0)) {Count = 2;}	//BC
+
+	if ((A > 0) && (B > 0) && (C > 0)) {Count = 3;}	//ABC
+	
+	let ans = (((parseFloat(A)) + (parseFloat(B)) + (parseFloat(C)))/Count);
+	let answer = ans.toFixed(1);
+	document.getElementById("PercentageTotal").value = answer;
+}
+
 //Compute Trainees and Percentage
 function Compute(){
 	T_R1_T();	T_R2_T();	T_R3_T();	
 	T_R4Q1();	T_R4Q2();	T_R4Q3();	T_R4Q4();	T_R4_T();
-	
+
+	P_R1_T();	P_R2_T();	P_R3_T();
+	PercentageTotal();	
 }
 
 
