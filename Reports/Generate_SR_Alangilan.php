@@ -42,7 +42,7 @@ $CEAFA_Full = "College of Engineering, Architecture and Fine Arts";
 <html>
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-<title>Generate Status Report</title>
+<title>Generate Status Report - Alangilan</title>
 <link rel="stylesheet" type="text/css" href="../styles/Generate_StatusReports.css">
 
 </head>
@@ -53,7 +53,7 @@ $CEAFA_Full = "College of Engineering, Architecture and Fine Arts";
 </div>
 <table class="header1">
 		<tr>
-			<td colspan="3"><img src ="images/logo.png" class="logo">Reference No. : BatStateU-FO-ESO-03</td>
+			<td colspan="3"><img src ="../images/logo.png" class="logo">Reference No. : BatStateU-FO-ESO-03</td>
 			<td colspan="4">Effectivity Date: May 18, 2022</td>
 			<td colspan="3">Revision No.: 01</td>
 		</tr>
@@ -139,17 +139,18 @@ while($result = mysqli_fetch_array($command))
 		$TimeResult = $timeinterval->format('%h'); //8 hrs = 1 DAY (7:00-4:00 = 9hrs - 1 = 8hrs)
 	
 		$NoOfHours = $TimeResult * $NoOfDays; //Display number of hours depends on number of days
-		if ($NoOfHours <= 7 ){
-			 $Duration = "0.5";
-		}else if ($NoOfHours <= 8 OR $NoOfHours <= 15){
-			 $Duration = "1";
-		}else if ($NoOfHours <= 16 OR $NoOfHours <= 23){
-			 $Duration = "2";
-		}else if ($NoOfHours <= 24 OR $NoOfHours <= 31){
-			 $Duration = "3";
-		}else if ($NoOfHours >= 32 ){
-				$Duration = "4";
+		if ($NoOfHours <= 7 ){ //Less than 8 hrs
+			$Duration = "0.5";
+		}else if ($NoOfHours <= 8 OR $NoOfHours <= 15){ //1 day
+			$Duration = "1";
+		}else if ($NoOfHours <= 16 OR $NoOfHours <= 23){ //2 days
+			$Duration = "1.25";
+		}else if ($NoOfHours <= 24 OR $NoOfHours <= 39){ // 3 - 4 days
+			$Duration = "1.50";
+		}else if ($NoOfHours >= 40 ){ // 5 days up
+			$Duration = "2";
 		}
+
 		$Dateduration = $Date1." - ".$Date2. " / ".$NoOfDays. "day(s)";
 
 		//Getting number of trainees from Evaluation Table

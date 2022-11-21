@@ -150,7 +150,6 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 							</select>
 						</div>
 					</td> 
-
 					<td>
 						<div class ="Drp1">
 							<select name="College" id="College" required>
