@@ -37,7 +37,7 @@ $CEAFA_Full = "College of Engineering, Architecture and Fine Arts";
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Generate Status Report</title>
 <link rel="stylesheet" type="text/css" href="styles/Generate_StatusReports.css">
 

@@ -27,7 +27,7 @@ if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Generate QMR</title>
 <link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
 </head>

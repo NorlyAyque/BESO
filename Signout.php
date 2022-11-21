@@ -9,7 +9,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Sign out</title>
 <link rel="stylesheet" type="text/css" href="styles/Account.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">

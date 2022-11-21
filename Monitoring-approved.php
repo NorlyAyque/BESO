@@ -11,7 +11,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring - Approved</title>
 <link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
 

@@ -69,7 +69,7 @@ include_once ("Dashboard-Computations.php");
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewpoet" content ="width=device-width, initial-scale=1.0">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
 <link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
 
