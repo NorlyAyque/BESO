@@ -51,7 +51,60 @@ while($result = mysqli_fetch_array($command))
 		$PS1 = $result['PS1'];
 		$PS2 = $result['PS2'];
 		$PS3 = $result['PS3'];
-		$PS4 = $result['PS4'];
+		
+		$dbFPR1_1 = $result['FPR1_1'];
+		$dbFPR1_2 = $result['FPR1_2'];
+		$dbFPR1_3 = $result['FPR1_3'];
+		$dbFPR1_4 = $result['FPR1_4'];
+		$dbFPR1_5 = $result['FPR1_5'];
+		$dbFPR2_1 = $result['FPR2_1'];
+		$dbFPR2_2 = $result['FPR2_2'];
+		$dbFPR2_3 = $result['FPR2_3'];
+		$dbFPR2_4 = $result['FPR2_4'];
+		$dbFPR2_5 = $result['FPR2_5'];
+		$dbFPR3_1 = $result['FPR3_1'];
+		$dbFPR3_2 = $result['FPR3_2'];
+		$dbFPR3_3 = $result['FPR3_3'];
+		$dbFPR3_4 = $result['FPR3_4'];
+		$dbFPR3_5 = $result['FPR3_5'];
+		$dbFPR4_1 = $result['FPR4_1'];
+		$dbFPR4_2 = $result['FPR4_2'];
+		$dbFPR4_2 = $result['FPR4_2'];
+		$dbFPR4_3 = $result['FPR4_3'];
+		$dbFPR4_4 = $result['FPR4_4'];
+		$dbFPR4_5 = $result['FPR4_5'];
+		$dbFPR5_1 = $result['FPR5_1'];
+		$dbFPR5_2 = $result['FPR5_2'];
+		$dbFPR5_3 = $result['FPR5_3'];
+		$dbFPR5_4 = $result['FPR5_4'];
+		$dbFPR5_5 = $result['FPR5_5'];
+		$dbFPR6_1 = $result['FPR6_1'];
+		$dbFPR6_2 = $result['FPR6_2'];
+		$dbFPR6_3 = $result['FPR6_3'];
+		$dbFPR6_4 = $result['FPR6_4'];
+		$dbFPR6_5 = $result['FPR6_5'];
+		$dbFPR7_1 = $result['FPR7_1'];
+		$dbFPR7_2 = $result['FPR7_2'];
+		$dbFPR7_3 = $result['FPR7_3'];
+		$dbFPR7_4 = $result['FPR7_4'];
+		$dbFPR7_5 = $result['FPR7_5'];
+		$dbFPR8_1 = $result['FPR8_1'];
+		$dbFPR8_2 = $result['FPR8_2'];
+		$dbFPR8_3 = $result['FPR8_3'];
+		$dbFPR8_4 = $result['FPR8_4'];
+		$dbFPR8_5 = $result['FPR8_5'];
+		$dbFPR9_1 = $result['FPR9_1'];
+		$dbFPR9_2 = $result['FPR9_2'];
+		$dbFPR9_3 = $result['FPR9_3'];
+		$dbFPR9_4 = $result['FPR9_4'];
+		$dbFPR9_5 = $result['FPR9_5'];
+		$dbFPR10_1 = $result['FPR10_1'];
+		$dbFPR10_2 = $result['FPR10_2'];
+		$dbFPR10_3 = $result['FPR10_3'];
+		$dbFPR10_4 = $result['FPR10_4'];
+		$dbFPR10_5 = $result['FPR10_5'];
+		$dbGrandTotal = $result['GrandTotal'];
+
 		$PS5 = $result['PS5'];
 		$PS6 = $result['PS6'];
 		$PS7 = $result['PS7'];
@@ -215,8 +268,102 @@ $pdf->Multicell(155, $Spacing, $PS3, 'J');
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               4. Financial report', $Border, 'J');
-$pdf->SetX(40);
-$pdf->Multicell(155, $Spacing, $PS4, 'J');
+$pdf->SetFont('Times','B',11); //Set New Font
+$pdf->SetX(32); //Header
+$pdf->Cell(80, 5, 'Item Description', 1, 0,'C');
+$pdf->Cell(20, 5, 'Quantity', 1, 0,'C');
+$pdf->Cell(20, 5, 'Unit', 1, 0,'C');
+$pdf->Cell(20, 5, 'Unit Cost', 1, 0,'C');
+$pdf->Cell(20, 5, 'Total', 1, 1,'C');
+
+$pdf->SetFont('Times','',10);//Reset Font
+if ($dbFPR1_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR1_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR1_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR1_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR1_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR1_5, 1, 1,'C');
+}
+
+if ($dbFPR2_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR2_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR2_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR2_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR2_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR2_5, 1, 1,'C');
+}
+if ($dbFPR3_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR3_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR3_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR3_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR3_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR3_5, 1, 1,'C');
+}
+if ($dbFPR4_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR4_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR4_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR4_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR4_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR4_5, 1, 1,'C');
+}
+if ($dbFPR5_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR5_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR5_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR5_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR5_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR5_5, 1, 1,'C');
+}
+if ($dbFPR6_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR6_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR6_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR6_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR6_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR6_5, 1, 1,'C');
+}
+if ($dbFPR7_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR7_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR7_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR7_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR7_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR7_5, 1, 1,'C');
+}
+if ($dbFPR8_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR8_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR8_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR8_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR8_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR8_5, 1, 1,'C');
+}
+if ($dbFPR9_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR9_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR9_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR9_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR9_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR9_5, 1, 1,'C');
+}
+if ($dbFPR10_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR10_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR10_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR10_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR10_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR10_5, 1, 1,'C');
+}
+//GrandTotal
+$pdf->SetFont('Times','B',11); //Set New Font
+$pdf->SetX(32);
+$pdf->Cell(140, 5, 'Grand Total ', 1, 0,'R');
+$pdf->Cell(20, 5, $dbGrandTotal, 1, 1,'C');
+$pdf->SetFont('Times','',10); //Reset Font
 
 $pdf->Ln();
 $pdf->Multicell($Length, $Spacing,'               5. Problems encountered', $Border, 'J');

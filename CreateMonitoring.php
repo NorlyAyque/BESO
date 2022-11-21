@@ -207,10 +207,7 @@ if(isset($_GET['create'])){
 				
 				<div class="fillup">
 				  <div class="input-field">
-						
-						
-						
-						
+
 						<label> 4. Financial report<label>
 							<div class="Tfinancial">
 								 <table class="financial">
@@ -300,10 +297,7 @@ if(isset($_GET['create'])){
 									</tbody>
 								</table>
 							</div> 
-						
-						
-						
-						
+	
 						<label>5. Problems encountered</label>
 						<textarea placeholder="type here..." name="PS5" required></textarea> 
 						
@@ -541,7 +535,60 @@ if (isset($_POST['submit'])) {
 	$PS1 = htmlspecialchars($_POST['PS1']);
 	$PS2 = htmlspecialchars($_POST['PS2']);
 	$PS3 = htmlspecialchars($_POST['PS3']);
-	$PS4 = htmlspecialchars($_POST['PS4']);
+	
+	$FPR1_1 = htmlspecialchars($_POST['FPR1_1']);
+	$FPR1_2 = htmlspecialchars($_POST['FPR1_2']);
+	$FPR1_3 = htmlspecialchars($_POST['FPR1_3']);
+	$FPR1_4 = htmlspecialchars($_POST['FPR1_4']);
+	$FPR1_5 = htmlspecialchars($_POST['FPR1_5']);
+	$FPR2_1 = htmlspecialchars($_POST['FPR2_1']);
+	$FPR2_2 = htmlspecialchars($_POST['FPR2_2']);
+	$FPR2_3 = htmlspecialchars($_POST['FPR2_3']);
+	$FPR2_4 = htmlspecialchars($_POST['FPR2_4']);
+	$FPR2_5 = htmlspecialchars($_POST['FPR2_5']);
+	$FPR3_1 = htmlspecialchars($_POST['FPR3_1']);
+	$FPR3_2 = htmlspecialchars($_POST['FPR3_2']);
+	$FPR3_3 = htmlspecialchars($_POST['FPR3_3']);
+	$FPR3_4 = htmlspecialchars($_POST['FPR3_4']);
+	$FPR3_5 = htmlspecialchars($_POST['FPR3_5']);
+	$FPR4_1 = htmlspecialchars($_POST['FPR4_1']);
+	$FPR4_2 = htmlspecialchars($_POST['FPR4_2']);
+	$FPR4_2 = htmlspecialchars($_POST['FPR4_2']);
+	$FPR4_3 = htmlspecialchars($_POST['FPR4_3']);
+	$FPR4_4 = htmlspecialchars($_POST['FPR4_4']);
+	$FPR4_5 = htmlspecialchars($_POST['FPR4_5']);
+	$FPR5_1 = htmlspecialchars($_POST['FPR5_1']);
+	$FPR5_2 = htmlspecialchars($_POST['FPR5_2']);
+	$FPR5_3 = htmlspecialchars($_POST['FPR5_3']);
+	$FPR5_4 = htmlspecialchars($_POST['FPR5_4']);
+	$FPR5_5 = htmlspecialchars($_POST['FPR5_5']);
+	$FPR6_1 = htmlspecialchars($_POST['FPR6_1']);
+	$FPR6_2 = htmlspecialchars($_POST['FPR6_2']);
+	$FPR6_3 = htmlspecialchars($_POST['FPR6_3']);
+	$FPR6_4 = htmlspecialchars($_POST['FPR6_4']);
+	$FPR6_5 = htmlspecialchars($_POST['FPR6_5']);
+	$FPR7_1 = htmlspecialchars($_POST['FPR7_1']);
+	$FPR7_2 = htmlspecialchars($_POST['FPR7_2']);
+	$FPR7_3 = htmlspecialchars($_POST['FPR7_3']);
+	$FPR7_4 = htmlspecialchars($_POST['FPR7_4']);
+	$FPR7_5 = htmlspecialchars($_POST['FPR7_5']);
+	$FPR8_1 = htmlspecialchars($_POST['FPR8_1']);
+	$FPR8_2 = htmlspecialchars($_POST['FPR8_2']);
+	$FPR8_3 = htmlspecialchars($_POST['FPR8_3']);
+	$FPR8_4 = htmlspecialchars($_POST['FPR8_4']);
+	$FPR8_5 = htmlspecialchars($_POST['FPR8_5']);
+	$FPR9_1 = htmlspecialchars($_POST['FPR9_1']);
+	$FPR9_2 = htmlspecialchars($_POST['FPR9_2']);
+	$FPR9_3 = htmlspecialchars($_POST['FPR9_3']);
+	$FPR9_4 = htmlspecialchars($_POST['FPR9_4']);
+	$FPR9_5 = htmlspecialchars($_POST['FPR9_5']);
+	$FPR10_1 = htmlspecialchars($_POST['FPR10_1']);
+	$FPR10_2 = htmlspecialchars($_POST['FPR10_2']);
+	$FPR10_3 = htmlspecialchars($_POST['FPR10_3']);
+	$FPR10_4 = htmlspecialchars($_POST['FPR10_4']);
+	$FPR10_5 = htmlspecialchars($_POST['FPR10_5']);
+	$GrandTotal = htmlspecialchars($_POST['GrandTotal']);
+
 	$PS5 = htmlspecialchars($_POST['PS5']);
 	$PS6 = htmlspecialchars($_POST['PS6']);
 	$PS7 = htmlspecialchars($_POST['PS7']);
@@ -558,13 +605,35 @@ if (isset($_POST['submit'])) {
 		(ProposalID, Author, Evaluator, Date_Time,
 			Title, Location_Area, Duration, TypeCES, SDG, 
 			Office, Programs, People, Agency, Beneficiaries,
-			PS1, PS2, PS3, PS4, PS5, PS6, PS7,
+			PS1, PS2, PS3,
+				FPR1_1, FPR1_2, FPR1_3, FPR1_4, FPR1_5,
+				FPR2_1, FPR2_2, FPR2_3, FPR2_4, FPR2_5,
+				FPR3_1, FPR3_2, FPR3_3, FPR3_4, FPR3_5,
+				FPR4_1, FPR4_2, FPR4_3, FPR4_4, FPR4_5,
+				FPR5_1, FPR5_2, FPR5_3, FPR5_4, FPR5_5,
+				FPR6_1, FPR6_2, FPR6_3, FPR6_4, FPR6_5,
+				FPR7_1, FPR7_2, FPR7_3, FPR7_4, FPR7_5,
+				FPR8_1, FPR8_2, FPR8_3, FPR8_4, FPR8_5,
+				FPR9_1, FPR9_2, FPR9_3, FPR9_4, FPR9_5,
+				FPR10_1, FPR10_2, FPR10_3, FPR10_4, FPR10_5, GrandTotal,
+			PS5, PS6, PS7,
 			Remarks, Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2)
 		VALUES 
 		('$PID', '$dbAuthor', '$AID', '$DateTime',
 			'$Title', '$Location_Area', '$Duration', '$TypeCES', '$SDG', 
 			'$Office', '$Programs', '$People', '$Agency', '$Beneficiaries',
-			'$PS1', '$PS2', '$PS3', '$PS4', '$PS5', '$PS6', '$PS7',
+			'$PS1', '$PS2', '$PS3',
+				'$FPR1_1', '$FPR1_2', '$FPR1_3', '$FPR1_4', '$FPR1_5',
+				'$FPR2_1', '$FPR2_2', '$FPR2_3', '$FPR2_4', '$FPR2_5',
+				'$FPR3_1', '$FPR3_2', '$FPR3_3', '$FPR3_4', '$FPR3_5',
+				'$FPR4_1', '$FPR4_2', '$FPR4_3', '$FPR4_4', '$FPR4_5',
+				'$FPR5_1', '$FPR5_2', '$FPR5_3', '$FPR5_4', '$FPR5_5',
+				'$FPR6_1', '$FPR6_2', '$FPR6_3', '$FPR6_4', '$FPR6_5',
+				'$FPR7_1', '$FPR7_2', '$FPR7_3', '$FPR7_4', '$FPR7_5',
+				'$FPR8_1', '$FPR8_2', '$FPR8_3', '$FPR8_4', '$FPR8_5',
+				'$FPR9_1', '$FPR9_2', '$FPR9_3', '$FPR9_4', '$FPR9_5',
+				'$FPR10_1', '$FPR10_2', '$FPR10_3', '$FPR10_4', '$FPR10_5', '$GrandTotal',
+			'$PS5', '$PS6', '$PS7',
 			'PENDING', '$Sign1_1', '$Sign1_2', '$Sign2_1', '$Sign2_2', '$Sign3_1', '$Sign3_2')");
 	//$command = $con->query($sql);
 
@@ -597,3 +666,111 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
+<script>
+//For Auto Compute
+function Row1(){
+	let a = document.getElementById('FPR1_2').value;
+	let b = document.getElementById('FPR1_4').value;
+	let ans = a * b;
+	document.getElementById("FPR1_5").value = ans;
+	
+	GrandTotal();
+}
+
+function Row2(){
+	let a = document.getElementById('FPR2_2').value;
+	let b = document.getElementById('FPR2_4').value;
+	let ans = a * b;
+	document.getElementById("FPR2_5").value = ans;
+
+	GrandTotal();
+}
+
+function Row3(){ 
+	let a = document.getElementById('FPR3_2').value;
+	let b = document.getElementById('FPR3_4').value;
+	let ans = a * b;
+	document.getElementById("FPR3_5").value = ans;
+
+	GrandTotal();
+}
+
+function Row4(){ 
+	let a = document.getElementById('FPR4_2').value;
+	let b = document.getElementById('FPR4_4').value;
+	let ans = a * b;
+	document.getElementById("FPR4_5").value = ans;
+
+	GrandTotal();
+}
+
+function Row5(){ 
+	let a = document.getElementById('FPR5_2').value;
+	let b = document.getElementById('FPR5_4').value;
+	let ans = a * b;
+	document.getElementById("FPR5_5").value = ans;
+
+	GrandTotal();
+}
+
+function Row6(){ 
+	let a = document.getElementById('FPR6_2').value;
+	let b = document.getElementById('FPR6_4').value;
+	let ans = a * b;
+	document.getElementById("FPR6_5").value = ans;
+
+	GrandTotal();
+}
+
+function Row7(){ 
+	let a = document.getElementById('FPR7_2').value;
+	let b = document.getElementById('FPR7_4').value;
+	let ans = a * b;
+	document.getElementById("FPR7_5").value = ans;
+
+	GrandTotal();
+}
+
+function Row8(){ 
+	let a = document.getElementById('FPR8_2').value;
+	let b = document.getElementById('FPR8_4').value;
+	let ans = a * b;
+	document.getElementById("FPR8_5").value = ans;
+
+	GrandTotal();
+}
+
+function Row9(){ 
+	let a = document.getElementById('FPR9_2').value;
+	let b = document.getElementById('FPR9_4').value;
+	let ans = a * b;
+	document.getElementById("FPR9_5").value = ans;
+
+	GrandTotal();
+}
+
+function Row10(){
+	let a = document.getElementById('FPR10_2').value;
+	let b = document.getElementById('FPR10_4').value;
+	let ans = a * b;
+	document.getElementById("FPR10_5").value = ans;
+
+	GrandTotal();
+}
+
+function GrandTotal(){ 
+	let r1 = document.getElementById('FPR1_5').value;
+	let r2 = document.getElementById('FPR2_5').value;
+	let r3 = document.getElementById('FPR3_5').value;
+	let r4 = document.getElementById('FPR4_5').value;
+	let r5 = document.getElementById('FPR5_5').value;
+	let r6 = document.getElementById('FPR6_5').value;
+	let r7 = document.getElementById('FPR7_5').value;
+	let r8 = document.getElementById('FPR8_5').value;
+	let r9 = document.getElementById('FPR9_5').value;
+	let r10 = document.getElementById('FPR10_5').value;
+	let anss = (parseFloat(r1)) + (parseFloat(r2)) + (parseFloat(r3)) + (parseFloat(r4)) + (parseFloat(r5)) + (parseFloat(r6)) + (parseFloat(r7)) + (parseFloat(r8)) + (parseFloat(r9)) + (parseFloat(r10));
+	document.getElementById("GrandTotal").value = anss;
+	document.getElementById("Cost").value = anss;
+}
+</script>
