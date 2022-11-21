@@ -366,30 +366,11 @@ if(isset($_GET['evaluation'])){
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm2()">CLOSE</button>
 										</div>
-										<textarea placeholder="Your Name" name="Sign1_1" required><?php echo ""; ?></textarea></td>
+										<textarea placeholder="..." name="Sign1_1" required><?php echo ""; ?></textarea></td>
 	
 								<td>
-									<div class="checkbox3">
-											<label onclick="openForm3()">Select Designation</label>
-									</div>
-										<div class="form-popup3" id="myForm3">
-											<label class="check"><span>Sample</span>
-												<input type="checkbox" id="" value="" name="" onclick="">
-												<span class="checkmark"></span>
-											</label>
-											<br>
-											<label class="check"><span>Sample</span>
-												<input type="checkbox" id="" value="" name="" onclick="">
-												<span class="checkmark"></span>
-											</label>
-											<br>
-											<label class="check"><span>Sample</span>
-												<input type="checkbox" id="" value="" name="" onclick="">
-												<span class="checkmark"></span>
-											</label>
-											<button type="button" class="btncancel" onclick="closeForm3()">CLOSE</button>
-										</div>
-										<textarea placeholder="Designation" name="Sign1_2" required><?php echo ""; ?></textarea></td>
+									
+										<textarea placeholder="..." name="Sign1_2" required><?php echo ""; ?></textarea></td>
 							</tr>
 							<tr>
 								<td> Review by:</td>
@@ -414,29 +395,10 @@ if(isset($_GET['evaluation'])){
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm4()">CLOSE</button>
 										</div>
-									<textarea placeholder="Your Name" name="Sign2_1" required><?php echo ""; ?></textarea></td>
+									<textarea placeholder="..." name="Sign2_1" required><?php echo ""; ?></textarea></td>
 								<td>
-									<div class="checkbox5">
-											<label onclick="openForm5()">Select Designation</label>
-									</div>
-										<div class="form-popup5" id="myForm5">
-											<label class="check"><span>Sample</span>
-												<input type="checkbox" id="" value="" name="" onclick="">
-												<span class="checkmark"></span>
-											</label>
-											<br>
-											<label class="check"><span>Sample</span>
-												<input type="checkbox" id="" value="" name="" onclick="">
-												<span class="checkmark"></span>
-											</label>
-											<br>
-											<label class="check"><span>Sample</span>
-												<input type="checkbox" id="" value="" name="" onclick="">
-												<span class="checkmark"></span>
-											</label>
-											<button type="button" class="btncancel" onclick="closeForm5()">CLOSE</button>
-										</div>
-								<textarea placeholder="Designation" name="Sign2_2" required><?php echo ""; ?></textarea></td>
+									
+								<textarea placeholder="..." name="Sign2_2" required><?php echo ""; ?></textarea></td>
 							</tr>
 				<tr>
 					<td> Accepted by:</td>
@@ -461,30 +423,11 @@ if(isset($_GET['evaluation'])){
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm6()">CLOSE</button>
 							</div>
-					<textarea placeholder="Your Name" name="Sign3_1" required><?php echo ""; ?></textarea></td>
+					<textarea placeholder="..." name="Sign3_1" required><?php echo ""; ?></textarea></td>
 					
 					<td>
-						<div class="checkbox7">
-								<label onclick="openForm7()">Select Designation</label>
-						</div>
-							<div class="form-popup7" id="myForm7">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm7()">CLOSE</button>
-							</div>
-					<textarea placeholder="Designation" name="Sign3_2" required><?php echo ""; ?></textarea></td>
+						
+					<textarea placeholder="..." name="Sign3_2" required><?php echo ""; ?></textarea></td>
 				</tr>
 						</table>
 	
@@ -518,6 +461,24 @@ if(isset($_GET['evaluation'])){
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink));
 	</script>
+	
+	<script>
+//For Signatories Dropdown
+	function openForm2()  { document.getElementById("myForm2").style.display = "block"; }
+	function closeForm2() { document.getElementById("myForm2").style.display = "none"; }
+	
+	
+	
+	function openForm4()  { document.getElementById("myForm4").style.display = "block"; }
+	function closeForm4() { document.getElementById("myForm4").style.display = "none"; }
+	
+	
+	
+	function openForm6()  { document.getElementById("myForm6").style.display = "block"; }
+	function closeForm6() { document.getElementById("myForm6").style.display = "none"; }
+	
+	
+</script>
 <body>
 </html>
 

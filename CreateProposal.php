@@ -576,29 +576,7 @@ $yearQuarter = ceil($month / 3);
 							</div>
 							<textarea placeholder="..." name="Sign1_1" required></textarea></td>
 	
-					<td>
-						<div class="checkbox3">
-								<label onclick="openForm3()">Select Designation</label>
-						</div>
-							<div class="form-popup3" id="myForm3">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm3()">CLOSE</button>
-							</div>
-					
-					<textarea placeholder="..." name="Sign1_2" required></textarea></td>
+					<td> <textarea placeholder="..." name="Sign1_2" required></textarea></td>
 				</tr>
 				<tr>
 					<td> Review by:</td>
@@ -624,27 +602,7 @@ $yearQuarter = ceil($month / 3);
 								<button type="button" class="btncancel" onclick="closeForm4()">CLOSE</button>
 							</div>
 						<textarea placeholder="..." name="Sign2_1" required></textarea></td>
-					<td>
-						<div class="checkbox5">
-								<label onclick="openForm5()">Select Designation</label>
-						</div>
-							<div class="form-popup5" id="myForm5">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm5()">CLOSE</button>
-							</div>
+					<td>	
 					<textarea placeholder="..." name="Sign2_2" required></textarea></td>
 				</tr>
 				<tr>
@@ -673,26 +631,6 @@ $yearQuarter = ceil($month / 3);
 					<textarea placeholder="..." name="Sign3_1" required></textarea></td>
 					
 					<td>
-						<div class="checkbox7">
-								<label onclick="openForm7()">Select Designation</label>
-						</div>
-							<div class="form-popup7" id="myForm7">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm7()">CLOSE</button>
-							</div>
 					<textarea placeholder="..." name="Sign3_2" required></textarea></td>
 				</tr>
 				<tr>
@@ -721,26 +659,6 @@ $yearQuarter = ceil($month / 3);
 					<textarea placeholder="..." name="Sign4_1" required></textarea></td>
 					
 					<td>
-						<div class="checkbox9">
-								<label onclick="openForm9()">Select Designation</label>
-						</div>
-							<div class="form-popup9" id="myForm9">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="S">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm9()">CLOSE</button>
-							</div>
 					<textarea placeholder="..." name="Sign4_2" required></textarea></td>
 				</tr>
 				<tr>
@@ -768,28 +686,7 @@ $yearQuarter = ceil($month / 3);
 							</div>
 					<textarea placeholder="..." name="Sign5_1" required></textarea></td>
 					
-					<td>
-						<div class="checkbox11">
-								<label onclick="openForm11()">Select Designation</label>
-						</div>
-							<div class="form-popup11" id="myForm11">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="S">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm11()">CLOSE</button>
-							</div>
-					<textarea placeholder="..." name="Sign5_2" required></textarea></td>
+					<td><textarea placeholder="..." name="Sign5_2" required></textarea></td>
 				</tr>
 			</table>
 			<div class="button">
@@ -979,32 +876,27 @@ if (isset($_POST['Save'])) {
 	function openForm2()  { document.getElementById("myForm2").style.display = "block"; }
 	function closeForm2() { document.getElementById("myForm2").style.display = "none"; }
 	
-	function openForm3()  { document.getElementById("myForm3").style.display = "block"; }
-	function closeForm3() { document.getElementById("myForm3").style.display = "none"; }
+	
 	
 	function openForm4()  { document.getElementById("myForm4").style.display = "block"; }
 	function closeForm4() { document.getElementById("myForm4").style.display = "none"; }
 	
-	function openForm5()  { document.getElementById("myForm5").style.display = "block"; }
-	function closeForm5() { document.getElementById("myForm5").style.display = "none"; }
+	
 	
 	function openForm6()  { document.getElementById("myForm6").style.display = "block"; }
 	function closeForm6() { document.getElementById("myForm6").style.display = "none"; }
 	
-	function openForm7()  { document.getElementById("myForm7").style.display = "block"; }
-	function closeForm7() { document.getElementById("myForm7").style.display = "none"; }
+	
 	
 	function openForm8()  { document.getElementById("myForm8").style.display = "block"; }
 	function closeForm8() { document.getElementById("myForm8").style.display = "none"; }
 	
-	function openForm9()  { document.getElementById("myForm9").style.display = "block"; }
-	function closeForm9() { document.getElementById("myForm9").style.display = "none"; }
+	
 	
 	function openForm10()  { document.getElementById("myForm10").style.display = "block"; }
 	function closeForm10() { document.getElementById("myForm10").style.display = "none"; }
 	
-	function openForm11()  { document.getElementById("myForm11").style.display = "block"; }
-	function closeForm11() { document.getElementById("myForm11").style.display = "none"; }
+	
 </script>
 
 <script>

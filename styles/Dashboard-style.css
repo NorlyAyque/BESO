@@ -292,7 +292,7 @@ margin-left: 100px;
 .input{
   margin-right:auto;
   margin-left:30px;
-  margin-top:-15px;
+  
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0,0,0,0.3); 
   overflow:hidden;
@@ -370,7 +370,7 @@ margin-left: 100px;
 	cursor:pointer;
 	padding: 10px 10px;
 	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
-	width:25%;
+	width:10%;
 	height:38px;
 	padding:7px;
 }
@@ -387,6 +387,7 @@ margin-left: 100px;
 	padding: 10px 15px;
 	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
 		margin-top:10px;
+	font-weight:normal;
 }
 #savebtn span:hover{
 	cursor:pointer;

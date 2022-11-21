@@ -71,7 +71,7 @@ include_once ("Dashboard-Computations.php");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard-style.css">
 
 </head>
 <body onload="Compute()">
@@ -186,7 +186,7 @@ include_once ("Dashboard-Computations.php");
 							<a id="Enable_SaveBtn" onclick="Enable_SaveBtn()">Edit Target/Actual</a>
 							<a id="savebtn" style="display:none">
 									<input type="submit" class="Ssave" name="Savebtn" value="Save"> 
-									<span id="Cancel" onclick="Cancel()">CANCEL</span>
+									<span id="Cancel" onclick="Cancel()">Cancel</span>
 							</a>
 						</th>
 					</tr>
