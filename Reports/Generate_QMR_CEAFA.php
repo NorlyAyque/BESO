@@ -200,7 +200,7 @@ while($result = mysqli_fetch_array($command))
 			<td></td>
 		</tr>
 
-	</table>
+	</table> 
 
 	<table class="legend">
 		<tr>

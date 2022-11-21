@@ -31,7 +31,7 @@ $Position = $_SESSION["Position"];
 <html>
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-<title>Generate QMR</title>
+<title>Generate QMR - CIT</title>
 <link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad.css">
 </head>
 
