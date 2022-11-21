@@ -9,6 +9,8 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 
 //Getting Data declared from index.php
 $AID = $_SESSION["AccountAID"]; //Naka Login na User
+$Fullname = $_SESSION["FullName"];
+$Position = $_SESSION["Position"];
 
 date_default_timezone_set("Asia/Manila");
 $DateTime = date("M, d Y; h:i:s A");
@@ -320,7 +322,7 @@ if(isset($_GET['create'])){
 								<td> Prepared by:</td>
 									
 								<td>
-									<div class="checkbox2">
+									<!-- <div class="checkbox2">
 											<label onclick="openForm2()">Select your name</label>
 									</div>
 										<div class="form-popup2" id="myForm2">
@@ -339,17 +341,16 @@ if(isset($_GET['create'])){
 												<span class="checkmark"></span>
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm2()">CLOSE</button>
-										</div>
-										<textarea placeholder="..." name="Sign1_1" required><?php echo ""; ?></textarea></td>
+										</div> -->
+										<textarea placeholder="..." name="Sign1_1" required><?php echo strtoupper($Fullname);?></textarea></td>
 	
 								<td>
-									
-										<textarea placeholder="..." name="Sign1_2" required><?php echo ""; ?></textarea></td>
+										<textarea placeholder="..." name="Sign1_2" required><?php echo $Position; ?></textarea></td>
 							</tr>
 							<tr>
 								<td> Review by:</td>
 								<td>
-									<div class="checkbox4">
+									<!-- <div class="checkbox4">
 											<label onclick="openForm4()">Select your name</label>
 									</div>
 										<div class="form-popup4" id="myForm4">
@@ -368,7 +369,7 @@ if(isset($_GET['create'])){
 												<span class="checkmark"></span>
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm4()">CLOSE</button>
-										</div>
+										</div> -->
 									<textarea placeholder="..." name="Sign2_1" required><?php echo ""; ?></textarea></td>
 								<td>
 									
@@ -377,7 +378,7 @@ if(isset($_GET['create'])){
 				<tr>
 					<td> Accepted by:</td>
 					<td>
-						<div class="checkbox6">
+						<!-- <div class="checkbox6">
 								<label onclick="openForm6()">Select your name</label>
 						</div>
 							<div class="form-popup6" id="myForm6">
@@ -396,7 +397,7 @@ if(isset($_GET['create'])){
 									<span class="checkmark"></span>
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm6()">CLOSE</button>
-							</div>
+							</div> -->
 					<textarea placeholder="..." name="Sign3_1" required><?php echo ""; ?></textarea></td>
 					
 					<td>
@@ -437,24 +438,19 @@ if(isset($_GET['create'])){
 	item.addEventlistener('mouseover',activeLink);
 	</script>
 	
-	<script>
+<!-- <script>
 //For Signatories Dropdown
 	function openForm2()  { document.getElementById("myForm2").style.display = "block"; }
 	function closeForm2() { document.getElementById("myForm2").style.display = "none"; }
 	
-	
-	
 	function openForm4()  { document.getElementById("myForm4").style.display = "block"; }
 	function closeForm4() { document.getElementById("myForm4").style.display = "none"; }
 	
-	
-	
 	function openForm6()  { document.getElementById("myForm6").style.display = "block"; }
-	function closeForm6() { document.getElementById("myForm6").style.display = "none"; }
-	
-	
-</script>
-<body>
+	function closeForm6() { document.getElementById("myForm6").style.display = "none"; }	
+</script> -->
+
+</body>
 </html>
 
 <?php

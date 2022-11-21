@@ -356,7 +356,7 @@ if(isset($_GET['edit'])){
 								<td> Prepared by:</td>
 									
 								<td>
-									<div class="checkbox2">
+									<!-- <div class="checkbox2">
 											<label onclick="openForm2()">Select your name</label>
 									</div>
 										<div class="form-popup2" id="myForm2">
@@ -375,7 +375,7 @@ if(isset($_GET['edit'])){
 												<span class="checkmark"></span>
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm2()">CLOSE</button>
-										</div>
+										</div> -->
 										<textarea placeholder="..." name="Sign1_1" required><?php echo $dbSign1_1; ?></textarea></td>
 	
 								<td>
@@ -385,7 +385,7 @@ if(isset($_GET['edit'])){
 							<tr>
 								<td> Review by:</td>
 								<td>
-									<div class="checkbox4">
+									<!-- <div class="checkbox4">
 											<label onclick="openForm4()">Select your name</label>
 									</div>
 										<div class="form-popup4" id="myForm4">
@@ -404,7 +404,7 @@ if(isset($_GET['edit'])){
 												<span class="checkmark"></span>
 											</label>
 											<button type="button" class="btncancel" onclick="closeForm4()">CLOSE</button>
-										</div>
+										</div> -->
 									<textarea placeholder="..." name="Sign2_1" required><?php echo $dbSign2_1; ?></textarea></td>
 								<td>
 									
@@ -413,7 +413,7 @@ if(isset($_GET['edit'])){
 				<tr>
 					<td> Accepted by:</td>
 					<td>
-						<div class="checkbox6">
+						<!-- <div class="checkbox6">
 								<label onclick="openForm6()">Select your name</label>
 						</div>
 							<div class="form-popup6" id="myForm6">
@@ -432,7 +432,7 @@ if(isset($_GET['edit'])){
 									<span class="checkmark"></span>
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm6()">CLOSE</button>
-							</div>
+							</div> -->
 					<textarea placeholder="..." name="Sign3_1" required><?php echo $dbSign3_1; ?></textarea></td>
 					
 					<td>
@@ -451,12 +451,9 @@ if(isset($_GET['edit'])){
 					<div class ="save">
 							<button class = "btn3" type="submit" name="submit"> Update </button>
 						</div>
-						
 					</th>
 				</tr>
 			</table>
-			
-			
 		</div>	
 	</div>
 </form>
@@ -487,23 +484,19 @@ if(isset($_GET['edit'])){
 	item.addEventlistener('mouseover',activeLink);
 	</script>
 	
-	<script>
+<!-- <script>
 //For Signatories Dropdown
 	function openForm2()  { document.getElementById("myForm2").style.display = "block"; }
 	function closeForm2() { document.getElementById("myForm2").style.display = "none"; }
-	
-	
-	
+
 	function openForm4()  { document.getElementById("myForm4").style.display = "block"; }
 	function closeForm4() { document.getElementById("myForm4").style.display = "none"; }
-	
-	
-	
+
 	function openForm6()  { document.getElementById("myForm6").style.display = "block"; }
 	function closeForm6() { document.getElementById("myForm6").style.display = "none"; }
-	
-</script>
-<body>
+</script> -->
+
+</body>
 </html>
 
 <?php

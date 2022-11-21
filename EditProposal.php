@@ -638,7 +638,7 @@ if(isset($_GET['edit'])){
 				<tr>
 					<td> Prepared by:</td>
 					<td>
-						<div class="checkbox2">
+						<!-- <div class="checkbox2">
 								<label onclick="openForm2()">Select your name</label>
 						</div>
 							<div class="form-popup2" id="myForm2">
@@ -657,7 +657,7 @@ if(isset($_GET['edit'])){
 									<span class="checkmark"></span>
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm2()">CLOSE</button>
-							</div>
+							</div> -->
 							<textarea placeholder="..." name="Sign1_1" required><?php echo $dbSign1_1;?></textarea></td>
 	
 					<td>
@@ -667,7 +667,7 @@ if(isset($_GET['edit'])){
 				<tr>
 					<td> Review by:</td>
 					<td>
-						<div class="checkbox4">
+						<!-- <div class="checkbox4">
 								<label onclick="openForm4()">Select your name</label>
 						</div>
 							<div class="form-popup4" id="myForm4">
@@ -686,7 +686,7 @@ if(isset($_GET['edit'])){
 									<span class="checkmark"></span>
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm4()">CLOSE</button>
-							</div>
+							</div> -->
 						<textarea placeholder="..." name="Sign2_1" required><?php echo $dbSign2_1;?></textarea></td>
 					<td>
 					<textarea placeholder="..." name="Sign2_2" required><?php echo $dbSign2_2;?></textarea></td>
@@ -694,7 +694,7 @@ if(isset($_GET['edit'])){
 				<tr>
 					<td> Recommending Approval:</td>
 					<td>
-						<div class="checkbox6">
+						<!-- <div class="checkbox6">
 								<label onclick="openForm6()">Select your name</label>
 						</div>
 							<div class="form-popup6" id="myForm6">
@@ -713,7 +713,7 @@ if(isset($_GET['edit'])){
 									<span class="checkmark"></span>
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm6()">CLOSE</button>
-							</div>
+							</div> -->
 					<textarea placeholder="..." name="Sign3_1" required><?php echo $dbSign3_1;?></textarea></td>
 					
 					<td>
@@ -722,7 +722,7 @@ if(isset($_GET['edit'])){
 				<tr>
 					<td> Recommending Approval:</td>
 					<td>
-						<div class="checkbox8">
+						<!-- <div class="checkbox8">
 								<label onclick="openForm8()">Select your name</label>
 						</div>
 							<div class="form-popup8" id="myForm8">
@@ -741,7 +741,7 @@ if(isset($_GET['edit'])){
 									<span class="checkmark"></span>
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm8()">CLOSE</button>
-							</div>
+							</div> -->
 					<textarea placeholder="..." name="Sign4_1" required><?php echo $dbSign4_1;?></textarea></td>
 					
 					<td>
@@ -750,7 +750,7 @@ if(isset($_GET['edit'])){
 				<tr>
 					<td>Approved by:</td>
 					<td>
-						<div class="checkbox10">
+						<!-- <div class="checkbox10">
 								<label onclick="openForm10()">Select your name</label>
 						</div>
 							<div class="form-popup10" id="myForm10">
@@ -769,7 +769,7 @@ if(isset($_GET['edit'])){
 									<span class="checkmark"></span>
 								</label>
 								<button type="button" class="btncancel" onclick="closeForm10()">CLOSE</button>
-							</div>
+							</div> -->
 					<textarea placeholder="..." name="Sign5_1" required><?php echo $dbSign5_1;?></textarea></td>
 					
 					<td>
@@ -1121,29 +1121,20 @@ function SelectSDG(){
 }
 </script>
 
-<script>
+<!-- <script>
 //For Signatories Dropdown
 	function openForm2()  { document.getElementById("myForm2").style.display = "block"; }
 	function closeForm2() { document.getElementById("myForm2").style.display = "none"; }
 	
-	
-	
 	function openForm4()  { document.getElementById("myForm4").style.display = "block"; }
 	function closeForm4() { document.getElementById("myForm4").style.display = "none"; }
-	
-	
 	
 	function openForm6()  { document.getElementById("myForm6").style.display = "block"; }
 	function closeForm6() { document.getElementById("myForm6").style.display = "none"; }
 	
-	
-	
 	function openForm8()  { document.getElementById("myForm8").style.display = "block"; }
 	function closeForm8() { document.getElementById("myForm8").style.display = "none"; }
 	
-	
 	function openForm10()  { document.getElementById("myForm10").style.display = "block"; }
 	function closeForm10() { document.getElementById("myForm10").style.display = "none"; }
-	
-	
-</script>
+</script> -->
