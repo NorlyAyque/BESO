@@ -168,10 +168,10 @@ while($result = mysqli_fetch_array($command))
 		<th >Verified by:</th>
 	</tr>
 	<tr>
-		<td><textarea></textarea></td>
-		<td><textarea></textarea></td>
-		<td><textarea></textarea></td>
-		<td><textarea></textarea></td>
+		<td><textarea placeholder="type here..."></textarea></td>
+		<td><textarea placeholder="type here..."></textarea></td>
+		<td><textarea placeholder="type here..."></textarea></td>
+		<td><textarea placeholder="type here..."></textarea></td>
 	</tr>
 	
 	

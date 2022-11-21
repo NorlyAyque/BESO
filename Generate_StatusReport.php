@@ -364,9 +364,9 @@ while($result = mysqli_fetch_array($command))
 			<th colspan="3">Approved by:</th>
 		</tr>
 		<tr class="signatories">
-			<td colspan="3"><textarea></textarea></td>
-			<td colspan="4"><textarea></textarea></td>
-			<td colspan="3"><textarea></textarea></td>
+			<td colspan="3"><textarea placeholder="type here..."></textarea></td>
+			<td colspan="4"><textarea placeholder="type here..." ></textarea></td>
+			<td colspan="3"><textarea placeholder="type here..."></textarea></td>
 		</tr>
 		</tbody>
 </table>

@@ -32,7 +32,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Edit User</title>
-<link rel="stylesheet" type="text/css" href="styles/Form-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Forms.css">
 
 </head>
 <body>
@@ -136,7 +136,7 @@ if(isset($_GET['edit'])){
 					</div>
 
 					<label><b>Campus</b></label>
-					<div class ="Drp">
+					<div class ="DrpCAMPUS">
 					<select name="Campus" id="Campus" required>
 						<option value="">Select Campus</option>
 						<option value="Alangilan">Alangilan</option>
@@ -157,7 +157,7 @@ if(isset($_GET['edit'])){
 					<input type="text" placeholder="Collage" name="College" value="<?php echo $dbCollege; ?>" required>
 
 					<label><b>Position</b></label>
-					<div class ="Drp">
+					<div class ="DrpCAMPUS">
 					<select name="Position" id="Position">
 						<option value="0">Select Position</option>
 						<option value="Head">Head</option>

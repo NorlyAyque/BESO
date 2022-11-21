@@ -13,7 +13,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Add New User</title>
-<link rel="stylesheet" type="text/css" href="styles/Form-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Forms.css">
 
 </head>
 <body>
@@ -111,7 +111,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<input type="checkbox" onclick="ShowPassword()"> Show Password
 					</div>
 					<label><b>Campus</b></label>
-					<div class ="Drp">
+					<div class ="DrpCAMPUS">
 					<select name="Campus" id="Campus" required>
 						<option value="">Select Campus</option>
 						<option value="Alangilan">Alangilan</option>
@@ -132,7 +132,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<input type="text" placeholder="College" name="College" required>
 
 					<label><b>Position</b></label>
-					<div class ="Drp">
+					<div class ="DrpCAMPUS">
 					<select name="Position" id="Position" required>
 						<option value="">Select Position</option>
 						<option value="Head">Head</option>
