@@ -23,6 +23,10 @@ if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 	else if ($Q == 4){$Quarter = "Fourth";}
 }
 
+//Getting Data declared from index.php
+$Fullname = $_SESSION["FullName"];
+$Position = $_SESSION["Position"];
+
 $CIT = "CIT";
 $CIT_Full = "College of Industrial Technology";
 
@@ -364,9 +368,9 @@ while($result = mysqli_fetch_array($command))
 			<th colspan="3">Approved by:</th>
 		</tr>
 		<tr class="signatories">
-			<td colspan="3"><textarea placeholder="type here..."></textarea></td>
+			<td colspan="3"><textarea placeholder="type here..."><?php echo strtoupper($Fullname)."\n".$Position;?></textarea></td>
 			<td colspan="4"><textarea placeholder="type here..." ></textarea></td>
-			<td colspan="3"><textarea placeholder="type here..."></textarea></td>
+			<td colspan="3"><textarea placeholder="type here..."></textarea></td>			
 		</tr>
 		</tbody>
 </table>
