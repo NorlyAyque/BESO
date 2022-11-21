@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("Connection.php");
+include("../Connection.php");
 
 if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
@@ -11,7 +11,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 	echo "<center> <br>";
 	echo("<h1> Please Select Year and Quarter </h1>");
-	echo "<h2> <a href='Reports.php'> RETURN <a> </h2>";
+	echo "<h2> <a href='../Reports.php'> RETURN <a> </h2>";
 	echo "</center";
 	die;
 }else{
@@ -32,7 +32,7 @@ $Position = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Generate QMR</title>
-<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
+<link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad.css">
 </head>
 
 <body>
@@ -56,7 +56,6 @@ $Position = $_SESSION["Position"];
 		<th><i>A. trainess weighted by the lenght of training / percentage of beneficiaries who rate the training course/s as satisfactory or higher terms of quality and relevance</i></th>
 	</tr>
 	</table>
-	
 	<table class="table2">
 		<tr>
 			<th><p style="width:30px;">No.</p></th>
@@ -284,7 +283,7 @@ while($result = mysqli_fetch_array($command))
 			<td colspan="13"> <b>College of Engineering, Architecture and Fine Arts </b></td>
 		</tr>
 <?php
-//Display all PAPS under CICS
+//Display all PAPS under CEAFA
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(Year = $Year) AND
 		(Quarter = $Q) AND
@@ -392,7 +391,7 @@ while($result = mysqli_fetch_array($command))
 
 	<table class="legend">
 		<tr>
-			<td>[1] - 0 Less than 8hrs; 1 = 8 hours or 1 day; 2 = 2 days; 3 = to 4 days; 5 days or more</td>
+			<td>[1] - 0.5 = Less than 8hrs; 1 = 8 hours or 1 day; 1.25 = 2 days; 1.50 = 3 to 4 days; 2 =  5 days or more</td>
 		</tr>
 		<tr>
 			<td>[2] - Annex A: Extension Program Write-up describing the program framwork and the actual implementaion

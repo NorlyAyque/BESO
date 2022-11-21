@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("Connection.php");
+include("../Connection.php");
 
 if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
@@ -10,7 +10,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 	echo "<center> <br>";
 	echo("<h1> Please Select Year and Quarter </h1>");
-	echo "<h2> <a href='GADReport.php'> RETURN <a> </h2>";
+	echo "<h2> <a href='../GADReport.php'> RETURN <a> </h2>";
 	echo "</center";
 	die;
 }else{
@@ -31,7 +31,7 @@ $Position = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Generate GAD Report</title>
-<link rel="stylesheet" type="text/css" href="styles/QuarterlyStatusGad.css">
+<link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad.css">
 
 </head>
 <body>

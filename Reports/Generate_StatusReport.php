@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("Connection.php");
+include("../Connection.php");
 
 if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
@@ -11,7 +11,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 	echo "<center> <br>";
 	echo("<h1> Please Select Year and Quarter </h1>");
-	echo "<h2> <a href='StatusReport.php'> RETURN <a> </h2>";
+	echo "<h2> <a href='../StatusReport.php'> RETURN <a> </h2>";
 	echo "</center";
 	die;
 }else{
@@ -43,7 +43,7 @@ $CEAFA_Full = "College of Engineering, Architecture and Fine Arts";
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Generate Status Report</title>
-<link rel="stylesheet" type="text/css" href="styles/Generate_StatusReports.css">
+<link rel="stylesheet" type="text/css" href="../styles/Generate_StatusReports.css">
 
 </head>
 <body>
