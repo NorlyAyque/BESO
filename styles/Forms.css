@@ -298,7 +298,7 @@ margin-left: 100px;
 }
 
 
-.Drp select{
+.DrpCAMPUS select{
   display:flex;
   background: #f1f1f1;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
@@ -311,7 +311,7 @@ margin-left: 100px;
   width:100%;
   
 }
-.Drp option{
+.DrpCAMPUS option{
 	font-size:15px;
 	cursor:pointer;
 	margin-left:auto;
