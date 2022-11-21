@@ -43,7 +43,7 @@ $Position = $_SESSION["Position"];
 	
 		<tr>
 			
-			<td colspan="4"><img src ="images/logo.png" class="logo">Reference No. : BatStateU-FO-ESO-03</td>
+			<td colspan="4"><img src ="../images/logo.png" class="logo">Reference No. : BatStateU-FO-ESO-03</td>
 			<td colspan="4">Effectivity Date: May 18, 2022</td>
 			<td colspan="2">Revision No. : 01</td>
 		</tr>

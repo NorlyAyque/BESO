@@ -109,13 +109,13 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				</tr>
 			</table>
 			
-			<form action="Generate_GADReport.php" method="_GET" target="_blank">
+			<form action="Reports/Generate_GADReport.php" method="_GET" target="_blank">
 			<table class="tbcontent">	
 									
 				<tr>
 					<th>Set Year</th>
 					<th>Set Quarter </th>
-					<th>Select College </th>
+					
 				</tr>	
 				
 				<tr>
@@ -152,21 +152,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 							</select>
 						</div>
 					</td> 
-					<td>
-						<div class ="Drp1">
-							<select name="College" id="College" required>
-								<option value="">Select College</option>
-								<option value="CEAFA">CEAFA</option>
-								<option value="CICS">CICS</option>
-								<option value="CIT">CIT</option>
-								<option value="ALL">ALL</option>
-							</select>
-						</div>
-					</td> 
 				</tr>
 				
 				<tr>
-					<th colspan="3">
+					<th colspan="2">
 						<div class="tbcreate">
 							<input type="submit" value="Create" class = "createBTN">
 							<!-- <a href="QuarterlyMonitoringReport.php" button class = "createBTN"> Create <ion-icon name="brush-outline"></ion-icon></a> -->
