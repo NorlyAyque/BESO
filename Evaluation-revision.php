@@ -119,8 +119,9 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 								<option value="1">Evaluation ID</option>
 								<option value="2">Proposal ID</option>
 								<option value="3">Title</option>
-								<option value="4">Prepared By</option>
-								<option value="5">Status</option>
+								<option value="4">College</option>
+								<option value="5">Prepared By</option>
+								<option value="6">Status</option>
 								</select>
 							
 						Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
@@ -249,6 +250,7 @@ function Filter() {
 	else if (x == "3"){var SelectedColumn = 2;}
 	else if (x == "4"){var SelectedColumn = 3;}	
 	else if (x == "5"){var SelectedColumn = 4;}	
+	else if (x == "6"){var SelectedColumn = 5;}	
 	
 	var input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("keyword");

@@ -161,9 +161,10 @@ if(isset($_GET['verify'])){
 							<option value="">Select Column</option>
 							<option value="1">Proposal ID</option>
 							<option value="2">Title</option>
-							<option value="3">End Date</option>
-							<option value="4">Monitoring</option>
-							<option value="5">Last Monitored</option>
+							<option value="3">College</option>
+							<option value="4">End Date</option>
+							<option value="5">Monitoring</option>
+							<option value="6">Last Monitored</option>
 						</select>
 					
 					Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
@@ -294,6 +295,8 @@ function Filter() {
 	else if (x == "2"){var SelectedColumn = 1;}
 	else if (x == "3"){var SelectedColumn = 2;}
 	else if (x == "4"){var SelectedColumn = 3;}	
+	else if (x == "5"){var SelectedColumn = 4;}	
+	else if (x == "6"){var SelectedColumn = 5;}	
 	
 	var input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("keyword");
