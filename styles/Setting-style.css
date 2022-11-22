@@ -1,0 +1,311 @@
+*
+{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-family:"Open Sans", sans-serif;
+}
+:root{
+	--red:  #E64848;
+	--white: #fff;
+	--grey: #f5f5f5;
+	--black1: #222;
+	--black2: #999;
+}
+
+body{
+	min-height: 625px;
+	overflow-x: hidden;
+	
+	
+}
+
+
+.container{
+	position: relative;
+	width:100%;
+	
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--white); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:  transparent; 
+}
+
+
+
+.navigation{
+	position: fixed;
+	width: 300px;
+	height: 100%;
+	background: var(--red);
+	border-left: 10px solid var(--black1);
+	transition: 0.5s;
+	overflow:hidden;
+	overflow-y:scroll;
+}
+/*navigation 2nd width*/
+.navigation.active{
+	width:120px;
+	
+}
+.navigation ul{
+	position: absolute;
+	top: 0;
+	left: 5px;
+	width: 100%;
+		
+}
+
+.navigation ul li {
+	position: relative;
+	width: 100%;
+	list-style: none;
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+	
+	
+}
+.navigation ul li:hover,
+.navigation ul li.hovered {
+	background: var(--white);
+}
+/*BESO potal*/
+.navigation ul li:nth-child(1){
+	margin-bottom: 40px;
+	pointer-events: none;
+	margin-top:20px;
+	margin-bottom:30px;
+	
+}
+
+
+.navigation ul li a{
+	position: relative;
+	display: block;
+	width: 100%;
+	display:flex;
+	text-decoration:none;
+	color: var(--white);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+	color: #444;
+	
+	
+}
+
+
+.navigation ul li a .icon{
+	position: relative;
+	display: block;
+	min-width: 70px;
+	height: 70px;
+	line-height: 90px;
+	text-align:center;
+	
+}
+
+.navigation ul li a .icon ion-icon{
+	font-size: 30px;
+	/*
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+	*/
+	margin-left:30px;
+}
+
+.navigation ul li a .title{
+	position: relative;
+	display:block;
+	padding: 0 40px;
+	line-height: 70px;
+	text-align: start;
+	white-space: nowrap;
+	font-size: 17px;
+	font-weight:bold;
+	
+}
+
+
+
+
+
+/* curve outside */
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+	content:'';
+	position: absolute;
+	right:5px;
+	top: -50px;
+	width:50px;
+	height:50px;
+	background:transparent;
+	border-radius: 50%;
+	box-shadow: 35px 35px 0 10px var(--white);
+	pointer-events:none;
+	
+	
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+	content:'';
+	position: absolute;
+	right:5px;
+	bottom: -50px;
+	width:50px;
+	height:50px;
+	background:transparent;
+	border-radius: 50%;
+	box-shadow: 30px -30px 10px var(--white);
+	pointer-events:none;
+}
+
+.navigation li .active{
+text-decoration: underline;
+text-underline-position: under;
+text-decoration-thickness:3px;
+}
+
+
+
+/***Main***/
+.main{
+	position: abosolute;
+	margin-left: 270px;
+	min-height:625px;
+	background: var(--white);
+	transition:0.5s;
+}
+.main.active{
+margin-left: 100px;
+}
+.topbar{
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px;
+}
+
+.toggle{
+	position:relative;
+	width:40px;
+	height:50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size:30px;
+	cursor: pointer;
+	margin-top:10px;
+	margin-left: 30px;
+}
+
+
+
+.settings{
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	margin-left:auto;
+	margin-right:auto;
+	width: 50%;
+	height: 200px;
+	margin-top:10px;
+	margin-bottom:auto;
+}
+.settings th{
+	background-color: #4CAF50;
+   border:none;
+   color:white;
+   padding:6px;
+}
+.settings td{
+	background-color: #EFEFEF;
+  
+}
+.settings  td:hover {
+background-color: #EFEFEF;
+cursor: pointer;
+}
+
+
+.Year input,.Quarter input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  height:50px;
+  text-align:center;
+  font-size:15px;
+  width:50%;
+  border:transparent;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius:2px;
+}
+
+.tbcreate{
+	text-align:center;
+}
+.tbcreate .SubmitYQ{
+	margin-top:10px;
+  background-color: #f5f5f5;
+  border: none;
+  color: black;
+  padding: 5px 15px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+  border-radius: 5px;
+  text-decoration:none;
+  
+  
+  
+}
+
+.tbcreate .SubmitYQ:hover {
+  color:white;
+  background:#4CAF50;
+ 
+  text-decoration:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

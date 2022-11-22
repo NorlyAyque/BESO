@@ -14,7 +14,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Settings</title>
-<link rel="stylesheet" type="text/css" href="styles/Settting.css">
+<link rel="stylesheet" type="text/css" href="styles/Setting-style.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
@@ -94,39 +94,55 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			<div class="topbar">
 				
 			</div>
-			
+			<br><br><br><br><br>
 			<center> 
 				<h2> Current Set Year <u> <?php echo "$CustomYear";?> </u>
 				and Quarter <u><?php echo "$CustomQuarter";?> </u></h2>
 			</center>
 			
-				<table class="settings">
-					<tr>
-						<th>Set Year and Quarter to be used for the whole system</th>
-					</tr>
-					<tr>
-						<td>Set Year:</th>
-					</tr>
-					<tr>
-						<td>Set Quarter:</th>
-					</tr>
-				</table>
+				<table class="settings">	
+					
+				<tr>
+					<th colspan="2"><h3>Set Year and Quarter to be used for the whole system</h3></i></th>
+					
+				</tr>			
+				<tr>
+					<th>Set Year</th>
+					<th>Set Quarter </th>
+				</tr>	
 				
-				
-					<div class="title">
-						Set Year and Quarter to be used for the whole system
-						<form action="" method="POST">		
-							Set Year:
+				<tr>
+					<td>
+						<div class ="Year">
 							<input type="number" min="0" id="Year" name="Year" placeholder="type here.." required> 
-							<input type="submit" name="SetYearBtn" value="Set Year">
-						</form>
-
-						<form action="" method="POST">
-							Set Quarter:
+							
+						</div>
+						<div class="tbcreate">
+							<input type="submit" name="SetYearBtn"  value="Set Year" class = "SubmitYQ">
+							
+						</div>
+					</td> 
+					<td>
+						<div class ="Quarter">
 							<input type="number" min="0" id="Quarter" name="Quarter" placeholder="type here.." required> 
-							<input type="submit" name="SetQuarterBtn" value=" Set Quarter">
-						</form>	
-					</div>
+						</div>
+						<div class="tbcreate">
+							<input type="submit" name="SetQuarterBtn" value=" Set Quarter"  class = "SubmitYQ">
+						</div>
+					</td> 
+					
+				</tr>
+				
+				
+					
+			
+				
+				
+		
+			</table>
+				
+				
+					
 					
 					
 			

@@ -417,7 +417,7 @@ text-decoration-thickness:3px;
 
 
 .tbcontent  td:hover {
-background-color: lightgrey;
+background-color: #EFEFEF;
 cursor: pointer;
 }
 
