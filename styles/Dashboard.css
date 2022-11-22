@@ -351,6 +351,43 @@ margin-left: 100px;
 	background-color:white;
 }
  */
+ #DropdownTa{
+	 text-align:left;
+ }
+#DropdownTa input{
+	border-radius:3px;
+	background-color:white; 
+	color: black;
+	cursor:pointer;
+	padding: 10px 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+	width:15%;
+	height:37px;
+	padding:6px;
+	
+}
+#CreatebtnTa{
+	margin-top:-36px;
+	margin-right:500px;
+}
+#CreatebtnTa input {
+	
+	border-radius:3px;
+	background-color:white; 
+	color: black;
+	cursor:pointer;
+	padding: 10px 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+	width:10%;
+	height:37px;
+	padding:6px;
+}
+#CreatebtnTa input:hover{
+	background-color:#168aad; 
+	color:white;
+}
+	
+ 
 .input1 input:nth-child(1){
 	width:110px;
 	text-align:center;

@@ -152,7 +152,7 @@ if(isset($_GET['Year']) == TRUE)  {
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboard-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
 
 </head>
 <body> 
@@ -255,12 +255,14 @@ if(isset($_GET['Year']) == TRUE)  {
 					</tr>
 					<tr id="row">
 						<th colspan="32"> 
-							<a id="Dropdown"> 
-								<h2>Type Year:
+							<div id="DropdownTa" > 
+								Type Year:
 									<input type="number" name="Year" value="<?php echo $SelectedYear; ?>" required>
-							<input type="submit" id="Createbtn" value="VIEW">	
-							</a>
-						</h2>						
+							</div>
+							<div id="CreatebtnTa" > 
+							<input type="submit"  value="VIEW">	
+							
+												
 						</th>	
 					</tr>
 <?php
