@@ -139,9 +139,10 @@ include_once ("Dashboard-Computations.php");
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
 <link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> <!-- For Graph -->
 </head>
 
-<body onload="myFunction()">
+<body>
 
 <div class="container">
 	
@@ -219,6 +220,11 @@ include_once ("Dashboard-Computations.php");
 				</div>
 			</div>
 			<div class ="scroll">
+
+			<!-- Graph -->
+<center>
+	<div id="chartContainer" style="height: 250px; width: 250px;"></div>
+</center>
 
 <form action="" method="POST">
 			<table class="input">
@@ -859,9 +865,38 @@ if (isset($_POST['Savebtn'])) { //For update
 }
 ?>
 
+<?php
+$dataPoints_CICS_Q1 = array(
+	array("label"=> "Target", "y"=> $dbCEAFA_AQ1),
+	array("label"=> "Actual", "y"=> $dbCEAFA_BQ1)
+);
+?>
+
 <script>
-function myFunction(){
-	Compute();
-	//document.getElementById("myForm").submit();
+//let Color = "yellow";
+
+//Graph
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "CICS Q1"
+	},
+	axisY:{
+		includeZero: true
+	},
+	data: [{
+		type: "column", //change type to bar, line, area, pie, etc
+		indexLabel: "{y}", //Shows y value on all Data Points
+		indexLabelFontColor: "#5A5757",
+		indexLabelBackgroundColor: "red",
+		indexLabelPlacement: "outside",  
+		dataPoints: <?php echo json_encode($dataPoints_CICS_Q1, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
 }
 </script>
