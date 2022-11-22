@@ -14,79 +14,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Settings</title>
-<link rel="stylesheet" type="text/css" href="styles/Account.css">
+<link rel="stylesheet" type="text/css" href="styles/Settting.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<style>
- .popupcenter{
-     
-      margin:auto;
-	margin-top:100px;
-	  
-  }
-  
-   .signout .popupcenter{
-       width:450px;
-       height:220px;
-       padding: 30px 20px;
-       background: white;
-       border-radius:10px;
-       z-index: 2;
-       text-align:center;
-       box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
-   }
-  
-  
-  
-   .signout .popupcenter .icon {
-       margin: 5px 0px;
-       width: 50px;
-       height: 50px;
-       border: 2px solid  #E64848;
-       text-align:center;
-       display:inline-block;
-       border-radius:50%;
-       line-height:60px;
-   }
-   .signout .popupcenter .icon i.fa{
-       font-size:30px;
-       color:red;
-   }
-   .signout .popupcenter .title{
-       margin:5px 0px;
-       font-size:30px;
-       font-weight:600;
-   }
-   .signout .popupcenter .des{
-  v margin-top:10px;
-    font-size:15px;
-    font-weight:600px;
-}
-.signout .popupcenter .des span{
-    color:red;
- }
-  .signout .popupcenter .dismiss-btn{
-      margin-top:15px;
-  }
-  .signout .popupcenter .dismiss-btn button{
-      padding:10px 20px;
-      background:#4CAF50;
-      color:#f5f5f5;
-      border:1px solid #4CAF50;
-      font-size:16px;
-      font-weight:600;
-      outline:none;
-      border-radius:10px;
-      transition: all 300ms ease-in-out;
-      cursor:pointer;
-  }
-  .signout .popupcenter .dismiss-btn button:hover{
-      color:#111;
-      background:#f5f5f5;
-  }
-  
-  
-</style>
+
 </head>
 <body>
 	
@@ -145,7 +76,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			</li>
 			<li>
 				<a  class="active" href="Settings.php">
-					<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
+					<span class ="icon"> <ion-icon name="settings-outline"></ion-icon> </span>
 					<span class ="title"> Settings</span>
 				</a>
 			</li>
@@ -168,9 +99,20 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				<h2> Current Set Year <u> <?php echo "$CustomYear";?> </u>
 				and Quarter <u><?php echo "$CustomQuarter";?> </u></h2>
 			</center>
-			<div class="signout">
-				<div class="popupcenter">
-					
+			
+				<table class="settings">
+					<tr>
+						<th>Set Year and Quarter to be used for the whole system</th>
+					</tr>
+					<tr>
+						<td>Set Year:</th>
+					</tr>
+					<tr>
+						<td>Set Quarter:</th>
+					</tr>
+				</table>
+				
+				
 					<div class="title">
 						Set Year and Quarter to be used for the whole system
 						<form action="" method="POST">		
@@ -185,12 +127,9 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 							<input type="submit" name="SetQuarterBtn" value=" Set Quarter">
 						</form>	
 					</div>
-					<div class="des">
-						
-					</div>
 					
-				</div>
-			</div>
+					
+			
 		</div>
 	</div>
 	

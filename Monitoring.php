@@ -76,6 +76,12 @@ $DateToday = date("Y-m-d"); //YYYY-mm-dd
 				</a>
 			</li>
 			<li>
+				<a href="Settings.php">
+					<span class ="icon"> <ion-icon name="settings-outline"></ion-icon> </span>
+					<span class ="title"> Settings</span>
+				</a>
+			</li>
+			<li>
 				<a href="Signout.php">
 					<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
 					<span class ="title"> Sign out</span>

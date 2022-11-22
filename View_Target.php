@@ -94,7 +94,7 @@ include_once ("Dashboard-Computations.php");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboard-stylecss.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard-style.css">
 
 </head>
 <body> 
@@ -153,6 +153,12 @@ include_once ("Dashboard-Computations.php");
 				</a>
 			</li>
 			<li>
+				<a href="Settings.php">
+					<span class ="icon"> <ion-icon name="settings-outline"></ion-icon> </span>
+					<span class ="title"> Settings</span>
+				</a>
+			</li>
+			<li>
 				<a href="Signout.php">
 					<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
 					<span class ="title"> Sign out</span>
@@ -163,10 +169,19 @@ include_once ("Dashboard-Computations.php");
 				
 		<!--main-->
 		<div class="main">
-
 		<br>
-			<?php echo "$Prompt"; ?> <!-- Adjust mo to -->
-
+		<?php 
+					echo "<table class='PromptHead'>";
+                echo "<tr>
+							<td> <div class='textHead'> $Prompt </div></td>
+						</tr>
+					";
+					
+				
+				echo "</table>";
+		
+			 ?> <!-- Adjust mo to -->
+		<br>
 			<div class ="scroll">
 
 <form action="View_Target.php" method="_GET">

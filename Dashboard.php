@@ -139,7 +139,7 @@ include_once ("Dashboard-Computations.php");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboard-stylecss.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard-style.css">
 </head>
 
 <body onload="myFunction()">
@@ -198,7 +198,7 @@ include_once ("Dashboard-Computations.php");
 			</li>
 			<li>
 				<a href="Settings.php">
-					<span class ="icon"> <ion-icon name="log-in-outline"></ion-icon> </span>
+					<span class ="icon"> <ion-icon name="settings-outline"></ion-icon> </span>
 					<span class ="title"> Settings</span>
 				</a>
 			</li>
