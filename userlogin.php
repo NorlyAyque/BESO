@@ -78,13 +78,34 @@ $Campus = $_SESSION["Campus"];
 
 }
 </style>
+<body>
+<?php
+
+$month = date("n");
+$CurrentQuarter = ceil($month / 3);
+$CurrentYear = date("Y");
+$MsgYear = "";
+$MsgQtr = "";
+
+if ($CurrentYear != $CustomYear){
+	$MsgYear = "<br> NOTICE: Update Year <br>";
+}
+
+if ($CurrentQuarter != $CustomQuarter){
+	$MsgQtr = "<br> NOTICE: Update Quarter!";
+}
+?>
 
 </head>
-<br><br>
+<br>
 <div class="BESOTITLE"><h1> BESO Portal</h1></div> 
  <b><?php echo "<div class='BESOTITLE'> Year: $CustomYear </div>";?></b>
  <b><?php echo "<div class='BESOTITLE'> Quarter: $CustomQuarter</div>";?></b>
-<div class="margin">
+
+ <b> <?php echo "$MsgYear"; ?> </b>
+ <b> <?php echo "$MsgQtr"; ?> </b>
+
+ <div class="margin">
 	<label> 	
             <?php 
 				echo "<table class='Tuser'>";
@@ -105,5 +126,5 @@ $Campus = $_SESSION["Campus"];
                
 				?> 
 	</div>		
-
+</body>
 </html>
