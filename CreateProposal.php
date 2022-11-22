@@ -26,14 +26,14 @@ $create_table = $_SESSION["create_table"];
 $Fullname = $_SESSION["FullName"];
 $Position = $_SESSION["Position"];
 
-
-
 date_default_timezone_set("Asia/Manila");
 $DateTime = date("M, d Y; h:i:s A");
-$Year = date("Y");
+
+//$Year = $CustomYear;
+//$yearQuarter = $CustomQuarter;
 //Getting Year Quarter
-$month = date("n");
-$yearQuarter = ceil($month / 3);
+//$month = date("n");
+//$yearQuarter = ceil($month / 3);
 ?>
 
 <!DOCTYPE html>
@@ -128,7 +128,7 @@ $yearQuarter = ceil($month / 3);
 					</th> 
 				</tr>
 				<tr>
-					<th colspan="4">
+					<th colspan="3">
 						<div class="Drp">
 							Type of Proposal: 
 							<select name="Initiated" id="Initiated" required>
@@ -154,20 +154,9 @@ $yearQuarter = ceil($month / 3);
 								<option value="No">NO</option>
 							</select>
 						</div>
-						<!--
-						<div class="DrpGAD">
-								GAD PAP: 
-							<select id="IsGAD" name="IsGAD" required>
-								<option value="">Please Select</option>
-								<option value="Yes">YES</option>
-								<option value="No">NO</option>
-							</select>
-							
-						</div>
-						-->
 					</th>	
 					<tr>
-					<th colspan="4">
+					<th colspan="2">
 						<div class="DrpV2">
 							Classification: 
 							<select id="Classification" name="Classification" required>
@@ -176,35 +165,37 @@ $yearQuarter = ceil($month / 3);
 								<option value="Project">Project</option>
 								<option value="Activity">Activity</option>
 							</select>
+							Year: 
+							<select id="Year" name="Year" required>
+								<option value="">Please Select</option>
+								<option value="2022">2022</option>
+								<option value="2023">2023</option>
+								<option value="2024">2024</option>
+								<option value="2025">2025</option>
+								<option value="2026">2026</option>
+								<option value="2027">2027</option>
+								<option value="2028">2028</option>
+								<option value="2029">2029</option>
+								<option value="2030">2030</option>
+								<option value="<?php echo "$CustomYear";?>" selected><?php echo "$CustomYear";?></option>
+							</select>
+							Quarter: 
+							<select id="Quarter" name="Quarter" required>
+								<option value="">Please Select</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="<?php echo "$CustomQuarter";?>" selected><?php echo "$CustomQuarter";?></option>
+							</select>
+							
 						</div>
-					</th>	
-					
-					<!--
-						<input type="radio" id="Client" name="Initiated" value="Client" required> Extension Service Program/Project/Activity is requested by clients.</th>
-					<th colspan="2">
-						<input type="radio" id="Department" name="Initiated" value="Department" required> Extension Service Program/Project/Activity is Departments initiative.</th>
-					-->
+					</th>
+						
+					</tr>
 				
 			</table>
-	<!--
-			<table class="header1">
-				<tr  class ="select1">
-					<th> <input type="radio" id="Program" name="Classification" value="Program" required> Program</th>
-					<th> <input type="radio" id="Project" name="Classification" value="Project" required> Project </th>
-					<th> <input type="radio" id="Activity" name="Classification" value="Activity" required> Activity</th>	
-				</tr>
-				<tr  class ="select2">
-					<th> <input type="radio" id="ExtensionPAP" name="unknown" value="Extension PAP" required> Extension PAP</th>
-					<th> <input type="radio" id="Monitoring" name="unknown" value="For Monitoring" required> For Monitoring </th>
-					<th> <input type="radio" id="Impact" name="unknown" value="For Impact Assessment" required> For Impact Assessment</th>	
-				</tr>
-				<tr class ="select3">
-					<th> Is this Proposal a GAD PAP? </th>
-					<th> <input type="radio" id="Yes" name="IsGAD" value="Yes" required>Yes </th>
-					<th> <input type="radio" id="No" name="IsGAD" valye="No" required>No </th>
-				</tr>
-			</table>
-			-->
+
 			<div class="Create">
 				<div class="fillup">
 				  <div class="input-field">
@@ -732,6 +723,9 @@ if (isset($_POST['Save'])) {
 	$unknown = $_POST["unknown"];
 	$IsGAD = $_POST["IsGAD"];
 
+	$Year = $_POST["Year"];
+	$Quarter = $_POST["Quarter"];
+
 	$Title = htmlspecialchars($_POST['Title']);
 	$Location_Area = htmlspecialchars($_POST['Location_Area']);
 	$Start_Date = htmlspecialchars($_POST['Start_Date']);
@@ -837,7 +831,7 @@ if (isset($_POST['Save'])) {
 				Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2,
 				Sign4_1, Sign4_2, Sign5_1, Sign5_2)
 		VALUES 
-			('$AID', '$DateTime', '$Year', '$yearQuarter', '$Initiated', '$Classification', '$unknown', '$IsGAD',
+			('$AID', '$DateTime', '$Year', '$Quarter', '$Initiated', '$Classification', '$unknown', '$IsGAD',
 				'$Title', '$Location_Area', '$Start_Date', '$End_Date', '$Start_Time', '$End_Time', '$TypeCES',
 				'$SDG', '$Office', '$Programs', '$People', '$Agencies', '$TypeParticipants', '$Male', '$Female',
 				'$Cost', '$SourceFund', '$Rationale', '$Objectives', '$Descriptions',

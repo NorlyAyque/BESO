@@ -19,4 +19,5 @@ while($output = mysqli_fetch_array($x))
 	$CustomYear = $output["Year"];
 	$CustomQuarter = $output["Quarter"];
 }
+
 ?>
