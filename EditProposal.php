@@ -123,7 +123,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Edit Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/EditProposal.css">
+<link rel="stylesheet" type="text/css" href="styles/EditProposals.css">
 
 </head>
 <body>
@@ -260,6 +260,34 @@ if(isset($_GET['edit'])){
 								<option value="Project">Project</option>
 								<option value="Activity">Activity</option>
 							</select>
+						</div>
+						<div class="DrpYear">
+							Year: 
+							<select id="Year" name="Year" required>
+								<option value="">Please Select</option>
+								<option value="2022">2022</option>
+								<option value="2023">2023</option>
+								<option value="2024">2024</option>
+								<option value="2025">2025</option>
+								<option value="2026">2026</option>
+								<option value="2027">2027</option>
+								<option value="2028">2028</option>
+								<option value="2029">2029</option>
+								<option value="2030">2030</option>
+								<option value="<?php echo "$CustomYear";?>" selected><?php echo "$CustomYear";?></option>
+							</select>
+						</div>
+						<div class="DrpQrt">
+							Quarter: 
+							<select id="Quarter" name="Quarter" required>
+								<option value="">Please Select</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="<?php echo "$CustomQuarter";?>" selected><?php echo "$CustomQuarter";?></option>
+							</select>
+							
 						</div>
 					</th>
 				</tr>

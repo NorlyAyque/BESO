@@ -75,6 +75,7 @@ $Campus = $_SESSION["Campus"];
 }
 .BESOTITLE{
 	color:white;
+	margin-right:10px;
 
 }
 </style>
