@@ -992,9 +992,62 @@ cursor: pointer;
   display: inline-block;
   vertical-align: middle;
     font-size:15px;
+	
 
 }
 .DrpGAD select{
 	cursor:pointer;
 	
 }
+
+
+.DrpYear{
+	margin-top:-30px;
+	margin-left:-6.3%;
+}
+.DrpYear select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+   width:17.5%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left:36px;
+  margin-right:2px;
+  font-size:15px;
+
+}
+.DrpYear option{
+	font-size:15px;
+	cursor:pointer;
+}
+
+.DrpQrt{
+	margin-top:-30px;
+	margin-left:47%;
+}
+.DrpQrt select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+   width:17.5%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left:36px;
+  margin-right:2px;
+  font-size:15px;
+
+}
+.DrpQrt option{
+	font-size:15px;
+	cursor:pointer;

@@ -36,7 +36,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposal-style.css">
 
 </head>
 <body>
@@ -160,6 +160,8 @@ $DateTime = date("M, d Y; h:i:s A");
 								<option value="Project">Project</option>
 								<option value="Activity">Activity</option>
 							</select>
+						</div>
+						<div class="DrpYear">
 							Year: 
 							<select id="Year" name="Year" required>
 								<option value="">Please Select</option>
@@ -174,6 +176,8 @@ $DateTime = date("M, d Y; h:i:s A");
 								<option value="2030">2030</option>
 								<option value="<?php echo "$CustomYear";?>" selected><?php echo "$CustomYear";?></option>
 							</select>
+						</div>
+						<div class="DrpQrt">
 							Quarter: 
 							<select id="Quarter" name="Quarter" required>
 								<option value="">Please Select</option>

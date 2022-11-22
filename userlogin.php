@@ -53,7 +53,7 @@ $Campus = $_SESSION["Campus"];
 
 .Tuser{
 	 
-	margin-top:30px;
+	margin-top:20px;
 	margin-right:10px;
 	
 	
@@ -73,14 +73,17 @@ $Campus = $_SESSION["Campus"];
 	text-align:center;
 	
 }
+.BESOTITLE{
+	color:white;
 
+}
 </style>
 
 </head>
-
-<h1> BESO Portal </h1>
-Year <u><b><?php echo "$CustomYear";?></b></u>
-Quarter <u><b><?php echo "$CustomQuarter";?></u></b>
+<br><br>
+<div class="BESOTITLE"><h1> BESO Portal</h1></div> 
+ <b><?php echo "<div class='BESOTITLE'> Year: $CustomYear </div>";?></b>
+ <b><?php echo "<div class='BESOTITLE'> Quarter: $CustomQuarter</div>";?></b>
 <div class="margin">
 	<label> 	
             <?php 
