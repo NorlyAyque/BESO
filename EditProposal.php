@@ -28,6 +28,9 @@ if(isset($_GET['edit'])){
 		$dbunknown = $result["unknown"];
 		$dbIsGAD = $result["IsGAD"];
 
+		$dbYear = $result["Year"];
+		$dbQuarter = $result["Quarter"];
+
 		$dbTitle = $result['Title'];
 		$dbLocation_Area = $result['Location_Area'];
 		$dbStart_Date = $result['Start_Date'];
@@ -239,16 +242,6 @@ if(isset($_GET['edit'])){
 						</div>
 					</th>
 					
-					
-					
-				
-				
-					<!-- 
-					<th colspan="2">
-						<label> <input type="radio" id="Client" name="Initiated" value="Client"> Extension Service Program/Project/Activity is requested by clients.</th> </label>
-					<th colspan="2">
-						<label> <input type="radio" id="Department" name="Initiated" value="Department" > Extension Service Program/Project/Activity is Departments initiative.</th> </label>
-					-->
 				</tr>	
 				<tr>
 					<th colspan="4">
@@ -274,7 +267,6 @@ if(isset($_GET['edit'])){
 								<option value="2028">2028</option>
 								<option value="2029">2029</option>
 								<option value="2030">2030</option>
-								<option value="<?php echo "$CustomYear";?>" selected><?php echo "$CustomYear";?></option>
 							</select>
 						</div>
 						<div class="DrpQrt">
@@ -285,7 +277,6 @@ if(isset($_GET['edit'])){
 								<option value="2">2</option>
 								<option value="3">3</option>
 								<option value="4">4</option>
-								<option value="<?php echo "$CustomQuarter";?>" selected><?php echo "$CustomQuarter";?></option>
 							</select>
 							
 						</div>
@@ -857,6 +848,9 @@ if (isset($_POST['update'])) {
 	$unknown = $_POST["unknown"];
 	$IsGAD = $_POST["IsGAD"];
 
+	$Year = $_POST["Year"];
+	$Quarter = $_POST["Quarter"];
+
 	$Title = htmlspecialchars($_POST['Title']);
 	$Location_Area = htmlspecialchars($_POST['Location_Area']);
 	$Start_Date = htmlspecialchars($_POST['Start_Date']);
@@ -944,7 +938,7 @@ if (isset($_POST['update'])) {
 	$Sign5_1 = htmlspecialchars($_POST['Sign5_1']); $Sign5_2 = htmlspecialchars($_POST['Sign5_2']);
 
 	$sql = ("UPDATE create_alangilan
-			SET Initiated = '$Initiated', Classification = '$Classification', unknown = '$unknown', IsGAD = '$IsGAD',
+			SET Year = '$Year', Quarter = '$Quarter', Initiated = '$Initiated', Classification = '$Classification', unknown = '$unknown', IsGAD = '$IsGAD',
 				Title = '$Title', Location_Area = '$Location_Area', 
 				Start_Date = '$Start_Date', End_Date = '$End_Date', Start_Time = '$Start_Time', End_Time = '$End_Time',
 				TypeCES = '$TypeCES', SDG = '$SDG', Office = '$Office', Programs = '$Programs', People = '$People', 
@@ -1019,6 +1013,18 @@ if (isset($_POST['update'])) {
  }else if ($dbFrequency == "Yearly"){
 	echo "<script>document.getElementById('Yearly').checked = true; </script>";
  }
+
+ if ($dbQuarter == "1"){
+	echo "<script>document.getElementById('Quarter').value = '1'; </script>";
+ } else if ($dbQuarter == "2"){
+	echo "<script>document.getElementById('Quarter').value = '2'; </script>";
+ } else if ($dbQuarter == "3"){
+	echo "<script>document.getElementById('Quarter').value = '3'; </script>";
+ } else if ($dbQuarter == "4"){
+	echo "<script>document.getElementById('Quarter').value = '4'; </script>";
+ }
+//For Year
+ echo "<script>document.getElementById('Year').value = '$dbYear'; </script>";
 ?>
 
 <script>
