@@ -88,7 +88,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			
 		<table class="proposals" id="MyTable">
 				<tr>
-					<th colspan="6">
+					<th colspan="7">
 						<div class="menu">
 							
 							<a href="Evaluation.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
@@ -108,10 +108,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					
 				</tr>
 				<tr  class="title">
-					<th colspan="6"><center>UNDER REVISION OF EVALUATION REPORTS </th> 
+					<th colspan="7"><center>UNDER REVISION OF EVALUATION REPORTS </th> 
 				</tr>
 				<tr>
-					<th colspan="6"> 
+					<th colspan="7"> 
 							<div class="Drp">
 								Select Column to filter: 
 							<select name="column" id="column">
@@ -132,6 +132,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th width="30px"> Evaluation ID </th>
 					<th width="30px"> Proposal ID </th>
 					<th width="auto"> Title </th>
+					<th width="90px";> College</th>
 					<th width="180px";> Prepared By</th>
 					<th width="120px";> Status </th>
 					<th width="250px";>  </th>
@@ -144,14 +145,22 @@ while($result = mysqli_fetch_array($command))
 	{
 		$EID = $result['EvaluationID'];
 		$PID = $result['ProposalID'];
+		$AID = $result['Author'];
 		$Title = $result ['Title'];
 		$PreparedBy = $result['Sign1_1'];
 		$Status = $result['ProjectStatus'];
+
+		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
+		$command2 = $con->query($sql2) or die("Error SQL");
+		while($result2 = mysqli_fetch_array($command2))
+			{
+				$College = $result2['College'];
 ?>
 			<tr class="inputs">
 				<td><?php echo $EID; ?></td>
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $College; ?></td> 
 				<td><?php echo $PreparedBy; ?></td> 
 				<td><?php echo $Status; ?></td>  	
 				<td>
@@ -160,7 +169,7 @@ while($result = mysqli_fetch_array($command))
 					<a href="Evaluation-revision.php?re_submit=<?php echo $EID; ?>" button class="Rbtn2">Re-Submit</button> </a>
 				</td> 
 			</tr>
-<?php }?>
+<?php }}?>
 			</table>	
 		</div>
 	</div>

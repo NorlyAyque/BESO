@@ -139,7 +139,7 @@ if(isset($_GET['verify'])){
 ?>
 		<table class="proposals" id="MyTable">
 			<tr>
-				<th colspan="6">
+				<th colspan="7">
 					<div class="menu">
 						<a href="Monitoring.php" button class = "nav1"> List<ion-icon name="list-outline"></ion-icon></a></button>
 						<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
@@ -151,10 +151,10 @@ if(isset($_GET['verify'])){
 			</tr>
 
 			<tr  class="title">
-				<th colspan="6" ><center>LIST OF EXTENSION PAPs FOR MONITORING </center> </th> 
+				<th colspan="7" ><center>LIST OF EXTENSION PAPs FOR MONITORING </center> </th> 
 			</tr>
 			<tr>
-				<th colspan="6"> 
+				<th colspan="7"> 
 					<div class="Drp">
 					Select Column to filter: 
 						<select name="column" id="column">
@@ -173,6 +173,7 @@ if(isset($_GET['verify'])){
 			<tr>
 				<th width="50px"> Proposal ID </th>
 				<th width="auto"> Title </th>
+				<th width="90px";> College</th>
 				<th width="130px";> End Date </th>
 				<th width="120px";> Monitoring</th> <!-- Frequency (Monthly, Quarterly, Semi-Annually, Yearly) -->
 				<th width="120px";> Last Monitored</th> <!-- Remarks_2 in Create Proposal table-->
@@ -186,14 +187,22 @@ $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
+		$AID = $result['AccountID'];
 		$Title = $result ['Title'];
 		$End_Date = $result['End_Date']; $date = date_create("$End_Date");
 		$Frequency = $result['Frequency'];
 		$Remarks = $result['Remarks_2']; //Monitored. Date
+
+		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
+		$command2 = $con->query($sql2) or die("Error SQL");
+		while($result2 = mysqli_fetch_array($command2))
+			{
+				$College = $result2['College'];
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $College; ?></td> 
 				<td><?php echo $dt = date_format($date,"M, d Y"); ?></td> 
 				<td><?php echo $Frequency; ?></td> 	
 				<td><?php echo $Remarks; ?></td> 	
@@ -204,7 +213,7 @@ while($result = mysqli_fetch_array($command))
 					
 				</td> 
 			</tr>
-<?php }?>
+<?php }}?>
 			</table>	
 		</div>
 	</div>

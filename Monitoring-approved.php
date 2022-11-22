@@ -80,8 +80,6 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 		</ul>
 	</div>
 		
-		
-		
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
@@ -90,7 +88,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			
 		<table class="proposals" id="MyTable">
 				<tr>
-					<th colspan="6">
+					<th colspan="7">
 						<div class="menu">
 							<a href="Monitoring.php" button class = "nav"> List <ion-icon name="list-outline"></ion-icon></a></button>
 							<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
@@ -101,10 +99,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					</th> 
 				</tr>
 				<tr  class="title">
-					<th colspan="6"><center>APPROVED MONITORING REPORTS </th> 
+					<th colspan="7"><center>APPROVED MONITORING REPORTS </th> 
 				</tr>
 				<tr>
-					<th colspan="6"> 
+					<th colspan="7"> 
 					<div class="Drp">
 						Select Column to filter: 
 							<select name="column" id="column">
@@ -124,6 +122,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th width="100px"> Monitoring ID </th>
 					<th width="100px"> Proposal ID </th>
 					<th width="auto"> Title </th>
+					<th width="90px";> College</th>
 					<th width="180px";> Prepared By</th>
 					<th width="120px";> Last Monitored</th>
 					<th width="120px";>  </th>
@@ -136,22 +135,30 @@ while($result = mysqli_fetch_array($command))
 	{
 		$MID = $result['MonitoringID'];
 		$PID = $result['ProposalID'];
+		$AID = $result['Author'];
 		$Title = $result ['Title'];
 		$PreparedBy = $result['Sign1_1'];
 		$Remarks = $result['Last_Monitored']; //Monitored. Date
+
+		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
+		$command2 = $con->query($sql2) or die("Error SQL");
+		while($result2 = mysqli_fetch_array($command2))
+			{
+				$College = $result2['College'];
 ?>
 
 			<tr class="inputs">
 				<td><?php echo $MID; ?></td>
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $College; ?></td> 
 				<td><?php echo $PreparedBy; ?></td>
 				<td><?php echo $Remarks; ?></td> 	 	
 				<td>
 					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
 				</td> 
 			</tr>
-<?php }?>
+<?php }}?>
 			</table>	
 		</div>
 	</div>
