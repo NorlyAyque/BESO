@@ -78,7 +78,9 @@ $Campus = $_SESSION["Campus"];
 
 </head>
 
-
+<h1> BESO Portal </h1>
+Year <u><b><?php echo "$CustomYear";?></b></u>
+Quarter <u><b><?php echo "$CustomQuarter";?></u></b>
 <div class="margin">
 	<label> 	
             <?php 
@@ -100,8 +102,5 @@ $Campus = $_SESSION["Campus"];
                
 				?> 
 	</div>		
-
-
-
 
 </html>
