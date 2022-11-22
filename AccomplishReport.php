@@ -112,10 +112,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			
 			<table class="Header" id="MyTable">
 				<tr  class="title">
-					<th colspan="7" >List of Accomplishment Reports</th> 
+					<th colspan="9" >List of Accomplishment Reports</th> 
 				</tr>
 				<tr>
-					<th colspan="7"> 
+					<th colspan="9"> 
 						
 						<div class ="Drp3">
 								Select Column to filter: 
@@ -123,10 +123,12 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 								<option value="">Select Column</option>
 								<option value="1">Proposal ID</option>
 								<option value="2">Title</option>
-								<option value="3">Proposal</option>
-								<option value="4">Evaluation</option>
-								<option value="5">Last Monitored</option>
-								<option value="6">Impact Assessment</option>
+								<option value="3">Year</option>
+								<option value="4">College</option>
+								<option value="5">Proposal</option>
+								<option value="6">Evaluation</option>
+								<option value="7">Last Monitored</option>
+								<option value="8">Impact Assessment</option>
 							</select>
 								 Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
 						</div>
@@ -137,8 +139,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				<tr>
 					<th width="80px"> Proposal ID</th>
 					<th width="auto"> Title </th>
-					<th width="140px"> Proposal </th> <!-- Project Status -->
-					<th width="140px";> Evaluation </th> <!-- Remarks -->
+					<th width="90px"> Year </th> <!-- Project Status -->
+					<th width="90px"> College </th> <!-- Project Status -->
+					<th width="100px"> Proposal </th> <!-- Project Status -->
+					<th width="100px";> Evaluation </th> <!-- Remarks -->
 					<th width="120px";> Last Monitored </th> <!-- Remarks_2 -->
 					<th width="120px";> Impact Assessment </th> <!-- Remarks_3 -->
 					<th width="130px";> View</th>
@@ -155,15 +159,25 @@ $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
+		$AID = $result['AccountID'];
+		$Year = $result['Year'];
 		$Title = $result ['Title'];
 		$PS = $result ['ProjectStatus']; // Pending, Approved, Revised, Reject
 		$R1 = $result ['Remarks']; //For Evaluation
 		$R2 = $result['Remarks_2']; //For Monitoring
 		$R3 = $result['Remarks_3']; // For Impact Assessment
+
+		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
+		$command2 = $con->query($sql2) or die("Error SQL");
+		while($result2 = mysqli_fetch_array($command2))
+			{
+				$College = $result2['College'];
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
+				<td><?php echo $Year; ?></p></td> 
+				<td><?php echo $College; ?></p></td> 
 				<td><?php echo $PS; ?></td> 
 				<td><?php echo $R1; ?></td> 
 				<td><?php echo $R2; ?></td> 
@@ -180,7 +194,7 @@ while($result = mysqli_fetch_array($command))
 					</div>
 				</td> 
 			</tr>
-<?php }?>
+<?php }}?>
 			</table>	
 		</div>
 	</div>
@@ -238,6 +252,8 @@ function Filter() {
 	else if (x == "4"){var SelectedColumn = 3;}	
 	else if (x == "5"){var SelectedColumn = 4;}	
 	else if (x == "6"){var SelectedColumn = 5;}	
+	else if (x == "7"){var SelectedColumn = 6;}	
+	else if (x == "8"){var SelectedColumn = 7;}	
 	
 	var input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("keyword");
