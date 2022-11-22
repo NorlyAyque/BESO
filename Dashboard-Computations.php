@@ -6,9 +6,9 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	die;
 }
 
-/*														
-*********************ALANGILAN CAMPUS*********************
-*/														
+/***********************************************************
+*					ALANGILAN CAMPUS					   *
+************************************************************/														
 
 //Set Department/College
 $CIT = "CIT";
@@ -43,7 +43,7 @@ $Budget = 0;
 *********************CEAFA QUARTER 1*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '1') AND
 		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
 		(Remarks = 'Evaluated')		
@@ -82,7 +82,7 @@ while($result = mysqli_fetch_array($command))
 *********************CEAFA QUARTER 2*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '2') AND
 		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
 		(Remarks = 'Evaluated')
@@ -121,7 +121,7 @@ while($result = mysqli_fetch_array($command))
 *********************CEAFA QUARTER 3*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '3') AND
 		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
 		(Remarks = 'Evaluated')
@@ -160,7 +160,7 @@ while($result = mysqli_fetch_array($command))
 *********************CEAFA QUARTER 4*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '4') AND
 		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
 		(Remarks = 'Evaluated')
@@ -200,7 +200,7 @@ while($result = mysqli_fetch_array($command))
 *********************CICS QUARTER 1*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '1') AND
 		(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
 		(Remarks = 'Evaluated')
@@ -239,7 +239,7 @@ while($result = mysqli_fetch_array($command))
 *********************CICS QUARTER 2*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '2') AND
 		(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
 		(Remarks = 'Evaluated')
@@ -278,7 +278,7 @@ while($result = mysqli_fetch_array($command))
 *********************CICS QUARTER 3*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '3') AND
 		(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
 		(Remarks = 'Evaluated')
@@ -317,7 +317,7 @@ while($result = mysqli_fetch_array($command))
 *********************CICS QUARTER 4*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '4') AND
 		(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
 		(Remarks = 'Evaluated')
@@ -357,7 +357,7 @@ while($result = mysqli_fetch_array($command))
 *********************CIT QUARTER 1*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '1') AND
 		(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
 		(Remarks = 'Evaluated')
@@ -396,7 +396,7 @@ while($result = mysqli_fetch_array($command))
 *********************CIT QUARTER 2*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '2') AND
 		(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
 		(Remarks = 'Evaluated')
@@ -435,7 +435,7 @@ while($result = mysqli_fetch_array($command))
 *********************CIT QUARTER 3*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '3') AND
 		(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
 		(Remarks = 'Evaluated')
@@ -474,7 +474,7 @@ while($result = mysqli_fetch_array($command))
 *********************CIT QUARTER 4*********************
 */
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(Year = $YearToday) AND
+		(Year = $CustomYear) AND
 		(Quarter = '4') AND
 		(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
 		(Remarks = 'Evaluated')
@@ -520,7 +520,7 @@ while($result = mysqli_fetch_array($command))
 *********************CEAFA QUARTER 1*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-	(Year = $YearToday) AND
+	(Year = $CustomYear) AND
 	(Quarter = '1') AND
 	(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
 	(ProjectStatus = 'Approved')		
@@ -543,7 +543,7 @@ while($result = mysqli_fetch_array($command))
 *********************CEAFA QUARTER 2*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-	(Year = $YearToday) AND
+	(Year = $CustomYear) AND
 	(Quarter = '2') AND
 	(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
 	(ProjectStatus = 'Approved')		
@@ -566,7 +566,7 @@ while($result = mysqli_fetch_array($command))
 *********************CEAFA QUARTER 3*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-	(Year = $YearToday) AND
+	(Year = $CustomYear) AND
 	(Quarter = '3') AND
 	(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
 	(ProjectStatus = 'Approved')		
@@ -589,7 +589,7 @@ while($result = mysqli_fetch_array($command))
 *********************CEAFA QUARTER 4*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-	(Year = $YearToday) AND
+	(Year = $CustomYear) AND
 	(Quarter = '4') AND
 	(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
 	(ProjectStatus = 'Approved')		
@@ -613,7 +613,7 @@ while($result = mysqli_fetch_array($command))
 *********************CICS QUARTER 1*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-	(Year = $YearToday) AND
+	(Year = $CustomYear) AND
 	(Quarter = '1') AND
 	(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
 	(ProjectStatus = 'Approved')		
@@ -636,7 +636,7 @@ while($result = mysqli_fetch_array($command))
 *********************CICS QUARTER 2*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-	(Year = $YearToday) AND
+	(Year = $CustomYear) AND
 	(Quarter = '2') AND
 	(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
 	(ProjectStatus = 'Approved')		
@@ -659,7 +659,7 @@ while($result = mysqli_fetch_array($command))
 *********************CICS QUARTER 3*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-	(Year = $YearToday) AND
+	(Year = $CustomYear) AND
 	(Quarter = '3') AND
 	(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
 	(ProjectStatus = 'Approved')		
@@ -682,7 +682,7 @@ while($result = mysqli_fetch_array($command))
 *********************CICS QUARTER 4*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-	(Year = $YearToday) AND
+	(Year = $CustomYear) AND
 	(Quarter = '4') AND
 	(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
 	(ProjectStatus = 'Approved')		
@@ -706,11 +706,11 @@ while($result = mysqli_fetch_array($command))
 *********************CIT QUARTER 1*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-(Year = $YearToday) AND
-(Quarter = '1') AND
-(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
-(ProjectStatus = 'Approved')		
-");
+	(Year = $CustomYear) AND
+	(Quarter = '1') AND
+	(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
 $No = 0;
 $Compute = 0;
 
@@ -729,11 +729,11 @@ while($result = mysqli_fetch_array($command))
 *********************CIT QUARTER 2*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-(Year = $YearToday) AND
-(Quarter = '2') AND
-(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
-(ProjectStatus = 'Approved')		
-");
+	(Year = $CustomYear) AND
+	(Quarter = '2') AND
+	(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
 $No = 0;
 $Compute = 0;
 
@@ -752,11 +752,11 @@ while($result = mysqli_fetch_array($command))
 *********************CIT QUARTER 3*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-(Year = $YearToday) AND
-(Quarter = '3') AND
-(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
-(ProjectStatus = 'Approved')		
-");
+	(Year = $CustomYear) AND
+	(Quarter = '3') AND
+	(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
 $No = 0;
 $Compute = 0;
 
@@ -775,11 +775,11 @@ while($result = mysqli_fetch_array($command))
 *********************CIT QUARTER 4*********************
 */
 $sql = ("SELECT * FROM evaluation_alangilan WHERE 
-(Year = $YearToday) AND
-(Quarter = '4') AND
-(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
-(ProjectStatus = 'Approved')		
-");
+	(Year = $CustomYear) AND
+	(Quarter = '4') AND
+	(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+	(ProjectStatus = 'Approved')		
+	");
 $No = 0;
 $Compute = 0;
 
@@ -802,7 +802,7 @@ while($result = mysqli_fetch_array($command))
 */
 $x = 0;
 $sql = ("SELECT * FROM create_alangilan WHERE 
-	(Year = $YearToday) AND
+	(Year = $CustomYear) AND
 	(Quarter = '4') AND
 	(Remarks = 'Evaluated')		
 	");
@@ -813,4 +813,62 @@ while($result = mysqli_fetch_array($command))
 		$x += $GrandTotal;
 	}
 	$Budget = number_format($x,2);
+?>
+
+<!-- Auto update Target once page load-->
+<?php
+//Trainees
+$T_R1_T = $T_R1Q1 + $T_R1Q2 + $T_R1Q3 + $T_R1Q4; //Row 1
+$T_R2_T = $T_R2Q1 + $T_R2Q2 + $T_R2Q3 + $T_R2Q4; //Row 2
+$T_R3_T = $T_R3Q1 + $T_R3Q2 + $T_R3Q3 + $T_R3Q4; //Row 3
+
+$T_R4Q1 = $T_R1Q1 + $T_R2Q1 + $T_R3Q1; //Column Q1
+$T_R4Q2 = $T_R1Q2 + $T_R2Q2 + $T_R3Q2; //Column Q2
+$T_R4Q3 = $T_R1Q3 + $T_R2Q3 + $T_R3Q3; //Column Q3
+$T_R4Q4 = $T_R1Q4 + $T_R2Q4 + $T_R3Q4; //Column Q4
+
+$T_R4_T = $T_R4Q1 + $T_R4Q2 + $T_R4Q3 + $T_R4Q4; //Total
+
+//Percentage
+//Row 1 Total
+$ArrVal = array($P_R1Q1, $P_R1Q2, $P_R1Q3, $P_R1Q4); 
+$Count = $x = 0;
+foreach ($ArrVal as $value) { if ($value > 1) { $Count++; $x += doubleval($value); } }
+if ($x == 0 AND $Count == 0){$P_R1_T  = 0;}
+else {$P_R1_T  = $x/$Count;}
+
+//Row 2 Total
+$ArrVal = array($P_R2Q1, $P_R2Q2, $P_R2Q3, $P_R2Q4); 
+$Count = $x = 0;
+foreach ($ArrVal as $value) { if ($value > 1) { $Count++; $x += doubleval($value); } }
+if ($x == 0 AND $Count == 0){$P_R2_T  = 0;}
+else {$P_R2_T  = $x/$Count;}
+
+//Row 3 Total
+$ArrVal = array($P_R3Q1, $P_R3Q2, $P_R3Q3, $P_R3Q4); 
+$Count = $x = 0;
+foreach ($ArrVal as $value) { if ($value > 1) { $Count++; $x += doubleval($value); } }
+if ($x == 0 AND $Count == 0){$P_R3_T  = 0;}
+else {$P_R3_T  = $x/$Count;}
+
+//Row 4 Total
+$ArrVal = array($P_R1_T, $P_R2_T, $P_R3_T); 
+$Count = $x = 0;
+foreach ($ArrVal as $value) { if ($value > 1) { $Count++; $x += doubleval($value); } }
+if ($x == 0 AND $Count == 0){$ans  = 0;}
+else {$ans  = $x/$Count;}
+$PercentageTotal = number_format(doubleval($ans),1);
+
+$sql = ("UPDATE target_alangilan SET 
+	T_R1Q1 = '$T_R1Q1', T_R1Q2 = '$T_R1Q2', T_R1Q3 = '$T_R1Q3', T_R1Q4 = '$T_R1Q4', T_R1_T = '$T_R1_T',
+	T_R2Q1 = '$T_R2Q1', T_R2Q2 = '$T_R2Q2', T_R2Q3 = '$T_R2Q3', T_R2Q4 = '$T_R2Q4', T_R2_T = '$T_R2_T',
+	T_R3Q1 = '$T_R3Q1', T_R3Q2 = '$T_R3Q2', T_R3Q3 = '$T_R3Q3', T_R3Q4 = '$T_R3Q4', T_R3_T = '$T_R3_T',
+	T_R4Q1 = '$T_R4Q1', T_R4Q2 = '$T_R4Q2', T_R4Q3 = '$T_R4Q3', T_R4Q4 = '$T_R4Q4', T_R4_T = '$T_R4_T',
+
+	P_R1Q1 = '$P_R1Q1', P_R1Q2 = '$P_R1Q2', P_R1Q3 = '$P_R1Q3', P_R1Q4 = '$P_R1Q4', P_R1_T = '$P_R1_T',
+	P_R2Q1 = '$P_R2Q1', P_R2Q2 = '$P_R2Q2', P_R2Q3 = '$P_R2Q3', P_R2Q4 = '$P_R2Q4', P_R2_T = '$P_R2_T',
+	P_R3Q1 = '$P_R3Q1', P_R3Q2 = '$P_R3Q2', P_R3Q3 = '$P_R3Q3', P_R3Q4 = '$P_R3Q4', P_R3_T = '$P_R3_T',
+	PercentageTotal = '$PercentageTotal', Budget = '$Budget'
+WHERE Year = '$CustomYear'");
+$command = $con->query($sql) or die("Error updating target");
 ?>
