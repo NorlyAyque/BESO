@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("Connection.php");
-//$YearToday = date("Y");
 
 if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
@@ -153,6 +152,7 @@ include_once ("Dashboard-Computations.php");
 		<div class="toggle">
 					<ion-icon name="reorder-three-sharp"></ion-icon>
 				</div>
+				
 			<center><?php include("userlogin.php"); ?></center>
 			<li>
 				<a class="active" href="Dashboard.php">

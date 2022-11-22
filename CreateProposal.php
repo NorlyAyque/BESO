@@ -29,11 +29,6 @@ $Position = $_SESSION["Position"];
 date_default_timezone_set("Asia/Manila");
 $DateTime = date("M, d Y; h:i:s A");
 
-//$Year = $CustomYear;
-//$yearQuarter = $CustomQuarter;
-//Getting Year Quarter
-//$month = date("n");
-//$yearQuarter = ceil($month / 3);
 ?>
 
 <!DOCTYPE html>
