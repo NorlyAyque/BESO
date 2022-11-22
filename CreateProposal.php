@@ -232,7 +232,7 @@ $yearQuarter = ceil($month / 3);
 						<label><b>lV. Type of Community Extension Service</b></label>
 						
 						<div class="checkbox">
-							<label onclick="openForm()"> Please Select one or more types.. </label>
+							<label onclick="openForm()"> Please Select one or more types </label>
 						</div>
 
 						<div class="form-popup" id="myForm">
@@ -292,7 +292,7 @@ $yearQuarter = ceil($month / 3);
 						<label><b>V. Sustainable Development Goals (SDG)</b></label>
 							<!-- -->
 							<div class="checkbox1" >
-								<label onclick="openForm1()"> Please Select one or more types..  </label>
+								<label onclick="openForm1()"> Please Select one or more types  </label>
 							</div>
 							<div class="form-popup1" id="myForm1">
 								<label class="check"><span>1. No poverty</span>
@@ -341,7 +341,7 @@ $yearQuarter = ceil($month / 3);
 									<input type="checkbox" id="SDG11" value="Sustainable cities and communities" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
-								<label class="check"><span>12. Resonsible comsumption and production</span>
+								<label class="check"><span>12. Responsible consumption and production</span>
 									<input type="checkbox" id="SDG12" value="Resonsible comsumption and production" name="ChkSDG" onclick="SelectSDG()">
 									<span class="checkmark"></span>
 								</label>
