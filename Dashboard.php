@@ -221,7 +221,6 @@ include_once ("Dashboard-Computations.php");
 			<div class ="scroll">
 
 <form action="" method="POST">
-<!-- <form action="Dashboard.php" method="_GET" id="myForm"> -->
 			<table class="input">
 				<tbody>
 					<tr>
