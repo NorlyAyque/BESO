@@ -112,10 +112,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			
 			<table class="Header" id="MyTable">
 				<tr  class="title">
-					<th colspan="6" >Extension PAP's for Impact Assessment</th> 
+					<th colspan="8" >Extension PAP's for Impact Assessment</th> 
 				</tr>
 				<tr>
-					<th colspan="6"> 
+					<th colspan="8"> 
 						<div class="Drp5">
 						Select Column to filter: 
 							<select name="column" id="column">
@@ -123,8 +123,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 								<option value="1">Proposal ID</option>
 								<option value="2">Title</option>
 								<option value="3">Duration</option>
-								<option value="4">Prepared By</option>
-								<option value="5">Remarks</option>
+								<option value="4">College</option>
+								<option value="5">Prepared By</option>
+								<option value="6">Last Monitored</option>
+								<option value="7">Remarks</option>
 							</select>
 							Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
 						</div>
@@ -136,35 +138,53 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th width="100px"> Proposal ID</th>
 					<th width="auto"> Title </th>
 					<th width="140px"> Duration </th>
+					<th width="100px";> College </th>
 					<th width="140px";> Prepared By </th>
+					<th width="100px";> Last Monitored </th>
 					<th width="120px";> Remarks </th>
 					<th width="200px";> </th>
 				</tr>
 <?php
+// Legend	Remarks = Evaluation		Remarks_2 = Monitoring
 //Display all the Pending Proposals
-$sql = ("SELECT * FROM create_alangilan WHERE unknown = 'For Impact Assessment' ");
+$sql = ("SELECT * FROM create_alangilan WHERE 
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '')
+	");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
+		$AID = $result['AccountID'];
 		$Title = $result ['Title'];
 		$SD = $result ['Start_Date']; 	$CDate1 = date_create("$SD"); $Date1 = date_format($CDate1,"M, d Y");
 		$ED = $result ['End_Date']; 	$CDate2 = date_create("$ED"); $Date2 = date_format($CDate2,"M, d Y");
 		$PreparedBy = $result['Sign1_1'];
+		$Remarks_2 = $result['Remarks_2'];
 		$Remarks_3 = $result['Remarks_3'];
+
+		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
+		$command2 = $con->query($sql2) or die("Error SQL");
+		while($result2 = mysqli_fetch_array($command2))
+			{
+				$College = $result2['College'];
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $Date1 . " -<br>". $Date2;?></td> 
+				<td><?php echo $College; ?></p></td> 
 				<td><?php echo $PreparedBy; ?></td> 
+				<td><?php echo $Remarks_2; ?></td> 	
 				<td><?php echo $Remarks_3; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn1">View</button> </a> <br> <br>
 					<a href="ListImpact.php?MarkAsComplete=<?php echo $PID; ?>" button class ="btn1">Mark as Complete</button> </a>
 				</td> 
 			</tr>
-<?php }?>
+<?php }}?>
 			</table>	
 		</div>
 	</div>
@@ -221,6 +241,8 @@ function Filter() {
 	else if (x == "3"){var SelectedColumn = 2;}
 	else if (x == "4"){var SelectedColumn = 3;}	
 	else if (x == "5"){var SelectedColumn = 4;}	
+	else if (x == "6"){var SelectedColumn = 5;}	
+	else if (x == "7"){var SelectedColumn = 6;}	
 	
 	
 	var input, filter, table, tr, td, i, txtValue;
