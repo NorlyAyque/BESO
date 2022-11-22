@@ -14,7 +14,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Settings</title>
-<link rel="stylesheet" type="text/css" href="styles/Setting-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Settings.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
@@ -127,7 +127,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<td>
 						<form action="" method="POST">
 							<div class ="Quarter">
-								Quarter: 
+								 
 								<select id="Quarter" name="Quarter" required>
 									<option value="">Please Select</option>
 									<option value="1">1</option>
@@ -137,6 +137,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 									<option value="<?php echo "$CustomQuarter";?>" selected><?php echo "$CustomQuarter";?></option>
 								</select>
 							</div>
+							
 							<div class="tbcreate">
 								<input type="submit" name="SetQuarterBtn" value=" Set Quarter"  class = "SubmitYQ">
 							</div>
