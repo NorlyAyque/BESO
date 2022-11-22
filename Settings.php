@@ -95,7 +95,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				
 			</div>
 			<br><br><br><br><br>
-			<form action="" method="POST">		
+	
 			<center> 
 				<h2> Current Set Year <u> <?php echo "$CustomYear";?> </u>
 				and Quarter <u><?php echo "$CustomQuarter";?> </u></h2>
@@ -114,39 +114,36 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				
 				<tr>
 					<td>
-						<div class ="Year">
-							<input type="number" min="0" id="Year" name="Year" placeholder="type here.." required> 
+						<form action="" method="POST">	
+							<div class ="Year">
+								<input type="number" min="0" id="Year" name="Year" placeholder="type here.." required> 
+							</div>
 							
-						</div>
-						<div class="tbcreate">
-							<input type="submit" name="SetYearBtn"  value="Set Year" class = "SubmitYQ">
-							
-						</div>
+							<div class="tbcreate">
+								<input type="submit" name="SetYearBtn"  value="Set Year" class = "SubmitYQ">
+							</div>
+						</form>
 					</td> 
 					<td>
-						<div class ="Quarter">
-							<input type="number" min="0" id="Quarter" name="Quarter" placeholder="type here.." required> 
-						</div>
-						<div class="tbcreate">
-							<input type="submit" name="SetQuarterBtn" value=" Set Quarter"  class = "SubmitYQ">
-						</div>
+						<form action="" method="POST">
+							<div class ="Quarter">
+								Quarter: 
+								<select id="Quarter" name="Quarter" required>
+									<option value="">Please Select</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="<?php echo "$CustomQuarter";?>" selected><?php echo "$CustomQuarter";?></option>
+								</select>
+							</div>
+							<div class="tbcreate">
+								<input type="submit" name="SetQuarterBtn" value=" Set Quarter"  class = "SubmitYQ">
+							</div>
+						</form>
 					</td> 
-					
 				</tr>
-				
-				
-					
-			
-				
-				
-		
 			</table>
-				
-				
-					
-					
-					
-			
 		</div>
 	</div>
 	
