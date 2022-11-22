@@ -95,6 +95,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				
 			</div>
 			<br><br><br><br><br>
+			<form action="" method="POST">		
 			<center> 
 				<h2> Current Set Year <u> <?php echo "$CustomYear";?> </u>
 				and Quarter <u><?php echo "$CustomQuarter";?> </u></h2>
