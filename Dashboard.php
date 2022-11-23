@@ -6,6 +6,11 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+//Getting Session Variables from index.php
+$College = $_SESSION["College"];
+$Position = $_SESSION["Position"];
+
 ?>
 
 <?php
@@ -215,28 +220,33 @@ include_once ("Dashboard-Computations.php");
 		<!--main-->
 		<div class="main">
 			<div class="topbar">
-				<div class="btnview">
+				<div class="btnview" id="ViewTargetButton">
 					<a href="View_Target.php" button class = "adduser"> View Target<ion-icon name="eye-outline"></ion-icon></a> </button>
 				</div>
 			</div>
-			<div class ="scroll">
+			
+<div id="TableForLabelText" style="display:none;">
+	<table align="center" class="input" border="2" style="height:30px; width:97%; border-radius:30px;">
+		<tr>
+			<th style="border-radius:30px;"><h2 id="LabelText"></h1></th>
+		</tr>
+	</table>
+</div>
 
 <!-- Graph -->
 <div class="graph">
 <table>
 	<tr>
-		<td><center><div id="ChartCEAFA" style="height: 350px; width: 310px;"></div></td>
-		<td><div id="ChartCICS" style="height: 350px; width: 310px;"></div></td>
-		<td><div id="ChartCIT" style="height: 350px; width: 310px;"></div></td>
+		<td id="ChartForCEAFA"><div id="ChartCEAFA" style="height: 350px; width: 310px;"></div></td>
+		<td id="ChartForCICS"><div id="ChartCICS" style="height: 350px; width: 310px;"></div></td>
+		<td id="ChartForCIT"><div id="ChartCIT" style="height: 350px; width: 310px;"></div></td>
 	</tr>
-	
 </table>
 	</div>
-	
-	
 
 <form action="" method="POST">
-			<table class="input">
+	<div class ="scroll">
+			<table class="input" id="TableForTargets">
 				<tbody>
 					<tr>
 						<th colspan="23"> 
@@ -1044,4 +1054,60 @@ function DisplayCharts(){
 		chartCEAFA.render();
 	}
 }
+
 </script>
+
+
+<?php
+//Code for Different  Account - Different View
+if ($College == "CIT" AND $Position == "Coordinator" ){
+	echo "
+		<script> 
+			document.getElementById('ChartForCIT').style.display = 'block';
+			document.getElementById('ChartCIT').style.height = '450px';
+			document.getElementById('ChartCIT').style.width = '650px';
+			document.getElementById('TableForLabelText').style.display = 'block';
+			document.getElementById('LabelText').innerHTML = 'College of Industrial Technology Targets/Actual';
+
+			document.getElementById('ChartForCEAFA').style.display = 'none';
+			document.getElementById('ChartForCICS').style.display = 'none';
+			document.getElementById('TableForTargets').style.display = 'none';
+			document.getElementById('ViewTargetButton').style.display = 'none';
+		</script>
+	";
+}
+if ($College == "CICS" AND $Position == "Coordinator" ){
+	echo "
+		<script> 
+			document.getElementById('ChartForCICS').style.display = 'block';
+			document.getElementById('ChartCICS').style.height = '450px';
+			document.getElementById('ChartCICS').style.width = '650px';
+			
+			document.getElementById('TableForLabelText').style.display = 'block';
+			document.getElementById('LabelText').innerHTML = 'College of Informatics and Computing Sciences Targets/Actual';
+
+			document.getElementById('ChartForCEAFA').style.display = 'none';
+			document.getElementById('ChartForCIT').style.display = 'none';
+			document.getElementById('TableForTargets').style.display = 'none';
+			document.getElementById('ViewTargetButton').style.display = 'none';
+		</script>
+	";
+}
+if ($College == "CEAFA" AND $Position == "Coordinator" ){
+	echo "
+		<script> 
+			document.getElementById('ChartForCEAFA').style.display = 'block';
+			document.getElementById('ChartCEAFA').style.height = '450px';
+			document.getElementById('ChartCEAFA').style.width = '650px';
+			
+			document.getElementById('TableForLabelText').style.display = 'block';
+			document.getElementById('LabelText').innerHTML = 'College of Engineering, Architecture and Fine Arts Targets/Actual';
+
+			document.getElementById('ChartForCICS').style.display = 'none';
+			document.getElementById('ChartForCIT').style.display = 'none';
+			document.getElementById('TableForTargets').style.display = 'none';
+			document.getElementById('ViewTargetButton').style.display = 'none';
+		</script>
+	";
+}
+?>
