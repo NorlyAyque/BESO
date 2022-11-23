@@ -101,7 +101,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Edit Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/EditEvaluation-style.css">
+<link rel="stylesheet" type="text/css" href="styles/EditEvaluationSTYLE.css">
 
 </head>
 <body>
@@ -374,8 +374,8 @@ if(isset($_GET['edit'])){
 		<table class="signiture">
 				<tr>
 					<th></th>
-					<th> Name </th>
-					<th> Designation </th>
+					<th width="40%";> Name </th>
+					<th width="40%";> Designation </th>>
 				</tr>
 				<tr>
 					<td> Prepared by:</td>	
@@ -385,6 +385,7 @@ if(isset($_GET['edit'])){
 				<tr>
 					<td> Reviewed by:</td>
 					<td>
+					<div class="DrpSigna">
 						<select id="ReviewedByName">
 							<option value="">Please Select Name</option>
 								<?php
@@ -396,10 +397,15 @@ if(isset($_GET['edit'])){
 							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 								<?php } ?>
 						</select>
-						<span onclick="ReviewedByName()"> GET </span>									
-						<textarea placeholder="..." id="Sign2_1" name="Sign2_1" required><?php echo ""; ?><?php echo "$Sign2_1";?></textarea>
+					</div>
+						<div class="Getbtn">
+							<span onclick="ReviewedByName()"> ✓  </span>	
+						</div>
+						<br>
+						<textarea placeholder="..." id="Sign2_1" name="Sign2_1" required><?php echo ""; ?></textarea>
 					</td>
 					<td>
+					<div class="DrpSigna">
 						<select id="ReviewByDesignation">
 							<option value="">Please Select Name</option>
 								<?php
@@ -411,13 +417,18 @@ if(isset($_GET['edit'])){
 							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 								<?php } ?>
 						</select>
-						<span onclick="ReviewByDesignation()"> GET </span>
-						<textarea placeholder="..." id="Sign2_2" name="Sign2_2" required><?php echo ""; ?><?php echo "$Sign2_2";?></textarea>
+						</div>
+						<div class="Getbtn">
+							<span onclick="ReviewByDesignation()"> ✓ </span>
+						</div>
+						<br>
+						<textarea placeholder="..." id="Sign2_2" name="Sign2_2" required><?php echo ""; ?></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td> Accepted by:</td>
 					<td>
+					<div class="DrpSigna">
 						<select id="AcceptedByName">
 							<option value="">Please Select Name</option>
 								<?php
@@ -429,11 +440,16 @@ if(isset($_GET['edit'])){
 							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 							<?php } ?>
 						</select>
-						<span onclick="AcceptedByName()"> GET </span>
-						<textarea placeholder="..." id="Sign3_1" name="Sign3_1" required><?php echo ""; ?><?php echo "$Sign3_1";?></textarea>
+					</div>
+					<div class="Getbtn">
+						<span onclick="AcceptedByName()"> ✓ </span>
+					</div>
+					<br>
+						<textarea placeholder="..." id="Sign3_1" name="Sign3_1" required><?php echo ""; ?></textarea>
 					</td>
 					
 					<td>
+					<div class="DrpSigna">
 						<select id="AcceptedByDesignation">
 							<option value="">Please Select Name</option>
 								<?php
@@ -445,8 +461,12 @@ if(isset($_GET['edit'])){
 							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 								<?php } ?>
 						</select>
-						<span onclick="AcceptedByDesignation()"> GET </span>
-						<textarea placeholder="..." id="Sign3_2" name="Sign3_2" required><?php echo ""; ?><?php echo "$Sign3_2";?></textarea>
+						</div>
+						<div class="Getbtn">
+							<span onclick="AcceptedByDesignation()">  ✓ </span>
+						</div>
+						<br>
+						<textarea placeholder="..." id="Sign3_2" name="Sign3_2" required><?php echo ""; ?></textarea>
 					</td>
 				</tr>
 			</table>
