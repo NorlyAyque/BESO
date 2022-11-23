@@ -260,7 +260,7 @@ $DateTime = date("M, d Y; h:i:s A");
 								<input type="checkbox" id="TypeCES_7" value="Technical Assistance and Advisory Program to Agencies, Organizations, Associations and Other Groups" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"><span>8. Parent's Empowerment through Social Development(PESODEV)Program</span>
+							<label class="check"><span>8. Parent's Empowerment through Social Development(PESODEV) Program</span>
 								<input type="checkbox" id="TypeCES_8" value="Parent's Empowerment through Social Development (PESODEV)Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
@@ -272,7 +272,7 @@ $DateTime = date("M, d Y; h:i:s A");
 								<input type="checkbox" id="TypeCES_10" value="Disaster Preparedness and Response/Climate Change Adaptation" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"><span>11. BatStateU Inclusive Social Innovation for Regional Growth(BISIG)Program</span>
+							<label class="check"><span>11. BatStateU Inclusive Social Innovation for Regional Growth(BISIG) Program</span>
 								<input type="checkbox" id="TypeCES_11" value="BatStateU Inclusive Social Innovation for Regional Growth(BISIG)Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
