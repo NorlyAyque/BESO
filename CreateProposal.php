@@ -36,7 +36,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-proposal-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
 
 </head>
 <body>

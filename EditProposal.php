@@ -126,7 +126,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Edit Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/EditProposals.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
 
 </head>
 <body>
@@ -801,7 +801,7 @@ if(isset($_GET['edit'])){
 					<textarea placeholder="..." name="Sign5_2" required><?php echo $dbSign5_2;?></textarea></td>
 				</tr>
 			</table>
-			<div class="buttonB">
+			<div class="buttonBACK">
 				<a href="Proposal-revision.php" class="btnB"> Back </a></button>
 			</div>
 			<div class="buttonU">

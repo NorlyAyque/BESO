@@ -268,7 +268,7 @@ margin-left: 100px;
 }
 
 .header th {
- 
+ padding:5px;
  
   background-color: var(--red);
   color: white;
@@ -437,17 +437,20 @@ margin-left: 100px;
   background-color: var(--red);
    border:none;
    color:white;
+   padding:5px;
 }
 
 .Date  .MF  td{
 	font-size:15px;
 	text-align: center;
 	border:none;
+	 padding:5px;
 }	
-.Date t .MF1  td{
+.Date  .MF1  td{
 	font-size:15px;
 	text-align: center;
 	border:none;
+	padding:5px;
 
 }	
 .Date .MF input {
@@ -782,8 +785,8 @@ cursor: pointer;
 	width:100%;
 	
 }
-.financial table,th,td{
-	padding:5px;
+.header table,td{
+
 	
 	
 }
@@ -1029,7 +1032,7 @@ cursor: pointer;
 
 .DrpQrt{
 	margin-top:-30px;
-	margin-left:47%;
+	margin-left:49.5%;
 }
 .DrpQrt select{
   display:flex;
@@ -1037,7 +1040,7 @@ cursor: pointer;
   cursor: pointer;
   border:none;
   text-align:center;
-   width:17.5%;
+   width:25%;
   border:none;
   height:30px;
   border-radius:3px;
@@ -1051,3 +1054,65 @@ cursor: pointer;
 .DrpQrt option{
 	font-size:15px;
 	cursor:pointer;
+	
+}
+
+
+
+
+
+
+
+.buttonBACK {
+	text-align: left;
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom:10px;
+}
+ .btnB {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  text-align:left;
+ 
+  
+}
+.buttonBACK .btnB:hover {
+  background-color:  #4CAF20;
+  color: white;
+}
+
+
+.buttonU {
+	text-align: right;
+	margin-right: 5px;
+	margin-top: -40px;
+	
+}
+.buttonU .btn {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+ 
+  
+}
+
+.buttonU .btn:hover {
+  background-color:  #4CAF20;
+  color: white;
+}

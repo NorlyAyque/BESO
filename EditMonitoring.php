@@ -109,7 +109,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Update Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/EditMonitoring.css">
+<link rel="stylesheet" type="text/css" href="styles/EditMonitoring-style.css">
 
 </head>
 <body>

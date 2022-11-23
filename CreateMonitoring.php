@@ -78,7 +78,7 @@ if(isset($_GET['create'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/CreateMonitoring.css">
+<link rel="stylesheet" type="text/css" href="styles/CreateMonitoring-style.css">
 
 </head>
 <body>

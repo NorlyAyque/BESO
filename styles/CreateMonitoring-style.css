@@ -136,7 +136,6 @@ body{
 	font-size: 17px;
 	font-weight:bold;
 	
-	
 }
 
 
@@ -199,6 +198,7 @@ margin-left: 100px;
 	padding: 0 10px;
 }
 
+
 .toggle{
 	position:relative;
 	width:40px;
@@ -210,7 +210,10 @@ margin-left: 100px;
 	cursor: pointer;
 	margin-top:10px;
 	margin-left: 30px;
+	margin-bottom:-30px;
+	color:white;
 }
+
 
 .header{
   width: 97%;
@@ -334,27 +337,14 @@ cursor: pointer;
 }
 
 
-.save-back{
-	margin:auto;
-	width:100%
-}
 
 
-.save-back table,th{
-	border:none;
-	
-}
+
 .save{
 		margin-top:10px;
 		text-align: right;
 		margin-right:15px;
 		margin-bottom: 10px;
-}
-
-.back{
-		text-align: left;
-		margin-left:40px;
-	
 }
  .btn3 {
   margin-right:5px;
@@ -380,30 +370,10 @@ cursor: pointer;
   color: white;
 }
 
-.btn4 {
-  margin-right:5px;
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-text-align:right;
+.headmes{
+	border:1px solid black;
+	margin:auto;
 }
-
-.btn4:hover {
-  background-color:  #4CAF20;
-  color: white;
-}
-
 .checkbox2 label, .checkbox3 label, .checkbox4 label, .checkbox5 label, 
 .checkbox6 label, .checkbox7 label {
   width:100%;
@@ -530,4 +500,48 @@ text-align:right;
  .btncancel:hover {
   background-color:  var(--red);
   color: white;
+}
+.Tfinancial table{
+	margin-left:auto;
+	margin-right:auto;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	margin-top:10px;
+	margin-bottom:15px;
+	width:100%;
+	
+}
+.financial table,th,td{
+	
+	
+	
+}
+.financial th{
+	padding-top:10px;
+	padding-bottom:10px;
+	 background-color: var(--red);
+	color: white;
+}
+
+.financial textarea:nth-child(1){
+	margin-top:20px;
+	width: 100px;
+	height:90px;	
+	border:none;
+	box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.financial td{
+	text-align:center;
+	background-color:#e3e3e3;	
+}
+.financial .MF input{
+	width: 70px;
+	height:40px;
+	text-align:center;
+	border:none;
+	 box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+.Tfinancial td:hover {
+background-color: lightgrey;
+cursor: pointer;
 }
