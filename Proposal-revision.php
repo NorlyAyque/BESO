@@ -13,7 +13,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Proposals - Revisions</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal-style.css">
+<link rel="stylesheet" type="text/css" href="styles/ProposalSTYLE.css">
 
 </head>
 <body>
@@ -97,7 +97,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th colspan="6">
 						<div class="menu">
 							
-							<a href="Proposal.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
+							<a href="Proposal.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
+							<div class="notif">
+							<span class="icon-button__badge">44</span>
+						</div></a>
 							</button>
 							
 							<a href="Proposal-revision.php" button class = "nav2"> Revision <ion-icon name="repeat-outline"></ion-icon></a>

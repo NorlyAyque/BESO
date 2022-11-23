@@ -17,7 +17,7 @@ $Position = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal-style.css">
+<link rel="stylesheet" type="text/css" href="styles/ProposalSTYLE.css">
 
 </head>
 <body>
@@ -100,8 +100,11 @@ $Position = $_SESSION["Position"];
 			<tr>
 				<th colspan="6">
 					<div class="menu">
-							
-						<a href="Proposal.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
+					
+						<a href="Proposal.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
+						<div class="notif">
+							<span class="icon-button__badge">44</span>
+						</div></a>
 						<a href="Proposal-revision.php" button class = "nav">Revision <ion-icon name="repeat-outline"></ion-icon></a>
 						<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 						<a href="Proposal-reject.php" button class = "nav"> Rejected <ion-icon name="thumbs-down-outline"></ion-icon></a>	
