@@ -97,8 +97,6 @@ date_default_timezone_set('Asia/Manila');
 				
 			</div>
 			
-
-
 	<p align ="center"> <?php echo date("F d, Y")?> </p>
 	<p align ="center"> <?php echo date("h:i:s a")?> </p>
 	<br>
@@ -108,7 +106,7 @@ date_default_timezone_set('Asia/Manila');
 				and Quarter <u><?php echo "$CustomQuarter";?> </u></h2>
 			</center>
 			
-				<table class="settings">	
+			<table class="settings">	
 					
 				<tr>
 					<th colspan="2"><h3>Set Year and Quarter to be used for the whole system</h3></i></th>
@@ -152,9 +150,99 @@ date_default_timezone_set('Asia/Manila');
 					</td> 
 				</tr>
 			</table>
+
+			<table class="settings"> <!-- For Signaotries -->
+					
+				<tr>
+					<th colspan="2"><h3>Add Signatories</h3></i></th>
+					
+				</tr>			
+				<tr>
+					<th>NAME</th>
+					<th> POSITION </th>
+				</tr>	
+				
+				<tr>
+					<td align="center">
+						<form action="" method="POST"> <!-- Do not Delete Form -->
+							<input type="text" name="PersonsName" placeholder="type here.." required> 
+							<input type="submit" name="SubmitName" value=" SAVE">
+						</form>
+					</td> 
+
+					<td align="center">
+						<form action="" method="POST">	<!-- Do not Delete Form -->
+							<input type="text" name="PersonsPosition" placeholder="type here.." required> 
+							<input type="submit" name="SubmitPosition"  value="SAVE">
+						</form>
+					</td> 
+				</tr>
+			</table>
 		</div>
 	</div>
 	
+	<!-- Display All Names in Signatories-->
+	<center>
+		<table align="center" border="1"> 
+			<tr>
+				<th colspan="3"> LIST OF NAMES</th>
+			</tr>
+			<tr>
+				<th> ID </th>
+				<th> NAME </th>
+				<th> Buttons </th>
+			</tr>
+			
+			<?php
+				$sql = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+				$command = $con->query($sql) or die("Error SQL");
+				while($result = mysqli_fetch_array($command))
+					{
+						$SID = $result['SignID'];
+						$Persons_Name = $result['Persons_Name'];
+			?>
+			<tr>
+				<td> <?php echo "$SID";?> </td>
+				<td> <?php echo "$Persons_Name";?> </td>
+				<td> <a href="Settings.php?delete=<?php echo $SID; ?>" >DELETE</button> </a> </td>
+			</tr>
+
+			<?php } ?>
+		</table>
+	</center>
+
+	<!-- Display All Positions in Signatories-->
+	<center>
+		<table align="center" border="1"> 
+			<tr>
+				<th colspan="3"> LIST OF Positions</th>
+			</tr>
+			<tr>
+				<th> ID </th>
+				<th> Positions </th>
+				<th> Buttons </th>
+			</tr>
+			
+			<?php
+				$sql = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+				$command = $con->query($sql) or die("Error SQL");
+				while($result = mysqli_fetch_array($command))
+					{
+						$SID = $result['SignID'];
+						$Position = $result['Position'];
+			?>
+			<tr>
+				<td> <?php echo "$SID";?> </td>
+				<td> <?php echo "$Position";?> </td>
+				<td> <a href="Settings.php?delete=<?php echo $SID; ?>" >DELETE</button> </a> </td>
+			</tr>
+
+			<?php } ?>
+		</table>
+	</center>
+	
+	
+
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -200,6 +288,39 @@ if (isset($_POST['SetQuarterBtn'])){
 	$command = $con->query($sql) or die("Error updating new year");
 
 	echo "<script> alert('Quarter Successfully Set'); window.location='Settings.php';</script>";
+}
+
+if (isset($_POST['SubmitName'])){
+	$text = htmlspecialchars($_POST['PersonsName']);
+	$PersonsName = strtoupper($text);
+
+	$sql = ("INSERT INTO signatories_alangilan (Persons_Name) VALUES ('$PersonsName')");
+	$command = $con->query($sql) or die("Error Occur when inserting name");
+
+	echo "<script> alert('Name Inserted'); window.location='Settings.php';</script>";
+}
+
+if (isset($_POST['SubmitPosition'])){
+	$PersonsPosition = htmlspecialchars($_POST['PersonsPosition']);
+
+	$sql = ("INSERT INTO signatories_alangilan (Position) VALUES ('$PersonsPosition')");
+	$command = $con->query($sql) or die("Error Occur when inserting name");
+
+	echo "<script> alert('Position Inserted'); window.location='Settings.php';</script>";
+}
+
+
+if(isset($_GET['delete'])){
+
+	$SID = $_GET['delete'];
+
+	$sql = ("DELETE FROM signatories_alangilan WHERE SignID = '$SID'");
+	$command = $con->query($sql) or die("Error Deleting Signatory");
+	echo "
+		<script>
+			alert('Signatory ID $SID Deleted');	
+			window.location.href='Settings.php';
+		</script>";
 }
 ?>
 
