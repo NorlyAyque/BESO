@@ -145,8 +145,27 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th width="100px";>  </th>
 				</tr>
 <?php
-//Display all the Pending Evaluation Reports
-$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved'");
+//Display all the Approved Evaluation Reports based on Colleges/Office
+if ($College == $CEAFA){
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+				(ProjectStatus = 'Approved')
+			");
+}else if ($College == $CICS){
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+				(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+				(ProjectStatus = 'Approved')
+			");
+}else if ($College == $CIT){
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+				(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+				(ProjectStatus = 'Approved')
+			");
+}else{
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved' ");
+}
+
+//$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved'");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{

@@ -152,13 +152,48 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				</tr>
 <?php
 // Legend	Remarks = Evaluation		Remarks_2 = Monitoring
-//Display all the Pending Proposals
+//Display all the Proposals that need impact assessment based on Colleges/Office
+if ($College == $CEAFA){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '')
+	");
+}else if ($College == $CICS){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '')
+	");
+}else if ($College == $CIT){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '')
+	");
+}else{
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '')
+	");
+}
+
+/*
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(unknown = 'For Impact Assessment') AND
 		(ProjectStatus = 'Approved') AND 
 		(Remarks = 'Evaluated') AND
 		(Remarks_2 != '')
 	");
+*/
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{

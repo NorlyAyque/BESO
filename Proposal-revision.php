@@ -147,8 +147,27 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				</tr>
 
 <?php
-//Display all the Proposals that need Revision
-$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Need to Revise' ");
+//Display all the Proposals that need Revision based on Colleges/Office
+if ($College == $CEAFA){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+				(ProjectStatus = 'Need to Revise')
+			");
+}else if ($College == $CICS){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+				(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+				(ProjectStatus = 'Need to Revise')
+			");
+}else if ($College == $CIT){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+				(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+				(ProjectStatus = 'Need to Revise')
+			");
+}else{
+	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Need to Revise'");
+}
+
+//$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Need to Revise' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{

@@ -190,8 +190,27 @@ if(isset($_GET['verify'])){
 			</tr>
 <?php
 
-//Display Proposal that needs to Monitor
-$sql = ("SELECT * FROM create_alangilan WHERE (unknown != 'Extension PAP' AND Remarks = 'Evaluated') ORDER BY ProposalID DESC");
+//Display Proposal that needs to Monitor based on Colleges/Office
+if ($College == $CEAFA){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+				(unknown != 'Extension PAP' AND Remarks = 'Evaluated') AND
+				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') 
+				ORDER BY ProposalID DESC");
+}else if ($College == $CICS){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+				(unknown != 'Extension PAP' AND Remarks = 'Evaluated') AND
+				(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') 
+				ORDER BY ProposalID DESC");
+}else if ($College == $CIT){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+				(unknown != 'Extension PAP' AND Remarks = 'Evaluated') AND
+				(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') 
+				ORDER BY ProposalID DESC");
+}else{
+	$sql = ("SELECT * FROM create_alangilan WHERE (unknown != 'Extension PAP' AND Remarks = 'Evaluated') ORDER BY ProposalID DESC");
+}
+
+//$sql = ("SELECT * FROM create_alangilan WHERE (unknown != 'Extension PAP' AND Remarks = 'Evaluated') ORDER BY ProposalID DESC");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{

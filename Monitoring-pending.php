@@ -140,8 +140,27 @@ date_default_timezone_set("Asia/Manila");
 <?php
 $DateToday = date("Y-m-d");
 
-//Display Proposal that needs to Monitor
-$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
+//Display Proposal that needs to Monitor based on Colleges/Office
+if ($College == $CEAFA){
+	$sql = ("SELECT * FROM monitoring_alangilan WHERE 
+				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+				(Remarks = 'PENDING')
+			");
+}else if ($College == $CICS){
+	$sql = ("SELECT * FROM monitoring_alangilan WHERE 
+				(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+				(Remarks = 'PENDING')
+			");
+}else if ($College == $CIT){
+	$sql = ("SELECT * FROM monitoring_alangilan WHERE 
+				(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+				(Remarks = 'PENDING')
+			");
+}else{
+	$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
+}
+
+//$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{

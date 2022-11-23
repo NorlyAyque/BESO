@@ -145,8 +145,27 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th width="150px";>  </th>
 				</tr>
 <?php
-//Display all the Pending Proposals
-$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Rejected' ");
+//Display all the Pending Proposals based on Colleges/Office
+if ($College == $CEAFA){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+				(ProjectStatus = 'Rejected')
+			");
+}else if ($College == $CICS){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+				(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+				(ProjectStatus = 'Rejected')
+			");
+}else if ($College == $CIT){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+				(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+				(ProjectStatus = 'Rejected')
+			");
+}else{
+	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Rejected'");
+}
+
+//$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Rejected' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
