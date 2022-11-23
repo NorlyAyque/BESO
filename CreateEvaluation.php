@@ -441,7 +441,7 @@ if(isset($_GET['evaluation'])){
 						</table>
 	
 		<div class="buttonBACK">
-				<a href="" class="btnB"> Back </a></button>
+				<a href="Proposal-approved.php" class="btnB"> Back </a></button>
 			</div>
 		<div class ="save">
 			<button class = "btn3" type="submit" name="submit"> Save </button>
