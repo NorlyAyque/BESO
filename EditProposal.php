@@ -662,143 +662,141 @@ if(isset($_GET['edit'])){
 				</tr>
 				<tr>
 					<td> Prepared by:</td>
-					<td>
-						<!-- <div class="checkbox2">
-								<label onclick="openForm2()">Select your name</label>
-						</div>
-							<div class="form-popup2" id="myForm2">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm2()">CLOSE</button>
-							</div> -->
-							<textarea placeholder="..." name="Sign1_1" required><?php echo $dbSign1_1;?></textarea></td>
-	
-					<td>
-					
-					<textarea placeholder="..." name="Sign1_2" required><?php echo $dbSign1_2;?></textarea></td>
+					<td> <textarea placeholder="..." name="Sign1_1" required><?php echo strtoupper($Fullname);?></textarea></td>
+					<td> <textarea placeholder="..." name="Sign1_2" required><?php echo $Position;?></textarea></td>
 				</tr>
 				<tr>
-					<td> Review by:</td>
+					<td> Reviewed by:</td>
 					<td>
-						<!-- <div class="checkbox4">
-								<label onclick="openForm4()">Select your name</label>
-						</div>
-							<div class="form-popup4" id="myForm4">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm4()">CLOSE</button>
-							</div> -->
-						<textarea placeholder="..." name="Sign2_1" required><?php echo $dbSign2_1;?></textarea></td>
+						<select id="ReviewedByName">
+							<option value="">Please Select Name</option>
+								<?php
+									$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+									$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+										while($RSTName = mysqli_fetch_array($CMDName)){
+											$Persons_Name = $RSTName['Persons_Name']; 
+								?>
+							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+							<?php } ?>
+						</select>
+						<span onclick="ReviewedByName()"> GET </span>
+						<textarea placeholder="..." id="Sign2_1" name="Sign2_1" required><?php echo "$dbSign2_1";?></textarea>
+					</td>
 					<td>
-					<textarea placeholder="..." name="Sign2_2" required><?php echo $dbSign2_2;?></textarea></td>
+						<select id="ReviewByDesignation">
+							<option value="">Please Select Name</option>
+								<?php
+									$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+									$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+										while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+											$SignPosition = $RSTPosition['Position']; 
+								?>
+							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+								<?php } ?>
+						</select>
+						<span onclick="ReviewByDesignation()"> GET </span>
+						<textarea placeholder="..." id="Sign2_2" name="Sign2_2" required><?php echo "$dbSign2_2";?></textarea>
+					</td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
 					<td>
-						<!-- <div class="checkbox6">
-								<label onclick="openForm6()">Select your name</label>
-						</div>
-							<div class="form-popup6" id="myForm6">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm6()">CLOSE</button>
-							</div> -->
-					<textarea placeholder="..." name="Sign3_1" required><?php echo $dbSign3_1;?></textarea></td>
+						<select id="RecommendingApproval1Name">
+							<option value="">Please Select Name</option>
+								<?php
+									$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+									$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+										while($RSTName = mysqli_fetch_array($CMDName)){
+											$Persons_Name = $RSTName['Persons_Name']; 
+								?>
+							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+							<?php } ?>
+						</select>
+						<span onclick="RecommendingApproval1Name()"> GET </span>
+						<textarea placeholder="..." id="Sign3_1"name="Sign3_1" required><?php echo "$dbSign3_1";?></textarea>
+					</td>
 					
 					<td>
-					<textarea placeholder="..." name="Sign3_2" required><?php echo $dbSign3_2;?></textarea></td>
+						<select id="RecommendingApproval1Designation">
+							<option value="">Please Select Name</option>
+								<?php
+									$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+									$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+										while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+											$SignPosition = $RSTPosition['Position']; 
+								?>
+							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+								<?php } ?>
+						</select>
+						<span onclick="RecommendingApproval1Designation()"> GET </span>
+						<textarea placeholder="..." id="Sign3_2" name="Sign3_2" required><?php echo "$dbSign3_2";?></textarea>
+					</td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
 					<td>
-						<!-- <div class="checkbox8">
-								<label onclick="openForm8()">Select your name</label>
-						</div>
-							<div class="form-popup8" id="myForm8">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="S">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm8()">CLOSE</button>
-							</div> -->
-					<textarea placeholder="..." name="Sign4_1" required><?php echo $dbSign4_1;?></textarea></td>
-					
+						<select id="RecommendingApproval2Name">
+							<option value="">Please Select Name</option>
+								<?php
+									$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+									$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+										while($RSTName = mysqli_fetch_array($CMDName)){
+											$Persons_Name = $RSTName['Persons_Name']; 
+								?>
+							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+							<?php } ?>
+						</select>
+						<span onclick="RecommendingApproval2Name()"> GET </span>
+						<textarea placeholder="..." id="Sign4_1" name="Sign4_1" required><?php echo "$dbSign4_1";?></textarea>
+					</td>
 					<td>
-					<textarea placeholder="..." name="Sign4_2" required><?php echo $dbSign4_2;?></textarea></td>
+						<select id="RecommendingApproval2Designation">
+							<option value="">Please Select Name</option>
+								<?php
+									$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+									$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+										while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+											$SignPosition = $RSTPosition['Position']; 
+								?>
+							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+								<?php } ?>
+						</select>
+						<span onclick="RecommendingApproval2Designation()"> GET </span>
+						<textarea placeholder="..." id="Sign4_2" name="Sign4_2" required><?php echo "$dbSign4_2";?></textarea>
+					</td>
 				</tr>
 				<tr>
 					<td>Approved by:</td>
 					<td>
-						<!-- <div class="checkbox10">
-								<label onclick="openForm10()">Select your name</label>
-						</div>
-							<div class="form-popup10" id="myForm10">
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="">
-									<span class="checkmark"></span>
-								</label>
-								<br>
-								<label class="check"><span>Sample</span>
-									<input type="checkbox" id="" value="" name="" onclick="S">
-									<span class="checkmark"></span>
-								</label>
-								<button type="button" class="btncancel" onclick="closeForm10()">CLOSE</button>
-							</div> -->
-					<textarea placeholder="..." name="Sign5_1" required><?php echo $dbSign5_1;?></textarea></td>
-					
+						<select id="ApprovedByName">
+							<option value="">Please Select Name</option>
+								<?php
+									$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+									$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+										while($RSTName = mysqli_fetch_array($CMDName)){
+											$Persons_Name = $RSTName['Persons_Name']; 
+								?>
+							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+							<?php } ?>
+						</select>
+						<span onclick="ApprovedByName()"> GET </span>
+						<textarea placeholder="..." id="Sign5_1" name="Sign5_1" required><?php echo "$dbSign5_1";?></textarea>
+					</td>
 					<td>
-					<textarea placeholder="..." name="Sign5_2" required><?php echo $dbSign5_2;?></textarea></td>
+						<select id="ApprovedByDesignation">
+							<option value="">Please Select Name</option>
+								<?php
+									$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+									$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+										while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+											$SignPosition = $RSTPosition['Position']; 
+								?>
+							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+								<?php } ?>
+						</select>
+						<span onclick="ApprovedByDesignation()"> GET </span>
+						<textarea placeholder="..." id="Sign5_2" name="Sign5_2" required><?php echo "$dbSign5_2";?></textarea>
+					</td>
 				</tr>
 			</table>
 			<div class="buttonBACK">
@@ -1161,20 +1159,41 @@ function SelectSDG(){
 }
 </script>
 
-<!-- <script>
+<script>
 //For Signatories Dropdown
-	function openForm2()  { document.getElementById("myForm2").style.display = "block"; }
-	function closeForm2() { document.getElementById("myForm2").style.display = "none"; }
-	
-	function openForm4()  { document.getElementById("myForm4").style.display = "block"; }
-	function closeForm4() { document.getElementById("myForm4").style.display = "none"; }
-	
-	function openForm6()  { document.getElementById("myForm6").style.display = "block"; }
-	function closeForm6() { document.getElementById("myForm6").style.display = "none"; }
-	
-	function openForm8()  { document.getElementById("myForm8").style.display = "block"; }
-	function closeForm8() { document.getElementById("myForm8").style.display = "none"; }
-	
-	function openForm10()  { document.getElementById("myForm10").style.display = "block"; }
-	function closeForm10() { document.getElementById("myForm10").style.display = "none"; }
-</script> -->
+function ReviewedByName(){
+	var x = document.getElementById("ReviewedByName").value;
+	document.getElementById("Sign2_1").value = x;
+}
+function ReviewByDesignation(){
+	var x = document.getElementById("ReviewByDesignation").value;
+	document.getElementById("Sign2_2").value = x;
+}
+
+function RecommendingApproval1Name(){
+	var x = document.getElementById("RecommendingApproval1Name").value;
+	document.getElementById("Sign3_1").value = x;
+}
+function RecommendingApproval1Designation(){
+	var x = document.getElementById("RecommendingApproval1Designation").value;
+	document.getElementById("Sign3_2").value = x;
+}
+
+function RecommendingApproval2Name(){
+	var x = document.getElementById("RecommendingApproval2Name").value;
+	document.getElementById("Sign4_1").value = x;
+}
+function RecommendingApproval2Designation(){
+	var x = document.getElementById("RecommendingApproval2Designation").value;
+	document.getElementById("Sign4_2").value = x;
+}
+
+function ApprovedByName(){
+	var x = document.getElementById("ApprovedByName").value;
+	document.getElementById("Sign5_1").value = x;
+}
+function ApprovedByDesignation(){
+	var x = document.getElementById("ApprovedByDesignation").value;
+	document.getElementById("Sign5_2").value = x;
+}
+</script>

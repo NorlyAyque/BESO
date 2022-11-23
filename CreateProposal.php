@@ -1013,8 +1013,10 @@ function SelectSDG(){
 			document.getElementById("SDG").value = result ;
 			//document.getElementById("Sign2_1").value = result;
 }
+</script>
 
 
+<script>
 //For Signatories Dropdown
 function ReviewedByName(){
 	var x = document.getElementById("ReviewedByName").value;
