@@ -6,6 +6,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+//Getting Session Variables from index.php
+$College = $_SESSION["College"];
+$Position = $_SESSION["Position"];
 ?>
 
 <!DOCTYPE html>
@@ -129,7 +133,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			<tr>
 				<th width="30px"> Proposal ID </th>
 				<th width="auto"> Title </th>
-				<th width="90px";> College</th>
+				<th width="auto";> College/Office</th>
 				<th width="180px";> Prepared By</th>
 				<th width="120px";> Status </th>
 				<th width="280px";>  </th>
@@ -146,19 +150,20 @@ while($result = mysqli_fetch_array($command))
 		$Title = $result ['Title'];
 		$PreparedBy = $result['Sign1_1'];
 		$Status = $result['ProjectStatus'];
+		$College = $result['Office'];
 
 		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
 		$command2 = $con->query($sql2) or die("Error SQL");
 		while($result2 = mysqli_fetch_array($command2))
 			{
-				$College = $result2['College'];
+				$Coll = $result2['College'];
 
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td style="text-align: justify;"><?php echo $Title; ?></p></td> 
 				<td><?php echo $College; ?></td> 
-				<td><?php echo $PreparedBy; ?></td> 
+				<td><?php echo $PreparedBy."<br>".$Coll; ?></td>
 				<td><?php echo $Status; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
@@ -171,7 +176,7 @@ while($result = mysqli_fetch_array($command))
 			</table>	
 		</div>
 	</div>
-	
+
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -262,8 +267,6 @@ if(isset($_GET['reject'])){
 		</script>";
 }
 
-
-
 ?>
 
 <script>
@@ -298,3 +301,13 @@ function Filter() {
 	}
 }
 </script>
+
+<?php
+if ($Position == "Coordinator" ){
+	echo "
+		<script> 
+			document.getElementById('CutOff').style.display = 'none';
+		</script>
+	";
+}
+?>

@@ -144,7 +144,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th width="100px"> Proposal ID</th>
 					<th width="auto"> Title </th>
 					<th width="140px"> Duration </th>
-					<th width="100px";> College </th>
+					<th width="auto";> College/Office</th>
 					<th width="140px";> Prepared By </th>
 					<th width="100px";> Last Monitored </th>
 					<th width="120px";> Remarks </th>
@@ -170,19 +170,20 @@ while($result = mysqli_fetch_array($command))
 		$PreparedBy = $result['Sign1_1'];
 		$Remarks_2 = $result['Remarks_2'];
 		$Remarks_3 = $result['Remarks_3'];
+		$College = $result['Office'];
 
 		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
 		$command2 = $con->query($sql2) or die("Error SQL");
 		while($result2 = mysqli_fetch_array($command2))
 			{
-				$College = $result2['College'];
+				$Coll = $result2['College'];
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $Date1 . " -<br>". $Date2;?></td> 
 				<td><?php echo $College; ?></p></td> 
-				<td><?php echo $PreparedBy; ?></td> 
+				<td><?php echo $PreparedBy."<br>".$Coll; ?></td>
 				<td><?php echo $Remarks_2; ?></td> 	
 				<td><?php echo $Remarks_3; ?></td> 	
 				<td>

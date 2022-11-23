@@ -137,7 +137,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				<tr>
 					<th width="30px"> Proposal ID </th>
 					<th width="auto"> Title </th>
-					<th width="90px";> College</th>
+					<th width="auto";> College/Office</th>
 					<th width="180px";> Prepared By</th>
 					<th width="120px";> Status </th>
 					<th width="250px";>  </th>
@@ -154,18 +154,19 @@ while($result = mysqli_fetch_array($command))
 		$Title = $result['Title'];
 		$PreparedBy = $result['Sign1_1'];
 		$Status = $result['ProjectStatus'];	
+		$College = $result['Office'];
 
 		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
 		$command2 = $con->query($sql2) or die("Error SQL");
 		while($result2 = mysqli_fetch_array($command2))
 			{
-				$College = $result2['College'];
+				$Coll = $result2['College'];
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></td> 
 				<td><?php echo $College; ?></td> 
-				<td><?php echo $PreparedBy; ?></td> 
+				<td><?php echo $PreparedBy."<br>".$Coll; ?></td> 
 				<td><?php echo $Status; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Rbtn">View</button> </a>

@@ -145,7 +145,7 @@ if(isset($_GET['verify'])){
 ?>
 		<table class="proposals" id="MyTable">
 			<tr>
-				<th colspan="7">
+				<th colspan="8">
 					<div class="menu">
 						<a href="Monitoring.php" button class = "nav1"> List<ion-icon name="list-outline"></ion-icon></a></button>
 						<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
@@ -157,20 +157,21 @@ if(isset($_GET['verify'])){
 			</tr>
 
 			<tr  class="title">
-				<th colspan="7" ><center>LIST OF EXTENSION PAPs FOR MONITORING </center> </th> 
+				<th colspan="8" ><center>LIST OF EXTENSION PAPs FOR MONITORING </center> </th> 
 			</tr>
 			<tr>
-				<th colspan="7"> 
+				<th colspan="8"> 
 					<div class="Drp">
 					Select Column to filter: 
 						<select name="column" id="column">
 							<option value="">Select Column</option>
 							<option value="1">Proposal ID</option>
 							<option value="2">Title</option>
-							<option value="3">College</option>
-							<option value="4">End Date</option>
-							<option value="5">Monitoring</option>
-							<option value="6">Last Monitored</option>
+							<option value="3">Prepared By</option>
+							<option value="4">College</option>
+							<option value="5">End Date</option>
+							<option value="6">Monitoring</option>
+							<option value="7">Last Monitored</option>
 						</select>
 					
 					Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
@@ -180,11 +181,12 @@ if(isset($_GET['verify'])){
 			<tr>
 				<th width="50px"> Proposal ID </th>
 				<th width="auto"> Title </th>
-				<th width="90px";> College</th>
-				<th width="130px";> End Date </th>
-				<th width="120px";> Monitoring</th> <!-- Frequency (Monthly, Quarterly, Semi-Annually, Yearly) -->
+				<th width="auto";> College/Office</th>
+				<th width="180px";> Prepared By</th>
+				<th width="100px";> End Date </th>
+				<th width="100px";> Monitoring</th> <!-- Frequency (Monthly, Quarterly, Semi-Annually, Yearly) -->
 				<th width="120px";> Last Monitored</th> <!-- Remarks_2 in Create Proposal table-->
-				<th width="220x";>  </th> <!-- Buttons, View and Create Monitoring -->
+				<th width="165px";>  </th> <!-- Buttons, View and Create Monitoring -->
 			</tr>
 <?php
 
@@ -199,22 +201,25 @@ while($result = mysqli_fetch_array($command))
 		$End_Date = $result['End_Date']; $date = date_create("$End_Date");
 		$Frequency = $result['Frequency'];
 		$Remarks = $result['Remarks_2']; //Monitored. Date
+		$PreparedBy = $result['Sign1_1'];
+		$College = $result['Office'];
 
 		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
 		$command2 = $con->query($sql2) or die("Error SQL");
 		while($result2 = mysqli_fetch_array($command2))
 			{
-				$College = $result2['College'];
+				$Coll = $result2['College'];
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $College; ?></td> 
+				<td><?php echo $PreparedBy."<br>".$Coll; ?></td>
 				<td><?php echo $dt = date_format($date,"M, d Y"); ?></td> 
 				<td><?php echo $Frequency; ?></td> 	
 				<td><?php echo $Remarks; ?></td> 	
 				<td>
-					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
+					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a> <br><br>
 					<!-- <a href="CreateMonitoring.php?create=<?php //echo $PID; ?>" button class ="Pbtn2">CREATE MONITORING</button> </a> -->
 					<a href="Monitoring.php?verify=<?php echo $PID; ?>&EndDate=<?php echo $dt; ?>" button class ="Pbtn2">CREATE MONITORING</button> </a> 
 					
@@ -303,6 +308,8 @@ function Filter() {
 	else if (x == "4"){var SelectedColumn = 3;}	
 	else if (x == "5"){var SelectedColumn = 4;}	
 	else if (x == "6"){var SelectedColumn = 5;}	
+	else if (x == "7"){var SelectedColumn = 6;}	
+	
 	
 	var input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("keyword");

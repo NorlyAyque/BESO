@@ -145,9 +145,9 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				<tr>
 					<th width="80px"> Proposal ID</th>
 					<th width="auto"> Title </th>
-					<th width="90px"> Year </th> <!-- Project Status -->
-					<th width="90px"> College </th> <!-- Project Status -->
-					<th width="100px"> Proposal </th> <!-- Project Status -->
+					<th width="90px"> Year </th> 
+					<th width="auto";> College/Office</th>
+					<th width="100px"> Proposal </th> 
 					<th width="100px";> Evaluation </th> <!-- Remarks -->
 					<th width="120px";> Last Monitored </th> <!-- Remarks_2 -->
 					<th width="120px";> Impact Assessment </th> <!-- Remarks_3 -->
@@ -172,12 +172,13 @@ while($result = mysqli_fetch_array($command))
 		$R1 = $result ['Remarks']; //For Evaluation
 		$R2 = $result['Remarks_2']; //For Monitoring
 		$R3 = $result['Remarks_3']; // For Impact Assessment
+		$College = $result['Office'];
 
 		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
 		$command2 = $con->query($sql2) or die("Error SQL");
 		while($result2 = mysqli_fetch_array($command2))
 			{
-				$College = $result2['College'];
+				$Coll = $result2['College']; //Not Used
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>

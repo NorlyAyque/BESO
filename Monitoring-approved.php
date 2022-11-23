@@ -129,7 +129,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th width="100px"> Monitoring ID </th>
 					<th width="100px"> Proposal ID </th>
 					<th width="auto"> Title </th>
-					<th width="90px";> College</th>
+					<th width="auto";> College/Office</th>
 					<th width="180px";> Prepared By</th>
 					<th width="120px";> Last Monitored</th>
 					<th width="120px";>  </th>
@@ -146,12 +146,13 @@ while($result = mysqli_fetch_array($command))
 		$Title = $result ['Title'];
 		$PreparedBy = $result['Sign1_1'];
 		$Remarks = $result['Last_Monitored']; //Monitored. Date
+		$College = $result['Office'];
 
 		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
 		$command2 = $con->query($sql2) or die("Error SQL");
 		while($result2 = mysqli_fetch_array($command2))
 			{
-				$College = $result2['College'];
+				$Coll = $result2['College'];
 ?>
 
 			<tr class="inputs">
@@ -159,7 +160,7 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
 				<td><?php echo $College; ?></td> 
-				<td><?php echo $PreparedBy; ?></td>
+				<td><?php echo $PreparedBy."<br>".$Coll; ?></td>
 				<td><?php echo $Remarks; ?></td> 	 	
 				<td>
 					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
