@@ -142,7 +142,7 @@ include_once ("Dashboard-Computations.php");
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> <!-- For Graph -->
 </head>
 
-<body>
+<body onload="DisplayCharts()">
 
 <div class="container">
 	
@@ -221,9 +221,11 @@ include_once ("Dashboard-Computations.php");
 			</div>
 			<div class ="scroll">
 
-			<!-- Graph -->
+<!-- Graph -->
 <center>
-	<div id="chartContainer" style="height: 250px; width: 250px;"></div>
+	<div id="ChartCEAFA" style="height: 350px; width: 400px;"></div>
+	<div id="ChartCICS" style="height: 350px; width: 400px;"></div>
+	<div id="ChartCIT" style="height: 350px; width: 400px;"></div>
 </center>
 
 <form action="" method="POST">
@@ -866,37 +868,169 @@ if (isset($_POST['Savebtn'])) { //For update
 ?>
 
 <?php
-$dataPoints_CICS_Q1 = array(
-	array("label"=> "Target", "y"=> $dbCEAFA_AQ1),
-	array("label"=> "Actual", "y"=> $dbCEAFA_BQ1)
+//CEFA
+$dataPointsCEAFA_A = array(
+	array("label"=> "Q1", "y"=> $dbCEAFA_AQ1),
+	array("label"=> "Q2", "y"=> $dbCEAFA_AQ2),
+	array("label"=> "Q3", "y"=> $dbCEAFA_AQ3),
+	array("label"=> "Q4", "y"=> $dbCEAFA_AQ4)
+);
+$dataPointsCEAFA_B = array(
+	array("label"=> "Q1", "y"=> $dbCEAFA_BQ1),
+	array("label"=> "Q2", "y"=> $dbCEAFA_BQ2),
+	array("label"=> "Q3", "y"=> $dbCEAFA_BQ3),
+	array("label"=> "Q4", "y"=> $dbCEAFA_BQ4)
+);
+
+//CICS
+$dataPointsCICS_A = array(
+	array("label"=> "Q1", "y"=> $dbCICS_AQ1),
+	array("label"=> "Q2", "y"=> $dbCICS_AQ2),
+	array("label"=> "Q3", "y"=> $dbCICS_AQ3),
+	array("label"=> "Q4", "y"=> $dbCICS_AQ4)
+);
+$dataPointsCICS_B = array(
+	array("label"=> "Q1", "y"=> $dbCICS_BQ1),
+	array("label"=> "Q2", "y"=> $dbCICS_BQ2),
+	array("label"=> "Q3", "y"=> $dbCICS_BQ3),
+	array("label"=> "Q4", "y"=> $dbCICS_BQ4)
+);
+
+//CIT
+$dataPointsCIT_A = array(
+	array("label"=> "Q1", "y"=> $dbCIT_AQ1),
+	array("label"=> "Q2", "y"=> $dbCIT_AQ2),
+	array("label"=> "Q3", "y"=> $dbCIT_AQ3),
+	array("label"=> "Q4", "y"=> $dbCIT_AQ4)
+);
+$dataPointsCIT_B = array(
+	array("label"=> "Q1", "y"=> $dbCIT_BQ1),
+	array("label"=> "Q2", "y"=> $dbCIT_BQ2),
+	array("label"=> "Q3", "y"=> $dbCIT_BQ3),
+	array("label"=> "Q4", "y"=> $dbCIT_BQ4)
 );
 ?>
 
-<script>
-//let Color = "yellow";
+<script type="text/javascript">
+function DisplayCharts(){
+	var chartCEAFA = new CanvasJS.Chart("ChartCEAFA", {
+		animationEnabled: true,
+		theme: "light2",
+		title:{ text: "CEAFA"},
+		axisY:{ includeZero: true },
+		legend:{
+			cursor: "pointer",
+			verticalAlign: "center",
+			horizontalAlign: "right",
+			itemclick: toggleDataSeries
+		},
+		data: [{
+			type: "column",
+			name: "Target",
+			indexLabel: "{y}",
+			indexLabelFontColor: "black",
+			showInLegend: true,
+			color: "#b3b3b3", //Target
+			dataPoints: <?php echo json_encode($dataPointsCEAFA_A, JSON_NUMERIC_CHECK); ?>
+		},{
+			type: "column",
+			name: "Actual",
+			indexLabel: "{y}",
+			indexLabelFontColor: "black",
+			showInLegend: true,
+			color: "#ff6242", //Actual
+			dataPoints: <?php echo json_encode($dataPointsCEAFA_B, JSON_NUMERIC_CHECK); ?>
+		}]
+	});
+	chartCEAFA.render();
+ 	function toggleDataSeries(e){
+		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+			e.dataSeries.visible = false;
+		}else{
+			e.dataSeries.visible = true;
+		}
+		chartCEAFA.render();
+	}
 
-//Graph
-window.onload = function () {
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	exportEnabled: true,
-	theme: "light1", // "light1", "light2", "dark1", "dark2"
-	title:{
-		text: "CICS Q1"
-	},
-	axisY:{
-		includeZero: true
-	},
-	data: [{
-		type: "column", //change type to bar, line, area, pie, etc
-		indexLabel: "{y}", //Shows y value on all Data Points
-		indexLabelFontColor: "#5A5757",
-		indexLabelBackgroundColor: "red",
-		indexLabelPlacement: "outside",  
-		dataPoints: <?php echo json_encode($dataPoints_CICS_Q1, JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chart.render();
- 
+
+
+	var chartCICS = new CanvasJS.Chart("ChartCICS", {
+		animationEnabled: true,
+		theme: "light2",
+		title:{ text: "CICS"},
+		axisY:{ includeZero: true },
+		legend:{
+			cursor: "pointer",
+			verticalAlign: "center",
+			horizontalAlign: "right",
+			itemclick: toggleDataSeries
+		},
+		data: [{
+			type: "column",
+			name: "Target",
+			indexLabel: "{y}",
+			indexLabelFontColor: "black",
+			showInLegend: true,
+			color: "#b3b3b3", //Target
+			dataPoints: <?php echo json_encode($dataPointsCICS_A, JSON_NUMERIC_CHECK); ?>
+		},{
+			type: "column",
+			name: "Actual",
+			indexLabel: "{y}",
+			indexLabelFontColor: "black",
+			showInLegend: true,
+			color: "#ff6242", //Actual
+			dataPoints: <?php echo json_encode($dataPointsCICS_B, JSON_NUMERIC_CHECK); ?>
+		}]
+	});
+	chartCICS.render();
+ 	function toggleDataSeries(e){
+		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+			e.dataSeries.visible = false;
+		}else{
+			e.dataSeries.visible = true;
+		}
+		chartCICS.render();
+	}
+
+
+	var chartCIT = new CanvasJS.Chart("ChartCIT", {
+		animationEnabled: true,
+		theme: "light2",
+		title:{ text: "CIT"},
+		axisY:{ includeZero: true },
+		legend:{
+			cursor: "pointer",
+			verticalAlign: "center",
+			horizontalAlign: "right",
+			itemclick: toggleDataSeries
+		},
+		data: [{
+			type: "column",
+			name: "Target",
+			indexLabel: "{y}",
+			indexLabelFontColor: "black",
+			showInLegend: true,
+			color: "#b3b3b3", //Target
+			dataPoints: <?php echo json_encode($dataPointsCIT_A, JSON_NUMERIC_CHECK); ?>
+		},{
+			type: "column",
+			name: "Actual",
+			indexLabel: "{y}",
+			indexLabelFontColor: "black",
+			showInLegend: true,
+			color: "#ff6242", //Actual
+			dataPoints: <?php echo json_encode($dataPointsCIT_B, JSON_NUMERIC_CHECK); ?>
+		}]
+	});
+	chartCIT.render();
+ 	function toggleDataSeries(e){
+		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+			e.dataSeries.visible = false;
+		}else{
+			e.dataSeries.visible = true;
+		}
+		chartCIT.render();
+	}
 }
 </script>
