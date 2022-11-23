@@ -17,7 +17,7 @@ $Position = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Proposals</title>
-<link rel="stylesheet" type="text/css" href="styles/ProposalSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Proposal-STYLE.css">
 
 </head>
 <body>
@@ -40,14 +40,19 @@ $Position = $_SESSION["Position"];
 			</li>
 			<li>
 				<a href="CreateProposal.php">
-					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
+					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> 
+					</span>
 					<span class ="title"> Create Proposal</span>
 				</a>
 			</li>
 			<li>
 				<a class="active" href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
-					<span class ="title"> Project Proposals</span>
+					
+					<span class ="title" ><u style="text-decoration-thickness:3px; text-underline-position: under";> Project Proposals</u></span>
+					<div class="notifDASH">
+							<span class="icon-buttonDASH">44</span>
+						</div>
 				</a>
 			</li>
 			

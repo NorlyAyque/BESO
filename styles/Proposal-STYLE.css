@@ -174,12 +174,13 @@ body{
 	pointer-events:none;
 }
 
-.navigation li .active{
+/*
+.navigation li .title{
 text-decoration: underline;
 text-underline-position: under;
 text-decoration-thickness:3px;
 }
-
+*/
 
 /***Main***/
 .main{
@@ -218,29 +219,59 @@ margin-left: 100px;
 
 /*******  NOTIFICATION NUMBER***************/
 .notif{
-	
+
 margin-top:-30px;
 display:flex;
 position:abosolute;
 }
+
 .icon-button__badge {
 	margin-left:-60px;
-	margin-top:-2px;
-	width:30px;
-	height:30px;
+	margin-top:-1px;
+	width:28px;
+	height:28px;
 	background: white;
 	color:black;
-	border-radius:50%;
+	border-radius:25%;
 	justify-content:center;
 	align-items:center;
 	text-align:center;
 	display:flex;
 	position:abosolute;
-	 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-	 
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-size:13px;
+
+}
+
+.notifDASH{
+	
+margin-left:-25px;
+display:flex;
+position:abosolute;
+	
+
+}
+
+.icon-buttonDASH {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
 
 
 }
+
 
 
 
