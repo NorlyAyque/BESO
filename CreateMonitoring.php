@@ -78,7 +78,7 @@ if(isset($_GET['create'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/CreateMonitoring-style.css">
+<link rel="stylesheet" type="text/css" href="styles/CreateMonitoring.css">
 
 </head>
 <body>
@@ -411,6 +411,10 @@ if(isset($_GET['create'])){
 					<textarea placeholder="..." name="Sign3_2" required><?php echo ""; ?></textarea></td>
 				</tr>
 			</table>
+			
+			<div class="buttonBACK">
+				<a href="" class="btnB"> Back </a></button>
+			</div>
 			<div class ="save">
 				<button class = "btn3" type="submit" name="submit"> Save </button>
 			</div>

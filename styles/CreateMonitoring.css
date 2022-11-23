@@ -339,32 +339,6 @@ cursor: pointer;
 
 
 
-
-.save{
-		margin-top:10px;
-		text-align: right;
-		margin-right:15px;
-		margin-bottom: 10px;
-}
- .btn3 {
-  margin-right:5px;
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-
-}
-
 .btn3:hover {
   background-color:  #4CAF20;
   color: white;
@@ -544,4 +518,56 @@ cursor: pointer;
 .Tfinancial td:hover {
 background-color: lightgrey;
 cursor: pointer;
+}
+
+.save{
+		margin-top:-45px;
+		text-align: right;
+		margin-right:15px;
+		margin-bottom: 10px;
+}
+ .btn3 {
+  margin-right:5px;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+
+}
+
+.buttonBACK {
+	text-align: left;
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom:10px;
+}
+ .btnB {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  text-align:left;
+ 
+  
+}
+.buttonBACK .btnB:hover {
+  background-color:  #4CAF20;
+  color: white;
 }
