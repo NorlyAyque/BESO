@@ -7,6 +7,8 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+date_default_timezone_set('Asia/Manila');
 ?>
 
 <!DOCTYPE html>
@@ -94,8 +96,13 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			<div class="topbar">
 				
 			</div>
-			<br><br><br><br><br>
-	
+			
+
+
+	<p align ="center"> <?php echo date("F d, Y")?> </p>
+	<p align ="center"> <?php echo date("h:i:s a")?> </p>
+	<br>
+
 			<center> 
 				<h2> Current Set Year <u> <?php echo "$CustomYear";?> </u>
 				and Quarter <u><?php echo "$CustomQuarter";?> </u></h2>
@@ -116,7 +123,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<td>
 						<form action="" method="POST">	
 							<div class ="Year">
-								<input type="number" min="0" id="Year" name="Year" placeholder="type here.." required> 
+								<input type="number" min="0" id="Year" name="Year" value = "<?php echo "$CustomYear";?>" placeholder="type here.." required> 
 							</div>
 							
 							<div class="tbcreate">
