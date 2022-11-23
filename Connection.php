@@ -20,4 +20,13 @@ while($output = mysqli_fetch_array($x))
 	$CustomQuarter = $output["Quarter"];
 }
 
+//Set Department/College
+$CICS = strtoupper("CICS");
+$CICS_Full = strtoupper("College of Informatics and Computing Sciences");
+
+$CIT = strtoupper("CIT");
+$CIT_Full = strtoupper("College of Industrial Technology");
+
+$CEAFA = strtoupper("CEAFA");
+$CEAFA_Full = strtoupper("College of Engineering, Architecture and Fine Arts");
 ?>

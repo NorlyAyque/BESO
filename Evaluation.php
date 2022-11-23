@@ -277,16 +277,7 @@ if(isset($_GET['approved'])){
 		$Office = strtoupper($word);
 	}
 
-	
-	$CICS = strtoupper("CICS");
-	$CICS_Full = strtoupper("College of Informatics and Computing Sciences");
-
-	$CIT = strtoupper("CIT");
-	$CIT_Full = strtoupper("College of Industrial Technology");
-
-	$CEAFA = strtoupper("CEAFA");
-	$CEAFA_Full = strtoupper("College of Engineering, Architecture and Fine Arts");
-	
+	//Words are in Connection.php
 	// Test if string contains the word 
 	if (((str_contains($Office, $CEAFA)) == TRUE) OR ((str_contains($Office, $CEAFA_Full)) == TRUE)) {
 		if ($CustomQuarter == 1){//For CEAFA Actual Quarter 1

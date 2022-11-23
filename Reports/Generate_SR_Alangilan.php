@@ -27,14 +27,6 @@ if((isset($_GET['Year']) == FALSE) AND (isset($_GET['Quarter'])== FALSE)) {
 $Fullname = $_SESSION["FullName"];
 $Position = $_SESSION["Position"];
 
-$CIT = "CIT";
-$CIT_Full = "College of Industrial Technology";
-
-$CICS = "CICS";
-$CICS_Full = "College of Informatics and Computing Sciences";
-
-$CEAFA = "CEAFA";
-$CEAFA_Full = "College of Engineering, Architecture and Fine Arts";
 ?>
 
 

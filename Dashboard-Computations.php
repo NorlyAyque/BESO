@@ -10,16 +10,6 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 *					ALANGILAN CAMPUS					   *
 ************************************************************/														
 
-//Set Department/College
-$CIT = "CIT";
-$CIT_Full = "College of Industrial Technology";
-
-$CICS = "CICS";
-$CICS_Full = "College of Informatics and Computing Sciences";
-
-$CEAFA = "CEAFA";
-$CEAFA_Full = "College of Engineering, Architecture and Fine Arts";
-
 //Variables to be used in Number of Trainees weight by length of training - T
 $T_R1Q1 = $T_R1Q2 = $T_R1Q3 = $T_R1Q4 = $T_R1_T = 0;
 $T_R2Q1 = $T_R2Q2 = $T_R2Q3 = $T_R2Q4 = $T_R2_T = 0;
