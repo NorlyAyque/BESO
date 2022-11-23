@@ -32,7 +32,7 @@ $Position = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Generate QMR - CIT</title>
-<link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad.css">
+<link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad-STYLE.css">
 </head>
 
 <body>
@@ -222,14 +222,15 @@ while($result = mysqli_fetch_array($command))
 	
 	<table class="signatories">
 		<tr>
-			<th>Prepared by:</th>
-			<th>Reviewed by:</th>
-			<th>Approved by:</th>
-			<th>Received by:</th>
+			<th >Prepared by:</th>
+			<th  >Reviewed by:</th>
+			<th  >Approved by:</th>
+			<th  >Received by:</th>
 		</tr>
 		<tr>
 			<!-- PREPARED BY -->
 			<td>
+			<div class="DrpSigna">
 				<select id="PreparedByName">
 				<option value="">Please Select Name</option>
 					<?php
@@ -241,9 +242,8 @@ while($result = mysqli_fetch_array($command))
 				<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 					<?php } ?>
 				</select>
-								
-				<br>
-
+			</div>			
+			<div class="DrpSigna">	
 				<select id="PreparedByDesignation">
 					<option value="">Please Select Designation</option>
 						<?php
@@ -255,12 +255,16 @@ while($result = mysqli_fetch_array($command))
 				<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 					<?php } ?>
 				</select>
-				<button id = "BtnPreparedBy" onclick="PreparedBy()"> GET </button>
+			</div>
+			<div class="Getbtn">
+				<button id = "BtnPreparedBy" onclick="PreparedBy()"> ✓  </button>
+			</div>
 				<textarea id = "PreparedByField" placeholder="type here..."><?php echo strtoupper($Fullname)."\n".$Position;?></textarea>Date Signed:
 			</td>
 			
 			<!-- REVIEWED BY -->
 			<td>
+			<div class="DrpSigna">
 				<select id="ReviewedByName">
 					<option value="">Please Select Name</option>
 						<?php
@@ -272,9 +276,9 @@ while($result = mysqli_fetch_array($command))
 					<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 						<?php } ?>
 				</select>
-									
-				<br>
-
+			</div>				
+			
+			<div class="DrpSigna">
 				<select id="ReviewedByDesignation">
 					<option value="">Please Select Designation</option>
 						<?php
@@ -286,12 +290,16 @@ while($result = mysqli_fetch_array($command))
 					<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 						<?php } ?>
 				</select>
-				<button id = "BtnReviewedBy" onclick="ReviewedBy()"> GET </button>
+			</div>
+			<div class="Getbtn">
+				<button id = "BtnReviewedBy" onclick="ReviewedBy()"> ✓ </button>
+			</div>
 				<textarea id="ReviewedByField" placeholder="type here..."></textarea>Date Signed:
 			</td>
 
 			<!-- APPROVED BY -->
 			<td>
+			<div class="DrpSigna">
 				<select id="ApprovedByName">
 					<option value="">Please Select Name</option>
 						<?php
@@ -303,9 +311,9 @@ while($result = mysqli_fetch_array($command))
 					<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 						<?php } ?>
 				</select>
-									
-				<br>
-
+			</div>				
+				
+			<div class="DrpSigna">
 				<select id="ApprovedByDesignation">
 					<option value="">Please Select Designation</option>
 						<?php
@@ -317,12 +325,16 @@ while($result = mysqli_fetch_array($command))
 					<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 						<?php } ?>
 				</select>
-				<button id = "BtnApprovedBy" onclick="ApprovedBy()"> GET </button>
+			</div>
+			<div class="Getbtn">
+				<button id = "BtnApprovedBy" onclick="ApprovedBy()"> ✓ </button>
+			</div>	
 				<textarea id="ApprovedByField" placeholder="type here..."></textarea>Date Signed:
 			</td>
 
 			<!-- RECEIVED BY -->
 			<td>
+			<div class="DrpSigna">
 				<select id="ReceivedName">
 					<option value="">Please Select Name</option>
 						<?php
@@ -334,9 +346,9 @@ while($result = mysqli_fetch_array($command))
 					<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 						<?php } ?>
 				</select>
-									
-				<br>
-
+			</div>				
+				
+			<div class="DrpSigna">
 				<select id="ReceivedDesignation">
 					<option value="">Please Select Designation</option>
 						<?php
@@ -348,7 +360,10 @@ while($result = mysqli_fetch_array($command))
 					<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 						<?php } ?>
 				</select>
-				<button id = "BtnReceived" onclick="Received()"> GET </button>
+			</div>
+			<div class="Getbtn">
+				<button id = "BtnReceived" onclick="Received()"> ✓ </button>
+			</div>	
 				<textarea id="ReceivedField" placeholder="type here..."></textarea>Date Signed:
 			</td>
 		</tr>

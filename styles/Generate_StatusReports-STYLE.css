@@ -45,6 +45,9 @@
 .header3 td,th{
 	border:1px solid black;
 }
+.header3 th{
+	padding:5px;
+}
 
 ::-webkit-resizer {
   display: none;
@@ -81,4 +84,50 @@ textarea::-webkit-scrollbar {
 	font-size:15px;
 	padding:5px;
 	border:none;
+}
+/******************** SIGNATORIES STYLE ********************************/
+.DrpSigna{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.DrpSigna select{
+
+  background: #f1f1f1;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  padding: 10px;
+ margin-bottom:20px;
+  margin-top:3px;
+  border:none;
+  text-align:center;
+  width:100%;
+  font-size:13px;
+  
+}
+.DrpSigna option{
+	
+	cursor:pointer;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+
+
+.Getbtn button {
+font-weight:bold;
+border:1px solid green;
+cursor:pointer;
+display:flex;
+padding:5px 10px;
+margin:auto;
+border-radius:5px;
+margin-top:-10px;
+margin-bottom:15px;
+}
+
+.Getbtn button:hover{
+	background-color:#38E54D;
+	color:white;
+	cursor:pointer;
 }
