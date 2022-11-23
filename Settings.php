@@ -323,6 +323,3 @@ if(isset($_GET['delete'])){
 		</script>";
 }
 ?>
-
-
-
