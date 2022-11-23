@@ -126,6 +126,7 @@ if ($CurrentQuarter != $CustomQuarter){
 				echo "</table>";
                
 				?> 
-	</div>		
+	</label>
+</div>		
 </body>
 </html>
