@@ -101,7 +101,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Edit Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/EditEvaluation.css">
+<link rel="stylesheet" type="text/css" href="styles/EditEvaluation-style.css">
 
 </head>
 <body>

@@ -82,7 +82,7 @@ if(isset($_GET['evaluation'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/Evaluation.css">
+<link rel="stylesheet" type="text/css" href="styles/CreateEvaluation.css">
 
 </head>
 <body>

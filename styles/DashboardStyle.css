@@ -208,8 +208,27 @@ margin-left: 100px;
 	align-items: center;
 	font-size:30px;
 	cursor: pointer;
+	margin-top:10px;
+	margin-left: 30px;
 	color:white;
 	margin-bottom:-30px;
+}
+
+
+.graph{
+	margin-top:10px;
+	display:flex;
+justify-content: center;
+margin-left:40px;
+
+}
+
+#ChartCICS{
+	margin-left:45px;
+	
+}
+#ChartCIT{
+	margin-left:45px;
 }
 /*
 .profile{

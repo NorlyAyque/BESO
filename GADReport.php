@@ -13,7 +13,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>GAD Report</title>
-<link rel="stylesheet" type="text/css" href="styles/DashReports.css">
+<link rel="stylesheet" type="text/css" href="styles/Reports-style.css">
 
 </head>
 <body>

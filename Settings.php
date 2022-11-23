@@ -16,7 +16,7 @@ date_default_timezone_set('Asia/Manila');
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Settings</title>
-<link rel="stylesheet" type="text/css" href="styles/Settings.css">
+<link rel="stylesheet" type="text/css" href="styles/Settings-style.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
@@ -96,15 +96,30 @@ date_default_timezone_set('Asia/Manila');
 			<div class="topbar">
 				
 			</div>
-			
-	<p align ="center"> <?php echo date("F d, Y")?> </p>
-	<p align ="center"> <?php echo date("h:i:s a")?> </p>
+			<table class="TimeDate">
+				<tr>
+					<td>
+						<?php echo date("F d, Y")?>
+					</td>
+				</tr>
+				<tr>
+					<td><p id="current-time"></p></td>
+				</tr>
+			</table>
+	
 	<br>
 
 			<center> 
 				<h2> Current Set Year <u> <?php echo "$CustomYear";?> </u>
 				and Quarter <u><?php echo "$CustomQuarter";?> </u></h2>
 			</center>
+	
+			
+			
+			<table>
+				<tr>
+				
+			
 			
 			<table class="settings">	
 					
@@ -113,8 +128,8 @@ date_default_timezone_set('Asia/Manila');
 					
 				</tr>			
 				<tr>
-					<th>Set Year</th>
-					<th>Set Quarter </th>
+					<th width="50%";>Set Year</th>
+					<th width="50%";>Set Quarter </th>
 				</tr>	
 				
 				<tr>
@@ -150,34 +165,52 @@ date_default_timezone_set('Asia/Manila');
 					</td> 
 				</tr>
 			</table>
-
-			<table class="settings"> <!-- For Signaotries -->
+			<table class="signatories">	
 					
 				<tr>
 					<th colspan="2"><h3>Add Signatories</h3></i></th>
 					
 				</tr>			
 				<tr>
-					<th>NAME</th>
-					<th> POSITION </th>
+					<th width="50%";>Name </th>
+					<th width="50%";>Position </th>
 				</tr>	
 				
 				<tr>
-					<td align="center">
-						<form action="" method="POST"> <!-- Do not Delete Form -->
-							<input type="text" name="PersonsName" placeholder="type here.." required> 
-							<input type="submit" name="SubmitName" value=" SAVE">
+					<td>
+						<form action="" method="POST">	
+							<div class ="Name">
+								<input type="text" name="PersonsName" placeholder="type here.." required> 
+							</div>
+							<div class="tbcreate">
+								<input type="submit" name="SubmitName" value=" SAVE" class = "SaveName">
+							</div>
 						</form>
 					</td> 
-
-					<td align="center">
-						<form action="" method="POST">	<!-- Do not Delete Form -->
-							<input type="text" name="PersonsPosition" placeholder="type here.." required> 
-							<input type="submit" name="SubmitPosition"  value="SAVE">
+					<td>
+						<form action="" method="POST">
+							<div class ="Position">
+								<input type="text" name="PersonsPosition" placeholder="type here.." required> 
+							</div>
+							<div class="tbcreate">
+								<input type="submit" name="SubmitPosition"  value="SAVE" class="SavePos">
+							</div>
 						</form>
 					</td> 
 				</tr>
 			</table>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		</div>
 	</div>
 	
@@ -267,6 +300,23 @@ date_default_timezone_set('Asia/Manila');
 	}
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
+	</script>
+	
+	
+	<script>
+	// For date and Time
+	let time = document.getElementById("current-time");
+	
+	
+	setInterval(()=>{
+		let d = new Date();
+		time.innerHTML = d.toLocaleTimeString();
+	},1000)
+		
+	</script>
+	<script>
+	var time = new Date();
+var date = time.getFullYear()+'-'+(time.getMonth()+1)+'-'+time.getDate();
 	</script>
 <body>
 </html>

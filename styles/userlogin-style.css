@@ -1,0 +1,57 @@
+.text{
+	margin-top:5px;
+	color:white;
+	 text-align:center;
+	 font-weight:bold;
+	 box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+	 padding:5px;
+
+ }
+ .text1{
+	margin-top:5px;
+	 text-align:center;
+	 font-size:12px;
+	 color:white;
+
+ }
+
+.profile {
+	
+	width:80px;
+	height:80px;
+	color:green;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	border-radius:50%;
+	color:white;
+	
+}
+
+
+
+.Tuser{
+	 
+	margin-top:20px;
+	margin-right:10px;
+	margin-bottom:10px;
+	
+	
+	
+}
+
+
+.Tuser table,td{
+	border: none;
+	border-collapse: collapse;
+
+	
+}
+
+.Tuser .logo td:nth-child(1){
+	border:none;
+	text-align:center;
+	
+}
+.BESOTITLE{
+	color:white;
+	margin-right:10px;
+}

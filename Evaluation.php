@@ -14,7 +14,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/EvaluationReport.css">
+<link rel="stylesheet" type="text/css" href="styles/EvaluationReport-style.css">
 
 </head>
 <body>

@@ -16,7 +16,7 @@ date_default_timezone_set("Asia/Manila");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring - Pending</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReport-style.css">
 
 </head>
 <body>

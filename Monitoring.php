@@ -17,7 +17,7 @@ $DateToday = date("Y-m-d"); //YYYY-mm-dd
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReport-style.css">
 
 </head>
 <body>
