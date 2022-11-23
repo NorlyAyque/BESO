@@ -42,9 +42,9 @@ $CICS_Full = "College of Informatics and Computing Sciences";
 </head>
 <body>
 <div class="content">
-<div class="print">
-	<button id="print_button"> PRINT </button>
-</div>
+	<div class="print">
+		<button id="myBtn" onclick="ButtonClick()"> PRINT </button>
+	</div>
 <table class="header1">
 		<tr>
 			<td colspan="3"><img src ="../images/logo.png" class="logo">Reference No. : BatStateU-FO-ESO-03</td>
@@ -177,17 +177,103 @@ while($result = mysqli_fetch_array($command))
 		</tr>
 <?php }}?>
 
-		<tr >
-			<th colspan="3">Prepared by:</th>
-			<th colspan="4">Reviewed by:</th>
-			<th colspan="3">Approved by:</th>
+<!-- SIGNATORIES -->
+		<tr>
+			<th colspan="3">
+				<p align="left">Prepared by: </p>
+				<select id="PreparedByName">
+				<option value="">Please Select Name</option>
+					<?php
+						$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+						$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+							while($RSTName = mysqli_fetch_array($CMDName)){
+								$Persons_Name = $RSTName['Persons_Name']; 
+					?>
+				<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+					<?php } ?>
+				</select>
+								
+				<br>
+
+				<select id="PreparedByDesignation">
+					<option value="">Please Select Designation</option>
+						<?php
+							$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+							$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+								while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+									$SignPosition = $RSTPosition['Position']; 
+					?>
+				<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+					<?php } ?>
+				</select>
+				<button id = "BtnPreparedBy" onclick="PreparedBy()"> GET </button>
+				<p class="signatories"> <textarea id="PreparedByField" placeholder="type here..."><?php echo strtoupper($Fullname)."\n".$Position;?></textarea> </p>
+			</th>
+
+
+			<th colspan="4">
+				<p align="left">Reviewed by: </p>
+				<select id="ReviewedByName">
+					<option value="">Please Select Name</option>
+						<?php
+							$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+							$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+								while($RSTName = mysqli_fetch_array($CMDName)){
+									$Persons_Name = $RSTName['Persons_Name']; 
+						?>
+					<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+						<?php } ?>
+				</select>
+									
+				<br>
+
+				<select id="ReviewedByDesignation">
+					<option value="">Please Select Designation</option>
+						<?php
+							$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+								$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+									while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+										$SignPosition = $RSTPosition['Position']; 
+						?>
+					<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+						<?php } ?>
+				</select>
+				<button id = "BtnReviewedBy" onclick="ReviewedBy()"> GET </button>
+				<p class="signatories"> <textarea id="ReviewedByField" placeholder="type here..."></textarea> </p>
+			</th>
+
+			<th colspan="3">
+				<p align="left">Approved by: </p>
+				<select id="ApprovedByName">
+					<option value="">Please Select Name</option>
+						<?php
+							$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+							$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+								while($RSTName = mysqli_fetch_array($CMDName)){
+									$Persons_Name = $RSTName['Persons_Name']; 
+						?>
+					<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+						<?php } ?>
+				</select>
+									
+				<br>
+
+				<select id="ApprovedByDesignation">
+					<option value="">Please Select Designation</option>
+						<?php
+							$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+								$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+									while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+										$SignPosition = $RSTPosition['Position']; 
+						?>
+					<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+						<?php } ?>
+				</select>
+				<button id = "BtnApprovedBy" onclick="ApprovedBy()"> GET </button>
+				<p class="signatories"> <textarea id="ApprovedByField"placeholder="type here..."></textarea> </p>
+			</th>
 		</tr>
-		<tr class="signatories">
-			<td colspan="3"><textarea placeholder="type here..."><?php echo strtoupper($Fullname)."\n".$Position;?></textarea></td>
-			<td colspan="4"><textarea placeholder="type here..." ></textarea></td>
-			<td colspan="3"><textarea placeholder="type here..."></textarea></td>			
-		</tr>
-		</tbody>
+	</tbody>
 </table>
 </div>	
 
@@ -244,10 +330,64 @@ while($result = mysqli_fetch_array($command))
 </html>
 
 <script>
-const btn = document.getElementById('print_button');
-	btn.addEventListener('click', () => {
-		btn.style.display = 'none';
-		window.print(); 
-		btn.style.display = 'block';
-	});
+function ButtonClick(){
+	hide();
+	window.print();
+	show();
+}
+
+function hide(){
+	document.getElementById('myBtn').style.display = 'none';
+
+	document.getElementById('PreparedByName').style.display = 'none';
+	document.getElementById('PreparedByDesignation').style.display = 'none';
+	document.getElementById('BtnPreparedBy').style.display = 'none';
+
+	document.getElementById('ReviewedByName').style.display = 'none';
+	document.getElementById('ReviewedByDesignation').style.display = 'none';
+	document.getElementById('BtnReviewedBy').style.display = 'none';
+
+	document.getElementById('ApprovedByName').style.display = 'none';
+	document.getElementById('ApprovedByDesignation').style.display = 'none';
+	document.getElementById('BtnApprovedBy').style.display = 'none';
+
+}
+
+function show(){
+	document.getElementById('myBtn').style.display = 'block';
+
+	document.getElementById('PreparedByName').style.display = 'block';
+	document.getElementById('PreparedByDesignation').style.display = 'block';
+	document.getElementById('BtnPreparedBy').style.display = 'block';
+
+	document.getElementById('ReviewedByName').style.display = 'block';
+	document.getElementById('ReviewedByDesignation').style.display = 'block';
+	document.getElementById('BtnReviewedBy').style.display = 'block';
+
+	document.getElementById('ApprovedByName').style.display = 'block';
+	document.getElementById('ApprovedByDesignation').style.display = 'block';
+	document.getElementById('BtnApprovedBy').style.display = 'block';
+}
+</script>
+
+<script>
+//For Signatories Dropdown
+function PreparedBy(){
+	var x = document.getElementById("PreparedByName").value;
+	var y = document.getElementById("PreparedByDesignation").value;
+	document.getElementById("PreparedByField").value = x+"\n"+y;
+}
+
+function ReviewedBy(){
+	var x = document.getElementById("ReviewedByName").value;
+	var y = document.getElementById("ReviewedByDesignation").value;
+	document.getElementById("ReviewedByField").value = x+"\n"+y;
+}
+
+function ApprovedBy(){
+	var x = document.getElementById("ApprovedByName").value;
+	var y = document.getElementById("ApprovedByDesignation").value;
+	document.getElementById("ApprovedByField").value = x+"\n"+y;
+}
+
 </script>

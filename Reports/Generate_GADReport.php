@@ -37,7 +37,8 @@ $Position = $_SESSION["Position"];
 <body>
 <div class="content1">
 <div class="print">
-	<button id="print_button"> PRINT </button>
+	<!-- <button id="print_button"> PRINT </button> -->
+	<button id="myBtn" onclick="ButtonClick()"> PRINT </button>
 </div>
 <table class="Gad-content">
 	
@@ -171,10 +172,129 @@ while($result = mysqli_fetch_array($command))
 		<th >Verified by:</th>
 	</tr>
 	<tr>
-		<td><textarea placeholder="type here..."><?php echo strtoupper($Fullname)."\n".$Position;?></textarea></td>
-		<td><textarea placeholder="type here..."></textarea></td>
-		<td><textarea placeholder="type here..."></textarea></td>
-		<td><textarea placeholder="type here..."></textarea></td>
+		<!-- PREPARED BY -->
+		<td><select id="PreparedByName">
+				<option value="">Please Select Name</option>
+					<?php
+						$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+						$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+							while($RSTName = mysqli_fetch_array($CMDName)){
+								$Persons_Name = $RSTName['Persons_Name']; 
+					?>
+				<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+					<?php } ?>
+			</select>
+								
+			<br>
+
+			<select id="PreparedByDesignation">
+				<option value="">Please Select Designation</option>
+					<?php
+						$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+							$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+								while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+									$SignPosition = $RSTPosition['Position']; 
+					?>
+				<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+					<?php } ?>
+			</select>
+			<button id = "BtnPreparedBy" onclick="PreparedBy()"> GET </button>
+			<textarea id = "PreparedByField" placeholder="type here..."><?php echo strtoupper($Fullname)."\n".$Position;?></textarea>Date Signed:
+		</td>
+		
+		<!-- CHECKED BY 1-->
+		<td>
+			<select id="CheckedBy1Name">
+				<option value="">Please Select Name</option>
+					<?php
+						$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+						$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+							while($RSTName = mysqli_fetch_array($CMDName)){
+								$Persons_Name = $RSTName['Persons_Name']; 
+					?>
+				<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+					<?php } ?>
+			</select>
+								
+			<br>
+
+			<select id="CheckedBy1Designation">
+				<option value="">Please Select Designation</option>
+					<?php
+						$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+							$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+								while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+									$SignPosition = $RSTPosition['Position']; 
+					?>
+				<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+					<?php } ?>
+			</select>
+			<button id = "BtnCheckedBy1" onclick="CheckBy1()"> GET </button>
+			<textarea id="CheckedBy1Field" placeholder="type here..."></textarea>Date Signed:
+		</td>
+
+		<!-- CHECKED BY 2-->
+		<td>
+			<select id="CheckedBy2Name">
+				<option value="">Please Select Name</option>
+					<?php
+						$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+						$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+							while($RSTName = mysqli_fetch_array($CMDName)){
+								$Persons_Name = $RSTName['Persons_Name']; 
+					?>
+				<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+					<?php } ?>
+			</select>
+								
+			<br>
+
+			<select id="CheckedBy2Designation">
+				<option value="">Please Select Designation</option>
+					<?php
+						$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+							$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+								while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+									$SignPosition = $RSTPosition['Position']; 
+					?>
+				<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+					<?php } ?>
+			</select>
+			<button id = "BtnCheckedBy2" onclick="CheckBy2()"> GET </button>
+			<textarea id="CheckedBy2Field" placeholder="type here..."></textarea>Date Signed:
+		</td>
+		
+		
+		<!-- VERIFIED BY-->
+		<td>
+			<select id="VerifiedByName">
+				<option value="">Please Select Name</option>
+					<?php
+						$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+						$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
+							while($RSTName = mysqli_fetch_array($CMDName)){
+								$Persons_Name = $RSTName['Persons_Name']; 
+					?>
+				<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
+					<?php } ?>
+			</select>
+								
+			<br>
+
+			<select id="VerifiedByDesignation">
+				<option value="">Please Select Designation</option>
+					<?php
+						$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+							$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
+								while($RSTPosition = mysqli_fetch_array($CMDPosition)){ 
+									$SignPosition = $RSTPosition['Position']; 
+					?>
+				<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
+					<?php } ?>
+			</select>
+			<button id = "BtnVerified" onclick="Verified()"> GET </button>
+			<textarea id="VerifiedByField" placeholder="type here..."></textarea>Date Signed:
+		</td>
 	</tr>
 	
 	
@@ -189,10 +309,82 @@ while($result = mysqli_fetch_array($command))
 </body>
 </html>
 <script>
-const btn = document.getElementById('print_button');
-	btn.addEventListener('click', () => {
-		btn.style.display = 'none';
-		window.print(); 
-		btn.style.display = 'block';
-	});
+
+function ButtonClick(){
+	hide();
+	window.print();
+	show();
+}
+
+function hide(){
+	document.getElementById('myBtn').style.display = 'none';
+
+	document.getElementById('PreparedByName').style.display = 'none';
+	document.getElementById('PreparedByDesignation').style.display = 'none';
+	document.getElementById('BtnPreparedBy').style.display = 'none';
+
+	document.getElementById('CheckedBy1Name').style.display = 'none';
+	document.getElementById('CheckedBy1Designation').style.display = 'none';
+	document.getElementById('BtnCheckedBy1').style.display = 'none';
+
+	document.getElementById('CheckedBy2Name').style.display = 'none';
+	document.getElementById('CheckedBy2Designation').style.display = 'none';
+	document.getElementById('BtnCheckedBy2').style.display = 'none';
+	
+	document.getElementById('VerifiedByName').style.display = 'none';
+	document.getElementById('VerifiedByDesignation').style.display = 'none';
+	document.getElementById('BtnVerified').style.display = 'none';
+}
+
+function show(){
+	document.getElementById('myBtn').style.display = 'block';
+
+	document.getElementById('PreparedByName').style.display = 'block';
+	document.getElementById('PreparedByDesignation').style.display = 'block';
+	document.getElementById('BtnPreparedBy').style.display = 'block';
+
+	document.getElementById('CheckedBy1Name').style.display = 'block';
+	document.getElementById('CheckedBy1Designation').style.display = 'block';
+	document.getElementById('BtnCheckedBy1').style.display = 'block';
+
+	document.getElementById('CheckedBy2Name').style.display = 'block';
+	document.getElementById('CheckedBy2Designation').style.display = 'block';
+	document.getElementById('BtnCheckedBy2').style.display = 'block';
+
+	document.getElementById('VerifiedByName').style.display = 'block';
+	document.getElementById('VerifiedByDesignation').style.display = 'block';
+	document.getElementById('BtnVerified').style.display = 'block';
+
+}
+</script>
+
+
+
+
+<script>
+//For Signatories Dropdown
+function PreparedBy(){
+	var x = document.getElementById("PreparedByName").value;
+	var y = document.getElementById("PreparedByDesignation").value;
+	document.getElementById("PreparedByField").value = x+"\n"+y;
+}
+
+function CheckBy1(){
+	var x = document.getElementById("CheckedBy1Name").value;
+	var y = document.getElementById("CheckedBy1Designation").value;
+	document.getElementById("CheckedBy1Field").value = x+"\n"+y;
+}
+
+function CheckBy2(){
+	var x = document.getElementById("CheckedBy2Name").value;
+	var y = document.getElementById("CheckedBy2Designation").value;
+	document.getElementById("CheckedBy2Field").value = x+"\n"+y;
+}
+
+function Verified(){
+	var x = document.getElementById("VerifiedByName").value;
+	var y = document.getElementById("VerifiedByDesignation").value;
+	document.getElementById("VerifiedByField").value = x+"\n"+y;
+}
+
 </script>
