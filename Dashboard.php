@@ -950,14 +950,14 @@ function DisplayCharts(){
 		}]
 	});
 	chartCEAFA.render();
- 	function toggleDataSeries(e){
+ 	/**function toggleDataSeries(e){
 		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
 			e.dataSeries.visible = false;
 		}else{
 			e.dataSeries.visible = true;
 		}
-		chartCEAFA.render();
-	}
+		chartCICS.render();
+	} */
 
 
 
@@ -991,14 +991,14 @@ function DisplayCharts(){
 		}]
 	});
 	chartCICS.render();
- 	function toggleDataSeries(e){
+ 	/**function toggleDataSeries(e){
 		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
 			e.dataSeries.visible = false;
 		}else{
 			e.dataSeries.visible = true;
 		}
 		chartCICS.render();
-	}
+	} */
 
 
 	var chartCIT = new CanvasJS.Chart("ChartCIT", {
@@ -1031,13 +1031,17 @@ function DisplayCharts(){
 		}]
 	});
 	chartCIT.render();
- 	function toggleDataSeries(e){
+ 	
+	
+	function toggleDataSeries(e){
 		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
 			e.dataSeries.visible = false;
 		}else{
 			e.dataSeries.visible = true;
 		}
 		chartCIT.render();
+		chartCICS.render();
+		chartCEAFA.render();
 	}
 }
 </script>
