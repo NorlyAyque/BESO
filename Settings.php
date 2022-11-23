@@ -16,7 +16,7 @@ date_default_timezone_set('Asia/Manila');
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Settings</title>
-<link rel="stylesheet" type="text/css" href="styles/Settings-style.css">
+<link rel="stylesheet" type="text/css" href="styles/SettingStyle.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
@@ -199,34 +199,40 @@ date_default_timezone_set('Asia/Manila');
 					</td> 
 				</tr>
 			</table>
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		</div>
-	</div>
+		<!-- Display All Names in Signatories-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
-	<!-- Display All Names in Signatories-->
-	<center>
-		<table align="center" border="1"> 
-			<tr>
-				<th colspan="3"> LIST OF NAMES</th>
-			</tr>
-			<tr>
-				<th> ID </th>
-				<th> NAME </th>
-				<th> Buttons </th>
-			</tr>
-			
-			<?php
+			<table class="List">
+				<tr>
+					<th colspan="3">LIST OF NAME</th>
+				</tr>
+				<tr>
+					<th>ID</th>
+					<th>NAME</th>
+					<th></th>
+				</tr>
+				<?php
 				$sql = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
 				$command = $con->query($sql) or die("Error SQL");
 				while($result = mysqli_fetch_array($command))
@@ -234,26 +240,24 @@ date_default_timezone_set('Asia/Manila');
 						$SID = $result['SignID'];
 						$Persons_Name = $result['Persons_Name'];
 			?>
-			<tr>
-				<td> <?php echo "$SID";?> </td>
-				<td> <?php echo "$Persons_Name";?> </td>
-				<td> <a href="Settings.php?delete=<?php echo $SID; ?>" >DELETE</button> </a> </td>
-			</tr>
+				<tr>
+					<td> <?php echo "$SID";?> </td>
+					<td> <?php echo "$Persons_Name";?> </td>
+					<td> <a href="Settings.php?delete=<?php echo $SID; ?>" class="deletebtn" >DELETE</button> </a> </td>
+				</tr>
 
 			<?php } ?>
-		</table>
-	</center>
-
-	<!-- Display All Positions in Signatories-->
-	<center>
-		<table align="center" border="1"> 
+			</table>
+			
+			
+			<table class="List2nd"> 
 			<tr>
-				<th colspan="3"> LIST OF Positions</th>
+				<th colspan="3"> LIST OF POSITIONS</th>
 			</tr>
 			<tr>
 				<th> ID </th>
 				<th> Positions </th>
-				<th> Buttons </th>
+				<th> </th>
 			</tr>
 			
 			<?php
@@ -266,13 +270,29 @@ date_default_timezone_set('Asia/Manila');
 			?>
 			<tr>
 				<td> <?php echo "$SID";?> </td>
-				<td> <?php echo "$Position";?> </td>
-				<td> <a href="Settings.php?delete=<?php echo $SID; ?>" >DELETE</button> </a> </td>
+				<td > <?php echo "$Position";?> </td>
+				<td> <a href="Settings.php?delete=<?php echo $SID; ?>" class="deletebtn">DELETE</button> </a> </td>
 			</tr>
 
 			<?php } ?>
 		</table>
-	</center>
+			
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+	
+	
+
+	<!-- Display All Positions in Signatories-->
+
+		
+	
 	
 	
 

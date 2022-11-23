@@ -401,12 +401,74 @@ margin-left: 100px;
 
 
 
+.List{
+	border-collapse:collapse;
+	border:1px solid black;
+	margin-left:40px;
+	margin-top:10px;
+	display:relative;
+	width:40%;
+	
+	
+}
+
+.List th {
+	border-collapse:collapse;
+	border:1px solid black;
+	padding:5px;
+
+	
+}
+.List td {
+	border-collapse:collapse;
+	border:1px solid black;
+	padding:8px;
+	
+}
 
 
 
+.List2nd{
+	border-collapse:collapse;
+	border:1px solid black;
+	margin-left:auto;
+	width:55%;
+	margin-top:-19.7%;
+	
+	
+	
+	
+	
+}
+
+.List2nd th {
+	border-collapse:collapse;
+	border:1px solid black;
+	padding:5px;
+	
+}
+.List2nd td {
+	border-collapse:collapse;
+	border:1px solid black;
+	padding:8px;
+	
+}
 
 
 
+.deletebtn{
+	text-decoration:none;
+	color:black;
+	border:1px solid black;
+	padding:3px;
+	border-radius:
+}
+
+
+.deletebtn:hover{
+	background-color:var(--red);
+	color:white;
+}
 
 
 

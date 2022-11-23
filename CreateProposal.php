@@ -36,7 +36,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposalSTYLE.css">
 
 </head>
 <body>
@@ -548,8 +548,8 @@ $DateTime = date("M, d Y; h:i:s A");
 			<table class="signiture">
 				<tr>
 					<th></th>
-					<th> Name </th>
-					<th> Designation </th>
+					<th width="40%";> Name </th>
+					<th width="40%";> Designation </th>
 				</tr>
 				<tr>
 					<td> Prepared by:</td>
@@ -559,8 +559,10 @@ $DateTime = date("M, d Y; h:i:s A");
 				<tr>
 					<td> Reviewed by:</td>
 					<td>
+						<div class="DrpSigna">
 						<select id="ReviewedByName">
 							<option value="">Please Select Name</option>
+							
 								<?php
 									$SQLName = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
 									$CMDName = $con->query($SQLName) or die("Error SQL Signatories");
@@ -570,10 +572,15 @@ $DateTime = date("M, d Y; h:i:s A");
 							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 							<?php } ?>
 						</select>
-						<span onclick="ReviewedByName()"> GET </span>
+						</div>
+						<div class="Getbtn">
+							<span onclick="ReviewedByName()" > ✓ </span>
+						</div>
+						<br>
 						<textarea placeholder="..." id="Sign2_1" name="Sign2_1" required></textarea>
 					</td>
 					<td>
+					<div class="DrpSigna">
 						<select id="ReviewByDesignation">
 							<option value="">Please Select Name</option>
 								<?php
@@ -585,13 +592,18 @@ $DateTime = date("M, d Y; h:i:s A");
 							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 								<?php } ?>
 						</select>
-						<span onclick="ReviewByDesignation()"> GET </span>
+					</div>
+					<div class="Getbtn">
+						<span onclick="ReviewByDesignation()"> ✓ </span>
+					</div>
+					<br>
 						<textarea placeholder="..." id="Sign2_2" name="Sign2_2" required></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
 					<td>
+					<div class="DrpSigna">
 						<select id="RecommendingApproval1Name">
 							<option value="">Please Select Name</option>
 								<?php
@@ -603,11 +615,16 @@ $DateTime = date("M, d Y; h:i:s A");
 							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 							<?php } ?>
 						</select>
-						<span onclick="RecommendingApproval1Name()"> GET </span>
+					</div>
+					<div class="Getbtn">
+						<span onclick="RecommendingApproval1Name()"> ✓ </span>
+					</div>
+					<br>
 						<textarea placeholder="..." id="Sign3_1"name="Sign3_1" required></textarea>
 					</td>
 					
 					<td>
+					<div class="DrpSigna">
 						<select id="RecommendingApproval1Designation">
 							<option value="">Please Select Name</option>
 								<?php
@@ -619,13 +636,18 @@ $DateTime = date("M, d Y; h:i:s A");
 							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 								<?php } ?>
 						</select>
-						<span onclick="RecommendingApproval1Designation()"> GET </span>
+					</div>
+					<div class="Getbtn">
+						<span onclick="RecommendingApproval1Designation()">  ✓ </span>
+					</div>
+					<br>
 						<textarea placeholder="..." id="Sign3_2" name="Sign3_2" required></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td> Recommending Approval:</td>
 					<td>
+						<div class="DrpSigna">
 						<select id="RecommendingApproval2Name">
 							<option value="">Please Select Name</option>
 								<?php
@@ -637,10 +659,15 @@ $DateTime = date("M, d Y; h:i:s A");
 							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 							<?php } ?>
 						</select>
-						<span onclick="RecommendingApproval2Name()"> GET </span>
+						</div>
+						<div class="Getbtn">
+							<span onclick="RecommendingApproval2Name()"> ✓ </span>
+						</div>
+						<br>
 						<textarea placeholder="..." id="Sign4_1" name="Sign4_1" required></textarea>
 					</td>
 					<td>
+					<div class="DrpSigna">
 						<select id="RecommendingApproval2Designation">
 							<option value="">Please Select Name</option>
 								<?php
@@ -652,13 +679,18 @@ $DateTime = date("M, d Y; h:i:s A");
 							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 								<?php } ?>
 						</select>
-						<span onclick="RecommendingApproval2Designation()"> GET </span>
+					</div>
+					<div class="Getbtn">
+						<span onclick="RecommendingApproval2Designation()"> ✓ </span>
+					</div>
+					<br>
 						<textarea placeholder="..." id="Sign4_2" name="Sign4_2" required></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td>Approved by:</td>
 					<td>
+					<div class="DrpSigna">
 						<select id="ApprovedByName">
 							<option value="">Please Select Name</option>
 								<?php
@@ -670,10 +702,15 @@ $DateTime = date("M, d Y; h:i:s A");
 							<option value="<?php echo "$Persons_Name";?>"><?php echo "$Persons_Name";?></option>
 							<?php } ?>
 						</select>
-						<span onclick="ApprovedByName()"> GET </span>
+					</div>
+					<div class="Getbtn">
+						<span onclick="ApprovedByName()"> ✓ </span>
+					</div>
+					<br>
 						<textarea placeholder="..." id="Sign5_1" name="Sign5_1" required></textarea>
 					</td>
 					<td>
+					<div class="DrpSigna">
 						<select id="ApprovedByDesignation">
 							<option value="">Please Select Name</option>
 								<?php
@@ -685,7 +722,11 @@ $DateTime = date("M, d Y; h:i:s A");
 							<option value="<?php echo "$SignPosition";?>"><?php echo "$SignPosition";?></option>
 								<?php } ?>
 						</select>
-						<span onclick="ApprovedByDesignation()"> GET </span>
+					</div>
+					<div class="Getbtn">
+						<span onclick="ApprovedByDesignation()">✓ </span>
+					</div>
+					<br>
 						<textarea placeholder="..." id="Sign5_2" name="Sign5_2" required></textarea>
 					</td>
 				</tr>
