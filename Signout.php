@@ -11,7 +11,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Sign out</title>
-<link rel="stylesheet" type="text/css" href="styles/AccountSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Account-STYLE.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 <style>
@@ -123,12 +123,18 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
+					<div class="notifEVAL">
+						<span class="icon-buttonEVAL">45</span>
+					</div>
 				</a>
 			</li>
 			<li>
 				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
+					<div class="notifMONI">
+						<span class="icon-buttonMONI">45</span>
+					</div>
 				</a>
 			</li>
 			<li>

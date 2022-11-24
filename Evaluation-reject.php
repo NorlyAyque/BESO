@@ -13,7 +13,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation - Rejected</title>
-<link rel="stylesheet" type="text/css" href="styles/EvaluationReportSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/EvaluationReport.css">
 
 </head>
 <body>
@@ -53,13 +53,19 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 			<li>
 				<a class="active" href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
-					<span class ="title"> Evaluation Reports</span>
+					<span class ="title"> <u style="text-decoration-thickness:3px; text-underline-position: under";>Evaluation Reports</u></span>
+					<div class="notifEVAL">
+						<span class="icon-buttonEVAL">45</span>
+					</div>
 				</a>
 			</li>
 			<li>
 				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
+					<div class="notifMONI">
+						<span class="icon-buttonMONI">44</span>
+					</div>
 				</a>
 			</li>
 			<li>
@@ -100,7 +106,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th colspan="7">
 						<div class="menu">
 							
-							<a href="Evaluation.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a>
+							<a href="Evaluation.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
+							<div class="notif">
+							<span class="icon-button__badge">45</span>
+							</div></a>
 							</button>
 							
 							<a href="Evaluation-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a>

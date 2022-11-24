@@ -13,7 +13,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>GAD Report</title>
-<link rel="stylesheet" type="text/css" href="styles/ReportsSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Reports-STYLE.css">
 
 </head>
 <body>
@@ -35,6 +35,12 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				</a>
 			</li>
 			<li>
+				<a href="CreateProposal.php">
+					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
+					<span class ="title"> Create Proposal</span>
+				</a>
+			</li>
+			<li>
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
@@ -43,22 +49,23 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					</div>
 				</a>
 			</li>
-			<li>
-				<a href="CreateProposal.php">
-					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
-					<span class ="title"> Create Proposal</span>
-				</a>
-			</li>
+			
 			<li>
 				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
+					<div class="notifEVAL">
+						<span class="icon-buttonEVAL">45</span>
+					</div>
 				</a>
 			</li>
 			<li>
 				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
+					<div class="notifMONI">
+						<span class="icon-buttonMONI">46</span>
+					</div>
 				</a>
 			</li>
 			<li>

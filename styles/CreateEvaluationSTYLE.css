@@ -212,9 +212,10 @@ text-decoration: underline;
 text-underline-position: under;
 text-decoration-thickness:3px;
 }
+
 /********* NOTIFICATION NUMBER **********/
 .notifDASH{	
-margin-left:-25px;
+margin-left:-15px;
 display:flex;
 position:abosolute;
 }
@@ -237,7 +238,57 @@ position:abosolute;
 	font-size:13px;
 }
 
-/********* NOTIFICATION NUMBER **********/
+.notifEVAL{	
+margin-left:-25px;
+display:flex;
+position:abosolute;
+}
+
+.icon-buttonEVAL {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
+	
+}
+.notifMONI{	
+margin-left:-26px;
+display:flex;
+position:abosolute;
+}
+
+.icon-buttonMONI {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
+	
+}
+
+/*******  NOTIFICATION NUMBER***************/
+
 .header{
   width: 97%;
   margin-left:30px;
@@ -317,6 +368,33 @@ position:abosolute;
   margin: 5px 0 22px 0;
   display: inline-block;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   .input-field1 textarea {
   margin-top:5px;
@@ -531,6 +609,7 @@ background-color: #D1D1D1;
 cursor: pointer;
 }
 
+
 .signiture td{
 	padding:5px;
 
@@ -582,72 +661,6 @@ border-radius:5px;
 
 
 
-
-
-
-
-
-
-.backEval{
-		text-align:left;
-		margin-left:50px;
-		margin-top:20px;
-}
-
-.btnBack {
-  margin-right:5px;
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-
-}
-.btnBack:hover {
-  background-color:  #4CAF20;
-  color: white;
-}
-
-
-
-.save{
-		text-align: right;
-		margin-right:15px;
-		margin-bottom: 10px;
-		margin-top:-35px;
-}
- .btn3 {
-  margin-right:5px;
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-
-}
-
-.btn3:hover {
-  background-color:  #4CAF20;
-  color: white;
-}
 
 .checkbox2 label, .checkbox3 label, .checkbox4 label, .checkbox5 label, 
 .checkbox6 label, .checkbox7 label {
@@ -774,5 +787,68 @@ border-radius:5px;
 }
  .btncancel:hover {
   background-color:  var(--red);
+  color: white;
+}
+
+
+
+
+
+.save{
+		text-align: right;
+		margin-right:15px;
+		margin-bottom: 10px;
+		margin-top:-45px;
+}
+ .btn3 {
+  margin-right:5px;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+
+}
+
+.btn3:hover {
+  background-color:  #4CAF20;
+  color: white;
+}
+
+
+
+.buttonBACK {
+	text-align: left;
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom:10px;
+}
+ .btnB {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  text-align:left;
+ 
+  
+}
+.buttonBACK .btnB:hover {
+  background-color:  #4CAF20;
   color: white;
 }

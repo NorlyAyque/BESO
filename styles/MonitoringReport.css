@@ -181,8 +181,33 @@ text-decoration-thickness:3px;
 }
 
 /********* NOTIFICATION NUMBER **********/
+
+.notif{
+
+margin-top:-30px;
+display:flex;
+position:abosolute;
+}
+
+.icon-button__badge {
+	margin-left:-60px;
+	margin-top:-1px;
+	width:28px;
+	height:28px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-size:13px;
+}
+
 .notifDASH{	
-margin-left:-25px;
+margin-left:-15px;
 display:flex;
 position:abosolute;
 }
@@ -205,7 +230,57 @@ position:abosolute;
 	font-size:13px;
 }
 
-/********* NOTIFICATION NUMBER **********/
+.notifEVAL{	
+margin-left:-25px;
+display:flex;
+position:abosolute;
+}
+
+.icon-buttonEVAL {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
+	
+}
+.notifMONI{	
+margin-left:-26px;
+display:flex;
+position:abosolute;
+}
+
+.icon-buttonMONI {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
+	
+}
+
+/*******  NOTIFICATION NUMBER***************/
+
 /***Main***/
 .main{
 	position: abosolute;
@@ -278,6 +353,68 @@ margin-left: 100px;
 	float: left;
 	text-decoration:none;
 }
+
+.menu .listnav1{
+  margin-right:20px;
+  background-color:  #0F3460;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.menu .listnav1 ion-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right:10px;
+	font-size: 20px;
+	float: left;
+	text-decoration:none;
+}
+
+.menu .listnav1:hover {
+  background-color:  #4248f8;
+  color: white;
+  text-decoration:none;
+}
+
+.menu .listnav2{
+  margin-right:20px;
+  background-color:  #4248f8;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.menu .listnav2 ion-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right:10px;
+	font-size: 20px;
+	float: left;
+	text-decoration:none;
+}
+
+
 
 .menu .nav1{
   margin-right:5px;

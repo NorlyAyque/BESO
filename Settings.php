@@ -22,7 +22,7 @@ date_default_timezone_set('Asia/Manila');
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Settings</title>
-<link rel="stylesheet" type="text/css" href="styles/Setting-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/SettingSTYLE.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
@@ -65,12 +65,18 @@ date_default_timezone_set('Asia/Manila');
 				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
+					<div class="notifEVAL">
+						<span class="icon-buttonEVAL">45</span>
+					</div>
 				</a>
 			</li>
 			<li>
 				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
+					<div class="notifMONI">
+						<span class="icon-buttonMONI">46</span>
+					</div>
 				</a>
 			</li>
 			<li>

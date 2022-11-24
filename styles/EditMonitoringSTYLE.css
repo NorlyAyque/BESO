@@ -136,6 +136,7 @@ body{
 	font-size: 17px;
 	font-weight:bold;
 	
+	
 }
 
 
@@ -197,26 +198,9 @@ margin-left: 100px;
 	align-items: center;
 	padding: 0 10px;
 }
-
-
-.toggle{
-	position:relative;
-	width:40px;
-	height:50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size:30px;
-	cursor: pointer;
-	margin-top:10px;
-	margin-left: 30px;
-	margin-bottom:-30px;
-	color:white;
-}
-
 /********* NOTIFICATION NUMBER **********/
 .notifDASH{	
-margin-left:-25px;
+margin-left:-15px;
 display:flex;
 position:abosolute;
 }
@@ -239,7 +223,71 @@ position:abosolute;
 	font-size:13px;
 }
 
-/********* NOTIFICATION NUMBER **********/
+.notifEVAL{	
+margin-left:-25px;
+display:flex;
+position:abosolute;
+}
+
+.icon-buttonEVAL {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
+	
+}
+.notifMONI{	
+margin-left:-26px;
+display:flex;
+position:abosolute;
+}
+
+.icon-buttonMONI {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
+	
+}
+
+/*******  NOTIFICATION NUMBER***************/
+.toggle{
+	position:relative;
+	width:40px;
+	height:50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size:30px;
+	cursor: pointer;
+	margin-top:10px;
+	margin-left: 30px;
+	color:white;
+	margin-bottom:-30px;
+}
+
 .header{
   width: 97%;
   margin-left:30px;
@@ -360,8 +408,6 @@ position:abosolute;
 background-color: #D1D1D1;
 cursor: pointer;
 }
-
-
 .signiture td{
 	padding:5px;
 
@@ -418,18 +464,76 @@ border-radius:5px;
 
 
 
+.save-back{
+	margin:auto;
+	width:100%
+}
 
 
+.save-back table,th{
+	border:none;
+	
+}
+.save{
+		margin-top:10px;
+		text-align: right;
+		margin-right:15px;
+		margin-bottom: 10px;
+}
+
+.back{
+		text-align: left;
+		margin-left:40px;
+	
+}
+ .btn3 {
+  margin-right:5px;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+
+}
 
 .btn3:hover {
   background-color:  #4CAF20;
   color: white;
 }
 
-.headmes{
-	border:1px solid black;
-	margin:auto;
+.btn4 {
+  margin-right:5px;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+text-align:right;
 }
+
+.btn4:hover {
+  background-color:  #4CAF20;
+  color: white;
+}
+
 .checkbox2 label, .checkbox3 label, .checkbox4 label, .checkbox5 label, 
 .checkbox6 label, .checkbox7 label {
   width:100%;
@@ -557,6 +661,7 @@ border-radius:5px;
   background-color:  var(--red);
   color: white;
 }
+
 .Tfinancial table{
 	margin-left:auto;
 	margin-right:auto;
@@ -567,7 +672,6 @@ border-radius:5px;
 	
 }
 .financial table,th,td{
-	
 	
 	
 }
@@ -600,56 +704,4 @@ border-radius:5px;
 .Tfinancial td:hover {
 background-color: lightgrey;
 cursor: pointer;
-}
-
-.save{
-		margin-top:-45px;
-		text-align: right;
-		margin-right:15px;
-		margin-bottom: 10px;
-}
- .btn3 {
-  margin-right:5px;
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-
-}
-
-.buttonBACK {
-	text-align: left;
-	margin-left: 40px;
-	margin-top: 20px;
-	margin-bottom:10px;
-}
- .btnB {
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding: 10px 30px;
-  font-size: 20px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-  text-align:left;
- 
-  
-}
-.buttonBACK .btnB:hover {
-  background-color:  #4CAF20;
-  color: white;
 }

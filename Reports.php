@@ -18,7 +18,7 @@ $UserPosition = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Quarterly Monitoring Report</title>
-<link rel="stylesheet" type="text/css" href="styles/ReportsSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Reports-STYLE.css">
 
 </head>
 <body>
@@ -41,6 +41,12 @@ $UserPosition = $_SESSION["Position"];
 				</a>
 			</li>
 			<li>
+				<a href="CreateProposal.php">
+					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
+					<span class ="title"> Create Proposal</span>
+				</a>
+			</li>
+			<li>
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
@@ -49,22 +55,23 @@ $UserPosition = $_SESSION["Position"];
 					</div>
 				</a>
 			</li>
-			<li>
-				<a href="CreateProposal.php">
-					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
-					<span class ="title"> Create Proposal</span>
-				</a>
-			</li>
+			
 			<li>
 				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
+					<div class="notifEVAL">
+						<span class="icon-buttonEVAL">45</span>
+					</div>
 				</a>
 			</li>
 			<li>
 				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
+					<div class="notifMONI">
+						<span class="icon-buttonMONI">45</span>
+					</div>
 				</a>
 			</li>
 			<li>

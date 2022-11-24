@@ -79,7 +79,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Account</title>
-<link rel="stylesheet" type="text/css" href="styles/AccountSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Account-STYLE.css">
 
 </head>
 <body>
@@ -120,12 +120,18 @@ if(isset($_GET['enable'])){
 				<a href="Evaluation.php">
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
+					<div class="notifEVAL">
+						<span class="icon-buttonEVAL">45</span>
+					</div>
 				</a>
 			</li>
 			<li>
 				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"> Monitoring Reports</span>
+					<div class="notifMONI">
+						<span class="icon-buttonMONI">46</span>
+					</div>
 				</a>
 			</li>
 			<li>

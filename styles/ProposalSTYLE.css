@@ -141,7 +141,6 @@ body{
 
 
 
-
 /* curve outside */
 
 .navigation ul li:hover a::before,
@@ -175,12 +174,13 @@ body{
 	pointer-events:none;
 }
 
-.navigation li .active{
+/*
+.navigation li .title{
 text-decoration: underline;
 text-underline-position: under;
 text-decoration-thickness:3px;
 }
-
+*/
 
 /***Main***/
 .main{
@@ -216,9 +216,34 @@ margin-left: 100px;
 	margin-bottom:-30px;
 	color:white;
 }
-/********* NOTIFICATION NUMBER **********/
+
+/*******  NOTIFICATION NUMBER***************/
+.notif{
+
+margin-top:-30px;
+display:flex;
+position:abosolute;
+}
+
+.icon-button__badge {
+	margin-left:-60px;
+	margin-top:-1px;
+	width:28px;
+	height:28px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-size:13px;
+}
+
 .notifDASH{	
-margin-left:-25px;
+margin-left:-15px;
 display:flex;
 position:abosolute;
 }
@@ -241,7 +266,65 @@ position:abosolute;
 	font-size:13px;
 }
 
-/********* NOTIFICATION NUMBER **********/
+.notifEVAL{	
+margin-left:-25px;
+display:flex;
+position:abosolute;
+}
+
+.icon-buttonEVAL {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
+	
+}
+.notifMONI{	
+margin-left:-26px;
+display:flex;
+position:abosolute;
+}
+
+.icon-buttonMONI {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
+	
+}
+
+/*******  NOTIFICATION NUMBER***************/
+
+.fulljustify {
+   text-align: justify;
+   
+}
+
+
+
+
 .menu{
 	 text-decoration:none;
 }
@@ -385,6 +468,78 @@ position:abosolute;
 	float: left;
 	text-decoration:none;
 }
+
+
+.Drp{
+	text-align:left;
+}
+.Drp select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.Drp input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -589,9 +744,7 @@ background-color: #D1D1D1;}
   background-color: #38E54D;
   color: white;
 }
-.proposal .Abtn1 a{
-	margin-top:10px;
-}
+
 .proposals .Abtn{
   background-color:  #00b4d8; 
   border: none;
@@ -604,6 +757,7 @@ background-color: #D1D1D1;}
   font-weight: bold;
   border-radius: 5px;
   text-decoration:none;
+  
   
  
 }
@@ -624,7 +778,8 @@ background-color: #D1D1D1;}
   border-radius: 2px;
   text-decoration:none;
   margin-top:10px;
-  display:inline-block;
+  display:inline-block;;
+
 
   
  
@@ -647,8 +802,11 @@ background-color: #D1D1D1;}
   font-weight: bold;
   border-radius: 2px;
   text-decoration:none;
- margin-top:10px;
+  margin-top:10px;
   display:inline-block;
+
+
+ 
  
 }
 .proposals .Abtn2:hover {
@@ -782,48 +940,4 @@ background-color: #D1D1D1;}
 .proposals .btn3:hover {
   background-color:  #38E54D;
   color: white;
-}
-.Drp{
-	text-align:left;
-}
-.Drp select{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right:40px;
-  
-}
-.Drp option{
-	font-size:15px;
-	cursor:pointer;
-	
-	
-}
-.Drp input{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  
-}
-.Drp option{
-	font-size:15px;
-	cursor:pointer;
-	
-	
 }
