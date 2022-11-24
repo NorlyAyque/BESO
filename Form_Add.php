@@ -13,7 +13,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Add New User</title>
-<link rel="stylesheet" type="text/css" href="styles/Forms-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/FormsSTYLE.css">
 
 </head>
 <body>
@@ -160,8 +160,13 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					</div>
 
 					<!--Save Button -->
-					<a href="Account.php" button class="btn">BACK</button>
-					<button class="btn" type="submit" name="Signup">Add Account</button>
+					<table class="SAVEBACK">
+						<tr>
+							<th><a href="Account.php" button class="btnB">Back</button></th>
+							<th><button class="btn" type="submit" name="Signup">Add Account</button></th>
+						</tr>
+					</table>
+					
 				    </div>
 				</th>
 			</table>

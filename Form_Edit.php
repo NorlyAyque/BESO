@@ -32,7 +32,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Edit User</title>
-<link rel="stylesheet" type="text/css" href="styles/Forms-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/FormsSTYLE.css">
 
 </head>
 <body>
@@ -186,8 +186,14 @@ if(isset($_GET['edit'])){
 					</div>
 					
 					<!--Save Button -->
-					<a href="Account.php" button class="btn1">BACK</button>
-					<button class="btn1" type="submit" name="Update">Save</button>
+					<table class="SAVEBACK">
+						<tr>
+							<th><a href="Account.php" button class="btn3"> BACK </button></th>
+							<th>	<button class="btn1" type="submit" name="Update">Save</button></th>
+						</tr>
+					</table>
+					
+				
 	                </div>
 				</th>
 			</tr>	

@@ -281,6 +281,15 @@ position:abosolute;
 	display:flex;
 }
 
+.SAVEBACK th{
+	
+}
+.SAVEBACK {
+	
+	margin:auto;
+}
+
+
  .forms .signup .btn {
   background-color: #4CAF50; 
   border: none;
@@ -292,16 +301,66 @@ position:abosolute;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
   border-radius: 5px;
-  width: auto;
+ 
   
   
 }
 
 
 .forms .signup .btn:hover {
-  background-color:  #EC7272;
+  background-color:  #168aad;
   color: white;
 }
+
+
+
+ .btnB {
+  background-color: #EC7272; 
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  margin-right:10px;
+  text-decoration:none;
+
+}
+
+
+.forms .signup .btnB:hover {
+  background-color:  #34a0a4;
+  color: white;
+}
+
+
+.btn3 {
+  background-color: #EC7272; 
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  margin-right:10px;
+  text-decoration:none;
+
+}
+
+
+ .btn3:hover {
+  background-color:  #34a0a4;
+  color: white;
+}
+
+
+
 
 
 .forms .signup p{
@@ -401,7 +460,7 @@ position:abosolute;
 
 
 .forms .signup1 .btn1:hover {
-  background-color:  #EC7272;
+  background-color:  #168aad;
   color: white;
 }
 
