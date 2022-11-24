@@ -63,9 +63,9 @@ date_default_timezone_set("Asia/Manila");
 				</a>
 			</li>
 			<li>
-				<a class="active" href="Monitoring.php">
+				<a href="Monitoring.php">
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
-					<span class ="title"> Monitoring Reports</span>
+					<span class ="title"><u style="text-decoration-thickness:3px; text-underline-position: under";> Monitoring Reports</u></span>
 					<div class="notifMONI">
 						<span class="icon-buttonMONI">46</span>
 					</div>
