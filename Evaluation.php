@@ -6,7 +6,9 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
-
+//Getting Session Variables from index.php
+$College = $_SESSION["College"];
+$UserPosition = $_SESSION["Position"];
 ?>
 
 <!DOCTYPE html>
@@ -147,7 +149,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				<th width="auto";> College/Office</th>
 				<th width="180px";> Prepared By</th>
 				<th width="120px";> Status </th>
-				<th width="280px";>  </th>
+				<th id="BtnWidth" width="280px";>  </th>
 			</tr>
 <?php
 //Display all the Pending Evaluation Reports based on Colleges/Office
@@ -170,6 +172,10 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'PENDING' ");
 }
 
+$BtnRevise = "a";
+$BtnApproved = "b";
+$BtnReject = "c";
+
 //$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'PENDING' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
@@ -187,6 +193,10 @@ while($result = mysqli_fetch_array($command))
 		while($result2 = mysqli_fetch_array($command2))
 			{
 				$Coll = $result2['College'];
+
+				$BtnRevise .= "a";
+				$BtnApproved .= "b";
+				$BtnReject .= "c";
 ?>
 			<tr class="inputs">
 				<td><?php echo $EID; ?></td>
@@ -197,11 +207,22 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Status; ?></td> 	
 				<td>
 					<a href="Generate_Evaluation.php?view=<?php echo $EID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
-					<a href="Evaluation.php?revise=<?php echo $EID; ?>" button class ="Pbtn1">Revise</button> </a> 
-					<a href="Evaluation.php?approved=<?php echo $EID; ?>&update=<?php echo $PID; ?>" button class ="Pbtn2">Approved</button> </a>
-					<a href="Evaluation.php?reject=<?php echo $EID; ?>" button class ="Pbtn3">Reject</button> </a>
+					<a id="<?php echo $BtnRevise;?>" href="Evaluation.php?revise=<?php echo $EID; ?>" button class ="Pbtn1">Revise</button> </a> 
+					<a id="<?php echo $BtnApproved;?>" href="Evaluation.php?approved=<?php echo $EID; ?>&update=<?php echo $PID; ?>" button class ="Pbtn2">Approved</button> </a>
+					<a id="<?php echo $BtnReject;?>" href="Evaluation.php?reject=<?php echo $EID; ?>" button class ="Pbtn3">Reject</button> </a>
 				</td> 
 			</tr>
+			<?php //Account Restrictions (Hide Buttons)
+				if($UserPosition == "Staff" OR $UserPosition == "Coordinator") {
+					echo "
+						<script> 
+							document.getElementById('$BtnRevise').style.display = 'none';
+							document.getElementById('$BtnApproved').style.display = 'none';
+							document.getElementById('$BtnReject').style.display = 'none';
+							document.getElementById('BtnWidth').style.width = '100px';
+						</script>";
+				}
+			?>
 <?php }}?>
 			</table>	
 		</div>
@@ -238,14 +259,6 @@ while($result = mysqli_fetch_array($command))
 
 <?php
 if(isset($_GET['revise'])){
-	//Account Restriction
-	$UserPosition = $_SESSION["Position"];
-	if ($UserPosition == "Head"){ //Code Continue
-	}else {
-		echo "<script> alert('Action not allowed!'); </script> ";
-		die;
-	}
-
 	$EID = $_GET['revise'];
 
 	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'Need to Revise' WHERE EvaluationID = $EID ");
@@ -258,14 +271,6 @@ if(isset($_GET['revise'])){
 }
 
 if(isset($_GET['approved'])){
-	//Account Restriction
-	$UserPosition = $_SESSION["Position"];
-	if ($UserPosition == "Head"){ //Code Continue
-	}else {
-		echo "<script> alert('Action not allowed!'); </script> ";
-		die;
-	}
-
 	$EID = $_GET['approved'];
 	$PID = $_GET['update'];
 
@@ -437,14 +442,6 @@ if(isset($_GET['update'])){
 }
 
 if(isset($_GET['reject'])){
-	//Account Restriction
-	$UserPosition = $_SESSION["Position"];
-	if ($UserPosition == "Head"){ //Code Continue
-	}else {
-		echo "<script> alert('Action not allowed!'); </script> ";
-		die;
-	}
-	
 	$EID = $_GET['reject'];
 
 	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'Rejected' WHERE EvaluationID = $EID ");

@@ -6,6 +6,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+//Getting Session Variables from index.php
+$College = $_SESSION["College"];
+$UserPosition = $_SESSION["Position"];
 ?>
 
 <!DOCTYPE html>
@@ -153,7 +157,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th width="180px";> Prepared By</th>
 					<th width="100px";> Status </th>
 					<th width="100px";> Remarks </th>
-					<th width="200px";>  </th>
+					<th id="BtnWidth" width="200px";>  </th>
 				</tr>
 <?php
 //Display all the Approved Proposals based on Colleges/Office
@@ -176,6 +180,8 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Approved'");
 }
 
+$BtnCreateEval = "a";
+
 //$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Approved' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
@@ -194,6 +200,8 @@ while($result = mysqli_fetch_array($command))
 		while($result2 = mysqli_fetch_array($command2))
 			{
 				$Coll = $result2['College'];
+
+				$BtnCreateEval .= "a";
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
@@ -204,10 +212,19 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Remarks; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Abtn">View</button> </a> <br>
-					<a href="Proposal-approved.php?check=<?php echo $PID; ?>" button class="Abtn1">CREATE EVALUATION</button> </a>
+					<a id="<?php echo $BtnCreateEval;?>" href="Proposal-approved.php?check=<?php echo $PID; ?>" button class="Abtn1">CREATE EVALUATION</button> </a>
 					<br>
 				</td> 
 			</tr>
+			<?php //Account Restrictions (Hide Buttons)
+				if($UserPosition == "Staff") {
+					echo "
+						<script> 
+							document.getElementById('$BtnCreateEval').style.display = 'none';
+							document.getElementById('BtnWidth').style.width = '100px';
+						</script>";
+				}
+			?>
 <?php }} ?>
 			</table>	
 		</div>

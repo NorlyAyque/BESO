@@ -7,6 +7,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	die;
 }
 
+//Getting Session Variables from index.php
+$College = $_SESSION["College"];
+$UserPosition = $_SESSION["Position"];
+
 date_default_timezone_set("Asia/Manila");
 //$DateToday = date("Y-m-d");
 ?>
@@ -147,7 +151,7 @@ date_default_timezone_set("Asia/Manila");
 				<th width="auto";> College/Office</th>
 				<th width="120px";> Prepared By</th>
 				<th width="120px";> Last Monitored</th>
-				<th width="280px";>  </th>
+				<th id="BtnWidth" width="280px";>  </th>
 			</tr>
 <?php
 $DateToday = date("Y-m-d");
@@ -172,6 +176,11 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
 }
 
+
+$BtnRevise = "a";
+$BtnApproved = "b";
+$BtnReject = "c";
+
 //$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
@@ -189,6 +198,10 @@ while($result = mysqli_fetch_array($command))
 		while($result2 = mysqli_fetch_array($command2))
 			{
 				$Coll = $result2['College'];
+
+				$BtnRevise .= "a";
+				$BtnApproved .= "b";
+				$BtnReject .= "c";
 ?>
 			<tr class="inputs">
 				<td><?php echo $MID; ?></td>
@@ -199,11 +212,22 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Remarks; ?></td> 	 	
 				<td>
 					<a href="Generate_Monitoring.php?view=<?php echo $MID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
-					<a href="Monitoring-pending.php?revise=<?php echo $MID; ?>" button class ="Pbtn1">Revise</button> </a> 
-					<a href="Monitoring-pending.php?approved=<?php echo $MID; ?>" button class ="Pbtn2">Approve</button> </a>
-					<a href="Monitoring-pending.php?reject=<?php echo $MID; ?>" button class ="Pbtn3">Reject</button> </a>
+					<a id="<?php echo $BtnRevise;?>" href="Monitoring-pending.php?revise=<?php echo $MID; ?>" button class ="Pbtn1">Revise</button> </a> 
+					<a id="<?php echo $BtnApproved;?>" href="Monitoring-pending.php?approved=<?php echo $MID; ?>" button class ="Pbtn2">Approve</button> </a>
+					<a id="<?php echo $BtnReject;?>" href="Monitoring-pending.php?reject=<?php echo $MID; ?>" button class ="Pbtn3">Reject</button> </a>
 				</td> 
 			</tr>
+			<?php //Account Restrictions (Hide Buttons)
+				if($UserPosition == "Staff" OR $UserPosition == "Coordinator") {
+					echo "
+						<script> 
+							document.getElementById('$BtnRevise').style.display = 'none';
+							document.getElementById('$BtnApproved').style.display = 'none';
+							document.getElementById('$BtnReject').style.display = 'none';
+							document.getElementById('BtnWidth').style.width = '100px';
+						</script>";
+				}
+			?>
 <?php }}?>
 			</table>	
 		</div>
@@ -240,14 +264,6 @@ while($result = mysqli_fetch_array($command))
 
 <?php
 if(isset($_GET['revise'])){
-	//Account Restriction
-	$UserPosition = $_SESSION["Position"];
-	if ($UserPosition == "Head"){ //Code Continue
-	}else {
-		echo "<script> alert('Action not allowed!'); </script> ";
-		die;
-	}
-
 	$MID = $_GET['revise'];
 
 	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Need to Revise' WHERE MonitoringID = $MID ");
@@ -260,14 +276,6 @@ if(isset($_GET['revise'])){
 }
 
 if(isset($_GET['approved'])){
-	//Account Restriction
-	$UserPosition = $_SESSION["Position"];
-	if ($UserPosition == "Head"){ //Code Continue
-	}else {
-		echo "<script> alert('Action not allowed!'); </script> ";
-		die;
-	}
-
 	$MID = $_GET['approved'];
 
 	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Approved' WHERE MonitoringID = $MID ");
@@ -280,14 +288,6 @@ if(isset($_GET['approved'])){
 }
 
 if(isset($_GET['reject'])){
-	//Account Restriction
-	$UserPosition = $_SESSION["Position"];
-	if ($UserPosition == "Head"){ //Code Continue
-	}else {
-		echo "<script> alert('Action not allowed!'); </script> ";
-		die;
-	}
-	
 	$MID = $_GET['reject'];
 
 	$sql = ("UPDATE monitoring_alangilan SET Remarks = 'Rejected' WHERE MonitoringID = $MID ");
@@ -298,11 +298,7 @@ if(isset($_GET['reject'])){
 			window.location.href='Monitoring-pending.php';
 		</script>";
 }
-
-
-
 ?>
-
 
 <script>
 //For Table filter

@@ -6,6 +6,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+//Getting Session Variables from index.php
+$College = $_SESSION["College"];
+$UserPosition = $_SESSION["Position"];
 ?>
 
 <!DOCTYPE html>
@@ -152,7 +156,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th width="auto";> College/Office</th>
 					<th width="180px";> Prepared By</th>
 					<th width="120px";> Status </th>
-					<th width="250px";>  </th>
+					<th id="BtnWidth" width="250px";>  </th>
 				</tr>
 
 <?php
@@ -176,6 +180,9 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Need to Revise'");
 }
 
+$BtnEdit = "a";
+$BtnResubmit = "b";
+
 //$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Need to Revise' ");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
@@ -192,6 +199,9 @@ while($result = mysqli_fetch_array($command))
 		while($result2 = mysqli_fetch_array($command2))
 			{
 				$Coll = $result2['College'];
+
+				$BtnEdit .= "a";
+				$BtnResubmit .= "b";
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
@@ -201,10 +211,21 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Status; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Rbtn">View</button> </a>
-					<a href="EditProposal.php?edit=<?php echo $PID; ?>" button class="Rbtn1">Edit</button> </a>
-					<a href="Proposal-revision.php?re_submit=<?php echo $PID; ?>" button class="Rbtn2">Re-Submit</button> </a>
+					<a id="<?php echo $BtnEdit;?>" href="EditProposal.php?edit=<?php echo $PID; ?>" button class="Rbtn1">Edit</button> </a>
+					<a id="<?php echo $BtnResubmit;?>" href="Proposal-revision.php?re_submit=<?php echo $PID; ?>" button class="Rbtn2">Re-Submit</button> </a>
 				</td> 
 			</tr>
+
+			<?php //Account Restrictions (Hide Buttons)
+				if($UserPosition == "Staff") {
+					echo "
+						<script> 
+							document.getElementById('$BtnEdit').style.display = 'none';
+							document.getElementById('$BtnResubmit').style.display = 'none';
+							document.getElementById('BtnWidth').style.width = '100px';
+						</script>";
+				}
+			?>
 <?php }}?>
 			</table>	
 		</div>

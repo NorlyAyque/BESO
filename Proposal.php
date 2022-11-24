@@ -9,7 +9,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 
 //Getting Session Variables from index.php
 $College = $_SESSION["College"];
-$Position = $_SESSION["Position"];
+$UserPosition = $_SESSION["Position"];
 ?>
 
 <!DOCTYPE html>
@@ -150,7 +150,7 @@ $Position = $_SESSION["Position"];
 				<th width="auto";> College/Office</th>
 				<th width="180px";> Prepared By</th>
 				<th width="120px";> Status </th>
-				<th width="280px";>  </th>
+				<th id="BtnWidth" width="280px";>  </th>
 			</tr>
 
 <?php
@@ -174,6 +174,10 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'PENDING'");
 }
 
+$BtnRevise = "a";
+$BtnApproved = "b";
+$BtnReject = "c";
+
 //$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'PENDING'");
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
@@ -190,7 +194,10 @@ while($result = mysqli_fetch_array($command))
 		while($result2 = mysqli_fetch_array($command2))
 			{
 				$Coll = $result2['College'];
-
+				
+				$BtnRevise .= "a";
+				$BtnApproved .= "b";
+				$BtnReject .= "c";
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
@@ -200,11 +207,23 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Status; ?></td> 	
 				<td>
 					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="Pbtn">View</button> </a>
-					<a href="Proposal.php?revise=<?php echo $PID; ?>" button class ="Pbtn1">Revise</button> </a> 
-					<a href="Proposal.php?approved=<?php echo $PID; ?>" button class ="Pbtn2">Approve</button> </a>
-					<a href="Proposal.php?reject=<?php echo $PID; ?>" button class ="Pbtn3">Reject</button> </a>
+					<a id="<?php echo $BtnRevise;?>" href="Proposal.php?revise=<?php echo $PID; ?>" button class ="Pbtn1">Revise</button> </a> 
+					<a id="<?php echo $BtnApproved;?>" href="Proposal.php?approved=<?php echo $PID; ?>" button class ="Pbtn2">Approve</button> </a>
+					<a id="<?php echo $BtnReject;?>" href="Proposal.php?reject=<?php echo $PID; ?>" button class ="Pbtn3">Reject</button> </a>
 				</td> 
 			</tr>
+
+			<?php //Account Restrictions (Hide Buttons)
+				if($UserPosition == "Staff" OR $UserPosition == "Coordinator") {
+					echo "
+						<script> 
+							document.getElementById('$BtnRevise').style.display = 'none';
+							document.getElementById('$BtnApproved').style.display = 'none';
+							document.getElementById('$BtnReject').style.display = 'none';
+							document.getElementById('BtnWidth').style.width = '100px';
+						</script>";
+				}
+			?>
 <?php }}?>
 			</table>	
 		</div>
@@ -241,14 +260,6 @@ while($result = mysqli_fetch_array($command))
 
 <?php
 if(isset($_GET['revise'])){
-	//Account Restriction
-	$UserPosition = $_SESSION["Position"];
-	if ($UserPosition == "Head"){ //Code Continue
-	}else {
-		echo "<script> alert('Action not allowed!'); </script> ";
-		die;
-	}
-
 	$PID = $_GET['revise'];
 
 	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'Need to Revise' WHERE ProposalID = $PID ");
@@ -261,14 +272,6 @@ if(isset($_GET['revise'])){
 }
 
 if(isset($_GET['approved'])){
-	//Account Restriction
-	$UserPosition = $_SESSION["Position"];
-	if ($UserPosition == "Head"){ //Code Continue
-	}else {
-		echo "<script> alert('Action not allowed!'); </script> ";
-		die;
-	}
-
 	$PID = $_GET['approved'];
 
 	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'Approved', Remarks = 'Not Yet Evaluated' WHERE ProposalID = $PID ");
@@ -281,14 +284,6 @@ if(isset($_GET['approved'])){
 }
 
 if(isset($_GET['reject'])){
-	//Account Restriction
-	$UserPosition = $_SESSION["Position"];
-	if ($UserPosition == "Head"){ //Code Continue
-	}else {
-		echo "<script> alert('Action not allowed!'); </script> ";
-		die;
-	}
-	
 	$PID = $_GET['reject'];
 
 	$sql = ("UPDATE create_alangilan SET ProjectStatus = 'Rejected' WHERE ProposalID = $PID ");
@@ -334,13 +329,3 @@ function Filter() {
 	}
 }
 </script>
-
-<?php
-if ($Position == "Coordinator" ){
-	echo "
-		<script> 
-			document.getElementById('CutOff').style.display = 'none';
-		</script>
-	";
-}
-?>
