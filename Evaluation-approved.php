@@ -55,7 +55,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> <u style="text-decoration-thickness:3px; text-underline-position: under";>Evaluation Reports</u></span>
 					<div class="notifEVAL">
-						<span class="icon-buttonEVAL">45</span>
+						<span class="icon-buttonEVAL"><?php echo "$CountEvaluation";?></span>
 					</div>
 				</a>
 			</li>
@@ -108,7 +108,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 							
 							<a href="Evaluation.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
 							<div class="notif">
-							<span class="icon-button__badge">45</span>
+							<span class="icon-button__badge"><?php echo "$CountEvaluation";?></span>
 							</div></a>
 							</button>
 							

@@ -59,7 +59,7 @@ $DateToday = date("Y-m-d"); //YYYY-mm-dd
 					<span class ="icon"> <ion-icon name="receipt-outline"></ion-icon> </span>
 					<span class ="title"> Evaluation Reports</span>
 					<div class="notifEVAL">
-						<span class="icon-buttonEVAL">45</span>
+						<span class="icon-buttonEVAL"><?php echo "$CountEvaluation";?></span>
 					</div>
 				</a>
 			</li>
