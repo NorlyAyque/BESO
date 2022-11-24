@@ -17,7 +17,7 @@ $UserPosition = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Proposals - Rejected</title>
-<link rel="stylesheet" type="text/css" href="styles/ProposalSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Proposal-STYLE.css">
 
 </head>
 <body>
@@ -116,7 +116,10 @@ $UserPosition = $_SESSION["Position"];
 						</div></a>
 							</button>
 							
-							<a href="Proposal-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a>
+							<a href="Proposal-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon>
+							<div class="notifREV">
+							<span class="icon-button__badge"><?php echo "$CountProposal";?></span>
+							</div><a>
 							</button>
 							
 							<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>

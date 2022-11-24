@@ -15,7 +15,7 @@ $UserPosition = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation - Revisions</title>
-<link rel="stylesheet" type="text/css" href="styles/EvaluationReport.css">
+<link rel="stylesheet" type="text/css" href="styles/EvaluationReports-STYLE.css">
 
 </head>
 <body>
@@ -110,11 +110,14 @@ $UserPosition = $_SESSION["Position"];
 							
 							<a href="Evaluation.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
 							<div class="notif">
-							<span class="icon-button__badge"><?php echo "$CountEvaluation";?></span>
+								<span class="icon-button__badge"><?php echo "$CountEvaluation";?></span>
 							</div></a>
 							</button>
 							
-							<a href="Evaluation-revision.php" button class = "nav2"> Revision <ion-icon name="repeat-outline"></ion-icon></a>
+							<a href="Evaluation-revision.php" button class = "nav2"> Revision <ion-icon name="repeat-outline"></ion-icon>
+							<div class="notifREV">
+								<span class="icon-button__badge"><?php echo "$CountEvaluation";?></span>
+							</div></a>
 							</button>
 							
 							<a href="Evaluation-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>

@@ -17,7 +17,7 @@ $DateToday = date("Y-m-d"); //YYYY-mm-dd
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReports-STYLE.css">
 
 </head>
 <body>
@@ -161,7 +161,10 @@ if(isset($_GET['verify'])){
 						<div class="notif">
 							<span class="icon-button__badge"><?php echo "$CountMonitoring";?></span>
 						</div></a></button>
-						<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a></button>
+						<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon>
+						<div class="notifREV">
+							<span class="icon-button__badge"><?php echo "$CountMonitoring";?></span>
+						</div></a></button>
 						<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
 						<a href="Monitoring-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a></button>
 					</div>
