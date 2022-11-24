@@ -177,7 +177,7 @@ include_once ("Dashboard-Computations.php");
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title">Project Proposals</span>
 					<div class="notifDASH">
-						<span class="icon-buttonDASH">44</span>
+						<span class="icon-buttonDASH"><?php echo "$CountProposal";?></span>
 					</div>
 				</a>
 			</li>

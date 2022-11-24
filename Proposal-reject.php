@@ -49,7 +49,7 @@ $UserPosition = $_SESSION["Position"];
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"><u style="text-decoration-thickness:3px; text-underline-position: under";> Project Proposals</u></span>
 					<div class="notifDASH">
-							<span class="icon-buttonDASH">44</span>
+							<span class="icon-buttonDASH"><?php echo "$CountProposal";?></span>
 					</div>
 				</a>
 			</li>
@@ -112,7 +112,7 @@ $UserPosition = $_SESSION["Position"];
 							
 							<a href="Proposal.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
 							<div class="notif">
-							<span class="icon-button__badge">44</span>
+							<span class="icon-button__badge"><?php echo "$CountProposal";?></span>
 						</div></a>
 							</button>
 							

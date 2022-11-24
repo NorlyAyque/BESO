@@ -51,7 +51,7 @@ $UserPosition = $_SESSION["Position"];
 					
 					<span class ="title" ><u style="text-decoration-thickness:3px; text-underline-position: under";> Project Proposals</u></span>
 					<div class="notifDASH">
-							<span class="icon-buttonDASH">44</span>
+							<span class="icon-buttonDASH"><?php echo "$CountProposal";?></span>
 					</div>
 				</a>
 			</li>
@@ -114,7 +114,7 @@ $UserPosition = $_SESSION["Position"];
 					
 						<a href="Proposal.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
 						<div class="notif">
-							<span class="icon-button__badge">44</span>
+							<span class="icon-button__badge"><?php echo "$CountProposal";?></span>
 						</div></a>
 						<a href="Proposal-revision.php" button class = "nav">Revision <ion-icon name="repeat-outline"></ion-icon></a>
 						<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
