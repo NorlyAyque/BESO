@@ -117,7 +117,7 @@ $UserPosition = $_SESSION["Position"];
 						</div></a>
 						<a href="Evaluation-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon>
 						<div class="notifREV">
-							<span class="icon-button__badge"><?php echo "$CountEvaluation";?></span>
+							<span class="icon-button__badge"><?php echo "$CountCoorRevEval";?></span>
 						</div></a>
 						<a href="Evaluation-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 						<a href="Evaluation-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>	

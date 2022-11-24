@@ -8,9 +8,16 @@ if ($Position == "Coordinator" ){
 			//document.querySelector('.notifMONI').style.display = 'none';
 
 			document.querySelector('.notif').style.display = 'none';
-			document.getElementByid('space').style.display = 'none';
+			
+		</script>
+	";
+}else{
+	echo "
+		<script> 
+			document.querySelector('.notifREV').style.display = 'none';
 		</script>
 	";
 }
+
 
 ?>

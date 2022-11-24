@@ -118,7 +118,7 @@ date_default_timezone_set("Asia/Manila");
 						</div></a></button>
 						<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon>
 						<div class="notifREV">
-							<span class="icon-button__badge"><?php echo "$CountMonitoring";?></span>
+							<span class="icon-button__badge"><?php echo "$CountCoorRevMon";?></span>
 						</div></a></button>
 						<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
 						<a href="Monitoring-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a></button>

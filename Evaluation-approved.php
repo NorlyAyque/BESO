@@ -114,7 +114,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 							
 							<a href="Evaluation-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon>
 							<div class="notifREV">
-								<span class="icon-button__badge"><?php echo "$CountEvaluation";?></span>
+								<span class="icon-button__badge"><?php echo "$CountCoorRevEval";?></span>
 							</div></a>
 							</button>
 							
