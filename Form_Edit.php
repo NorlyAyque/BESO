@@ -169,7 +169,8 @@ if(isset($_GET['edit'])){
 						<option value="CEAFA">CEAFA</option>
 						<option value="CICS">CICS</option>
 						<option value="CIT">CIT</option>
-						<option value="*">N/A</option>
+						<option value="**">N/A (Head)</option>
+						<option value="*">N/A (Staff)</option>
                         <option value="<?php echo $dbCollege; ?>" selected><?php echo $dbCollege; ?></option>
 					</select>
 					</div>

@@ -12,9 +12,10 @@ $AccountID = $_SESSION["AccountAID"];
 $Fullname = $_SESSION["FullName"];
 $Campus = $_SESSION["Campus"];
 $College = $_SESSION["College"];
-
-//Account Restrictions
 $UserPosition = $_SESSION["Position"];
+
+/*
+//Account Restrictions
 if ($UserPosition == "Head"){
 	//Code Continue
 }else {
@@ -24,9 +25,12 @@ if ($UserPosition == "Head"){
 	echo "<h2> <a href='Dashboard.php'> RETURN </a> </h2>";
 	die();
 }
+*/
 
 ?>
-
+<script>
+	document.getElementById('Logo_Title').style.display = 'none'; //Do not Delete
+</script>
 
 <?php
 if(isset($_GET['disable'])){
@@ -179,14 +183,17 @@ if(isset($_GET['enable'])){
 			?>
 
 			<div class="add">
-				<a href="Form_Add.php" button class = "adduser"> Add User <ion-icon name="person-add-outline"></ion-icon></a> </button>
+				<a href="Form_Add.php" button class = "adduser" id="AddUserBtn"> Add User <ion-icon name="person-add-outline"></ion-icon></a> </button>
 			</div>
 			<div class="scroll" >
 			<table class="account" id="Table" >
 				<thead>
 				<tr class="Name">
 					 
-					<th colspan="8"> Filter Name: <input type="text" onkeyup="myFunction()" id="keyword" placeholder="Type name here"></th>
+					<th colspan="8" id="FilterRow"> 
+						Filter Name: <input type="text" onkeyup="myFunction()" id="keyword" placeholder="Type name here">
+						<button type='button' onclick='display()'>FIND ME</button>
+					</th>
 				</tr>
 
 				<tr>
@@ -200,14 +207,30 @@ if(isset($_GET['enable'])){
 					<th width="auto";> College </th>
 					<th width="auto";> Position </th>
 					<th width="auto";> Status </th>
-					<th width="200px";></th>
+					<th id="ColumnForButton" width="200px";></th>
 				</tr>
 				</thead>
 <?php
 //Displaying All Accounts
 //$sql = ("SELECT * FROM account WHERE AccountID != '$AccountID' AND Campus = '$Campus'");
 //$sql = ("SELECT * FROM account WHERE AccountID = '$AccountID'");
-$sql = ("SELECT * FROM account");
+
+
+if ($UserPosition == "Staff" OR $UserPosition == "Coordinator"){
+	$sql = ("SELECT * FROM account WHERE AccountID = '$AccountID' AND Campus = '$Campus'");
+	echo "
+		<script>
+			document.getElementById('FilterRow').style.display = 'none';
+			document.getElementById('Logo_Title').style.display = 'block';
+		</script>
+	";
+}else{
+	$sql = ("SELECT * FROM account WHERE Campus = '$Campus'");
+	//$sql = ("SELECT * FROM account");
+}
+
+
+//$sql = ("SELECT * FROM account");
 $command = $con->query($sql) or die("Error SQL");
 
 while($result = mysqli_fetch_array($command))
@@ -232,16 +255,21 @@ while($result = mysqli_fetch_array($command))
 					<td> <?php echo $dbStatus; ?> </td> 
 					<td>
 						<a href="Form_Edit.php?edit=<?php echo $dbAID; ?>" button class = "btn"> Edit </button> </a>
-						<a href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn3"> Enable </a>
-						<a href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
+						<a id="EnableBtn" href="Account.php?enable=<?php echo $dbAID; ?>" button class = "btn3"> Enable </a>
+						<a id="DisableBtn" href="Account.php?disable=<?php echo $dbAID; ?>" button class = "btn2"> Disable </a>
 					</td>
 				</tr>
 				</tbody>
 <?php
 	}
 ?>
-				
 			</table>
+			
+				<p align="center" id="Logo_Title">
+					<img src="images/logo.png" width="200px">
+					<marquee> <h1> BESO PORTAL </h1> </marquee>
+				</p>
+
 			</div>
 		</div>
 	</div>
@@ -302,3 +330,23 @@ function myFunction(){
   }
 }
 </script>
+
+<?php
+if ($UserPosition == "Staff" OR $UserPosition == "Coordinator"){
+	echo "
+		<script>
+			document.getElementById('AddUserBtn').style.display = 'none';
+			document.getElementById('EnableBtn').style.display = 'none';
+			document.getElementById('DisableBtn').style.display = 'none';
+			document.getElementById('ColumnForButton').style.width = '100px';
+		</script>
+	";
+}else{
+	echo "
+		<script>
+			
+			document.getElementById('Logo_Title').style.display = 'none';
+		</script>
+	";
+}
+?>
