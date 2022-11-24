@@ -488,3 +488,5 @@ function Filter() {
 	}
 }
 </script>
+
+<?php include("RestrictNotif.php"); ?>

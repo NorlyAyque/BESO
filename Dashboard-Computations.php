@@ -862,3 +862,5 @@ $sql = ("UPDATE target_alangilan SET
 WHERE Year = '$CustomYear'");
 $command = $con->query($sql) or die("Error updating target");
 ?>
+
+<?php include("RestrictNotif.php"); ?>

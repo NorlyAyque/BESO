@@ -209,5 +209,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
-<body>
+</body>
 </html>
+
+<?php include("RestrictNotif.php"); ?>

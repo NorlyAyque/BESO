@@ -355,3 +355,5 @@ if ($UserPosition == "Staff" OR $UserPosition == "Coordinator"){
 	";
 }
 ?>
+
+<?php include("RestrictNotif.php"); ?>

@@ -1120,3 +1120,5 @@ if ($College == "CEAFA" AND $Position == "Coordinator" ){
 	";
 }
 ?>
+
+<?php include("RestrictNotif.php"); ?>

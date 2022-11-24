@@ -187,7 +187,7 @@ if (($Position == "Coordinator") OR ($Position == "Staff")){
 }
 ?>		
 
-
+<?php include("RestrictNotif.php"); ?>
 <!--********************************************
 					SIGNATORIES 
 *************************************************-->

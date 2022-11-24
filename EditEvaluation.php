@@ -751,3 +751,5 @@ function AcceptedByDesignation(){
 	document.getElementById("Sign3_2").value = x;
 }
 </script>
+
+<?php include("RestrictNotif.php"); ?>

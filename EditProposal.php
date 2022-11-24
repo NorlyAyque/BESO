@@ -1248,3 +1248,5 @@ function ApprovedByDesignation(){
 	document.getElementById("Sign5_2").value = x;
 }
 </script>
+
+<?php include("RestrictNotif.php"); ?>

@@ -304,3 +304,5 @@ function ShowPassword() {
 	}
 }
 </script>
+
+<?php include("RestrictNotif.php"); ?>

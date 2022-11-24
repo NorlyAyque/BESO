@@ -116,7 +116,9 @@ $UserPosition = $_SESSION["Position"];
 						<div class="notif">
 							<span class="icon-button__badge"><?php echo "$CountProposal";?></span>
 						</div></a>
-						<a href="Proposal-revision.php" button class = "nav">Revision <ion-icon name="repeat-outline"></ion-icon></a>
+
+						<a href="Proposal-revision.php" button class = "nav">Revision <ion-icon name="repeat-outline"></ion-icon><a>
+						
 						<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 						<a href="Proposal-reject.php" button class = "nav"> Rejected <ion-icon name="thumbs-down-outline"></ion-icon></a>	
 					</div>
@@ -329,3 +331,5 @@ function Filter() {
 	}
 }
 </script>
+
+<?php include("RestrictNotif.php"); ?>

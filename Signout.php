@@ -227,3 +227,5 @@ if (isset($_POST['Logout'])){
 	echo"<script> window.location.href='index.php'; </script>";
 }
 ?>
+
+<?php include("RestrictNotif.php"); ?>

@@ -474,3 +474,5 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
+
+<?php include("RestrictNotif.php"); ?>
