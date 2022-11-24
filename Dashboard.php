@@ -953,7 +953,7 @@ function DisplayCharts(){
 			color: "#b3b3b3", //Target
 			dataPoints: <?php echo json_encode($dataPointsCEAFA_A, JSON_NUMERIC_CHECK); ?>
 		},{
-			type: "column",
+			type: "area",
 			name: "Actual",
 			indexLabel: "{y}",
 			indexLabelFontColor: "black",
@@ -994,7 +994,7 @@ function DisplayCharts(){
 			color: "#b3b3b3", //Target
 			dataPoints: <?php echo json_encode($dataPointsCICS_A, JSON_NUMERIC_CHECK); ?>
 		},{
-			type: "column",
+			type: "area",
 			name: "Actual",
 			indexLabel: "{y}",
 			indexLabelFontColor: "black",
@@ -1034,7 +1034,7 @@ function DisplayCharts(){
 			color: "#b3b3b3", //Target
 			dataPoints: <?php echo json_encode($dataPointsCIT_A, JSON_NUMERIC_CHECK); ?>
 		},{
-			type: "column",
+			type: "area",
 			name: "Actual",
 			indexLabel: "{y}",
 			indexLabelFontColor: "black",
