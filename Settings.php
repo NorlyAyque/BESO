@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include("Connection.php");
@@ -7,6 +8,11 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+//Getting Session Variables from index.php
+$College = $_SESSION["College"];
+$Position = $_SESSION["Position"];
+
 
 date_default_timezone_set('Asia/Manila');
 ?>
@@ -111,25 +117,19 @@ date_default_timezone_set('Asia/Manila');
 			</table>
 	
 	<br>
-
+		<!-- Display Set Year and Quarter-->
+		<div id="LabelText">
 			<center> 
 				<h2> Current Set Year <u> <?php echo "$CustomYear";?> </u>
 				and Quarter <u><?php echo "$CustomQuarter";?> </u></h2>
 			</center>
-	
-			
-			
-			<table>
-				<tr>
-				
-			
-			
-			<table class="settings">	
-					
+		</div>
+
+			<table id="TableForYearQuarter" class="settings">
 				<tr>
 					<th colspan="2"><h3>Set Year and Quarter to be used for the whole system</h3></i></th>
-					
-				</tr>			
+				</tr>
+
 				<tr>
 					<th width="50%";>Set Year</th>
 					<th width="50%";>Set Quarter </th>
@@ -168,11 +168,27 @@ date_default_timezone_set('Asia/Manila');
 					</td> 
 				</tr>
 			</table>
+			<?php
+
+//Restrictions for Year and Quarter
+if (($Position == "Coordinator") OR ($Position == "Staff")){
+	echo "
+		<script> 
+			document.getElementById('LabelText').style.display = 'none';
+			document.getElementById('TableForYearQuarter').style.display = 'none';
+		</script>
+	";
+}
+?>		
+
+
+<!--********************************************
+					SIGNATORIES 
+*************************************************-->
+
 			<table class="signatories">	
-					
 				<tr>
 					<th colspan="2"><h3>Add Signatories</h3></i></th>
-					
 				</tr>			
 				<tr>
 					<th width="50%";>Name </th>
@@ -202,29 +218,8 @@ date_default_timezone_set('Asia/Manila');
 					</td> 
 				</tr>
 			</table>
+
 		<!-- Display All Names in Signatories-->
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<div class="row">
 		  <div class="column">
 				<table class="List">
@@ -253,7 +248,8 @@ date_default_timezone_set('Asia/Manila');
 				<?php } ?>
 				</table>
 			</div>
-		
+			
+			<!-- Display All Positions in Signatories-->
 			<div class="column">
 				<table class="List2nd"> 
 				<tr>
@@ -282,24 +278,9 @@ date_default_timezone_set('Asia/Manila');
 				<?php } ?>
 				</table>
 			</div>
-		</div>
-			
-			
-			
-			
-			
-			
+		</div>		
+	</div>
 </div>
-</div>
-	
-	
-
-	<!-- Display All Positions in Signatories-->
-
-		
-	
-	
-	
 
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -331,19 +312,19 @@ date_default_timezone_set('Asia/Manila');
 	<script>
 	// For date and Time
 	let time = document.getElementById("current-time");
-	
-	
 	setInterval(()=>{
 		let d = new Date();
-		time.innerHTML = d.toLocaleTimeString();
+			time.innerHTML = d.toLocaleTimeString();
 	},1000)
 		
 	</script>
+
 	<script>
-	var time = new Date();
-var date = time.getFullYear()+'-'+(time.getMonth()+1)+'-'+time.getDate();
+		var time = new Date();
+		var date = time.getFullYear()+'-'+(time.getMonth()+1)+'-'+time.getDate();
 	</script>
-<body>
+
+</body>
 </html>
 
 <?php
@@ -398,3 +379,4 @@ if(isset($_GET['delete'])){
 		</script>";
 }
 ?>
+
