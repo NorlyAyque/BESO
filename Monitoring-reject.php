@@ -106,7 +106,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<th colspan="7">
 						<div class="menu">
 							<a href="Monitoring.php" button class = "listnav1"> List<ion-icon name="list-outline"></ion-icon></a></button>
-							<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon></a></button>
+							<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
+							<div class="notif">
+							<span class="icon-button__badge">46</span>
+							</div></a></button>
 							<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a></button>
 							<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
 							<a href="Monitoring-reject.php" button class = "nav1"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a></button>
