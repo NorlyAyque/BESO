@@ -11,7 +11,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Status Report</title>
-<link rel="stylesheet" type="text/css" href="styles/Reports-style.css">
+<link rel="stylesheet" type="text/css" href="styles/ReportsSTYLE.css">
 
 </head>
 <body>
@@ -36,12 +36,16 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
+					<div class="notifDASH">
+						<span class="icon-buttonDASH">44</span>
+					</div>
 				</a>
 			</li>
 			<li>
 				<a href="CreateProposal.php">
 					<span class ="icon"> <ion-icon name="document-text-outline"></ion-icon> </span>
 					<span class ="title"> Create Proposal</span>
+					
 				</a>
 			</li>
 			<li>

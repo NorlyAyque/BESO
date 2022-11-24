@@ -78,7 +78,7 @@ if(isset($_GET['create'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/CreateMonitoringSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/CreateMonitoring-STYLE.css">
 
 </head>
 <body>
@@ -109,6 +109,9 @@ if(isset($_GET['create'])){
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
+					<div class="notifDASH">
+						<span class="icon-buttonDASH">44</span>
+					</div>
 				</a>
 			</li>
 			

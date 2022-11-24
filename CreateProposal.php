@@ -36,7 +36,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-proposalSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposal-STYLE.css">
 
 </head>
 <body>
@@ -67,6 +67,9 @@ $DateTime = date("M, d Y; h:i:s A");
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
+					<div class="notifDASH">
+						<span class="icon-buttonDASH">44</span>
+					</div>
 				</a>
 			</li>
 			<li>

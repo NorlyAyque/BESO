@@ -141,6 +141,7 @@ body{
 
 
 
+
 /* curve outside */
 
 .navigation ul li:hover a::before,
@@ -215,7 +216,32 @@ margin-left: 100px;
 	margin-bottom:-30px;
 	color:white;
 }
+/********* NOTIFICATION NUMBER **********/
+.notifDASH{	
+margin-left:-25px;
+display:flex;
+position:abosolute;
+}
 
+.icon-buttonDASH {
+	margin-left:-210px;
+	margin-top:5px;
+	width:25px;
+	height:25px;
+	background: white;
+	color:black;
+	border-radius:25%;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	display:flex;
+	position:abosolute;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	font-weight:bold;
+	font-size:13px;
+}
+
+/********* NOTIFICATION NUMBER **********/
 .menu{
 	 text-decoration:none;
 }
@@ -359,77 +385,6 @@ margin-left: 100px;
 	float: left;
 	text-decoration:none;
 }
-
-
-.Drp{
-	text-align:left;
-}
-.Drp select{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right:40px;
-  
-}
-.Drp option{
-	font-size:15px;
-	cursor:pointer;
-	
-	
-}
-.Drp input{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  
-}
-.Drp option{
-	font-size:15px;
-	cursor:pointer;
-	
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -828,44 +783,47 @@ background-color: #D1D1D1;}
   background-color:  #38E54D;
   color: white;
 }
-
-.headmes{
-	border-collapse:collapse;
-	margin:auto;
-	border-radius:10px;
-	margin-top:-10px;
+.Drp{
+	text-align:left;
 }
-
-.headmes td {
-	border:1px solid black;
-	padding:7px 50px;
-
+.Drp select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  
 }
-
-.cancel{
-	text-decoration:none;
-	background-color: orange;
-	color:white;
-	padding:5px;
-	border-radius:3px;
-	font-size:12px;
-	margin-right:5px;
-}
-.cancel:hover{
-	background-color: var(--red);
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
 	
 }
-.proceed{
-	text-decoration:none;
-	background-color: #4CAF50; 
-	color:white;
-	padding:5px;
-	border-radius:3px;
-	font-size:12px;
-	margin-right:-30px;
-	
+.Drp input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
 }
-.proceed:hover{
-	background-color: green;
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
 	
 }

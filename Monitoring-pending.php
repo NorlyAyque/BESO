@@ -16,7 +16,7 @@ date_default_timezone_set("Asia/Manila");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring - Pending</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReport-style.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReportSTYLE.css">
 
 </head>
 <body>
@@ -47,6 +47,9 @@ date_default_timezone_set("Asia/Manila");
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
+					<div class="notifDASH">
+						<span class="icon-buttonDASH">44</span>
+					</div>
 				</a>
 			</li>
 			

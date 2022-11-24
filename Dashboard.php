@@ -143,7 +143,7 @@ include_once ("Dashboard-Computations.php");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/DashboardStyle.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard-STYLE.css">
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> <!-- For Graph -->
 </head>
 
@@ -175,7 +175,10 @@ include_once ("Dashboard-Computations.php");
 			<li>
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
-					<span class ="title"> Project Proposals</span>
+					<span class ="title">Project Proposals</span>
+					<div class="notifDASH">
+						<span class="icon-buttonDASH">44</span>
+					</div>
 				</a>
 			</li>
 			<li>

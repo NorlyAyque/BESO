@@ -17,7 +17,7 @@ $DateToday = date("Y-m-d"); //YYYY-mm-dd
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReport-style.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReportSTYLE.css">
 
 </head>
 <body>
@@ -48,6 +48,9 @@ $DateToday = date("Y-m-d"); //YYYY-mm-dd
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
+					<div class="notifDASH">
+						<span class="icon-buttonDASH">44</span>
+					</div>
 				</a>
 			</li>
 			

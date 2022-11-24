@@ -16,7 +16,7 @@ date_default_timezone_set('Asia/Manila');
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Settings</title>
-<link rel="stylesheet" type="text/css" href="styles/SettingStyle.css">
+<link rel="stylesheet" type="text/css" href="styles/Setting-STYLE.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
@@ -49,6 +49,9 @@ date_default_timezone_set('Asia/Manila');
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
+					<div class="notifDASH">
+						<span class="icon-buttonDASH">44</span>
+					</div>
 				</a>
 			</li>
 			
@@ -222,70 +225,72 @@ date_default_timezone_set('Asia/Manila');
 		
 		
 		
-	
-			<table class="List">
+		<div class="row">
+		  <div class="column">
+				<table class="List">
+					<tr>
+						<th colspan="3">LIST OF NAME</th>
+					</tr>
+					<tr>
+						<th>ID</th>
+						<th>NAME</th>
+						<th></th>
+					</tr>
+					<?php
+					$sql = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
+					$command = $con->query($sql) or die("Error SQL");
+					while($result = mysqli_fetch_array($command))
+						{
+							$SID = $result['SignID'];
+							$Persons_Name = $result['Persons_Name'];
+				?>
+					<tr>
+						<td> <?php echo "$SID";?> </td>
+						<td> <?php echo "$Persons_Name";?> </td>
+						<td> <a href="Settings.php?delete=<?php echo $SID; ?>" class="deletebtn" >DELETE</button> </a> </td>
+					</tr>
+
+				<?php } ?>
+				</table>
+			</div>
+		
+			<div class="column">
+				<table class="List2nd"> 
 				<tr>
-					<th colspan="3">LIST OF NAME</th>
+					<th colspan="3"> LIST OF POSITIONS</th>
 				</tr>
 				<tr>
-					<th>ID</th>
-					<th>NAME</th>
-					<th></th>
+					<th> ID </th>
+					<th> Positions </th>
+					<th> </th>
 				</tr>
+				
 				<?php
-				$sql = ("SELECT * FROM signatories_alangilan WHERE Persons_Name != ''");
-				$command = $con->query($sql) or die("Error SQL");
-				while($result = mysqli_fetch_array($command))
-					{
-						$SID = $result['SignID'];
-						$Persons_Name = $result['Persons_Name'];
-			?>
+					$sql = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
+					$command = $con->query($sql) or die("Error SQL");
+					while($result = mysqli_fetch_array($command))
+						{
+							$SID = $result['SignID'];
+							$Position = $result['Position'];
+				?>
 				<tr>
 					<td> <?php echo "$SID";?> </td>
-					<td> <?php echo "$Persons_Name";?> </td>
-					<td> <a href="Settings.php?delete=<?php echo $SID; ?>" class="deletebtn" >DELETE</button> </a> </td>
+					<td > <?php echo "$Position";?> </td>
+					<td> <a href="Settings.php?delete=<?php echo $SID; ?>" class="deletebtn">DELETE</button> </a> </td>
 				</tr>
 
-			<?php } ?>
-			</table>
-			
-			
-			<table class="List2nd"> 
-			<tr>
-				<th colspan="3"> LIST OF POSITIONS</th>
-			</tr>
-			<tr>
-				<th> ID </th>
-				<th> Positions </th>
-				<th> </th>
-			</tr>
-			
-			<?php
-				$sql = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
-				$command = $con->query($sql) or die("Error SQL");
-				while($result = mysqli_fetch_array($command))
-					{
-						$SID = $result['SignID'];
-						$Position = $result['Position'];
-			?>
-			<tr>
-				<td> <?php echo "$SID";?> </td>
-				<td > <?php echo "$Position";?> </td>
-				<td> <a href="Settings.php?delete=<?php echo $SID; ?>" class="deletebtn">DELETE</button> </a> </td>
-			</tr>
-
-			<?php } ?>
-		</table>
-			
-			
-			
-			
-			
-			
-			
-			
+				<?php } ?>
+				</table>
+			</div>
 		</div>
-	</div>
+			
+			
+			
+			
+			
+			
+</div>
+</div>
 	
 	
 

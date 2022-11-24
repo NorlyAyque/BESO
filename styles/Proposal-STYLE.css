@@ -243,13 +243,10 @@ position:abosolute;
 
 }
 
-.notifDASH{
-	
+.notifDASH{	
 margin-left:-25px;
 display:flex;
 position:abosolute;
-	
-
 }
 
 .icon-buttonDASH {
@@ -268,8 +265,6 @@ position:abosolute;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 	font-weight:bold;
 	font-size:13px;
-
-
 }
 
 

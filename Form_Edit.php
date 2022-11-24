@@ -32,7 +32,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Edit User</title>
-<link rel="stylesheet" type="text/css" href="styles/Forms.css">
+<link rel="stylesheet" type="text/css" href="styles/Forms-STYLE.css">
 
 </head>
 <body>
@@ -63,6 +63,9 @@ if(isset($_GET['edit'])){
 				<a href="Proposal.php">
 					<span class ="icon"> <ion-icon name="document-attach-outline"></ion-icon> </span>
 					<span class ="title"> Project Proposals</span>
+					<div class="notifDASH">
+						<span class="icon-buttonDASH">44</span>
+					</div>
 				</a>
 			</li>
 			
