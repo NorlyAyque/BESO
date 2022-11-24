@@ -344,7 +344,6 @@ if ($UserPosition == "Staff" OR $UserPosition == "Coordinator"){
 }else{
 	echo "
 		<script>
-			
 			document.getElementById('Logo_Title').style.display = 'none';
 		</script>
 	";

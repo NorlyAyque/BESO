@@ -6,6 +6,11 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+//Session variables from index.php
+$College = $_SESSION["College"];
+$UserPosition = $_SESSION["Position"];
+
 ?>
 
 <!DOCTYPE html>
@@ -163,10 +168,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 						<div class ="Drp1">
 							<select name="College" id="College" required>
 								<option value="">Select College</option>
-								<option value="CEAFA">CEAFA</option>
-								<option value="CICS">CICS</option>
-								<option value="CIT">CIT</option>
-								<option value="ALL">ALL</option>
+								<option value="CEAFA" id="DrpDwnCEAFA" style="display:none;">CEAFA</option>
+								<option value="CICS" id="DrpDwnCICS" style="display:none;">CICS</option>
+								<option value="CIT" id="DrpDwnCIT" style="display:none;">CIT</option>
+								<option value="ALL" id="DrpDwnALL" style="display:none;">ALL</option>
 							</select>
 						</div>
 					</td> 
@@ -243,4 +248,35 @@ if((isset($_GET['Year']) == TRUE) AND (isset($_GET['Quarter'])== TRUE) AND (isse
 	}
 }
 
+?>
+
+<?php
+if ($College == "CEAFA" ){
+	echo "
+		<script>
+			document.getElementById('DrpDwnCEAFA').style.display = 'block';
+		</script>
+	";
+}else if ($College == "CICS"){
+	echo "
+		<script>
+			document.getElementById('DrpDwnCICS').style.display = 'block';
+		</script>
+	";
+}else if ($College == "CIT" ){
+	echo "
+		<script>
+			document.getElementById('DrpDwnCIT').style.display = 'block';
+		</script>
+	";
+}else{
+	echo "
+		<script>
+			document.getElementById('DrpDwnCEAFA').style.display = 'block';
+			document.getElementById('DrpDwnCICS').style.display = 'block';
+			document.getElementById('DrpDwnCIT').style.display = 'block';
+			document.getElementById('DrpDwnALL').style.display = 'block';
+		</script>
+	";
+}
 ?>
