@@ -111,13 +111,13 @@ $UserPosition = $_SESSION["Position"];
 						<div class="menu">
 							
 							<a href="Proposal.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
-							<div class="notif">
+							<div id="PendingProp" class="notif">
 							<span class="icon-button__badge"><?php echo "$CountProposal";?></span>
 						</div></a>
 							</button>
 							
 							<a href="Proposal-revision.php" button class = "nav2"> Revision <ion-icon name="repeat-outline"></ion-icon>
-							<div class="notifREV">
+							<div id="ReviseProp" class="notifREV">
 							<span class="icon-button__badge"><?php echo "$CountCoorRevProp";?></span>
 							</div><a>
 							</button>

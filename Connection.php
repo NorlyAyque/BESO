@@ -66,11 +66,16 @@ if ((isset($_SESSION['College']) == TRUE) AND (isset($_SESSION['Position']) == T
 	$sql = ("SELECT COUNT(*) as TotalCount FROM monitoring_alangilan WHERE (Author = '$AID') AND (Remarks = 'Need to Revise')");
 	$command = $con->query($sql) or die("Error Fethcing Data");
 	while($result = mysqli_fetch_array($command)){$CountCoorRevMon = $result['TotalCount'];}
+	
+	//For Demo
+	//$CountProposal = 10; //Proposal
+	//$CountEvaluation = 20; //Evaluation
+	//$CountMonitoring = 30; //Monitoring
 
 	if ($UserPosition == "Coordinator"){
-		$CountProposal = $CountCoorRevProp; //Proposal
-		$CountEvaluation = $CountCoorRevEval; //Evaluation
-		$CountMonitoring = $CountCoorRevMon; //Monitoring
+		$CountProposal = $CountCoorRevProp;// = 1; //Proposal
+		$CountEvaluation = $CountCoorRevEval;// = 2; //Evaluation
+		$CountMonitoring = $CountCoorRevMon;// = 3; //Monitoring
 	}
 }
 

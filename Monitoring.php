@@ -158,11 +158,11 @@ if(isset($_GET['verify'])){
 					<div class="menu">
 						<a href="Monitoring.php" button class = "listnav2"> List<ion-icon name="list-outline"></ion-icon></a></button>
 						<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
-						<div class="notif">
+						<div id="PendingMon" class="notif">
 							<span class="icon-button__badge"><?php echo "$CountMonitoring";?></span>
 						</div></a></button>
 						<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon>
-						<div class="notifREV">
+						<div id="ReviseMon" class="notifREV">
 							<span class="icon-button__badge"><?php echo "$CountCoorRevMon";?></span>
 						</div></a></button>
 						<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>

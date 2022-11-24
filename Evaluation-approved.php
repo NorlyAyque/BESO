@@ -107,13 +107,13 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 						<div class="menu">
 							
 							<a href="Evaluation.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
-							<div class="notif">
+							<div id="PendingEval" class="notif">
 								<span class="icon-button__badge"><?php echo "$CountEvaluation";?></span>
 							</div></a>
 							</button>
 							
 							<a href="Evaluation-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon>
-							<div class="notifREV">
+							<div id="ReviseEval" class="notifREV">
 								<span class="icon-button__badge"><?php echo "$CountCoorRevEval";?></span>
 							</div></a>
 							</button>
