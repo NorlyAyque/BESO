@@ -585,7 +585,7 @@ $DateTime = date("M, d Y; h:i:s A");
 					<td>
 					<div class="DrpSigna">
 						<select id="ReviewByDesignation">
-							<option value="">Please Select Name</option>
+							<option value="">Please Select Designation</option>
 								<?php
 									$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
 									$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
@@ -629,7 +629,7 @@ $DateTime = date("M, d Y; h:i:s A");
 					<td>
 					<div class="DrpSigna">
 						<select id="RecommendingApproval1Designation">
-							<option value="">Please Select Name</option>
+							<option value="">Please Select Designation</option>
 								<?php
 									$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
 									$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
@@ -672,7 +672,7 @@ $DateTime = date("M, d Y; h:i:s A");
 					<td>
 					<div class="DrpSigna">
 						<select id="RecommendingApproval2Designation">
-							<option value="">Please Select Name</option>
+							<option value="">Please Select Designation</option>
 								<?php
 									$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
 									$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
@@ -715,7 +715,7 @@ $DateTime = date("M, d Y; h:i:s A");
 					<td>
 					<div class="DrpSigna">
 						<select id="ApprovedByDesignation">
-							<option value="">Please Select Name</option>
+							<option value="">Please Select Designation</option>
 								<?php
 									$SQLPosition = ("SELECT * FROM signatories_alangilan WHERE Position != ''");
 									$CMDPosition = $con->query($SQLPosition) or die("Error SQL Signatories");
@@ -906,6 +906,7 @@ if (isset($_POST['Save'])) {
 		$command = $con->query($sql);
 		echo "<script>
 			alert('Proposal Successfully Created');
+			
 		</script>";
 }
 ?>
