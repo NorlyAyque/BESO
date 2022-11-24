@@ -135,7 +135,16 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					</div>
 
 					<label><b>College</b></label>
-					<input type="text" placeholder="College" name="College" required>
+					<div class ="DrpCAMPUS">
+					<select name="College" id="College" required>
+						<option value="0">Select College</option>
+						<option value="CEAFA">CEAFA</option>
+						<option value="CICS">CICS</option>
+						<option value="CIT">CIT</option>
+						<option value="*">N/A</option>
+					</select>
+					</div>
+
 
 					<label><b>Position</b></label>
 					<div class ="DrpCAMPUS">
@@ -148,6 +157,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					</div>
 
 					<!--Save Button -->
+					<a href="Account.php" button class="btn">BACK</button>
 					<button class="btn" type="submit" name="Signup">Add Account</button>
 				    </div>
 				</th>

@@ -160,11 +160,20 @@ if(isset($_GET['edit'])){
 					</div>
 
 					<label><b>College</b></label>
-					<input type="text" placeholder="Collage" name="College" value="<?php echo $dbCollege; ?>" required>
-
+					<div class ="DrpCAMPUS">
+					<select name="College" id="College" required>
+						<option value="0">Select College</option>
+						<option value="CEAFA">CEAFA</option>
+						<option value="CICS">CICS</option>
+						<option value="CIT">CIT</option>
+						<option value="*">N/A</option>
+                        <option value="<?php echo $dbCollege; ?>" selected><?php echo $dbCollege; ?></option>
+					</select>
+					</div>
+					
 					<label><b>Position</b></label>
 					<div class ="DrpCAMPUS">
-					<select name="Position" id="Position">
+					<select name="Position" id="Position" required>
 						<option value="0">Select Position</option>
 						<option value="Head">Head</option>
 						<option value="Coordinator">Coordinator</option>
@@ -174,6 +183,7 @@ if(isset($_GET['edit'])){
 					</div>
 					
 					<!--Save Button -->
+					<a href="Account.php" button class="btn1">BACK</button>
 					<button class="btn1" type="submit" name="Update">Save</button>
 	                </div>
 				</th>
