@@ -71,7 +71,7 @@ date_default_timezone_set("Asia/Manila");
 					<span class ="icon"> <ion-icon name="hourglass-outline"></ion-icon> </span>
 					<span class ="title"><u style="text-decoration-thickness:3px; text-underline-position: under";> Monitoring Reports</u></span>
 					<div class="notifMONI">
-						<span class="icon-buttonMONI">46</span>
+						<span class="icon-buttonMONI"><?php echo "$CountMonitoring";?></span>
 					</div>
 				</a>
 			</li>
@@ -114,7 +114,7 @@ date_default_timezone_set("Asia/Manila");
 						<a href="Monitoring.php" button class = "listnav1"> List <ion-icon name="list-outline"></ion-icon></a></button>
 						<a href="Monitoring-pending.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
 						<div class="notif">
-							<span class="icon-button__badge">46</span>
+							<span class="icon-button__badge"><?php echo "$CountMonitoring";?></span>
 						</div></a></button>
 						<a href="Monitoring-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon></a></button>
 						<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
