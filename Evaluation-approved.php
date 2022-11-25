@@ -6,6 +6,8 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+$AID = $_SESSION["AccountAID"];
 ?>
 
 <!DOCTYPE html>
@@ -161,6 +163,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				</tr>
 <?php
 //Display all the Approved Evaluation Reports based on Colleges/Office
+/*
 if ($College == $CEAFA){
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
 				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
@@ -178,6 +181,15 @@ if ($College == $CEAFA){
 			");
 }else{
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved' ");
+}*/
+
+if ($UserPosition != "Head"){
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+		(Author = '$AID') AND
+		(ProjectStatus = 'Approved')
+	");
+}else{
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved'");
 }
 
 //$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved'");

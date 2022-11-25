@@ -8,8 +8,10 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 }
 
 //Getting Session Variables from index.php
+$AID = $_SESSION["AccountAID"];
 $College = $_SESSION["College"];
 $UserPosition = $_SESSION["Position"];
+
 
 date_default_timezone_set("Asia/Manila");
 //$DateToday = date("Y-m-d");

@@ -6,6 +6,9 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+$AID = $_SESSION["AccountAID"];
+
 ?>
 
 <!DOCTYPE html>

@@ -7,6 +7,8 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	die;
 }
 
+$AID = $_SESSION["AccountAID"];
+
 date_default_timezone_set("Asia/Manila");
 //$DateToday = date("Y-m-d");
 $DateToday = date("Y-m-d"); //YYYY-mm-dd
