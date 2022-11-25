@@ -183,13 +183,13 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved' ");
 }*/
 
-if ($UserPosition != "Head"){
+if ($UserPosition != "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved'");
+}else{
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
 		(Author = '$AID') AND
 		(ProjectStatus = 'Approved')
 	");
-}else{
-	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved'");
 }
 
 //$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Approved'");

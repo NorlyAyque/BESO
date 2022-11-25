@@ -180,13 +180,14 @@ $UserPosition = $_SESSION["Position"];
 	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'PENDING'");
 }**/
 
-if ($UserPosition != "Head"){
+if ($UserPosition == "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'PENDING'");
+	
+}else{
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(AccountID = '$AID') AND
 		(ProjectStatus = 'PENDING')
 	");
-}else{
-	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'PENDING'");
 }
 
 $BtnRevise = "a";

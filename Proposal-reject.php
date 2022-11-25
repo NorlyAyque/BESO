@@ -183,13 +183,14 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Rejected'");
 }*/
 
-if ($UserPosition != "Head"){
+if ($UserPosition == "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Rejected'");
+	
+}else{
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(AccountID = '$AID') AND
 		(ProjectStatus = 'Rejected')
 	");
-}else{
-	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Rejected'");
 }
 
 $BtnRe_Use = "a";

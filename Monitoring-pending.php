@@ -162,6 +162,7 @@ date_default_timezone_set("Asia/Manila");
 $DateToday = date("Y-m-d");
 
 //Display Proposal that needs to Monitor based on Colleges/Office
+/*
 if ($College == $CEAFA){
 	$sql = ("SELECT * FROM monitoring_alangilan WHERE 
 				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
@@ -179,8 +180,16 @@ if ($College == $CEAFA){
 			");
 }else{
 	$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
-}
+}*/
 
+if ($UserPosition != "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'PENDING' ");
+}else{
+	$sql = ("SELECT * FROM monitoring_alangilan WHERE 
+		(Author = '$AID') AND
+		(Remarks = 'PENDING')
+	");
+}
 
 $BtnRevise = "a";
 $BtnApproved = "b";

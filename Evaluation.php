@@ -177,13 +177,13 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'PENDING' ");
 }*/
 
-if ($UserPosition != "Head"){
+if ($UserPosition != "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'PENDING'");
+}else{
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
 		(Author = '$AID') AND
 		(ProjectStatus = 'PENDING')
 	");
-}else{
-	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'PENDING'");
 }
 
 $BtnRevise = "a";
