@@ -143,7 +143,7 @@ include_once ("Dashboard-Computations.php");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/DashboardSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboards.css">
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> <!-- For Graph -->
 </head>
 
@@ -244,6 +244,7 @@ include_once ("Dashboard-Computations.php");
 
 <!-- Graph -->
 <div class="graph">
+	<center>
 <table>
 	<tr>
 		<td id="ChartForCEAFA"><div id="ChartCEAFA" style="height: 350px; width: 310px;"></div></td>
@@ -251,6 +252,7 @@ include_once ("Dashboard-Computations.php");
 		<td id="ChartForCIT"><div id="ChartCIT" style="height: 350px; width: 310px;"></div></td>
 	</tr>
 </table>
+</center>
 	</div>
 
 <form action="" method="POST">
