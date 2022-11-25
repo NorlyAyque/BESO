@@ -45,7 +45,7 @@ if($CountProposal == 0){
 	<script> 
 		document.querySelector('.notifDASH').style.display = 'none';
 		document.querySelector('#PendingProp').style.display = 'none';
-
+		document.querySelector('.notifREV').style.display = 'none';
 	</script>
 ";
 }
@@ -55,6 +55,7 @@ if($CountEvaluation == 0){
 	<script> 
 		document.querySelector('.notifEVAL').style.display = 'none';
 		document.querySelector('#PendingEval').style.display = 'none';
+		document.querySelector('.notifREV').style.display = 'none';
 	</script>
 ";
 }
@@ -64,6 +65,7 @@ if($CountMonitoring == 0){
 	<script> 
 		document.querySelector('.notifMONI').style.display = 'none';
 		document.querySelector('#PendingMon').style.display = 'none';
+		document.querySelector('.notifREV').style.display = 'none';
 	</script>
 ";
 }
