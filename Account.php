@@ -79,7 +79,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Account</title>
-<link rel="stylesheet" type="text/css" href="styles/Account-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Accounts.css">
 
 </head>
 <body>
