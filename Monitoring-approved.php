@@ -6,6 +6,12 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+//Getting Session Variables from index.php
+$AID = $_SESSION["AccountAID"];
+$College = $_SESSION["College"];
+$UserPosition = $_SESSION["Position"];$AID = $_SESSION["AccountAID"];
+
 ?>
 
 <!DOCTYPE html>
@@ -151,6 +157,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				</tr>
 <?php
 //Display all the Approved Evaluation Reports based on Colleges/Office
+/*
 if ($College == $CEAFA){
 	$sql = ("SELECT * FROM monitoring_alangilan WHERE 
 				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
@@ -168,6 +175,15 @@ if ($College == $CEAFA){
 			");
 }else{
 	$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'Approved' ");
+}*/
+
+if ($UserPosition != "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'Approved' ");
+}else{
+	$sql = ("SELECT * FROM monitoring_alangilan WHERE 
+		(Author = '$AID') AND
+		(Remarks = 'Approved')
+	");
 }
 
 //$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'Approved' ");

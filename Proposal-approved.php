@@ -8,6 +8,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 }
 
 //Getting Session Variables from index.php
+$AID = $_SESSION["AccountAID"];
 $College = $_SESSION["College"];
 $UserPosition = $_SESSION["Position"];
 ?>
@@ -164,6 +165,7 @@ $UserPosition = $_SESSION["Position"];
 				</tr>
 <?php
 //Display all the Approved Proposals based on Colleges/Office
+/*
 if ($College == $CEAFA){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
@@ -181,6 +183,16 @@ if ($College == $CEAFA){
 			");
 }else{
 	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Approved'");
+}*/
+
+if ($UserPosition == "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Approved'");
+	
+}else{
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(AccountID = '$AID') AND
+		(ProjectStatus = 'Approved')
+	");
 }
 
 $BtnCreateEval = "a";

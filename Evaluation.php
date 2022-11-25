@@ -7,6 +7,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	die;
 }
 //Getting Session Variables from index.php
+$AID = $_SESSION["AccountAID"];
 $College = $_SESSION["College"];
 $UserPosition = $_SESSION["Position"];
 ?>
@@ -156,6 +157,7 @@ $UserPosition = $_SESSION["Position"];
 			</tr>
 <?php
 //Display all the Pending Evaluation Reports based on Colleges/Office
+/*
 if ($College == $CEAFA){
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
 				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
@@ -173,6 +175,15 @@ if ($College == $CEAFA){
 			");
 }else{
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'PENDING' ");
+}*/
+
+if ($UserPosition != "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'PENDING'");
+}else{
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+		(Author = '$AID') AND
+		(ProjectStatus = 'PENDING')
+	");
 }
 
 $BtnRevise = "a";

@@ -6,6 +6,8 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+$AID = $_SESSION["AccountAID"];
 $College = $_SESSION["College"];
 $UserPosition = $_SESSION["Position"];
 ?>
@@ -163,6 +165,7 @@ $UserPosition = $_SESSION["Position"];
 				</tr>
 <?php
 //Display all the Need to Revise Evaluation Reports based on Colleges/Office
+/*
 if ($College == $CEAFA){
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
 				(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
@@ -180,6 +183,15 @@ if ($College == $CEAFA){
 			");
 }else{
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Need to Revise' ");
+}*/
+
+if ($UserPosition != "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Need to Revise'");
+}else{
+	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
+		(Author = '$AID') AND
+		(ProjectStatus = 'Need to Revise')
+	");
 }
 
 $BtnEdit = "a";
