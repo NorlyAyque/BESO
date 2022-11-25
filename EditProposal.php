@@ -488,6 +488,7 @@ if(isset($_GET['edit'])){
 						<textarea placeholder="type here..." name="SDG" id="SDG" required><?php echo $dbSDG; ?></textarea>
 						
 						<label>  Vl. Office/ College/s Involved </label>
+								(CEAFA, CICS, CIT)
 						<textarea placeholder="type here..." name="Office" required><?php echo $dbOffice; ?></textarea>
 						
 						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i></label>
