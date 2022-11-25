@@ -177,7 +177,7 @@ while($result = mysqli_fetch_array($command))
 
 <!-- SIGNATORIES -->
 		<tr>
-			<th colspan="3" width="33%";>
+			<th colspan="3">
 				<p align="left">Prepared by: </p>
 				<div class="DrpSigna">
 				<select id="PreparedByName">
@@ -213,7 +213,7 @@ while($result = mysqli_fetch_array($command))
 			</th>
 
 
-			<th colspan="4"  width="34%";>
+			<th colspan="4">
 				<p align="left">Reviewed by: </p>
 				<div class="DrpSigna">
 				<select id="ReviewedByName">
@@ -248,7 +248,7 @@ while($result = mysqli_fetch_array($command))
 				<p class="signatories"> <textarea id="ReviewedByField" placeholder="type here..."></textarea> </p>
 			</th>
 
-			<th colspan="3"  width="33%";>
+			<th colspan="3" >
 				<p align="left">Approved by: </p>
 				<div class="DrpSigna">
 				<select id="ApprovedByName">
