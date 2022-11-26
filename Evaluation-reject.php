@@ -185,7 +185,7 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Rejected' ");
 }*/
 
-if ($UserPosition != "Head" OR $UserPosition == "Staff"){
+if ($UserPosition == "Head" OR $UserPosition == "Staff"){
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE ProjectStatus = 'Rejected'");
 }else{
 	$sql = ("SELECT * FROM evaluation_alangilan WHERE 
