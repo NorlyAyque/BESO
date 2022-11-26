@@ -385,8 +385,8 @@ if(isset($_GET['edit'])){
 								<input type="checkbox" id="TypeCES_8" value="Parent's Empowerment through Social Development(PESODEV)Program" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
-							<label class="check"><span>9. Genger and Development</span>
-								<input type="checkbox" id="TypeCES_9" value="Genger and Development" name="CES" onclick="SelectTypeCES()">
+							<label class="check"><span>9. Gender and Development</span>
+								<input type="checkbox" id="TypeCES_9" value="Gender and Development" name="CES" onclick="SelectTypeCES()">
 								<span class="checkmark"></span>
 							</label>
 							<label class="check"><span>10. Disaster Preparedness and Response/Climate Change Adaptation</span>
