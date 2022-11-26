@@ -6,6 +6,11 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+
+//Getting Session Variables from index.php
+$AID = $_SESSION["AccountAID"];
+$College = $_SESSION["College"];
+$UserPosition = $_SESSION["Position"];
 ?>
 
 
@@ -165,6 +170,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 				</tr>
 <?php
 //Display all the Approved PAP based on Colleges/Office
+/*
 if ($College == $CEAFA){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
@@ -196,7 +202,7 @@ if ($College == $CEAFA){
 		Remarks_2 != '') AND
 		(Remarks_3 = 'Completed' OR Remarks_3 = '')
 	");
-}
+}*/
 
 /* 
 $sql = ("SELECT * FROM create_alangilan WHERE 
@@ -206,6 +212,23 @@ $sql = ("SELECT * FROM create_alangilan WHERE
 		(Remarks_3 = 'Completed' OR Remarks_3 = '')
 	");
 */
+
+
+if ($UserPosition == "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(ProjectStatus = 'Approved' AND 
+		Remarks = 'Evaluated' AND
+		Remarks_2 != '') AND
+		(Remarks_3 = 'Completed' OR Remarks_3 = '')");
+}else{
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(AccountID = '$AID') AND
+		(ProjectStatus = 'Approved' AND 
+		Remarks = 'Evaluated' AND
+		Remarks_2 != '') AND
+		(Remarks_3 = 'Completed' OR Remarks_3 = '')");
+}
+
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
