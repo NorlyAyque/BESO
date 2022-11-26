@@ -11,7 +11,7 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Sign out</title>
-<link rel="stylesheet" type="text/css" href="styles/Account-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Accounts.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 <style>
@@ -211,11 +211,11 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	let list = document.querySelectorAll('.navigation li');
 	function activeLink(){
 		list.forEach((item)=>
-		item.classList.remove('hovered));
+		item.classList.remove('hovered'));
 		this.classList.add('hovered');
 	}
 	list.forEach((item))=>
-	item.addEventlistener('mouseover',activeLink));
+	item.addEventlistener('mouseover',activeLink);
 	</script>
 <body>
 </html>
