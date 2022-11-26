@@ -330,7 +330,8 @@ if(isset($_GET['approved'])){
 
 	//Words are in Connection.php
 	// Test if string contains the word 
-	if (((str_contains($Office, $CEAFA)) == TRUE) OR ((str_contains($Office, $CEAFA_Full)) == TRUE)) {
+	//if (((str_contains($Office, $CEAFA)) == TRUE) OR ((str_contains($Office, $CEAFA_Full)) == TRUE)) {
+	if (((strpos($Office, $CEAFA)) !== FALSE) OR ((strpos($Office, $CEAFA_Full)) !== FALSE)) {
 		if ($CustomQuarter == 1){//For CEAFA Actual Quarter 1
 			$NewCount = $CEAFA_BQ1 + 1;
 			$Col = $CEAFA_BQT + 1;
@@ -365,7 +366,8 @@ if(isset($_GET['approved'])){
 		}
 	}
 	
-	if (((str_contains($Office, $CICS)) == TRUE) OR ((str_contains($Office, $CICS_Full)) == TRUE)) {
+	//if (((str_contains($Office, $CICS)) == TRUE) OR ((str_contains($Office, $CICS_Full)) == TRUE)) {
+	if (((strpos($Office, $CICS)) !== FALSE) OR ((strpos($Office, $CICS_Full)) !== FALSE)) {
 		if ($CustomQuarter == 1){//For CICS Actual Quarter 1
 			$NewCount = $CICS_BQ1 + 1;	
 			$Col = $CICS_BQT + 1;
@@ -400,7 +402,8 @@ if(isset($_GET['approved'])){
 		}	
 	}
 	
-	if (((str_contains($Office, $CIT)) == TRUE) OR ((str_contains($Office, $CIT_Full)) == TRUE)) {
+	//if (((str_contains($Office, $CIT)) == TRUE) OR ((str_contains($Office, $CIT_Full)) == TRUE)) {
+	if (((strpos($Office, $CIT)) !== FALSE) OR ((strpos($Office, $CIT_Full)) !== FALSE)) {
 		if ($CustomQuarter == 1){//For CIT Actual Quarter 1
 			$NewCount = $CIT_BQ1 + 1;	
 			$Col = $CIT_BQT + 1;
