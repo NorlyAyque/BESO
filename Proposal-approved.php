@@ -18,7 +18,7 @@ $UserPosition = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Proposals - Approved</title>
-<link rel="stylesheet" type="text/css" href="styles/Proposal-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/ProposalCSS.css">
 
 </head>
 <body>
@@ -109,12 +109,23 @@ $UserPosition = $_SESSION["Position"];
 if(isset($_GET['DeleteWarning'])){
 	$PID = $_GET['DeleteWarning'];
 	echo "
-		<center> 
-			<h1> WARNING!: Are you sure you want to DELETE Proposal ID <u> $PID </u>? </h1>
-		 	<h2> Deleting Proposal will also delete the existing <br> Evaluation and Monitoring Report! </h2> 
-			<a href='Proposal-approved.php'><button class='btn'>CANCEL</button></a>
-			<a href='Proposal-approved.php?delete=$PID'><button class='btn1'>DELETE</button> </a>
-		</center> 
+	<div class='warning'>
+		<table class='tbwarning'>
+			<tr>
+				<th> <a>WARNING!</a>: Are you sure you want to DELETE Proposal ID <u> $PID </u>?</th>
+			</tr>
+			<tr>
+			<th>Deleting Proposal will also delete the existing: Evaluation and Monitoring Report!</th>
+			</tr>
+			<tr>
+				
+				<td  style='text-align:center'><a href='Proposal-approved.php'><button class='cancel'>CANCEL</button></a>
+				<a href='Proposal-approved.php?delete=$PID'><button class='proceed'>DELETE</button> </a></td>
+				
+			</tr>
+			
+		</table> 
+		</div>
 		<br>
 	";
 
