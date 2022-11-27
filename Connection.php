@@ -11,6 +11,7 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 	die("Failed To Connect to the Server and to the Database  " .$dbname);
 }
 
+//Copy Codes Here
 $query = ("SELECT * FROM custom_alangilan");
 $x = $con->query($query) or die("Error Fethcing data from custome alangilan");
 while($output = mysqli_fetch_array($x))
@@ -78,7 +79,4 @@ if ((isset($_SESSION['College']) == TRUE) AND (isset($_SESSION['Position']) == T
 		$CountMonitoring = $CountCoorRevMon;// = 3; //Monitoring
 	}
 }
-
-
-
 ?>
