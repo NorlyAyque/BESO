@@ -208,6 +208,7 @@ if(isset($_GET['verify'])){
 <?php
 
 //Display Proposal that needs to Monitor based on Colleges/Office
+/*
 if ($College == $CEAFA){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 				(unknown != 'Extension PAP' AND Remarks = 'Evaluated') AND
@@ -225,6 +226,17 @@ if ($College == $CEAFA){
 				ORDER BY ProposalID DESC");
 }else{
 	$sql = ("SELECT * FROM create_alangilan WHERE (unknown != 'Extension PAP' AND Remarks = 'Evaluated') ORDER BY ProposalID DESC");
+}*/
+
+if ($UserPosition == "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(unknown != 'Extension PAP' AND Remarks = 'Evaluated') 
+		ORDER BY ProposalID DESC");
+}else{
+	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(AccountID = '$AID') AND
+		(unknown != 'Extension PAP' AND Remarks = 'Evaluated')
+		ORDER BY ProposalID DESC");
 }
 
 //$sql = ("SELECT * FROM create_alangilan WHERE (unknown != 'Extension PAP' AND Remarks = 'Evaluated') ORDER BY ProposalID DESC");

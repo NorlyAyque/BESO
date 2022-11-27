@@ -6,10 +6,17 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 	header('Location: index.php');
 	die;
 }
+//Getting Data declared from index.php
+$AID = $_SESSION["AccountAID"];
+$create_table = $_SESSION["create_table"];
+
+$Fullname = $_SESSION["FullName"];
+$Position = $_SESSION["Position"];
+$College = $_SESSION["College"];
+
 
 //Account Restrictions
-$UserPosition = $_SESSION["Position"];
-if (($UserPosition == "Head") OR ($UserPosition == "Coordinator")) {
+if (($Position == "Head") OR ($Position == "Coordinator")) {
 	//Code Continue
 }else {
 	echo "<center> <br>";
@@ -18,13 +25,6 @@ if (($UserPosition == "Head") OR ($UserPosition == "Coordinator")) {
 	echo "<h2> <a href='Dashboard.php'> RETURN </a> </h2>";
 	die();
 }
-
-//Getting Data declared from index.php
-$AID = $_SESSION["AccountAID"];
-$create_table = $_SESSION["create_table"];
-
-$Fullname = $_SESSION["FullName"];
-$Position = $_SESSION["Position"];
 
 date_default_timezone_set("Asia/Manila");
 $DateTime = date("M, d Y; h:i:s A");
@@ -143,7 +143,7 @@ $DateTime = date("M, d Y; h:i:s A");
 						</div>
 						<div class="DrpCate">
 								Category: 
-							<select id="unknown"name="unknown" required>
+							<select id="unknown" name="unknown" onchange="MonitoringFrequency()" required>
 								<option value="">Please Select</option>
 								<option value="Extension PAP">Extension PAP</option>
 								<option value="For Monitoring">Monitoring</option>
@@ -379,7 +379,7 @@ $DateTime = date("M, d Y; h:i:s A");
 				
 						<label>  Vl. Office/ College/s Involved <label>
 							(CEAFA, CICS, CIT)
-						<textarea placeholder="type here..." name="Office" required></textarea>
+						<textarea placeholder="type here..." name="Office" required><?php echo "$College";?></textarea>
 						
 						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i><label>
 						<textarea placeholder="type here..." name="Programs" required></textarea>
@@ -416,8 +416,12 @@ $DateTime = date("M, d Y; h:i:s A");
 						<table class="TotalCost">	
 									
 								<tr class="MF" >
-									<th>Total Cost</th>
-									<td><input type="number" min="0" name="Cost" id="Cost" title="Based from the Financial Plan Grand Total" readonly> </td> 
+									<th>Total Cost</th> <br>
+									<i>*auto generated based from the computed Financial Plan </i>
+									<td>
+										<input type="number" min="0" name="Cost" id="Cost" title="Based from the Financial Plan Grand Total" readonly> 
+										
+									</td> 
 								
 								</tr>
 								<tr class="MF1" >
@@ -539,10 +543,11 @@ $DateTime = date("M, d Y; h:i:s A");
 						<div class="select4">
 							<table>
 								<tr>
-									<th><input type="radio" name="Frequency" value="Monthly">Monthly </th>
-									<th><input type="radio" name="Frequency" value="Quarterly"> Quarterly</th>
-									<th><input type="radio" name="Frequency" value="Semi-Annually">Semi-Annually</th>
-									<th><input type="radio" name="Frequency" value="Yearly">Yearly </th>
+									<th><input type="radio" name="Frequency" id="Monthly" value="Monthly">Monthly </th>
+									<th><input type="radio" name="Frequency" id="Quarterly" value="Quarterly"> Quarterly</th>
+									<th><input type="radio" name="Frequency" id="Semi" value="Semi-Annually">Semi-Annually</th>
+									<th><input type="radio" name="Frequency" id="Yearly" value="Yearly">Yearly </th>
+									<th><input type="radio" name="Frequency" id="N_A" value="Not Applicable">N/A</th>
 								</tr>
 							</table>
 						</div>
@@ -889,7 +894,7 @@ if (isset($_POST['Save'])) {
 				FPR10_1, FPR10_2, FPR10_3, FPR10_4, FPR10_5, GrandTotal,
 				Functional, Frequency, Monitoring, Plans, ProjectStatus,
 				Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2,
-				Sign4_1, Sign4_2, Sign5_1, Sign5_2)
+				Sign4_1, Sign4_2, Sign5_1, Sign5_2, Remarks_2)
 		VALUES 
 			('$AID', '$DateTime', '$Year', '$Quarter', '$Initiated', '$Classification', '$unknown', '$IsGAD',
 				'$Title', '$Location_Area', '$Start_Date', '$End_Date', '$Start_Time', '$End_Time', '$TypeCES',
@@ -907,16 +912,40 @@ if (isset($_POST['Save'])) {
 				'$FPR10_1', '$FPR10_2', '$FPR10_3', '$FPR10_4', '$FPR10_5', '$GrandTotal',
 				'$Functional', '$Frequency', '$Monitoring', '$Plans', 'PENDING',
 				'$Sign1_1', '$Sign1_2', '$Sign2_1', '$Sign2_2', '$Sign3_1', '$Sign3_2',
-				'$Sign4_1', '$Sign4_2', '$Sign5_1', '$Sign5_2'
+				'$Sign4_1', '$Sign4_2', '$Sign5_1', '$Sign5_2','$Frequency'
 			)");
 	
 		$command = $con->query($sql);
 		echo "<script>
 			alert('Proposal Successfully Created');
-			
+			window.location.href='Proposal.php';
 		</script>";
 }
 ?>
+
+<script>
+function MonitoringFrequency(){
+	var x = document.getElementById("unknown").value;
+
+	if (x == "Extension PAP"){
+		document.getElementById("N_A").checked = true;
+
+		//document.getElementById("Monthly").readonly = true;
+		//document.getElementById("Quarterly").readonly = true;
+		//document.getElementById("Semi").readonly = true;
+		//document.getElementById("Yearly").readonly = true;
+	}
+	else{
+		document.getElementById("N_A").checked = false;
+
+		//document.getElementById("Monthly").readonly = false;
+		//document.getElementById("Quarterly").readonly = false;
+		//document.getElementById("Semi").readonly = false;
+		//document.getElementById("Yearly").readonly = false;	
+	}
+}
+
+</script>
 
 <script>
 //For Form TypeCES and SDG

@@ -43,6 +43,10 @@ if(isset($_GET['create'])){
 		$dbTypeParticipants = $result['TypeParticipants'];
 		$dbMale = $result['Male'];
 		$dbFemale = $result['Female'];
+
+		$dbSign1_1 = $result['Sign1_1'];
+		$dbSign1_2 = $result['Sign1_2'];
+		
     }
 
 	//Computation for number of Hours Implemented / Duration
@@ -335,8 +339,8 @@ if(isset($_GET['create'])){
 				</tr>
 				<tr>
 					<td> Prepared by:</td>	
-					<td><textarea placeholder="..." name="Sign1_1" required><?php echo strtoupper($Fullname);?></textarea></td>
-					<td><textarea placeholder="..." name="Sign1_2" required><?php echo $Position; ?></textarea></td>
+					<td><textarea placeholder="..." name="Sign1_1" required><?php echo strtoupper($dbSign1_1);?></textarea></td>
+					<td><textarea placeholder="..." name="Sign1_2" required><?php echo $dbSign1_2; ?></textarea></td>
 				</tr>
 				<tr>
 					<td> Reviewed by:</td>

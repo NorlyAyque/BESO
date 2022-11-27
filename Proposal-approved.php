@@ -105,7 +105,41 @@ $UserPosition = $_SESSION["Position"];
 			<div class="topbar">
 					
 			</div>
-			
+<?php
+if(isset($_GET['DeleteWarning'])){
+	$PID = $_GET['DeleteWarning'];
+	echo "
+		<center> 
+			<h1> WARNING!: Are you sure you want to DELETE Proposal ID <u> $PID </u>? </h1>
+		 	<h2> Deleting Proposal will also delete the existing <br> Evaluation and Monitoring Report! </h2> 
+			<a href='Proposal-approved.php'><button class='btn'>CANCEL</button></a>
+			<a href='Proposal-approved.php?delete=$PID'><button class='btn1'>DELETE</button> </a>
+		</center> 
+		<br>
+	";
+
+}
+
+if(isset($_GET['delete'])){
+
+	$PID = $_GET['delete'];
+
+	$sql = ("DELETE FROM create_alangilan WHERE ProposalID = '$PID'");
+	$command = $con->query($sql) or die("Error Deleting proposal");
+	
+	$sql = ("DELETE FROM evaluation_alangilan WHERE ProposalID = '$PID'");
+	$command = $con->query($sql) or die("Error Deleting evaluation");
+
+	$sql = ("DELETE FROM monitoring_alangilan WHERE ProposalID = '$PID'");
+	$command = $con->query($sql) or die("Error Deleting monitoring");
+	echo " 
+
+		<script>
+			alert('PROPOSAL Deleted $PID');	
+			window.location.href='Proposal-approved.php';
+		</script>";
+}
+?>
 		<table class="proposals" id="MyTable">
 				<tr>
 					<th colspan="7">
@@ -195,7 +229,9 @@ if ($UserPosition == "Head" OR $UserPosition == "Staff"){
 	");
 }
 
-$BtnCreateEval = "a";
+$BtnEdit = "a";
+$BtnDelete = "b";
+$BtnCreateEval = "c";
 
 //$sql = ("SELECT * FROM create_alangilan WHERE ProjectStatus = 'Approved' ");
 $command = $con->query($sql) or die("Error SQL");
@@ -216,7 +252,9 @@ while($result = mysqli_fetch_array($command))
 			{
 				$Coll = $result2['College'];
 
-				$BtnCreateEval .= "a";
+				$BtnEdit = "a";
+				$BtnDelete = "b";
+				$BtnCreateEval = "c";
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
@@ -226,19 +264,24 @@ while($result = mysqli_fetch_array($command))
 				<td><?php echo $Status; ?></td> 	
 				<td><?php echo $Remarks; ?></td> 	
 				<td>
-					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="Abtn">View</button> </a> <br>
+					<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class="btn3">View</button> </a>
+					<a id="<?php echo $BtnEdit;?>" href="EditProposal.php?edit=<?php echo $PID; ?>" button class="Rbtn">Edit</button> </a>
+					<a id="<?php echo $BtnDelete;?>" href="Proposal-approved.php?DeleteWarning=<?php echo $PID; ?>" button class="btn1">DELETE</button> </a> <br>
 					<a id="<?php echo $BtnCreateEval;?>" href="Proposal-approved.php?check=<?php echo $PID; ?>" button class="Abtn1">CREATE EVALUATION</button> </a>
 					<br>
 				</td> 
 			</tr>
 			<?php //Account Restrictions (Hide Buttons)
-				if($UserPosition == "Staff") {
+				if($UserPosition == "Coordinator") {
 					echo "
 						<script> 
-							document.getElementById('$BtnCreateEval').style.display = 'none';
-							document.getElementById('BtnWidth').style.width = '100px';
+							//document.getElementById('$BtnEdit').style.display = 'none';
+							document.getElementById('$BtnDelete').style.display = 'none';	
+							//document.getElementById('$BtnCreateEval').style.display = 'none';
+							//document.getElementById('BtnWidth').style.width = '200px';
 						</script>";
 				}
+				
 			?>
 <?php }} ?>
 			</table>	
@@ -277,6 +320,7 @@ while($result = mysqli_fetch_array($command))
 
 
 <?php
+
 if(isset($_GET['check'])){
 	//Account Restriction
 	$UserPosition = $_SESSION["Position"];

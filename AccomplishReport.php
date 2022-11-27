@@ -213,20 +213,35 @@ $sql = ("SELECT * FROM create_alangilan WHERE
 	");
 */
 
-
+//fix code
 if ($UserPosition == "Head" OR $UserPosition == "Staff"){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
-		(ProjectStatus = 'Approved' AND 
-		Remarks = 'Evaluated' AND
-		Remarks_2 != '') AND
-		(Remarks_3 = 'Completed' OR Remarks_3 = '')");
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 = 'Not Applicable' OR
+			(
+				Remarks_2 != 'Monthly' AND
+				Remarks_2 != 'Quarterly' AND
+				Remarks_2 != 'Semi-Annually' AND
+				Remarks_2 != 'Yearly'
+			)
+		)
+
+		");
 }else{
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(AccountID = '$AID') AND
-		(ProjectStatus = 'Approved' AND 
-		Remarks = 'Evaluated' AND
-		Remarks_2 != '') AND
-		(Remarks_3 = 'Completed' OR Remarks_3 = '')");
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 = 'Not Applicable' OR
+			(
+				Remarks_2 != 'Monthly' AND
+				Remarks_2 != 'Quarterly' AND
+				Remarks_2 != 'Semi-Annually' AND
+				Remarks_2 != 'Yearly'
+			)
+		)
+	");
 }
 
 $command = $con->query($sql) or die("Error SQL");

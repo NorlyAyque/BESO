@@ -177,7 +177,7 @@ if ($College == $CEAFA){
 	$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'Need to Revise' ");
 }*/
 
-if ($UserPosition != "Head" OR $UserPosition == "Staff"){
+if ($UserPosition == "Head" OR $UserPosition == "Staff"){
 	$sql = ("SELECT * FROM monitoring_alangilan WHERE Remarks = 'Need to Revise' ");
 }else{
 	$sql = ("SELECT * FROM monitoring_alangilan WHERE 
