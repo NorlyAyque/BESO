@@ -144,12 +144,11 @@ $UserPosition = $_SESSION["Position"];
 								<option value="">Select Column</option>
 								<option value="1">Proposal ID</option>
 								<option value="2">Title</option>
-								<option value="3">Year</option>
+								<option value="3">GAD</option>
 								<option value="4">College</option>
-								<option value="5">Proposal</option>
-								<option value="6">Evaluation</option>
-								<option value="7">Last Monitored</option>
-								<option value="8">Impact Assessment</option>
+								<option value="5">Year</option>
+								<option value="6">Quarter</option>
+								<option value="7">Status</option>
 							</select>
 								 Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
 						</div>
@@ -160,12 +159,14 @@ $UserPosition = $_SESSION["Position"];
 				<tr>
 					<th width="80px"> Proposal ID</th>
 					<th width="auto"> Title </th>
+					<th width="50"> GAD </th>
+					<th width="200px";> College/Office</th>
 					<th width="90px"> Year </th> 
-					<th width="auto";> College/Office</th>
-					<th width="100px"> Proposal </th> 
-					<th width="100px";> Evaluation </th> <!-- Remarks -->
-					<th width="120px";> Last Monitored </th> <!-- Remarks_2 -->
-					<th width="120px";> Impact Assessment </th> <!-- Remarks_3 -->
+					<th width="90px"> Quarter </th> 
+					<th width="100px"> STATUS </th> 
+					<!-- <th width="100px";> Evaluation </th>  Remarks -->
+					<!-- <th width="120px";> Last Monitored </th> Remarks_2 -->
+					<!-- <th width="120px";> Impact Assessment </th> Remarks_3 -->
 					<th width="130px";> View</th>
 				</tr>
 <?php
@@ -233,11 +234,13 @@ while($result = mysqli_fetch_array($command))
 		$PID = $result['ProposalID'];
 		$AID = $result['AccountID'];
 		$Year = $result['Year'];
+		$Quarter = $result['Quarter'];
+		$GAD = $result['IsGAD'];
 		$Title = $result ['Title'];
 		$PS = $result ['ProjectStatus']; // Pending, Approved, Revised, Reject
 		$R1 = $result ['Remarks']; //For Evaluation
-		$R2 = $result['Remarks_2']; //For Monitoring
-		$R3 = $result['Remarks_3']; // For Impact Assessment
+		//$R2 = $result['Remarks_2']; //For Monitoring
+		//$R3 = $result['Remarks_3']; // For Impact Assessment
 		$College = $result['Office'];
 
 		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
@@ -249,12 +252,14 @@ while($result = mysqli_fetch_array($command))
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
-				<td><?php echo $Year; ?></p></td> 
+				<td><?php echo $GAD; ?></p></td> 
 				<td><?php echo $College; ?></p></td> 
-				<td><?php echo $PS; ?></td> 
-				<td><?php echo $R1; ?></td> 
-				<td><?php echo $R2; ?></td> 
-				<td><?php echo $R3; ?></td> 	
+				<td><?php echo $Year; ?></p></td> 
+				<td><?php echo $Quarter; ?></p></td> 
+				<td><?php echo $PS."<br>".$R1; ?></td> 
+				<!-- <td><?php echo $R1; ?></td>  -->
+				<!-- <td><?php //echo $R2; ?></td> -->
+				<!-- <td><?php //echo $R3; ?></td> -->
 				<td>
 					<div class="margin">
 						<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn1">Proposal</button> </a>
@@ -326,8 +331,7 @@ function Filter() {
 	else if (x == "5"){var SelectedColumn = 4;}	
 	else if (x == "6"){var SelectedColumn = 5;}	
 	else if (x == "7"){var SelectedColumn = 6;}	
-	else if (x == "8"){var SelectedColumn = 7;}	
-	
+		
 	var input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("keyword");
 	filter = input.value.toUpperCase();
