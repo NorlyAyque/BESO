@@ -793,7 +793,6 @@ while($result = mysqli_fetch_array($command))
 $x = 0;
 $sql = ("SELECT * FROM create_alangilan WHERE 
 	(Year = $CustomYear) AND
-	(Quarter = '4') AND
 	(Remarks = 'Evaluated')		
 	");
 $command = $con->query($sql) or die("Error SQL");
