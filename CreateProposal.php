@@ -915,11 +915,18 @@ if (isset($_POST['Save'])) {
 				'$Sign4_1', '$Sign4_2', '$Sign5_1', '$Sign5_2','$Frequency'
 			)");
 	
-		$command = $con->query($sql);
-		echo "<script>
-			alert('Proposal Successfully Created');
-			window.location.href='Proposal.php';
-		</script>";
+		if ($command = $con->query($sql) === TRUE) {
+			echo "<script>
+					alert('Proposal Successfully Created');
+					window.location.href='Proposal.php';
+				</script>";
+		  } else {
+			echo "<script>
+					alert('FAILED TO CREATE. Try Again!');
+					window.location.href='CreateProposal.php';
+				</script>";
+		  }
+
 }
 ?>
 
