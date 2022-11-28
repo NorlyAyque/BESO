@@ -324,6 +324,7 @@ if(isset($_GET['approved'])){
 	$command = $con->query($sql) or die("Error Fethcing data");
 	while($result = mysqli_fetch_array($command))
 	{
+		$Quarter = $result["Quarter"];
 		$word = $result["Office"];
 		$Office = strtoupper($word);
 	}
@@ -332,7 +333,8 @@ if(isset($_GET['approved'])){
 	// Test if string contains the word 
 	//if (((str_contains($Office, $CEAFA)) == TRUE) OR ((str_contains($Office, $CEAFA_Full)) == TRUE)) {
 	if (((strpos($Office, $CEAFA)) !== FALSE) OR ((strpos($Office, $CEAFA_Full)) !== FALSE)) {
-		if ($CustomQuarter == 1){//For CEAFA Actual Quarter 1
+		//if ($CustomQuarter == 1){//For CEAFA Actual Quarter 1
+		if ($Quarter == 1){//For CEAFA Actual Quarter 1
 			$NewCount = $CEAFA_BQ1 + 1;
 			$Col = $CEAFA_BQT + 1;
 			$Row = $BT_Q1 + 1;
@@ -340,7 +342,7 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CEAFA_BQ1 = '$NewCount', CEAFA_BQT = '$Col', BT_Q1 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($CustomQuarter == 2){//For CEAFA Actual Quarter 2
+		else if ($Quarter == 2){//For CEAFA Actual Quarter 2
 			$NewCount = $CEAFA_BQ2 + 1;		
 			$Col = $CEAFA_BQT + 1;
 			$Row = $BT_Q2 + 1;	
@@ -348,7 +350,7 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CEAFA_BQ2 = '$NewCount', CEAFA_BQT = '$Col', BT_Q2 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($CustomQuarter == 3){//For CEAFA Actual Quarter 3
+		else if ($Quarter == 3){//For CEAFA Actual Quarter 3
 			$NewCount = $CEAFA_BQ3 + 1;	
 			$Col = $CEAFA_BQT + 1;
 			$Row = $BT_Q3 + 1;	
@@ -356,7 +358,7 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CEAFA_BQ3 = '$NewCount', CEAFA_BQT = '$Col', BT_Q3 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($CustomQuarter == 4){//For CEAFA Actual Quarter 3
+		else if ($Quarter == 4){//For CEAFA Actual Quarter 3
 			$NewCount = $CEAFA_BQ4 + 1;	
 			$Col = $CEAFA_BQT + 1;
 			$Row = $BT_Q4 + 1;		
@@ -368,7 +370,7 @@ if(isset($_GET['approved'])){
 	
 	//if (((str_contains($Office, $CICS)) == TRUE) OR ((str_contains($Office, $CICS_Full)) == TRUE)) {
 	if (((strpos($Office, $CICS)) !== FALSE) OR ((strpos($Office, $CICS_Full)) !== FALSE)) {
-		if ($CustomQuarter == 1){//For CICS Actual Quarter 1
+		if ($Quarter == 1){//For CICS Actual Quarter 1
 			$NewCount = $CICS_BQ1 + 1;	
 			$Col = $CICS_BQT + 1;
 			$Row = $BT_Q1 + 1;		
@@ -376,7 +378,7 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CICS_BQ1 = '$NewCount', CICS_BQT = '$Col', BT_Q1 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($CustomQuarter == 2){//For CICS Actual Quarter 2
+		else if ($Quarter == 2){//For CICS Actual Quarter 2
 			$NewCount = $CICS_BQ2 + 1;			
 			$Col = $CICS_BQT + 1;
 			$Row = $BT_Q2 + 1;		
@@ -384,7 +386,7 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CICS_BQ2 = '$NewCount', CICS_BQT = '$Col', BT_Q2 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($CustomQuarter == 3){//For CICS Actual Quarter 3
+		else if ($Quarter == 3){//For CICS Actual Quarter 3
 			$NewCount = $CICS_BQ3 + 1;	
 			$Col = $CICS_BQT + 1;
 			$Row = $BT_Q3+ 1;		
@@ -392,7 +394,7 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CICS_BQ3 = '$NewCount', CICS_BQT = '$Col', BT_Q3 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($CustomQuarter == 4){//For CICS Actual Quarter 3
+		else if ($Quarter == 4){//For CICS Actual Quarter 3
 			$NewCount = $CICS_BQ4 + 1;	
 			$Col = $CICS_BQT + 1;
 			$Row = $BT_Q4 + 1;		
@@ -404,7 +406,7 @@ if(isset($_GET['approved'])){
 	
 	//if (((str_contains($Office, $CIT)) == TRUE) OR ((str_contains($Office, $CIT_Full)) == TRUE)) {
 	if (((strpos($Office, $CIT)) !== FALSE) OR ((strpos($Office, $CIT_Full)) !== FALSE)) {
-		if ($CustomQuarter == 1){//For CIT Actual Quarter 1
+		if ($Quarter == 1){//For CIT Actual Quarter 1
 			$NewCount = $CIT_BQ1 + 1;	
 			$Col = $CIT_BQT + 1;
 			$Row = $BT_Q1 + 1;		
@@ -412,7 +414,7 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CIT_BQ1 = '$NewCount', CIT_BQT = '$Col', BT_Q1 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($CustomQuarter == 2){//For CIT Actual Quarter 2
+		else if ($Quarter == 2){//For CIT Actual Quarter 2
 			$NewCount = $CIT_BQ2 + 1;			
 			$Col = $CIT_BQT + 1;
 			$Row = $BT_Q2 + 1;		
@@ -420,7 +422,7 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CIT_BQ2 = '$NewCount', CIT_BQT = '$Col', BT_Q2 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($CustomQuarter == 3){//For CIT Actual Quarter 3
+		else if ($Quarter == 3){//For CIT Actual Quarter 3
 			$NewCount = $CIT_BQ3 + 1;
 			$Col = $CIT_BQT + 1;
 			$Row = $BT_Q3 + 1;		
@@ -428,7 +430,7 @@ if(isset($_GET['approved'])){
 			$sql = ("UPDATE target_alangilan SET CIT_BQ3 = '$NewCount', CIT_BQT = '$Col', BT_Q3 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($CustomQuarter == 4){//For CIT Actual Quarter 3
+		else if ($Quarter == 4){//For CIT Actual Quarter 3
 			$NewCount = $CIT_BQ4 + 1;
 			$Col = $CIT_BQT + 1;
 			$Row = $BT_Q4 + 1;		
