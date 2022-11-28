@@ -894,7 +894,7 @@ if (isset($_POST['Save'])) {
 				FPR10_1, FPR10_2, FPR10_3, FPR10_4, FPR10_5, GrandTotal,
 				Functional, Frequency, Monitoring, Plans, ProjectStatus,
 				Sign1_1, Sign1_2, Sign2_1, Sign2_2, Sign3_1, Sign3_2,
-				Sign4_1, Sign4_2, Sign5_1, Sign5_2, Remarks_2)
+				Sign4_1, Sign4_2, Sign5_1, Sign5_2)
 		VALUES 
 			('$AID', '$DateTime', '$Year', '$Quarter', '$Initiated', '$Classification', '$unknown', '$IsGAD',
 				'$Title', '$Location_Area', '$Start_Date', '$End_Date', '$Start_Time', '$End_Time', '$TypeCES',
@@ -912,7 +912,7 @@ if (isset($_POST['Save'])) {
 				'$FPR10_1', '$FPR10_2', '$FPR10_3', '$FPR10_4', '$FPR10_5', '$GrandTotal',
 				'$Functional', '$Frequency', '$Monitoring', '$Plans', 'PENDING',
 				'$Sign1_1', '$Sign1_2', '$Sign2_1', '$Sign2_2', '$Sign3_1', '$Sign3_2',
-				'$Sign4_1', '$Sign4_2', '$Sign5_1', '$Sign5_2','$Frequency'
+				'$Sign4_1', '$Sign4_2', '$Sign5_1', '$Sign5_2'
 			)");
 	
 		if ($command = $con->query($sql) === TRUE) {
