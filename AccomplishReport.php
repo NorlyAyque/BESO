@@ -208,7 +208,7 @@ if ($College == $CEAFA){
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(ProjectStatus = 'Approved' AND 
 		Remarks = 'Evaluated' AND
-		Remarks_2 != '') AND
+		Remarks_2 != '') AND //For Monitor
 		(Remarks_3 = 'Completed' OR Remarks_3 = '')
 	");
 */
@@ -217,30 +217,13 @@ $sql = ("SELECT * FROM create_alangilan WHERE
 if ($UserPosition == "Head" OR $UserPosition == "Staff"){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(ProjectStatus = 'Approved') AND 
-		(Remarks = 'Evaluated') AND
-		(Remarks_2 = 'Not Applicable' OR
-			(
-				Remarks_2 != 'Monthly' AND
-				Remarks_2 != 'Quarterly' AND
-				Remarks_2 != 'Semi-Annually' AND
-				Remarks_2 != 'Yearly'
-			)
-		)
-
+		(Remarks = 'Evaluated')
 		");
 }else{
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(AccountID = '$AID') AND
 		(ProjectStatus = 'Approved') AND 
-		(Remarks = 'Evaluated') AND
-		(Remarks_2 = 'Not Applicable' OR
-			(
-				Remarks_2 != 'Monthly' AND
-				Remarks_2 != 'Quarterly' AND
-				Remarks_2 != 'Semi-Annually' AND
-				Remarks_2 != 'Yearly'
-			)
-		)
+		(Remarks = 'Evaluated')
 	");
 }
 

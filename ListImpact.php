@@ -207,7 +207,7 @@ $sql = ("SELECT * FROM create_alangilan WHERE
 		(unknown = 'For Impact Assessment') AND
 		(ProjectStatus = 'Approved') AND 
 		(Remarks = 'Evaluated') AND
-		(Remarks_2 != '')
+		(Remarks_2 != '') //For Monitoring
 	");
 */
 
@@ -215,16 +215,14 @@ if ($UserPosition == "Head" OR $UserPosition == "Staff"){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(unknown = 'For Impact Assessment') AND
 		(ProjectStatus = 'Approved') AND 
-		(Remarks = 'Evaluated') AND
-		(Remarks_2 != '')
+		(Remarks = 'Evaluated')
 	");
 }else{
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(AccountID = '$AID') AND
 		(unknown = 'For Impact Assessment') AND
 		(ProjectStatus = 'Approved') AND 
-		(Remarks = 'Evaluated') AND
-		(Remarks_2 != '')
+		(Remarks = 'Evaluated')
 	");
 }
 
