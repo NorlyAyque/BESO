@@ -263,9 +263,9 @@ while($result = mysqli_fetch_array($command))
 			{
 				$Coll = $result2['College'];
 
-				$BtnEdit = "a";
-				$BtnDelete = "b";
-				$BtnCreateEval = "c";
+				$BtnEdit .= "a";
+				$BtnDelete .= "b";
+				$BtnCreateEval .= "c";
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>

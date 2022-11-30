@@ -267,7 +267,7 @@ while($result = mysqli_fetch_array($command))
 	list.forEach((item))=>
 	item.addEventlistener('mouseover',activeLink);
 	</script>
-<body>
+</body>
 </html>
 
 
