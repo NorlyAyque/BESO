@@ -137,6 +137,7 @@ while($result = mysqli_fetch_array($command))
 		$TimeResult = $timeinterval->format('%h'); //8 hrs = 1 DAY (7:00-4:00 = 9hrs - 1 = 8hrs)
 	
 		$NoOfHours = $TimeResult * $NoOfDays; //Display number of hours depends on number of days
+		
 		if ($NoOfHours <= 7 ){ $Duration = "0.5";} //Less than 8 hrs
         else if ($NoOfHours <= 8 OR $NoOfHours <= 15){ $Duration = "1";} //1 day
         else if ($NoOfHours <= 16 OR $NoOfHours <= 23){ $Duration = "1.25";} //2 days

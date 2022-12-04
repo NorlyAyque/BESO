@@ -135,17 +135,11 @@ while($result = mysqli_fetch_array($command))
 		$TimeResult = $timeinterval->format('%h'); //8 hrs = 1 DAY (7:00-4:00 = 9hrs - 1 = 8hrs)
 	
 		$NoOfHours = $TimeResult * $NoOfDays; //Display number of hours depends on number of days
-		if ($NoOfHours <= 7 ){ //Less than 8 hrs
-			$Duration = "0.5";
-		}else if ($NoOfHours <= 8 OR $NoOfHours <= 15){ //1 day
-			$Duration = "1";
-		}else if ($NoOfHours <= 16 OR $NoOfHours <= 23){ //2 days
-			$Duration = "1.25";
-		}else if ($NoOfHours <= 24 OR $NoOfHours <= 39){ // 3 - 4 days
-			$Duration = "1.50";
-		}else if ($NoOfHours >= 40 ){ // 5 days up
-			$Duration = "2";
-		}
+		if ($NoOfHours <= 7 ){ $Duration = "0.5";} //Less than 8 hrs
+        else if ($NoOfHours <= 8 OR $NoOfHours <= 15){ $Duration = "1";} //1 day
+        else if ($NoOfHours <= 16 OR $NoOfHours <= 23){ $Duration = "1.25";} //2 days
+        else if ($NoOfHours <= 24 OR $NoOfHours <= 39){ $Duration = "1.50";} // 3 - 4 days
+        else if ($NoOfHours >= 40 ){ $Duration = "2";} // 5 days up
 
 		//Getting number of trainees from Evaluation MFT 
 		$sql2 = ("SELECT * FROM evaluation_alangilan WHERE ProposalID ='$PID'");
