@@ -731,7 +731,7 @@ if (isset($_POST['update'])) {
 	  } else {
 		echo "<script>
 				alert('PROCESS FAILED Try Again!');
-				window.location.href='EditEvaluation.php';
+				window.location='EditEvaluation.php?edit=$EID';
 			</script>";
 	  }
 }
