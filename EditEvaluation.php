@@ -411,7 +411,7 @@ if(isset($_GET['edit'])){
 							<span onclick="ReviewedByName()"> ✓  </span>	
 						</div>
 						<br>
-						<textarea placeholder="..." id="Sign2_1" name="Sign2_1" required><?php echo ""; ?></textarea>
+						<textarea placeholder="..." id="Sign2_1" name="Sign2_1" required><?php echo "$dbSign2_1"; ?></textarea>
 					</td>
 					<td>
 					<div class="DrpSigna">
@@ -431,7 +431,7 @@ if(isset($_GET['edit'])){
 							<span onclick="ReviewByDesignation()"> ✓ </span>
 						</div>
 						<br>
-						<textarea placeholder="..." id="Sign2_2" name="Sign2_2" required><?php echo ""; ?></textarea>
+						<textarea placeholder="..." id="Sign2_2" name="Sign2_2" required><?php echo "$dbSign2_2"; ?></textarea>
 					</td>
 				</tr>
 				<tr>
@@ -454,7 +454,7 @@ if(isset($_GET['edit'])){
 						<span onclick="AcceptedByName()"> ✓ </span>
 					</div>
 					<br>
-						<textarea placeholder="..." id="Sign3_1" name="Sign3_1" required><?php echo ""; ?></textarea>
+						<textarea placeholder="..." id="Sign3_1" name="Sign3_1" required><?php echo "$dbSign3_1"; ?></textarea>
 					</td>
 					
 					<td>
@@ -475,7 +475,7 @@ if(isset($_GET['edit'])){
 							<span onclick="AcceptedByDesignation()">  ✓ </span>
 						</div>
 						<br>
-						<textarea placeholder="..." id="Sign3_2" name="Sign3_2" required><?php echo ""; ?></textarea>
+						<textarea placeholder="..." id="Sign3_2" name="Sign3_2" required><?php echo "$dbSign3_2"; ?></textarea>
 					</td>
 				</tr>
 			</table>
@@ -721,12 +721,19 @@ if (isset($_POST['update'])) {
 			Sign1_1 = '$Sign1_1', Sign1_2 = '$Sign1_2', Sign2_1 = '$Sign2_1',
 			Sign2_2 = '$Sign2_2', Sign3_1 = '$Sign3_1', Sign3_2 = '$Sign3_2'
 		WHERE EvaluationID = $EID");
-	$command = $con->query($sql);
 	
-	echo "<script>
+	
+	if ($command = $con->query($sql) === TRUE) {
+		echo "<script>
 			alert('Evaluation Successfully Created');
 			window.location='EditEvaluation.php?edit=$EID';
 		</script>";
+	  } else {
+		echo "<script>
+				alert('PROCESS FAILED Try Again!');
+				window.location.href='CreateProposal.php';
+			</script>";
+	  }
 }
 ?>
 
