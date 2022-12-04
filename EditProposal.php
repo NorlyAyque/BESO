@@ -1009,11 +1009,18 @@ if (isset($_POST['update'])) {
 				Sign3_1 = '$Sign3_1', Sign3_2 = '$Sign3_2', Sign4_1 = '$Sign4_1', Sign4_2 = '$Sign4_2', 
 				Sign5_1 = '$Sign5_1', Sign5_2 = '$Sign5_2'
 			WHERE ProposalID = $PID");
-	$command = $con->query($sql);
-	echo "<script>
-			alert('Proposal Successfully Updated');
-			window.location='EditProposal.php?edit=$PID';
-		</script>";
+
+		if ($command = $con->query($sql) === TRUE) {
+			echo "<script>
+				alert('Proposal Successfully Updated');
+				window.location='EditProposal.php?edit=$PID';
+			</script>";
+		  } else {
+			echo "<script>
+					alert('PROCESS FAILED. Try Again!');
+					window.location='EditProposal.php?edit=$PID';
+				</script>";
+		  }	
 }
 ?>
 <script>
