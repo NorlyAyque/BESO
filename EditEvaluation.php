@@ -731,7 +731,7 @@ if (isset($_POST['update'])) {
 	  } else {
 		echo "<script>
 				alert('PROCESS FAILED Try Again!');
-				window.location.href='CreateProposal.php';
+				window.location.href='EditEvaluation.php';
 			</script>";
 	  }
 }
