@@ -15,7 +15,7 @@ $AID = $_SESSION["AccountAID"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation - Approved</title>
-<link rel="stylesheet" type="text/css" href="styles/EvaluationReports-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/EvaluationReports.css">
 
 </head>
 <body>
@@ -120,7 +120,7 @@ $AID = $_SESSION["AccountAID"];
 							</div></a>
 							</button>
 							
-							<a href="Evaluation-approved.php" button class = "nav3"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
+							<a href="Evaluation-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 							</button>
 						
 							<a href="Evaluation-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>

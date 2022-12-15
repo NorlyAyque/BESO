@@ -6,7 +6,7 @@
 	font-family:"Open Sans", sans-serif;
 }
 :root{
-	--red:  #E64848;
+	--red:  #2B4257;
 	--white: #fff;
 	--grey: #f5f5f5;
 	--black1: #222;
@@ -49,7 +49,7 @@ body{
 	position: fixed;
 	width: 300px;
 	height: 100%;
-	background: var(--red);
+	background: #2B4257;
 	border-left: 10px solid var(--black1);
 	transition: 0.5s;
 	overflow:hidden;
@@ -287,6 +287,9 @@ position:abosolute;
 	
 }
 
+
+
+
 /*******  NOTIFICATION NUMBER***************/
 
 .header{
@@ -297,10 +300,7 @@ position:abosolute;
   overflow:hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
   display:fixed;
-  border-top: 1px solid black; 
-  border-left: 1px solid black; 
-  border-right: 1px solid black; 
-  border-bottom: 1px solid black; 
+  
   text-decoration:none;
   
 }
@@ -334,7 +334,7 @@ position:abosolute;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: var(--red);
+  background-color: #2B4257;
   color: white;
   font-weight:bold;
   text-decoration:none;
@@ -452,7 +452,10 @@ position:abosolute;
 
 	
 }
-
+.Create::after{
+	content:"after";
+	filter:blur(5px);
+}
 .Create .fillup{
 	position:relative;
 	padding:5px;
@@ -547,7 +550,7 @@ cursor: pointer;
 .checkbox label{
   width:500px;
   display:flex;
-  background-color: #ff4d4d;
+  background-color: var(--red);
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
   cursor: pointer;
   padding: 10px 10px;
@@ -563,7 +566,7 @@ cursor: pointer;
 .checkbox1 label{
   width:352px;
   display:flex;
-  background-color: #ff4d4d;
+  background-color: var(--red);
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
   cursor: pointer;
   padding: 10px 10px;
@@ -611,6 +614,9 @@ cursor: pointer;
   cursor: pointer;
 }
 */
+
+
+
 .form-popup {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   display: none;
@@ -739,6 +745,24 @@ cursor: pointer;
   color: white;
 }
 
+.sustaine {
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	margin-left:auto;
+	margin-right:auto;
+	width: 100%;
+	margin-top:10px;
+	margin-bottom:15px;
+	border:none;
+}
+.sustaine th{
+	background-color: var(--red);
+	color:white;
+}
+.sustaine input{
+	width:60px;
+}
 
  .TotalCost {
 	box-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -851,13 +875,96 @@ cursor: pointer;
 background-color: lightgrey;
 cursor: pointer;
 }
+
+.bform{
+	margin-top:15px;
+	margin-bottom:10px;
+	text-decoration:none;
+}
+.open-button{
+	padding:5px;
+	cursor:pointer;
+	text-decoration:none;
+	color:white;
+	border: 1px solid black;
+	border-radius:3px;
+	background-color:var(--red);
+}
+.hide{
+	padding:3px 5px;
+	cursor:pointer;
+	text-decoration:none;
+	color:black;
+	border: 1px solid black;
+	border-radius:3px;
+	margin-top:20px;
+	background-color:white;
+}
+
+.hide:hover{
+	color:red;
+	cursor:pointer;
+}
+.hideleft{
+	margin-left:10px;
+	text-align:right;
+}
+.hide2nd{
+	
+	text-align:right;
+}
+.form-popupFinancial {
+  
+  display: none;
+  background-color: #f1f1f2;
+  bottom: 0;
+  border: 3px solid #f1f1f1;
+  width: 500px;
+  z-index: 9;
+  position: flex;
+  
+}
+
+
+
+#overlay    {
+    margin-left:-515px;
+    display: none;
+    width:%;
+    background:grey;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+   
+}
+.blur2nd   {
+    filter: blur(10px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+#overlay2nd    {
+    margin-left:-515px;
+    display: none;
+    width:%;
+    background:grey;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+   
+}
+
+
+
+
+
 .Tfinancial table{
 	margin-left:auto;
 	margin-right:auto;
+	display:fixed;
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
 	margin-top:10px;
 	margin-bottom:15px;
-	width:100%;
+	width:90%;
+	position:flex;
+	
 	
 }
 .header table,td{
@@ -873,8 +980,8 @@ cursor: pointer;
 }
 
 .financial textarea:nth-child(1){
-	margin-top:20px;
-	width: 100px;
+	margin:auto;
+	width: 100%;
 	height:90px;	
 	border:none;
 	box-shadow: 0 0 3px rgba(0,0,0,0.3);
@@ -885,8 +992,9 @@ cursor: pointer;
 	background-color:#e3e3e3;	
 }
 .financial .MF input{
-	width: 70px;
-	height:40px;
+	margin:auto;
+	width: 100%;
+	height:90px;
 	text-align:center;
 	border:none;
 	 box-shadow: 0 0 3px rgba(0,0,0,0.3);

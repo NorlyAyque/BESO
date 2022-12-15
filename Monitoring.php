@@ -19,7 +19,7 @@ $DateToday = date("Y-m-d"); //YYYY-mm-dd
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReports-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
 
 </head>
 <body>
@@ -158,7 +158,7 @@ if(isset($_GET['verify'])){
 			<tr>
 				<th colspan="8">
 					<div class="menu">
-						<a href="Monitoring.php" button class = "listnav2"> List<ion-icon name="list-outline"></ion-icon></a></button>
+						<a href="Monitoring.php" button class = "nav"> List<ion-icon name="list-outline"></ion-icon></a></button>
 						<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
 						<div id="PendingMon" class="notif">
 							<span class="icon-button__badge"><?php echo "$CountMonitoring";?></span>

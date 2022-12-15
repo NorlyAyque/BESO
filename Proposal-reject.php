@@ -18,7 +18,7 @@ $UserPosition = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Proposals - Rejected</title>
-<link rel="stylesheet" type="text/css" href="styles/ProposalCSS.css">
+<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
 
 </head>
 <body>
@@ -126,7 +126,7 @@ $UserPosition = $_SESSION["Position"];
 							<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 							</button>
 						
-							<a href="Proposal-reject.php" button class = "nav4"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
+							<a href="Proposal-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a>
 							</button>
 							
 						</div>

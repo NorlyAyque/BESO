@@ -6,7 +6,7 @@
 	font-family:"Open Sans", sans-serif;
 }
 :root{
-	--red:  #E64848;
+	--red:  #2B4257;
 	--white: #fff;
 	--grey: #f5f5f5;
 	--black1: #222;
@@ -20,13 +20,13 @@ body{
 	
 }
 
+
 .container{
 	position: relative;
 	width:100%;
 	
 
 }
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -90,6 +90,7 @@ body{
 	
 }
 
+
 .navigation ul li a{
 	position: relative;
 	display: block;
@@ -136,6 +137,8 @@ body{
 	font-weight:bold;
 	
 }
+
+
 
 
 
@@ -210,9 +213,10 @@ margin-left: 100px;
 	cursor: pointer;
 	margin-top:10px;
 	margin-left: 30px;
-	color:white;
 	margin-bottom:-30px;
+	color:white;
 }
+
 /********* NOTIFICATION NUMBER **********/
 .notifDASH{	
 margin-left:-15px;
@@ -291,246 +295,275 @@ position:abosolute;
 
 
 
-.signup{
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-	width: 300px;
-	padding: 15px;	
-	top:10px;
-    bottom: 0;
-    right: 0;
-	overflow:hidden;
-	overflow-y:scroll;
-	
-	
-}
-
- .forms {
-	width:auto;
-	margin:auto;
-	margin-top:-15px;
-	text-decoration:none;
-	
-}
 
 
 
 
-/* Full-width input fields */
- .forms .signup input[type=text], input[type=password]{
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-
-}
- .forms .signup label{
-	display:flex;
-}
-
-.SAVEBACK th{
-	
-}
-.SAVEBACK {
-	
-	margin:auto;
-}
-
-
- .forms .signup .btn {
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding: 8px 25px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
- 
-  
-  
-}
-
-
-.forms .signup .btn:hover {
-  background-color:  #168aad;
-  color: white;
-}
-
-
-
- .btnB {
-  background-color: #EC7272; 
-  border: none;
-  color: white;
-  padding: 8px 10px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  margin-right:10px;
-  text-decoration:none;
-
-}
-
-
-.forms .signup .btnB:hover {
-  background-color:  #34a0a4;
-  color: white;
-}
-
-
-.btn3 {
-  background-color: #EC7272; 
-  border: none;
-  color: white;
-  padding: 8px 10px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  margin-right:10px;
-  text-decoration:none;
-
-}
-
-
- .btn3:hover {
-  background-color:  #34a0a4;
-  color: white;
-}
-
-
-
-
-
-.forms .signup p{
-	font-size:14px;
-	text-decoration:underline;
-	margin-bottom:10px;
-	
-}
-.showP input{
-	height:15px;
-	width:15px;
-  cursor: pointer;
-  margin-top:-4px;
-  vertical-align: middle;
-  margin-right:5px; 
- 
-}
-.showP{
-	margin-bottom:20px;
-	text-align:left;
-}
-
-
-.DrpCAMPUS select{
-  display:flex;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  cursor: pointer;
-  padding: 10px;
-  margin-bottom:20px;
-  margin-top:3px;
-  border:none;
-  text-align:center;
-  width:100%;
-  
-}
-.DrpCAMPUS option{
-	font-size:15px;
-	cursor:pointer;
+.settings{
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	display:relative;
 	margin-left:auto;
 	margin-right:auto;
-	
+	width: 50%;
+	height: 200px;
+	margin-top:10px;
+	margin-bottom:auto;
 }
-
-
-.forms .signup1{
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-	width: 300px;
-	padding: 15px;	
-	top:10px;
-    bottom: 0;
-    right: 0;
-	overflow:hidden;
-	overflow-y:scroll;
-	margin-left:5px;
-
-	
+.settings th{
+	background-color: #4CAF50;
+   border:none;
+   color:white;
+   
 }
-
-/* Full-width input fields */
-.forms .signup1 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+.settings td{
+	background-color: #EFEFEF;
+	
   
 }
 
- .forms .signup1 label{
-	display:flex;
+.signatories{
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	margin-left:auto;
+	margin-right:auto;
+	width: 50%;
+	height: 200px;
+	margin-top:10px;
+	margin-bottom:auto;
 	
+
+}
+.signatories th{
+	background-color: #4CAF50;
+   border:none;
+   color:white;
+   
+}
+.signatories td{
+	background-color: #EFEFEF;
+
+}
+.Name input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  height:39px;
+  text-align:center;
+  font-size:15px;
+  width:90%;
+  border:transparent;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius:2px;
+}
+.Position input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  height:39px;
+  text-align:center;
+  font-size:15px;
+  width:90%;
+  border:transparent;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius:2px;
 }
 
-.forms .signup1 .btn1{
-	margin-top:4px;
-	
+.tbcreate{
+	text-align:center;
 }
- 
- .forms .signup1 .btn1 {
-  background-color: #4CAF50; 
+.tbcreate .SaveName, .SavePos{
+	margin-top:10px;
+  background-color: #f5f5f5;
   border: none;
-  color: white;
-  padding: 8px 25px;
+  color: black;
+  padding: 5px 15px;
   font-size: 15px;
   transition-duration: 0.4s;
   cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
   border-radius: 5px;
-  width: auto;
-  margin-top:-1px;
+  text-decoration:none;
+ 
+}
+
+.tbcreate .SaveName:hover {
+  color:white;
+  background:#4CAF50;
+  text-decoration:none;
+}
+.tbcreate .SavePos:hover {
+  color:white;
+  background:#4CAF50;
+  text-decoration:none;
+}
+
+
+
+.Year input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  height:39px;
+  text-align:center;
+  font-size:15px;
+  width:50%;
+  border:transparent;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius:2px;
+  
   
 }
 
-
-.forms .signup1 .btn1:hover {
-  background-color:  #168aad;
-  color: white;
-}
-
-
-.forms .signup1 p{
-	font-size:14px;
-	text-decoration:underline;
-	margin-bottom:10px;
-
-}
-
-.Drp1 select{
+.Quarter select{
   display:flex;
-  background: #f1f1f1;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin:auto;
   cursor: pointer;
-  padding: 10px 10px;
-  margin-bottom:20px;
-  margin-top:3px;
+ 
+  text-align:center;
+  width:50%;
+  border:transparent;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  height:40px;
+  
 }
-.Drp1 option{
+.Quarter option{
 	font-size:15px;
 	cursor:pointer;
+	
+	
 }
+
+.tbcreate{
+	text-align:center;
+}
+.tbcreate .SubmitYQ{
+	margin-top:10px;
+  background-color: #f5f5f5;
+  border: none;
+  color: black;
+  padding: 5px 15px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+  border-radius: 5px;
+  text-decoration:none;
+ 
+}
+
+.tbcreate .SubmitYQ:hover {
+  color:white;
+  background:#4CAF50;
+ 
+  text-decoration:none;
+}
+
+.TimeDate{
+	display:flex;
+	justify-content: right;
+	font-weight:bold;
+	margin-top:-50px;
+	margin-right:30px;
+	text-align:center;
+	
+}
+
+
+
+.List{
+	border-collapse:collapse;
+	border:1px solid black;
+	margin-left:40px;
+	margin-top:10px;
+	display:relative;
+	width:90%;
+	margin-bottom:10px;
+	
+	
+	
+}
+
+.List th {
+	border-collapse:collapse;
+	border:1px solid black;
+	padding:5px;
+
+	
+}
+.List td {
+	border-collapse:collapse;
+	border:1px solid black;
+	padding:8px;
+	
+}
+.column{
+	float: left;
+	width: 50%;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.List2nd{
+	border-collapse:collapse;
+	border:1px solid black;
+	margin-top:10px;
+	width:100%;
+	
+	
+	
+	
+	
+	
+}
+
+.List2nd th {
+	border-collapse:collapse;
+	border:1px solid black;
+	padding:5px;
+	
+}
+.List2nd td {
+	border-collapse:collapse;
+	border:1px solid black;
+	padding:8px;
+	
+}
+
+
+
+.deletebtn{
+	text-decoration:none;
+	color:black;
+	border:1px solid black;
+	padding:3px;
+	border-radius:
+}
+
+
+.deletebtn:hover{
+	background-color:var(--red);
+	color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

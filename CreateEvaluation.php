@@ -85,7 +85,7 @@ if(isset($_GET['evaluation'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/CreateEvaluationSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/CreateEvaluation.css">
 
 </head>
 <body>
@@ -199,7 +199,7 @@ if(isset($_GET['evaluation'])){
 									<th><textarea placeholder="type here..." name="HoursImplement" required><?php echo $DurationTime ." hours"; ?></textarea></th>
 								</tr>
 							</table>
-						<label>  Implementing Office/College/Program<i>(specify the programs under the college implementing the project)</i> </label>
+						<label>  Implementing Office/College/Program<i><h5>(specify the programs under the college implementing the project)</h5></i> </label>
 						<textarea placeholder="type here..."  name="Office" required><?php echo $dbOffice; ?></textarea> 
 						
 						<label>  Partner Agency </label>
@@ -211,7 +211,7 @@ if(isset($_GET['evaluation'])){
 						<label> Sustanable Development Goals </label>
 						<textarea placeholder="type here..." name="SDG" required><?php echo $dbSDG; ?></textarea> 
 						
-						<label> Number of Male and Female and Types of Beneficiaries<i>(Type such as OSY, Childern,Women,etc.)</i>  </label>
+						<label> Number of Male and Female and Types of Beneficiaries<i><h5>(Type such as OSY, Childern,Women,etc.)</h5></i>  </label>
 						
 						<table class="participants">
 								<tr class="types">
@@ -243,7 +243,7 @@ if(isset($_GET['evaluation'])){
 						</table>
 								
 							<table class="Evaluation">	
-								<label><br> Evaluation Result <i>(If activity is training, techinical advice or seminar)</i></label>
+								<label><br> Evaluation Result <i><h5>(If activity is training, techinical advice or seminar)</h5></i></label>
 								<label> <h4><br>1. Number of beneficiaries/paricipants who rated the activity as:</h4></label>
 								<tr class="th1">
 									<th>Scale</th>
@@ -336,7 +336,7 @@ if(isset($_GET['evaluation'])){
 						<label> Narrative Activity</i></label>
 						<textarea placeholder="type here..."  name="Narrative" required></textarea> 
 						<br>
-						<label>  Photos <i>(Please attach  3 photos with captions) <br>(Accepts JPEG only):</i> </label>
+						<label>  Photos <i><h5>(Please attach  3 photos with captions Accepts JPEG only):</h5></i> </label>
 						
 						<div class ="pics1">
 							 <label> Select Picture 1:</label>

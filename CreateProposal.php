@@ -36,7 +36,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-proposalSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
 
 </head>
 <body>
@@ -378,10 +378,10 @@ $DateTime = date("M, d Y; h:i:s A");
 						<textarea placeholder="..." name="SDG" ID="SDG" required></textarea>
 				
 						<label>  Vl. Office/ College/s Involved <label>
-							(CEAFA, CICS, CIT)
+							<h5>(CEAFA, CICS, CIT)</h5>
 						<textarea placeholder="type here..." name="Office" required><?php echo "$College";?></textarea>
 						
-						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i><label>
+						<label>  Vll. Program/s Involved<i><h5>(specify the programs under the college implementing the project)</h5></i><label>
 						<textarea placeholder="type here..." name="Programs" required></textarea>
 						
 						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i><label>
@@ -390,7 +390,14 @@ $DateTime = date("M, d Y; h:i:s A");
 						<label> lX. Partner Agencies<label>
 						<textarea placeholder="type here..." name="Agencies" required></textarea>	
 						
-						<label> X. Beneficiaries <i>(Type and Number of Male & Female)</i><label>
+						
+						
+				  </div>
+				</div>
+				
+				<div class="fillup">
+				  <div class="input-field">
+						<label> X. Beneficiaries <i><h5>(Type and Number of Male & Female)</h5></i><label>
 						<table class="MaleFemale">	
 								<tr class="th1">	
 									<th colspan="2">
@@ -417,7 +424,7 @@ $DateTime = date("M, d Y; h:i:s A");
 									
 								<tr class="MF" >
 									<th>Total Cost</th> <br>
-									<i>*auto generated based from the computed Financial Plan </i>
+									<i><h5>*auto generated based from the computed Financial Plan</h5> </i>
 									<td>
 										<input type="number" min="0" name="Cost" id="Cost" title="Based from the Financial Plan Grand Total" readonly> 
 										
@@ -430,22 +437,22 @@ $DateTime = date("M, d Y; h:i:s A");
 								</tr>
 						</table>
 						
-						<label> Xll. Rationale<i>(brief description of the situation)</i><label>
+						<label> Xll. Rationale<i><h5>(brief description of the situation)</h5></i><label>
 						<textarea placeholder="type here..." name="Rationale" required></textarea>
 						
-						<label> Xlll. Objectives<i>(General and Specific)</i><label>
+						<label> Xlll. Objectives<i><h5>(General and Specific)</h5></i><label>
 						<textarea placeholder="type here..." name="Objectives" required></textarea>
 
-						<label> XlV. Description, Strategies and Methods <i>(Activities/Schedule)</i><label>
+						<label> XlV. Description, Strategies and Methods <i><h5>(Activities/Schedule)</h5></i><label>
 						<textarea placeholder="type here..." name="Descriptions" required></textarea>
-						
-				  </div>
-				</div>
-				
-				<div class="fillup">
-				  <div class="input-field">
-						
 						<label> XV. Financial Plan</i><label>
+						
+						<i><h5>(Click the button Form to open the table)</h5></i>
+						<div class="bform">
+							<a  class="open-button" href="javascript:myBlurFunction(1);">Open Form</a>
+						</div>
+						<div id="overlay">
+							
 							<div class="Tfinancial">
 								 <table class="financial">
 									<tbody>
@@ -526,17 +533,92 @@ $DateTime = date("M, d Y; h:i:s A");
 											<td><input type="number" min="0" name="FPR10_4" id="FPR10_4" onchange="Row10()"></td>
 											<td><input type="number" min="0" name="FPR10_5" id="FPR10_5" value="0" onchange="Row10()" readonly></td>
 										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
 											
 										<tr class="MF">
 											<th colspan="4"  class="total">Grand Total</th>
 											<td><input type="number" name="GrandTotal" id="GrandTotal" readonly></td>
 										</tr>
 									</tbody>
+									<div class="hideleft">
+										<a class="hide" href="javascript:myBlurFunction(0);">X</a>
+									</div>
 								</table>
-							</div> 
-								 
 								
-						<label> XVl. Functional Relationships with the Partner <i>(Duties/Task of the Partner Agencies)</i><label>
+							</div> 
+							
+						</div> 
+						
+						<label> XVl. Functional Relationships with the Partner <i><h5>(Duties/Task of the Partner Agencies)</h5></i><label>
 						<textarea placeholder="type here..." name="Functional" required></textarea>
 						
 						<label> XVll. Monitoring and Evaluation Mechanics/Plan<label>
@@ -553,8 +635,134 @@ $DateTime = date("M, d Y; h:i:s A");
 						</div>
 						<textarea placeholder="type here..." name="Monitoring" required></textarea>
 						
-						<label> XVlll. Sustainability Plan<label>
-						<textarea placeholder="type here..." name="Plans" required></textarea>
+						<label> XVlll. Sustainability Plan<label><i><h5> (Click the button Form to open the table)</h5></i>
+						<div class="bform">
+							<a  class="open-button" href="javascript:myBlurFunction1(1);">Open Form</a>
+						</div>
+						<div id="overlay2nd">
+							
+							<div class="Tfinancial">
+								 <table class="financial">
+									<tbody>
+										<tr>
+											<th>ACTIVITIES </th>
+											<th>TENTATIVE SCHEDULE </th>
+											<th>INVOLVED </th>
+											
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+											
+										
+									</tbody>
+									<div class="hide2nd">
+										<a class="hide" href="javascript:myBlurFunction1(0);">X</a>
+									</div>
+								</table>
+								
+							</div> 
+							
+						</div> 
+						
+					
 						
 				  </div>
 				</div>
@@ -961,6 +1169,47 @@ function MonitoringFrequency(){
 		
 	function openForm1()  { document.getElementById("myForm1").style.display = "block"; }
 	function closeForm1() { document.getElementById("myForm1").style.display = "none"; }
+</script>
+
+<script>
+//For Financial Plan
+	function openFormFinancial()  { document.getElementById("myFormFinancial").style.display = "block"; }
+	function closeFormFinancial() { document.getElementById("myFormFinancial").style.display = "none"; }
+</script>
+
+<script>
+//For Financial Plan
+myBlurFunction = function(state) {
+    /* state can be 1 or 0 */
+    var containerElement = document.getElementById('main_container');
+    var overlayEle = document.getElementById('overlay');
+
+    if (state) {
+        overlayEle.style.display = 'block';
+        containerElement.setAttribute('class', 'blur');
+    } else {
+        overlayEle.style.display = 'none';
+        containerElement.setAttribute('class', null);
+    }
+};
+
+</script>
+<script>
+//For Sustainability Plan
+myBlurFunction1 = function(state) {
+    /* state can be 1 or 0 */
+    var containerElement = document.getElementById('main_container');
+    var overlay2ndEle = document.getElementById('overlay2nd');
+
+    if (state) {
+        overlay2ndEle.style.display = 'block';
+        containerElement.setAttribute('class', 'blur');
+    } else {
+        overlay2ndEle.style.display = 'none';
+        containerElement.setAttribute('class', null);
+    }
+};
+
 </script>
 
 <script>

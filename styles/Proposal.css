@@ -6,7 +6,7 @@
 	font-family:"Open Sans", sans-serif;
 }
 :root{
-	--red:  #E64848;
+	--red:  #2B4257;
 	--white: #fff;
 	--grey: #f5f5f5;
 	--black1: #222;
@@ -50,7 +50,7 @@ body{
 	position: fixed;
 	width: 300px;
 	height: 100%;
-	background: var(--red);
+	background: #2B4257;
 	border-left: 10px solid var(--black1);
 	transition: 0.5s;
 	overflow:hidden;
@@ -75,7 +75,6 @@ body{
 	list-style: none;
 	border-top-left-radius: 50px;
 	border-bottom-left-radius: 50px;
-	
 	
 	
 }
@@ -104,7 +103,6 @@ body{
 .navigation ul li:hover a,
 .navigation ul li.hovered a{
 	color: #444;
-		
 	
 	
 }
@@ -143,7 +141,6 @@ body{
 
 
 
-
 /* curve outside */
 
 .navigation ul li:hover a::before,
@@ -161,7 +158,6 @@ body{
 	
 	
 	
-	
 }
 
 .navigation ul li:hover a::after,
@@ -176,15 +172,15 @@ body{
 	border-radius: 50%;
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
-
 }
-/***
-.navigation li .active{
+
+/*
+.navigation li .title{
 text-decoration: underline;
 text-underline-position: under;
 text-decoration-thickness:3px;
 }
-**/
+*/
 
 /***Main***/
 .main{
@@ -220,19 +216,18 @@ margin-left: 100px;
 	margin-bottom:-30px;
 	color:white;
 }
-/********* NOTIFICATION NUMBER **********/
-.notifREV{
-margin-top:-30px;
-display:flex;
-position:abosolute;
-}
 
+/*******  NOTIFICATION NUMBER***************/
 .notif{
 margin-top:-30px;
 display:flex;
 position:abosolute;
 }
-
+.notifREV{
+margin-top:-30px;
+display:flex;
+position:abosolute;
+}
 .icon-button__badge {
 	margin-left:-60px;
 	margin-top:-1px;
@@ -248,11 +243,7 @@ position:abosolute;
 	position:abosolute;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 	font-size:13px;
-
 }
-
-
-
 
 .notifDASH{	
 margin-left:-15px;
@@ -276,7 +267,6 @@ position:abosolute;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 	font-weight:bold;
 	font-size:13px;
-	
 }
 
 .notifEVAL{	
@@ -328,17 +318,28 @@ position:abosolute;
 	
 }
 
-/********* NOTIFICATION NUMBER **********/
+/*******  NOTIFICATION NUMBER***************/
+
+.fulljustify {
+   text-align: justify;
+   
+}
+
+
+
+
 .menu{
 	 text-decoration:none;
+	 padding: 13px;
+	
 }
 
 
  .menu .nav{
   margin-right:20px;
-  background-color: #0F3460; 
+  background-color: white; 
   border: none;
-  color: white;
+  color: black;
   padding: 10px 15px;
   font-size: 15px;
   transition-duration: 0.4s;
@@ -353,9 +354,13 @@ position:abosolute;
 }
 
 .menu .nav:hover {
-  background-color:  #4248f8;
+  background-color:  #708090;
   color: white;
   text-decoration:none;
+ 
+  
+  
+  
 }
 
 .menu .nav ion-icon {
@@ -369,7 +374,7 @@ position:abosolute;
 
 .menu .nav1{
   margin-right:20px;
-  background-color:  #4248f8;
+  background-color: #708090;
   border: none;
   color: white;
   padding: 10px 15px;
@@ -474,6 +479,78 @@ position:abosolute;
 }
 
 
+.Drp{
+	text-align:left;
+}
+.Drp select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+.Drp input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .proposals{
@@ -574,7 +651,7 @@ background-color: #D1D1D1;}
 }
 
 .proposals .Pbtn1:hover {
-  background-color:  var(--red);
+  background-color:  #E64848;
   color: white;
 }
 .proposals .Pbtn2{
@@ -676,9 +753,7 @@ background-color: #D1D1D1;}
   background-color: #38E54D;
   color: white;
 }
-.proposal .Abtn1 a{
-	margin-top:10px;
-}
+
 .proposals .Abtn{
   background-color:  #00b4d8; 
   border: none;
@@ -691,6 +766,7 @@ background-color: #D1D1D1;}
   font-weight: bold;
   border-radius: 5px;
   text-decoration:none;
+  
   
  
 }
@@ -711,7 +787,8 @@ background-color: #D1D1D1;}
   border-radius: 2px;
   text-decoration:none;
   margin-top:10px;
-  display:inline-block;
+  display:inline-block;;
+
 
   
  
@@ -734,8 +811,11 @@ background-color: #D1D1D1;}
   font-weight: bold;
   border-radius: 2px;
   text-decoration:none;
- margin-top:10px;
+  margin-top:10px;
   display:inline-block;
+
+
+ 
  
 }
 .proposals .Abtn2:hover {
@@ -870,47 +950,63 @@ background-color: #D1D1D1;}
   background-color:  #38E54D;
   color: white;
 }
-.Drp{
-	text-align:left;
+.warning{
+	display:flex;
+	margin-left:auto;
+	margin-right:auto;
 }
-.Drp select{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right:40px;
-  
+.tbwarning{
+	display:flex;
+	margin-left:auto;
+	margin-right:auto;
+	 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	 padding:15px;
+	 border-radius:5px;
+	
 }
-.Drp option{
-	font-size:15px;
+.tbwarning th{
+	font-size: 20px;
+	
+}
+.tbwarning a{
+	color:red;
+	
+}
+
+
+
+.cancel{
+	margin-top:10px;
+	text-decoration:none;
+	background-color: orange;
+	color:white;
+	padding:8px;
+	border-radius:3px;
+	font-size:12px;
+	margin-right:5px;
+	border:none;
+	cursor:pointer;
+	
+}
+.cancel:hover{
+	background-color: green;
+	
+}
+.proceed{
+	text-decoration:none;
+	background-color:  #EF7C8E; 
+	color:white;
+	padding:8px;
+	border-radius:3px;
+	font-size:12px;
+	
+	border:none;
 	cursor:pointer;
 	
 	
 }
-.Drp input{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  
-}
-.Drp option{
-	font-size:15px;
-	cursor:pointer;
-	
+.proceed:hover{
+	background-color:  var(--red);
+  color: white;
 	
 }

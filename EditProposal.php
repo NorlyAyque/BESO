@@ -126,7 +126,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Edit Proposal</title>
-<link rel="stylesheet" type="text/css" href="styles/Create-proposalSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Create-proposal.css">
 
 </head>
 <body>
@@ -488,10 +488,10 @@ if(isset($_GET['edit'])){
 						<textarea placeholder="type here..." name="SDG" id="SDG" required><?php echo $dbSDG; ?></textarea>
 						
 						<label>  Vl. Office/ College/s Involved </label>
-								(CEAFA, CICS, CIT)
+								<h5>(CEAFA, CICS, CIT)</h5>
 						<textarea placeholder="type here..." name="Office" required><?php echo $dbOffice; ?></textarea>
 						
-						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i></label>
+						<label>  Vll. Program/s Involved<i><h5>(specify the programs under the college implementing the project)</h5></i></label>
 						<textarea placeholder="type here..." name="Programs" required><?php echo $dbPrograms; ?></textarea>
 						
 						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i></label>
@@ -500,7 +500,13 @@ if(isset($_GET['edit'])){
 						<label> lX. Partner Agencies</label>
 						<textarea placeholder="type here..." name="Agencies" required><?php echo $dbAgencies; ?></textarea>	
 						
-						<label> X. Beneficiaries <i>(Type and Number of Male & Female)</i><label>
+						
+				  </div>
+				</div>
+				
+				<div class="fillup">
+				  <div class="input-field">
+						<label> X. Beneficiaries <i><h5>(Type and Number of Male & Female)</h5></i><label>
 							<table class="MaleFemale">	
 								<tr class="th1">	
 									<th colspan="2">
@@ -536,21 +542,22 @@ if(isset($_GET['edit'])){
 									</tr>
 							</table>
 						
-						<label> Xll. Rationale<i>(brief description of the situation)</i><label>
+						<label> Xll. Rationale<i><h5>(brief description of the situation)</h5></i><label>
 						<textarea placeholder="type here..." name="Rationale" required><?php echo $dbRationale; ?></textarea>
 						
-						<label> Xlll. Objectives<i>(General and Specific)</i><label>
+						<label> Xlll. Objectives<i><h5>(General and Specific)</h5></i><label>
 						<textarea placeholder="type here..." name="Objectives" required><?php echo $dbObjectives; ?></textarea>
 
-						<label> XlV. Description, Strategies and Methods <i>(Activities/Schedule)</i><label>
+						<label> XlV. Description, Strategies and Methods <i><h5>(Activities/Schedule)</h5></i><label>
 						<textarea placeholder="type here..." name="Descriptions" required><?php echo $dbDescriptions; ?></textarea>
-				  </div>
-				</div>
-				
-				<div class="fillup">
-				  <div class="input-field">
-					
-						<label> XV. Financial Plan</i></label>
+						<label> XV. Financial Plan</i><label>
+						
+						<i><h5>(Click the button Form to open the table)</h5></i>
+						<div class="bform">
+							<a  class="open-button" href="javascript:myBlurFunction(1);">Open Form</a>
+						</div>
+						<div id="overlay">
+							
 							<div class="Tfinancial">
 								 <table class="financial">
 									<tbody>
@@ -562,86 +569,163 @@ if(isset($_GET['edit'])){
 											<th>Total</th>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR1_1"><?php echo $dbFPR1_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR1_2" value="<?php echo $dbFPR1_2;?>" id="FPR1_2" onchange="Row1()"></td>
-											<td><textarea placeholder="type here..." name="FPR1_3"><?php echo $dbFPR1_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR1_4" value="<?php echo $dbFPR1_4;?>" id="FPR1_4" onchange="Row1()"></td>
-											<td><input type="number" min="0" name="FPR1_5" value="<?php echo $dbFPR1_5;?>" id="FPR1_5" onchange="Row1()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR1_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR1_2" id="FPR1_2" onchange="Row1()"></td>
+											<td><textarea placeholder="type here..." name="FPR1_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR1_4" id="FPR1_4" onchange="Row1()"></td>
+											<td><input type="number" min="0" name="FPR1_5" id="FPR1_5" value="0" onchange="Row1()" readonly></td>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR2_1"><?php echo $dbFPR2_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR2_2" value="<?php echo $dbFPR2_2;?>" id="FPR2_2" onchange="Row2()"></td>
-											<td><textarea placeholder="type here..." name="FPR2_3"><?php echo $dbFPR2_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR2_4" value="<?php echo $dbFPR2_4;?>" id="FPR2_4" onchange="Row2()"></td>
-											<td><input type="number" min="0" name="FPR2_5" value="<?php echo $dbFPR2_5;?>" id="FPR2_5" onchange="Row2()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR2_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR2_2" id="FPR2_2" onchange="Row2()"></td>
+											<td><textarea placeholder="type here..." name="FPR2_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR2_4" id="FPR2_4" onchange="Row2()"></td>
+											<td><input type="number" min="0" name="FPR2_5" id="FPR2_5" value="0" onchange="Row2()" readonly></td>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR3_1"><?php echo $dbFPR3_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR3_2" value="<?php echo $dbFPR3_2;?>" id="FPR3_2" onchange="Row3()"></td>
-											<td><textarea placeholder="type here..." name="FPR3_3"><?php echo $dbFPR3_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR3_4" value="<?php echo $dbFPR3_4;?>" id="FPR3_4" onchange="Row3()"></td>
-											<td><input type="number" min="0" name="FPR3_5" value="<?php echo $dbFPR3_5;?>" id="FPR3_5" onchange="Row3()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR3_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR3_2" id="FPR3_2" onchange="Row3()"></td>
+											<td><textarea placeholder="type here..." name="FPR3_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR3_4" id="FPR3_4" onchange="Row3()"></td>
+											<td><input type="number" min="0" name="FPR3_5" id="FPR3_5" value="0" onchange="Row3()" readonly></td>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR4_1"><?php echo $dbFPR4_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR4_2" value="<?php echo $dbFPR4_2;?>" id="FPR4_2" onchange="Row4()"></td>
-											<td><textarea placeholder="type here..." name="FPR4_3"><?php echo $dbFPR4_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR4_4" value="<?php echo $dbFPR4_4;?>" id="FPR4_4" onchange="Row4()"></td>
-											<td><input type="number" min="0" name="FPR4_5" value="<?php echo $dbFPR4_5;?>" id="FPR4_5" onchange="Row4()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR4_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR4_2" id="FPR4_2" onchange="Row4()"></td>
+											<td><textarea placeholder="type here..." name="FPR4_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR4_4" id="FPR4_4" onchange="Row4()"></td>
+											<td><input type="number" min="0" name="FPR4_5" id="FPR4_5" value="0" onchange="Row4()" readonly></td>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR5_1"><?php echo $dbFPR5_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR5_2" value="<?php echo $dbFPR5_2;?>" id="FPR5_2" onchange="Row5()"></td>
-											<td><textarea placeholder="type here..." name="FPR5_3"><?php echo $dbFPR5_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR5_4" value="<?php echo $dbFPR5_4;?>" id="FPR5_4" onchange="Row5()"></td>
-											<td><input type="number" min="0" name="FPR5_5" value="<?php echo $dbFPR5_5;?>" id="FPR5_5" onchange="Row5()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR5_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR5_2" id="FPR5_2" onchange="Row5()"></td>
+											<td><textarea placeholder="type here..." name="FPR5_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR5_4" id="FPR5_4" onchange="Row5()"></td>
+											<td><input type="number" min="0" name="FPR5_5" id="FPR5_5" value="0" onchange="Row5()" readonly></td>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR6_1"><?php echo $dbFPR6_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR6_2" value="<?php echo $dbFPR6_2;?>" id="FPR6_2" onchange="Row6()"></td>
-											<td><textarea placeholder="type here..." name="FPR6_3"><?php echo $dbFPR6_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR6_4" value="<?php echo $dbFPR6_4;?>" id="FPR6_4" onchange="Row6()"></td>
-											<td><input type="number" min="0" name="FPR6_5" value="<?php echo $dbFPR6_5;?>" id="FPR6_5" onchange="Row6()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR6_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR6_2" id="FPR6_2" onchange="Row6()"></td>
+											<td><textarea placeholder="type here..." name="FPR6_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR6_4" id="FPR6_4" onchange="Row6()"></td>
+											<td><input type="number" min="0" name="FPR6_5" id="FPR6_5" value="0" onchange="Row6()" readonly></td>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR7_1"><?php echo $dbFPR7_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR7_2" value="<?php echo $dbFPR7_2;?>" id="FPR7_2" onchange="Row7()"></td>
-											<td><textarea placeholder="type here..." name="FPR7_3"><?php echo $dbFPR7_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR7_4" value="<?php echo $dbFPR7_4;?>" id="FPR7_4" onchange="Row7()"></td>
-											<td><input type="number" min="0" name="FPR7_5" value="<?php echo $dbFPR7_5;?>" id="FPR7_5" onchange="Row7()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR7_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR7_2" id="FPR7_2" onchange="Row7()"></td>
+											<td><textarea placeholder="type here..." name="FPR7_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR7_4" id="FPR7_4" onchange="Row7()"></td>
+											<td><input type="number" min="0" name="FPR7_5" id="FPR7_5" value="0" onchange="Row7()" readonly></td>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR8_1"><?php echo $dbFPR8_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR8_2" value="<?php echo $dbFPR8_2;?>" id="FPR8_2" onchange="Row8()"></td>
-											<td><textarea placeholder="type here..." name="FPR8_3"><?php echo $dbFPR8_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR8_4" value="<?php echo $dbFPR8_4;?>" id="FPR8_4" onchange="Row8()"></td>
-											<td><input type="number" min="0" name="FPR8_5" value="<?php echo $dbFPR8_5;?>" id="FPR8_5" onchange="Row8()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR8_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR8_2" id="FPR8_2" onchange="Row8()"></td>
+											<td><textarea placeholder="type here..." name="FPR8_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR8_4" id="FPR8_4" onchange="Row8()"></td>
+											<td><input type="number" min="0" name="FPR8_5" id="FPR8_5" value="0" onchange="Row8()" readonly></td>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR9_1"><?php echo $dbFPR9_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR9_2" value="<?php echo $dbFPR9_2;?>" id="FPR9_2" onchange="Row9()"></td>
-											<td><textarea placeholder="type here..." name="FPR9_3"><?php echo $dbFPR9_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR9_4" value="<?php echo $dbFPR9_4;?>" id="FPR9_4" onchange="Row9()"></td>
-											<td><input type="number" min="0" name="FPR9_5" value="<?php echo $dbFPR9_5;?>" id="FPR9_5" onchange="Row9()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR9_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR9_2" id="FPR9_2" onchange="Row9()"></td>
+											<td><textarea placeholder="type here..." name="FPR9_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR9_4" id="FPR9_4" onchange="Row9()"></td>
+											<td><input type="number" min="0" name="FPR9_5" id="FPR9_5" value="0" onchange="Row9()" readonly></td>
 										</tr>
 										<tr class="MF">
-											<td><textarea placeholder="type here..." name="FPR10_1"><?php echo $dbFPR10_1;?></textarea></td>
-											<td><input type="number" min="0" name="FPR10_2" value="<?php echo $dbFPR10_2;?>" id="FPR10_2" onchange="Row10()"></td>
-											<td><textarea placeholder="type here..." name="FPR10_3"><?php echo $dbFPR10_3;?></textarea></td>
-											<td><input type="number" min="0" name="FPR10_4" value="<?php echo $dbFPR10_4;?>" id="FPR10_4" onchange="Row10()"></td>
-											<td><input type="number" min="0" name="FPR10_5" value="<?php echo $dbFPR10_5;?>" id="FPR10_5" onchange="Row10()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR10_1"></textarea></td>
+											<td><input type="number" min="0" name="FPR10_2" id="FPR10_2" onchange="Row10()"></td>
+											<td><textarea placeholder="type here..." name="FPR10_3"></textarea></td>
+											<td><input type="number" min="0" name="FPR10_4" id="FPR10_4" onchange="Row10()"></td>
+											<td><input type="number" min="0" name="FPR10_5" id="FPR10_5" value="0" onchange="Row10()" readonly></td>
 										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id=""></td>
+											<td><input type="number" min="0" name="" id=""></td>
+										</tr>
+										
 											
 										<tr class="MF">
 											<th colspan="4"  class="total">Grand Total</th>
-											<td><input type="number" min="0" name="GrandTotal" value="<?php echo $dbGrandTotal;?>" id="GrandTotal" readonly></td>
+											<td><input type="number" name="GrandTotal" id="GrandTotal" readonly></td>
 										</tr>
 									</tbody>
+									<div class="hideleft">
+										<a class="hide" href="javascript:myBlurFunction(0);">X</a>
+									</div>
 								</table>
+								
 							</div> 
+							
+						</div> 
 						
 						
-						<label> XVl. Functional Relationships with the partner <i>(Duties/Task of the Partner Agencies)</i></label>
+						<label> XVl. Functional Relationships with the partner <i><h5>(Duties/Task of the Partner Agencies)</i></h5></label>
 						<textarea placeholder="type here..." name="Functional" required><?php echo $dbFunctional; ?></textarea>
 						
 						<label> XVll. Monitoring and Evaluation Mechanics/Plan</label>
@@ -657,8 +741,133 @@ if(isset($_GET['edit'])){
 						</div>
 						<textarea placeholder="type here..." name="Monitoring" required><?php echo $dbMonitoring; ?></textarea>
 			
-						<label> XVlll. Sustainability Plan<label>
-						<textarea placeholder="type here..." name="Plans" required><?php echo $dbPlans; ?></textarea>
+						<label> XVlll. Sustainability Plan<label><i><h5> (Click the button Form to open the table)</h5></i>
+						<div class="bform">
+							<a  class="open-button" href="javascript:myBlurFunction1(1);">Open Form</a>
+						</div>
+						<div id="overlay2nd">
+							
+							<div class="Tfinancial">
+								 <table class="financial">
+									<tbody>
+										<tr>
+											<th>ACTIVITIES </th>
+											<th>TENTATIVE SCHEDULE </th>
+											<th>INVOLVED </th>
+											
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+										</tr>
+										
+											
+										
+									</tbody>
+									<div class="hide2nd">
+										<a class="hide" href="javascript:myBlurFunction1(0);">X</a>
+									</div>
+								</table>
+								
+							</div> 
+							
+						</div> 
 						
 				  </div>
 				</div>
@@ -1192,6 +1401,56 @@ function GrandTotal(){
 }
 
 </script>
+
+
+<script>
+//For financial Plan
+myBlurFunction = function(state) {
+    /* state can be 1 or 0 */
+    var containerElement = document.getElementById('main_container');
+    var overlayEle = document.getElementById('overlay');
+
+    if (state) {
+        overlayEle.style.display = 'block';
+        containerElement.setAttribute('class', 'blur');
+    } else {
+        overlayEle.style.display = 'none';
+        containerElement.setAttribute('class', null);
+    }
+};
+
+</script>
+<script>
+//For Sustainability Plan
+myBlurFunction1 = function(state) {
+    /* state can be 1 or 0 */
+    var containerElement = document.getElementById('main_container');
+    var overlay2ndEle = document.getElementById('overlay2nd');
+
+    if (state) {
+        overlay2ndEle.style.display = 'block';
+        containerElement.setAttribute('class', 'blur');
+    } else {
+        overlay2ndEle.style.display = 'none';
+        containerElement.setAttribute('class', null);
+    }
+};
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
 //For Type CES & SDG

@@ -17,7 +17,7 @@ $UserPosition = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation - Revisions</title>
-<link rel="stylesheet" type="text/css" href="styles/EvaluationReports-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/EvaluationReports.css">
 
 </head>
 <body>
@@ -116,7 +116,7 @@ $UserPosition = $_SESSION["Position"];
 							</div></a>
 							</button>
 							
-							<a href="Evaluation-revision.php" button class = "nav2"> Revision <ion-icon name="repeat-outline"></ion-icon>
+							<a href="Evaluation-revision.php" button class = "nav"> Revision <ion-icon name="repeat-outline"></ion-icon>
 							<div id="ReviseEval" class="notifREV">
 								<span class="icon-button__badge"><?php echo "$CountCoorRevEval";?></span>
 							</div></a>

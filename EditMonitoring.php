@@ -109,7 +109,7 @@ if(isset($_GET['edit'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Update Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/EditMonitoringSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/EditMonitoring-style.css">
 
 </head>
 <body>
@@ -237,6 +237,13 @@ if(isset($_GET['edit'])){
 						<label> lX. Cooperating Agencies</label>
 						<textarea placeholder="type here..." name="Agency" required><?Php echo $dbAgency; ?></textarea> 
 						
+						
+				  </div>
+				</div>
+				
+				<div class="fillup">
+				  <div class="input-field">
+						
 						<label> X. Beneficiaries<i>(Type and Number of Male and Female)</i></label>
 						<textarea placeholder="type here..." name="Beneficiaries" required><?Php echo $dbBeneficiaries; ?></textarea> 
 						
@@ -250,16 +257,13 @@ if(isset($_GET['edit'])){
 						
 						<label>3. Schedule of activities</label>
 						<textarea placeholder="type here..." name="PS3" required><?Php echo $dbPS3; ?></textarea> 
-				  </div>
-				</div>
-				
-				<div class="fillup">
-				  <div class="input-field">
-						
-						
 						
 						
 						<label> 4. Financial report<label>
+						<div class="bform">
+							<a  class="open-button" href="javascript:myBlurFunction(1);">Open Form</a>
+						</div>
+						<div id="overlay">
 							<div class="Tfinancial">
 								 <table class="financial">
 									<tbody>
@@ -346,9 +350,12 @@ if(isset($_GET['edit'])){
 											<td><input type="number" min="0" name="GrandTotal" value="<?php echo $dbGrandTotal;?>" id="GrandTotal" readonly></td>
 										</tr>
 									</tbody>
+									<div class="hideleft">
+										<a class="hide" href="javascript:myBlurFunction(0);">X</a>
+									</div>
 								</table>
 							</div> 
-
+						</div>
 						<label>5. Problems encountered</label>
 						<textarea placeholder="type here..." name="PS5" required><?Php echo $dbPS5; ?></textarea> 
 						
@@ -626,7 +633,23 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
+<script>
+//For Financial Plan
+myBlurFunction = function(state) {
+    /* state can be 1 or 0 */
+    var containerElement = document.getElementById('main_container');
+    var overlayEle = document.getElementById('overlay');
 
+    if (state) {
+        overlayEle.style.display = 'block';
+        containerElement.setAttribute('class', 'blur');
+    } else {
+        overlayEle.style.display = 'none';
+        containerElement.setAttribute('class', null);
+    }
+};
+
+</script>
 <script>
 //For Auto Compute
 function Row1(){

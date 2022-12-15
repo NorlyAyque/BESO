@@ -143,7 +143,7 @@ include_once ("Dashboard-Computations.php");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboards.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard-style.css">
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> <!-- For Graph -->
 </head>
 
@@ -291,8 +291,8 @@ include_once ("Dashboard-Computations.php");
 						<th colspan="12" class="SaveCancel">
 							<a id="Enable_SaveBtn" onclick="Enable_SaveBtn()">Edit Target/Actual</a>
 							<a id="savebtn" style="display:none">
-									<input type="submit" class="Ssave" name="Savebtn" value="Update"> 
-									<span id="Cancel" onclick="Cancel()">Cancel</span>
+									<input type="submit" class="Ssave" name="Savebtn" value="UPDATE"> 
+									<span id="Cancel" onclick="Cancel()">CANCEL</span>
 							</a>
 						</th>
 					</tr>
@@ -349,8 +349,8 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						<td >Total</td>
 						
 					</tr>
-					<tr class="cols">
-						<td colspan="23"></td>
+					<tr class="cols" border="none";>
+						<td colspan="23" ></td>
 						
 					</tr>
 					<tr >

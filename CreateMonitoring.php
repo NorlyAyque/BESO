@@ -82,7 +82,7 @@ if(isset($_GET['create'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Create Monitoring</title>
-<link rel="stylesheet" type="text/css" href="styles/CreateMonitoringSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/CreateMonitoring-style.css">
 
 </head>
 <body>
@@ -201,7 +201,7 @@ if(isset($_GET['create'])){
 						<label>  Vl. Office/ College/s Involved </label>
 						<textarea placeholder="type here..." name="Office" required><?Php echo $dbOffice; ?></textarea> 
 						
-						<label>  Vll. Program/s Involved<i>(specify the programs under the college implementing the project)</i></label>
+						<label>  Vll. Program/s Involved<i><h5>(specify the programs under the college implementing the project)</h5></i></label>
 						<textarea placeholder="type here..." name="Programs" required><?Php echo $dbPrograms; ?></textarea> 
 						
 						<label> Vlll. Project Leader, Assistant Project Leader and coordinator</i></label>
@@ -210,12 +210,21 @@ if(isset($_GET['create'])){
 						<label> lX. Cooperating Agencies</label>
 						<textarea placeholder="type here..." name="Agency" required><?Php echo $dbAgencies; ?></textarea> 
 						
-						<label> X. Beneficiaries<i>(Type and Number of Male and Female</i></label>
-						<textarea placeholder="type here..." name="Beneficiaries" required><?Php echo "Type: ".$dbTypeParticipants. "\rMale: ".$dbMale. "\rFemale: ".$dbFemale;?></textarea> 
-
-						<center><label> Xl. Project Status<label></center><br>
 						
-						<label>1. As to purpose (how far has the purpose been attained)</label>
+
+						
+						
+						
+				  </div>
+				</div>
+				
+				<div class="fillup">
+				  <div class="input-field">
+						<label> X. Beneficiaries<i><h5>(Type and Number of Male and Female</h5></i></label>
+						<textarea placeholder="type here..." name="Beneficiaries" required><?Php echo "Type: ".$dbTypeParticipants. "\rMale: ".$dbMale. "\rFemale: ".$dbFemale;?></textarea> 
+						
+						<center><label> Xl. Project Status<label></center><br>
+						<label>1. As to purpose <h5><i>(how far has the purpose been attained)</i></h5></label>
 						<textarea placeholder="type here..." name="PS1" required></textarea> 
 						
 						<label>2. Availability of materials</label>
@@ -223,13 +232,11 @@ if(isset($_GET['create'])){
 						
 						<label>3. Schedule of activities</label>
 						<textarea placeholder="type here..." name="PS3" required></textarea> 
-				  </div>
-				</div>
-				
-				<div class="fillup">
-				  <div class="input-field">
-
-						<label> 4. Financial report<label>
+						<label> 4. Financial report<label><i><h5> (Click the button Form to open the table)</h5></i>
+						<div class="bform">
+							<a  class="open-button" href="javascript:myBlurFunction(1);">Open Form</a>
+						</div>
+						<div id="overlay">
 							<div class="Tfinancial">
 								 <table class="financial">
 									<tbody>
@@ -310,15 +317,88 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR10_4" id="FPR10_4" onchange="Row10()"></td>
 											<td><input type="number" min="0" name="FPR10_5" id="FPR10_5" value="0" onchange="Row10()" readonly></td>
 										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
+										<tr class="MF">
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+											<td><input type="number" min="0" name="" id="" ></td>
+										</tr>
 											
 										<tr class="MF">
 											<th colspan="4"  class="total">Grand Total</th>
 											<td><input type="number" name="GrandTotal" id="GrandTotal" readonly></td>
 										</tr>
 									</tbody>
+									<div class="hideleft">
+										<a class="hide" href="javascript:myBlurFunction(0);">X</a>
+									</div>
 								</table>
 							</div> 
-	
+						</div>
 						<label>5. Problems encountered</label>
 						<textarea placeholder="type here..." name="PS5" required></textarea> 
 						
@@ -727,7 +807,23 @@ function GrandTotal(){
 	document.getElementById("Cost").value = anss;
 }
 </script>
+<script>
+//For Financial Plan
+myBlurFunction = function(state) {
+    /* state can be 1 or 0 */
+    var containerElement = document.getElementById('main_container');
+    var overlayEle = document.getElementById('overlay');
 
+    if (state) {
+        overlayEle.style.display = 'block';
+        containerElement.setAttribute('class', 'blur');
+    } else {
+        overlayEle.style.display = 'none';
+        containerElement.setAttribute('class', null);
+    }
+};
+
+</script>
 <script>
 //For Signatories Dropdown
 function ReviewedByName(){

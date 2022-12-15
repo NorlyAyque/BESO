@@ -17,7 +17,7 @@ $UserPosition = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Evaluation</title>
-<link rel="stylesheet" type="text/css" href="styles/EvaluationReports-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/EvaluationReports.css">
 
 </head>
 <body>
@@ -112,7 +112,7 @@ $UserPosition = $_SESSION["Position"];
 				<th colspan="7">
 					<div class="menu">
 							
-						<a href="Evaluation.php" button class = "nav1"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
+						<a href="Evaluation.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
 						<div id="PendingEval" class="notif">
 							<span class="icon-button__badge"><?php echo "$CountEvaluation";?></span>
 						</div></a>

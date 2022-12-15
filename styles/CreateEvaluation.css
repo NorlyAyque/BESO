@@ -6,7 +6,7 @@
 	font-family:"Open Sans", sans-serif;
 }
 :root{
-	--red:  #E64848;
+	--red: #2B4257;
 	--white: #fff;
 	--grey: #f5f5f5;
 	--black1: #222;
@@ -136,7 +136,6 @@ body{
 	font-size: 17px;
 	font-weight:bold;
 	
-	
 }
 
 
@@ -173,12 +172,6 @@ body{
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
 }
-
-.navigation li .active{
-text-decoration: underline;
-text-underline-position: under;
-text-decoration-thickness:3px;
-}
 /***Main***/
 .main{
 	position: abosolute;
@@ -198,6 +191,28 @@ margin-left: 100px;
 	align-items: center;
 	padding: 0 10px;
 }
+
+.toggle{
+	position:relative;
+	width:40px;
+	height:50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size:30px;
+	cursor: pointer;
+	margin-top:10px;
+	margin-left: 30px;
+	margin-bottom:-30px;
+	color:white;
+}
+
+.navigation li .active{
+text-decoration: underline;
+text-underline-position: under;
+text-decoration-thickness:3px;
+}
+
 /********* NOTIFICATION NUMBER **********/
 .notifDASH{	
 margin-left:-15px;
@@ -273,20 +288,6 @@ position:abosolute;
 }
 
 /*******  NOTIFICATION NUMBER***************/
-.toggle{
-	position:relative;
-	width:40px;
-	height:50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size:30px;
-	cursor: pointer;
-	margin-top:10px;
-	margin-left: 30px;
-	color:white;
-	margin-bottom:-30px;
-}
 
 .header{
   width: 97%;
@@ -354,10 +355,10 @@ position:abosolute;
 
 
 
-.Create  .input-field input, textarea {
+.Create  .input-field textarea {
   margin-top:5px;
   width: 100%;
-  height: 80px;
+  height: 70px;
   padding: 10px 11px;
   box-sizing: border-box;
   background-color: #f8f8f8;
@@ -366,6 +367,204 @@ position:abosolute;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
   margin: 5px 0 22px 0;
   display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .input-field1 textarea {
+  margin-top:5px;
+  width: 100%;
+  height: 250px;
+  padding: 10px 11px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  font-size: 15px;
+  resize: none;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
+  margin: 5px 0 22px 0;
+  display: inline-block;
+}
+.input-field1 label{
+	font-weight:bold;
+	color#444;
+	
+}
+.Create .input-field1 {
+  padding: 12px 5px;
+  width: auto;
+}
+
+
+
+
+
+
+.participants {
+	overflow:hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	margin-left:auto;
+	margin-right:auto;
+}
+.participants th {
+  border-collapse: collapse;
+  color: white;
+  font-weight:bold;
+  padding: 8px 35px ;
+  background-color: var(--red);
+  display:abosolute; 
+  
+  
+}
+
+.participants  td,input {
+  margin-top:-15px;
+  resize: none;
+  font-weight:bold;
+  width: 50px;
+  text-align: center;
+  height:60px;
+  
+}
+.participants .total td{
+	color:white;
+}
+.participants .total  td:nth-child(1){
+	 background-color:  var(--red); 
+}
+.participants tr:hover {
+	background-color: #ddd;
+	cursor:pointer;
+
+}
+.participants .types input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  font-size:18px;
+}
+
+.Evaluation {
+	overflow:hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.2);
+	border-radius: 3px 3px 0 0;
+	border: 1px solid black; 	
+	margin-left:auto;
+	margin-right:auto;
+}
+.Evaluation .th1 th {
+  border-collapse: collapse;
+  color: white;
+  font-weight:bold;
+  padding: 8px 20px;
+  background-color: var(--red);
+  display:abosolute; 
+  
+}
+ .Evaluation .MF  td{
+	font-size:12px;
+	text-align: left;
+	
+	
+}	
+.Evaluation  td,input {
+  font-weight:bold;
+  resize: none;
+  font-weight:bold;
+ width: 50px;
+  text-align: center;
+  height:40px;
+  
+}
+.Evaluation .total td{
+	color:white;
+}
+.Evaluation .total  td:nth-child(1){
+	 background-color:  var(--red); 
+}
+.Evaluation tr:hover {
+	background-color: #ddd;
+	cursor:pointer;
+
+}
+.pics1 textarea{
+	width:65%;
+	font-size:15px;
+	height:40px;
+}
+.pics2 textarea{
+	width:65%;
+	font-size:15px;
+	height:40px;
+}
+.pics3 textarea{
+	width:65%;
+	font-size:15px;
+	height:40px;
+}
+
+.pics1{
+
+	margin-top:30px;
+}
+.pics1 label,input{
+	 font-weight: normal;
+	 margin-bottom:-20px;
+}
+
+.pics1 input{
+	width: auto;
+}
+
+.pics2 label,input{
+	 font-weight: normal;
+	  margin-bottom:-20px;
+}
+
+.pics2 input{
+	width: auto;
+}
+
+.pics3 label,input{
+	 font-weight: normal;
+	  margin-bottom:-20px;
+}
+
+.pics3 input{
+	width: auto;
+}
+
+.submit:hover {
+  background-color:  #4CAF20;
+  color: white;
 }
 
 .signiture{
@@ -390,7 +589,7 @@ position:abosolute;
 }
 
 
-.signiture  textarea{
+ .signiture input, textarea{
   width: 100%;
   height: 50px;
   box-sizing: border-box;
@@ -399,6 +598,7 @@ position:abosolute;
   resize: none;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
   display: inline-block;
+  padding: 12px 20px;
 }
 .signiture textarea {
 	margin:auto;
@@ -408,6 +608,8 @@ position:abosolute;
 background-color: #D1D1D1;
 cursor: pointer;
 }
+
+
 .signiture td{
 	padding:5px;
 
@@ -459,80 +661,6 @@ border-radius:5px;
 
 
 
-
-
-
-
-
-.save-back{
-	margin:auto;
-	width:100%
-}
-
-
-.save-back table,th{
-	border:none;
-	
-}
-.save{
-		margin-top:10px;
-		text-align: right;
-		margin-right:15px;
-		margin-bottom: 10px;
-}
-
-.back{
-		text-align: left;
-		margin-left:40px;
-	
-}
- .btn3 {
-  margin-right:5px;
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-
-}
-
-.btn3:hover {
-  background-color:  #4CAF20;
-  color: white;
-}
-
-.btn4 {
-  margin-right:5px;
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-text-align:right;
-}
-
-.btn4:hover {
-  background-color:  #4CAF20;
-  color: white;
-}
 
 .checkbox2 label, .checkbox3 label, .checkbox4 label, .checkbox5 label, 
 .checkbox6 label, .checkbox7 label {
@@ -662,46 +790,65 @@ text-align:right;
   color: white;
 }
 
-.Tfinancial table{
-	margin-left:auto;
-	margin-right:auto;
-	box-shadow: 0 0 5px rgba(0,0,0,0.3);
-	margin-top:10px;
-	margin-bottom:15px;
-	width:100%;
-	
+
+
+
+
+.save{
+		text-align: right;
+		margin-right:15px;
+		margin-bottom: 10px;
+		margin-top:-45px;
 }
-.financial table,th,td{
-	
-	
-}
-.financial th{
-	padding-top:10px;
-	padding-bottom:10px;
-	 background-color: var(--red);
-	color: white;
+ .btn3 {
+  margin-right:5px;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+
 }
 
-.financial textarea:nth-child(1){
-	margin-top:20px;
-	width: 100px;
-	height:90px;	
-	border:none;
-	box-shadow: 0 0 3px rgba(0,0,0,0.3);
+.btn3:hover {
+  background-color:  #4CAF20;
+  color: white;
 }
 
-.financial td{
-	text-align:center;
-	background-color:#e3e3e3;	
+
+
+.buttonBACK {
+	text-align: left;
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom:10px;
 }
-.financial .MF input{
-	width: 70px;
-	height:40px;
-	text-align:center;
-	border:none;
-	 box-shadow: 0 0 3px rgba(0,0,0,0.3);
+ .btnB {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  text-align:left;
+ 
+  
 }
-.Tfinancial td:hover {
-background-color: lightgrey;
-cursor: pointer;
+.buttonBACK .btnB:hover {
+  background-color:  #4CAF20;
+  color: white;
 }

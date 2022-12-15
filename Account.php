@@ -79,7 +79,7 @@ if(isset($_GET['enable'])){
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Account</title>
-<link rel="stylesheet" type="text/css" href="styles/Accounts.css">
+<link rel="stylesheet" type="text/css" href="styles/Account.css">
 
 </head>
 <body>
@@ -198,7 +198,7 @@ if(isset($_GET['enable'])){
 					 
 					<th colspan="8" id="FilterRow"> 
 						Filter Name: <input type="text" onkeyup="myFunction()" id="keyword" placeholder="Type name here">
-						<button type='button' onclick='display()'>FIND ME</button>
+						<button class ="search" type='button' onclick='display()'>Search</button>
 					</th>
 				</tr>
 
@@ -273,7 +273,7 @@ while($result = mysqli_fetch_array($command))
 			
 				<p align="center" id="Logo_Title">
 					<img src="images/logo.png" width="200px">
-					<marquee> <h1> BESO PORTAL </h1> </marquee>
+					
 				</p>
 
 			</div>

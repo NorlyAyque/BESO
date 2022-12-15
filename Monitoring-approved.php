@@ -19,7 +19,7 @@ $UserPosition = $_SESSION["Position"];$AID = $_SESSION["AccountAID"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Monitoring - Approved</title>
-<link rel="stylesheet" type="text/css" href="styles/MonitoringReports-STYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/MonitoringReport.css">
 
 </head>
 <body>
@@ -111,7 +111,7 @@ $UserPosition = $_SESSION["Position"];$AID = $_SESSION["AccountAID"];
 				<tr>
 					<th colspan="7">
 						<div class="menu">
-							<a href="Monitoring.php" button class = "listnav1"> List <ion-icon name="list-outline"></ion-icon></a></button>
+							<a href="Monitoring.php" button class = "nav"> List <ion-icon name="list-outline"></ion-icon></a></button>
 							<a href="Monitoring-pending.php" button class = "nav"> Pending <ion-icon name="mail-unread-outline"></ion-icon>
 							<div id="PendingMon" class="notif">
 							<span class="icon-button__badge"><?php echo "$CountMonitoring";?></span>
@@ -120,7 +120,7 @@ $UserPosition = $_SESSION["Position"];$AID = $_SESSION["AccountAID"];
 							<div id="ReviseMon" class="notifREV">
 								<span class="icon-button__badge"><?php echo "$CountCoorRevMon";?></span>
 							</div></a></button>
-							<a href="Monitoring-approved.php" button class = "nav1"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
+							<a href="Monitoring-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a></button>
 							<a href="Monitoring-reject.php" button class = "nav"> Reject <ion-icon name="thumbs-down-outline"></ion-icon></a></button>
 						</div>
 					</th> 

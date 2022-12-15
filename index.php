@@ -27,7 +27,7 @@ if (isset($_SESSION['AccountAID']) == TRUE){
 		<div class="overlay">
 			<img src ="images/logo.png">
 			<span>
-				<p>BATSTATEU EXTENSION SERVICES OFFICE PORTAL<br>"BESO"</br></p>
+				<p>BATSTATEU EXTENSION SERVICES OFFICE PORTAL<br>ALANGILAN CAMPUS</br></p>
 			</span>
 		</div>
 	</div>

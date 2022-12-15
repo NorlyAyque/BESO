@@ -22,7 +22,7 @@ date_default_timezone_set('Asia/Manila');
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Settings</title>
-<link rel="stylesheet" type="text/css" href="styles/SettingSTYLE.css">
+<link rel="stylesheet" type="text/css" href="styles/Setting.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 

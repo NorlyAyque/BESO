@@ -6,7 +6,7 @@
 	font-family:"Open Sans", sans-serif;
 }
 :root{
-	--red:  #E64848;
+	--red:  #2B4257;
 	--white: #fff;
 	--grey: #f5f5f5;
 	--black1: #222;
@@ -77,6 +77,7 @@ body{
 	border-bottom-left-radius: 50px;
 	
 	
+	
 }
 .navigation ul li:hover,
 .navigation ul li.hovered {
@@ -103,6 +104,7 @@ body{
 .navigation ul li:hover a,
 .navigation ul li.hovered a{
 	color: #444;
+		
 	
 	
 }
@@ -141,6 +143,7 @@ body{
 
 
 
+
 /* curve outside */
 
 .navigation ul li:hover a::before,
@@ -158,6 +161,7 @@ body{
 	
 	
 	
+	
 }
 
 .navigation ul li:hover a::after,
@@ -172,14 +176,50 @@ body{
 	border-radius: 50%;
 	box-shadow: 30px -30px 10px var(--white);
 	pointer-events:none;
-}
 
+}
+/***
 .navigation li .active{
 text-decoration: underline;
 text-underline-position: under;
 text-decoration-thickness:3px;
 }
+**/
 
+/***Main***/
+.main{
+	position: abosolute;
+	margin-left: 270px;
+	min-height:625px;
+	background: var(--white);
+	transition:0.5s;
+}
+.main.active{
+margin-left: 100px;
+}
+.topbar{
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px;
+}
+
+.toggle{
+	position:relative;
+	width:40px;
+	height:50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size:30px;
+	cursor: pointer;
+	margin-top:10px;
+	margin-left: 30px;
+	margin-bottom:-30px;
+	color:white;
+}
 /********* NOTIFICATION NUMBER **********/
 .notifREV{
 margin-top:-30px;
@@ -208,7 +248,11 @@ position:abosolute;
 	position:abosolute;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 	font-size:13px;
+
 }
+
+
+
 
 .notifDASH{	
 margin-left:-15px;
@@ -232,6 +276,7 @@ position:abosolute;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 	font-weight:bold;
 	font-size:13px;
+	
 }
 
 .notifEVAL{	
@@ -283,53 +328,18 @@ position:abosolute;
 	
 }
 
-/*******  NOTIFICATION NUMBER***************/
-
-/***Main***/
-.main{
-	position: abosolute;
-	margin-left: 270px;
-	min-height:625px;
-	background: var(--white);
-	transition:0.5s;
-}
-.main.active{
-margin-left: 100px;
-}
-.topbar{
-	width: 100%;
-	height: 60px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 10px;
-}
-
-.toggle{
-	position:relative;
-	width:40px;
-	height:50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size:30px;
-	cursor: pointer;
-	margin-top:10px;
-	margin-left: 30px;
-	margin-bottom:-30px;
-	color:white;
-}
-
+/********* NOTIFICATION NUMBER **********/
 .menu{
 	 text-decoration:none;
+	 padding: 13px;
 }
 
 
  .menu .nav{
   margin-right:20px;
-  background-color: #0F3460; 
+  background-color: white; 
   border: none;
-  color: white;
+  color: black;
   padding: 10px 15px;
   font-size: 15px;
   transition-duration: 0.4s;
@@ -344,7 +354,7 @@ margin-left: 100px;
 }
 
 .menu .nav:hover {
-  background-color:  #4248f8;
+  background-color:   #708090;
   color: white;
   text-decoration:none;
 }
@@ -357,68 +367,6 @@ margin-left: 100px;
 	float: left;
 	text-decoration:none;
 }
-
-.menu .listnav1{
-  margin-right:20px;
-  background-color:  #0F3460;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-  display: inline-block;
-  vertical-align: middle;
-
-}
-
-.menu .listnav1 ion-icon {
-	display: inline-block;
-	vertical-align: middle;
-	margin-right:10px;
-	font-size: 20px;
-	float: left;
-	text-decoration:none;
-}
-
-.menu .listnav1:hover {
-  background-color:  #4248f8;
-  color: white;
-  text-decoration:none;
-}
-
-.menu .listnav2{
-  margin-right:20px;
-  background-color:  #4248f8;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration:none;
-  display: inline-block;
-  vertical-align: middle;
-
-}
-
-.menu .listnav2 ion-icon {
-	display: inline-block;
-	vertical-align: middle;
-	margin-right:10px;
-	font-size: 20px;
-	float: left;
-	text-decoration:none;
-}
-
-
 
 .menu .nav1{
   margin-right:20px;
@@ -501,7 +449,7 @@ margin-left: 100px;
 }
 
 .menu .nav4{
-  margin-right:20px;
+  margin-right:5px;
   background-color:  #4248f8;
   border: none;
   color: white;
@@ -525,77 +473,6 @@ margin-left: 100px;
 	float: left;
 	text-decoration:none;
 }
-
-
-.Drp{
-	text-align:left;
-}
-.Drp select{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right:40px;
-  
-}
-.Drp option{
-	font-size:15px;
-	cursor:pointer;
-	
-	
-}
-.Drp input{
-  display:flex;
-  margin:auto;
-  cursor: pointer;
-  border:none;
-  text-align:center;
-  width:15%;
-  border:none;
-  height:30px;
-  border-radius:3px;
-  display: inline-block;
-  vertical-align: middle;
-  
-}
-.Drp option{
-	font-size:15px;
-	cursor:pointer;
-	
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -994,44 +871,47 @@ background-color: #D1D1D1;}
   background-color:  #38E54D;
   color: white;
 }
-
-.headmes{
-	border-collapse:collapse;
-	margin:auto;
-	border-radius:10px;
-	margin-top:-10px;
+.Drp{
+	text-align:left;
 }
-
-.headmes td {
-	border:1px solid black;
-	padding:7px 50px;
-
+.Drp select{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:40px;
+  
 }
-
-.cancel{
-	text-decoration:none;
-	background-color: orange;
-	color:white;
-	padding:5px;
-	border-radius:3px;
-	font-size:12px;
-	margin-right:5px;
-}
-.cancel:hover{
-	background-color: var(--red);
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
 	
 }
-.proceed{
-	text-decoration:none;
-	background-color: #4CAF50; 
-	color:white;
-	padding:5px;
-	border-radius:3px;
-	font-size:12px;
-	margin-right:-30px;
-	
+.Drp input{
+  display:flex;
+  margin:auto;
+  cursor: pointer;
+  border:none;
+  text-align:center;
+  width:15%;
+  border:none;
+  height:30px;
+  border-radius:3px;
+  display: inline-block;
+  vertical-align: middle;
+  
 }
-.proceed:hover{
-	background-color: green;
+.Drp option{
+	font-size:15px;
+	cursor:pointer;
+	
 	
 }

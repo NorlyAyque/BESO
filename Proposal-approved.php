@@ -18,7 +18,7 @@ $UserPosition = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Proposals - Approved</title>
-<link rel="stylesheet" type="text/css" href="styles/ProposalCSS.css">
+<link rel="stylesheet" type="text/css" href="styles/Proposal.css">
 
 </head>
 <body>
@@ -168,7 +168,7 @@ if(isset($_GET['delete'])){
 							</div><a>
 							</button>
 							
-							<a href="Proposal-approved.php" button class = "nav3"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
+							<a href="Proposal-approved.php" button class = "nav"> Approved <ion-icon name="checkmark-done-outline"></ion-icon></a>
 							</button>
 						
 							<a href="Proposal-reject.php" button class = "nav"> Rejected <ion-icon name="thumbs-down-outline"></ion-icon></a>
