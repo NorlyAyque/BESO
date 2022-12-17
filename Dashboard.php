@@ -142,7 +142,7 @@ include_once ("Dashboard-Computations.php");
 <html>
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-<title>Dashborad BESO Portal</title>
+<title>Dashborad</title>
 <link rel="stylesheet" type="text/css" href="styles/Dashboard-style.css">
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> <!-- For Graph -->
 </head>

@@ -241,6 +241,7 @@ if(isset($_GET['create'])){
 								 <table class="financial">
 									<tbody>
 										<tr>
+											<th width="50px";>No.</th>
 											<th>Item Description </th>
 											<th> Quantity </th>
 											<th>Unit </th>
@@ -248,6 +249,7 @@ if(isset($_GET['create'])){
 											<th>Total</th>
 										</tr>
 										<tr class="MF">
+											<td>1</td>
 											<td><textarea placeholder="type here..." name="FPR1_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR1_2" id="FPR1_2" onchange="Row1()"></td>
 											<td><textarea placeholder="type here..." name="FPR1_3"></textarea></td>
@@ -255,6 +257,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR1_5" id="FPR1_5" value="0" onchange="Row1()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>2</td>
 											<td><textarea placeholder="type here..." name="FPR2_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR2_2" id="FPR2_2" onchange="Row2()"></td>
 											<td><textarea placeholder="type here..." name="FPR2_3"></textarea></td>
@@ -262,6 +265,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR2_5" id="FPR2_5" value="0" onchange="Row2()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>3</td>
 											<td><textarea placeholder="type here..." name="FPR3_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR3_2" id="FPR3_2" onchange="Row3()"></td>
 											<td><textarea placeholder="type here..." name="FPR3_3"></textarea></td>
@@ -269,6 +273,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR3_5" id="FPR3_5" value="0" onchange="Row3()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>4</td>
 											<td><textarea placeholder="type here..." name="FPR4_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR4_2" id="FPR4_2" onchange="Row4()"></td>
 											<td><textarea placeholder="type here..." name="FPR4_3"></textarea></td>
@@ -276,6 +281,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR4_5" id="FPR4_5" value="0" onchange="Row4()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>5</td>
 											<td><textarea placeholder="type here..." name="FPR5_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR5_2" id="FPR5_2" onchange="Row5()"></td>
 											<td><textarea placeholder="type here..." name="FPR5_3"></textarea></td>
@@ -283,6 +289,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR5_5" id="FPR5_5" value="0" onchange="Row5()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>6</td>
 											<td><textarea placeholder="type here..." name="FPR6_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR6_2" id="FPR6_2" onchange="Row6()"></td>
 											<td><textarea placeholder="type here..." name="FPR6_3"></textarea></td>
@@ -290,6 +297,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR6_5" id="FPR6_5" value="0" onchange="Row6()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>7</td>
 											<td><textarea placeholder="type here..." name="FPR7_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR7_2" id="FPR7_2" onchange="Row7()"></td>
 											<td><textarea placeholder="type here..." name="FPR7_3"></textarea></td>
@@ -297,6 +305,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR7_5" id="FPR7_5" value="0" onchange="Row7()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>8</td>
 											<td><textarea placeholder="type here..." name="FPR8_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR8_2" id="FPR8_2" onchange="Row8()"></td>
 											<td><textarea placeholder="type here..." name="FPR8_3"></textarea></td>
@@ -304,6 +313,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR8_5" id="FPR8_5" value="0" onchange="Row8()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>9</td>
 											<td><textarea placeholder="type here..." name="FPR9_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR9_2" id="FPR9_2" onchange="Row9()"></td>
 											<td><textarea placeholder="type here..." name="FPR9_3"></textarea></td>
@@ -311,6 +321,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR9_5" id="FPR9_5" value="0" onchange="Row9()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>10</td>
 											<td><textarea placeholder="type here..." name="FPR10_1"></textarea></td>
 											<td><input type="number" min="0" name="FPR10_2" id="FPR10_2" onchange="Row10()"></td>
 											<td><textarea placeholder="type here..." name="FPR10_3"></textarea></td>
@@ -318,6 +329,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="FPR10_5" id="FPR10_5" value="0" onchange="Row10()" readonly></td>
 										</tr>
 										<tr class="MF">
+											<td>11</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -325,6 +337,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="" id="" ></td>
 										</tr>
 										<tr class="MF">
+											<td>12</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -332,6 +345,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="" id="" ></td>
 										</tr>
 										<tr class="MF">
+											<td>13</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -339,6 +353,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="" id="" ></td>
 										</tr>
 										<tr class="MF">
+											<td>14</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -346,6 +361,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="" id="" ></td>
 										</tr>
 										<tr class="MF">
+											<td>15</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -353,6 +369,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="" id="" ></td>
 										</tr>
 										<tr class="MF">
+											<td>16</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -360,6 +377,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="" id="" ></td>
 										</tr>
 										<tr class="MF">
+											<td>17</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -367,6 +385,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="" id="" ></td>
 										</tr>
 										<tr class="MF">
+											<td>18</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -374,6 +393,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="" id="" ></td>
 										</tr>
 										<tr class="MF">
+											<td>19</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -381,6 +401,7 @@ if(isset($_GET['create'])){
 											<td><input type="number" min="0" name="" id="" ></td>
 										</tr>
 										<tr class="MF">
+											<td>20</td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
 											<td><input type="number" min="0" name="" id="" ></td>
 											<td><textarea placeholder="type here..." name=""></textarea></td>
@@ -389,7 +410,7 @@ if(isset($_GET['create'])){
 										</tr>
 											
 										<tr class="MF">
-											<th colspan="4"  class="total">Grand Total</th>
+											<th colspan="5"  class="total">Grand Total</th>
 											<td><input type="number" name="GrandTotal" id="GrandTotal" readonly></td>
 										</tr>
 									</tbody>

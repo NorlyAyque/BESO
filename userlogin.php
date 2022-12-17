@@ -39,7 +39,8 @@ if ($CurrentQuarter != $CustomQuarter){
 
 </head>
 <br>
-<div class="BESOTITLE"><h1> BESO Portal</h1></div> 
+<br>
+<div class="BESOTITLE"><h3>BatStateU Extension Services Office Portal <br>Alangilan Campus</h3></div> <br>
  <b><?php echo "<div class='BESOTITLE'> Year: $CustomYear </div>";?></b>
  <b><?php echo "<div class='BESOTITLE'> Quarter: $CustomQuarter</div>";?></b>
 
