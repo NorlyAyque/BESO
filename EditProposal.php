@@ -51,63 +51,11 @@ if(isset($_GET['edit'])){
 		$dbRationale = $result['Rationale'];
 		$dbObjectives = $result['Objectives'];
 		$dbDescriptions = $result['Descriptions'];
-		$dbFPR1_1 = $result['FPR1_1'];
-		$dbFPR1_2 = $result['FPR1_2'];
-		$dbFPR1_3 = $result['FPR1_3'];
-		$dbFPR1_4 = $result['FPR1_4'];
-		$dbFPR1_5 = $result['FPR1_5'];
-		$dbFPR2_1 = $result['FPR2_1'];
-		$dbFPR2_2 = $result['FPR2_2'];
-		$dbFPR2_3 = $result['FPR2_3'];
-		$dbFPR2_4 = $result['FPR2_4'];
-		$dbFPR2_5 = $result['FPR2_5'];
-		$dbFPR3_1 = $result['FPR3_1'];
-		$dbFPR3_2 = $result['FPR3_2'];
-		$dbFPR3_3 = $result['FPR3_3'];
-		$dbFPR3_4 = $result['FPR3_4'];
-		$dbFPR3_5 = $result['FPR3_5'];
-		$dbFPR4_1 = $result['FPR4_1'];
-		$dbFPR4_2 = $result['FPR4_2'];
-		$dbFPR4_2 = $result['FPR4_2'];
-		$dbFPR4_3 = $result['FPR4_3'];
-		$dbFPR4_4 = $result['FPR4_4'];
-		$dbFPR4_5 = $result['FPR4_5'];
-		$dbFPR5_1 = $result['FPR5_1'];
-		$dbFPR5_2 = $result['FPR5_2'];
-		$dbFPR5_3 = $result['FPR5_3'];
-		$dbFPR5_4 = $result['FPR5_4'];
-		$dbFPR5_5 = $result['FPR5_5'];
-		$dbFPR6_1 = $result['FPR6_1'];
-		$dbFPR6_2 = $result['FPR6_2'];
-		$dbFPR6_3 = $result['FPR6_3'];
-		$dbFPR6_4 = $result['FPR6_4'];
-		$dbFPR6_5 = $result['FPR6_5'];
-		$dbFPR7_1 = $result['FPR7_1'];
-		$dbFPR7_2 = $result['FPR7_2'];
-		$dbFPR7_3 = $result['FPR7_3'];
-		$dbFPR7_4 = $result['FPR7_4'];
-		$dbFPR7_5 = $result['FPR7_5'];
-		$dbFPR8_1 = $result['FPR8_1'];
-		$dbFPR8_2 = $result['FPR8_2'];
-		$dbFPR8_3 = $result['FPR8_3'];
-		$dbFPR8_4 = $result['FPR8_4'];
-		$dbFPR8_5 = $result['FPR8_5'];
-		$dbFPR9_1 = $result['FPR9_1'];
-		$dbFPR9_2 = $result['FPR9_2'];
-		$dbFPR9_3 = $result['FPR9_3'];
-		$dbFPR9_4 = $result['FPR9_4'];
-		$dbFPR9_5 = $result['FPR9_5'];
-		$dbFPR10_1 = $result['FPR10_1'];
-		$dbFPR10_2 = $result['FPR10_2'];
-		$dbFPR10_3 = $result['FPR10_3'];
-		$dbFPR10_4 = $result['FPR10_4'];
-		$dbFPR10_5 = $result['FPR10_5'];
-		$dbGrandTotal = $result['GrandTotal'];
+
 		$dbFunctional = $result['Functional'];
 		$dbFrequency = $result['Frequency'];
 		$dbMonitoring = $result['Monitoring'];
-		$dbPlans = $result['Plans'];
-		
+				
 		$dbSign1_1 = $result['Sign1_1'];
 		$dbSign1_2 = $result['Sign1_2'];
 		$dbSign2_1 = $result['Sign2_1'];
@@ -119,6 +67,221 @@ if(isset($_GET['edit'])){
 		$dbSign5_1 = $result['Sign5_1'];
 		$dbSign5_2 = $result['Sign5_2'];
     }
+
+	//Displaying data from financial plan propsoal table
+	$sql = ("SELECT * FROM financial_plan_proposal WHERE ProposalID = $PID");
+	$command = $con->query($sql) or die("Error Fethcing data");
+    while($result = mysqli_fetch_array($command))
+	{
+		$DBFPR1_1 = $result['Item_1'];
+		$DBFPR1_2 = $result['Qty_1'];
+		$DBFPR1_3 = $result['Unit_1'];
+		$DBFPR1_4 = $result['Cost_1'];
+		$DBFPR1_5 = $result['Total_1'];
+
+		$DBFPR2_1 = $result['Item_2'];
+		$DBFPR2_2 = $result['Qty_2'];
+		$DBFPR2_3 = $result['Unit_2'];
+		$DBFPR2_4 = $result['Cost_2'];
+		$DBFPR2_5 = $result['Total_2'];
+
+		$DBFPR3_1 = $result['Item_3'];
+		$DBFPR3_2 = $result['Qty_3'];
+		$DBFPR3_3 = $result['Unit_3'];
+		$DBFPR3_4 = $result['Cost_3'];
+		$DBFPR3_5 = $result['Total_3'];
+
+		$DBFPR4_1 = $result['Item_4'];
+		$DBFPR4_2 = $result['Qty_4'];
+		$DBFPR4_3 = $result['Unit_4'];
+		$DBFPR4_4 = $result['Cost_4'];
+		$DBFPR4_5 = $result['Total_4'];
+
+		$DBFPR5_1 = $result['Item_5'];
+		$DBFPR5_2 = $result['Qty_5'];
+		$DBFPR5_3 = $result['Unit_5'];
+		$DBFPR5_4 = $result['Cost_5'];
+		$DBFPR5_5 = $result['Total_5'];
+
+		$DBFPR6_1 = $result['Item_6'];
+		$DBFPR6_2 = $result['Qty_6'];
+		$DBFPR6_3 = $result['Unit_6'];
+		$DBFPR6_4 = $result['Cost_6'];
+		$DBFPR6_5 = $result['Total_6'];
+
+		$DBFPR7_1 = $result['Item_7'];
+		$DBFPR7_2 = $result['Qty_7'];
+		$DBFPR7_3 = $result['Unit_7'];
+		$DBFPR7_4 = $result['Cost_7'];
+		$DBFPR7_5 = $result['Total_7'];
+
+		$DBFPR8_1 = $result['Item_8'];
+		$DBFPR8_2 = $result['Qty_8'];
+		$DBFPR8_3 = $result['Unit_8'];
+		$DBFPR8_4 = $result['Cost_8'];
+		$DBFPR8_5 = $result['Total_8'];
+
+		$DBFPR9_1 = $result['Item_9'];
+		$DBFPR9_2 = $result['Qty_9'];
+		$DBFPR9_3 = $result['Unit_9'];
+		$DBFPR9_4 = $result['Cost_9'];
+		$DBFPR9_5 = $result['Total_9'];
+
+		$DBFPR10_1 = $result['Item_10'];
+		$DBFPR10_2 = $result['Qty_10'];
+		$DBFPR10_3 = $result['Unit_10'];
+		$DBFPR10_4 = $result['Cost_10'];
+		$DBFPR10_5 = $result['Total_10'];
+		
+		$DBFPR11_1 = $result['Item_11'];
+		$DBFPR11_2 = $result['Qty_11'];
+		$DBFPR11_3 = $result['Unit_11'];
+		$DBFPR11_4 = $result['Cost_11'];
+		$DBFPR11_5 = $result['Total_11'];
+
+		$DBFPR12_1 = $result['Item_12'];
+		$DBFPR12_2 = $result['Qty_12'];
+		$DBFPR12_3 = $result['Unit_12'];
+		$DBFPR12_4 = $result['Cost_12'];
+		$DBFPR12_5 = $result['Total_12'];
+
+		$DBFPR13_1 = $result['Item_13'];
+		$DBFPR13_2 = $result['Qty_13'];
+		$DBFPR13_3 = $result['Unit_13'];
+		$DBFPR13_4 = $result['Cost_13'];
+		$DBFPR13_5 = $result['Total_13'];
+
+		$DBFPR14_1 = $result['Item_14'];
+		$DBFPR14_2 = $result['Qty_14'];
+		$DBFPR14_3 = $result['Unit_14'];
+		$DBFPR14_4 = $result['Cost_14'];
+		$DBFPR14_5 = $result['Total_14'];
+
+		$DBFPR15_1 = $result['Item_15'];
+		$DBFPR15_2 = $result['Qty_15'];
+		$DBFPR15_3 = $result['Unit_15'];
+		$DBFPR15_4 = $result['Cost_15'];
+		$DBFPR15_5 = $result['Total_15'];
+
+		$DBFPR16_1 = $result['Item_16'];
+		$DBFPR16_2 = $result['Qty_16'];
+		$DBFPR16_3 = $result['Unit_16'];
+		$DBFPR16_4 = $result['Cost_16'];
+		$DBFPR16_5 = $result['Total_16'];
+
+		$DBFPR17_1 = $result['Item_17'];
+		$DBFPR17_2 = $result['Qty_17'];
+		$DBFPR17_3 = $result['Unit_17'];
+		$DBFPR17_4 = $result['Cost_17'];
+		$DBFPR17_5 = $result['Total_17'];
+
+		$DBFPR18_1 = $result['Item_18'];
+		$DBFPR18_2 = $result['Qty_18'];
+		$DBFPR18_3 = $result['Unit_18'];
+		$DBFPR18_4 = $result['Cost_18'];
+		$DBFPR18_5 = $result['Total_18'];
+
+		$DBFPR19_1 = $result['Item_19'];
+		$DBFPR19_2 = $result['Qty_19'];
+		$DBFPR19_3 = $result['Unit_19'];
+		$DBFPR19_4 = $result['Cost_19'];
+		$DBFPR19_5 = $result['Total_19'];
+
+		$DBFPR20_1 = $result['Item_20'];
+		$DBFPR20_2 = $result['Qty_20'];
+		$DBFPR20_3 = $result['Unit_20'];
+		$DBFPR20_4 = $result['Cost_20'];
+		$DBFPR20_5 = $result['Total_20'];
+		
+		$DBGrandTotal = $result['GrandTotal'];
+	}
+
+	//Displaying data from sustainability plan propsoal table
+	$sql = ("SELECT * FROM sustainability_plan_proposal WHERE ProposalID = $PID");
+	$command = $con->query($sql) or die("Error Fethcing data");
+    while($result = mysqli_fetch_array($command))
+	{
+		$dbSustainability = $result['Sustainability'];
+		$dbSP1_1 = $result['Activities_1'];
+		$dbSP1_2 = $result['Sched_1'];
+		$dbSP1_3 = $result['Involved_1'];
+
+		$dbSP2_1 = $result['Activities_2'];
+		$dbSP2_2 = $result['Sched_2'];
+		$dbSP2_3 = $result['Involved_2'];
+
+		$dbSP3_1 = $result['Activities_3'];
+		$dbSP3_2 = $result['Sched_3'];
+		$dbSP3_3 = $result['Involved_3'];
+
+		$dbSP4_1 = $result['Activities_4'];
+		$dbSP4_2 = $result['Sched_4'];
+		$dbSP4_3 = $result['Involved_4'];
+
+		$dbSP5_1 = $result['Activities_5'];
+		$dbSP5_2 = $result['Sched_5'];
+		$dbSP5_3 = $result['Involved_5'];
+
+		$dbSP6_1 = $result['Activities_6'];
+		$dbSP6_2 = $result['Sched_6'];
+		$dbSP6_3 = $result['Involved_6'];
+
+		$dbSP7_1 = $result['Activities_7'];
+		$dbSP7_2 = $result['Sched_7'];
+		$dbSP7_3 = $result['Involved_7'];
+
+		$dbSP8_1 = $result['Activities_8'];
+		$dbSP8_2 = $result['Sched_8'];
+		$dbSP8_3 = $result['Involved_8'];
+
+		$dbSP9_1 = $result['Activities_9'];
+		$dbSP9_2 = $result['Sched_9'];
+		$dbSP9_3 = $result['Involved_9'];
+
+		$dbSP10_1 = $result['Activities_10'];
+		$dbSP10_2 = $result['Sched_10'];
+		$dbSP10_3 = $result['Involved_10'];	
+
+		$dbSP11_1 = $result['Activities_11'];
+		$dbSP11_2 = $result['Sched_11'];
+		$dbSP11_3 = $result['Involved_11'];
+
+		$dbSP12_1 = $result['Activities_12'];
+		$dbSP12_2 = $result['Sched_12'];
+		$dbSP12_3 = $result['Involved_12'];
+
+		$dbSP13_1 = $result['Activities_13'];
+		$dbSP13_2 = $result['Sched_13'];
+		$dbSP13_3 = $result['Involved_13'];
+
+		$dbSP14_1 = $result['Activities_14'];
+		$dbSP14_2 = $result['Sched_14'];
+		$dbSP14_3 = $result['Involved_14'];
+
+		$dbSP15_1 = $result['Activities_15'];
+		$dbSP15_2 = $result['Sched_15'];
+		$dbSP15_3 = $result['Involved_15'];
+
+		$dbSP16_1 = $result['Activities_16'];
+		$dbSP16_2 = $result['Sched_16'];
+		$dbSP16_3 = $result['Involved_16'];
+
+		$dbSP17_1 = $result['Activities_7'];
+		$dbSP17_2 = $result['Sched_17'];
+		$dbSP17_3 = $result['Involved_17'];
+
+		$dbSP18_1 = $result['Activities_18'];
+		$dbSP18_2 = $result['Sched_18'];
+		$dbSP18_3 = $result['Involved_18'];
+
+		$dbSP19_1 = $result['Activities_19'];
+		$dbSP19_2 = $result['Sched_19'];
+		$dbSP19_3 = $result['Involved_19'];
+
+		$dbSP20_1 = $result['Activities_20'];
+		$dbSP20_2 = $result['Sched_20'];
+		$dbSP20_3 = $result['Involved_20'];	
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -564,175 +727,175 @@ if(isset($_GET['edit'])){
 										<tr>
 											<th width="50px";>No.</th>
 											<th>Item Description </th>
-											<th> Quantity </th>
+											<th>Quantity </th>
 											<th>Unit </th>
 											<th>Unit Cost </th>
 											<th>Total</th>
 										</tr>
 										<tr class="MF">
 											<td>1</td>
-											<td><textarea placeholder="type here..." name="FPR1_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR1_2" id="FPR1_2" onchange="Row1()"></td>
-											<td><textarea placeholder="type here..." name="FPR1_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR1_4" id="FPR1_4" onchange="Row1()"></td>
-											<td><input type="number" min="0" name="FPR1_5" id="FPR1_5" value="0" onchange="Row1()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR1_1"><?php echo "$DBFPR1_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR1_2" id="FPR1_2" value="<?php echo "$DBFPR1_2";?>" onchange="Row1()"></td>
+											<td><textarea placeholder="type here..." name="FPR1_3"><?php echo "$DBFPR1_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR1_4" id="FPR1_4" value="<?php echo "$DBFPR1_4";?>" onchange="Row1()"></td>
+											<td><input type="number" min="0" name="FPR1_5" id="FPR1_5" value="<?php echo "$DBFPR1_5";?>" onchange="Row1()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>2</td>
-											<td><textarea placeholder="type here..." name="FPR2_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR2_2" id="FPR2_2" onchange="Row2()"></td>
-											<td><textarea placeholder="type here..." name="FPR2_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR2_4" id="FPR2_4" onchange="Row2()"></td>
-											<td><input type="number" min="0" name="FPR2_5" id="FPR2_5" value="0" onchange="Row2()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR2_1"><?php echo "$DBFPR2_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR2_2" id="FPR2_2" value="<?php echo "$DBFPR2_2";?>" onchange="Row2()"></td>
+											<td><textarea placeholder="type here..." name="FPR2_3"><?php echo "$DBFPR2_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR2_4" id="FPR2_4" value="<?php echo "$DBFPR2_4";?>" onchange="Row2()"></td>
+											<td><input type="number" min="0" name="FPR2_5" id="FPR2_5" value="<?php echo "$DBFPR2_5";?>" onchange="Row2()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>3</td>
-											<td><textarea placeholder="type here..." name="FPR3_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR3_2" id="FPR3_2" onchange="Row3()"></td>
-											<td><textarea placeholder="type here..." name="FPR3_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR3_4" id="FPR3_4" onchange="Row3()"></td>
-											<td><input type="number" min="0" name="FPR3_5" id="FPR3_5" value="0" onchange="Row3()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR3_1"><?php echo "$DBFPR3_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR3_2" id="FPR3_2" value="<?php echo "$DBFPR3_2";?>" onchange="Row3()"></td>
+											<td><textarea placeholder="type here..." name="FPR3_3"><?php echo "$DBFPR3_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR3_4" id="FPR3_4" value="<?php echo "$DBFPR3_4";?>" onchange="Row3()"></td>
+											<td><input type="number" min="0" name="FPR3_5" id="FPR3_5" value="<?php echo "$DBFPR3_5";?>" onchange="Row3()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>4</td>
-											<td><textarea placeholder="type here..." name="FPR4_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR4_2" id="FPR4_2" onchange="Row4()"></td>
-											<td><textarea placeholder="type here..." name="FPR4_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR4_4" id="FPR4_4" onchange="Row4()"></td>
-											<td><input type="number" min="0" name="FPR4_5" id="FPR4_5" value="0" onchange="Row4()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR4_1"><?php echo "$DBFPR4_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR4_2" id="FPR4_2" value="<?php echo "$DBFPR4_2";?>" onchange="Row4()"></td>
+											<td><textarea placeholder="type here..." name="FPR4_3"><?php echo "$DBFPR4_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR4_4" id="FPR4_4" value="<?php echo "$DBFPR4_4";?>" onchange="Row4()"></td>
+											<td><input type="number" min="0" name="FPR4_5" id="FPR4_5" value="<?php echo "$DBFPR4_5";?>" onchange="Row4()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>5</td>
-											<td><textarea placeholder="type here..." name="FPR5_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR5_2" id="FPR5_2" onchange="Row5()"></td>
-											<td><textarea placeholder="type here..." name="FPR5_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR5_4" id="FPR5_4" onchange="Row5()"></td>
-											<td><input type="number" min="0" name="FPR5_5" id="FPR5_5" value="0" onchange="Row5()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR5_1"><?php echo "$DBFPR5_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR5_2" id="FPR5_2" value="<?php echo "$DBFPR5_2";?>" onchange="Row5()"></td>
+											<td><textarea placeholder="type here..." name="FPR5_3"><?php echo "$DBFPR5_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR5_4" id="FPR5_4" value="<?php echo "$DBFPR5_4";?>" onchange="Row5()"></td>
+											<td><input type="number" min="0" name="FPR5_5" id="FPR5_5" value="<?php echo "$DBFPR5_5";?>" onchange="Row5()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>6</td>
-											<td><textarea placeholder="type here..." name="FPR6_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR6_2" id="FPR6_2" onchange="Row6()"></td>
-											<td><textarea placeholder="type here..." name="FPR6_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR6_4" id="FPR6_4" onchange="Row6()"></td>
-											<td><input type="number" min="0" name="FPR6_5" id="FPR6_5" value="0" onchange="Row6()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR6_1"><?php echo "$DBFPR6_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR6_2" id="FPR6_2" value="<?php echo "$DBFPR6_2";?>" onchange="Row6()"></td>
+											<td><textarea placeholder="type here..." name="FPR6_3"><?php echo "$DBFPR6_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR6_4" id="FPR6_4" value="<?php echo "$DBFPR6_4";?>" onchange="Row6()"></td>
+											<td><input type="number" min="0" name="FPR6_5" id="FPR6_5" value="<?php echo "$DBFPR6_5";?>" onchange="Row6()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>7</td>
-											<td><textarea placeholder="type here..." name="FPR7_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR7_2" id="FPR7_2" onchange="Row7()"></td>
-											<td><textarea placeholder="type here..." name="FPR7_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR7_4" id="FPR7_4" onchange="Row7()"></td>
-											<td><input type="number" min="0" name="FPR7_5" id="FPR7_5" value="0" onchange="Row7()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR7_1"><?php echo "$DBFPR7_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR7_2" id="FPR7_2" value="<?php echo "$DBFPR7_2";?>" onchange="Row7()"></td>
+											<td><textarea placeholder="type here..." name="FPR7_3"><?php echo "$DBFPR7_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR7_4" id="FPR7_4" value="<?php echo "$DBFPR7_4";?>" onchange="Row7()"></td>
+											<td><input type="number" min="0" name="FPR7_5" id="FPR7_5" value="<?php echo "$DBFPR7_5";?>" onchange="Row7()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>8</td>
-											<td><textarea placeholder="type here..." name="FPR8_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR8_2" id="FPR8_2" onchange="Row8()"></td>
-											<td><textarea placeholder="type here..." name="FPR8_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR8_4" id="FPR8_4" onchange="Row8()"></td>
-											<td><input type="number" min="0" name="FPR8_5" id="FPR8_5" value="0" onchange="Row8()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR8_1"><?php echo "$DBFPR8_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR8_2" id="FPR8_2" value="<?php echo "$DBFPR8_2";?>" onchange="Row8()"></td>
+											<td><textarea placeholder="type here..." name="FPR8_3"><?php echo "$DBFPR8_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR8_4" id="FPR8_4" value="<?php echo "$DBFPR8_4";?>" onchange="Row8()"></td>
+											<td><input type="number" min="0" name="FPR8_5" id="FPR8_5" value="<?php echo "$DBFPR8_5";?>" onchange="Row8()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>9</td>
-											<td><textarea placeholder="type here..." name="FPR9_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR9_2" id="FPR9_2" onchange="Row9()"></td>
-											<td><textarea placeholder="type here..." name="FPR9_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR9_4" id="FPR9_4" onchange="Row9()"></td>
-											<td><input type="number" min="0" name="FPR9_5" id="FPR9_5" value="0" onchange="Row9()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR9_1"><?php echo "$DBFPR9_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR9_2" id="FPR9_2" value="<?php echo "$DBFPR9_2";?>" onchange="Row9()"></td>
+											<td><textarea placeholder="type here..." name="FPR9_3"><?php echo "$DBFPR9_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR9_4" id="FPR9_4" value="<?php echo "$DBFPR9_4";?>" onchange="Row9()"></td>
+											<td><input type="number" min="0" name="FPR9_5" id="FPR9_5" value="<?php echo "$DBFPR9_5";?>" onchange="Row9()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>10</td>
-											<td><textarea placeholder="type here..." name="FPR10_1"></textarea></td>
-											<td><input type="number" min="0" name="FPR10_2" id="FPR10_2" onchange="Row10()"></td>
-											<td><textarea placeholder="type here..." name="FPR10_3"></textarea></td>
-											<td><input type="number" min="0" name="FPR10_4" id="FPR10_4" onchange="Row10()"></td>
-											<td><input type="number" min="0" name="FPR10_5" id="FPR10_5" value="0" onchange="Row10()" readonly></td>
+											<td><textarea placeholder="type here..." name="FPR10_1"><?php echo "$DBFPR10_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR10_2" id="FPR10_2" value="<?php echo "$DBFPR10_2";?>" onchange="Row10()"></td>
+											<td><textarea placeholder="type here..." name="FPR10_3"><?php echo "$DBFPR10_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR10_4" id="FPR10_4" value="<?php echo "$DBFPR10_4";?>" onchange="Row10()"></td>
+											<td><input type="number" min="0" name="FPR10_5" id="FPR10_5" value="<?php echo "$DBFPR10_5";?>" onchange="Row10()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>11</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR11_1"><?php echo "$DBFPR11_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR11_2" id="FPR11_2" value="<?php echo "$DBFPR11_2";?>" onchange="Row11()"></td>
+											<td><textarea placeholder="type here..." name="FPR11_3"><?php echo "$DBFPR11_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR11_4" id="FPR11_4" value="<?php echo "$DBFPR11_4";?>" onchange="Row11()"></td>
+											<td><input type="number" min="0" name="FPR11_5" id="FPR11_5" value="<?php echo "$DBFPR11_5";?>" onchange="Row11()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>12</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR12_1"><?php echo "$DBFPR12_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR12_2" id="FPR12_2" value="<?php echo "$DBFPR12_2";?>" onchange="Row12()"></td>
+											<td><textarea placeholder="type here..." name="FPR12_3"><?php echo "$DBFPR12_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR12_4" id="FPR12_4" value="<?php echo "$DBFPR12_4";?>" onchange="Row12()"></td>
+											<td><input type="number" min="0" name="FPR12_5" id="FPR12_5" value="<?php echo "$DBFPR12_5";?>" onchange="Row12()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>13</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR13_1"><?php echo "$DBFPR13_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR13_2" id="FPR13_2" value="<?php echo "$DBFPR13_2";?>" onchange="Row13()"></td>
+											<td><textarea placeholder="type here..." name="FPR13_3"><?php echo "$DBFPR13_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR13_4" id="FPR13_4" value="<?php echo "$DBFPR13_4";?>" onchange="Row13()"></td>
+											<td><input type="number" min="0" name="FPR13_5" id="FPR13_5" value="<?php echo "$DBFPR13_5";?>" onchange="Row13()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>14</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR14_1"><?php echo "$DBFPR14_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR14_2" id="FPR14_2" value="<?php echo "$DBFPR14_2";?>" onchange="Row14()"></td>
+											<td><textarea placeholder="type here..." name="FPR14_3"><?php echo "$DBFPR14_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR14_4" id="FPR14_4" value="<?php echo "$DBFPR14_4";?>" onchange="Row14()"></td>
+											<td><input type="number" min="0" name="FPR14_5" id="FPR14_5" value="<?php echo "$DBFPR14_5";?>" onchange="Row14()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>15</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR15_1"><?php echo "$DBFPR15_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR15_2" id="FPR15_2" value="<?php echo "$DBFPR15_2";?>" onchange="Row15()"></td>
+											<td><textarea placeholder="type here..." name="FPR15_3"><?php echo "$DBFPR1_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR15_4" id="FPR15_4" value="<?php echo "$DBFPR15_4";?>" onchange="Row15()"></td>
+											<td><input type="number" min="0" name="FPR15_5" id="FPR15_5" value="<?php echo "$DBFPR15_5";?>" onchange="Row15()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>16</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR16_1"><?php echo "$DBFPR16_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR16_2" id="FPR16_2" value="<?php echo "$DBFPR16_2";?>" onchange="Row16()"></td>
+											<td><textarea placeholder="type here..." name="FPR16_3"><?php echo "$DBFPR16_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR16_4" id="FPR16_4" value="<?php echo "$DBFPR16_4";?>" onchange="Row16()"></td>
+											<td><input type="number" min="0" name="FPR16_5" id="FPR16_5" value="<?php echo "$DBFPR16_5";?>" onchange="Row16()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>17</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR17_1"><?php echo "$DBFPR17_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR17_2" id="FPR17_2" value="<?php echo "$DBFPR17_2";?>" onchange="Row17()"></td>
+											<td><textarea placeholder="type here..." name="FPR17_3"><?php echo "$DBFPR17_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR17_4" id="FPR17_4" value="<?php echo "$DBFPR17_4";?>" onchange="Row17()"></td>
+											<td><input type="number" min="0" name="FPR17_5" id="FPR17_5" value="<?php echo "$DBFPR17_5";?>" onchange="Row17()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>18</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR18_1"><?php echo "$DBFPR18_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR18_2" id="FPR18_2" value="<?php echo "$DBFPR18_2";?>" onchange="Row18()"></td>
+											<td><textarea placeholder="type here..." name="FPR18_3"><?php echo "$DBFPR18_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR18_4" id="FPR18_4" value="<?php echo "$DBFPR18_4";?>" onchange="Row18()"></td>
+											<td><input type="number" min="0" name="FPR18_5" id="FPR18_5" value="<?php echo "$DBFPR18_5";?>" onchange="Row18()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>19</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR19_1"><?php echo "$DBFPR19_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR19_2" id="FPR19_2" value="<?php echo "$DBFPR19_2";?>" onchange="Row19()"></td>
+											<td><textarea placeholder="type here..." name="FPR19_3"><?php echo "$DBFPR19_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR19_4" id="FPR19_4" value="<?php echo "$DBFPR19_4";?>" onchange="Row19()"></td>
+											<td><input type="number" min="0" name="FPR19_5" id="FPR19_5" value="<?php echo "$DBFPR19_5";?>" onchange="Row19()" readonly></td>
 										</tr>
 										<tr class="MF">
 											<td>20</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><input type="number" min="0" name="" id="" ></td>
-											<td><input type="number" min="0" name="" id="" ></td>
+											<td><textarea placeholder="type here..." name="FPR20_1"><?php echo "$DBFPR20_1";?></textarea></td>
+											<td><input type="number" min="0" name="FPR20_2" id="FPR20_2" value="<?php echo "$DBFPR20_2";?>" onchange="Row20()"></td>
+											<td><textarea placeholder="type here..." name="FPR20_3"><?php echo "$DBFPR20_3";?></textarea></td>
+											<td><input type="number" min="0" name="FPR20_4" id="FPR20_4" value="<?php echo "$DBFPR20_4";?>" onchange="Row20()"></td>
+											<td><input type="number" min="0" name="FPR20_5" id="FPR20_5" value="<?php echo "$DBFPR20_5";?>" onchange="Row20()" readonly></td>
 										</tr>
 											
 										<tr class="MF">
 											<th colspan="5"  class="total">Grand Total</th>
-											<td><input type="number" name="GrandTotal" id="GrandTotal" readonly></td>
+											<td><input type="number" name="GrandTotal" id="GrandTotal" value="<?php echo "$DBGrandTotal";?>" readonly></td>
 										</tr>
 									</tbody>
 									<div class="hideleft">
@@ -756,6 +919,7 @@ if(isset($_GET['edit'])){
 									<th><input type="radio" id="Quarterly" name="Frequency" value="Quarterly"> Quarterly</th>
 									<th><input type="radio" id='Semi-Annually' name="Frequency" value="Semi-Annually">Semi-Annually</th>
 									<th><input type="radio" id="Yearly" name="Frequency" value="Yearly">Yearly </th>
+									<th><input type="radio" id="N_A" name="Frequency" value="Not Applicable">N/A</th>
 								</tr>
 							</table>
 						</div>
@@ -779,123 +943,124 @@ if(isset($_GET['edit'])){
 										</tr>
 										<tr class="MF">
 											<td>1</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP1_1"><?php echo "$dbSP1_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP1_2"><?php echo "$dbSP1_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP1_3"><?php echo "$dbSP1_3";?></textarea></td>
+											
 										</tr>
 										<tr class="MF">
 											<td>2</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP2_1"><?php echo "$dbSP2_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP2_2"><?php echo "$dbSP2_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP2_3"><?php echo "$dbSP2_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>3</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP3_1"><?php echo "$dbSP3_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP3_2"><?php echo "$dbSP3_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP3_3"><?php echo "$dbSP3_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>4</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP4_1"><?php echo "$dbSP4_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP4_2"><?php echo "$dbSP4_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP4_3"><?php echo "$dbSP4_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>5</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP5_1"><?php echo "$dbSP5_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP5_2"><?php echo "$dbSP5_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP5_3"><?php echo "$dbSP5_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>6</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP6_1"><?php echo "$dbSP6_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP6_2"><?php echo "$dbSP6_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP6_3"><?php echo "$dbSP6_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>7</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP7_1"><?php echo "$dbSP7_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP7_2"><?php echo "$dbSP7_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP7_3"><?php echo "$dbSP7_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>8</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP8_1"><?php echo "$dbSP8_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP8_2"><?php echo "$dbSP8_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP8_3"><?php echo "$dbSP8_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>9</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP9_1"><?php echo "$dbSP9_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP9_2"><?php echo "$dbSP9_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP9_3"><?php echo "$dbSP9_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>10</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP10_1"><?php echo "$dbSP10_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP10_2"><?php echo "$dbSP10_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP10_3"><?php echo "$dbSP10_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>11</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP11_1"><?php echo "$dbSP11_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP11_2"><?php echo "$dbSP11_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP11_3"><?php echo "$dbSP11_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>12</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP12_1"><?php echo "$dbSP12_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP12_2"><?php echo "$dbSP12_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP12_3"><?php echo "$dbSP12_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>13</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP13_1"><?php echo "$dbSP13_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP13_2"><?php echo "$dbSP13_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP13_3"><?php echo "$dbSP13_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>14</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP14_1"><?php echo "$dbSP14_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP14_2"><?php echo "$dbSP14_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP14_3"><?php echo "$dbSP14_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>15</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP15_1"><?php echo "$dbSP15_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP15_2"><?php echo "$dbSP15_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP15_3"><?php echo "$dbSP15_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>16</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP16_1"><?php echo "$dbSP16_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP16_2"><?php echo "$dbSP16_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP16_3"><?php echo "$dbSP16_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>17</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP17_1"><?php echo "$dbSP17_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP17_2"><?php echo "$dbSP17_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP17_3"><?php echo "$dbSP17_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>18</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP18_1"><?php echo "$dbSP18_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP18_2"><?php echo "$dbSP18_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP18_3"><?php echo "$dbSP18_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>19</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP19_1"><?php echo "$dbSP19_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP19_2"><?php echo "$dbSP19_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP19_3"><?php echo "$dbSP19_3";?></textarea></td>
 										</tr>
 										<tr class="MF">
 											<td>20</td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
-											<td><textarea placeholder="type here..." name=""></textarea></td>
+											<td><textarea placeholder="type here..." name="SP20_1"><?php echo "$dbSP20_1";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP20_2"><?php echo "$dbSP20_2";?></textarea></td>
+											<td><textarea placeholder="type here..." name="SP20_3"><?php echo "$dbSP20_3";?></textarea></td>
 										</tr>
 											
 										
@@ -908,7 +1073,7 @@ if(isset($_GET['edit'])){
 							</div> 
 							
 						</div> 
-							<textarea placeholder="type here..." name="" required></textarea>
+							<textarea placeholder="type here..." name="Sustainability" required><?php echo "$dbSustainability";?></textarea>
 						
 				  </div>
 				</div>
@@ -1171,6 +1336,7 @@ if (isset($_POST['update'])) {
 	$Rationale = htmlspecialchars($_POST['Rationale']);
 	$Objectives = htmlspecialchars($_POST['Objectives']);
 	$Descriptions = htmlspecialchars($_POST['Descriptions']);
+
 	$FPR1_1 = htmlspecialchars($_POST['FPR1_1']);
 	$FPR1_2 = htmlspecialchars($_POST['FPR1_2']);
 	$FPR1_3 = htmlspecialchars($_POST['FPR1_3']);
@@ -1222,11 +1388,127 @@ if (isset($_POST['update'])) {
 	$FPR10_3 = htmlspecialchars($_POST['FPR10_3']);
 	$FPR10_4 = htmlspecialchars($_POST['FPR10_4']);
 	$FPR10_5 = htmlspecialchars($_POST['FPR10_5']);
+
+	$FPR11_1 = htmlspecialchars($_POST['FPR11_1']);
+	$FPR11_2 = htmlspecialchars($_POST['FPR11_2']);
+	$FPR11_3 = htmlspecialchars($_POST['FPR11_3']);
+	$FPR11_4 = htmlspecialchars($_POST['FPR11_4']);
+	$FPR11_5 = htmlspecialchars($_POST['FPR11_5']);
+	$FPR12_1 = htmlspecialchars($_POST['FPR12_1']);
+	$FPR12_2 = htmlspecialchars($_POST['FPR12_2']);
+	$FPR12_3 = htmlspecialchars($_POST['FPR12_3']);
+	$FPR12_4 = htmlspecialchars($_POST['FPR12_4']);
+	$FPR12_5 = htmlspecialchars($_POST['FPR12_5']);
+	$FPR13_1 = htmlspecialchars($_POST['FPR13_1']);
+	$FPR13_2 = htmlspecialchars($_POST['FPR13_2']);
+	$FPR13_3 = htmlspecialchars($_POST['FPR13_3']);
+	$FPR13_4 = htmlspecialchars($_POST['FPR13_4']);
+	$FPR13_5 = htmlspecialchars($_POST['FPR13_5']);
+	$FPR14_1 = htmlspecialchars($_POST['FPR14_1']);
+	$FPR14_2 = htmlspecialchars($_POST['FPR14_2']);
+	$FPR14_2 = htmlspecialchars($_POST['FPR14_2']);
+	$FPR14_3 = htmlspecialchars($_POST['FPR14_3']);
+	$FPR14_4 = htmlspecialchars($_POST['FPR14_4']);
+	$FPR14_5 = htmlspecialchars($_POST['FPR14_5']);
+	$FPR15_1 = htmlspecialchars($_POST['FPR15_1']);
+	$FPR15_2 = htmlspecialchars($_POST['FPR15_2']);
+	$FPR15_3 = htmlspecialchars($_POST['FPR15_3']);
+	$FPR15_4 = htmlspecialchars($_POST['FPR15_4']);
+	$FPR15_5 = htmlspecialchars($_POST['FPR15_5']);
+	$FPR16_1 = htmlspecialchars($_POST['FPR16_1']);
+	$FPR16_2 = htmlspecialchars($_POST['FPR16_2']);
+	$FPR16_3 = htmlspecialchars($_POST['FPR16_3']);
+	$FPR16_4 = htmlspecialchars($_POST['FPR16_4']);
+	$FPR16_5 = htmlspecialchars($_POST['FPR16_5']);
+	$FPR17_1 = htmlspecialchars($_POST['FPR17_1']);
+	$FPR17_2 = htmlspecialchars($_POST['FPR17_2']);
+	$FPR17_3 = htmlspecialchars($_POST['FPR17_3']);
+	$FPR17_4 = htmlspecialchars($_POST['FPR17_4']);
+	$FPR17_5 = htmlspecialchars($_POST['FPR17_5']);
+	$FPR18_1 = htmlspecialchars($_POST['FPR18_1']);
+	$FPR18_2 = htmlspecialchars($_POST['FPR18_2']);
+	$FPR18_3 = htmlspecialchars($_POST['FPR18_3']);
+	$FPR18_4 = htmlspecialchars($_POST['FPR18_4']);
+	$FPR18_5 = htmlspecialchars($_POST['FPR18_5']);
+	$FPR19_1 = htmlspecialchars($_POST['FPR19_1']);
+	$FPR19_2 = htmlspecialchars($_POST['FPR19_2']);
+	$FPR19_3 = htmlspecialchars($_POST['FPR19_3']);
+	$FPR19_4 = htmlspecialchars($_POST['FPR19_4']);
+	$FPR19_5 = htmlspecialchars($_POST['FPR19_5']);
+	$FPR20_1 = htmlspecialchars($_POST['FPR20_1']);
+	$FPR20_2 = htmlspecialchars($_POST['FPR20_2']);
+	$FPR20_3 = htmlspecialchars($_POST['FPR20_3']);
+	$FPR20_4 = htmlspecialchars($_POST['FPR20_4']);
+	$FPR20_5 = htmlspecialchars($_POST['FPR20_5']);
 	$GrandTotal = htmlspecialchars($_POST['GrandTotal']);
+
 	$Functional = htmlspecialchars($_POST['Functional']);
 	$Frequency = htmlspecialchars($_POST['Frequency']);
 	$Monitoring = htmlspecialchars($_POST['Monitoring']);
-	$Plans = htmlspecialchars($_POST['Plans']);
+	
+	//Save in sustainability_plan_proposal table
+	$Sustainability = htmlspecialchars($_POST['Sustainability']);
+	$SP1_1 = htmlspecialchars($_POST['SP1_1']);
+	$SP1_2 = htmlspecialchars($_POST['SP1_2']);
+	$SP1_3 = htmlspecialchars($_POST['SP1_3']);
+	$SP2_1 = htmlspecialchars($_POST['SP2_1']);
+	$SP2_2 = htmlspecialchars($_POST['SP2_2']);
+	$SP2_3 = htmlspecialchars($_POST['SP2_3']);
+	$SP3_1 = htmlspecialchars($_POST['SP3_1']);
+	$SP3_2 = htmlspecialchars($_POST['SP3_2']);
+	$SP3_3 = htmlspecialchars($_POST['SP3_3']);
+	$SP4_1 = htmlspecialchars($_POST['SP4_1']);
+	$SP4_2 = htmlspecialchars($_POST['SP4_2']);
+	$SP4_3 = htmlspecialchars($_POST['SP4_3']);
+	$SP5_1 = htmlspecialchars($_POST['SP5_1']);
+	$SP5_2 = htmlspecialchars($_POST['SP5_2']);
+	$SP5_3 = htmlspecialchars($_POST['SP5_3']);
+	$SP6_1 = htmlspecialchars($_POST['SP6_1']);
+	$SP6_2 = htmlspecialchars($_POST['SP6_2']);
+	$SP6_3 = htmlspecialchars($_POST['SP6_3']);
+	$SP7_1 = htmlspecialchars($_POST['SP7_1']);
+	$SP7_2 = htmlspecialchars($_POST['SP7_2']);
+	$SP7_3 = htmlspecialchars($_POST['SP7_3']);
+	$SP8_1 = htmlspecialchars($_POST['SP8_1']);
+	$SP8_2 = htmlspecialchars($_POST['SP8_2']);
+	$SP8_3 = htmlspecialchars($_POST['SP8_3']);
+	$SP9_1 = htmlspecialchars($_POST['SP9_1']);
+	$SP9_2 = htmlspecialchars($_POST['SP9_2']);
+	$SP9_3 = htmlspecialchars($_POST['SP9_3']);
+	$SP10_1 = htmlspecialchars($_POST['SP10_1']);
+	$SP10_2 = htmlspecialchars($_POST['SP10_2']);
+	$SP10_3 = htmlspecialchars($_POST['SP10_3']);
+
+	$SP11_1 = htmlspecialchars($_POST['SP11_1']);
+	$SP11_2 = htmlspecialchars($_POST['SP11_2']);
+	$SP11_3 = htmlspecialchars($_POST['SP11_3']);
+	$SP12_1 = htmlspecialchars($_POST['SP12_1']);
+	$SP12_2 = htmlspecialchars($_POST['SP12_2']);
+	$SP12_3 = htmlspecialchars($_POST['SP12_3']);
+	$SP13_1 = htmlspecialchars($_POST['SP13_1']);
+	$SP13_2 = htmlspecialchars($_POST['SP13_2']);
+	$SP13_3 = htmlspecialchars($_POST['SP13_3']);
+	$SP14_1 = htmlspecialchars($_POST['SP14_1']);
+	$SP14_2 = htmlspecialchars($_POST['SP14_2']);
+	$SP14_3 = htmlspecialchars($_POST['SP14_3']);
+	$SP15_1 = htmlspecialchars($_POST['SP15_1']);
+	$SP15_2 = htmlspecialchars($_POST['SP15_2']);
+	$SP15_3 = htmlspecialchars($_POST['SP15_3']);
+	$SP16_1 = htmlspecialchars($_POST['SP16_1']);
+	$SP16_2 = htmlspecialchars($_POST['SP16_2']);
+	$SP16_3 = htmlspecialchars($_POST['SP16_3']);
+	$SP17_1 = htmlspecialchars($_POST['SP17_1']);
+	$SP17_2 = htmlspecialchars($_POST['SP17_2']);
+	$SP17_3 = htmlspecialchars($_POST['SP17_3']);
+	$SP18_1 = htmlspecialchars($_POST['SP18_1']);
+	$SP18_2 = htmlspecialchars($_POST['SP18_2']);
+	$SP18_3 = htmlspecialchars($_POST['SP18_3']);
+	$SP19_1 = htmlspecialchars($_POST['SP19_1']);
+	$SP19_2 = htmlspecialchars($_POST['SP19_2']);
+	$SP19_3 = htmlspecialchars($_POST['SP19_3']);
+	$SP20_1 = htmlspecialchars($_POST['SP20_1']);
+	$SP20_2 = htmlspecialchars($_POST['SP20_2']);
+	$SP20_3 = htmlspecialchars($_POST['SP20_3']);
 	
 	//ProjectStatus (Pending, Need to Revise, Approved, Rejected)
 	//Remarks (Evaluated)
@@ -1244,20 +1526,74 @@ if (isset($_POST['update'])) {
 				TypeCES = '$TypeCES', SDG = '$SDG', Office = '$Office', Programs = '$Programs', People = '$People', 
 				Agencies = '$Agencies', TypeParticipants = '$TypeParticipants', Male = '$Male', Female = '$Female',
 				Cost = '$Cost', SourceFund = '$SourceFund', Rationale = '$Rationale', Objectives = '$Objectives', Descriptions = '$Descriptions', 
-				FPR1_1 = '$FPR1_1', FPR1_2 = '$FPR1_2', FPR1_3 = '$FPR1_3', FPR1_4 = '$FPR1_4', FPR1_5 = '$FPR1_5',
-				FPR2_1 = '$FPR2_1', FPR2_2 = '$FPR2_2', FPR2_3 = '$FPR2_3', FPR2_4 = '$FPR2_4', FPR2_5 = '$FPR2_5',
-				FPR3_1 = '$FPR3_1', FPR3_2 = '$FPR3_2', FPR3_3 = '$FPR3_3', FPR3_4 = '$FPR3_4', FPR3_5 = '$FPR3_5',
-				FPR4_1 = '$FPR4_1', FPR4_2 = '$FPR4_2', FPR4_3 = '$FPR4_3', FPR4_4 = '$FPR4_4', FPR4_5 = '$FPR4_5',
-				FPR5_1 = '$FPR5_1', FPR5_2 = '$FPR5_2', FPR5_3 = '$FPR5_3', FPR5_4 = '$FPR5_4', FPR5_5 = '$FPR5_5',
-				FPR6_1 = '$FPR6_1', FPR6_2 = '$FPR6_2', FPR6_3 = '$FPR6_3', FPR6_4 = '$FPR6_4', FPR6_5 = '$FPR6_5',
-				FPR7_1 = '$FPR7_1', FPR7_2 = '$FPR7_2', FPR7_3 = '$FPR7_3', FPR7_4 = '$FPR7_4', FPR7_5 = '$FPR7_5',
-				FPR8_1 = '$FPR8_1', FPR8_2 = '$FPR8_2', FPR8_3 = '$FPR8_3', FPR8_4 = '$FPR8_4', FPR8_5 = '$FPR8_5',
-				FPR9_1 = '$FPR9_1', FPR9_2 = '$FPR9_2', FPR9_3 = '$FPR9_3', FPR9_4 = '$FPR9_4', FPR9_5 = '$FPR9_5',
-				FPR10_1 = '$FPR10_1', FPR10_2 = '$FPR10_2', FPR10_3 = '$FPR10_3', FPR10_4 = '$FPR10_4', FPR10_5 = '$FPR10_5', GrandTotal = '$GrandTotal',
-				Functional = '$Functional', Frequency = '$Frequency', Monitoring = '$Monitoring', Plans = '$Plans',
+				Functional = '$Functional', Frequency = '$Frequency', Monitoring = '$Monitoring',
 				Sign1_1 = '$Sign1_1', Sign1_2 = '$Sign1_2', Sign2_1 = '$Sign2_1', Sign2_2 = '$Sign2_2', 
-				Sign3_1 = '$Sign3_1', Sign3_2 = '$Sign3_2', Sign4_1 = '$Sign4_1', Sign4_2 = '$Sign4_2', 
+				Sign3_1 = '$Sign3_1', Sign3_2 = '$Sign3_2', Sign4_1 = '$Sign4_1', Sign4_2 = '$Sign4_2',
 				Sign5_1 = '$Sign5_1', Sign5_2 = '$Sign5_2'
+			WHERE ProposalID = $PID");
+
+		if ($command = $con->query($sql) === TRUE) {} 
+		else {
+			echo "<script>
+				alert('PROCESS FAILED 1. Try Again!');
+			</script>";
+		}
+		
+		//updating Data into Financial Plan Proposal Table
+		$sql = ("UPDATE financial_plan_proposal
+			SET Item_1 = '$FPR1_1', Qty_1 = '$FPR1_2', Unit_1 = '$FPR1_3', Cost_1 = '$FPR1_4', Total_1 = '$FPR1_5',
+				Item_2 = '$FPR2_1', Qty_2 = '$FPR2_2', Unit_2 = '$FPR2_3', Cost_2 = '$FPR2_4', Total_2 = '$FPR2_5',
+				Item_3 = '$FPR3_1', Qty_3 = '$FPR3_2', Unit_3 = '$FPR3_3', Cost_3 = '$FPR3_4', Total_3 = '$FPR3_5',
+				Item_4 = '$FPR4_1', Qty_4 = '$FPR4_2', Unit_4 = '$FPR4_3', Cost_4 = '$FPR4_4', Total_4 = '$FPR4_5',
+				Item_5 = '$FPR5_1', Qty_5 = '$FPR5_2', Unit_5 = '$FPR5_3', Cost_5 = '$FPR5_4', Total_5 = '$FPR5_5',
+				Item_6 = '$FPR6_1', Qty_6 = '$FPR6_2', Unit_6 = '$FPR6_3', Cost_6 = '$FPR6_4', Total_6 = '$FPR6_5',
+				Item_7 = '$FPR7_1', Qty_7 = '$FPR7_2', Unit_7 = '$FPR7_3', Cost_7 = '$FPR7_4', Total_7 = '$FPR7_5',
+				Item_8 = '$FPR8_1', Qty_8 = '$FPR8_2', Unit_8 = '$FPR8_3', Cost_8 = '$FPR8_4', Total_8 = '$FPR8_5',
+				Item_9 = '$FPR9_1', Qty_9 = '$FPR9_2', Unit_9 = '$FPR9_3', Cost_9 = '$FPR9_4', Total_9 = '$FPR9_5',
+				Item_10 = '$FPR10_1', Qty_10 = '$FPR10_2', Unit_10 = '$FPR10_3', Cost_10 = '$FPR10_4', Total_10 = '$FPR10_5',
+				Item_11 = '$FPR11_1', Qty_11 = '$FPR11_2', Unit_11 = '$FPR11_3', Cost_11 = '$FPR11_4', Total_11 = '$FPR11_5',
+				Item_12 = '$FPR12_1', Qty_12 = '$FPR12_2', Unit_12 = '$FPR12_3', Cost_12 = '$FPR12_4', Total_12 = '$FPR12_5',
+				Item_13 = '$FPR13_1', Qty_13 = '$FPR13_2', Unit_13 = '$FPR13_3', Cost_13 = '$FPR13_4', Total_13 = '$FPR13_5',
+				Item_14 = '$FPR14_1', Qty_14 = '$FPR14_2', Unit_14 = '$FPR14_3', Cost_14 = '$FPR14_4', Total_14 = '$FPR14_5',
+				Item_15 = '$FPR15_1', Qty_15 = '$FPR15_2', Unit_15 = '$FPR15_3', Cost_15 = '$FPR15_4', Total_15 = '$FPR15_5',
+				Item_16 = '$FPR16_1', Qty_16 = '$FPR16_2', Unit_16 = '$FPR16_3', Cost_16 = '$FPR16_4', Total_16 = '$FPR16_5',
+				Item_17 = '$FPR17_1', Qty_17 = '$FPR17_2', Unit_17 = '$FPR17_3', Cost_17 = '$FPR17_4', Total_17 = '$FPR17_5',
+				Item_18 = '$FPR18_1', Qty_18 = '$FPR18_2', Unit_18 = '$FPR18_3', Cost_18 = '$FPR18_4', Total_18 = '$FPR18_5',
+				Item_19 = '$FPR19_1', Qty_19 = '$FPR19_2', Unit_19 = '$FPR19_3', Cost_19 = '$FPR19_4', Total_19 = '$FPR19_5',
+				Item_20 = '$FPR20_1', Qty_20 = '$FPR20_2', Unit_20 = '$FPR20_3', Cost_20 = '$FPR20_4', Total_20 = '$FPR20_5',
+				GrandTotal = '$GrandTotal'
+			WHERE ProposalID = $PID");
+
+		if ($command = $con->query($sql) === TRUE) {}
+		else {
+			echo "<script>
+				alert('PROCESS FAILED 2. Try Again!');
+			</script>";
+		}
+
+		//updating Data into sustainability Plan Proposal Table
+		$sql = ("UPDATE sustainability_plan_proposal
+			SET Sustainability = '$Sustainability',
+				Activities_1 = '$SP1_1', Sched_1 = '$SP1_2', Involved_1 = '$SP1_3',
+				Activities_2 = '$SP2_1', Sched_2 = '$SP2_2', Involved_2 = '$SP2_3',
+				Activities_3 = '$SP3_1', Sched_3 = '$SP3_2', Involved_3 = '$SP3_3',
+				Activities_4 = '$SP4_1', Sched_4 = '$SP4_2', Involved_4 = '$SP4_3',
+				Activities_5 = '$SP5_1', Sched_5 = '$SP5_2', Involved_5 = '$SP5_3',
+				Activities_6 = '$SP6_1', Sched_6 = '$SP6_2', Involved_6 = '$SP6_3',
+				Activities_7 = '$SP7_1', Sched_7 = '$SP7_2', Involved_7 = '$SP7_3',
+				Activities_8 = '$SP8_1', Sched_8 = '$SP8_2', Involved_8 = '$SP8_3',
+				Activities_9 = '$SP9_1', Sched_9 = '$SP9_2', Involved_9 = '$SP9_3',
+				Activities_10 = '$SP10_1', Sched_10 = '$SP10_2', Involved_10 = '$SP10_3',
+				Activities_11 = '$SP11_1', Sched_11 = '$SP11_2', Involved_11 = '$SP11_3',
+				Activities_12 = '$SP12_1', Sched_12 = '$SP12_2', Involved_12 = '$SP12_3',
+				Activities_13 = '$SP13_1', Sched_13 = '$SP13_2', Involved_13 = '$SP13_3',
+				Activities_14 = '$SP14_1', Sched_14 = '$SP14_2', Involved_14 = '$SP14_3',
+				Activities_15 = '$SP15_1', Sched_15 = '$SP15_2', Involved_15 = '$SP15_3',
+				Activities_16 = '$SP16_1', Sched_16 = '$SP16_2', Involved_16 = '$SP16_3',
+				Activities_17 = '$SP17_1', Sched_17 = '$SP17_2', Involved_17 = '$SP17_3',
+				Activities_18 = '$SP18_1', Sched_18 = '$SP18_2', Involved_18 = '$SP18_3',
+				Activities_19 = '$SP19_1', Sched_19 = '$SP19_2', Involved_19 = '$SP19_3',
+				Activities_20 = '$SP20_1', Sched_20 = '$SP20_2', Involved_20 = '$SP20_3'
 			WHERE ProposalID = $PID");
 
 		if ($command = $con->query($sql) === TRUE) {
@@ -1265,12 +1601,12 @@ if (isset($_POST['update'])) {
 				alert('Proposal Successfully Updated');
 				window.location='EditProposal.php?edit=$PID';
 			</script>";
-		  } else {
+		} else {
 			echo "<script>
-					alert('PROCESS FAILED. Try Again!');
-					window.location='EditProposal.php?edit=$PID';
-				</script>";
-		  }	
+				alert('PROCESS FAILED 3. Try Again!');
+				window.location='EditProposal.php?edit=$PID';
+			</script>";
+		}
 }
 ?>
 <script>
@@ -1319,6 +1655,8 @@ if (isset($_POST['update'])) {
 	echo "<script>document.getElementById('Semi-Annually').checked = true; </script>";
  }else if ($dbFrequency == "Yearly"){
 	echo "<script>document.getElementById('Yearly').checked = true; </script>";
+ }else if ($dbFrequency == "Not Applicable"){
+	echo "<script>document.getElementById('N_A').checked = true; </script>";
  }
 
  if ($dbQuarter == "1"){
@@ -1342,88 +1680,159 @@ function Row1(){
 	let ans = a * b;
 	document.getElementById("FPR1_5").value = ans;
 	
-	GrandTotal()
+	GrandTotal();
 }
-
 function Row2(){
 	let a = document.getElementById('FPR2_2').value;
 	let b = document.getElementById('FPR2_4').value;
 	let ans = a * b;
 	document.getElementById("FPR2_5").value = ans;
 
-	GrandTotal()
+	GrandTotal();
 }
-
 function Row3(){ 
 	let a = document.getElementById('FPR3_2').value;
 	let b = document.getElementById('FPR3_4').value;
 	let ans = a * b;
 	document.getElementById("FPR3_5").value = ans;
 
-	GrandTotal()
+	GrandTotal();
 }
-
 function Row4(){ 
 	let a = document.getElementById('FPR4_2').value;
 	let b = document.getElementById('FPR4_4').value;
 	let ans = a * b;
 	document.getElementById("FPR4_5").value = ans;
 
-	GrandTotal()
+	GrandTotal();
 }
-
 function Row5(){ 
 	let a = document.getElementById('FPR5_2').value;
 	let b = document.getElementById('FPR5_4').value;
 	let ans = a * b;
 	document.getElementById("FPR5_5").value = ans;
 
-	GrandTotal()
+	GrandTotal();
 }
-
 function Row6(){ 
 	let a = document.getElementById('FPR6_2').value;
 	let b = document.getElementById('FPR6_4').value;
 	let ans = a * b;
 	document.getElementById("FPR6_5").value = ans;
 
-	GrandTotal()
+	GrandTotal();
 }
-
 function Row7(){ 
 	let a = document.getElementById('FPR7_2').value;
 	let b = document.getElementById('FPR7_4').value;
 	let ans = a * b;
 	document.getElementById("FPR7_5").value = ans;
 
-	GrandTotal()
+	GrandTotal();
 }
-
 function Row8(){ 
 	let a = document.getElementById('FPR8_2').value;
 	let b = document.getElementById('FPR8_4').value;
 	let ans = a * b;
 	document.getElementById("FPR8_5").value = ans;
 
-	GrandTotal()
+	GrandTotal();
 }
-
 function Row9(){ 
 	let a = document.getElementById('FPR9_2').value;
 	let b = document.getElementById('FPR9_4').value;
 	let ans = a * b;
 	document.getElementById("FPR9_5").value = ans;
 
-	GrandTotal()
+	GrandTotal();
 }
-
 function Row10(){
 	let a = document.getElementById('FPR10_2').value;
 	let b = document.getElementById('FPR10_4').value;
 	let ans = a * b;
 	document.getElementById("FPR10_5").value = ans;
 
-	GrandTotal()
+	GrandTotal();
+}
+function Row11(){
+	let a = document.getElementById('FPR11_2').value;
+	let b = document.getElementById('FPR11_4').value;
+	let ans = a * b;
+	document.getElementById("FPR11_5").value = ans;
+
+	GrandTotal();
+}
+function Row12(){
+	let a = document.getElementById('FPR12_2').value;
+	let b = document.getElementById('FPR12_4').value;
+	let ans = a * b;
+	document.getElementById("FPR12_5").value = ans;
+
+	GrandTotal();
+}
+function Row13(){
+	let a = document.getElementById('FPR13_2').value;
+	let b = document.getElementById('FPR13_4').value;
+	let ans = a * b;
+	document.getElementById("FPR13_5").value = ans;
+
+	GrandTotal();
+}
+function Row14(){
+	let a = document.getElementById('FPR14_2').value;
+	let b = document.getElementById('FPR14_4').value;
+	let ans = a * b;
+	document.getElementById("FPR14_5").value = ans;
+
+	GrandTotal();
+}
+function Row15(){
+	let a = document.getElementById('FPR15_2').value;
+	let b = document.getElementById('FPR15_4').value;
+	let ans = a * b;
+	document.getElementById("FPR15_5").value = ans;
+
+	GrandTotal();
+}
+function Row16(){
+	let a = document.getElementById('FPR16_2').value;
+	let b = document.getElementById('FPR16_4').value;
+	let ans = a * b;
+	document.getElementById("FPR16_5").value = ans;
+
+	GrandTotal();
+}
+function Row17(){
+	let a = document.getElementById('FPR17_2').value;
+	let b = document.getElementById('FPR17_4').value;
+	let ans = a * b;
+	document.getElementById("FPR17_5").value = ans;
+
+	GrandTotal();
+}
+function Row18(){
+	let a = document.getElementById('FPR18_2').value;
+	let b = document.getElementById('FPR18_4').value;
+	let ans = a * b;
+	document.getElementById("FPR18_5").value = ans;
+
+	GrandTotal();
+}
+function Row19(){
+	let a = document.getElementById('FPR19_2').value;
+	let b = document.getElementById('FPR19_4').value;
+	let ans = a * b;
+	document.getElementById("FPR19_5").value = ans;
+
+	GrandTotal();
+}
+function Row20(){
+	let a = document.getElementById('FPR20_2').value;
+	let b = document.getElementById('FPR20_4').value;
+	let ans = a * b;
+	document.getElementById("FPR20_5").value = ans;
+
+	GrandTotal();
 }
 function GrandTotal(){ 
 	let r1 = document.getElementById('FPR1_5').value;
@@ -1436,7 +1845,18 @@ function GrandTotal(){
 	let r8 = document.getElementById('FPR8_5').value;
 	let r9 = document.getElementById('FPR9_5').value;
 	let r10 = document.getElementById('FPR10_5').value;
-	let anss = (parseFloat(r1)) + (parseFloat(r2)) + (parseFloat(r3)) + (parseFloat(r4)) + (parseFloat(r5)) + (parseFloat(r6)) + (parseFloat(r7)) + (parseFloat(r8)) + (parseFloat(r9)) + (parseFloat(r10));
+	let r11 = document.getElementById('FPR11_5').value;
+	let r12 = document.getElementById('FPR12_5').value;
+	let r13 = document.getElementById('FPR13_5').value;
+	let r14 = document.getElementById('FPR14_5').value;
+	let r15 = document.getElementById('FPR15_5').value;
+	let r16 = document.getElementById('FPR16_5').value;
+	let r17 = document.getElementById('FPR17_5').value;
+	let r18 = document.getElementById('FPR18_5').value;
+	let r19 = document.getElementById('FPR19_5').value;
+	let r20 = document.getElementById('FPR20_5').value;
+	let anss = (parseFloat(r1)) + (parseFloat(r2)) + (parseFloat(r3)) + (parseFloat(r4)) + (parseFloat(r5)) + (parseFloat(r6)) + (parseFloat(r7)) + (parseFloat(r8)) + (parseFloat(r9)) + (parseFloat(r10)) +
+			   (parseFloat(r11)) + (parseFloat(r12)) + (parseFloat(r13)) + (parseFloat(r14)) + (parseFloat(r15)) + (parseFloat(r16)) + (parseFloat(r17)) + (parseFloat(r18)) + (parseFloat(r19)) + (parseFloat(r20));
 	document.getElementById("GrandTotal").value = anss;
 	document.getElementById("Cost").value = anss;
 }
@@ -1478,20 +1898,6 @@ myBlurFunction1 = function(state) {
 };
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script>
 //For Type CES & SDG

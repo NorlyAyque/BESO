@@ -798,8 +798,8 @@ $sql = ("SELECT * FROM create_alangilan WHERE
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
-		$GrandTotal = $result['GrandTotal'];
-		$x += $GrandTotal;
+		$Cost = $result['Cost'];
+		$x += $Cost;
 	}
 	$Budget = number_format($x,2);
 ?>

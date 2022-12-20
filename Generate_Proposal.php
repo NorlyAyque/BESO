@@ -60,63 +60,11 @@ while($result = mysqli_fetch_array($command))
 		$dbRationale = $result['Rationale'];
 		$dbObjectives = $result['Objectives'];
 		$dbDescriptions = $result['Descriptions'];
-		$dbFPR1_1 = $result['FPR1_1'];
-		$dbFPR1_2 = $result['FPR1_2'];
-		$dbFPR1_3 = $result['FPR1_3'];
-		$dbFPR1_4 = $result['FPR1_4'];
-		$dbFPR1_5 = $result['FPR1_5'];
-		$dbFPR2_1 = $result['FPR2_1'];
-		$dbFPR2_2 = $result['FPR2_2'];
-		$dbFPR2_3 = $result['FPR2_3'];
-		$dbFPR2_4 = $result['FPR2_4'];
-		$dbFPR2_5 = $result['FPR2_5'];
-		$dbFPR3_1 = $result['FPR3_1'];
-		$dbFPR3_2 = $result['FPR3_2'];
-		$dbFPR3_3 = $result['FPR3_3'];
-		$dbFPR3_4 = $result['FPR3_4'];
-		$dbFPR3_5 = $result['FPR3_5'];
-		$dbFPR4_1 = $result['FPR4_1'];
-		$dbFPR4_2 = $result['FPR4_2'];
-		$dbFPR4_2 = $result['FPR4_2'];
-		$dbFPR4_3 = $result['FPR4_3'];
-		$dbFPR4_4 = $result['FPR4_4'];
-		$dbFPR4_5 = $result['FPR4_5'];
-		$dbFPR5_1 = $result['FPR5_1'];
-		$dbFPR5_2 = $result['FPR5_2'];
-		$dbFPR5_3 = $result['FPR5_3'];
-		$dbFPR5_4 = $result['FPR5_4'];
-		$dbFPR5_5 = $result['FPR5_5'];
-		$dbFPR6_1 = $result['FPR6_1'];
-		$dbFPR6_2 = $result['FPR6_2'];
-		$dbFPR6_3 = $result['FPR6_3'];
-		$dbFPR6_4 = $result['FPR6_4'];
-		$dbFPR6_5 = $result['FPR6_5'];
-		$dbFPR7_1 = $result['FPR7_1'];
-		$dbFPR7_2 = $result['FPR7_2'];
-		$dbFPR7_3 = $result['FPR7_3'];
-		$dbFPR7_4 = $result['FPR7_4'];
-		$dbFPR7_5 = $result['FPR7_5'];
-		$dbFPR8_1 = $result['FPR8_1'];
-		$dbFPR8_2 = $result['FPR8_2'];
-		$dbFPR8_3 = $result['FPR8_3'];
-		$dbFPR8_4 = $result['FPR8_4'];
-		$dbFPR8_5 = $result['FPR8_5'];
-		$dbFPR9_1 = $result['FPR9_1'];
-		$dbFPR9_2 = $result['FPR9_2'];
-		$dbFPR9_3 = $result['FPR9_3'];
-		$dbFPR9_4 = $result['FPR9_4'];
-		$dbFPR9_5 = $result['FPR9_5'];
-		$dbFPR10_1 = $result['FPR10_1'];
-		$dbFPR10_2 = $result['FPR10_2'];
-		$dbFPR10_3 = $result['FPR10_3'];
-		$dbFPR10_4 = $result['FPR10_4'];
-		$dbFPR10_5 = $result['FPR10_5'];
-		$dbGrandTotal = $result['GrandTotal'];
+
 		$dbFunctional = $result['Functional'];
 		$dbFrequency = $result['Frequency'];
 		$dbMonitoring = $result['Monitoring'];
-		$dbPlans = $result['Plans'];
-		
+				
 		$dbSign1_1 = $result['Sign1_1'];
 		$dbSign1_2 = $result['Sign1_2'];
 		$dbSign2_1 = $result['Sign2_1'];
@@ -127,6 +75,221 @@ while($result = mysqli_fetch_array($command))
 		$dbSign4_2 = $result['Sign4_2'];
 		$dbSign5_1 = $result['Sign5_1'];
 		$dbSign5_2 = $result['Sign5_2'];
+	}
+
+//Displaying data from financial plan propsoal table
+$sql = ("SELECT * FROM financial_plan_proposal WHERE ProposalID = $PID");
+$command = $con->query($sql) or die("Error Fethcing data");
+while($result = mysqli_fetch_array($command))
+	{
+		$dbFPR1_1 = $result['Item_1'];
+		$dbFPR1_2 = $result['Qty_1'];
+		$dbFPR1_3 = $result['Unit_1'];
+		$dbFPR1_4 = $result['Cost_1'];
+		$dbFPR1_5 = $result['Total_1'];
+
+		$dbFPR2_1 = $result['Item_2'];
+		$dbFPR2_2 = $result['Qty_2'];
+		$dbFPR2_3 = $result['Unit_2'];
+		$dbFPR2_4 = $result['Cost_2'];
+		$dbFPR2_5 = $result['Total_2'];
+
+		$dbFPR3_1 = $result['Item_3'];
+		$dbFPR3_2 = $result['Qty_3'];
+		$dbFPR3_3 = $result['Unit_3'];
+		$dbFPR3_4 = $result['Cost_3'];
+		$dbFPR3_5 = $result['Total_3'];
+
+		$dbFPR4_1 = $result['Item_4'];
+		$dbFPR4_2 = $result['Qty_4'];
+		$dbFPR4_3 = $result['Unit_4'];
+		$dbFPR4_4 = $result['Cost_4'];
+		$dbFPR4_5 = $result['Total_4'];
+
+		$dbFPR5_1 = $result['Item_5'];
+		$dbFPR5_2 = $result['Qty_5'];
+		$dbFPR5_3 = $result['Unit_5'];
+		$dbFPR5_4 = $result['Cost_5'];
+		$dbFPR5_5 = $result['Total_5'];
+
+		$dbFPR6_1 = $result['Item_6'];
+		$dbFPR6_2 = $result['Qty_6'];
+		$dbFPR6_3 = $result['Unit_6'];
+		$dbFPR6_4 = $result['Cost_6'];
+		$dbFPR6_5 = $result['Total_6'];
+
+		$dbFPR7_1 = $result['Item_7'];
+		$dbFPR7_2 = $result['Qty_7'];
+		$dbFPR7_3 = $result['Unit_7'];
+		$dbFPR7_4 = $result['Cost_7'];
+		$dbFPR7_5 = $result['Total_7'];
+
+		$dbFPR8_1 = $result['Item_8'];
+		$dbFPR8_2 = $result['Qty_8'];
+		$dbFPR8_3 = $result['Unit_8'];
+		$dbFPR8_4 = $result['Cost_8'];
+		$dbFPR8_5 = $result['Total_8'];
+
+		$dbFPR9_1 = $result['Item_9'];
+		$dbFPR9_2 = $result['Qty_9'];
+		$dbFPR9_3 = $result['Unit_9'];
+		$dbFPR9_4 = $result['Cost_9'];
+		$dbFPR9_5 = $result['Total_9'];
+
+		$dbFPR10_1 = $result['Item_10'];
+		$dbFPR10_2 = $result['Qty_10'];
+		$dbFPR10_3 = $result['Unit_10'];
+		$dbFPR10_4 = $result['Cost_10'];
+		$dbFPR10_5 = $result['Total_10'];
+
+		$dbFPR11_1 = $result['Item_11'];
+		$dbFPR11_2 = $result['Qty_11'];
+		$dbFPR11_3 = $result['Unit_11'];
+		$dbFPR11_4 = $result['Cost_11'];
+		$dbFPR11_5 = $result['Total_11'];
+
+		$dbFPR12_1 = $result['Item_12'];
+		$dbFPR12_2 = $result['Qty_12'];
+		$dbFPR12_3 = $result['Unit_12'];
+		$dbFPR12_4 = $result['Cost_12'];
+		$dbFPR12_5 = $result['Total_12'];
+
+		$dbFPR13_1 = $result['Item_13'];
+		$dbFPR13_2 = $result['Qty_13'];
+		$dbFPR13_3 = $result['Unit_13'];
+		$dbFPR13_4 = $result['Cost_13'];
+		$dbFPR13_5 = $result['Total_13'];
+
+		$dbFPR14_1 = $result['Item_14'];
+		$dbFPR14_2 = $result['Qty_14'];
+		$dbFPR14_3 = $result['Unit_14'];
+		$dbFPR14_4 = $result['Cost_14'];
+		$dbFPR14_5 = $result['Total_14'];
+
+		$dbFPR15_1 = $result['Item_15'];
+		$dbFPR15_2 = $result['Qty_15'];
+		$dbFPR15_3 = $result['Unit_15'];
+		$dbFPR15_4 = $result['Cost_15'];
+		$dbFPR15_5 = $result['Total_15'];
+
+		$dbFPR16_1 = $result['Item_16'];
+		$dbFPR16_2 = $result['Qty_16'];
+		$dbFPR16_3 = $result['Unit_16'];
+		$dbFPR16_4 = $result['Cost_16'];
+		$dbFPR16_5 = $result['Total_16'];
+
+		$dbFPR17_1 = $result['Item_17'];
+		$dbFPR17_2 = $result['Qty_17'];
+		$dbFPR17_3 = $result['Unit_17'];
+		$dbFPR17_4 = $result['Cost_17'];
+		$dbFPR17_5 = $result['Total_17'];
+
+		$dbFPR18_1 = $result['Item_18'];
+		$dbFPR18_2 = $result['Qty_18'];
+		$dbFPR18_3 = $result['Unit_18'];
+		$dbFPR18_4 = $result['Cost_18'];
+		$dbFPR18_5 = $result['Total_18'];
+
+		$dbFPR19_1 = $result['Item_19'];
+		$dbFPR19_2 = $result['Qty_19'];
+		$dbFPR19_3 = $result['Unit_19'];
+		$dbFPR19_4 = $result['Cost_19'];
+		$dbFPR19_5 = $result['Total_19'];
+
+		$dbFPR20_1 = $result['Item_20'];
+		$dbFPR20_2 = $result['Qty_20'];
+		$dbFPR20_3 = $result['Unit_20'];
+		$dbFPR20_4 = $result['Cost_20'];
+		$dbFPR20_5 = $result['Total_20'];
+	
+		$dbGrandTotal = $result['GrandTotal'];
+	}
+	
+//Displaying data from sustainability plan propsoal table
+$sql = ("SELECT * FROM sustainability_plan_proposal WHERE ProposalID = $PID");
+$command = $con->query($sql) or die("Error Fethcing data");
+while($result = mysqli_fetch_array($command))
+	{
+		$dbSustainability = $result['Sustainability'];
+		$dbSP1_1 = $result['Activities_1'];
+		$dbSP1_2 = $result['Sched_1'];
+		$dbSP1_3 = $result['Involved_1'];
+
+		$dbSP2_1 = $result['Activities_2'];
+		$dbSP2_2 = $result['Sched_2'];
+		$dbSP2_3 = $result['Involved_2'];
+
+		$dbSP3_1 = $result['Activities_3'];
+		$dbSP3_2 = $result['Sched_3'];
+		$dbSP3_3 = $result['Involved_3'];
+
+		$dbSP4_1 = $result['Activities_4'];
+		$dbSP4_2 = $result['Sched_4'];
+		$dbSP4_3 = $result['Involved_4'];
+
+		$dbSP5_1 = $result['Activities_5'];
+		$dbSP5_2 = $result['Sched_5'];
+		$dbSP5_3 = $result['Involved_5'];
+
+		$dbSP6_1 = $result['Activities_6'];
+		$dbSP6_2 = $result['Sched_6'];
+		$dbSP6_3 = $result['Involved_6'];
+
+		$dbSP7_1 = $result['Activities_7'];
+		$dbSP7_2 = $result['Sched_7'];
+		$dbSP7_3 = $result['Involved_7'];
+
+		$dbSP8_1 = $result['Activities_8'];
+		$dbSP8_2 = $result['Sched_8'];
+		$dbSP8_3 = $result['Involved_8'];
+
+		$dbSP9_1 = $result['Activities_9'];
+		$dbSP9_2 = $result['Sched_9'];
+		$dbSP9_3 = $result['Involved_9'];
+
+		$dbSP10_1 = $result['Activities_10'];
+		$dbSP10_2 = $result['Sched_10'];
+		$dbSP10_3 = $result['Involved_10'];	
+
+		$dbSP11_1 = $result['Activities_11'];
+		$dbSP11_2 = $result['Sched_11'];
+		$dbSP11_3 = $result['Involved_11'];
+
+		$dbSP12_1 = $result['Activities_12'];
+		$dbSP12_2 = $result['Sched_12'];
+		$dbSP12_3 = $result['Involved_12'];
+
+		$dbSP13_1 = $result['Activities_13'];
+		$dbSP13_2 = $result['Sched_13'];
+		$dbSP13_3 = $result['Involved_13'];
+
+		$dbSP14_1 = $result['Activities_14'];
+		$dbSP14_2 = $result['Sched_14'];
+		$dbSP14_3 = $result['Involved_14'];
+
+		$dbSP15_1 = $result['Activities_15'];
+		$dbSP15_2 = $result['Sched_15'];
+		$dbSP15_3 = $result['Involved_15'];
+
+		$dbSP16_1 = $result['Activities_16'];
+		$dbSP16_2 = $result['Sched_16'];
+		$dbSP16_3 = $result['Involved_16'];
+
+		$dbSP17_1 = $result['Activities_7'];
+		$dbSP17_2 = $result['Sched_17'];
+		$dbSP17_3 = $result['Involved_17'];
+
+		$dbSP18_1 = $result['Activities_18'];
+		$dbSP18_2 = $result['Sched_18'];
+		$dbSP18_3 = $result['Involved_18'];
+
+		$dbSP19_1 = $result['Activities_19'];
+		$dbSP19_2 = $result['Sched_19'];
+		$dbSP19_3 = $result['Involved_19'];
+
+		$dbSP20_1 = $result['Activities_20'];
+		$dbSP20_2 = $result['Sched_20'];
+		$dbSP20_3 = $result['Involved_20'];	
 	}
 
 class PDF extends FPDF
@@ -387,7 +550,6 @@ if ($dbFPR1_1 == ""){} else {
 	$pdf->Cell(20, 5, $dbFPR1_4, 1, 0,'C');
 	$pdf->Cell(20, 5, $dbFPR1_5, 1, 1,'C');
 }
-
 if ($dbFPR2_1 == ""){} else {
 	$pdf->SetX(32); //Row 1
 	$pdf->Cell(80, 5, $dbFPR2_1, 1, 0,'C');
@@ -460,6 +622,86 @@ if ($dbFPR10_1 == ""){} else {
 	$pdf->Cell(20, 5, $dbFPR10_4, 1, 0,'C');
 	$pdf->Cell(20, 5, $dbFPR10_5, 1, 1,'C');
 }
+if ($dbFPR11_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR11_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR11_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR11_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR11_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR11_5, 1, 1,'C');
+}
+if ($dbFPR12_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR12_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR12_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR12_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR12_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR12_5, 1, 1,'C');
+}
+if ($dbFPR13_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR13_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR13_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR13_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR13_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR13_5, 1, 1,'C');
+}
+if ($dbFPR14_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR14_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR14_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR14_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR14_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR14_5, 1, 1,'C');
+}
+if ($dbFPR15_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR15_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR15_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR15_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR15_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR15_5, 1, 1,'C');
+}
+if ($dbFPR16_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR16_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR16_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR16_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR16_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR16_5, 1, 1,'C');
+}
+if ($dbFPR17_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR17_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR17_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR17_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR17_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR17_5, 1, 1,'C');
+}
+if ($dbFPR18_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR18_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR18_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR18_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR18_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR18_5, 1, 1,'C');
+}
+if ($dbFPR19_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR19_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR19_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR19_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR19_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR19_5, 1, 1,'C');
+}
+if ($dbFPR20_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(80, 5, $dbFPR20_1, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR20_2, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR20_3, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR20_4, 1, 0,'C');
+	$pdf->Cell(20, 5, $dbFPR20_5, 1, 1,'C');
+}
 //GrandTotal
 $pdf->SetFont('Times','B',11); //Set New Font
 $pdf->SetX(32);
@@ -483,8 +725,138 @@ $pdf->Ln();
 
 $pdf->Multicell($Length, $Spacing, 'XVIII.   Sustainability Plan:', $Border, 'L');
 $pdf->SetX($indent);
-$pdf->Multicell($Length, $Spacing, $dbPlans, $Border, 'J');
+$pdf->Multicell($Length, $Spacing, $dbSustainability, $Border, 'J');
 
+$pdf->Ln();
+
+$pdf->SetFont('Times','B',11); //Set New Font
+$pdf->SetX(32); //Header
+$pdf->Cell(70, 5, 'Activities', 1, 0,'C');
+$pdf->Cell(45, 5, 'Tentative Schedule', 1, 0,'C');
+$pdf->Cell(45, 5, 'Involved', 1, 1,'C');
+
+
+$pdf->SetFont('Times','',10);//Reset Font
+if ($dbSP1_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP1_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP1_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP1_3, 1, 1,'C');
+}
+if ($dbSP2_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP2_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP2_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP2_3, 1, 1,'C');
+}
+if ($dbSP3_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP3_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP3_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP3_3, 1, 1,'C');
+}
+if ($dbSP4_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP4_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP4_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP4_3, 1, 1,'C');
+}
+if ($dbSP5_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP5_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP5_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP5_3, 1, 1,'C');
+}
+if ($dbSP6_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP6_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP6_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP6_3, 1, 1,'C');
+}
+if ($dbSP7_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP7_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP7_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP7_3, 1, 1,'C');
+}
+if ($dbSP8_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP8_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP8_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP8_3, 1, 1,'C');
+}
+if ($dbSP9_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP9_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP9_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP9_3, 1, 1,'C');
+}
+if ($dbSP10_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP10_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP10_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP10_3, 1, 1,'C');
+}
+if ($dbSP11_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP11_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP11_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP11_3, 1, 1,'C');
+}
+if ($dbSP12_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP12_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP12_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP12_3, 1, 1,'C');
+}
+if ($dbSP13_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP13_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP13_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP13_3, 1, 1,'C');
+}
+if ($dbSP14_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP14_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP14_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP14_3, 1, 1,'C');
+}
+if ($dbSP15_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP15_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP15_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP15_3, 1, 1,'C');
+}
+if ($dbSP16_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP16_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP16_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP16_3, 1, 1,'C');
+}
+if ($dbSP17_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP17_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP17_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP17_3, 1, 1,'C');
+}
+if ($dbSP18_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP18_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP18_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP18_3, 1, 1,'C');
+}
+if ($dbSP19_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP19_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP19_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP19_3, 1, 1,'C');
+}
+if ($dbSP20_1 == ""){} else {
+	$pdf->SetX(32); //Row 1
+	$pdf->Cell(70, 5, $dbSP20_1, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP20_2, 1, 0,'C');
+	$pdf->Cell(45, 5, $dbSP20_3, 1, 1,'C');
+}
 $pdf->Ln();
 
 //Signatories
