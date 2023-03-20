@@ -971,16 +971,6 @@ function DisplayCharts(){
 		}]
 	});
 	chartCEAFA.render();
- 	/**function toggleDataSeries(e){
-		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-			e.dataSeries.visible = false;
-		}else{
-			e.dataSeries.visible = true;
-		}
-		chartCICS.render();
-	} */
-
-
 
 	var chartCICS = new CanvasJS.Chart("ChartCICS", {
 		animationEnabled: true,
@@ -1012,15 +1002,6 @@ function DisplayCharts(){
 		}]
 	});
 	chartCICS.render();
- 	/**function toggleDataSeries(e){
-		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-			e.dataSeries.visible = false;
-		}else{
-			e.dataSeries.visible = true;
-		}
-		chartCICS.render();
-	} */
-
 
 	var chartCIT = new CanvasJS.Chart("ChartCIT", {
 		animationEnabled: true,
