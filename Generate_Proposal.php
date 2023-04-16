@@ -876,8 +876,12 @@ $pdf->Cell(92.95, 5, $dbSign1_1, 0, 0, 'C');
 $pdf->Cell(92.95, 5, $dbSign2_1, 'L', 1, 'C');
 
 //Box 1 Designation
-$pdf->Cell(92.95, 5, $dbSign1_2, 0, 0, 'C');
-$pdf->Cell(92.95, 5, $dbSign2_2, 'L',1,'C');
+$pdf->MultiCell(92.95, 5, $dbSign1_2, 'L','C'); //Designation 1
+
+$XD2 = $pdf ->GetX();
+$YD2 = $pdf ->GetY();
+$pdf->SetXY($XD2+92.95,$YD2+-10);
+$pdf->MultiCell(92.95, 5, $dbSign2_2, 'L','C'); //Designation 2
 
 //Box 1 Date Signed
 $pdf->Cell(92.95, 5, '     Date Signed:', 0, 0, 'L');
@@ -896,8 +900,12 @@ $pdf->Cell(92.95, 5, $dbSign3_1, 0, 0, 'C');
 $pdf->Cell(92.95, 5, $dbSign4_1, 'L', 1, 'C');
 
 //Box 2 Designation
-$pdf->Cell(92.95, 5, $dbSign3_2, 0, 0, 'C');
-$pdf->Cell(92.95, 5, $dbSign4_2, 'L',1,'C');
+$pdf->Multicell(92.95, 5, $dbSign3_2, 'L', 'C'); //Designation 3
+
+$XD4 = $pdf ->GetX();
+$YD4 = $pdf ->GetY();
+$pdf->SetXY($XD4+92.95,$YD4+-10);
+$pdf->Multicell(92.95, 5, $dbSign4_2, 'L', 'C'); //Designation 4
 
 //Box 2 Date Signed
 $pdf->Cell(92.95, 5, '     Date Signed:', 0, 0, 'L');
@@ -916,8 +924,7 @@ $pdf->Cell(92.95, 5, $dbSign5_1, 0, 0, 'C');
 $pdf->Cell(92.95, 5, '', 'L', 1, 'C');
 
 //Box 3 Designation
-$pdf->Cell(92.95, 5, $dbSign5_2, 0, 0, 'C');
-$pdf->Cell(92.95, 5, '', 'L',1,'C');
+$pdf->multiCell(92.95, 5, $dbSign5_2, 'R', 'C'); //Designation 5
 
 //Box 3 Date Signed
 $pdf->Cell(92.95, 5, '     Date Signed:', 'B', 0, 'L');

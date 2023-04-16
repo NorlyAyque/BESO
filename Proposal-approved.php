@@ -135,14 +135,24 @@ if(isset($_GET['delete'])){
 
 	$PID = $_GET['delete'];
 
-	$sql = ("DELETE FROM create_alangilan WHERE ProposalID = '$PID'");
-	$command = $con->query($sql) or die("Error Deleting proposal");
-	
+	$sql = ("DELETE FROM monitoring_alangilan WHERE ProposalID = '$PID'");
+	$command = $con->query($sql) or die("Error Deleting monitoring");
+
 	$sql = ("DELETE FROM evaluation_alangilan WHERE ProposalID = '$PID'");
 	$command = $con->query($sql) or die("Error Deleting evaluation");
 
-	$sql = ("DELETE FROM monitoring_alangilan WHERE ProposalID = '$PID'");
-	$command = $con->query($sql) or die("Error Deleting monitoring");
+	$sql = ("DELETE FROM create_alangilan WHERE ProposalID = '$PID'");
+	$command = $con->query($sql) or die("Error Deleting proposal");
+
+	$sql = ("DELETE FROM financial_plan_proposal WHERE ProposalID = '$PID'");
+	$command = $con->query($sql) or die("Error Deleting proposal");
+
+	$sql = ("DELETE FROM sustainability_plan_proposal WHERE ProposalID = '$PID'");
+	$command = $con->query($sql) or die("Error Deleting proposal");
+
+	$sql = ("DELETE FROM financial_plan_monitoring WHERE ProposalID = '$PID'");
+	$command = $con->query($sql) or die("Error Deleting proposal");
+	
 	echo " 
 
 		<script>

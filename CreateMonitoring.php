@@ -19,6 +19,7 @@ $DateTime = date("M, d Y; h:i:s A");
 <?php
 if(isset($_GET['create'])){
 	$PID = $_GET['create']; //Proposal ID
+	//$_SESSION["PID_FPM"] = $PID;
     
 	$sql = ("SELECT * FROM create_alangilan WHERE ProposalID = $PID");
 	$command = $con->query($sql) or die("Error Fethcing data");
@@ -580,7 +581,9 @@ if(isset($_GET['create'])){
 
 if (isset($_POST['submit'])) {
 	//$PID , $dbAuthor , $AID - Who Monitor (Evaluator), $DateTime
-	
+
+	//$PID = $_SESSION["PID_FPM"]; //Proposal ID
+
 	$Title = htmlspecialchars($_POST['Title']);
 	$Location_Area = htmlspecialchars($_POST['Location_Area']);
 	$Duration = htmlspecialchars($_POST['Duration']);
@@ -732,7 +735,7 @@ if (isset($_POST['submit'])) {
 
 	//Inserting Data into Financial Plan Proposal Table
 	$sql = ("INSERT INTO financial_plan_monitoring
-		(MonitoringID,
+		(MonitoringID, ProposalID,
 			Item_1, Qty_1, Unit_1, Cost_1, Total_1,
 			Item_2, Qty_2, Unit_2, Cost_2, Total_2,
 			Item_3, Qty_3, Unit_3, Cost_3, Total_3,
@@ -754,7 +757,7 @@ if (isset($_POST['submit'])) {
 			Item_19, Qty_19, Unit_19, Cost_19, Total_19,
 			Item_20, Qty_20, Unit_20, Cost_20, Total_20, GrandTotal)
 	VALUES 
-		('$last_id',
+		('$last_id', '$PID',
 			'$FPR1_1', '$FPR1_2', '$FPR1_3', '$FPR1_4', '$FPR1_5',
 			'$FPR2_1', '$FPR2_2', '$FPR2_3', '$FPR2_4', '$FPR2_5',
 			'$FPR3_1', '$FPR3_2', '$FPR3_3', '$FPR3_4', '$FPR3_5',
