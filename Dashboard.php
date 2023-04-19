@@ -39,7 +39,7 @@ $Position = $_SESSION["Position"];
 	$dbTOTAL_B_Q1 = $dbTOTAL_B_Q2 = $dbTOTAL_B_Q3 = $dbTOTAL_B_Q4 = $dbTOTAL_B = "";
 	$dbTOTAL_C_Q1 = $dbTOTAL_C_Q2 = $dbTOTAL_C_Q3 = $dbTOTAL_C_Q4 = $dbTOTAL_C = "";
 
-	$dbPercentage = $dbBudget = "";
+	$dbPercentageTotal = $dbBudget = "";
 
 //Display Data of Target and Actual
 $sql = ("SELECT * FROM dashboard_targets WHERE Year = '$CustomYear'");
