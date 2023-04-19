@@ -123,6 +123,13 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 						</div>
 					</th>
 				</tr>
+				<tr>
+					<th>
+						<div class="menu1">
+							<a href="ListAllPAPS.php" button class = "nav"> List of All Extension PAPs<ion-icon name="bookmarks-outline"></ion-icon></a>	
+						</div>
+					</th>
+				</tr>
 			</table>
 			
 			<form action="Reports/Generate_GADReport.php" method="_GET" target="_blank">

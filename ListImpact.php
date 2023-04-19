@@ -129,6 +129,13 @@ $UserPosition = $_SESSION["Position"];
 						</div>
 					</th>
 				</tr>
+				<tr>
+					<th>
+						<div class="menu1">
+							<a href="ListAllPAPS.php" button class = "nav"> List of All Extension PAPs<ion-icon name="bookmarks-outline"></ion-icon></a>	
+						</div>
+					</th>
+				</tr>
 			</table>
 			
 			<table class="Header" id="MyTable">

@@ -18,7 +18,7 @@ $UserPosition = $_SESSION["Position"];
 <html>
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-<title>List of Accomplishment Report</title>
+<title>List of Extension PAPs for Impact Assessment</title>
 <link rel="stylesheet" type="text/css" href="styles/Report.css">
 
 </head>
@@ -125,14 +125,14 @@ $UserPosition = $_SESSION["Position"];
 					<th>
 						<div class="menu1">
 							<a href="ListImpact.php" button class = "nav"> List of Extension PAPs for Impact Assessment <ion-icon name="bookmarks-outline"></ion-icon></a>	
-							<a href="AccomplishReport.php" button class = "nav1"> List of Accomplishment Report <ion-icon name="bookmarks-outline"></ion-icon></a>	
+							<a href="AccomplishReport.php" button class = "nav"> List of Accomplishment Report <ion-icon name="bookmarks-outline"></ion-icon></a>	
 						</div>
 					</th>
 				</tr>
 				<tr>
 					<th>
 						<div class="menu1">
-							<a href="ListAllPAPS.php" button class = "nav"> List of All Extension PAPs<ion-icon name="bookmarks-outline"></ion-icon></a>	
+							<a href="ListAllPAPS.php" button class = "nav1"> List of All Extension PAPs<ion-icon name="bookmarks-outline"></ion-icon></a>	
 						</div>
 					</th>
 				</tr>
@@ -140,131 +140,145 @@ $UserPosition = $_SESSION["Position"];
 			
 			<table class="Header" id="MyTable">
 				<tr  class="title">
-					<th colspan="9" >List of Accomplishment Reports</th> 
+					<th colspan="13" >List of All Extension PAP's</th> 
 				</tr>
 				<tr>
-					<th colspan="9"> 
-						
-						<div class ="Drp3">
-								Select Column to filter: 
+					<th colspan="13"> 
+						<div class="Drp5">
+						Select Column to filter: 
 							<select name="column" id="column">
 								<option value="">Select Column</option>
 								<option value="1">Proposal ID</option>
 								<option value="2">Title</option>
-								<option value="3">GAD</option>
-								<option value="4">College</option>
-								<option value="5">Year</option>
-								<option value="6">Quarter</option>
-								<option value="7">Status</option>
+								<option value="3">Initiated by</option>
+								<option value="4">Classification</option>
+								<option value="5">Category</option>
+								<option value="6">GAD</option>
+								<option value="7">College/Office</option>
+								<option value="8">Year</option>
+								<option value="9">Proposal Status</option>
+								<option value="10">Evaluation Status</option>
+								<option value="11">Monitoring Status</option>
+								<option value="12">PreparedBy</option>
 							</select>
-								 Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
+							Keyword: <input type="text" onkeyup="Filter()" id="keyword"  placeholder="type keyword"> 
 						</div>
-							
-						</th>	
+					</th>
+				
 				</tr>
 				
 				<tr>
-					<th width="80px"> Proposal ID</th>
+					<th width="auto"> Proposal ID</th>
 					<th width="auto"> Title </th>
-					<th width="50"> GAD </th>
-					<th width="200px";> College/Office</th>
-					<th width="90px"> Year </th> 
-					<th width="90px"> Quarter </th> 
-					<th width="100px"> STATUS </th> 
-					<!-- <th width="100px";> Evaluation </th>  Remarks -->
-					<!-- <th width="120px";> Last Monitored </th> Remarks_2 -->
-					<!-- <th width="120px";> Impact Assessment </th> Remarks_3 -->
-					<th width="130px";> View</th>
+					<th width="auto"> Initiated by </th>
+					<th width="auto";> Classification</th>
+					<th width="auto";> Category </th>
+					<th width="auto";> GAD </th>
+					<th width="auto";> College / Office </th>
+					<th width="auto";> Year </th>
+					<th width="auto";> Proposal Status </th>
+					<th width="auto";> Evaluation Status </th>
+					<th width="auto";> Monitoring Status </th>
+					<th width="auto";> PreparedBy </th>
+					<th width="auto";>  </th>
 				</tr>
 <?php
-//Display all the Approved PAP based on Colleges/Office
+// Legend	Remarks = Evaluation		Remarks_2 = Monitoring
+//Display all the Proposals that need impact assessment based on Colleges/Office
 /*
 if ($College == $CEAFA){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
-		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
-		(ProjectStatus = 'Approved' AND 
-		Remarks = 'Evaluated' AND
-		Remarks_2 != '') AND
-		(Remarks_3 = 'Completed' OR Remarks_3 = '')
+		(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '')
 	");
 }else if ($College == $CICS){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
-		(ProjectStatus = 'Approved' AND 
-		Remarks = 'Evaluated' AND
-		Remarks_2 != '') AND
-		(Remarks_3 = 'Completed' OR Remarks_3 = '')
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '')
 	");
 }else if ($College == $CIT){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
-		(Office LIKE '%$CIT%' OR Office LIKE '%$CIT_Full%') AND
-		(ProjectStatus = 'Approved' AND 
-		Remarks = 'Evaluated' AND
-		Remarks_2 != '') AND
-		(Remarks_3 = 'Completed' OR Remarks_3 = '')
+		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '')
 	");
 }else{
 	$sql = ("SELECT * FROM create_alangilan WHERE 
-		(ProjectStatus = 'Approved' AND 
-		Remarks = 'Evaluated' AND
-		Remarks_2 != '') AND
-		(Remarks_3 = 'Completed' OR Remarks_3 = '')
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '')
 	");
 }*/
 
-/* 
+/*
 $sql = ("SELECT * FROM create_alangilan WHERE 
-		(ProjectStatus = 'Approved' AND 
-		Remarks = 'Evaluated' AND
-		Remarks_2 != '') AND //For Monitor
-		(Remarks_3 = 'Completed' OR Remarks_3 = '')
+		(unknown = 'For Impact Assessment') AND
+		(ProjectStatus = 'Approved') AND 
+		(Remarks = 'Evaluated') AND
+		(Remarks_2 != '') //For Monitoring
 	");
 */
 
-//fix code
 if ($UserPosition == "Head" OR $UserPosition == "Staff"){
 	$sql = ("SELECT * FROM create_alangilan WHERE 
+		(unknown = 'For Impact Assessment') AND
 		(ProjectStatus = 'Approved') AND 
 		(Remarks = 'Evaluated')
-		");
+	");
 }else{
 	$sql = ("SELECT * FROM create_alangilan WHERE 
 		(AccountID = '$AID') AND
+		(unknown = 'For Impact Assessment') AND
 		(ProjectStatus = 'Approved') AND 
 		(Remarks = 'Evaluated')
 	");
 }
+////
 
+if ($UserPosition == "Head" OR $UserPosition == "Staff"){
+	$sql = ("SELECT * FROM create_alangilan");
+}else{
+	$sql = ("SELECT * FROM create_alangilan WHERE AccountID = '$AID'");
+}
 $command = $con->query($sql) or die("Error SQL");
 while($result = mysqli_fetch_array($command))
 	{
 		$PID = $result['ProposalID'];
-		$AID = $result['AccountID'];
-		$Year = $result['Year'];
-		$Quarter = $result['Quarter'];
-		$GAD = $result['IsGAD'];
 		$Title = $result ['Title'];
-		$PS = $result ['ProjectStatus']; // Pending, Approved, Revised, Reject
-		$R1 = $result ['Remarks']; //For Evaluation
-		//$R2 = $result['Remarks_2']; //For Monitoring
-		//$R3 = $result['Remarks_3']; // For Impact Assessment
+		$Initiated = $result ['Initiated'];
+		$Classification = $result ['Classification'];
+		$Category = $result ['unknown'];
+		$IsGAD = $result ['IsGAD'];
 		$College = $result['Office'];
+		$Year = $result['Year'];
+		$Prop_Status = $result['ProjectStatus'];
+		$Eval_Status = $result['Remarks'];
+		$Moni_Status = $result['Remarks_2'];
+		$PreparedBy = $result['Sign1_1'];
 
-		$sql2 = ("SELECT * FROM account WHERE AccountID = '$AID' ");
-		$command2 = $con->query($sql2) or die("Error SQL");
-		while($result2 = mysqli_fetch_array($command2))
-			{
-				$Coll = $result2['College']; //Not Used
 ?>
 			<tr class="inputs">
 				<td><?php echo $PID; ?></td>
 				<td><?php echo $Title; ?></p></td> 
-				<td><?php echo $GAD; ?></p></td> 
-				<td><?php echo $College; ?></p></td> 
-				<td><?php echo $Year; ?></p></td> 
-				<td><?php echo $Quarter; ?></p></td> 
-				<td><?php echo $PS."<br>".$R1; ?></td> 
-			  
+				<td><?php echo $Initiated; ?></p></td> 
+				<td><?php echo $Classification; ?></td>
+				<td><?php echo $Category; ?></td>
+				<td><?php echo $IsGAD; ?></td>
+				<td><?php echo $College; ?></td>
+				<td><?php echo $Year; ?></td>
+				<td><?php echo $Prop_Status; ?></td>
+				<td><?php echo $Eval_Status; ?></td>
+				<td><?php echo $Moni_Status; ?></td> 	
+				<td><?php echo $PreparedBy; ?></td>
 				<td>
 					<div class="margin">
 						<a href="Generate_Proposal.php?view=<?php echo $PID; ?>" target="_blank" button class ="btn1">Proposal</button> </a>
@@ -275,9 +289,9 @@ while($result = mysqli_fetch_array($command))
 					<div class="margin1">
 						<a href="Monitoring-approved.php?FilterPID=<?php echo $PID; ?>" target="_blank" button class ="btn3">Monitoring</button> </a>
 					</div>
-				</td> 
+				</td> 	
 			</tr>
-<?php }}?>
+<?php }?>
 			</table>	
 		</div>
 	</div>
@@ -314,7 +328,7 @@ while($result = mysqli_fetch_array($command))
 if(isset($_GET['MarkAsComplete'])){
 	$PID = $_GET['MarkAsComplete'];
 
-	$sql = ("UPDATE create_alangilan SET Remarks_3 = 'Done Impact Assessment' WHERE ProposalID = $PID ");
+	$sql = ("UPDATE create_alangilan SET Remarks_3 = 'Completed' WHERE ProposalID = $PID ");
 	$command = $con->query($sql) or die("Error Rejecting Proposal");
 	echo "
 		<script>
@@ -336,7 +350,8 @@ function Filter() {
 	else if (x == "5"){var SelectedColumn = 4;}	
 	else if (x == "6"){var SelectedColumn = 5;}	
 	else if (x == "7"){var SelectedColumn = 6;}	
-		
+	
+	
 	var input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("keyword");
 	filter = input.value.toUpperCase();
