@@ -34,7 +34,7 @@ $Position = $_SESSION["Position"];
 <html>
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-<title>Generate Status Report - CEAFA</title>
+<title>Generate Status Report - COE</title>
 <link rel="stylesheet" type="text/css" href="../styles/Generate_StatusReports-STYLE.css">
 
 </head>
@@ -87,15 +87,15 @@ $Position = $_SESSION["Position"];
 		</tr>
 
 		<tr>
-			<td colspan="10"> <b><i> College of Engineering, Architecture and Fine Arts </i></b></td>
+			<td colspan="10"> <b><i> College of Engineering</i></b></td>
 		</tr>
 
 <?php
-//Display all PAPS under CEAFA
+//Display all PAPS under COE
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(Year = $Year) AND
 		(Quarter = $Q) AND
-		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+		(Office LIKE '%$COE%' OR Office LIKE '%$COE_Full%') AND
 		(Remarks = 'Evaluated')");
 $command = $con->query($sql) or die("Error finding Offices under CIT");
 $No = 0;
@@ -146,8 +146,8 @@ while($result = mysqli_fetch_array($command))
 		{
 			$Narrative = $result2['Narrative'];
 			$Beneficiaries = $result2['Beneficiaries'];
-			$Male = $result2['MT'];
-			$Female = $result2['FT'];
+			$Male = $result2['M2'];							//$Male = $result2['MT'];
+			$Female = $result2['F2'];						//$Female = $result2['FT'];
 			$Location = $result2['Location_Area'];
 			$People = $result2['People'];
 		$No ++;
@@ -285,11 +285,11 @@ while($result = mysqli_fetch_array($command))
 <table border="0" align="center">
 
 <?php
-//Display all Pictures under CEAFA
+//Display all Pictures under COE
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(Year = $Year) AND
 		(Quarter = $Q) AND
-		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+		(Office LIKE '%$COE%' OR Office LIKE '%$COE_Full%') AND
 		(Remarks = 'Evaluated')");
 $command = $con->query($sql) or die("Error finding Offices under CIT");
 $No = 0;

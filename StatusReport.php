@@ -138,7 +138,6 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 						<div class ="Drp1">
 							<select name="Year" id="Year" required>
 								<option value="">Select Year</option>
-								<option value="2022">2022</option>
 								<option value="2023">2023</option>
 								<option value="2024">2024</option>
 								<option value="2025">2025</option>
@@ -171,7 +170,8 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 						<div class ="Drp1">
 							<select name="College" id="College" required>
 								<option value="">Select College</option>
-								<option value="CEAFA" id="DrpDwnCEAFA" style="display:none;">CEAFA</option>
+								<option value="CAFAD" id="DrpDwnCAFAD" style="display:none;">CAFAD</option>
+								<option value="COE" id="DrpDwnCOE" style="display:none;">COE</option>
 								<option value="CICS" id="DrpDwnCICS" style="display:none;">CICS</option>
 								<option value="CIT" id="DrpDwnCIT" style="display:none;">CIT</option>
 								<option value="ALL" id="DrpDwnALL" style="display:none;">ALL</option>
@@ -229,9 +229,14 @@ if((isset($_GET['Year']) == TRUE) AND (isset($_GET['Quarter'])== TRUE) AND (isse
 	$Quarter = $_GET['Quarter'];
 	$College = $_GET['College'];
 
-	if ($College == "CEAFA"){
+	if ($College == "CAFAD"){
 		echo "<script>
-			window.location='Reports/Generate_SR_CEAFA.php?Year=$Year&Quarter=$Quarter&College=$College';
+			window.location='Reports/Generate_SR_CAFAD.php?Year=$Year&Quarter=$Quarter&College=$College';
+		</script>";
+	}
+	if ($College == "COE"){
+		echo "<script>
+			window.location='Reports/Generate_SR_COE.php?Year=$Year&Quarter=$Quarter&College=$College';
 		</script>";
 	}
 	if ($College == "CICS"){
@@ -254,10 +259,16 @@ if((isset($_GET['Year']) == TRUE) AND (isset($_GET['Quarter'])== TRUE) AND (isse
 ?>
 
 <?php
-if ($College == "CEAFA" ){
+if ($College == "CAFAD" ){
 	echo "
 		<script>
-			document.getElementById('DrpDwnCEAFA').style.display = 'block';
+			document.getElementById('DrpDwnCAFAD').style.display = 'block';
+		</script>
+	";
+}else if ($College == "COE" ){
+	echo "
+		<script>
+			document.getElementById('DrpDwnCOE').style.display = 'block';
 		</script>
 	";
 }else if ($College == "CICS"){
@@ -275,7 +286,8 @@ if ($College == "CEAFA" ){
 }else{
 	echo "
 		<script>
-			document.getElementById('DrpDwnCEAFA').style.display = 'block';
+			document.getElementById('DrpDwnCAFAD').style.display = 'block';
+			document.getElementById('DrpDwnCOE').style.display = 'block';
 			document.getElementById('DrpDwnCICS').style.display = 'block';
 			document.getElementById('DrpDwnCIT').style.display = 'block';
 			document.getElementById('DrpDwnALL').style.display = 'block';

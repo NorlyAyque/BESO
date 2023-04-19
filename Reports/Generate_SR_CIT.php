@@ -146,8 +146,8 @@ while($result = mysqli_fetch_array($command))
 		{
 			$Narrative = $result2['Narrative'];
 			$Beneficiaries = $result2['Beneficiaries'];
-			$Male = $result2['MT'];
-			$Female = $result2['FT'];
+			$Male = $result2['M2'];							//$Male = $result2['MT'];
+			$Female = $result2['F2'];						//$Female = $result2['FT'];
 			$Location = $result2['Location_Area'];
 			$People = $result2['People'];
 		$No ++;

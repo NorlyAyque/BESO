@@ -149,12 +149,12 @@ while($result = mysqli_fetch_array($command))
 		$command2 = $con->query($sql2) or die("Error finding Total number of Trainees");
 		while($result2 = mysqli_fetch_array($command2))
 		{
-			$Trainees = $result2['MFT'];
-			$Excellent = $result2['Eval1AT'];
-			$VerySatisfactory = $result2['Eval1BT'];
-			$Satisfactory = $result2['Eval1CT'];
-			$Fair = $result2['Eval1DT'];
-			$Poor = $result2['Eval1ET'];
+			$Trainees = $result2['M2'] + $result2['F2'];		//$Trainees = $result2['MFT'];
+			$Excellent = $result2['Eval1A2'];					//$Excellent = $result2['Eval1AT'];
+			$VerySatisfactory = $result2['Eval1B2'];			//$VerySatisfactory = $result2['Eval1BT'];
+			$Satisfactory = $result2['Eval1C2'];				//$Satisfactory = $result2['Eval1CT'];
+			$Fair = $result2['Eval1D2'];						//$Fair = $result2['Eval1DT'];
+			$Poor = $result2['Eval1E2'];						//$Poor = $result2['Eval1ET'];
 			
 		$Weighted = $Duration * $Trainees;
 		$No++; //For auto numbering

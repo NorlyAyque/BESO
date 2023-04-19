@@ -290,33 +290,39 @@ if(isset($_GET['approved'])){
 
 	//Updating Target
 	//Getting the values from Actual Target
-	$sql = ("SELECT * FROM target_alangilan WHERE Year = $CustomYear");
+	$sql = ("SELECT * FROM dashboard_targets WHERE Year = $CustomYear");
 	$command = $con->query($sql) or die("Error Fethcing data");
 	while($result = mysqli_fetch_array($command))
 	{
-		$CEAFA_BQ1 = $result["CEAFA_BQ1"];
-		$CEAFA_BQ2 = $result["CEAFA_BQ2"];
-		$CEAFA_BQ3 = $result["CEAFA_BQ3"];
-		$CEAFA_BQ4 = $result["CEAFA_BQ4"];
-		$CEAFA_BQT = $result["CEAFA_BQT"];
+		$CAFAD_C_Q1 = $result["CAFAD_C_Q1"];
+		$CAFAD_C_Q2 = $result["CAFAD_C_Q2"];
+		$CAFAD_C_Q3 = $result["CAFAD_C_Q3"];
+		$CAFAD_C_Q4 = $result["CAFAD_C_Q4"];
+		$CAFAD_C_T = $result["CAFAD_C_T"];
 
-		$CICS_BQ1 = $result["CICS_BQ1"];
-		$CICS_BQ2 = $result["CICS_BQ2"];
-		$CICS_BQ3 = $result["CICS_BQ3"];
-		$CICS_BQ4 = $result["CICS_BQ4"];
-		$CICS_BQT = $result["CICS_BQT"];
+		$COE_C_Q1 = $result["COE_C_Q1"];
+		$COE_C_Q2 = $result["COE_C_Q2"];
+		$COE_C_Q3 = $result["COE_C_Q3"];
+		$COE_C_Q4 = $result["COE_C_Q4"];
+		$COE_C_T = $result["COE_C_T"];
+		
+		$CICS_C_Q1 = $result["CICS_C_Q1"];
+		$CICS_C_Q2 = $result["CICS_C_Q2"];
+		$CICS_C_Q3 = $result["CICS_C_Q3"];
+		$CICS_C_Q4 = $result["CICS_C_Q4"];
+		$CICS_C_T = $result["CICS_C_T"];
 
-		$CIT_BQ1 = $result["CIT_BQ1"];
-		$CIT_BQ2 = $result["CIT_BQ2"];
-		$CIT_BQ3 = $result["CIT_BQ3"];
-		$CIT_BQ4 = $result["CIT_BQ4"];
-		$CIT_BQT = $result["CIT_BQT"];
+		$CIT_C_Q1 = $result["CIT_C_Q1"];
+		$CIT_C_Q2 = $result["CIT_C_Q2"];
+		$CIT_C_Q3 = $result["CIT_C_Q3"];
+		$CIT_C_Q4 = $result["CIT_C_Q4"];
+		$CIT_C_T = $result["CIT_C_T"];
 
-		$BT_Q1 = $result["BT_Q1"];
-		$BT_Q2 = $result["BT_Q2"];
-		$BT_Q3 = $result["BT_Q3"];
-		$BT_Q4 = $result["BT_Q4"];
-		$BT_QT = $result["BT_QT"];	
+		$TOTAL_C_Q1 = $result["TOTAL_C_Q1"];
+		$TOTAL_C_Q2 = $result["TOTAL_C_Q2"];
+		$TOTAL_C_Q3 = $result["TOTAL_C_Q3"];
+		$TOTAL_C_Q4 = $result["TOTAL_C_Q4"];
+		$TOTAL_C = $result["TOTAL_C"];
 	}
 
 	//Determining what Office/College involved
@@ -331,39 +337,113 @@ if(isset($_GET['approved'])){
 
 	//Words are in Connection.php
 	// Test if string contains the word 
-	//if (((str_contains($Office, $CEAFA)) == TRUE) OR ((str_contains($Office, $CEAFA_Full)) == TRUE)) {
-	if (((strpos($Office, $CEAFA)) !== FALSE) OR ((strpos($Office, $CEAFA_Full)) !== FALSE)) {
+	//if (((str_contains($Office, $CAFAD)) == TRUE) OR ((str_contains($Office, $CAFAD_Full)) == TRUE)) {
+	if (((strpos($Office, $CAFAD)) !== FALSE) OR ((strpos($Office, $CAFAD_Full)) !== FALSE)) {
 		//if ($CustomQuarter == 1){//For CEAFA Actual Quarter 1
-		if ($Quarter == 1){//For CEAFA Actual Quarter 1
-			$NewCount = $CEAFA_BQ1 + 1;
-			$Col = $CEAFA_BQT + 1;
-			$Row = $BT_Q1 + 1;
-			$Total = $BT_QT + 1;
-			$sql = ("UPDATE target_alangilan SET CEAFA_BQ1 = '$NewCount', CEAFA_BQT = '$Col', BT_Q1 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+		if ($Quarter == 1){//For CAFAD Actual Quarter 1
+			$NewCount = $CAFAD_C_Q1 + 1;
+			$Col = $CAFAD_C_T + 1;
+			$Row = $TOTAL_C_Q1 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CAFAD_C_Q1 = '$NewCount', CAFAD_C_T = '$Col', TOTAL_C_Q1 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($Quarter == 2){//For CEAFA Actual Quarter 2
-			$NewCount = $CEAFA_BQ2 + 1;		
-			$Col = $CEAFA_BQT + 1;
-			$Row = $BT_Q2 + 1;	
-			$Total = $BT_QT + 1;
-			$sql = ("UPDATE target_alangilan SET CEAFA_BQ2 = '$NewCount', CEAFA_BQT = '$Col', BT_Q2 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+		else if ($Quarter == 2){//For CAFAD Actual Quarter 2
+			$NewCount = $CAFAD_C_Q2 + 1;
+			$Col = $CAFAD_C_T + 1;
+			$Row = $TOTAL_C_Q2 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CAFAD_C_Q2 = '$NewCount', CAFAD_C_T = '$Col', TOTAL_C_Q2 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($Quarter == 3){//For CEAFA Actual Quarter 3
-			$NewCount = $CEAFA_BQ3 + 1;	
-			$Col = $CEAFA_BQT + 1;
-			$Row = $BT_Q3 + 1;	
-			$Total = $BT_QT + 1;	
-			$sql = ("UPDATE target_alangilan SET CEAFA_BQ3 = '$NewCount', CEAFA_BQT = '$Col', BT_Q3 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+		else if ($Quarter == 3){//For CAFAD Actual Quarter 3
+			$NewCount = $CAFAD_C_Q3 + 1;
+			$Col = $CAFAD_C_T + 1;
+			$Row = $TOTAL_C_Q3 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CAFAD_C_Q3 = '$NewCount', CAFAD_C_T = '$Col', TOTAL_C_Q3 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($Quarter == 4){//For CEAFA Actual Quarter 3
-			$NewCount = $CEAFA_BQ4 + 1;	
-			$Col = $CEAFA_BQT + 1;
-			$Row = $BT_Q4 + 1;		
-			$Total = $BT_QT + 1;
-			$sql = ("UPDATE target_alangilan SET CEAFA_BQ4 = '$NewCount', CEAFA_BQT = '$Col', BT_Q4 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+		else if ($Quarter == 4){//For CAFAD Actual Quarter 4
+			$NewCount = $CAFAD_C_Q4 + 1;
+			$Col = $CAFAD_C_T + 1;
+			$Row = $TOTAL_C_Q4 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CAFAD_C_Q4 = '$NewCount', CAFAD_C_T = '$Col', TOTAL_C_Q4 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+	}
+
+	//if (((str_contains($Office, $CAFAD)) == TRUE) OR ((str_contains($Office, $CAFAD_Full)) == TRUE)) {
+	if (((strpos($Office, $CAFAD)) !== FALSE) OR ((strpos($Office, $CAFAD_Full)) !== FALSE)) {
+		//if ($CustomQuarter == 1){//For CAFAD Actual Quarter 1
+		if ($Quarter == 1){//For CAFAD Actual Quarter 1
+			$NewCount = $CAFAD_C_Q1 + 1;
+			$Col = $CAFAD_C_T + 1;
+			$Row = $TOTAL_C_Q1 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CAFAD_C_Q1 = '$NewCount', CAFAD_C_T = '$Col', TOTAL_C_Q1 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($Quarter == 2){//For CAFAD Actual Quarter 2
+			$NewCount = $CAFAD_C_Q2 + 1;
+			$Col = $CAFAD_C_T + 1;
+			$Row = $TOTAL_C_Q2 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CAFAD_C_Q2 = '$NewCount', CAFAD_C_T = '$Col', TOTAL_C_Q2 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($Quarter == 3){//For CAFAD Actual Quarter 3
+			$NewCount = $CAFAD_C_Q3 + 1;
+			$Col = $CAFAD_C_T + 1;
+			$Row = $TOTAL_C_Q3 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CAFAD_C_Q3 = '$NewCount', CAFAD_C_T = '$Col', TOTAL_C_Q3 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($Quarter == 4){//For CAFAD Actual Quarter 4
+			$NewCount = $CAFAD_C_Q4 + 1;
+			$Col = $CAFAD_C_T + 1;
+			$Row = $TOTAL_C_Q4 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CAFAD_C_Q4 = '$NewCount', CAFAD_C_T = '$Col', TOTAL_C_Q4 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+	}
+
+	//if (((str_contains($Office, $COE)) == TRUE) OR ((str_contains($Office, $COE_Full)) == TRUE)) {
+	if (((strpos($Office, $COE)) !== FALSE) OR ((strpos($Office, $COE_Full)) !== FALSE)) {
+		//if ($CustomQuarter == 1){//For COE Actual Quarter 1
+		if ($Quarter == 1){//For COE Actual Quarter 1
+			$NewCount = $COE_C_Q1 + 1;
+			$Col = $COE_C_T + 1;
+			$Row = $TOTAL_C_Q1 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET COE_C_Q1 = '$NewCount', COE_C_T = '$Col', TOTAL_C_Q1 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($Quarter == 2){//For COE Actual Quarter 2
+			$NewCount = $COE_C_Q2 + 1;
+			$Col = $COE_C_T + 1;
+			$Row = $TOTAL_C_Q2 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET COE_C_Q2 = '$NewCount', COE_C_T = '$Col', TOTAL_C_Q2 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($Quarter == 3){//For COE Actual Quarter 3
+			$NewCount = $COE_C_Q3 + 1;
+			$Col = $COE_C_T + 1;
+			$Row = $TOTAL_C_Q3 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET COE_C_Q3 = '$NewCount', COE_C_T = '$Col', TOTAL_C_Q3 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
+			$command = $con->query($sql) or die("Error Occur");
+		}
+		else if ($Quarter == 4){//For COE Actual Quarter 4
+			$NewCount = $COE_C_Q4 + 1;
+			$Col = $COE_C_T + 1;
+			$Row = $TOTAL_C_Q4 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET COE_C_Q4 = '$NewCount', COE_C_T = '$Col', TOTAL_C_Q4 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
 	}
@@ -371,35 +451,35 @@ if(isset($_GET['approved'])){
 	//if (((str_contains($Office, $CICS)) == TRUE) OR ((str_contains($Office, $CICS_Full)) == TRUE)) {
 	if (((strpos($Office, $CICS)) !== FALSE) OR ((strpos($Office, $CICS_Full)) !== FALSE)) {
 		if ($Quarter == 1){//For CICS Actual Quarter 1
-			$NewCount = $CICS_BQ1 + 1;	
-			$Col = $CICS_BQT + 1;
-			$Row = $BT_Q1 + 1;		
-			$Total = $BT_QT + 1;		
-			$sql = ("UPDATE target_alangilan SET CICS_BQ1 = '$NewCount', CICS_BQT = '$Col', BT_Q1 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+			$NewCount = $CICS_C_Q1 + 1;
+			$Col = $CICS_C_T + 1;
+			$Row = $TOTAL_C_Q1 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CICS_C_Q1 = '$NewCount', CICS_C_T = '$Col', TOTAL_C_Q1 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
 		else if ($Quarter == 2){//For CICS Actual Quarter 2
-			$NewCount = $CICS_BQ2 + 1;			
-			$Col = $CICS_BQT + 1;
-			$Row = $BT_Q2 + 1;		
-			$Total = $BT_QT + 1;
-			$sql = ("UPDATE target_alangilan SET CICS_BQ2 = '$NewCount', CICS_BQT = '$Col', BT_Q2 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+			$NewCount = $CICS_C_Q2 + 1;
+			$Col = $CICS_C_T + 1;
+			$Row = $TOTAL_C_Q2 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CICS_C_Q2 = '$NewCount', CICS_C_T = '$Col', TOTAL_C_Q2 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
 		else if ($Quarter == 3){//For CICS Actual Quarter 3
-			$NewCount = $CICS_BQ3 + 1;	
-			$Col = $CICS_BQT + 1;
-			$Row = $BT_Q3+ 1;		
-			$Total = $BT_QT + 1;		
-			$sql = ("UPDATE target_alangilan SET CICS_BQ3 = '$NewCount', CICS_BQT = '$Col', BT_Q3 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+			$NewCount = $CICS_C_Q3 + 1;
+			$Col = $CICS_C_T + 1;
+			$Row = $TOTAL_C_Q3 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CICS_C_Q3 = '$NewCount', CICS_C_T = '$Col', TOTAL_C_Q3 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($Quarter == 4){//For CICS Actual Quarter 3
-			$NewCount = $CICS_BQ4 + 1;	
-			$Col = $CICS_BQT + 1;
-			$Row = $BT_Q4 + 1;		
-			$Total = $BT_QT + 1;		
-			$sql = ("UPDATE target_alangilan SET CICS_BQ4 = '$NewCount', CICS_BQT = '$Col', BT_Q4 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+		else if ($Quarter == 4){//For CICS Actual Quarter 4
+			$NewCount = $CICS_C_Q4 + 1;
+			$Col = $CICS_C_T + 1;
+			$Row = $TOTAL_C_Q4 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CICS_C_Q4 = '$NewCount', CICS_C_T = '$Col', TOTAL_C_Q4 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}	
 	}
@@ -407,40 +487,39 @@ if(isset($_GET['approved'])){
 	//if (((str_contains($Office, $CIT)) == TRUE) OR ((str_contains($Office, $CIT_Full)) == TRUE)) {
 	if (((strpos($Office, $CIT)) !== FALSE) OR ((strpos($Office, $CIT_Full)) !== FALSE)) {
 		if ($Quarter == 1){//For CIT Actual Quarter 1
-			$NewCount = $CIT_BQ1 + 1;	
-			$Col = $CIT_BQT + 1;
-			$Row = $BT_Q1 + 1;		
-			$Total = $BT_QT + 1;		
-			$sql = ("UPDATE target_alangilan SET CIT_BQ1 = '$NewCount', CIT_BQT = '$Col', BT_Q1 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+			$NewCount = $CIT_C_Q1 + 1;
+			$Col = $CIT_C_T + 1;
+			$Row = $TOTAL_C_Q1 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CIT_C_Q1 = '$NewCount', CIT_C_T = '$Col', TOTAL_C_Q1 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
 		else if ($Quarter == 2){//For CIT Actual Quarter 2
-			$NewCount = $CIT_BQ2 + 1;			
-			$Col = $CIT_BQT + 1;
-			$Row = $BT_Q2 + 1;		
-			$Total = $BT_QT + 1;
-			$sql = ("UPDATE target_alangilan SET CIT_BQ2 = '$NewCount', CIT_BQT = '$Col', BT_Q2 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+			$NewCount = $CIT_C_Q2 + 1;
+			$Col = $CIT_C_T + 1;
+			$Row = $TOTAL_C_Q2 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CIT_C_Q2 = '$NewCount', CIT_C_T = '$Col', TOTAL_C_Q2 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
 		else if ($Quarter == 3){//For CIT Actual Quarter 3
-			$NewCount = $CIT_BQ3 + 1;
-			$Col = $CIT_BQT + 1;
-			$Row = $BT_Q3 + 1;		
-			$Total = $BT_QT + 1;
-			$sql = ("UPDATE target_alangilan SET CIT_BQ3 = '$NewCount', CIT_BQT = '$Col', BT_Q3 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+			$NewCount = $CIT_C_Q3 + 1;
+			$Col = $CIT_C_T + 1;
+			$Row = $TOTAL_C_Q3 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CIT_C_Q3 = '$NewCount', CIT_C_T = '$Col', TOTAL_C_Q3 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
-		else if ($Quarter == 4){//For CIT Actual Quarter 3
-			$NewCount = $CIT_BQ4 + 1;
-			$Col = $CIT_BQT + 1;
-			$Row = $BT_Q4 + 1;		
-			$Total = $BT_QT + 1;		
-			$sql = ("UPDATE target_alangilan SET CIT_BQ4 = '$NewCount', CIT_BQT = '$Col', BT_Q4 = '$Row', BT_QT = '$Total' WHERE Year = '$CustomYear'");
+		else if ($Quarter == 4){//For CIT Actual Quarter 4
+			$NewCount = $CIT_C_Q4 + 1;
+			$Col = $CIT_C_T + 1;
+			$Row = $TOTAL_C_Q4 + 1;
+			$Total = $TOTAL_C + 1;
+			$sql = ("UPDATE dashboard_targets SET CIT_C_Q4 = '$NewCount', CIT_C_T = '$Col', TOTAL_C_Q4 = '$Row', TOTAL_C = '$Total' WHERE Year = '$CustomYear'");
 			$command = $con->query($sql) or die("Error Occur");
 		}
 	}
 	
-
 	//Updating Project Status
 	$sql = ("UPDATE evaluation_alangilan SET ProjectStatus = 'Approved' WHERE EvaluationID = $EID ");
 	$command = $con->query($sql) or die("Error Evaluation Report Approval");
@@ -449,7 +528,6 @@ if(isset($_GET['approved'])){
 			alert('Evaluation ID $EID APPROVED');	
 			window.location.href='Evaluation.php';
 		</script>";
-	
 }
 
 if(isset($_GET['update'])){

@@ -146,8 +146,8 @@ while($result = mysqli_fetch_array($command))
 		{
 			$Narrative = $result2['Narrative'];
 			$Beneficiaries = $result2['Beneficiaries'];
-			$Male = $result2['MT'];
-			$Female = $result2['FT'];
+			$Male = $result2['M2'];							//$Male = $result2['MT'];
+			$Female = $result2['F2'];						//$Female = $result2['FT'];
 			$Location = $result2['Location_Area'];
 			$People = $result2['People'];
 		$No ++;
@@ -230,8 +230,8 @@ while($result = mysqli_fetch_array($command))
 		{
 			$Narrative = $result2['Narrative'];
 			$Beneficiaries = $result2['Beneficiaries'];
-			$Male = $result2['MT'];
-			$Female = $result2['FT'];
+			$Male = $result2['M2'];							//$Male = $result2['MT'];
+			$Female = $result2['F2'];						//$Female = $result2['FT'];
 			$Location = $result2['Location_Area'];
 			$People = $result2['People'];
 		$No ++;
@@ -254,15 +254,15 @@ while($result = mysqli_fetch_array($command))
 <?php }}?>
 
 		<tr>
-			<td colspan="10"> <b><i> College of Engineering, Architecture and Fine Arts </i></b></td>
+			<td colspan="10"> <b><i> College of Architecture, Fine Arts and Design </i></b></td>
 		</tr>
 
 <?php
-//Display all PAPS under CEAFA
+//Display all PAPS under CAFAD
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(Year = $Year) AND
 		(Quarter = $Q) AND
-		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+		(Office LIKE '%$CAFAD%' OR Office LIKE '%$CAFAD_Full%') AND
 		(Remarks = 'Evaluated')");
 $command = $con->query($sql) or die("Error finding Offices under CIT");
 //$No = 0;
@@ -315,8 +315,93 @@ while($result = mysqli_fetch_array($command))
 		{
 			$Narrative = $result2['Narrative'];
 			$Beneficiaries = $result2['Beneficiaries'];
-			$Male = $result2['MT'];
-			$Female = $result2['FT'];
+			$Male = $result2['M2'];							//$Male = $result2['MT'];
+			$Female = $result2['F2'];						//$Female = $result2['FT'];
+			$Location = $result2['Location_Area'];
+			$People = $result2['People'];
+		$No ++;
+?>
+		<tr class="font1">
+			<td colspan="10"><textarea style="width:50%;"><?php echo $TypeCES;?></textarea></td> <!-- TYPE CES -->
+		</tr>
+		<tr class="font">
+			<td><textarea style="height:80px; "><?php echo $No.". ".$Title; ?></textarea></td> <!-- Title of the Training -->
+			<td><textarea style="height:80px; text-align:left;"><?php echo $SDG; ?> </textarea></td> <!-- SDG-->
+			<td><textarea style="height:80px;"><?php echo $Dateduration."&#13;".$NoOfHours." hours"; ?></textarea></td> <!-- Date Duration-->
+			<td><textarea style="height:80px;"><?php echo $Narrative; ?> </textarea></td> <!-- Documentation-->
+			<td><textarea style="width:90px;"><?php echo $Male." - Male"."&#13;".$Female." - Female"; ?> </textarea></td> <!-- Male/Female-->
+			<td><textarea style="width:85px; "><?php echo $Beneficiaries; ?> </textarea></td> <!-- Beneficiaries-->
+			<td><textarea style="width:70px; height:80px;"><?php echo $Location; ?> </textarea></td> <!-- Location-->
+			<td><textarea style="width:110px; height:100px; text-align:left;"><?php echo $People; ?> </textarea></td> <!-- Extensionist-->
+			<td><textarea style="width:80px;"><?php echo $Cost; ?> </textarea></td> <!-- Budget-->
+			<td><textarea><?php echo $SourceFund; ?> </textarea></td> <!-- Source fund-->
+		</tr>
+<?php }}?>
+
+		<tr>
+			<td colspan="10"> <b><i> College of Engineering</i></b></td>
+		</tr>
+
+<?php
+//Display all PAPS under COE
+$sql = ("SELECT * FROM create_alangilan WHERE 
+		(Year = $Year) AND
+		(Quarter = $Q) AND
+		(Office LIKE '%$COE%' OR Office LIKE '%$COE_Full%') AND
+		(Remarks = 'Evaluated')");
+$command = $con->query($sql) or die("Error finding Offices under CIT");
+//$No = 0;
+while($result = mysqli_fetch_array($command))
+	{
+		$PID = $result['ProposalID'];
+		$TypeCES = $result['TypeCES'];
+		$Title = $result['Title'];
+		$SDG = $result['SDG'];
+
+		$SD = $result['Start_Date'];	$CDate1 = date_create("$SD"); $Date1 = date_format($CDate1,"F, d Y");
+		$ED = $result['End_Date'];		$CDate2 = date_create("$ED"); $Date2 = date_format($CDate2,"F, d Y");
+		$ST = $result['Start_Time'];
+		$ET = $result['End_Time'];
+
+		$Cost = $result['Cost'];
+		$SourceFund = $result['SourceFund'];
+
+		$time1 = date_create($ST); 		$Start_Time = date_format($time1,"h:i:s A");
+		$time2 = date_create($ET); 		$End_Time = date_format($time2,"h:i:s A");
+
+		//Getting Number of Days
+		$dateinterval = date_diff($CDate1, $CDate2);
+		$x = $dateinterval->format('%a');//Whole Number
+
+		if ($x == 0){ //Same Day = 0 = 1 day (8hrs)
+			$NoOfDays = $dateinterval->format('%a') + 1;
+		}else{ //Not same day = 2 days or more
+			$NoOfDays = $dateinterval->format('%a') +1;
+		}
+	
+		//Getting Number of Hours
+		$timeinterval = date_diff($time1, $time2);
+		$TimeResult = $timeinterval->format('%h'); //8 hrs = 1 DAY (7:00-4:00 = 9hrs - 1 = 8hrs)
+	
+		$NoOfHours = $TimeResult * $NoOfDays; //Display number of hours depends on number of days
+		
+		if ($NoOfHours <= 7 ){ $Duration = "0.5";} //Less than 8 hrs
+        else if ($NoOfHours <= 8 OR $NoOfHours <= 15){ $Duration = "1";} //1 day
+        else if ($NoOfHours <= 16 OR $NoOfHours <= 23){ $Duration = "1.25";} //2 days
+        else if ($NoOfHours <= 24 OR $NoOfHours <= 39){ $Duration = "1.50";} // 3 - 4 days
+        else if ($NoOfHours >= 40 ){ $Duration = "2";} // 5 days up
+		
+		$Dateduration = $Date1." - ".$Date2. " / ".$NoOfDays. "day(s)";
+
+		//Getting number of trainees from Evaluation Table
+		$sql2 = ("SELECT * FROM evaluation_alangilan WHERE ProposalID ='$PID'");
+		$command2 = $con->query($sql2) or die("Error finding Total number of Trainees");
+		while($result2 = mysqli_fetch_array($command2))
+		{
+			$Narrative = $result2['Narrative'];
+			$Beneficiaries = $result2['Beneficiaries'];
+			$Male = $result2['M2'];							//$Male = $result2['MT'];
+			$Female = $result2['F2'];						//$Female = $result2['FT'];
 			$Location = $result2['Location_Area'];
 			$People = $result2['People'];
 		$No ++;
@@ -544,11 +629,56 @@ while($result = mysqli_fetch_array($command))
 ?>
 
 <?php
-//Display all Pictures under CEAFA
+//Display all Pictures under CAFAD
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(Year = $Year) AND
 		(Quarter = $Q) AND
-		(Office LIKE '%$CEAFA%' OR Office LIKE '%$CEAFA_Full%') AND
+		(Office LIKE '%$CAFAD%' OR Office LIKE '%$CAFAD_Full%') AND
+		(Remarks = 'Evaluated')");
+$command = $con->query($sql) or die("Error finding Offices under CIT");
+//$No = 0;
+
+while($result = mysqli_fetch_array($command))
+	{
+		$PID = $result['ProposalID'];
+		$Title = $result['Title'];
+
+		//Getting pictures from Eval Tablr
+		$sql2 = ("SELECT * FROM evaluation_alangilan WHERE ProposalID ='$PID'");
+		$command2 = $con->query($sql2) or die("Error");
+		while($result2 = mysqli_fetch_array($command2))
+		{
+			$dbPic1 = $result2['Pic1'];
+			$dbCaption1 = $result2['Caption1'];
+			$dbPic2 = $result2['Pic2'];
+			$dbCaption2 = $result2['Caption2'];
+			$dbPic3 = $result2['Pic3'];
+			$dbCaption3 = $result2['Caption3'];
+		$No++;
+
+			echo "<tr> <td colspan='3'><b> $No. $Title </b></td></tr>";
+			echo '
+				<tr align="center">
+					<td> <img src="data:image/jpeg;base64,'.base64_encode($dbPic1).'" alt="Image 1 Unavailable" width=400 height=210> </td>
+					<td> <img src="data:image/jpeg;base64,'.base64_encode($dbPic2).'" alt="Image 2 Unavailable" width=400 height=210> </td>
+					<td> <img src="data:image/jpeg;base64,'.base64_encode($dbPic3).'" alt="Image 3 Unavailable" width=400 height=210> </td>
+				</tr>';
+			echo "
+				<tr align='center'>
+					<td><b>$dbCaption1</b></td>
+					<td><b>$dbCaption2</b></td>
+					<td><b>$dbCaption3</b></td>
+				</tr>";
+		}
+	}	
+?>
+
+<?php
+//Display all Pictures under COE
+$sql = ("SELECT * FROM create_alangilan WHERE 
+		(Year = $Year) AND
+		(Quarter = $Q) AND
+		(Office LIKE '%$COE%' OR Office LIKE '%$COE_Full%') AND
 		(Remarks = 'Evaluated')");
 $command = $con->query($sql) or die("Error finding Offices under CIT");
 //$No = 0;

@@ -31,7 +31,7 @@ $Position = $_SESSION["Position"];
 <html>
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-<title>Generate QMR - CEAFA</title>
+<title>Generate QMR - CAFAD</title>
 <link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad-STYLE.css">
 </head>
 
@@ -98,14 +98,14 @@ $TotalVS = 0;
 $TotalE = 0;
 ?>
 		<tr>
-			<td colspan="13"> <b>College of Engineering, Architecture and Fine Arts </b></td>
+			<td colspan="13"> <b>College of Architecture, Fine Arts and Design </b></td>
 		</tr>
 <?php
-//Display all PAPS under CEAFA
+//Display all PAPS under CAFAD
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(Year = $Year) AND
 		(Quarter = $Q) AND
-		(Office LIKE '%CEAFA%' OR Office LIKE '%College of Engineering, Architecture and Fine Artss%') AND
+		(Office LIKE '%CAFAD%' OR Office LIKE '%College of Architecture, Fine Arts and Design%') AND
 		(Remarks = 'Evaluated')");
 $command = $con->query($sql) or die("Error finding Offices under CIT");
 //$No = 0;
@@ -149,12 +149,12 @@ while($result = mysqli_fetch_array($command))
 		$command2 = $con->query($sql2) or die("Error finding Total number of Trainees");
 		while($result2 = mysqli_fetch_array($command2))
 		{
-			$Trainees = $result2['MFT'];
-			$Excellent = $result2['Eval1AT'];
-			$VerySatisfactory = $result2['Eval1BT'];
-			$Satisfactory = $result2['Eval1CT'];
-			$Fair = $result2['Eval1DT'];
-			$Poor = $result2['Eval1ET'];
+			$Trainees = $result2['M2'] + $result2['F2'];		//$Trainees = $result2['MFT'];
+			$Excellent = $result2['Eval1A2'];					//$Excellent = $result2['Eval1AT'];
+			$VerySatisfactory = $result2['Eval1B2'];			//$VerySatisfactory = $result2['Eval1BT'];
+			$Satisfactory = $result2['Eval1C2'];				//$Satisfactory = $result2['Eval1CT'];
+			$Fair = $result2['Eval1D2'];						//$Fair = $result2['Eval1DT'];
+			$Poor = $result2['Eval1E2'];						//$Poor = $result2['Eval1ET'];
 			
 		$Weighted = $Duration * $Trainees;
 		$No++; //For auto numbering

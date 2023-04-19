@@ -556,7 +556,7 @@ $pdf->multiCell(92.95, 5, $Sign1_2, 0,'C'); //Designation 1
 
 $XD2 = $pdf ->GetX();
 $YD2 = $pdf ->GetY();
-$pdf->SetXY($XD2+92.95,$YD2+-10);
+$pdf->SetXY($XD2+92.95,$YD2+-5);
 $pdf->multiCell(92.95, 5, $Sign2_2, 'L','C'); //Designation 2
 
 //Box 1 Date Signed

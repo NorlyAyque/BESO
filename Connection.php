@@ -30,6 +30,12 @@ $CIT_Full = strtoupper("College of Industrial Technology");
 $CEAFA = strtoupper("CEAFA");
 $CEAFA_Full = strtoupper("College of Engineering, Architecture and Fine Arts");
 
+$CAFAD = strtoupper("CAFAD");
+$CAFAD_Full = strtoupper("College of Architecture, Fine Arts and Design");
+
+$COE = strtoupper("COE");
+$COE_Full = strtoupper("College of Engineering");
+
 
 //For Proposal Pending
 $QueryProp = ("SELECT COUNT(*) as TotalProposal FROM create_alangilan WHERE ProjectStatus = 'PENDING'");

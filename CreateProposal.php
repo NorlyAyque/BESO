@@ -378,7 +378,7 @@ $DateTime = date("M, d Y; h:i:s A");
 						<textarea placeholder="..." name="SDG" ID="SDG" required></textarea>
 				
 						<label>  Vl. Office/ College/s Involved <label>
-							<h5>(CEAFA, CICS, CIT)</h5>
+							<h5>(CAFAD. COE, CICS, CIT)</h5>
 						<textarea placeholder="type here..." name="Office" required><?php echo "$College";?></textarea>
 						
 						<label>  Vll. Program/s Involved<i><h5>(specify the programs under the college implementing the project)</h5></i><label>

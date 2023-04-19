@@ -15,122 +15,154 @@ $Position = $_SESSION["Position"];
 
 <?php
 //Default Values
-	$dbCEAFA_AQ1 = $dbCEAFA_AQ2 = $dbCEAFA_AQ3 = $dbCEAFA_AQ4 = $dbCEAFA_AQT = "";
-	$dbCEAFA_BQ1 = $dbCEAFA_BQ2 = $dbCEAFA_BQ3 = $dbCEAFA_BQ4 = $dbCEAFA_BQT = "";
+	$dbCAFAD_A_Q1 =  $dbCAFAD_A_Q2 = $dbCAFAD_A_Q3 = $dbCAFAD_A_Q4 = $dbCAFAD_A_T ="";
+	$dbCAFAD_B_Q1 =  $dbCAFAD_B_Q2 = $dbCAFAD_B_Q3 = $dbCAFAD_B_Q4 = $dbCAFAD_B_T ="";
+	$dbCAFAD_C_Q1 =  $dbCAFAD_C_Q2 = $dbCAFAD_C_Q3 = $dbCAFAD_C_Q4 = $dbCAFAD_C_T ="";
+	$dbCAFAD_D_Q1 =  $dbCAFAD_D_Q2 = $dbCAFAD_D_Q3 = $dbCAFAD_D_Q4 = $dbCAFAD_D_T ="";
 
-	$dbCICS_AQ1 = $dbCICS_AQ2 = $dbCICS_AQ3 = $dbCICS_AQ4 = $dbCICS_AQT = "";
-	$dbCICS_BQ1 = $dbCICS_BQ2 = $dbCICS_BQ3 = $dbCICS_BQ4 = $dbCICS_BQT = "";
+	$dbCOE_A_Q1 = $dbCOE_A_Q2 = $dbCOE_A_Q3 = $dbCOE_A_Q4 = $dbCOE_A_T = "";
+	$dbCOE_B_Q1 = $dbCOE_B_Q2 = $dbCOE_B_Q3 = $dbCOE_B_Q4 = $dbCOE_B_T = "";
+	$dbCOE_C_Q1 = $dbCOE_C_Q2 = $dbCOE_C_Q3 = $dbCOE_C_Q4 = $dbCOE_C_T = "";
+	$dbCOE_D_Q1 = $dbCOE_D_Q2 = $dbCOE_D_Q3 = $dbCOE_D_Q4 = $dbCOE_D_T = "";
 
-	$dbCIT_AQ1 = $dbCIT_AQ2 = $dbCIT_AQ3 = $dbCIT_AQ4 = $dbCIT_AQT = "";
-	$dbCIT_BQ1 = $dbCIT_BQ2 = $dbCIT_BQ3 = $dbCIT_BQ4 = $dbCIT_BQT = "";
+	$dbCICS_A_Q1 = $dbCICS_A_Q2 = $dbCICS_A_Q3 = $dbCICS_A_Q4 = $dbCICS_A_T = "";
+	$dbCICS_B_Q1 = $dbCICS_B_Q2 = $dbCICS_B_Q3 = $dbCICS_B_Q4 = $dbCICS_B_T = "";
+	$dbCICS_C_Q1 = $dbCICS_C_Q2 = $dbCICS_C_Q3 = $dbCICS_C_Q4 = $dbCICS_C_T = "";
+	$dbCICS_D_Q1 = $dbCICS_D_Q2 = $dbCICS_D_Q3 = $dbCICS_D_Q4 = $dbCICS_D_T = "";
 
-	$dbAT_Q1 = $dbAT_Q2 = $dbAT_Q3 = $dbAT_Q4 = $dbAT_QT = "";
-	$dbBT_Q1 = $dbBT_Q2 = $dbBT_Q3 = $dbBT_Q4 = $dbBT_QT = "";
-	
-	$dbT_R1Q1 = $dbT_R1Q2 = $dbT_R1Q3 = $dbT_R1Q4 = $dbT_R1_T = "";
-	$dbT_R2Q1 = $dbT_R2Q2 = $dbT_R2Q3 = $dbT_R2Q4 = $dbT_R2_T = "";
-	$dbT_R3Q1 = $dbT_R3Q2 = $dbT_R3Q3 = $dbT_R3Q4 = $dbT_R3_T = "";
-	$dbT_R4Q1 = $dbT_R4Q2 = $dbT_R4Q3 = $dbT_R4Q4 = $dbT_R4_T = "";
+	$dbCIT_A_Q1 = $dbCIT_A_Q2 = $dbCIT_A_Q3 = $dbCIT_A_Q4 = $dbCIT_A_T = "";
+	$dbCIT_B_Q1 = $dbCIT_B_Q2 = $dbCIT_B_Q3 = $dbCIT_B_Q4 = $dbCIT_B_T = "";
+	$dbCIT_C_Q1 = $dbCIT_C_Q2 = $dbCIT_C_Q3 = $dbCIT_C_Q4 = $dbCIT_C_T = "";
+	$dbCIT_D_Q1 = $dbCIT_D_Q2 = $dbCIT_D_Q3 = $dbCIT_D_Q4 = $dbCIT_D_T = "";
 
-	$dbP_R1Q1 = $dbP_R1Q2 = $dbP_R1Q3 = $dbP_R1Q4 = $dbP_R1_T = "";
-	$dbP_R2Q1 = $dbP_R2Q2 = $dbP_R2Q3 = $dbP_R2Q4 = $dbP_R2_T = "";
-	$dbP_R3Q1 = $dbP_R3Q2 = $dbP_R3Q3 = $dbP_R3Q4 = $dbP_R3_T = "";
-	$dbPercentageTotal = $dbBudget = "";
+	$dbTOTAL_A_Q1 = $dbTOTAL_A_Q2 = $dbTOTAL_A_Q3 = $dbTOTAL_A_Q4 = $dbTOTAL_A = "";
+	$dbTOTAL_B_Q1 = $dbTOTAL_B_Q2 = $dbTOTAL_B_Q3 = $dbTOTAL_B_Q4 = $dbTOTAL_B = "";
+	$dbTOTAL_C_Q1 = $dbTOTAL_C_Q2 = $dbTOTAL_C_Q3 = $dbTOTAL_C_Q4 = $dbTOTAL_C = "";
+
+	$dbPercentage = $dbBudget = "";
 
 //Display Data of Target and Actual
-$sql = ("SELECT * FROM target_alangilan WHERE Year = '$CustomYear'");
+$sql = ("SELECT * FROM dashboard_targets WHERE Year = '$CustomYear'");
 $command = $con->query($sql) or die("Error Fethcing data");
 while($result = mysqli_fetch_array($command))
 {
-	$dbCEAFA_AQ1 = $result["CEAFA_AQ1"];
-	$dbCEAFA_AQ2 = $result["CEAFA_AQ2"];
-	$dbCEAFA_AQ3 = $result["CEAFA_AQ3"];
-	$dbCEAFA_AQ4 = $result["CEAFA_AQ4"];
-	$dbCEAFA_AQT = $result["CEAFA_AQT"];
+	//Targets (A)
+	$dbCAFAD_A_Q1 = $result["CAFAD_A_Q1"];
+	$dbCAFAD_A_Q2 = $result["CAFAD_A_Q2"];
+	$dbCAFAD_A_Q3 = $result["CAFAD_A_Q3"];
+	$dbCAFAD_A_Q4 = $result["CAFAD_A_Q4"];
+	$dbCAFAD_A_T = $result["CAFAD_A_T"];
 
-	$dbCICS_AQ1 = $result["CICS_AQ1"];
-	$dbCICS_AQ2 = $result["CICS_AQ2"];
-	$dbCICS_AQ3 = $result["CICS_AQ3"];
-	$dbCICS_AQ4 = $result["CICS_AQ4"];
-	$dbCICS_AQT = $result["CICS_AQT"];
+	$dbCOE_A_Q1 = $result["COE_A_Q1"];
+	$dbCOE_A_Q2 = $result["COE_A_Q2"];
+	$dbCOE_A_Q3 = $result["COE_A_Q3"];
+	$dbCOE_A_Q4 = $result["COE_A_Q4"];
+	$dbCOE_A_T = $result["COE_A_T"];
 
-	$dbCIT_AQ1 = $result["CIT_AQ1"];
-	$dbCIT_AQ2 = $result["CIT_AQ2"];
-	$dbCIT_AQ3 = $result["CIT_AQ3"];
-	$dbCIT_AQ4 = $result["CIT_AQ4"];
-	$dbCIT_AQT = $result["CIT_AQT"];
+	$dbCICS_A_Q1 = $result["CICS_A_Q1"];
+	$dbCICS_A_Q2 = $result["CICS_A_Q2"];
+	$dbCICS_A_Q3 = $result["CICS_A_Q3"];
+	$dbCICS_A_Q4 = $result["CICS_A_Q4"];
+	$dbCICS_A_T = $result["CICS_A_T"];
 
-	$dbCEAFA_BQ1 = $result["CEAFA_BQ1"];
-	$dbCEAFA_BQ2 = $result["CEAFA_BQ2"];
-	$dbCEAFA_BQ3 = $result["CEAFA_BQ3"];
-	$dbCEAFA_BQ4 = $result["CEAFA_BQ4"];
-	$dbCEAFA_BQT = $result["CEAFA_BQT"];
+	$dbCIT_A_Q1 = $result["CIT_A_Q1"];
+	$dbCIT_A_Q2 = $result["CIT_A_Q2"];
+	$dbCIT_A_Q3 = $result["CIT_A_Q3"];
+	$dbCIT_A_Q4 = $result["CIT_A_Q4"];
+	$dbCIT_A_T = $result["CIT_A_T"];
 
-	$dbCICS_BQ1 = $result["CICS_BQ1"];
-	$dbCICS_BQ2 = $result["CICS_BQ2"];
-	$dbCICS_BQ3 = $result["CICS_BQ3"];
-	$dbCICS_BQ4 = $result["CICS_BQ4"];
-	$dbCICS_BQT = $result["CICS_BQT"];
-
-	$dbCIT_BQ1 = $result["CIT_BQ1"];
-	$dbCIT_BQ2 = $result["CIT_BQ2"];
-	$dbCIT_BQ3 = $result["CIT_BQ3"];
-	$dbCIT_BQ4 = $result["CIT_BQ4"];
-	$dbCIT_BQT = $result["CIT_BQT"];
+	$dbTOTAL_A_Q1 = $result["TOTAL_A_Q1"];
+	$dbTOTAL_A_Q2 = $result["TOTAL_A_Q2"];
+	$dbTOTAL_A_Q3 = $result["TOTAL_A_Q3"];
+	$dbTOTAL_A_Q4 = $result["TOTAL_A_Q4"];
+	$dbTOTAL_A = $result["TOTAL_A"];
 	
-	$dbAT_Q1 = $result["AT_Q1"];
-	$dbAT_Q2 = $result["AT_Q2"];
-	$dbAT_Q3 = $result["AT_Q3"];
-	$dbAT_Q4 = $result["AT_Q4"];
-	$dbAT_QT = $result["AT_QT"];
+	//Trainees (B)
+	$dbCAFAD_B_Q1 = $result["CAFAD_B_Q1"];
+	$dbCAFAD_B_Q2 = $result["CAFAD_B_Q2"];
+	$dbCAFAD_B_Q3 = $result["CAFAD_B_Q3"];
+	$dbCAFAD_B_Q4 = $result["CAFAD_B_Q4"];
+	$dbCAFAD_B_T = $result["CAFAD_B_T"];
 
-	$dbBT_Q1 = $result["BT_Q1"];
-	$dbBT_Q2 = $result["BT_Q2"];
-	$dbBT_Q3 = $result["BT_Q3"];
-	$dbBT_Q4 = $result["BT_Q4"];
-	$dbBT_QT = $result["BT_QT"];
+	$dbCOE_B_Q1 = $result["COE_B_Q1"];
+	$dbCOE_B_Q2 = $result["COE_B_Q2"];
+	$dbCOE_B_Q3 = $result["COE_B_Q3"];
+	$dbCOE_B_Q4 = $result["COE_B_Q4"];
+	$dbCOE_B_T = $result["COE_B_T"];
 
-	$dbT_R1Q1 = $result["T_R1Q1"];
-	$dbT_R1Q2 = $result["T_R1Q2"];
-	$dbT_R1Q3 = $result["T_R1Q3"];
-	$dbT_R1Q4 = $result["T_R1Q4"];
-	$dbT_R1_T = $result["T_R1_T"];
+	$dbCICS_B_Q1 = $result["CICS_B_Q1"];
+	$dbCICS_B_Q2 = $result["CICS_B_Q2"];
+	$dbCICS_B_Q3 = $result["CICS_B_Q3"];
+	$dbCICS_B_Q4 = $result["CICS_B_Q4"];
+	$dbCICS_B_T = $result["CICS_B_T"];
 
-	$dbT_R2Q1 = $result["T_R2Q1"];
-	$dbT_R2Q2 = $result["T_R2Q2"];
-	$dbT_R2Q3 = $result["T_R2Q3"];
-	$dbT_R2Q4 = $result["T_R2Q4"];
-	$dbT_R2_T = $result["T_R2_T"];
+	$dbCIT_B_Q1 = $result["CIT_B_Q1"];
+	$dbCIT_B_Q2 = $result["CIT_B_Q2"];
+	$dbCIT_B_Q3 = $result["CIT_B_Q3"];
+	$dbCIT_B_Q4 = $result["CIT_B_Q4"];
+	$dbCIT_B_T = $result["CIT_B_T"];
 
-	$dbT_R3Q1 = $result["T_R3Q1"];
-	$dbT_R3Q2 = $result["T_R3Q2"];
-	$dbT_R3Q3 = $result["T_R3Q3"];
-	$dbT_R3Q4 = $result["T_R3Q4"];
-	$dbT_R3_T = $result["T_R3_T"];
+	$dbTOTAL_B_Q1 = $result["TOTAL_B_Q1"];
+	$dbTOTAL_B_Q2 = $result["TOTAL_B_Q2"];
+	$dbTOTAL_B_Q3 = $result["TOTAL_B_Q3"];
+	$dbTOTAL_B_Q4 = $result["TOTAL_B_Q4"];
+	$dbTOTAL_B = $result["TOTAL_B"];
 
-	$dbT_R4Q1 = $result["T_R4Q1"];
-	$dbT_R4Q2 = $result["T_R4Q2"];
-	$dbT_R4Q3 = $result["T_R4Q3"];
-	$dbT_R4Q4 = $result["T_R4Q4"];
-	$dbT_R4_T = $result["T_R4_T"];
+	//Actual (C)
+	$dbCAFAD_C_Q1 = $result["CAFAD_C_Q1"];
+	$dbCAFAD_C_Q2 = $result["CAFAD_C_Q2"];
+	$dbCAFAD_C_Q3 = $result["CAFAD_C_Q3"];
+	$dbCAFAD_C_Q4 = $result["CAFAD_C_Q4"];
+	$dbCAFAD_C_T = $result["CAFAD_C_T"];
 
-	$dbP_R1Q1 = $result["P_R1Q1"];
-	$dbP_R1Q2 = $result["P_R1Q2"];
-	$dbP_R1Q3 = $result["P_R1Q3"];
-	$dbP_R1Q4 = $result["P_R1Q4"];
-	$dbP_R1_T = $result["P_R1_T"];
+	$dbCOE_C_Q1 = $result["COE_C_Q1"];
+	$dbCOE_C_Q2 = $result["COE_C_Q2"];
+	$dbCOE_C_Q3 = $result["COE_C_Q3"];
+	$dbCOE_C_Q4 = $result["COE_C_Q4"];
+	$dbCOE_C_T = $result["COE_C_T"];
 
-	$dbP_R2Q1 = $result["P_R2Q1"];
-	$dbP_R2Q2 = $result["P_R2Q2"];
-	$dbP_R2Q3 = $result["P_R2Q3"];
-	$dbP_R2Q4 = $result["P_R2Q4"];
-	$dbP_R2_T = $result["P_R2_T"];
+	$dbCICS_C_Q1 = $result["CICS_C_Q1"];
+	$dbCICS_C_Q2 = $result["CICS_C_Q2"];
+	$dbCICS_C_Q3 = $result["CICS_C_Q3"];
+	$dbCICS_C_Q4 = $result["CICS_C_Q4"];
+	$dbCICS_C_T = $result["CICS_C_T"];
 
-	$dbP_R3Q1 = $result["P_R3Q1"];
-	$dbP_R3Q2 = $result["P_R3Q2"];
-	$dbP_R3Q3 = $result["P_R3Q3"];
-	$dbP_R3Q4 = $result["P_R3Q4"];
-	$dbP_R3_T = $result["P_R3_T"];
+	$dbCIT_C_Q1 = $result["CIT_C_Q1"];
+	$dbCIT_C_Q2 = $result["CIT_C_Q2"];
+	$dbCIT_C_Q3 = $result["CIT_C_Q3"];
+	$dbCIT_C_Q4 = $result["CIT_C_Q4"];
+	$dbCIT_C_T = $result["CIT_C_T"];
+
+	$dbTOTAL_C_Q1 = $result["TOTAL_C_Q1"];
+	$dbTOTAL_C_Q2 = $result["TOTAL_C_Q2"];
+	$dbTOTAL_C_Q3 = $result["TOTAL_C_Q3"];
+	$dbTOTAL_C_Q4 = $result["TOTAL_C_Q4"];
+	$dbTOTAL_C = $result["TOTAL_C"];
+
+	//Percentage (D)
+	$dbCAFAD_D_Q1 = $result["CAFAD_D_Q1"];
+	$dbCAFAD_D_Q2 = $result["CAFAD_D_Q2"];
+	$dbCAFAD_D_Q3 = $result["CAFAD_D_Q3"];
+	$dbCAFAD_D_Q4 = $result["CAFAD_D_Q4"];
+	$dbCAFAD_D_T = $result["CAFAD_D_T"];
+
+	$dbCOE_D_Q1 = $result["COE_D_Q1"];
+	$dbCOE_D_Q2 = $result["COE_D_Q2"];
+	$dbCOE_D_Q3 = $result["COE_D_Q3"];
+	$dbCOE_D_Q4 = $result["COE_D_Q4"];
+	$dbCOE_D_T = $result["COE_D_T"];
+
+	$dbCICS_D_Q1 = $result["CICS_D_Q1"];
+	$dbCICS_D_Q2 = $result["CICS_D_Q2"];
+	$dbCICS_D_Q3 = $result["CICS_D_Q3"];
+	$dbCICS_D_Q4 = $result["CICS_D_Q4"];
+	$dbCICS_D_T = $result["CICS_D_T"];
+
+	$dbCIT_D_Q1 = $result["CIT_D_Q1"];
+	$dbCIT_D_Q2 = $result["CIT_D_Q2"];
+	$dbCIT_D_Q3 = $result["CIT_D_Q3"];
+	$dbCIT_D_Q4 = $result["CIT_D_Q4"];
+	$dbCIT_D_T = $result["CIT_D_T"];
 
 	$dbPercentageTotal = $result["PercentageTotal"];
 	$dbBudget = $result["Budget"];
@@ -242,18 +274,30 @@ include_once ("Dashboard-Computations.php");
 	</table>
 </div>
 
+<style>
+div.graph {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+</style>
+
+
 <!-- Graph -->
+
 <div class="graph">
-	<center>
-<table>
+<center>
+	<table>
 	<tr>
-		<td id="ChartForCEAFA"><div id="ChartCEAFA" style="height: 350px; width: 310px;"></div></td>
+		<td id="ChartForCAFAD"><div id="ChartCAFAD" style="height: 350px; width: 310px;"></div></td>
+		<td id="ChartForCOE"><div id="ChartCOE" style="height: 350px; width: 310px;"></div></td>
 		<td id="ChartForCICS"><div id="ChartCICS" style="height: 350px; width: 310px;"></div></td>
 		<td id="ChartForCIT"><div id="ChartCIT" style="height: 350px; width: 310px;"></div></td>
 	</tr>
-</table>
+	</table>
 </center>
-	</div>
+</div>
+
 
 <form action="" method="POST">
 	<div class ="scroll">
@@ -273,7 +317,6 @@ include_once ("Dashboard-Computations.php");
 									Set target for year: 
 									<select name="Year" id="Year_DD" required>
 										<option value="">Select Year</option>
-										<option value="2022">2022</option>
 										<option value="2023">2023</option>
 										<option value="2024">2024</option>
 										<option value="2025">2025</option>
@@ -282,6 +325,11 @@ include_once ("Dashboard-Computations.php");
 										<option value="2028">2028</option>
 										<option value="2029">2029</option>
 										<option value="2030">2030</option>
+										<option value="2031">2031</option>
+										<option value="2032">2032</option>
+										<option value="2033">2033</option>
+										<option value="2034">2034</option>
+										<option value="2035">2035</option>
 										<option value="<?php echo "$CustomYear";?>" selected><?php echo "$CustomYear";?></option>
 									</select>	
 									<input type="submit" id="Createbtn" name="Createbtn" value="CREATE">
@@ -354,111 +402,141 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						
 					</tr>
 					<tr >
-						<th>CEAFA</th>
+						<th>CAFAD</th>
 						<td>13</td>
-						<td><input type = "number" min="0" name="CEAFA_AQ1" id="CEAFA_AQ1" value="<?php echo $dbCEAFA_AQ1;?>" onchange="CalCEAFA_A()"></td>
-						<td><input type = "number" min="0" name="CEAFA_AQ2" id="CEAFA_AQ2" value="<?php echo $dbCEAFA_AQ2;?>" onchange="CalCEAFA_A()"></td>
-						<td><input type = "number" min="0" name="CEAFA_AQ3" id="CEAFA_AQ3" value="<?php echo $dbCEAFA_AQ3;?>" onchange="CalCEAFA_A()"></td>
-						<td><input type = "number" min="0" name="CEAFA_AQ4" id="CEAFA_AQ4" value="<?php echo $dbCEAFA_AQ4;?>" onchange="CalCEAFA_A()"></td>
-						<td><input type = "number" min="0" name="CEAFA_AQT" id="CEAFA_AQT" value="<?php echo $dbCEAFA_AQT;?>" readonly> </td> 
+						<td><input type = "number" min="0" name="CAFAD_A_Q1" id="CAFAD_A_Q1" value="<?php echo $dbCAFAD_A_Q1;?>" onchange="Cal_CAFAD_A()"></td>
+						<td><input type = "number" min="0" name="CAFAD_A_Q2" id="CAFAD_A_Q2" value="<?php echo $dbCAFAD_A_Q2;?>" onchange="Cal_CAFAD_A()"></td>
+						<td><input type = "number" min="0" name="CAFAD_A_Q3" id="CAFAD_A_Q3" value="<?php echo $dbCAFAD_A_Q3;?>" onchange="Cal_CAFAD_A()"></td>
+						<td><input type = "number" min="0" name="CAFAD_A_Q4" id="CAFAD_A_Q4" value="<?php echo $dbCAFAD_A_Q4;?>" onchange="Cal_CAFAD_A()"></td>
+						<td><input type = "number" min="0" name="CAFAD_A_T" id="CAFAD_A_T" value="<?php echo $dbCAFAD_A_T;?>" readonly> </td> 
 						
-						<td><input type = "number" min="0" name="T_R1Q1" id="T_R1Q1" value="<?php echo "$dbT_R1Q1";?>" readonly></td> <!-- Trainees Row 1 Q1 -->
-						<td><input type = "number" min="0" name="T_R1Q2" id="T_R1Q2" value="<?php echo "$dbT_R1Q2";?>" readonly></td> <!-- Trainees Row 1 Q2 -->
-						<td><input type = "number" min="0" name="T_R1Q3" id="T_R1Q3" value="<?php echo "$dbT_R1Q3";?>" readonly></td> <!-- Trainees Row 1 Q3 -->
-						<td><input type = "number" min="0" name="T_R1Q4" id="T_R1Q4" value="<?php echo "$dbT_R1Q4";?>" readonly></td> <!-- Trainees Row 1 Q4 -->
-						<td><input type = "number" min="0" name="T_R1_T" id="T_R1_T" value="<?php echo "$dbT_R1_T";?>" readonly></td> <!-- Trainees Row 1 Total -->
+						<td><input type = "number" min="0" name="CAFAD_B_Q1" id="CAFAD_B_Q1" value="<?php echo "$dbCAFAD_B_Q1";?>" readonly></td> <!-- Trainees Row 1 Q1 -->
+						<td><input type = "number" min="0" name="CAFAD_B_Q2" id="CAFAD_B_Q2" value="<?php echo "$dbCAFAD_B_Q2";?>" readonly></td> <!-- Trainees Row 1 Q2 -->
+						<td><input type = "number" min="0" name="CAFAD_B_Q3" id="CAFAD_B_Q3" value="<?php echo "$dbCAFAD_B_Q3";?>" readonly></td> <!-- Trainees Row 1 Q3 -->
+						<td><input type = "number" min="0" name="CAFAD_B_Q4" id="CAFAD_B_Q4" value="<?php echo "$dbCAFAD_B_Q4";?>" readonly></td> <!-- Trainees Row 1 Q4 -->
+						<td><input type = "number" min="0" name="CAFAD_B_T" id="CAFAD_B_T" value="<?php echo "$dbCAFAD_B_T";?>" readonly></td> <!-- Trainees Row 1 Total -->
 						
-						<td><input type = "number" min="0" name="CEAFA_BQ1" id="CEAFA_BQ1" value="<?php echo $dbCEAFA_BQ1;?>" onchange="CalCEAFA_B()"></td>
-						<td><input type = "number" min="0" name="CEAFA_BQ2" id="CEAFA_BQ2" value="<?php echo $dbCEAFA_BQ2;?>" onchange="CalCEAFA_B()"></td>
-						<td><input type = "number" min="0" name="CEAFA_BQ3" id="CEAFA_BQ3" value="<?php echo $dbCEAFA_BQ3;?>" onchange="CalCEAFA_B()"></td>
-						<td><input type = "number" min="0" name="CEAFA_BQ4" id="CEAFA_BQ4" value="<?php echo $dbCEAFA_BQ4;?>" onchange="CalCEAFA_B()"></td>
-						<td><input type = "number" min="0" name="CEAFA_BQT" id="CEAFA_BQT" value="<?php echo $dbCEAFA_BQT;?>" readonly> </td> 
+						<td><input type = "number" min="0" name="CAFAD_C_Q1" id="CAFAD_C_Q1" value="<?php echo $dbCAFAD_C_Q1;?>" onchange="Cal_CAFAD_C()"></td>
+						<td><input type = "number" min="0" name="CAFAD_C_Q2" id="CAFAD_C_Q2" value="<?php echo $dbCAFAD_C_Q2;?>" onchange="Cal_CAFAD_C()"></td>
+						<td><input type = "number" min="0" name="CAFAD_C_Q3" id="CAFAD_C_Q3" value="<?php echo $dbCAFAD_C_Q3;?>" onchange="Cal_CAFAD_C()"></td>
+						<td><input type = "number" min="0" name="CAFAD_C_Q4" id="CAFAD_C_Q4" value="<?php echo $dbCAFAD_C_Q4;?>" onchange="Cal_CAFAD_C()"></td>
+						<td><input type = "number" min="0" name="CAFAD_C_T" id="CAFAD_C_T" value="<?php echo $dbCAFAD_C_T;?>" readonly> </td> 
 
-						<td><input type = "text" name="P_R1Q1" id="P_R1Q1" value="<?php echo "$dbP_R1Q1";?>%" readonly></td> <!-- Percentage Row 1 Q1 -->
-						<td><input type = "text" name="P_R1Q2" id="P_R1Q2" value="<?php echo "$dbP_R1Q2";?>%" readonly></td> <!-- Percentage Row 1 Q2 -->
-						<td><input type = "text" name="P_R1Q3" id="P_R1Q3" value="<?php echo "$dbP_R1Q3";?>%" readonly></td> <!-- Percentage Row 1 Q3 -->
-						<td><input type = "text" name="P_R1Q4" id="P_R1Q4" value="<?php echo "$dbP_R1Q4";?>%" readonly></td> <!-- Percentage Row 1 Q4 -->
-						<td><input type = "text" name="P_R1_T" id="P_R1_T" value="<?php echo "$dbP_R1_T";?>%" readonly></td> <!-- Percentage Row 1 Total -->
+						<td><input type = "text" name="CAFAD_D_Q1" id="CAFAD_D_Q1" value="<?php echo "$dbCAFAD_D_Q1";?>%" readonly></td> <!-- Percentage Row 1 Q1 -->
+						<td><input type = "text" name="CAFAD_D_Q2" id="CAFAD_D_Q2" value="<?php echo "$dbCAFAD_D_Q2";?>%" readonly></td> <!-- Percentage Row 1 Q2 -->
+						<td><input type = "text" name="CAFAD_D_Q3" id="CAFAD_D_Q3" value="<?php echo "$dbCAFAD_D_Q3";?>%" readonly></td> <!-- Percentage Row 1 Q3 -->
+						<td><input type = "text" name="CAFAD_D_Q4" id="CAFAD_D_Q4" value="<?php echo "$dbCAFAD_D_Q4";?>%" readonly></td> <!-- Percentage Row 1 Q4 -->
+						<td><input type = "text" name="CAFAD_D_T" id="CAFAD_D_T" value="<?php echo "$dbCAFAD_D_T";?>%" readonly></td> <!-- Percentage Row 1 Total -->
 						
-						<td  rowspan="3" class="input1" ><input type = "text" name = "Budget" id = "Budget" value="₱<?php echo "$dbBudget";?>" readonly></td>
+						<td  rowspan="4" class="input1" ><input type = "text" name = "Budget" id = "Budget" value="₱<?php echo "$dbBudget";?>" readonly></td>
 
 					</tr>
+
+					<tr >
+						<th>COE</th>
+						<td>13</td>
+						<td><input type = "number" min="0" name="COE_A_Q1" id="COE_A_Q1" value="<?php echo $dbCOE_A_Q1;?>" onchange="Cal_COE_A()"></td>
+						<td><input type = "number" min="0" name="COE_A_Q2" id="COE_A_Q2" value="<?php echo $dbCOE_A_Q2;?>" onchange="Cal_COE_A()"></td>
+						<td><input type = "number" min="0" name="COE_A_Q3" id="COE_A_Q3" value="<?php echo $dbCOE_A_Q3;?>" onchange="Cal_COE_A()"></td>
+						<td><input type = "number" min="0" name="COE_A_Q4" id="COE_A_Q4" value="<?php echo $dbCOE_A_Q4;?>" onchange="Cal_COE_A()"></td>
+						<td><input type = "number" min="0" name="COE_A_T" id="COE_A_T" value="<?php echo $dbCOE_A_T;?>" readonly> </td> 
+						
+						<td><input type = "number" min="0" name="COE_B_Q1" id="COE_B_Q1" value="<?php echo "$dbCOE_B_Q1";?>" readonly></td> <!-- Trainees Row 1 Q1 -->
+						<td><input type = "number" min="0" name="COE_B_Q2" id="COE_B_Q2" value="<?php echo "$dbCOE_B_Q2";?>" readonly></td> <!-- Trainees Row 1 Q2 -->
+						<td><input type = "number" min="0" name="COE_B_Q3" id="COE_B_Q3" value="<?php echo "$dbCOE_B_Q3";?>" readonly></td> <!-- Trainees Row 1 Q3 -->
+						<td><input type = "number" min="0" name="COE_B_Q4" id="COE_B_Q4" value="<?php echo "$dbCOE_B_Q4";?>" readonly></td> <!-- Trainees Row 1 Q4 -->
+						<td><input type = "number" min="0" name="COE_B_T" id="COE_B_T" value="<?php echo "$dbCOE_B_T";?>" readonly></td> <!-- Trainees Row 1 Total -->
+						
+						<td><input type = "number" min="0" name="COE_C_Q1" id="COE_C_Q1" value="<?php echo $dbCOE_C_Q1;?>" onchange="Cal_COE_C()"></td>
+						<td><input type = "number" min="0" name="COE_C_Q2" id="COE_C_Q2" value="<?php echo $dbCOE_C_Q2;?>" onchange="Cal_COE_C()"></td>
+						<td><input type = "number" min="0" name="COE_C_Q3" id="COE_C_Q3" value="<?php echo $dbCOE_C_Q3;?>" onchange="Cal_COE_C()"></td>
+						<td><input type = "number" min="0" name="COE_C_Q4" id="COE_C_Q4" value="<?php echo $dbCOE_C_Q4;?>" onchange="Cal_COE_C()"></td>
+						<td><input type = "number" min="0" name="COE_C_T" id="COE_C_T" value="<?php echo $dbCOE_C_T;?>" readonly> </td> 
+
+						<td><input type = "text" name="COE_D_Q1" id="COE_D_Q1" value="<?php echo "$dbCOE_D_Q1";?>%" readonly></td> <!-- Percentage Row 1 Q1 -->
+						<td><input type = "text" name="COE_D_Q2" id="COE_D_Q2" value="<?php echo "$dbCOE_D_Q2";?>%" readonly></td> <!-- Percentage Row 1 Q2 -->
+						<td><input type = "text" name="COE_D_Q3" id="COE_D_Q3" value="<?php echo "$dbCOE_D_Q3";?>%" readonly></td> <!-- Percentage Row 1 Q3 -->
+						<td><input type = "text" name="COE_D_Q4" id="COE_D_Q4" value="<?php echo "$dbCOE_D_Q4";?>%" readonly></td> <!-- Percentage Row 1 Q4 -->
+						<td><input type = "text" name="COE_D_T" id="COE_D_T" value="<?php echo "$dbCOE_D_T";?>%" readonly></td> <!-- Percentage Row 1 Total -->
+						
+					</tr>
+
 					<tr>
 						<th>CICS</th>
 						<td>4</td>
-						<td><input type = "number" min="0" name="CICS_AQ1" id="CICS_AQ1" value="<?php echo $dbCICS_AQ1;?>" onchange="CalCICS_A()"></td>
-						<td><input type = "number" min="0" name="CICS_AQ2" id="CICS_AQ2" value="<?php echo $dbCICS_AQ2;?>" onchange="CalCICS_A()"></td>
-						<td><input type = "number" min="0" name="CICS_AQ3" id="CICS_AQ3" value="<?php echo $dbCICS_AQ3;?>" onchange="CalCICS_A()"></td>
-						<td><input type = "number" min="0" name="CICS_AQ4" id="CICS_AQ4" value="<?php echo $dbCICS_AQ4;?>" onchange="CalCICS_A()"></td>
-						<td><input type = "number" min="0" name="CICS_AQT" id="CICS_AQT" value="<?php echo $dbCICS_AQT;?>" readonly> </td> 
+						<td><input type = "number" min="0" name="CICS_A_Q1" id="CICS_A_Q1" value="<?php echo $dbCICS_A_Q1;?>" onchange="Cal_CICS_A()"></td>
+						<td><input type = "number" min="0" name="CICS_A_Q2" id="CICS_A_Q2" value="<?php echo $dbCICS_A_Q2;?>" onchange="Cal_CICS_A()"></td>
+						<td><input type = "number" min="0" name="CICS_A_Q3" id="CICS_A_Q3" value="<?php echo $dbCICS_A_Q3;?>" onchange="Cal_CICS_A()"></td>
+						<td><input type = "number" min="0" name="CICS_A_Q4" id="CICS_A_Q4" value="<?php echo $dbCICS_A_Q4;?>" onchange="Cal_CICS_A()"></td>
+						<td><input type = "number" min="0" name="CICS_A_T" id="CICS_A_T" value="<?php echo $dbCICS_A_T;?>" readonly> </td> 
 						
-						<td><input type = "number" min="0" name="T_R2Q1" id="T_R2Q1" value="<?php echo "$dbT_R2Q1";?>" readonly></td> <!-- Trainees Row 2 Q1 -->
-						<td><input type = "number" min="0" name="T_R2Q2" id="T_R2Q2" value="<?php echo "$dbT_R2Q2";?>" readonly></td> <!-- Trainees Row 2 Q2 -->
-						<td><input type = "number" min="0" name="T_R2Q3" id="T_R2Q3" value="<?php echo "$dbT_R2Q3";?>" readonly></td> <!-- Trainees Row 2 Q3 -->
-						<td><input type = "number" min="0" name="T_R2Q4" id="T_R2Q4" value="<?php echo "$dbT_R2Q4";?>" readonly></td> <!-- Trainees Row 2 Q4 -->
-						<td><input type = "number" min="0" name="T_R2_T" id="T_R2_T" value="<?php echo "$dbT_R2_T";?>" readonly></td> <!-- Trainees Row 2 Total -->
+						<td><input type = "number" min="0" name="CICS_B_Q1" id="CICS_B_Q1" value="<?php echo "$dbCICS_B_Q1";?>" readonly></td> <!-- Trainees Row 2 Q1 -->
+						<td><input type = "number" min="0" name="CICS_B_Q2" id="CICS_B_Q2" value="<?php echo "$dbCICS_B_Q2";?>" readonly></td> <!-- Trainees Row 2 Q2 -->
+						<td><input type = "number" min="0" name="CICS_B_Q3" id="CICS_B_Q3" value="<?php echo "$dbCICS_B_Q3";?>" readonly></td> <!-- Trainees Row 2 Q3 -->
+						<td><input type = "number" min="0" name="CICS_B_Q4" id="CICS_B_Q4" value="<?php echo "$dbCICS_B_Q4";?>" readonly></td> <!-- Trainees Row 2 Q4 -->
+						<td><input type = "number" min="0" name="CICS_B_T" id="CICS_B_T" value="<?php echo "$dbCICS_B_T";?>" readonly></td> <!-- Trainees Row 2 Total -->
 						
-						<td><input type = "number" min="0" name="CICS_BQ1" id="CICS_BQ1" value="<?php echo $dbCICS_BQ1;?>" onchange="CalCICS_B()"></td>
-						<td><input type = "number" min="0" name="CICS_BQ2" id="CICS_BQ2" value="<?php echo $dbCICS_BQ2;?>" onchange="CalCICS_B()"></td>
-						<td><input type = "number" min="0" name="CICS_BQ3" id="CICS_BQ3" value="<?php echo $dbCICS_BQ3;?>" onchange="CalCICS_B()"></td>
-						<td><input type = "number" min="0" name="CICS_BQ4" id="CICS_BQ4" value="<?php echo $dbCICS_BQ4;?>" onchange="CalCICS_B()"></td>
-						<td><input type = "number" min="0" name="CICS_BQT" id="CICS_BQT" value="<?php echo $dbCICS_BQT;?>" readonly> </td> 
+						<td><input type = "number" min="0" name="CICS_C_Q1" id="CICS_C_Q1" value="<?php echo $dbCICS_C_Q1;?>" onchange="Cal_CICS_C()"></td>
+						<td><input type = "number" min="0" name="CICS_C_Q2" id="CICS_C_Q2" value="<?php echo $dbCICS_C_Q2;?>" onchange="Cal_CICS_C()"></td>
+						<td><input type = "number" min="0" name="CICS_C_Q3" id="CICS_C_Q3" value="<?php echo $dbCICS_C_Q3;?>" onchange="Cal_CICS_C()"></td>
+						<td><input type = "number" min="0" name="CICS_C_Q4" id="CICS_C_Q4" value="<?php echo $dbCICS_C_Q4;?>" onchange="Cal_CICS_C()"></td>
+						<td><input type = "number" min="0" name="CICS_C_T" id="CICS_C_T" value="<?php echo $dbCICS_C_T;?>" readonly> </td> 
 
-						<td><input type = "text" name="P_R2Q1" id="P_R2Q1" value="<?php echo "$dbP_R2Q1";?>%" readonly></td> <!-- Percentage Row 2 Q1 -->
-						<td><input type = "text" name="P_R2Q2" id="P_R2Q2" value="<?php echo "$dbP_R2Q2";?>%" readonly></td> <!-- Percentage Row 2 Q2 -->
-						<td><input type = "text" name="P_R2Q3" id="P_R2Q3" value="<?php echo "$dbP_R2Q3";?>%" readonly></td> <!-- Percentage Row 2 Q3 -->
-						<td><input type = "text" name="P_R2Q4" id="P_R2Q4" value="<?php echo "$dbP_R2Q4";?>%" readonly></td> <!-- Percentage Row 2 Q4 -->
-						<td><input type = "text" name="P_R2_T" id="P_R2_T" value="<?php echo "$dbP_R2_T";?>%" readonly></td> <!-- Percentage Row 2 Total -->
+						<td><input type = "text" name="CICS_D_Q1" id="CICS_D_Q1" value="<?php echo "$dbCICS_D_Q1";?>%" readonly></td> <!-- Percentage Row 2 Q1 -->
+						<td><input type = "text" name="CICS_D_Q2" id="CICS_D_Q2" value="<?php echo "$dbCICS_D_Q2";?>%" readonly></td> <!-- Percentage Row 2 Q2 -->
+						<td><input type = "text" name="CICS_D_Q3" id="CICS_D_Q3" value="<?php echo "$dbCICS_D_Q3";?>%" readonly></td> <!-- Percentage Row 2 Q3 -->
+						<td><input type = "text" name="CICS_D_Q4" id="CICS_D_Q4" value="<?php echo "$dbCICS_D_Q4";?>%" readonly></td> <!-- Percentage Row 2 Q4 -->
+						<td><input type = "text" name="CICS_D_T" id="CICS_D_T" value="<?php echo "$dbCICS_D_T";?>%" readonly></td> <!-- Percentage Row 2 Total -->
 						 
 					</tr>
 					<tr>
 						<th>CIT</th>
 						<td>6</td>
-						<td><input type = "number" min="0" name="CIT_AQ1" id="CIT_AQ1" value="<?php echo $dbCIT_AQ1;?>" onchange="CalCIT_A()"></td>
-						<td><input type = "number" min="0" name="CIT_AQ2" id="CIT_AQ2" value="<?php echo $dbCIT_AQ2;?>" onchange="CalCIT_A()"></td>
-						<td><input type = "number" min="0" name="CIT_AQ3" id="CIT_AQ3" value="<?php echo $dbCIT_AQ3;?>" onchange="CalCIT_A()"></td>
-						<td><input type = "number" min="0" name="CIT_AQ4" id="CIT_AQ4" value="<?php echo $dbCIT_AQ4;?>" onchange="CalCIT_A()"></td>
-						<td><input type = "number" min="0" name="CIT_AQT" id="CIT_AQT" value="<?php echo $dbCIT_AQT;?>" readonly> </td> 
+						<td><input type = "number" min="0" name="CIT_A_Q1" id="CIT_A_Q1" value="<?php echo $dbCIT_A_Q1;?>" onchange="Cal_CIT_A()"></td>
+						<td><input type = "number" min="0" name="CIT_A_Q2" id="CIT_A_Q2" value="<?php echo $dbCIT_A_Q2;?>" onchange="Cal_CIT_A()"></td>
+						<td><input type = "number" min="0" name="CIT_A_Q3" id="CIT_A_Q3" value="<?php echo $dbCIT_A_Q3;?>" onchange="Cal_CIT_A()"></td>
+						<td><input type = "number" min="0" name="CIT_A_Q4" id="CIT_A_Q4" value="<?php echo $dbCIT_A_Q4;?>" onchange="Cal_CIT_A()"></td>
+						<td><input type = "number" min="0" name="CIT_A_T" id="CIT_A_T" value="<?php echo $dbCIT_A_T;?>" readonly> </td> 
 						
-						<td><input type = "number" min="0" name="T_R3Q1" id="T_R3Q1" value="<?php echo "$dbT_R3Q1";?>" readonly></td> <!-- Trainees Row 3 Q1 -->
-						<td><input type = "number" min="0" name="T_R3Q2" id="T_R3Q2" value="<?php echo "$dbT_R3Q2";?>" readonly></td> <!-- Trainees Row 3 Q2 -->
-						<td><input type = "number" min="0" name="T_R3Q3" id="T_R3Q3" value="<?php echo "$dbT_R3Q3";?>" readonly></td> <!-- Trainees Row 3 Q3 -->
-						<td><input type = "number" min="0" name="T_R3Q4" id="T_R3Q4" value="<?php echo "$dbT_R3Q4";?>" readonly></td> <!-- Trainees Row 3 Q4 -->
-						<td><input type = "number" min="0" name="T_R3_T" id="T_R3_T" value="<?php echo "$dbT_R3_T";?>" readonly></td> <!-- Trainees Row 3 Total -->
+						<td><input type = "number" min="0" name="CIT_B_Q1" id="CIT_B_Q1" value="<?php echo "$dbCIT_B_Q1";?>" readonly></td> <!-- Trainees Row 3 Q1 -->
+						<td><input type = "number" min="0" name="CIT_B_Q2" id="CIT_B_Q2" value="<?php echo "$dbCIT_B_Q2";?>" readonly></td> <!-- Trainees Row 3 Q2 -->
+						<td><input type = "number" min="0" name="CIT_B_Q3" id="CIT_B_Q3" value="<?php echo "$dbCIT_B_Q3";?>" readonly></td> <!-- Trainees Row 3 Q3 -->
+						<td><input type = "number" min="0" name="CIT_B_Q4" id="CIT_B_Q4" value="<?php echo "$dbCIT_B_Q4";?>" readonly></td> <!-- Trainees Row 3 Q4 -->
+						<td><input type = "number" min="0" name="CIT_B_T" id="CIT_B_T" value="<?php echo "$dbCIT_B_T";?>" readonly></td> <!-- Trainees Row 3 Total -->
 
-						<td><input type = "number" min="0" name="CIT_BQ1" id="CIT_BQ1" value="<?php echo $dbCIT_BQ1;?>" onchange="CalCIT_B()"></td>
-						<td><input type = "number" min="0" name="CIT_BQ2" id="CIT_BQ2" value="<?php echo $dbCIT_BQ2;?>" onchange="CalCIT_B()"></td>
-						<td><input type = "number" min="0" name="CIT_BQ3" id="CIT_BQ3" value="<?php echo $dbCIT_BQ3;?>" onchange="CalCIT_B()"></td>
-						<td><input type = "number" min="0" name="CIT_BQ4" id="CIT_BQ4" value="<?php echo $dbCIT_BQ4;?>" onchange="CalCIT_B()"></td>
-						<td><input type = "number" min="0" name="CIT_BQT" id="CIT_BQT" value="<?php echo $dbCIT_BQT;?>" readonly> </td> 
+						<td><input type = "number" min="0" name="CIT_C_Q1" id="CIT_C_Q1" value="<?php echo $dbCIT_C_Q1;?>" onchange="Cal_CIT_C()"></td>
+						<td><input type = "number" min="0" name="CIT_C_Q2" id="CIT_C_Q2" value="<?php echo $dbCIT_C_Q2;?>" onchange="Cal_CIT_C()"></td>
+						<td><input type = "number" min="0" name="CIT_C_Q3" id="CIT_C_Q3" value="<?php echo $dbCIT_C_Q3;?>" onchange="Cal_CIT_C()"></td>
+						<td><input type = "number" min="0" name="CIT_C_Q4" id="CIT_C_Q4" value="<?php echo $dbCIT_C_Q4;?>" onchange="Cal_CIT_C()"></td>
+						<td><input type = "number" min="0" name="CIT_C_T" id="CIT_C_T" value="<?php echo $dbCIT_C_T;?>" readonly> </td> 
 
-						<td><input type = "text" name="P_R3Q1" id="P_R3Q1" value="<?php echo "$dbP_R3Q1";?>%" readonly></td> <!-- Percentage Row 3 Q1 -->
-						<td><input type = "text" name="P_R3Q2" id="P_R3Q2" value="<?php echo "$dbP_R3Q2";?>%" readonly></td> <!-- Percentage Row 3 Q2 -->
-						<td><input type = "text" name="P_R3Q3" id="P_R3Q3" value="<?php echo "$dbP_R3Q3";?>%" readonly></td> <!-- Percentage Row 3 Q3 -->
-						<td><input type = "text" name="P_R3Q4" id="P_R3Q4" value="<?php echo "$dbP_R3Q4";?>%" readonly></td> <!-- Percentage Row 3 Q4 -->
-						<td><input type = "text" name="P_R3_T" id="P_R3_T" value="<?php echo "$dbP_R3_T";?>%" readonly></td> <!-- Percentage Row 3 Total -->
+						<td><input type = "text" name="CIT_D_Q1" id="CIT_D_Q1" value="<?php echo "$dbCIT_D_Q1";?>%" readonly></td> <!-- Percentage Row 3 Q1 -->
+						<td><input type = "text" name="CIT_D_Q2" id="CIT_D_Q2" value="<?php echo "$dbCIT_D_Q2";?>%" readonly></td> <!-- Percentage Row 3 Q2 -->
+						<td><input type = "text" name="CIT_D_Q3" id="CIT_D_Q3" value="<?php echo "$dbCIT_D_Q3";?>%" readonly></td> <!-- Percentage Row 3 Q3 -->
+						<td><input type = "text" name="CIT_D_Q4" id="CIT_D_Q4" value="<?php echo "$dbCIT_D_Q4";?>%" readonly></td> <!-- Percentage Row 3 Q4 -->
+						<td><input type = "text" name="CIT_D_T" id="CIT_D_T" value="<?php echo "$dbCIT_D_T";?>%" readonly></td> <!-- Percentage Row 3 Total -->
 						
 					</tr>
 					<tr>
 						<th>Total</th> 
 						<td>23</td>
-						<td><input type = "number" min="0" name="AT_Q1" id="AT_Q1" value="<?php echo $dbAT_Q1;?>" readonly></td>
-						<td><input type = "number" min="0" name="AT_Q2" id="AT_Q2" value="<?php echo $dbAT_Q2;?>" readonly></td>
-						<td><input type = "number" min="0" name="AT_Q3" id="AT_Q3" value="<?php echo $dbAT_Q3;?>" readonly></td>
-						<td><input type = "number" min="0" name="AT_Q4" id="AT_Q4" value="<?php echo $dbAT_Q4;?>" readonly></td>
-						<td><input type = "number" min="0" name="AT_QT" id="AT_QT" value="<?php echo $dbAT_QT;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_A_Q1" id="TOTAL_A_Q1" value="<?php echo $dbTOTAL_A_Q1;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_A_Q2" id="TOTAL_A_Q2" value="<?php echo $dbTOTAL_A_Q2;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_A_Q3" id="TOTAL_A_Q3" value="<?php echo $dbTOTAL_A_Q3;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_A_Q4" id="TOTAL_A_Q4" value="<?php echo $dbTOTAL_A_Q4;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_A" id="TOTAL_A" value="<?php echo $dbTOTAL_A;?>" readonly></td>
 
-						<td><input type = "number" min="0" name="T_R4Q1" id="T_R4Q1" value="<?php echo "$dbT_R4Q1";?>" readonly></td> <!-- Trainees Row 4 Q1 -->
-						<td><input type = "number" min="0" name="T_R4Q2" id="T_R4Q2" value="<?php echo "$dbT_R4Q2";?>" readonly></td> <!-- Trainees Row 4 Q2 -->
-						<td><input type = "number" min="0" name="T_R4Q3" id="T_R4Q3" value="<?php echo "$dbT_R4Q3";?>" readonly></td> <!-- Trainees Row 4 Q3 -->
-						<td><input type = "number" min="0" name="T_R4Q4" id="T_R4Q4" value="<?php echo "$dbT_R4Q4";?>" readonly></td> <!-- Trainees Row 4 Q4 -->
-						<td><input type = "number" min="0" name="T_R4_T" id="T_R4_T" value="<?php echo "$dbT_R4_T";?>" readonly></td> <!-- Trainees Row 4 Total -->
+						<td><input type = "number" min="0" name="TOTAL_B_Q1" id="TOTAL_B_Q1" value="<?php echo "$dbTOTAL_B_Q1";?>" readonly></td> <!-- Trainees Row 4 Q1 -->
+						<td><input type = "number" min="0" name="TOTAL_B_Q2" id="TOTAL_B_Q2" value="<?php echo "$dbTOTAL_B_Q2";?>" readonly></td> <!-- Trainees Row 4 Q2 -->
+						<td><input type = "number" min="0" name="TOTAL_B_Q3" id="TOTAL_B_Q3" value="<?php echo "$dbTOTAL_B_Q3";?>" readonly></td> <!-- Trainees Row 4 Q3 -->
+						<td><input type = "number" min="0" name="TOTAL_B_Q4" id="TOTAL_B_Q4" value="<?php echo "$dbTOTAL_B_Q4";?>" readonly></td> <!-- Trainees Row 4 Q4 -->
+						<td><input type = "number" min="0" name="TOTAL_B" id="TOTAL_B" value="<?php echo "$dbTOTAL_B";?>" readonly></td> <!-- Trainees Row 4 Total -->
 						
-						<td><input type = "number" min="0" name="BT_Q1" id="BT_Q1" value="<?php echo $dbBT_Q1;?>" readonly></td>
-						<td><input type = "number" min="0" name="BT_Q2" id="BT_Q2" value="<?php echo $dbBT_Q2;?>" readonly></td>
-						<td><input type = "number" min="0" name="BT_Q3" id="BT_Q3" value="<?php echo $dbBT_Q3;?>" readonly></td>
-						<td><input type = "number" min="0" name="BT_Q4" id="BT_Q4" value="<?php echo $dbBT_Q4;?>" readonly></td>
-						<td><input type = "number" min="0" name="BT_QT" id="BT_QT" value="<?php echo $dbBT_QT;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_C_Q1" id="TOTAL_C_Q1" value="<?php echo $dbTOTAL_C_Q1;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_C_Q2" id="TOTAL_C_Q2" value="<?php echo $dbTOTAL_C_Q2;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_C_Q3" id="TOTAL_C_Q3" value="<?php echo $dbTOTAL_C_Q3;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_C_Q4" id="TOTAL_C_Q4" value="<?php echo $dbTOTAL_C_Q4;?>" readonly></td>
+						<td><input type = "number" min="0" name="TOTAL_C" id="TOTAL_C" value="<?php echo $dbTOTAL_C;?>" readonly></td>
 
 						<td colspan="5" class="input2"><input type = "text" id="PercentageTotal" name="PercentageTotal" value="<?php echo "$dbPercentageTotal";?>%" readonly></td> <!-- Percentage Row 4 Total -->
 
@@ -505,57 +583,72 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 Disable_Inputs();
 //Auto Readonly
 function Disable_Inputs(){
-	document.getElementById("CEAFA_AQ1").readOnly = true;	document.getElementById("CEAFA_BQ1").readOnly = true;
-	document.getElementById("CEAFA_AQ2").readOnly = true;	document.getElementById("CEAFA_BQ2").readOnly = true;
-	document.getElementById("CEAFA_AQ3").readOnly = true;	document.getElementById("CEAFA_BQ3").readOnly = true;
-	document.getElementById("CEAFA_AQ4").readOnly = true;	document.getElementById("CEAFA_BQ4").readOnly = true;
+	document.getElementById("CAFAD_A_Q1").readOnly = true;	document.getElementById("CAFAD_C_Q1").readOnly = true;
+	document.getElementById("CAFAD_A_Q2").readOnly = true;	document.getElementById("CAFAD_C_Q2").readOnly = true;
+	document.getElementById("CAFAD_A_Q3").readOnly = true;	document.getElementById("CAFAD_C_Q3").readOnly = true;
+	document.getElementById("CAFAD_A_Q4").readOnly = true;	document.getElementById("CAFAD_C_Q4").readOnly = true;
 
-	document.getElementById("CICS_AQ1").readOnly = true;	document.getElementById("CICS_BQ1").readOnly = true;
-	document.getElementById("CICS_AQ2").readOnly = true;	document.getElementById("CICS_BQ2").readOnly = true;
-	document.getElementById("CICS_AQ3").readOnly = true;	document.getElementById("CICS_BQ3").readOnly = true;
-	document.getElementById("CICS_AQ4").readOnly = true;	document.getElementById("CICS_BQ4").readOnly = true;
+	document.getElementById("COE_A_Q1").readOnly = true;	document.getElementById("COE_C_Q1").readOnly = true;
+	document.getElementById("COE_A_Q2").readOnly = true;	document.getElementById("COE_C_Q2").readOnly = true;
+	document.getElementById("COE_A_Q3").readOnly = true;	document.getElementById("COE_C_Q3").readOnly = true;
+	document.getElementById("COE_A_Q4").readOnly = true;	document.getElementById("COE_C_Q4").readOnly = true;
 
-	document.getElementById("CIT_AQ1").readOnly = true;		document.getElementById("CIT_BQ1").readOnly = true;
-	document.getElementById("CIT_AQ2").readOnly = true;		document.getElementById("CIT_BQ2").readOnly = true;
-	document.getElementById("CIT_AQ3").readOnly = true;		document.getElementById("CIT_BQ3").readOnly = true;
-	document.getElementById("CIT_AQ4").readOnly = true;		document.getElementById("CIT_BQ4").readOnly = true;
+	document.getElementById("CICS_A_Q1").readOnly = true;	document.getElementById("CICS_C_Q1").readOnly = true;
+	document.getElementById("CICS_A_Q2").readOnly = true;	document.getElementById("CICS_C_Q2").readOnly = true;
+	document.getElementById("CICS_A_Q3").readOnly = true;	document.getElementById("CICS_C_Q3").readOnly = true;
+	document.getElementById("CICS_A_Q4").readOnly = true;	document.getElementById("CICS_C_Q4").readOnly = true;
+
+	document.getElementById("CIT_A_Q1").readOnly = true;	document.getElementById("CIT_C_Q1").readOnly = true;
+	document.getElementById("CIT_A_Q2").readOnly = true;	document.getElementById("CIT_C_Q2").readOnly = true;
+	document.getElementById("CIT_A_Q3").readOnly = true;	document.getElementById("CIT_C_Q3").readOnly = true;
+	document.getElementById("CIT_A_Q4").readOnly = true;	document.getElementById("CIT_C_Q4").readOnly = true;
 }
 
 function Enable_Inputs_Edit(){
-	document.getElementById("CEAFA_AQ1").readOnly = false;	document.getElementById("CEAFA_BQ1").readOnly = false;
-	document.getElementById("CEAFA_AQ2").readOnly = false;	document.getElementById("CEAFA_BQ2").readOnly = false;
-	document.getElementById("CEAFA_AQ3").readOnly = false;	document.getElementById("CEAFA_BQ3").readOnly = false;
-	document.getElementById("CEAFA_AQ4").readOnly = false;	document.getElementById("CEAFA_BQ4").readOnly = false;
+	document.getElementById("CAFAD_A_Q1").readOnly = false;	document.getElementById("CAFAD_C_Q1").readOnly = false;
+	document.getElementById("CAFAD_A_Q2").readOnly = false;	document.getElementById("CAFAD_C_Q2").readOnly = false;
+	document.getElementById("CAFAD_A_Q3").readOnly = false;	document.getElementById("CAFAD_C_Q3").readOnly = false;
+	document.getElementById("CAFAD_A_Q4").readOnly = false;	document.getElementById("CAFAD_C_Q4").readOnly = false;
 
-	document.getElementById("CICS_AQ1").readOnly = false;	document.getElementById("CICS_BQ1").readOnly = false;
-	document.getElementById("CICS_AQ2").readOnly = false;	document.getElementById("CICS_BQ2").readOnly = false;
-	document.getElementById("CICS_AQ3").readOnly = false;	document.getElementById("CICS_BQ3").readOnly = false;
-	document.getElementById("CICS_AQ4").readOnly = false;	document.getElementById("CICS_BQ4").readOnly = false;
+	document.getElementById("COE_A_Q1").readOnly = false;	document.getElementById("COE_C_Q1").readOnly = false;
+	document.getElementById("COE_A_Q2").readOnly = false;	document.getElementById("COE_C_Q2").readOnly = false;
+	document.getElementById("COE_A_Q3").readOnly = false;	document.getElementById("COE_C_Q3").readOnly = false;
+	document.getElementById("COE_A_Q4").readOnly = false;	document.getElementById("COE_C_Q4").readOnly = false;
 
-	document.getElementById("CIT_AQ1").readOnly = false;	document.getElementById("CIT_BQ1").readOnly = false;
-	document.getElementById("CIT_AQ2").readOnly = false;	document.getElementById("CIT_BQ2").readOnly = false;
-	document.getElementById("CIT_AQ3").readOnly = false;	document.getElementById("CIT_BQ3").readOnly = false;
-	document.getElementById("CIT_AQ4").readOnly = false;	document.getElementById("CIT_BQ4").readOnly = false;
+	document.getElementById("CICS_A_Q1").readOnly = false;	document.getElementById("CICS_C_Q1").readOnly = false;
+	document.getElementById("CICS_A_Q2").readOnly = false;	document.getElementById("CICS_C_Q2").readOnly = false;
+	document.getElementById("CICS_A_Q3").readOnly = false;	document.getElementById("CICS_C_Q3").readOnly = false;
+	document.getElementById("CICS_A_Q4").readOnly = false;	document.getElementById("CICS_C_Q4").readOnly = false;
+
+	document.getElementById("CIT_A_Q1").readOnly = false;	document.getElementById("CIT_C_Q1").readOnly = false;
+	document.getElementById("CIT_A_Q2").readOnly = false;	document.getElementById("CIT_C_Q2").readOnly = false;
+	document.getElementById("CIT_A_Q3").readOnly = false;	document.getElementById("CIT_C_Q3").readOnly = false;
+	document.getElementById("CIT_A_Q4").readOnly = false;	document.getElementById("CIT_C_Q4").readOnly = false;
 	
 	Color_Target();
 	Color_Actual();
 }
 
 function Enable_Inputs_Create(){
-	document.getElementById("CEAFA_AQ1").readOnly = false;
-	document.getElementById("CEAFA_AQ2").readOnly = false;
-	document.getElementById("CEAFA_AQ3").readOnly = false;
-	document.getElementById("CEAFA_AQ4").readOnly = false;
+	document.getElementById("CAFAD_A_Q1").readOnly = false;
+	document.getElementById("CAFAD_A_Q2").readOnly = false;
+	document.getElementById("CAFAD_A_Q3").readOnly = false;
+	document.getElementById("CAFAD_A_Q4").readOnly = false;
 
-	document.getElementById("CICS_AQ1").readOnly = false;
-	document.getElementById("CICS_AQ2").readOnly = false;
-	document.getElementById("CICS_AQ3").readOnly = false;
-	document.getElementById("CICS_AQ4").readOnly = false;
+	document.getElementById("COE_A_Q1").readOnly = false;
+	document.getElementById("COE_A_Q2").readOnly = false;
+	document.getElementById("COE_A_Q3").readOnly = false;
+	document.getElementById("COE_A_Q4").readOnly = false;	
 
-	document.getElementById("CIT_AQ1").readOnly = false;
-	document.getElementById("CIT_AQ2").readOnly = false;
-	document.getElementById("CIT_AQ3").readOnly = false;
-	document.getElementById("CIT_AQ4").readOnly = false;
+	document.getElementById("CICS_A_Q1").readOnly = false;
+	document.getElementById("CICS_A_Q2").readOnly = false;
+	document.getElementById("CICS_A_Q3").readOnly = false;
+	document.getElementById("CICS_A_Q4").readOnly = false;
+
+	document.getElementById("CIT_A_Q1").readOnly = false;
+	document.getElementById("CIT_A_Q2").readOnly = false;
+	document.getElementById("CIT_A_Q3").readOnly = false;
+	document.getElementById("CIT_A_Q4").readOnly = false;
 
 	Color_Target();
 }
@@ -563,217 +656,83 @@ function Enable_Inputs_Create(){
 function Color_Target(){
 	//Color
 	let Color = "#ff8c66";
-	document.getElementById("CEAFA_AQ1").style.backgroundColor = Color;
-	document.getElementById("CEAFA_AQ2").style.backgroundColor = Color;
-	document.getElementById("CEAFA_AQ3").style.backgroundColor = Color;
-	document.getElementById("CEAFA_AQ4").style.backgroundColor = Color;
+	document.getElementById("CAFAD_A_Q1").style.backgroundColor = Color;
+	document.getElementById("CAFAD_A_Q2").style.backgroundColor = Color;
+	document.getElementById("CAFAD_A_Q3").style.backgroundColor = Color;
+	document.getElementById("CAFAD_A_Q4").style.backgroundColor = Color;
 
-	document.getElementById("CICS_AQ1").style.backgroundColor = Color;
-	document.getElementById("CICS_AQ2").style.backgroundColor = Color;
-	document.getElementById("CICS_AQ3").style.backgroundColor = Color;
-	document.getElementById("CICS_AQ4").style.backgroundColor = Color;
+	document.getElementById("COE_A_Q1").style.backgroundColor = Color;
+	document.getElementById("COE_A_Q2").style.backgroundColor = Color;
+	document.getElementById("COE_A_Q3").style.backgroundColor = Color;
+	document.getElementById("COE_A_Q4").style.backgroundColor = Color;
 
-	document.getElementById("CIT_AQ1").style.backgroundColor = Color;
-	document.getElementById("CIT_AQ2").style.backgroundColor = Color;
-	document.getElementById("CIT_AQ3").style.backgroundColor = Color;
-	document.getElementById("CIT_AQ4").style.backgroundColor = Color;
+	document.getElementById("CICS_A_Q1").style.backgroundColor = Color;
+	document.getElementById("CICS_A_Q2").style.backgroundColor = Color;
+	document.getElementById("CICS_A_Q3").style.backgroundColor = Color;
+	document.getElementById("CICS_A_Q4").style.backgroundColor = Color;
+
+	document.getElementById("CIT_A_Q1").style.backgroundColor = Color;
+	document.getElementById("CIT_A_Q2").style.backgroundColor = Color;
+	document.getElementById("CIT_A_Q3").style.backgroundColor = Color;
+	document.getElementById("CIT_A_Q4").style.backgroundColor = Color;
 }
 
 function Color_Actual(){
 	//Color
 	let Color = "#ff8c66";
-	document.getElementById("CEAFA_BQ1").style.backgroundColor = Color;
-	document.getElementById("CEAFA_BQ2").style.backgroundColor = Color;
-	document.getElementById("CEAFA_BQ3").style.backgroundColor = Color;
-	document.getElementById("CEAFA_BQ4").style.backgroundColor = Color;
+	document.getElementById("CAFAD_C_Q1").style.backgroundColor = Color;
+	document.getElementById("CAFAD_C_Q2").style.backgroundColor = Color;
+	document.getElementById("CAFAD_C_Q3").style.backgroundColor = Color;
+	document.getElementById("CAFAD_C_Q4").style.backgroundColor = Color;
 
-	document.getElementById("CICS_BQ1").style.backgroundColor = Color;
-	document.getElementById("CICS_BQ2").style.backgroundColor = Color;
-	document.getElementById("CICS_BQ3").style.backgroundColor = Color;
-	document.getElementById("CICS_BQ4").style.backgroundColor = Color;
+	document.getElementById("COE_C_Q1").style.backgroundColor = Color;
+	document.getElementById("COE_C_Q2").style.backgroundColor = Color;
+	document.getElementById("COE_C_Q3").style.backgroundColor = Color;
+	document.getElementById("COE_C_Q4").style.backgroundColor = Color;
 
-	document.getElementById("CIT_BQ1").style.backgroundColor = Color;
-	document.getElementById("CIT_BQ2").style.backgroundColor = Color;
-	document.getElementById("CIT_BQ3").style.backgroundColor = Color;
-	document.getElementById("CIT_BQ4").style.backgroundColor = Color;
+	document.getElementById("CICS_C_Q1").style.backgroundColor = Color;
+	document.getElementById("CICS_C_Q2").style.backgroundColor = Color;
+	document.getElementById("CICS_C_Q3").style.backgroundColor = Color;
+	document.getElementById("CICS_C_Q4").style.backgroundColor = Color;
+
+	document.getElementById("CIT_C_Q1").style.backgroundColor = Color;
+	document.getElementById("CIT_C_Q2").style.backgroundColor = Color;
+	document.getElementById("CIT_C_Q3").style.backgroundColor = Color;
+	document.getElementById("CIT_C_Q4").style.backgroundColor = Color;
 }
 
 function Clear_Inputs(){
-	document.getElementById("CEAFA_AQ1").value = "0";
-	document.getElementById("CEAFA_AQ2").value = "0";
-	document.getElementById("CEAFA_AQ3").value = "0";
-	document.getElementById("CEAFA_AQ4").value = "0";
-	document.getElementById("CEAFA_AQT").value = "0";
+	document.getElementById("CAFAD_A_Q1").value = "0";
+	document.getElementById("CAFAD_A_Q2").value = "0";
+	document.getElementById("CAFAD_A_Q3").value = "0";
+	document.getElementById("CAFAD_A_Q4").value = "0";
+	document.getElementById("CAFAD_A_T").value = "0";
 
-	document.getElementById("CICS_AQ1").value = "0";
-	document.getElementById("CICS_AQ2").value = "0";
-	document.getElementById("CICS_AQ3").value = "0";
-	document.getElementById("CICS_AQ4").value = "0";
-	document.getElementById("CICS_AQT").value = "0";
+	document.getElementById("COE_A_Q1").value = "0";
+	document.getElementById("COE_A_Q2").value = "0";
+	document.getElementById("COE_A_Q3").value = "0";
+	document.getElementById("COE_A_Q4").value = "0";
+	document.getElementById("COE_A_T").value = "0";
 
-	document.getElementById("CIT_AQ1").value = "0";
-	document.getElementById("CIT_AQ2").value = "0";
-	document.getElementById("CIT_AQ3").value = "0";
-	document.getElementById("CIT_AQ4").value = "0";
-	document.getElementById("CIT_AQT").value = "0";
+	document.getElementById("CICS_A_Q1").value = "0";
+	document.getElementById("CICS_A_Q2").value = "0";
+	document.getElementById("CICS_A_Q3").value = "0";
+	document.getElementById("CICS_A_Q4").value = "0";
+	document.getElementById("CICS_A_T").value = "0";
 
-	document.getElementById("AT_Q1").value = "0";
-	document.getElementById("AT_Q2").value = "0";
-	document.getElementById("AT_Q3").value = "0";
-	document.getElementById("AT_Q4").value = "0";
-	document.getElementById("AT_QT").value = "0";
-}
-</script>
+	document.getElementById("CIT_A_Q1").value = "0";
+	document.getElementById("CIT_A_Q2").value = "0";
+	document.getElementById("CIT_A_Q3").value = "0";
+	document.getElementById("CIT_A_Q4").value = "0";
+	document.getElementById("CIT_A_T").value = "0";
 
-<script>
-//Auto Compute for TARGET (A)
-function CalCEAFA_A(){ //Auto Compute for CEAFA
-	let A = document.getElementById('CEAFA_AQ1').value;
-	let B = document.getElementById('CEAFA_AQ2').value;
-	let C = document.getElementById('CEAFA_AQ3').value;
-	let D = document.getElementById('CEAFA_AQ4').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
-	document.getElementById("CEAFA_AQT").value = ans;
-	CalTotal_AQ1(); CalTotal_AQ2(); CalTotal_AQ3(); CalTotal_AQ4();
-	CalTotal_AQ();
-}
-function CalCICS_A(){ //Auto Compute for CICS
-	let A = document.getElementById('CICS_AQ1').value;
-	let B = document.getElementById('CICS_AQ2').value;
-	let C = document.getElementById('CICS_AQ3').value;
-	let D = document.getElementById('CICS_AQ4').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
-	document.getElementById("CICS_AQT").value = ans;
-	CalTotal_AQ1(); CalTotal_AQ2(); CalTotal_AQ3(); CalTotal_AQ4();
-	CalTotal_AQ();
-}
-function CalCIT_A(){ //Auto Compute for CIT
-	let A = document.getElementById('CIT_AQ1').value;
-	let B = document.getElementById('CIT_AQ2').value;
-	let C = document.getElementById('CIT_AQ3').value;
-	let D = document.getElementById('CIT_AQ4').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
-	document.getElementById("CIT_AQT").value = ans;
-	CalTotal_AQ1(); CalTotal_AQ2(); CalTotal_AQ3(); CalTotal_AQ4();
-	CalTotal_AQ();
+	document.getElementById("TOTAL_A_Q1").value = "0";
+	document.getElementById("TOTAL_A_Q2").value = "0";
+	document.getElementById("TOTAL_A_Q3").value = "0";
+	document.getElementById("TOTAL_A_Q4").value = "0";
+	document.getElementById("TOTAL_A").value = "0";
 }
 
-function CalTotal_AQ1(){ //Auto Compute for A_Quarter1
-	let A = document.getElementById('CEAFA_AQ1').value;
-	let B = document.getElementById('CICS_AQ1').value;
-	let C = document.getElementById('CIT_AQ1').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("AT_Q1").value = ans;
-}
-
-function CalTotal_AQ2(){ //Auto Compute for A_Quarter2
-	let A = document.getElementById('CEAFA_AQ2').value;
-	let B = document.getElementById('CICS_AQ2').value;
-	let C = document.getElementById('CIT_AQ2').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("AT_Q2").value = ans;
-}
-
-function CalTotal_AQ3(){ //Auto Compute for A_Quarter3
-	let A = document.getElementById('CEAFA_AQ3').value;
-	let B = document.getElementById('CICS_AQ3').value;
-	let C = document.getElementById('CIT_AQ3').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("AT_Q3").value = ans;
-}
-
-function CalTotal_AQ4(){ //Auto Compute for A_Quarter4
-	let A = document.getElementById('CEAFA_AQ4').value;
-	let B = document.getElementById('CICS_AQ4').value;
-	let C = document.getElementById('CIT_AQ4').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("AT_Q4").value = ans;
-}
-
-function CalTotal_AQ(){ //Auto Compute for A_Quarter4
-	let A = document.getElementById('CEAFA_AQT').value;
-	let B = document.getElementById('CICS_AQT').value;
-	let C = document.getElementById('CIT_AQT').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("AT_QT").value = ans;
-}
-//End for Auto Compute for TARGET (A)
-
-//Auto Compute for ACTUAL (B)
-function CalCEAFA_B(){ //Auto Compute for CEAFA
-	let A = document.getElementById('CEAFA_BQ1').value;
-	let B = document.getElementById('CEAFA_BQ2').value;
-	let C = document.getElementById('CEAFA_BQ3').value;
-	let D = document.getElementById('CEAFA_BQ4').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
-	document.getElementById("CEAFA_BQT").value = ans;
-	CalTotal_BQ1(); CalTotal_BQ2(); CalTotal_BQ3(); CalTotal_BQ4();
-	CalTotal_BQ();
-}
-function CalCICS_B(){ //Auto Compute for CICS
-	let A = document.getElementById('CICS_BQ1').value;
-	let B = document.getElementById('CICS_BQ2').value;
-	let C = document.getElementById('CICS_BQ3').value;
-	let D = document.getElementById('CICS_BQ4').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
-	document.getElementById("CICS_BQT").value = ans;
-	CalTotal_BQ1(); CalTotal_BQ2(); CalTotal_BQ3(); CalTotal_BQ4();
-	CalTotal_BQ();
-}
-function CalCIT_B(){ //Auto Compute for CIT
-	let A = document.getElementById('CIT_BQ1').value;
-	let B = document.getElementById('CIT_BQ2').value;
-	let C = document.getElementById('CIT_BQ3').value;
-	let D = document.getElementById('CIT_BQ4').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
-	document.getElementById("CIT_BQT").value = ans;
-	CalTotal_BQ1(); CalTotal_BQ2(); CalTotal_BQ3(); CalTotal_BQ4();
-	CalTotal_BQ();
-}
-
-function CalTotal_BQ1(){ //Auto Compute for A_Quarter1
-	let A = document.getElementById('CEAFA_BQ1').value;
-	let B = document.getElementById('CICS_BQ1').value;
-	let C = document.getElementById('CIT_BQ1').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("BT_Q1").value = ans;
-}
-
-function CalTotal_BQ2(){ //Auto Compute for A_Quarter2
-	let A = document.getElementById('CEAFA_BQ2').value;
-	let B = document.getElementById('CICS_BQ2').value;
-	let C = document.getElementById('CIT_BQ2').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("BT_Q2").value = ans;
-}
-
-function CalTotal_BQ3(){ //Auto Compute for A_Quarter3
-	let A = document.getElementById('CEAFA_BQ3').value;
-	let B = document.getElementById('CICS_BQ3').value;
-	let C = document.getElementById('CIT_BQ3').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("BT_Q3").value = ans;
-}
-
-function CalTotal_BQ4(){ //Auto Compute for A_Quarter4
-	let A = document.getElementById('CEAFA_BQ4').value;
-	let B = document.getElementById('CICS_BQ4').value;
-	let C = document.getElementById('CIT_BQ4').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("BT_Q4").value = ans;
-}
-
-function CalTotal_BQ(){ //Auto Compute for A_Quarter4
-	let A = document.getElementById('CEAFA_BQT').value;
-	let B = document.getElementById('CICS_BQT').value;
-	let C = document.getElementById('CIT_BQT').value;
-	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C));
-	document.getElementById("BT_QT").value = ans;
-}
-//End for Auto Compute for ACTUAL (B)
-</script>
-
-<script>
 //for Buttons
 function Enable_Dropdown(){ //For Create Target
 	Enable_Inputs_Create(); //Call function to enable the input text
@@ -793,9 +752,185 @@ function Enable_SaveBtn(){//For Edit Target
 function Cancel(){
 	window.location='Dashboard.php';
 }
-
 </script>
 
+<script>
+//Auto Compute for TARGET (A)
+function Cal_CAFAD_A(){ //Auto Compute for CAFAD
+	let A = document.getElementById('CAFAD_A_Q1').value;
+	let B = document.getElementById('CAFAD_A_Q2').value;
+	let C = document.getElementById('CAFAD_A_Q3').value;
+	let D = document.getElementById('CAFAD_A_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("CAFAD_A_T").value = ans;
+	CalTotal_A_Q1(); CalTotal_A_Q2(); CalTotal_A_Q3(); CalTotal_A_Q4();
+	CalTotal_A();
+}
+function Cal_COE_A(){ //Auto Compute for COE
+	let A = document.getElementById('COE_A_Q1').value;
+	let B = document.getElementById('COE_A_Q2').value;
+	let C = document.getElementById('COE_A_Q3').value;
+	let D = document.getElementById('COE_A_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("COE_A_T").value = ans;
+	CalTotal_A_Q1(); CalTotal_A_Q2(); CalTotal_A_Q3(); CalTotal_A_Q4();
+	CalTotal_A();
+}
+function Cal_CICS_A(){ //Auto Compute for CICS
+	let A = document.getElementById('CICS_A_Q1').value;
+	let B = document.getElementById('CICS_A_Q2').value;
+	let C = document.getElementById('CICS_A_Q3').value;
+	let D = document.getElementById('CICS_A_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("CICS_A_T").value = ans;
+	CalTotal_A_Q1(); CalTotal_A_Q2(); CalTotal_A_Q3(); CalTotal_A_Q4();
+	CalTotal_A();
+}
+function Cal_CIT_A(){ //Auto Compute for CIT
+	let A = document.getElementById('CIT_A_Q1').value;
+	let B = document.getElementById('CIT_A_Q2').value;
+	let C = document.getElementById('CIT_A_Q3').value;
+	let D = document.getElementById('CIT_A_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("CIT_A_T").value = ans;
+	CalTotal_A_Q1(); CalTotal_A_Q2(); CalTotal_A_Q3(); CalTotal_A_Q4();
+	CalTotal_A();
+}
+
+function CalTotal_A_Q1(){ //Auto Compute for A_Quarter1
+	let A = document.getElementById('CAFAD_A_Q1').value;
+	let B = document.getElementById('COE_A_Q1').value;
+	let C = document.getElementById('CICS_A_Q1').value;
+	let D = document.getElementById('CIT_A_Q1').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_A_Q1").value = ans;
+}
+
+function CalTotal_A_Q2(){ //Auto Compute for A_Quarter2
+	let A = document.getElementById('CAFAD_A_Q2').value;
+	let B = document.getElementById('COE_A_Q2').value;
+	let C = document.getElementById('CICS_A_Q2').value;
+	let D = document.getElementById('CIT_A_Q2').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_A_Q2").value = ans;
+}
+
+function CalTotal_A_Q3(){ //Auto Compute for A_Quarter3
+	let A = document.getElementById('CAFAD_A_Q3').value;
+	let B = document.getElementById('COE_A_Q3').value;
+	let C = document.getElementById('CICS_A_Q3').value;
+	let D = document.getElementById('CIT_A_Q3').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_A_Q3").value = ans;
+}
+
+function CalTotal_A_Q4(){ //Auto Compute for A_Quarter4
+	let A = document.getElementById('CAFAD_A_Q4').value;
+	let B = document.getElementById('COE_A_Q4').value;
+	let C = document.getElementById('CICS_A_Q4').value;
+	let D = document.getElementById('CIT_A_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_A_Q4").value = ans;
+}
+
+function CalTotal_A(){ //Auto Compute for A_Quarter4
+	let A = document.getElementById('TOTAL_A_Q1').value;
+	let B = document.getElementById('TOTAL_A_Q2').value;
+	let C = document.getElementById('TOTAL_A_Q3').value;
+	let D = document.getElementById('TOTAL_A_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_A").value = ans;
+}
+//End for Auto Compute for TARGET (A)
+
+//Auto Compute for ACTUAL (C)
+function Cal_CAFAD_C(){ //Auto Compute for CAFAD
+	let A = document.getElementById('CAFAD_C_Q1').value;
+	let B = document.getElementById('CAFAD_C_Q2').value;
+	let C = document.getElementById('CAFAD_C_Q3').value;
+	let D = document.getElementById('CAFAD_C_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("CAFAD_C_T").value = ans;
+	CalTotal_C_Q1(); CalTotal_C_Q2(); CalTotal_C_Q3(); CalTotal_C_Q4();
+	CalTotal_C();
+}
+function Cal_COE_C(){ //Auto Compute for COE
+	let A = document.getElementById('COE_C_Q1').value;
+	let B = document.getElementById('COE_C_Q2').value;
+	let C = document.getElementById('COE_C_Q3').value;
+	let D = document.getElementById('COE_C_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("COE_C_T").value = ans;
+	CalTotal_C_Q1(); CalTotal_C_Q2(); CalTotal_C_Q3(); CalTotal_C_Q4();
+	CalTotal_C();
+}
+function Cal_CICS_C(){ //Auto Compute for CICS
+	let A = document.getElementById('CICS_C_Q1').value;
+	let B = document.getElementById('CICS_C_Q2').value;
+	let C = document.getElementById('CICS_C_Q3').value;
+	let D = document.getElementById('CICS_C_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("CICS_C_T").value = ans;
+	CalTotal_C_Q1(); CalTotal_C_Q2(); CalTotal_C_Q3(); CalTotal_C_Q4();
+	CalTotal_C();
+}
+function Cal_CIT_C(){ //Auto Compute for CIT
+	let A = document.getElementById('CIT_C_Q1').value;
+	let B = document.getElementById('CIT_C_Q2').value;
+	let C = document.getElementById('CIT_C_Q3').value;
+	let D = document.getElementById('CIT_C_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("CIT_C_T").value = ans;
+	CalTotal_C_Q1(); CalTotal_C_Q2(); CalTotal_C_Q3(); CalTotal_C_Q4();
+	CalTotal_C();
+}
+
+function CalTotal_C_Q1(){ //Auto Compute for A_Quarter1
+	let A = document.getElementById('CAFAD_C_Q1').value;
+	let B = document.getElementById('COE_C_Q1').value;
+	let C = document.getElementById('CICS_C_Q1').value;
+	let D = document.getElementById('CIT_C_Q1').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_C_Q1").value = ans;
+}
+
+function CalTotal_C_Q2(){ //Auto Compute for A_Quarter2
+	let A = document.getElementById('CAFAD_C_Q2').value;
+	let B = document.getElementById('COE_C_Q2').value;
+	let C = document.getElementById('CICS_C_Q2').value;
+	let D = document.getElementById('CIT_C_Q2').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_C_Q2").value = ans;
+}
+
+function CalTotal_C_Q3(){ //Auto Compute for A_Quarter3
+	let A = document.getElementById('CAFAD_C_Q3').value;
+	let B = document.getElementById('COE_C_Q3').value;
+	let C = document.getElementById('CICS_C_Q3').value;
+	let D = document.getElementById('CIT_C_Q3').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_C_Q3").value = ans;
+}
+
+function CalTotal_C_Q4(){ //Auto Compute for A_Quarter4
+	let A = document.getElementById('CAFAD_C_Q4').value;
+	let B = document.getElementById('COE_C_Q4').value;
+	let C = document.getElementById('CICS_C_Q4').value;
+	let D = document.getElementById('CIT_C_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_C_Q4").value = ans;
+}
+
+function CalTotal_C(){ //Auto Compute for A_Quarter4
+	let A = document.getElementById('TOTAL_C_Q1').value;
+	let B = document.getElementById('TOTAL_C_Q2').value;
+	let C = document.getElementById('TOTAL_C_Q3').value;
+	let D = document.getElementById('TOTAL_C_Q4').value;
+	let ans = (parseInt(A)) + (parseInt(B)) + (parseInt(C)) + (parseInt(D));
+	document.getElementById("TOTAL_C").value = ans;
+}
+//End for Auto Compute for ACTUAL (C)
+</script>
 
 <?php
 
@@ -804,46 +939,54 @@ if (isset($_POST['Createbtn'])) {//Creating new target
 	$Year = $_POST["Year"];
 
 	//Checking if Year is exisiting
-	$sql = mysqli_query($con,"SELECT * FROM target_alangilan WHERE Year = '$Year'");
+	$sql = mysqli_query($con,"SELECT * FROM dashboard_targets WHERE Year = '$Year'");
 	if(mysqli_num_rows($sql)>0){ //if existing
 		echo "<script>
             alert('Target for this Year $Year is already existing.');
         </script>";
 	}else{//if not exisiting
-		$CEAFA_AQ1 = $_POST["CEAFA_AQ1"];
-		$CEAFA_AQ2 = $_POST["CEAFA_AQ2"];
-		$CEAFA_AQ3 = $_POST["CEAFA_AQ3"];
-		$CEAFA_AQ4 = $_POST["CEAFA_AQ4"];
-		$CEAFA_AQT = $_POST["CEAFA_AQT"];
+		$CAFAD_A_Q1 = $_POST["CAFAD_A_Q1"];
+		$CAFAD_A_Q2 = $_POST["CAFAD_A_Q2"];
+		$CAFAD_A_Q3 = $_POST["CAFAD_A_Q3"];
+		$CAFAD_A_Q4 = $_POST["CAFAD_A_Q4"];
+		$CAFAD_A_T = $_POST["CAFAD_A_T"];
 
-		$CICS_AQ1 = $_POST["CICS_AQ1"];
-		$CICS_AQ2 = $_POST["CICS_AQ2"];
-		$CICS_AQ3 = $_POST["CICS_AQ3"];
-		$CICS_AQ4 = $_POST["CICS_AQ4"];
-		$CICS_AQT = $_POST["CICS_AQT"];
+		$COE_A_Q1 = $_POST["COE_A_Q1"];
+		$COE_A_Q2 = $_POST["COE_A_Q2"];
+		$COE_A_Q3 = $_POST["COE_A_Q3"];
+		$COE_A_Q4 = $_POST["COE_A_Q4"];
+		$COE_A_T = $_POST["COE_A_T"];
 
-		$CIT_AQ1 = $_POST["CIT_AQ1"];
-		$CIT_AQ2 = $_POST["CIT_AQ2"];
-		$CIT_AQ3 = $_POST["CIT_AQ3"];
-		$CIT_AQ4 = $_POST["CIT_AQ4"];
-		$CIT_AQT = $_POST["CIT_AQT"];
+		$CICS_A_Q1 = $_POST["CICS_A_Q1"];
+		$CICS_A_Q2 = $_POST["CICS_A_Q2"];
+		$CICS_A_Q3 = $_POST["CICS_A_Q3"];
+		$CICS_A_Q4 = $_POST["CICS_A_Q4"];
+		$CICS_A_T = $_POST["CICS_A_T"];
 
-		$AT_Q1 = $_POST["AT_Q1"];
-		$AT_Q2 = $_POST["AT_Q2"];
-		$AT_Q3 = $_POST["AT_Q3"];
-		$AT_Q4 = $_POST["AT_Q4"];
-		$AT_QT = $_POST["AT_QT"];
+		$CIT_A_Q1 = $_POST["CIT_A_Q1"];
+		$CIT_A_Q2 = $_POST["CIT_A_Q2"];
+		$CIT_A_Q3 = $_POST["CIT_A_Q3"];
+		$CIT_A_Q4 = $_POST["CIT_A_Q4"];
+		$CIT_A_T = $_POST["CIT_A_T"];
 
-		$sql = ("INSERT INTO target_alangilan
-			(Year, CEAFA_AQ1, CEAFA_AQ2, CEAFA_AQ3, CEAFA_AQ4, CEAFA_AQT,
-			CICS_AQ1, CICS_AQ2, CICS_AQ3, CICS_AQ4, CICS_AQT,
-			CIT_AQ1, CIT_AQ2, CIT_AQ3, CIT_AQ4, CIT_AQT,
-			AT_Q1, AT_Q2, AT_Q3, AT_Q4, AT_QT)
+		$TOTAL_A_Q1 = $_POST["TOTAL_A_Q1"];
+		$TOTAL_A_Q2 = $_POST["TOTAL_A_Q2"];
+		$TOTAL_A_Q3 = $_POST["TOTAL_A_Q3"];
+		$TOTAL_A_Q4 = $_POST["TOTAL_A_Q4"];
+		$TOTAL_A = $_POST["TOTAL_A"];
+	
+		$sql = ("INSERT INTO dashboard_targets
+			(Year, CAFAD_A_Q1, CAFAD_A_Q2, CAFAD_A_Q3, CAFAD_A_Q4, CAFAD_A_T,
+			COE_A_Q1, COE_A_Q2, COE_A_Q3, COE_A_Q4, COE_A_T,
+			CICS_A_Q1, CICS_A_Q2, CICS_A_Q3, CICS_A_Q4, CICS_A_T,
+			CIT_A_Q1, CIT_A_Q2, CIT_A_Q3, CIT_A_Q4, CIT_A_T,
+			TOTAL_A_Q1, TOTAL_A_Q2, TOTAL_A_Q3, TOTAL_A_Q4, TOTAL_A)
 		VALUES 
-			('$Year','$CEAFA_AQ1','$CEAFA_AQ2','$CEAFA_AQ3','$CEAFA_AQ4','$CEAFA_AQT',
-			'$CICS_AQ1','$CICS_AQ2','$CICS_AQ3','$CICS_AQ4','$CICS_AQT',
-			'$CIT_AQ1','$CIT_AQ2','$CIT_AQ3','$CIT_AQ4','$CIT_AQT',
-			'$AT_Q1','$AT_Q2','$AT_Q3','$AT_Q4','$AT_QT')");
+		('$Year', '$CAFAD_A_Q1', '$CAFAD_A_Q2', '$CAFAD_A_Q3', '$CAFAD_A_Q4', '$CAFAD_A_T',
+			'$COE_A_Q1', '$COE_A_Q2', '$COE_A_Q3', '$COE_A_Q4', '$COE_A_T',
+			'$CICS_A_Q1', '$CICS_A_Q2', '$CICS_A_Q3', '$CICS_A_Q4', '$CICS_A_T',
+			'$CIT_A_Q1', '$CIT_A_Q2', '$CIT_A_Q3', '$CIT_A_Q4', '$CIT_A_T',
+			'$TOTAL_A_Q1', '$TOTAL_A_Q2', '$TOTAL_A_Q3', '$TOTAL_A_Q4', '$TOTAL_A')");
 		$command = $con->query($sql);
 		echo "<script>
 			alert('Target Set Successfuly');
@@ -852,40 +995,48 @@ if (isset($_POST['Createbtn'])) {//Creating new target
 	}		
 }
 if (isset($_POST['Savebtn'])) { //For update
-	$CEAFA_AQ1 = $_POST["CEAFA_AQ1"];	$CEAFA_BQ1 = $_POST["CEAFA_BQ1"];
-	$CEAFA_AQ2 = $_POST["CEAFA_AQ2"];	$CEAFA_BQ2 = $_POST["CEAFA_BQ2"];
-	$CEAFA_AQ3 = $_POST["CEAFA_AQ3"];	$CEAFA_BQ3 = $_POST["CEAFA_BQ3"];
-	$CEAFA_AQ4 = $_POST["CEAFA_AQ4"];	$CEAFA_BQ4 = $_POST["CEAFA_BQ4"];
-	$CEAFA_AQT = $_POST["CEAFA_AQT"];	$CEAFA_BQT = $_POST["CEAFA_BQT"];
+	$CAFAD_A_Q1 = $_POST["CAFAD_A_Q1"];	$CAFAD_C_Q1 = $_POST["CAFAD_C_Q1"];
+	$CAFAD_A_Q2 = $_POST["CAFAD_A_Q2"];	$CAFAD_C_Q2 = $_POST["CAFAD_C_Q2"];
+	$CAFAD_A_Q3 = $_POST["CAFAD_A_Q3"];	$CAFAD_C_Q3 = $_POST["CAFAD_C_Q3"];
+	$CAFAD_A_Q4 = $_POST["CAFAD_A_Q4"];	$CAFAD_C_Q4 = $_POST["CAFAD_C_Q4"];
+	$CAFAD_A_T = $_POST["CAFAD_A_T"];	$CAFAD_C_T = $_POST["CAFAD_C_T"];
 
-	$CICS_AQ1 = $_POST["CICS_AQ1"];		$CICS_BQ1 = $_POST["CICS_BQ1"];
-	$CICS_AQ2 = $_POST["CICS_AQ2"];		$CICS_BQ2 = $_POST["CICS_BQ2"];
-	$CICS_AQ3 = $_POST["CICS_AQ3"];		$CICS_BQ3 = $_POST["CICS_BQ3"];
-	$CICS_AQ4 = $_POST["CICS_AQ4"];		$CICS_BQ4 = $_POST["CICS_BQ4"];
-	$CICS_AQT = $_POST["CICS_AQT"];		$CICS_BQT = $_POST["CICS_BQT"];
+	$COE_A_Q1 = $_POST["COE_A_Q1"];		$COE_C_Q1 = $_POST["COE_C_Q1"];
+	$COE_A_Q2 = $_POST["COE_A_Q2"];		$COE_C_Q2 = $_POST["COE_C_Q2"];
+	$COE_A_Q3 = $_POST["COE_A_Q3"];		$COE_C_Q3 = $_POST["COE_C_Q3"];
+	$COE_A_Q4 = $_POST["COE_A_Q4"];		$COE_C_Q4 = $_POST["COE_C_Q4"];
+	$COE_A_T = $_POST["COE_A_T"];		$COE_C_T = $_POST["COE_C_T"];
 
-	$CIT_AQ1 = $_POST["CIT_AQ1"];		$CIT_BQ1 = $_POST["CIT_BQ1"];
-	$CIT_AQ2 = $_POST["CIT_AQ2"];		$CIT_BQ2 = $_POST["CIT_BQ2"];
-	$CIT_AQ3 = $_POST["CIT_AQ3"];		$CIT_BQ3 = $_POST["CIT_BQ3"];
-	$CIT_AQ4 = $_POST["CIT_AQ4"];		$CIT_BQ4 = $_POST["CIT_BQ4"];
-	$CIT_AQT = $_POST["CIT_AQT"];		$CIT_BQT = $_POST["CIT_BQT"];
+	$CICS_A_Q1 = $_POST["CICS_A_Q1"];	$CICS_C_Q1 = $_POST["CICS_C_Q1"];
+	$CICS_A_Q2 = $_POST["CICS_A_Q2"];	$CICS_C_Q2 = $_POST["CICS_C_Q2"];
+	$CICS_A_Q3 = $_POST["CICS_A_Q3"];	$CICS_C_Q3 = $_POST["CICS_C_Q3"];
+	$CICS_A_Q4 = $_POST["CICS_A_Q4"];	$CICS_C_Q4 = $_POST["CICS_C_Q4"];
+	$CICS_A_T = $_POST["CICS_A_T"];		$CICS_C_T = $_POST["CICS_C_T"];
+	
+	$CIT_A_Q1 = $_POST["CIT_A_Q1"];		$CIT_C_Q1 = $_POST["CIT_C_Q1"];
+	$CIT_A_Q2 = $_POST["CIT_A_Q2"];		$CIT_C_Q2 = $_POST["CIT_C_Q2"];
+	$CIT_A_Q3 = $_POST["CIT_A_Q3"];		$CIT_C_Q3 = $_POST["CIT_C_Q3"];
+	$CIT_A_Q4 = $_POST["CIT_A_Q4"];		$CIT_C_Q4 = $_POST["CIT_C_Q4"];
+	$CIT_A_T = $_POST["CIT_A_T"];		$CIT_C_T = $_POST["CIT_C_T"];
 
-	$AT_Q1 = $_POST["AT_Q1"];			$BT_Q1 = $_POST["BT_Q1"];
-	$AT_Q2 = $_POST["AT_Q2"];			$BT_Q2 = $_POST["BT_Q2"];
-	$AT_Q3 = $_POST["AT_Q3"];			$BT_Q3 = $_POST["BT_Q3"];
-	$AT_Q4 = $_POST["AT_Q4"];			$BT_Q4 = $_POST["BT_Q4"];
-	$AT_QT = $_POST["AT_QT"];			$BT_QT = $_POST["BT_QT"];
+	$TOTAL_A_Q1 = $_POST["TOTAL_A_Q1"];	$TOTAL_C_Q1 = $_POST["TOTAL_C_Q1"];
+	$TOTAL_A_Q2 = $_POST["TOTAL_A_Q2"];	$TOTAL_C_Q2 = $_POST["TOTAL_C_Q2"];
+	$TOTAL_A_Q3 = $_POST["TOTAL_A_Q3"];	$TOTAL_C_Q3 = $_POST["TOTAL_C_Q3"];
+	$TOTAL_A_Q4 = $_POST["TOTAL_A_Q4"];	$TOTAL_C_Q4 = $_POST["TOTAL_C_Q4"];
+	$TOTAL_A = $_POST["TOTAL_A"];	$TOTAL_C = $_POST["TOTAL_C"];
 
-	$sql = ("UPDATE target_alangilan
-	SET CEAFA_AQ1 = '$CEAFA_AQ1', CEAFA_AQ2 = '$CEAFA_AQ2', CEAFA_AQ3 = '$CEAFA_AQ3', CEAFA_AQ4 = '$CEAFA_AQ4', CEAFA_AQT = '$CEAFA_AQT',
-		CICS_AQ1 = '$CICS_AQ1', CICS_AQ2 = '$CICS_AQ2', CICS_AQ3 = '$CICS_AQ3', CICS_AQ4 = '$CICS_AQ4', CICS_AQT = '$CICS_AQT',
-		CIT_AQ1 = '$CIT_AQ1', CIT_AQ2 = '$CIT_AQ2', CIT_AQ3 = '$CIT_AQ3', CIT_AQ4 = '$CIT_AQ4', CIT_AQT = '$CIT_AQT',
-		AT_Q1 = '$AT_Q1', AT_Q2 = '$AT_Q2', AT_Q3 = '$AT_Q3', AT_Q4 = '$AT_Q4', AT_QT = '$AT_QT',
+	$sql = ("UPDATE dashboard_targets
+	SET CAFAD_A_Q1 = '$CAFAD_A_Q1', CAFAD_A_Q2 = '$CAFAD_A_Q2', CAFAD_A_Q3 = '$CAFAD_A_Q3', CAFAD_A_Q4 = '$CAFAD_A_Q4', CAFAD_A_T = '$CAFAD_A_T',
+		COE_A_Q1 = '$COE_A_Q1', COE_A_Q2 = '$COE_A_Q2', COE_A_Q3 = '$COE_A_Q3', COE_A_Q4 = '$COE_A_Q4', COE_A_T = '$COE_A_T',
+		CICS_A_Q1 = '$CICS_A_Q1', CICS_A_Q2 = '$CICS_A_Q2', CICS_A_Q3 = '$CICS_A_Q3', CICS_A_Q4 = '$CICS_A_Q4', CICS_A_T = '$CICS_A_T',
+		CIT_A_Q1 = '$CIT_A_Q1', CIT_A_Q2 = '$CIT_A_Q2', CIT_A_Q3 = '$CIT_A_Q3', CIT_A_Q4 = '$CIT_A_Q4', CIT_A_T = '$CIT_A_T',
+		TOTAL_A_Q1 = '$TOTAL_A_Q1', TOTAL_A_Q2 = '$TOTAL_A_Q2', TOTAL_A_Q3 = '$TOTAL_A_Q3', TOTAL_A_Q4 = '$TOTAL_A_Q4', TOTAL_A = '$TOTAL_A',
 
-		CEAFA_BQ1 = '$CEAFA_BQ1', CEAFA_BQ2 = '$CEAFA_BQ2', CEAFA_BQ3 = '$CEAFA_BQ3', CEAFA_BQ4 = '$CEAFA_BQ4', CEAFA_BQT = '$CEAFA_BQT',
-		CICS_BQ1 = '$CICS_BQ1', CICS_BQ2 = '$CICS_BQ2', CICS_BQ3 = '$CICS_BQ3', CICS_BQ4 = '$CICS_BQ4', CICS_BQT = '$CICS_BQT',
-		CIT_BQ1 = '$CIT_BQ1', CIT_BQ2 = '$CIT_BQ2', CIT_BQ3 = '$CIT_BQ3', CIT_BQ4 = '$CIT_BQ4', CIT_BQT = '$CIT_BQT',
-		BT_Q1 = '$BT_Q1', BT_Q2 = '$BT_Q2', BT_Q3 = '$BT_Q3', BT_Q4 = '$BT_Q4', BT_QT = '$BT_QT'
+		CAFAD_C_Q1 = '$CAFAD_C_Q1', CAFAD_C_Q2 = '$CAFAD_C_Q2', CAFAD_C_Q3 = '$CAFAD_C_Q3', CAFAD_C_Q4 = '$CAFAD_C_Q4', CAFAD_C_T = '$CAFAD_C_T',
+		COE_C_Q1 = '$COE_C_Q1', COE_C_Q2 = '$COE_C_Q2', COE_C_Q3 = '$COE_C_Q3', COE_C_Q4 = '$COE_C_Q4', COE_C_T = '$COE_C_T',
+		CICS_C_Q1 = '$CICS_C_Q1', CICS_C_Q2 = '$CICS_C_Q2', CICS_C_Q3 = '$CICS_C_Q3', CICS_C_Q4 = '$CICS_C_Q4', CICS_C_T = '$CICS_C_T',
+		CIT_C_Q1 = '$CIT_C_Q1', CIT_C_Q2 = '$CIT_C_Q2', CIT_C_Q3 = '$CIT_C_Q3', CIT_C_Q4 = '$CIT_C_Q4', CIT_C_T = '$CIT_C_T',
+		TOTAL_C_Q1 = '$TOTAL_C_Q1', TOTAL_C_Q2 = '$TOTAL_C_Q2', TOTAL_C_Q3 = '$TOTAL_C_Q3', TOTAL_C_Q4 = '$TOTAL_C_Q4', TOTAL_C = '$TOTAL_C'
 	WHERE Year = $CustomYear");
 	$command = $con->query($sql) or die("Error encounter while updating data");
 	echo "<script>
@@ -896,55 +1047,69 @@ if (isset($_POST['Savebtn'])) { //For update
 ?>
 
 <?php
-//CEFA
-$dataPointsCEAFA_A = array(
-	array("label"=> "Q1", "y"=> $dbCEAFA_AQ1),
-	array("label"=> "Q2", "y"=> $dbCEAFA_AQ2),
-	array("label"=> "Q3", "y"=> $dbCEAFA_AQ3),
-	array("label"=> "Q4", "y"=> $dbCEAFA_AQ4)
+//CAFAD
+$dataPointsCAFAD_A = array(
+	array("label"=> "Q1", "y"=> $dbCAFAD_A_Q1),
+	array("label"=> "Q2", "y"=> $dbCAFAD_A_Q2),
+	array("label"=> "Q3", "y"=> $dbCAFAD_A_Q3),
+	array("label"=> "Q4", "y"=> $dbCAFAD_A_Q4)
 );
-$dataPointsCEAFA_B = array(
-	array("label"=> "Q1", "y"=> $dbCEAFA_BQ1),
-	array("label"=> "Q2", "y"=> $dbCEAFA_BQ2),
-	array("label"=> "Q3", "y"=> $dbCEAFA_BQ3),
-	array("label"=> "Q4", "y"=> $dbCEAFA_BQ4)
+$dataPointsCAFAD_B = array(
+	array("label"=> "Q1", "y"=> $dbCAFAD_C_Q1),
+	array("label"=> "Q2", "y"=> $dbCAFAD_C_Q2),
+	array("label"=> "Q3", "y"=> $dbCAFAD_C_Q3),
+	array("label"=> "Q4", "y"=> $dbCAFAD_C_Q4)
+);
+
+//CAFAD
+$dataPointsCOE_A = array(
+	array("label"=> "Q1", "y"=> $dbCOE_A_Q1),
+	array("label"=> "Q2", "y"=> $dbCOE_A_Q2),
+	array("label"=> "Q3", "y"=> $dbCOE_A_Q3),
+	array("label"=> "Q4", "y"=> $dbCOE_A_Q4)
+);
+$dataPointsCOE_B = array(
+	array("label"=> "Q1", "y"=> $dbCOE_C_Q1),
+	array("label"=> "Q2", "y"=> $dbCOE_C_Q2),
+	array("label"=> "Q3", "y"=> $dbCOE_C_Q3),
+	array("label"=> "Q4", "y"=> $dbCOE_C_Q4)
 );
 
 //CICS
 $dataPointsCICS_A = array(
-	array("label"=> "Q1", "y"=> $dbCICS_AQ1),
-	array("label"=> "Q2", "y"=> $dbCICS_AQ2),
-	array("label"=> "Q3", "y"=> $dbCICS_AQ3),
-	array("label"=> "Q4", "y"=> $dbCICS_AQ4)
+	array("label"=> "Q1", "y"=> $dbCICS_A_Q1),
+	array("label"=> "Q2", "y"=> $dbCICS_A_Q2),
+	array("label"=> "Q3", "y"=> $dbCICS_A_Q3),
+	array("label"=> "Q4", "y"=> $dbCICS_A_Q4)
 );
 $dataPointsCICS_B = array(
-	array("label"=> "Q1", "y"=> $dbCICS_BQ1),
-	array("label"=> "Q2", "y"=> $dbCICS_BQ2),
-	array("label"=> "Q3", "y"=> $dbCICS_BQ3),
-	array("label"=> "Q4", "y"=> $dbCICS_BQ4)
+	array("label"=> "Q1", "y"=> $dbCICS_C_Q1),
+	array("label"=> "Q2", "y"=> $dbCICS_C_Q2),
+	array("label"=> "Q3", "y"=> $dbCICS_C_Q3),
+	array("label"=> "Q4", "y"=> $dbCICS_C_Q4)
 );
 
 //CIT
 $dataPointsCIT_A = array(
-	array("label"=> "Q1", "y"=> $dbCIT_AQ1),
-	array("label"=> "Q2", "y"=> $dbCIT_AQ2),
-	array("label"=> "Q3", "y"=> $dbCIT_AQ3),
-	array("label"=> "Q4", "y"=> $dbCIT_AQ4)
+	array("label"=> "Q1", "y"=> $dbCIT_A_Q1),
+	array("label"=> "Q2", "y"=> $dbCIT_A_Q2),
+	array("label"=> "Q3", "y"=> $dbCIT_A_Q3),
+	array("label"=> "Q4", "y"=> $dbCIT_A_Q4)
 );
 $dataPointsCIT_B = array(
-	array("label"=> "Q1", "y"=> $dbCIT_BQ1),
-	array("label"=> "Q2", "y"=> $dbCIT_BQ2),
-	array("label"=> "Q3", "y"=> $dbCIT_BQ3),
-	array("label"=> "Q4", "y"=> $dbCIT_BQ4)
+	array("label"=> "Q1", "y"=> $dbCIT_C_Q1),
+	array("label"=> "Q2", "y"=> $dbCIT_C_Q2),
+	array("label"=> "Q3", "y"=> $dbCIT_C_Q3),
+	array("label"=> "Q4", "y"=> $dbCIT_C_Q4)
 );
 ?>
 
 <script type="text/javascript">
 function DisplayCharts(){
-	var chartCEAFA = new CanvasJS.Chart("ChartCEAFA", {
+	var chartCAFAD = new CanvasJS.Chart("ChartCAFAD", {
 		animationEnabled: true,
 		theme: "light2",
-		title:{ text: "CEAFA"},
+		title:{ text: "CAFAD"},
 		axisY:{ includeZero: true },
 		legend:{
 			cursor: "pointer",
@@ -959,7 +1124,7 @@ function DisplayCharts(){
 			indexLabelFontColor: "black",
 			showInLegend: true,
 			color: "#b3b3b3", //Target
-			dataPoints: <?php echo json_encode($dataPointsCEAFA_A, JSON_NUMERIC_CHECK); ?>
+			dataPoints: <?php echo json_encode($dataPointsCAFAD_A, JSON_NUMERIC_CHECK); ?>
 		},{
 			type: "area",
 			name: "Actual",
@@ -967,10 +1132,41 @@ function DisplayCharts(){
 			indexLabelFontColor: "black",
 			showInLegend: true,
 			color: "#ff6242", //Actual
-			dataPoints: <?php echo json_encode($dataPointsCEAFA_B, JSON_NUMERIC_CHECK); ?>
+			dataPoints: <?php echo json_encode($dataPointsCAFAD_B, JSON_NUMERIC_CHECK); ?>
 		}]
 	});
-	chartCEAFA.render();
+	chartCAFAD.render();
+
+	var chartCOE = new CanvasJS.Chart("ChartCOE", {
+		animationEnabled: true,
+		theme: "light2",
+		title:{ text: "COE"},
+		axisY:{ includeZero: true },
+		legend:{
+			cursor: "pointer",
+			verticalAlign: "center",
+			horizontalAlign: "right",
+			itemclick: toggleDataSeries
+		},
+		data: [{
+			type: "column",
+			name: "Target",
+			indexLabel: "{y}",
+			indexLabelFontColor: "black",
+			showInLegend: true,
+			color: "#b3b3b3", //Target
+			dataPoints: <?php echo json_encode($dataPointsCOE_A, JSON_NUMERIC_CHECK); ?>
+		},{
+			type: "area",
+			name: "Actual",
+			indexLabel: "{y}",
+			indexLabelFontColor: "black",
+			showInLegend: true,
+			color: "#ff6242", //Actual
+			dataPoints: <?php echo json_encode($dataPointsCOE_B, JSON_NUMERIC_CHECK); ?>
+		}]
+	});
+	chartCOE.render();
 
 	var chartCICS = new CanvasJS.Chart("ChartCICS", {
 		animationEnabled: true,
@@ -1043,10 +1239,10 @@ function DisplayCharts(){
 		}
 		chartCIT.render();
 		chartCICS.render();
-		chartCEAFA.render();
+		chartCAFAD.render();
+		chartCOE.render();
 	}
 }
-
 </script>
 
 
@@ -1061,7 +1257,8 @@ if ($College == "CIT" AND $Position == "Coordinator" ){
 			document.getElementById('TableForLabelText').style.display = 'block';
 			document.getElementById('LabelText').innerHTML = 'College of Industrial Technology Targets/Actual';
 
-			document.getElementById('ChartForCEAFA').style.display = 'none';
+			document.getElementById('ChartForCAFAD').style.display = 'none';
+			document.getElementById('ChartForCOE').style.display = 'none';
 			document.getElementById('ChartForCICS').style.display = 'none';
 			document.getElementById('TableForTargets').style.display = 'none';
 			document.getElementById('ViewTargetButton').style.display = 'none';
@@ -1078,25 +1275,46 @@ if ($College == "CICS" AND $Position == "Coordinator" ){
 			document.getElementById('TableForLabelText').style.display = 'block';
 			document.getElementById('LabelText').innerHTML = 'College of Informatics and Computing Sciences Targets/Actual';
 
-			document.getElementById('ChartForCEAFA').style.display = 'none';
+			document.getElementById('ChartForCAFAD').style.display = 'none';
 			document.getElementById('ChartForCIT').style.display = 'none';
+			document.getElementById('ChartForCOE').style.display = 'none';
 			document.getElementById('TableForTargets').style.display = 'none';
 			document.getElementById('ViewTargetButton').style.display = 'none';
 		</script>
 	";
 }
-if ($College == "CEAFA" AND $Position == "Coordinator" ){
+if ($College == "CAFAD" AND $Position == "Coordinator" ){
 	echo "
 		<script> 
-			document.getElementById('ChartForCEAFA').style.display = 'block';
-			document.getElementById('ChartCEAFA').style.height = '450px';
-			document.getElementById('ChartCEAFA').style.width = '650px';
+			document.getElementById('ChartForCAFAD').style.display = 'block';
+			document.getElementById('ChartCAFAD').style.height = '450px';
+			document.getElementById('ChartCAFAD').style.width = '650px';
 			
 			document.getElementById('TableForLabelText').style.display = 'block';
-			document.getElementById('LabelText').innerHTML = 'College of Engineering, Architecture and Fine Arts Targets/Actual';
+			document.getElementById('LabelText').innerHTML = 'College of Architecture, Fine Arts and Deisgn Targets/Actual';
 
 			document.getElementById('ChartForCICS').style.display = 'none';
 			document.getElementById('ChartForCIT').style.display = 'none';
+			document.getElementById('ChartForCOE').style.display = 'none';
+			document.getElementById('TableForTargets').style.display = 'none';
+			document.getElementById('ViewTargetButton').style.display = 'none';
+		</script>
+	";
+}
+
+if ($College == "COE" AND $Position == "Coordinator" ){
+	echo "
+		<script> 
+			document.getElementById('ChartForCOE').style.display = 'block';
+			document.getElementById('ChartCOE').style.height = '450px';
+			document.getElementById('ChartCOE').style.width = '650px';
+			
+			document.getElementById('TableForLabelText').style.display = 'block';
+			document.getElementById('LabelText').innerHTML = 'College of Engineering Targets/Actual';
+
+			document.getElementById('ChartForCICS').style.display = 'none';
+			document.getElementById('ChartForCIT').style.display = 'none';
+			document.getElementById('ChartForCAFAD').style.display = 'none';
 			document.getElementById('TableForTargets').style.display = 'none';
 			document.getElementById('ViewTargetButton').style.display = 'none';
 		</script>

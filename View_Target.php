@@ -10,27 +10,31 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 
 <?php
 //Default Values
-	$dbCEAFA_AQ1 = $dbCEAFA_AQ2 = $dbCEAFA_AQ3 = $dbCEAFA_AQ4 = $dbCEAFA_AQT = "";
-	$dbCEAFA_BQ1 = $dbCEAFA_BQ2 = $dbCEAFA_BQ3 = $dbCEAFA_BQ4 = $dbCEAFA_BQT = "";
+	$dbCAFAD_A_Q1 =  $dbCAFAD_A_Q2 = $dbCAFAD_A_Q3 = $dbCAFAD_A_Q4 = $dbCAFAD_A_T ="";
+	$dbCAFAD_B_Q1 =  $dbCAFAD_B_Q2 = $dbCAFAD_B_Q3 = $dbCAFAD_B_Q4 = $dbCAFAD_B_T ="";
+	$dbCAFAD_C_Q1 =  $dbCAFAD_C_Q2 = $dbCAFAD_C_Q3 = $dbCAFAD_C_Q4 = $dbCAFAD_C_T ="";
+	$dbCAFAD_D_Q1 =  $dbCAFAD_D_Q2 = $dbCAFAD_D_Q3 = $dbCAFAD_D_Q4 = $dbCAFAD_D_T ="";
+	
+	$dbCOE_A_Q1 = $dbCOE_A_Q2 = $dbCOE_A_Q3 = $dbCOE_A_Q4 = $dbCOE_A_T = "";
+	$dbCOE_B_Q1 = $dbCOE_B_Q2 = $dbCOE_B_Q3 = $dbCOE_B_Q4 = $dbCOE_B_T = "";
+	$dbCOE_C_Q1 = $dbCOE_C_Q2 = $dbCOE_C_Q3 = $dbCOE_C_Q4 = $dbCOE_C_T = "";
+	$dbCOE_D_Q1 = $dbCOE_D_Q2 = $dbCOE_D_Q3 = $dbCOE_D_Q4 = $dbCOE_D_T = "";
 
-	$dbCICS_AQ1 = $dbCICS_AQ2 = $dbCICS_AQ3 = $dbCICS_AQ4 = $dbCICS_AQT = "";
-	$dbCICS_BQ1 = $dbCICS_BQ2 = $dbCICS_BQ3 = $dbCICS_BQ4 = $dbCICS_BQT = "";
+	$dbCICS_A_Q1 = $dbCICS_A_Q2 = $dbCICS_A_Q3 = $dbCICS_A_Q4 = $dbCICS_A_T = "";
+	$dbCICS_B_Q1 = $dbCICS_B_Q2 = $dbCICS_B_Q3 = $dbCICS_B_Q4 = $dbCICS_B_T = "";
+	$dbCICS_C_Q1 = $dbCICS_C_Q2 = $dbCICS_C_Q3 = $dbCICS_C_Q4 = $dbCICS_C_T = "";
+	$dbCICS_D_Q1 = $dbCICS_D_Q2 = $dbCICS_D_Q3 = $dbCICS_D_Q4 = $dbCICS_D_T = "";
 
-	$dbCIT_AQ1 = $dbCIT_AQ2 = $dbCIT_AQ3 = $dbCIT_AQ4 = $dbCIT_AQT = "";
-	$dbCIT_BQ1 = $dbCIT_BQ2 = $dbCIT_BQ3 = $dbCIT_BQ4 = $dbCIT_BQT = "";
+	$dbCIT_A_Q1 = $dbCIT_A_Q2 = $dbCIT_A_Q3 = $dbCIT_A_Q4 = $dbCIT_A_T = "";
+	$dbCIT_B_Q1 = $dbCIT_B_Q2 = $dbCIT_B_Q3 = $dbCIT_B_Q4 = $dbCIT_B_T = "";
+	$dbCIT_C_Q1 = $dbCIT_C_Q2 = $dbCIT_C_Q3 = $dbCIT_C_Q4 = $dbCIT_C_T = "";
+	$dbCIT_D_Q1 = $dbCIT_D_Q2 = $dbCIT_D_Q3 = $dbCIT_D_Q4 = $dbCIT_D_T = "";
 
-	$dbAT_Q1 = $dbAT_Q2 = $dbAT_Q3 = $dbAT_Q4 = $dbAT_QT = "";
-	$dbBT_Q1 = $dbBT_Q2 = $dbBT_Q3 = $dbBT_Q4 = $dbBT_QT = "";
+	$dbTOTAL_A_Q1 = $dbTOTAL_A_Q2 = $dbTOTAL_A_Q3 = $dbTOTAL_A_Q4 = $dbTOTAL_A = "";
+	$dbTOTAL_B_Q1 = $dbTOTAL_B_Q2 = $dbTOTAL_B_Q3 = $dbTOTAL_B_Q4 = $dbTOTAL_B = "";
+	$dbTOTAL_C_Q1 = $dbTOTAL_C_Q2 = $dbTOTAL_C_Q3 = $dbTOTAL_C_Q4 = $dbTOTAL_C = "";
 
-	$dbT_R1Q1 = $dbT_R1Q2 = $dbT_R1Q3 = $dbT_R1Q4 = $dbT_R1_T = "";
-	$dbT_R2Q1 = $dbT_R2Q2 = $dbT_R2Q3 = $dbT_R2Q4 = $dbT_R2_T = "";
-	$dbT_R3Q1 = $dbT_R3Q2 = $dbT_R3Q3 = $dbT_R3Q4 = $dbT_R3_T = "";
-	$dbT_R4Q1 = $dbT_R4Q2 = $dbT_R4Q3 = $dbT_R4Q4 = $dbT_R4_T = "";
-
-	$dbP_R1Q1 = $dbP_R1Q2 = $dbP_R1Q3 = $dbP_R1Q4 = $dbP_R1_T = "";
-	$dbP_R2Q1 = $dbP_R2Q2 = $dbP_R2Q3 = $dbP_R2Q4 = $dbP_R2_T = "";
-	$dbP_R3Q1 = $dbP_R3Q2 = $dbP_R3Q3 = $dbP_R3Q4 = $dbP_R3_T = "";
-	$dbPercentageTotal = $dbBudget = "";
+	$dbPercentage = $dbBudget = "";
 
 $SelectedYear = $CustomYear;
 $Prompt = "<h1> Please Select Year </h1>";
@@ -39,107 +43,136 @@ if(isset($_GET['Year']) == TRUE)  {
 	$SelectedYear = $_GET['Year'];
 
 	//Checking if Year is Exisiting
-	$sql = mysqli_query($con,"SELECT * FROM target_alangilan WHERE Year = '$SelectedYear'");
+	$sql = mysqli_query($con,"SELECT * FROM dashboard_targets WHERE Year = '$SelectedYear'");
 	if(mysqli_num_rows($sql)>0){
 		//Year is Existing
 		
-		$sql = ("SELECT * FROM target_alangilan WHERE Year = $SelectedYear");
+		$sql = ("SELECT * FROM dashboard_targets WHERE Year = $SelectedYear");
 		$command = $con->query($sql) or die("Error Fethcing data");
 		while($result = mysqli_fetch_array($command))
 			{
-				$dbCEAFA_AQ1 = $result["CEAFA_AQ1"];
-				$dbCEAFA_AQ2 = $result["CEAFA_AQ2"];
-				$dbCEAFA_AQ3 = $result["CEAFA_AQ3"];
-				$dbCEAFA_AQ4 = $result["CEAFA_AQ4"];
-				$dbCEAFA_AQT = $result["CEAFA_AQT"];
-			
-				$dbCICS_AQ1 = $result["CICS_AQ1"];
-				$dbCICS_AQ2 = $result["CICS_AQ2"];
-				$dbCICS_AQ3 = $result["CICS_AQ3"];
-				$dbCICS_AQ4 = $result["CICS_AQ4"];
-				$dbCICS_AQT = $result["CICS_AQT"];
-			
-				$dbCIT_AQ1 = $result["CIT_AQ1"];
-				$dbCIT_AQ2 = $result["CIT_AQ2"];
-				$dbCIT_AQ3 = $result["CIT_AQ3"];
-				$dbCIT_AQ4 = $result["CIT_AQ4"];
-				$dbCIT_AQT = $result["CIT_AQT"];
-			
-				$dbCEAFA_BQ1 = $result["CEAFA_BQ1"];
-				$dbCEAFA_BQ2 = $result["CEAFA_BQ2"];
-				$dbCEAFA_BQ3 = $result["CEAFA_BQ3"];
-				$dbCEAFA_BQ4 = $result["CEAFA_BQ4"];
-				$dbCEAFA_BQT = $result["CEAFA_BQT"];
-			
-				$dbCICS_BQ1 = $result["CICS_BQ1"];
-				$dbCICS_BQ2 = $result["CICS_BQ2"];
-				$dbCICS_BQ3 = $result["CICS_BQ3"];
-				$dbCICS_BQ4 = $result["CICS_BQ4"];
-				$dbCICS_BQT = $result["CICS_BQT"];
-			
-				$dbCIT_BQ1 = $result["CIT_BQ1"];
-				$dbCIT_BQ2 = $result["CIT_BQ2"];
-				$dbCIT_BQ3 = $result["CIT_BQ3"];
-				$dbCIT_BQ4 = $result["CIT_BQ4"];
-				$dbCIT_BQT = $result["CIT_BQT"];
-				
-				$dbAT_Q1 = $result["AT_Q1"];
-				$dbAT_Q2 = $result["AT_Q2"];
-				$dbAT_Q3 = $result["AT_Q3"];
-				$dbAT_Q4 = $result["AT_Q4"];
-				$dbAT_QT = $result["AT_QT"];
-			
-				$dbBT_Q1 = $result["BT_Q1"];
-				$dbBT_Q2 = $result["BT_Q2"];
-				$dbBT_Q3 = $result["BT_Q3"];
-				$dbBT_Q4 = $result["BT_Q4"];
-				$dbBT_QT = $result["BT_QT"];
-			
-				$dbT_R1Q1 = $result["T_R1Q1"];
-				$dbT_R1Q2 = $result["T_R1Q2"];
-				$dbT_R1Q3 = $result["T_R1Q3"];
-				$dbT_R1Q4 = $result["T_R1Q4"];
-				$dbT_R1_T = $result["T_R1_T"];
-			
-				$dbT_R2Q1 = $result["T_R2Q1"];
-				$dbT_R2Q2 = $result["T_R2Q2"];
-				$dbT_R2Q3 = $result["T_R2Q3"];
-				$dbT_R2Q4 = $result["T_R2Q4"];
-				$dbT_R2_T = $result["T_R2_T"];
-			
-				$dbT_R3Q1 = $result["T_R3Q1"];
-				$dbT_R3Q2 = $result["T_R3Q2"];
-				$dbT_R3Q3 = $result["T_R3Q3"];
-				$dbT_R3Q4 = $result["T_R3Q4"];
-				$dbT_R3_T = $result["T_R3_T"];
-			
-				$dbT_R4Q1 = $result["T_R4Q1"];
-				$dbT_R4Q2 = $result["T_R4Q2"];
-				$dbT_R4Q3 = $result["T_R4Q3"];
-				$dbT_R4Q4 = $result["T_R4Q4"];
-				$dbT_R4_T = $result["T_R4_T"];
-			
-				$dbP_R1Q1 = $result["P_R1Q1"];
-				$dbP_R1Q2 = $result["P_R1Q2"];
-				$dbP_R1Q3 = $result["P_R1Q3"];
-				$dbP_R1Q4 = $result["P_R1Q4"];
-				$dbP_R1_T = $result["P_R1_T"];
-			
-				$dbP_R2Q1 = $result["P_R2Q1"];
-				$dbP_R2Q2 = $result["P_R2Q2"];
-				$dbP_R2Q3 = $result["P_R2Q3"];
-				$dbP_R2Q4 = $result["P_R2Q4"];
-				$dbP_R2_T = $result["P_R2_T"];
-			
-				$dbP_R3Q1 = $result["P_R3Q1"];
-				$dbP_R3Q2 = $result["P_R3Q2"];
-				$dbP_R3Q3 = $result["P_R3Q3"];
-				$dbP_R3Q4 = $result["P_R3Q4"];
-				$dbP_R3_T = $result["P_R3_T"];
-			
-				$dbPercentageTotal = $result["PercentageTotal"];
+				//Targets (A)
+				$dbCAFAD_A_Q1 = $result["CAFAD_A_Q1"];
+				$dbCAFAD_A_Q2 = $result["CAFAD_A_Q2"];
+				$dbCAFAD_A_Q3 = $result["CAFAD_A_Q3"];
+				$dbCAFAD_A_Q4 = $result["CAFAD_A_Q4"];
+				$dbCAFAD_A_T = $result["CAFAD_A_T"];
+
+				$dbCOE_A_Q1 = $result["COE_A_Q1"];
+				$dbCOE_A_Q2 = $result["COE_A_Q2"];
+				$dbCOE_A_Q3 = $result["COE_A_Q3"];
+				$dbCOE_A_Q4 = $result["COE_A_Q4"];
+				$dbCOE_A_T = $result["COE_A_T"];
+
+				$dbCICS_A_Q1 = $result["CICS_A_Q1"];
+				$dbCICS_A_Q2 = $result["CICS_A_Q2"];
+				$dbCICS_A_Q3 = $result["CICS_A_Q3"];
+				$dbCICS_A_Q4 = $result["CICS_A_Q4"];
+				$dbCICS_A_T = $result["CICS_A_T"];
+
+				$dbCIT_A_Q1 = $result["CIT_A_Q1"];
+				$dbCIT_A_Q2 = $result["CIT_A_Q2"];
+				$dbCIT_A_Q3 = $result["CIT_A_Q3"];
+				$dbCIT_A_Q4 = $result["CIT_A_Q4"];
+				$dbCIT_A_T = $result["CIT_A_T"];
+
+				$dbTOTAL_A_Q1 = $result["TOTAL_A_Q1"];
+				$dbTOTAL_A_Q2 = $result["TOTAL_A_Q2"];
+				$dbTOTAL_A_Q3 = $result["TOTAL_A_Q3"];
+				$dbTOTAL_A_Q4 = $result["TOTAL_A_Q4"];
+				$dbTOTAL_A = $result["TOTAL_A"];
+	
+				//Trainees (B)
+				$dbCAFAD_B_Q1 = $result["CAFAD_B_Q1"];
+				$dbCAFAD_B_Q2 = $result["CAFAD_B_Q2"];
+				$dbCAFAD_B_Q3 = $result["CAFAD_B_Q3"];
+				$dbCAFAD_B_Q4 = $result["CAFAD_B_Q4"];
+				$dbCAFAD_B_T = $result["CAFAD_B_T"];
+
+				$dbCOE_B_Q1 = $result["COE_B_Q1"];
+				$dbCOE_B_Q2 = $result["COE_B_Q2"];
+				$dbCOE_B_Q3 = $result["COE_B_Q3"];
+				$dbCOE_B_Q4 = $result["COE_B_Q4"];
+				$dbCOE_B_T = $result["COE_B_T"];
+
+				$dbCICS_B_Q1 = $result["CICS_B_Q1"];
+				$dbCICS_B_Q2 = $result["CICS_B_Q2"];
+				$dbCICS_B_Q3 = $result["CICS_B_Q3"];
+				$dbCICS_B_Q4 = $result["CICS_B_Q4"];
+				$dbCICS_B_T = $result["CICS_B_T"];
+
+				$dbCIT_B_Q1 = $result["CIT_B_Q1"];
+				$dbCIT_B_Q2 = $result["CIT_B_Q2"];
+				$dbCIT_B_Q3 = $result["CIT_B_Q3"];
+				$dbCIT_B_Q4 = $result["CIT_B_Q4"];
+				$dbCIT_B_T = $result["CIT_B_T"];
+
+				$dbTOTAL_B_Q1 = $result["TOTAL_B_Q1"];
+				$dbTOTAL_B_Q2 = $result["TOTAL_B_Q2"];
+				$dbTOTAL_B_Q3 = $result["TOTAL_B_Q3"];
+				$dbTOTAL_B_Q4 = $result["TOTAL_B_Q4"];
+				$dbTOTAL_B = $result["TOTAL_B"];
+
+				//Actual (C)
+				$dbCAFAD_C_Q1 = $result["CAFAD_C_Q1"];
+				$dbCAFAD_C_Q2 = $result["CAFAD_C_Q2"];
+				$dbCAFAD_C_Q3 = $result["CAFAD_C_Q3"];
+				$dbCAFAD_C_Q4 = $result["CAFAD_C_Q4"];
+				$dbCAFAD_C_T = $result["CAFAD_C_T"];
+
+				$dbCOE_C_Q1 = $result["COE_C_Q1"];
+				$dbCOE_C_Q2 = $result["COE_C_Q2"];
+				$dbCOE_C_Q3 = $result["COE_C_Q3"];
+				$dbCOE_C_Q4 = $result["COE_C_Q4"];
+				$dbCOE_C_T = $result["COE_C_T"];
+
+				$dbCICS_C_Q1 = $result["CICS_C_Q1"];
+				$dbCICS_C_Q2 = $result["CICS_C_Q2"];
+				$dbCICS_C_Q3 = $result["CICS_C_Q3"];
+				$dbCICS_C_Q4 = $result["CICS_C_Q4"];
+				$dbCICS_C_T = $result["CICS_C_T"];
+
+				$dbCIT_C_Q1 = $result["CIT_C_Q1"];
+				$dbCIT_C_Q2 = $result["CIT_C_Q2"];
+				$dbCIT_C_Q3 = $result["CIT_C_Q3"];
+				$dbCIT_C_Q4 = $result["CIT_C_Q4"];
+				$dbCIT_C_T = $result["CIT_C_T"];
+
+				$dbTOTAL_C_Q1 = $result["TOTAL_C_Q1"];
+				$dbTOTAL_C_Q2 = $result["TOTAL_C_Q2"];
+				$dbTOTAL_C_Q3 = $result["TOTAL_C_Q3"];
+				$dbTOTAL_C_Q4 = $result["TOTAL_C_Q4"];
+				$dbTOTAL_C = $result["TOTAL_C"];
+
+				//Percentage (D)
+				$dbCAFAD_D_Q1 = $result["CAFAD_D_Q1"];
+				$dbCAFAD_D_Q2 = $result["CAFAD_D_Q2"];
+				$dbCAFAD_D_Q3 = $result["CAFAD_D_Q3"];
+				$dbCAFAD_D_Q4 = $result["CAFAD_D_Q4"];
+				$dbCAFAD_D_T = $result["CAFAD_D_T"];
+
+				$dbCOE_D_Q1 = $result["COE_D_Q1"];
+				$dbCOE_D_Q2 = $result["COE_D_Q2"];
+				$dbCOE_D_Q3 = $result["COE_D_Q3"];
+				$dbCOE_D_Q4 = $result["COE_D_Q4"];
+				$dbCOE_D_T = $result["COE_D_T"];
+
+				$dbCICS_D_Q1 = $result["CICS_D_Q1"];
+				$dbCICS_D_Q2 = $result["CICS_D_Q2"];
+				$dbCICS_D_Q3 = $result["CICS_D_Q3"];
+				$dbCICS_D_Q4 = $result["CICS_D_Q4"];
+				$dbCICS_D_T = $result["CICS_D_T"];
+
+				$dbCIT_D_Q1 = $result["CIT_D_Q1"];
+				$dbCIT_D_Q2 = $result["CIT_D_Q2"];
+				$dbCIT_D_Q3 = $result["CIT_D_Q3"];
+				$dbCIT_D_Q4 = $result["CIT_D_Q4"];
+				$dbCIT_D_T = $result["CIT_D_T"];
+
+				$dbPercentage = $result["Percentage"];
 				$dbBudget = $result["Budget"];
 			}
+
 		$Prompt = "<h1>Record Found for Year $SelectedYear</h1>";
 	}
 	else { $Prompt = "<h1>No Record Found Year $SelectedYear</h1>"; }
@@ -332,112 +365,139 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 						
 					</tr>
 					<tr >
-						<th>CEAFA</th>
+						<th>CAFAD</th>
 						<td>13</td>
-						<td><?php echo $dbCEAFA_AQ1;?></td> <!-- Target Row 1 Q1 -->
-						<td><?php echo $dbCEAFA_AQ2;?></td> <!-- Target Row 1 Q2 -->
-						<td><?php echo $dbCEAFA_AQ3;?></td> <!-- Target Row 1 Q3 -->
-						<td><?php echo $dbCEAFA_AQ4;?></td> <!-- Target Row 1 Q4 -->
-						<td><?php echo $dbCEAFA_AQT;?></td> <!-- Target Row 1 Total -->
+						<td><?php echo $dbCAFAD_A_Q1;?></td>
+						<td><?php echo $dbCAFAD_A_Q2;?></td>
+						<td><?php echo $dbCAFAD_A_Q3;?></td>
+						<td><?php echo $dbCAFAD_A_Q4;?></td>
+						<td><?php echo $dbCAFAD_A_T;?></td> 
 						
-						<td><?php echo "$dbT_R1Q1";?></td> <!-- Trainees Row 1 Q1 -->
-						<td><?php echo "$dbT_R1Q2";?></td> <!-- Trainees Row 1 Q2 -->
-						<td><?php echo "$dbT_R1Q3";?></td> <!-- Trainees Row 1 Q3 -->
-						<td><?php echo "$dbT_R1Q4";?></td> <!-- Trainees Row 1 Q4 -->
-						<td><?php echo "$dbT_R1_T";?></td> <!-- Trainees Row 1 Total -->
+						<td><?php echo "$dbCAFAD_B_Q1";?></td> 
+						<td><?php echo "$dbCAFAD_B_Q2";?></td> 
+						<td><?php echo "$dbCAFAD_B_Q3";?></td> 
+						<td><?php echo "$dbCAFAD_B_Q4";?></td> 
+						<td><?php echo "$dbCAFAD_B_T";?></td> 
 						
-						<td><?php echo $dbCEAFA_BQ1;?></td> <!-- Actual Row 1 Q1 -->
-						<td><?php echo $dbCEAFA_BQ2;?></td> <!-- Actual Row 1 Q2 -->
-						<td><?php echo $dbCEAFA_BQ3;?></td> <!-- Actual Row 1 Q3 -->
-						<td><?php echo $dbCEAFA_BQ4;?></td> <!-- Actual Row 1 Q4 -->
-						<td><?php echo $dbCEAFA_BQT;?></td> <!-- Actual Row 1 Total -->
+						<td><?php echo $dbCAFAD_C_Q1;?></td>
+						<td><?php echo $dbCAFAD_C_Q2;?></td>
+						<td><?php echo $dbCAFAD_C_Q3;?></td>
+						<td><?php echo $dbCAFAD_C_Q4;?></td>
+						<td><?php echo $dbCAFAD_C_T;?></td>
 
-						<td><?php echo "$dbP_R1Q1";?>%</td> <!-- Percentage Row 1 Q1 -->
-						<td><?php echo "$dbP_R1Q2";?>%</td> <!-- Percentage Row 1 Q2 -->
-						<td><?php echo "$dbP_R1Q3";?>%</td> <!-- Percentage Row 1 Q3 -->
-						<td><?php echo "$dbP_R1Q4";?>%</td> <!-- Percentage Row 1 Q4 -->
-						<td><?php echo "$dbP_R1_T";?>%</td> <!-- Percentage Row 1 Total -->
+						<td><?php echo "$dbCAFAD_D_Q1";?>%</td>
+						<td><?php echo "$dbCAFAD_D_Q2";?>%</td>
+						<td><?php echo "$dbCAFAD_D_Q3";?>%</td>
+						<td><?php echo "$dbCAFAD_D_Q4";?>%</td>
+						<td><?php echo "$dbCAFAD_D_T";?>%</td>
 
-						<td rowspan="3">₱<?php echo "$dbBudget";?></td><!-- Budget -->
+						<td rowspan="4">₱<?php echo "$dbBudget";?></td><!-- Budget -->
+					</tr>
+					<tr >
+						<th>COE</th>
+						<td>13</td>
+						<td><?php echo $dbCOE_A_Q1;?></td>
+						<td><?php echo $dbCOE_A_Q2;?></td>
+						<td><?php echo $dbCOE_A_Q3;?></td>
+						<td><?php echo $dbCOE_A_Q4;?></td>
+						<td><?php echo $dbCOE_A_T;?></td> 
+						
+						<td><?php echo "$dbCOE_B_Q1";?></td> 
+						<td><?php echo "$dbCOE_B_Q2";?></td> 
+						<td><?php echo "$dbCOE_B_Q3";?></td> 
+						<td><?php echo "$dbCOE_B_Q4";?></td> 
+						<td><?php echo "$dbCOE_B_T";?></td> 
+						
+						<td><?php echo $dbCOE_C_Q1;?></td>
+						<td><?php echo $dbCOE_C_Q2;?></td>
+						<td><?php echo $dbCOE_C_Q3;?></td>
+						<td><?php echo $dbCOE_C_Q4;?></td>
+						<td><?php echo $dbCOE_C_T;?></td>
+
+						<td><?php echo "$dbCOE_D_Q1";?>%</td>
+						<td><?php echo "$dbCOE_D_Q2";?>%</td>
+						<td><?php echo "$dbCOE_D_Q3";?>%</td>
+						<td><?php echo "$dbCOE_D_Q4";?>%</td>
+						<td><?php echo "$dbCOE_D_T";?>%</td>
 					</tr>
 					<tr>
 						<th>CICS</th>
 						<td>4</td>
-						<td><?php echo $dbCICS_AQ1;?></td> <!-- Target Row 2 Q1 -->
-						<td><?php echo $dbCICS_AQ2;?></td> <!-- Target Row 2 Q2 -->
-						<td><?php echo $dbCICS_AQ3;?></td> <!-- Target Row 2 Q3 -->
-						<td><?php echo $dbCICS_AQ4;?></td> <!-- Target Row 2 Q4 -->
-						<td><?php echo $dbCICS_AQT;?></td> <!-- Target Row 2 Total -->
+						<td><?php echo $dbCICS_A_Q1;?></td>
+						<td><?php echo $dbCICS_A_Q2;?></td>
+						<td><?php echo $dbCICS_A_Q3;?></td>
+						<td><?php echo $dbCICS_A_Q4;?></td>
+						<td><?php echo $dbCICS_A_T;?></td>
 						
-						<td><?php echo "$dbT_R2Q1";?></td> <!-- Trainees Row 2 Q1 -->
-						<td><?php echo "$dbT_R2Q2";?></td> <!-- Trainees Row 2 Q2 -->
-						<td><?php echo "$dbT_R2Q3";?></td> <!-- Trainees Row 2 Q3 -->
-						<td><?php echo "$dbT_R2Q4";?></td> <!-- Trainees Row 2 Q4 -->
-						<td><?php echo "$dbT_R2_T";?></td> <!-- Trainees Row 2 Total -->
+						<td><?php echo "$dbCICS_B_Q1";?></td>
+						<td><?php echo "$dbCICS_B_Q2";?></td>
+						<td><?php echo "$dbCICS_B_Q3";?></td>
+						<td><?php echo "$dbCICS_B_Q4";?></td>
+						<td><?php echo "$dbCICS_B_T";?></td>
 						
-						<td><?php echo $dbCICS_BQ1;?></td> <!-- Actual Row 2 Q1 -->
-						<td><?php echo $dbCICS_BQ2;?></td> <!-- Actual Row 2 Q2 -->
-						<td><?php echo $dbCICS_BQ3;?></td> <!-- Actual Row 2 Q3 -->
-						<td><?php echo $dbCICS_BQ4;?></td> <!-- Actual Row 2 Q4 -->
-						<td><?php echo $dbCICS_BQT;?></td> <!-- Actual Row 2 Total -->
+						<td><?php echo $dbCICS_C_Q1;?></td>
+						<td><?php echo $dbCICS_C_Q2;?></td>
+						<td><?php echo $dbCICS_C_Q3;?></td>
+						<td><?php echo $dbCICS_C_Q4;?></td>
+						<td><?php echo $dbCICS_C_T;?></td>
 
-						<td><?php echo "$dbP_R2Q1";?>%</td> <!-- Percentage Row 2 Q1 -->
-						<td><?php echo "$dbP_R2Q2";?>%</td> <!-- Percentage Row 2 Q2 -->
-						<td><?php echo "$dbP_R2Q3";?>%</td> <!-- Percentage Row 2 Q3 -->
-						<td><?php echo "$dbP_R2Q4";?>%</td> <!-- Percentage Row 2 Q4 -->
-						<td><?php echo "$dbP_R2_T";?>%</td> <!-- Percentage Row 2 Total -->	 
+						<td><?php echo "$dbCICS_D_Q1";?>%</td>
+						<td><?php echo "$dbCICS_D_Q2";?>%</td>
+						<td><?php echo "$dbCICS_D_Q3";?>%</td>
+						<td><?php echo "$dbCICS_D_Q4";?>%</td>
+						<td><?php echo "$dbCICS_D_T";?>%</td>
 					</tr>
 					<tr>
 						<th>CIT</th>
 						<td>6</td>
-						<td><?php echo $dbCIT_AQ1;?></td> <!-- Target Row 3 Q1 -->
-						<td><?php echo $dbCIT_AQ2;?></td> <!-- Target Row 3 Q2 -->
-						<td><?php echo $dbCIT_AQ3;?></td> <!-- Target Row 3 Q3 -->
-						<td><?php echo $dbCIT_AQ4;?></td> <!-- Target Row 3 Q4 -->
-						<td><?php echo $dbCIT_AQT;?></td> <!-- Target Row 3 Total -->
+						<td><?php echo $dbCIT_A_Q1;?></td>
+						<td><?php echo $dbCIT_A_Q2;?></td>
+						<td><?php echo $dbCIT_A_Q3;?></td>
+						<td><?php echo $dbCIT_A_Q4;?></td>
+						<td><?php echo $dbCIT_A_T;?></td>
 						
-						<td><?php echo "$dbT_R3Q1";?></td> <!-- Trainees Row 3 Q1 -->
-						<td><?php echo "$dbT_R3Q2";?></td> <!-- Trainees Row 3 Q2 -->
-						<td><?php echo "$dbT_R3Q3";?></td> <!-- Trainees Row 3 Q3 -->
-						<td><?php echo "$dbT_R3Q4";?></td> <!-- Trainees Row 3 Q4 -->
-						<td><?php echo "$dbT_R3_T";?></td> <!-- Trainees Row 3 Total -->
+						<td><?php echo "$dbCIT_B_Q1";?></td>
+						<td><?php echo "$dbCIT_B_Q2";?></td>
+						<td><?php echo "$dbCIT_B_Q3";?></td>
+						<td><?php echo "$dbCIT_B_Q4";?></td>
+						<td><?php echo "$dbCIT_B_T";?></td>
 						
-						<td><?php echo $dbCIT_BQ1;?></td> <!-- Actual Row 3 Q1 -->
-						<td><?php echo $dbCIT_BQ2;?></td> <!-- Actual Row 3 Q2 -->
-						<td><?php echo $dbCIT_BQ3;?></td> <!-- Actual Row 3 Q3 -->
-						<td><?php echo $dbCIT_BQ4;?></td> <!-- Actual Row 3 Q4 -->
-						<td><?php echo $dbCIT_BQT;?></td> <!-- Actual Row 3 Total -->
+						<td><?php echo $dbCIT_C_Q1;?></td>
+						<td><?php echo $dbCIT_C_Q2;?></td>
+						<td><?php echo $dbCIT_C_Q3;?></td>
+						<td><?php echo $dbCIT_C_Q4;?></td>
+						<td><?php echo $dbCIT_C_T;?></td>
 
-						<td><?php echo "$dbP_R3Q1";?>%</td> <!-- Percentage Row 3 Q1 -->
-						<td><?php echo "$dbP_R3Q2";?>%</td> <!-- Percentage Row 3 Q2 -->
-						<td><?php echo "$dbP_R3Q3";?>%</td> <!-- Percentage Row 3 Q3 -->
-						<td><?php echo "$dbP_R3Q4";?>%</td> <!-- Percentage Row 3 Q4 -->
-						<td><?php echo "$dbP_R3_T";?>%</td> <!-- Percentage Row 3 Total -->
+						<td><?php echo "$dbCIT_D_Q1";?>%</td>
+						<td><?php echo "$dbCIT_D_Q2";?>%</td>
+						<td><?php echo "$dbCIT_D_Q3";?>%</td>
+						<td><?php echo "$dbCIT_D_Q4";?>%</td>
+						<td><?php echo "$dbCIT_D_T";?>%</td>
 					</tr>
 					<tr>
 						<th>Total</th> 
 						<td>23</td>
-						<td><?php echo $dbAT_Q1;?></td> <!-- Total Row 4 Target Q1 -->
-						<td><?php echo $dbAT_Q1;?></td> <!-- Total Row 4 Target Q2 -->
-						<td><?php echo $dbAT_Q2;?></td> <!-- Total Row 4 Target Q3 -->
-						<td><?php echo $dbAT_Q3;?></td> <!-- Total Row 4 Target Q4 -->
-						<td><?php echo $dbAT_QT;?></td> <!-- Total Row 4 Target Total -->
+						<td><?php echo $dbTOTAL_A_Q1;?></td>
+						<td><?php echo $dbTOTAL_A_Q2;?></td>
+						<td><?php echo $dbTOTAL_A_Q3;?></td>
+						<td><?php echo $dbTOTAL_A_Q4;?></td>
+						<td><?php echo $dbTOTAL_A;?></td>
 					
-						<td><?php echo "$dbT_R4Q1";?></td> <!-- Total Row 4 Trainees Q1 -->
-						<td><?php echo "$dbT_R4Q2";?></td> <!-- Total Row 4 Trainees Q2 -->
-						<td><?php echo "$dbT_R4Q3";?></td> <!-- Total Row 4 Trainees Q3 -->
-						<td><?php echo "$dbT_R4Q4";?></td> <!-- Total Row 4 Trainees Q4 -->
-						<td><?php echo "$dbT_R4_T";?></td> <!-- Total Row 4 Trainees Total -->
+						<td><?php echo "$dbTOTAL_B_Q1";?></td>
+						<td><?php echo "$dbTOTAL_B_Q2";?></td>
+						<td><?php echo "$dbTOTAL_B_Q3";?></td>
+						<td><?php echo "$dbTOTAL_B_Q4";?></td>
+						<td><?php echo "$dbTOTAL_B";?></td>
 						
-						<td><?php echo $dbBT_Q1;?></td> <!-- Total Row 4 Actual Q1 -->
-						<td><?php echo $dbBT_Q2;?></td> <!-- Total Row 4 Actual Q1 -->
-						<td><?php echo $dbBT_Q3;?></td> <!-- Total Row 4 Actual Q1 -->
-						<td><?php echo $dbBT_Q4;?></td> <!-- Total Row 4 Actual Q1 -->
-						<td><?php echo $dbBT_QT;?></td> <!-- Total Row 4 Actual Total -->
+						<td><?php echo $dbTOTAL_C_Q1;?></td>
+						<td><?php echo $dbTOTAL_C_Q2;?></td>
+						<td><?php echo $dbTOTAL_C_Q3;?></td>
+						<td><?php echo $dbTOTAL_C_Q4;?></td>
+						<td><?php echo $dbTOTAL_C;?></td>
 						
-						<td colspan="5"><?php echo "$dbPercentageTotal";?>%</td> <!-- Total Row 4 Percentage Total -->
+						<td colspan="5"><?php echo "$dbPercentage";?>%</td>
 
-						<td>₱<?php echo "$dbBudget";?></td> <!-- Budget -->
+						<td>₱<?php echo "$dbBudget";?></td>
 					</tr>
 				</tbody>
 			</table>

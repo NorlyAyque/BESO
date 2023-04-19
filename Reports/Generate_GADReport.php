@@ -75,13 +75,13 @@ $Position = $_SESSION["Position"];
 			<th width="90px";>Source <br>of<br> Fund</th>
 		</tr>
 <?php
-//Display all PAPS under CIT
+//Display all PAPS with GAD
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(Year = $Year) AND
 		(Quarter = $Q) AND
 		(IsGAD = 'Yes')AND
 		(Remarks = 'Evaluated')");
-$command = $con->query($sql) or die("Error finding Offices under CIT");
+$command = $con->query($sql) or die("Error finding GAD Proposal");
 $No = 0;
 while($result = mysqli_fetch_array($command))
 	{

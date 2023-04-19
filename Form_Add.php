@@ -130,15 +130,6 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<select name="Campus" id="Campus" required>
 						<option value="">Select Campus</option>
 						<option value="Alangilan">Alangilan</option>
-						<option value="Balayan">Balayan</option>
-						<option value="Lemery">Lemery</option>
-						<option value="Lipa">Lipa</option>
-						<option value="Lobo">Lobo</option>
-						<option value="Mabini">Mabini</option>
-						<option value="Malvar">Malvar</option>
-						<option value="Pablo Borbon">Pablo Borbon</option>
-						<option value="Rosario">Rosario</option>
-						<option value="San Juan">San Juan</option>
 						<option value="<?php echo $_SESSION["Campus"]; ?>" selected><?php echo $_SESSION["Campus"]; ?></option>
 					</select>
 					</div>
@@ -147,7 +138,8 @@ if (isset($_SESSION['AccountAID']) == FALSE){
 					<div class ="DrpCAMPUS">
 					<select name="College" id="College" required>
 						<option value="0">Select College</option>
-						<option value="CEAFA">CEAFA</option>
+						<option value="CAFAD">CAFAD</option>
+						<option value="COE">COE</option>
 						<option value="CICS">CICS</option>
 						<option value="CIT">CIT</option>
 						<option value="**">N/A (Head)</option>

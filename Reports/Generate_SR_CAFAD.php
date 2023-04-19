@@ -34,7 +34,7 @@ $Position = $_SESSION["Position"];
 <html>
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-<title>Generate Status Report - CICS</title>
+<title>Generate Status Report - CAFAD</title>
 <link rel="stylesheet" type="text/css" href="../styles/Generate_StatusReports-STYLE.css">
 
 </head>
@@ -87,15 +87,15 @@ $Position = $_SESSION["Position"];
 		</tr>
 
 		<tr>
-			<td colspan="10"> <b><i> College of Informatics and Computing Sciences </i></b></td>
+			<td colspan="10"> <b><i> College of Architecture, Fine Arts and Design </i></b></td>
 		</tr>
 
 <?php
-//Display all PAPS under CICS
+//Display all PAPS under CAFAD
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(Year = $Year) AND
 		(Quarter = $Q) AND
-		(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+		(Office LIKE '%$CAFAD%' OR Office LIKE '%$CAFAD_Full%') AND
 		(Remarks = 'Evaluated')");
 $command = $con->query($sql) or die("Error finding Offices under CIT");
 $No = 0;
@@ -171,7 +171,7 @@ while($result = mysqli_fetch_array($command))
 
 <!-- SIGNATORIES -->
 		<tr>
-			<th colspan="3">
+			<th colspan="3" width="33%";>
 				<p align="left">Prepared by: </p>
 				<div class="DrpSigna">
 				<select id="PreparedByName">
@@ -207,7 +207,7 @@ while($result = mysqli_fetch_array($command))
 			</th>
 
 
-			<th colspan="4">
+			<th colspan="4"  width="34%";>
 				<p align="left">Reviewed by: </p>
 				<div class="DrpSigna">
 				<select id="ReviewedByName">
@@ -242,7 +242,7 @@ while($result = mysqli_fetch_array($command))
 				<p class="signatories"> <textarea id="ReviewedByField" placeholder="type here..."></textarea> </p>
 			</th>
 
-			<th colspan="3" >
+			<th colspan="3"  width="33%";>
 				<p align="left">Approved by: </p>
 				<div class="DrpSigna">
 				<select id="ApprovedByName">
@@ -285,11 +285,11 @@ while($result = mysqli_fetch_array($command))
 <table border="0" align="center">
 
 <?php
-//Display all Pictures under CICS
+//Display all Pictures under CAFAD
 $sql = ("SELECT * FROM create_alangilan WHERE 
 		(Year = $Year) AND
 		(Quarter = $Q) AND
-		(Office LIKE '%$CICS%' OR Office LIKE '%$CICS_Full%') AND
+		(Office LIKE '%$CAFAD%' OR Office LIKE '%$CAFAD_Full%') AND
 		(Remarks = 'Evaluated')");
 $command = $con->query($sql) or die("Error finding Offices under CIT");
 $No = 0;
@@ -328,6 +328,7 @@ while($result = mysqli_fetch_array($command))
 		}
 	}	
 ?>
+
 </table>
 
 </body>
