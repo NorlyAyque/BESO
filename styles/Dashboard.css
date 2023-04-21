@@ -297,23 +297,49 @@ position:abosolute;
 .graph{
 	justify-content: center;
 	margin-top:10px;
-	margin-left:40px;
-	margin-right: auto;
+	margin-left:32px;
+	margin-right: 10px;
 	text-align: center;
-	
-	 
-	
-
-
+	border: 2px solid black;
+	border-radius: 5px;
 }
 
-#ChartCICS{
-	margin-left:45px;
+
+.graph{
+	overflow-y:scroll;
 	
 }
-#ChartCIT{
-	margin-left:45px;
+.graph::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius:3px;
+   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+
+  
+ 
 }
+.graph::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.graph::-webkit-scrollbar {
+  width: 10px;
+  height:10px;
+   
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 .profile{
 	margin-top:50px;
@@ -363,7 +389,6 @@ position:abosolute;
   width: 10px;
   height:10px;
    
-  
 }
 .btnview{
 	margin-left:auto;

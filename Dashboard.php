@@ -175,7 +175,7 @@ include_once ("Dashboard-Computations.php");
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboard-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> <!-- For Graph -->
 </head>
 
@@ -289,14 +289,28 @@ div.graph {
 <center>
 	<table>
 	<tr>
-		<td id="ChartForCAFAD"><div id="ChartCAFAD" style="height: 350px; width: 310px;"></div></td>
-		<td id="ChartForCOE"><div id="ChartCOE" style="height: 350px; width: 310px;"></div></td>
-		<td id="ChartForCICS"><div id="ChartCICS" style="height: 350px; width: 310px;"></div></td>
-		<td id="ChartForCIT"><div id="ChartCIT" style="height: 350px; width: 310px;"></div></td>
+		<td id="ChartForCAFAD"><div id="ChartCAFAD" style="height: 350px; width: 500px;"></div></td>
+		<td id="ChartForCOE"><div id="ChartCOE" style="height: 350px; width: 500px;"></div></td>
+		
 	</tr>
 	</table>
-</center>
+</center>	
 </div>
+
+<div class="graph">
+<center>
+	<table>
+	<tr>
+		<td id="ChartForCICS"><div id="ChartCICS" style="height: 350px; width: 500px;"></div></td>
+		<td id="ChartForCIT"><div id="ChartCIT" style="height: 350px; width: 500px;"></div></td>
+	
+	</tr>
+	</table>
+</center>		
+</div>
+	
+
+
 
 
 <form action="" method="POST">
