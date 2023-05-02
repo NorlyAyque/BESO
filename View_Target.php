@@ -185,7 +185,7 @@ if(isset($_GET['Year']) == TRUE)  {
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Dashborad BESO Portal</title>
-<link rel="stylesheet" type="text/css" href="styles/Dashboard-style.css">
+<link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
 
 </head>
 <body> 
