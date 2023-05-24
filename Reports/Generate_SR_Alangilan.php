@@ -35,7 +35,7 @@ $Position = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Generate Status Report - Alangilan</title>
-<link rel="stylesheet" type="text/css" href="../styles/Generate_StatusReports-STYLE.css">
+<link rel="stylesheet" type="text/css" href="../styles/Generate_StatusReports.css">
 
 </head>
 <body>
@@ -72,7 +72,7 @@ $Position = $_SESSION["Position"];
 
 		<tr>
 			<th width="155px";>Title of Projects</th>
-			<th width="130px";>Sustainble<br> Development<br> Goals</th>
+			<th width="130px";>Sustainable<br> Development<br> Goals</th>
 			<th width="90px";>Date/<br>Duration</th>
 			<th width ="220px";>Documentation</th>
 			<th width="110px";>No. of <br>(Male and <br>Female <br> Beneficiaries)</th>

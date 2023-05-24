@@ -31,7 +31,7 @@ $Position = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Generate GAD Report</title>
-<link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad-STYLE.css">
+<link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad-STYLES.css">
 
 </head>
 <body>
@@ -62,7 +62,7 @@ $Position = $_SESSION["Position"];
 
 		
 		<tr>
-			<th width="168px";>Title of<br> Implementated<br> PPAs</th>
+			<th width="168px";>Title of<br> Implemented<br> PPAs</th>
 			<th width="110px">Date/<br>Duration <br> (Number of hours)</th>
 			<th width="150px";>No. of<br> beneficiaries <br>(Male and <br>Female)</th>
 			<th width="150px">Tyes of <br>Beneficiaries</th>

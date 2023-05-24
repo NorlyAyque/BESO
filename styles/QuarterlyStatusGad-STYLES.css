@@ -3,7 +3,7 @@
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
-	font-family:"Open Sans", sans-serif;
+	
 
 	
 }
@@ -15,6 +15,7 @@
 	border-collapse: collapse;
 	word-break: break-all;
 	padding:7px;	
+	font-family: "Times New Roman", Times, serif;
 }
 .print{
 	
@@ -25,7 +26,7 @@
 
 
 .print ion-icon{
-	width:30px;
+	width:100px;
 }
 .print button{
 	padding:5px;
@@ -73,11 +74,11 @@
 .table2 th{
 	
 	padding:5px;
-	font-family:"Open Sans", sans-serif;
+	
 }
 .table2 td{
 	font-size:13px;
-	font-family:"Open Sans", Serif;
+	
 }
 
 .font td{
@@ -174,6 +175,7 @@ textarea::-webkit-scrollbar {
 	font-size:15px;
 	padding:5px;
 	border:none;
+	font-family: "Times New Roman", Times, serif;
 }
 .GADsignatories td{
 	
@@ -189,15 +191,16 @@ border-top:none;
 .DrpSigna{
 	margin-left:auto;
 	margin-right:auto;
+	font-family: "Times New Roman", Times, serif;
 }
 
 .DrpSigna select{
-
+ font-family: "Times New Roman", Times, serif;
   background: #f1f1f1;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   cursor: pointer;
   padding: 10px;
- margin-bottom:20px;
+  margin-bottom:20px;
   margin-top:3px;
   border:none;
   text-align:center;
@@ -210,6 +213,7 @@ border-top:none;
 	cursor:pointer;
 	margin-left:auto;
 	margin-right:auto;
+	font-family: "Times New Roman", Times, serif;
 
 }
 
@@ -224,10 +228,15 @@ margin:auto;
 border-radius:5px;
 margin-top:-10px;
 margin-bottom:15px;
+font-family: "Times New Roman", Times, serif;
 }
 
 .Getbtn button:hover{
 	background-color:#38E54D;
 	color:white;
 	cursor:pointer;
+	font-family: "Times New Roman", Times, serif;
+}
+textarea{
+	font-family: "Times New Roman", Times, serif;
 }

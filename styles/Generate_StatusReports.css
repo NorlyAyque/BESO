@@ -1,6 +1,6 @@
 *
-{
-		font-family:"Open Sans", sans-serif;
+body{
+		 font-family: "Times New Roman", Times, serif;
 }
 
  table , td, th {
@@ -57,7 +57,7 @@ textarea::-webkit-scrollbar {
 }
 .font textarea{
 	border:none;
-	
+	 font-family: "Times New Roman", Times, serif;
 	height: auto;
 
 }
@@ -65,12 +65,14 @@ textarea::-webkit-scrollbar {
 	border:none;
 	text-align:center;
 	height: auto;
+	 font-family: "Times New Roman", Times, serif;
 
 }
 .font1 textarea{
 	border:none;
 	text-align:left;
 	height: auto;
+	 font-family: "Times New Roman", Times, serif;
 
 }
 
@@ -89,10 +91,11 @@ textarea::-webkit-scrollbar {
 .DrpSigna{
 	margin-left:auto;
 	margin-right:auto;
+	 font-family: "Times New Roman", Times, serif;
 }
 
 .DrpSigna select{
-
+	 font-family: "Times New Roman", Times, serif;
   background: #f1f1f1;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   cursor: pointer;
@@ -106,7 +109,7 @@ textarea::-webkit-scrollbar {
   
 }
 .DrpSigna option{
-	
+	font-family: "Times New Roman", Times, serif;
 	cursor:pointer;
 	margin-left:auto;
 	margin-right:auto;
@@ -124,10 +127,15 @@ margin:auto;
 border-radius:5px;
 margin-top:-10px;
 margin-bottom:15px;
+font-family: "Times New Roman", Times, serif;
 }
 
 .Getbtn button:hover{
+	font-family: "Times New Roman", Times, serif;
 	background-color:#38E54D;
 	color:white;
 	cursor:pointer;
+}
+textarea{
+ font-family: "Times New Roman", Times, serif;
 }
