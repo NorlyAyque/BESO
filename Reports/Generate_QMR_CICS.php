@@ -32,7 +32,7 @@ $Position = $_SESSION["Position"];
 <head>
 <meta name="viewport" content ="width=device-width, initial-scale=1.0">
 <title>Generate QMR - CICS</title>
-<link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad-STYLE.css">
+<link rel="stylesheet" type="text/css" href="../styles/QuarterlyStatusGad-STYLES.css">
 </head>
 
 <body>
@@ -65,7 +65,7 @@ $Position = $_SESSION["Position"];
 			<th width="110px";>NO. OF<br> TRAINEES</th>
 			<th width="150px";>TRAINESS<br> WEIGHTED BY <br>THE LENGTH <br>OF TRAINING</th>
 			<th colspan="5" width="140px";>QUALITY AND <br>RELEVANCE <br>RATING </th>
-			<th width="110px";>PROOF OF<br> IMPLEMETAION<br>(reference)</th>
+			<th width="110px";>PROOF OF<br> IMPLEMENTATION<br>(reference)</th>
 		</tr>
 		<tr>
 			<td></td>
