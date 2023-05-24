@@ -169,7 +169,7 @@ if(isset($_GET['Year']) == TRUE)  {
 				$dbCIT_D_Q4 = $result["CIT_D_Q4"];
 				$dbCIT_D_T = $result["CIT_D_T"];
 
-				$dbPercentage = $result["Percentage"];
+				$dbPercentage = $result["PercentageTotal"];
 				$dbBudget = $result["Budget"];
 			}
 
