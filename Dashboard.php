@@ -417,7 +417,7 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 					</tr>
 					<tr >
 						<th>CAFAD</th>
-						<td>13</td>
+						<td>3</td>
 						<td><input type = "number" min="0" name="CAFAD_A_Q1" id="CAFAD_A_Q1" value="<?php echo $dbCAFAD_A_Q1;?>" onchange="Cal_CAFAD_A()"></td>
 						<td><input type = "number" min="0" name="CAFAD_A_Q2" id="CAFAD_A_Q2" value="<?php echo $dbCAFAD_A_Q2;?>" onchange="Cal_CAFAD_A()"></td>
 						<td><input type = "number" min="0" name="CAFAD_A_Q3" id="CAFAD_A_Q3" value="<?php echo $dbCAFAD_A_Q3;?>" onchange="Cal_CAFAD_A()"></td>
@@ -448,7 +448,7 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 
 					<tr >
 						<th>COE</th>
-						<td>13</td>
+						<td>22</td>
 						<td><input type = "number" min="0" name="COE_A_Q1" id="COE_A_Q1" value="<?php echo $dbCOE_A_Q1;?>" onchange="Cal_COE_A()"></td>
 						<td><input type = "number" min="0" name="COE_A_Q2" id="COE_A_Q2" value="<?php echo $dbCOE_A_Q2;?>" onchange="Cal_COE_A()"></td>
 						<td><input type = "number" min="0" name="COE_A_Q3" id="COE_A_Q3" value="<?php echo $dbCOE_A_Q3;?>" onchange="Cal_COE_A()"></td>
@@ -533,7 +533,7 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 					</tr>
 					<tr>
 						<th>Total</th> 
-						<td>23</td>
+						<td>25</td>
 						<td><input type = "number" min="0" name="TOTAL_A_Q1" id="TOTAL_A_Q1" value="<?php echo $dbTOTAL_A_Q1;?>" readonly></td>
 						<td><input type = "number" min="0" name="TOTAL_A_Q2" id="TOTAL_A_Q2" value="<?php echo $dbTOTAL_A_Q2;?>" readonly></td>
 						<td><input type = "number" min="0" name="TOTAL_A_Q3" id="TOTAL_A_Q3" value="<?php echo $dbTOTAL_A_Q3;?>" readonly></td>

@@ -366,7 +366,7 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 					</tr>
 					<tr >
 						<th>CAFAD</th>
-						<td>13</td>
+						<td>3</td>
 						<td><?php echo $dbCAFAD_A_Q1;?></td>
 						<td><?php echo $dbCAFAD_A_Q2;?></td>
 						<td><?php echo $dbCAFAD_A_Q3;?></td>
@@ -395,7 +395,7 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 					</tr>
 					<tr >
 						<th>COE</th>
-						<td>13</td>
+						<td>22</td>
 						<td><?php echo $dbCOE_A_Q1;?></td>
 						<td><?php echo $dbCOE_A_Q2;?></td>
 						<td><?php echo $dbCOE_A_Q3;?></td>
@@ -476,7 +476,7 @@ if (($UserPosition == "Head") OR ($UserPosition == "Staff")) {
 					</tr>
 					<tr>
 						<th>Total</th> 
-						<td>23</td>
+						<td>35</td>
 						<td><?php echo $dbTOTAL_A_Q1;?></td>
 						<td><?php echo $dbTOTAL_A_Q2;?></td>
 						<td><?php echo $dbTOTAL_A_Q3;?></td>
